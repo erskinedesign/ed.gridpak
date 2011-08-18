@@ -56,43 +56,18 @@
                         </a>
                     </p> <!-- // #branding -->
                 {% endblock %} 
-                
-                <form action="#" id="site_search">
-                    <fieldset>
-                        <div>
-                            <label for="site_search_keywords">Search</label>
-                            <input type="search" id="site_search_keywords" size="20" placeholder="Keywords" title="Keywords" />
-                        </div>
-                        <div class="submit">
-                            <input type="submit" value="Go" />
-                        </div>
-                    </fieldset>
-                </form> <!-- // #site_search -->
-            
-            </div> <!-- // #header -->
-            
-            <ul id="navigation_pri">
-                <li{% if location == "home" %} class="cur"{% endif %}><a href="/">Home</a></li>
-                <li{% if location == "section_1" %} class="cur"{% endif %}><a href="/">Section 1</a></li>
-                <li{% if location == "section_2" %} class="cur"{% endif %}><a href="/">Section 2</a></li>
-                <li{% if location == "section_3" %} class="cur"{% endif %}><a href="/">Section 3</a></li>
-            </ul> <!-- // #navigation_pri -->
             
             {% block content %}{% endblock %}
         
         </div><!-- // #page -->
-        
-        <div id="footer">
-        
-            <p class="copyright">&copy; {{ now|date:"Y" }} Site name</p>
-            <p class="credit">Site by <a href="http://erskinedesign.com/">Erskine Design</a></p>
-        
-        </div> <!-- // #footer -->
     
     </div> <!-- // #page -->
     
     <!-- JAVASCRIPT -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery-ui-1.8.15.custom.min.js"></script>
+    <script src="{{ STATIC_URL }}js/onload.js"></script>
+    
     
     <!-- CALL DOC READY FUNCTIONS -->
     <script>

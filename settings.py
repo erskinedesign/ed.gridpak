@@ -100,7 +100,7 @@ MIDDLEWARE_CLASSES = (
     # 'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'ultimate_package.urls'
+ROOT_URLCONF = 'gridulator.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
