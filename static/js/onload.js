@@ -36,7 +36,7 @@ $(document).ready(function(){
 function draw_cols(ui_width) {
     
     var browser_width = (typeof ui_width == 'undefined') ? $browser.innerWidth() : round_to_grid(ui_width),
-        col_width = (browser_width / options.cols) - (options.col_margins * options.cols) - 2,
+        col_width = (browser_width / options.cols) - (options.col_margins * 2),
         col = '<div class="col" style="width: ' + col_width + 'px; margin:0 ' + options.col_margins + 'px" />',
         i = 0,
         cols = '';
