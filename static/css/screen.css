@@ -417,6 +417,7 @@ div#browser {
     background-color:#ccc;
     border:2px solid #333;
     margin-bottom:20px;
+    overflow:hidden;
 }
 div#info {
     padding: 20px;
@@ -435,3 +436,12 @@ div#info {
 .ui-resizable-sw { cursor: sw-resize; width: 9px; height: 9px; left: -5px; bottom: -5px; }
 .ui-resizable-nw { cursor: nw-resize; width: 9px; height: 9px; left: -5px; top: -5px; }
 .ui-resizable-ne { cursor: ne-resize; width: 9px; height: 9px; right: -5px; top: -5px;}
+
+div.col {
+    height:100%;
+    display:block;
+    float:left;
+    width: 100px;
+    background-color:red;
+    margin:0 10px;
+}
