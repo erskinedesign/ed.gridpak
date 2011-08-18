@@ -1,0 +1,6 @@
+/* DESIGN & BUILD */
+    Team:       Erskine Design
+    URL:        http://erskinedesign.com
+    Contact:    hello [at] erskinedesign.com
+    Twitter:    @erskinedesign
+    From:       Nottingham,UK

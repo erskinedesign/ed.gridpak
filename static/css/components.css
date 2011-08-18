@@ -1,0 +1,221 @@
+/*
+
+    COMPONENTS LIBRARY
+    For usage with screen_prototype.css
+    
+    @version: 1.0
+    @author: Erskine Design
+    
+    CONTENTS ----------
+    
+        1. BLOCK
+            1.1 BLOCK FORM
+        2. LISTINGS
+            2.1. MEDIA LISTING
+            2.2. ITEM LISTING
+        4. CALL TO ACTION BUTTONS
+    
+    -------------------
+    
+*/
+
+
+
+/* @group 1. BLOCK -------------------- */
+
+/*
+    EXAMPLE -----------
+    
+    <div class="block">
+    
+        <!--
+        
+        Put anything you want here.
+        Usually used to separate #content_sec 'components'.
+        
+        -->
+    
+    </div>
+    
+    -------------------
+*/
+
+.block {
+    background-color:#DDD;
+    margin:0 0 20px;
+    padding:20px 20px 4px;
+}
+
+    /* @group 1.1. BLOCK FORM ---------- */
+    
+    .block form {
+        font-size:0.9em;
+        line-height:1.3em;
+        margin:0;
+    }
+    .block fieldset {
+        margin:0;
+    }
+    .block fieldset div {
+        border-color:#999;
+        padding:10px 0;
+    }
+    .block label {
+        float:none;
+        left:0;
+        margin:0 0 5px;
+        width:auto;
+    }
+    .block input[type="text"],
+    .block textarea {
+        margin:0;
+        padding:1%;
+        width:98%;
+    }
+    .block fieldset div.multiselect input {
+        position:absolute;
+        left:0;
+        top:1em;
+    }
+    .block form div.submit {
+        padding:10px 0;
+        text-align:right;
+    }
+    
+    /* @end */
+
+
+
+/* @end */
+
+
+
+/* @group 2. LISTINGS -------------------- */
+
+
+
+    /* @group 2.1. MEDIA LISTING ---------- */
+    
+    /*
+        EXAMPLE -----------
+        
+        <ul class="media_listing">
+            <li>
+                <a href="">
+                    <img src="" width="110" height="70" alt="" />
+                    <h4>Have a Go Guide</h4>
+                    <p>Everything you need to know about getting involved with WorldSkills London 2011 Have a Go.</p>
+                    <span class="link">Download the guide</span>
+                </a>
+            </li>
+        </ul>
+        
+        -------------------
+    */
+    
+    ul.media_listing li {
+    
+    }
+    
+    ul.media_listing a {
+        display:block;
+        overflow:hidden;
+    }
+    ul.media_listing a:hover,
+    ul.media_listing a:focus {
+        text-decoration:none;
+    }
+    
+    ul.media_listing img {
+        float:left;
+        margin-right:;
+    }
+    ul.media_listing h4 {
+    
+    }
+    ul.media_listing p {
+    
+    }
+    
+    ul.media_listing .link {
+    
+    }
+    ul.media_listing a:hover .link,
+    ul.media_listing a:focus .link {
+    
+    }
+    
+    /* @end */
+    
+    /* @group 2.2. ITEM LISTING -------------------- */
+    
+    /*
+        EXAMPLE -----------
+        
+        <ul class="item_listing">
+            <li><a href="">Nunc eu ullamcorper orci</a></li>
+            <li><a href="">Quisque eget odio</a></li>
+            <li><a href="">Ac lectus vestibulum faucibus</a></li>
+            <li><a href="">Eget in metus</a></li>
+        </ul>
+        
+        -------------------
+    */
+    
+    ul.item_listing {
+        border-bottom:1px dotted #999;
+        list-style:none;
+    }
+    
+    ul.item_listing li {
+        border-top:1px dotted #999;
+        margin:0;
+    }
+    
+    ul.item_listing a {
+        display:block;
+        padding:0.25em 0.5em;
+    }
+    ul.item_listing a:hover,
+    ul.item_listing a:focus {
+        background-color:#DDD;
+    }
+    
+    /* @end */
+
+
+
+/* @end */
+
+
+
+/* @group 3. CALL TO ACTION BUTTONS -------------------- */
+
+/*
+    EXAMPLE -----------
+    
+    <p class="cta_button">
+        <a href="">Extra, extra - read all about it.</a>
+    </p>
+    
+    -------------------
+*/
+
+.cta_button a {
+    background-color:#666;
+    color:#FFF;
+    display:block;
+    font-weight:bold;
+    font-size:1.5em;
+    line-height:1.2em;
+    padding:0.5em;
+    text-align:center;
+}
+.cta_button a:hover,
+.cta_button a:focus {
+    background-color:#333;
+}
+
+/* @end */
+
+

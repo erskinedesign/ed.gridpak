@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="js-disabled">
+
+    <head>
+    
+        <!-- METADATA -->
+        <meta charset="UTF-8" />
+        <meta name="description" content="" />
+        <meta name="author" content="Erskine Design" />
+        <link rel="author" type="text/plain" href="/humans.txt" />
+        <title>{% block page_title %}{% endblock %} | Site name</title>
+        
+        <!-- CSS -->
+        <link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/screen.css" />
+        
+        <!-- INTERNET EXPLORER CSS -->
+        <!--[if IE 8]><link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/ie/screen_ie8.css" /><![endif]-->
+        <!--[if lte IE 7]><link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/ie/screen_ie.css" /><![endif]-->
+        <!--[if IE 7]><link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/ie/screen_ie7.css" /><![endif]-->
+        <!--[if IE 6]><link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/ie/screen_ie6.css" /><![endif]-->
+        
+        <link rel="stylesheet" media="print" type="text/css" href="{{ STATIC_URL }}css/print.css" />
+        
+        <!-- ICONS -->
+        <link rel="icon" type="image/png" href="{{ STATIC_URL }}images/site/icons/favicon.png" />
+        
+        <!-- RSS -->
+        <!-- <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss/feed.xml" /> -->
+        
+        <!-- ALLOW JAVASCRIPT STYLING -->
+        <script>
+            docElement = this.document.documentElement;
+            docElement.className = docElement.className.replace(/\bjs-disabled\b/,'') + ' js-enabled';
+        </script>
+        
+        <!-- THE EDJ -->
+        <script src="/static/js/EDJ.js"></script>
+    
+    </head>
+    
+    <body class="{% block body_class %}{% endblock %}">
+    
+        <ul id="nav_access">
+            <li><a href="#navigation_pri">Skip to navigation</a></li>
+            <li><a href="#content_wrapper">Skip to content</a></li>
+        </ul> <!-- // #nav_access -->
+        
+        <div id="page">
+        
+            <div id="header">
+            
+                {% block branding %}
+                    <p id="branding">
+                        <a href="/">
+                            <img src="{{ STATIC_URL }}images/site/branding/branding.png" alt="" width="480" height="100" />
+                        </a>
+                    </p> <!-- // #branding -->
+                {% endblock %} 
+                
+                <form action="#" id="site_search">
+                    <fieldset>
+                        <div>
+                            <label for="site_search_keywords">Search</label>
+                            <input type="search" id="site_search_keywords" size="20" placeholder="Keywords" title="Keywords" />
+                        </div>
+                        <div class="submit">
+                            <input type="submit" value="Go" />
+                        </div>
+                    </fieldset>
+                </form> <!-- // #site_search -->
+            
+            </div> <!-- // #header -->
+            
+            <ul id="navigation_pri">
+                <li{% if location == "home" %} class="cur"{% endif %}><a href="/">Home</a></li>
+                <li{% if location == "section_1" %} class="cur"{% endif %}><a href="/">Section 1</a></li>
+                <li{% if location == "section_2" %} class="cur"{% endif %}><a href="/">Section 2</a></li>
+                <li{% if location == "section_3" %} class="cur"{% endif %}><a href="/">Section 3</a></li>
+            </ul> <!-- // #navigation_pri -->
+            
+            {% block content %}{% endblock %}
+        
+        </div><!-- // #page -->
+        
+        <div id="footer">
+        
+            <p class="copyright">&copy; {{ now|date:"Y" }} Site name</p>
+            <p class="credit">Site by <a href="http://erskinedesign.com/">Erskine Design</a></p>
+        
+        </div> <!-- // #footer -->
+    
+    </div> <!-- // #page -->
+    
+    <!-- JAVASCRIPT -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    
+    <!-- CALL DOC READY FUNCTIONS -->
+    <script>
+    $(document).ready(function() {
+        var settings = {
+            debug: {{ debug }},
+            STATIC_URL: '{{ STATIC_URL }}'
+        };
+        EDJ.on_ready(settings);
+    });
+    </script>
+    
+    <!--[if IE 6]>
+        <script src="{{ STATIC_URL }}js/ie6/DD_belatedPNG_0.0.8a.js"></script>
+        <script src="{{ STATIC_URL }}js/ie6/ie6.js"></script>
+    <![endif]-->
+    
+    </body>
+</html>
