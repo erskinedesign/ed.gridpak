@@ -11,6 +11,12 @@ $(document).ready(function(){
 
     $browser = $('div#browser');
     $info = $('div#info');
+    $width = $info.find('input#width');
+    $cols = $info.find('input#cols');
+    $col_margins = $info.find('input#col_margins');
+
+    $('button#set_options').live('click', set_options);
+
     draw_cols();
         
     $browser.resizable({
@@ -19,7 +25,9 @@ $(document).ready(function(){
             var col_width = 0;
             current_width = round_to_grid(ui.size.width);
             draw_cols(current_width);
-            $info.html(current_width + 'px');
+            $width.val(current_width + 'px');
+            $cols.val(options.cols);
+            $col_margins.val(options.col_margins);
         }
     });
 });
@@ -33,6 +41,8 @@ function draw_cols(ui_width) {
         i = 0,
         cols = '';
 
+    $browser.width(browser_width);
+
     for (i; i<=options.cols; i++) {
         cols += col  + "\n";
     }
@@ -44,4 +54,15 @@ function draw_cols(ui_width) {
 
 function round_to_grid(width) {
     return Math.round(width / options.snap) * options.snap;
+}
+
+
+function set_options() {
+
+    options.width = $('input#width').val();
+    options.cols = $('input#cols').val();
+    options.col_margins = $('input#col_margins').val();
+
+    draw_cols(options.width);
+
 }
