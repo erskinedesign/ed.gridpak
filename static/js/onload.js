@@ -43,7 +43,7 @@ function draw_cols(ui_width) {
 
     $browser.width(browser_width);
 
-    for (i; i<=options.cols; i++) {
+    for (i; i<options.cols; i++) {
         cols += col  + "\n";
     }
 
