@@ -441,7 +441,7 @@ div.col {
     height:100%;
     display:block;
     float:left;
-    width: 100px;
+    width: 10%;
     background-color:red;
     margin:0 10px;
 }

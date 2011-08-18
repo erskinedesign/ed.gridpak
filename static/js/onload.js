@@ -2,8 +2,10 @@ var $browser = {},
         $info = {},
         options = {
             snap: 50,
-            cols: 10
-        };
+            cols: 5,
+            col_margins: 10
+        },
+        current_width = 960;
 
 $(document).ready(function(){
 
@@ -14,20 +16,32 @@ $(document).ready(function(){
     $browser.resizable({
         grid: options.snap,
         resize: function(event, ui) {
-            width = Math.round(ui.size.width / options.snap) * 50;
-            $info.html(width + 'px');
+            var col_width = 0;
+            current_width = round_to_grid(ui.size.width);
+            draw_cols(current_width);
+            $info.html(current_width + 'px');
         }
     });
 });
 
 
-function draw_cols() {
-
-    var col = '<div class="col" />',
-        i = 0;
+function draw_cols(ui_width) {
+    
+    var browser_width = (typeof ui_width == 'undefined') ? $browser.innerWidth() : round_to_grid(ui_width),
+        col_width = (browser_width / options.cols) - (options.col_margins * options.cols) - 2,
+        col = '<div class="col" style="width: ' + col_width + 'px; margin:0 ' + options.col_margins + 'px" />',
+        i = 0,
+        cols = '';
 
     for (i; i<=options.cols; i++) {
-        $browser.append($(col));
+        cols += col  + "\n";
     }
 
+    $browser.find('.col').remove();
+    $browser.append($(cols));
+
+}
+
+function round_to_grid(width) {
+    return Math.round(width / options.snap) * options.snap;
 }
