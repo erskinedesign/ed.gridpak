@@ -11,9 +11,9 @@ urlpatterns = patterns('',
     (r'^media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.MEDIA_ROOT}),
 
-    (r'^(?P<page>.*)', 'views.static_page'),
+    #(r'^(?P<page>.*)', 'views.static_page'),
     # Example:
-    # (r'^ultimate_package/', include('ultimate_package.foo.urls')),
+    (r'^$', include('gridulator.gridulate.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
