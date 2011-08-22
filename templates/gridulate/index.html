@@ -11,16 +11,19 @@
         
             <div id="gridulator">
             
-                <div id="browser"></div>
+                <div id="browser">
 
-                <div id="create_grid">
-                    <input id="new_min_width" type="text" placeholder="Min width" value="960" />
-                    <input id="new_col_num" type="text" placeholder="Number of cols" value="10" />
-                    <input id="new_col_margin_width" type="text" placeholder="Margin width" value="1" />
-                    <input id="new_col_margin_type" type="text" placeholder="px or %" value="%" />
-                    <button id="save_grid">Save</button>
+                    <div id="create_grid">
+                        <div class="dragme ui-resizable-handle ui-resizable-e">Drag me</div>
+                        <input id="new_min_width" type="text" placeholder="Min width" value="960" />
+                        <input id="new_col_num" type="text" placeholder="Number of cols" value="10" />
+                        <input id="new_col_margin_width" type="text" placeholder="Margin width" value="1" />
+                        <input id="new_col_margin_type" type="text" placeholder="px or %" value="%" />
+                        <button id="save_grid">Save</button>
 
-                </div><!-- // #create_grid -->
+                    </div><!-- // #create_grid -->
+
+                </div><!-- // #browser -->
 
                 <ul id="grid_list"></ul>
 

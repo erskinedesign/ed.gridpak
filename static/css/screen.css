@@ -412,17 +412,39 @@ div#content_wrapper {
 /* @end */
 
 div#browser {
-    width: 960px;
-    height: 500px;
+    position:relative;
+    width: 200px;
+    height: 150px;
     background-color:#ccc;
     border:2px solid #333;
     margin-bottom:20px;
-    overflow:hidden;
 }
 div#info {
     padding: 20px;
     clear:both;
     background-color:#efefef;
+}
+div#create_grid {
+    display:block;
+    position:absolute;
+    top: 0;
+    right: -50px;
+    width:80px;
+    padding:50px 10px 10px 10px;
+    background-color:#ccc;
+}
+div#create_grid input[type="text"] {
+    width: 60px;
+}
+div#create_grid .dragme {
+    width:30px;
+    background-color:red;
+    height:30px;
+    display:block;
+    position:absolute;
+    right:30px;
+    top: 5px;
+    cursor:pointer;
 }
 
 .ui-resizable { position: relative;}

@@ -100,6 +100,13 @@ $(function() {
 
          initialize: function() {
             this.input = this.$('#create_grid');
+            this.$('#browser').resizable({
+                handles: { e: $(".dragme") },
+                grid: 20,
+                resize: function(e, ui) {
+                    $('#new_min_width').val(ui.size.width);
+                }
+            });
 
             Grids.bind('add', this.addOne, this);
 
