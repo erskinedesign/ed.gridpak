@@ -37,14 +37,13 @@ $(function() {
         template: _.template($('#grid_template').html()),
 
         initialize: function() {
-            Grids.bind('all', this.render, this);
-
+            this.model.bind('change', this.render, this);
+            this.model.bind('destroy', this.remove, this);
             Grids.fetch();
-
         },
 
         events: {
-            'click .remove' : 'remove'
+            'click .remove' : 'clear'
         },
 
         render: function() {
