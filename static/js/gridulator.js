@@ -43,7 +43,8 @@ $(function() {
         },
 
         events: {
-            'click .remove' : 'clear'
+            'click .remove' : 'clear',
+            'click .update' : 'updateOptions'
         },
 
         render: function() {
@@ -62,6 +63,15 @@ $(function() {
             this.$('.col_num').val(col_num);
             this.$('.col_margin_width').val(col_margin_width);
             this.$('.col_margin_type').val(col_margin_type);
+        },
+
+        updateOptions: function() {
+            this.model.set({
+                min_width: this.$('.min_width').val(),
+                col_num: this.$('.col_num').val(),
+                col_margin_width: this.$('.col_margin_width').val(),
+                col_margin_type: this.$('.col_margin_type').val()
+            });
         },
 
         remove: function() {
