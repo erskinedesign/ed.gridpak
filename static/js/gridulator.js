@@ -50,7 +50,6 @@ $(function() {
         render: function() {
             $(this.el).html(this.template(this.model.toJSON()));
             this.setOptions();
-            console.log('render view');
             return this;
         },
 
@@ -86,7 +85,8 @@ $(function() {
          el: $('#gridulator'),
 
          events: {
-             'click #save_grid': 'createGrid'
+             'click #save_grid': 'createGrid',
+             'click #stringify': 'stringify'
          },
 
          initialize: function() {
@@ -114,6 +114,12 @@ $(function() {
                 col_margin_type: col_margin_type
             });
             Grids.add(new_grid);
+        },
+
+        stringify: function(e) {
+
+            this.$('#hashme').val(JSON.stringify(Grids));
+
         },
 
         addOne: function(grid) {
