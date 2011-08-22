@@ -27,14 +27,6 @@
         <!-- RSS -->
         <!-- <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss/feed.xml" /> -->
         
-        <!-- ALLOW JAVASCRIPT STYLING -->
-        <script>
-            docElement = this.document.documentElement;
-            docElement.className = docElement.className.replace(/\bjs-disabled\b/,'') + ' js-enabled';
-        </script>
-        
-        <!-- THE EDJ -->
-        <script src="/static/js/EDJ.js"></script>
     
     </head>
     
@@ -66,19 +58,11 @@
     <!-- JAVASCRIPT -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     <script src="{{ STATIC_URL }}js/jquery-ui-1.8.15.custom.min.js"></script>
-    <script src="{{ STATIC_URL }}js/onload.js"></script>
-    
-    
-    <!-- CALL DOC READY FUNCTIONS -->
-    <script>
-    $(document).ready(function() {
-        var settings = {
-            debug: {{ debug }},
-            STATIC_URL: '{{ STATIC_URL }}'
-        };
-        EDJ.on_ready(settings);
-    });
-    </script>
+    <script src="{{ STATIC_URL }}js/underscore-min.js"></script>
+    <script src="{{ STATIC_URL }}js/backbone.js"></script>
+    <script src="{{ STATIC_URL }}js/gridulator.js"></script>
+
+
     
     <!--[if IE 6]>
         <script src="{{ STATIC_URL }}js/ie6/DD_belatedPNG_0.0.8a.js"></script>
