@@ -17,11 +17,33 @@
 
                     <div id="create_grid">
                         <div class="dragme ui-resizable-handle ui-resizable-e">Drag me</div>
-                        <input id="new_min_width" type="text" placeholder="Min width" value="960" />
-                        <input id="new_col_num" type="text" placeholder="Number of cols" value="10" />
-                        <input id="new_col_margin_width" type="text" placeholder="Margin width" value="1" />
-                        <input id="new_col_margin_type" type="text" placeholder="px or %" value="%" />
-                        <button id="save_grid">Save</button>
+                        <div class="hidden">
+                            <input id="new_min_width" type="hidden" />
+                        </div>
+                        <div>
+                            <label for="new_col_num">No. of columns</label>
+                            <input id="new_col_num" type="text" />
+                        </div>
+                        <div>
+                            <label for="new_col_padding_width">Column padding</label>
+                            <input id="new_col_padding_width" type="text" />
+                            <select id="new_col_padding_type">
+                                <option value="px">pixels</option>
+                                <option value="%">%</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="new_col_margin_width">Gutter width</label>
+                            <input id="new_col_margin_width" type="text" placeholder="Margin width" value="1" />
+                            <select id="new_col_margin_type">
+                                <option value="px">pixels</option>
+                                <option value="%">%</option>
+                            </select>
+                        </div>
+
+                        <div class="submit">
+                            <button id="save_grid">Save layout</button>
+                        </div>
 
                     </div><!-- // #create_grid -->
 
@@ -41,6 +63,8 @@
             <div class="grid" style="width:<%= min_width %>px;">
                 <input class="min_width" type="text" value="" />
                 <input class="col_num" type="text" value="" />
+                <input class="col_padding_width" type="text" value="" />
+                <input class="col_padding_type" type="text" value="" />
                 <input class="col_margin_width" type="text" value="" />
                 <input class="col_margin_type" type="text" value="" />
                 <a href="#" class="remove">remove</a>,

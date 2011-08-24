@@ -44,7 +44,7 @@
 /* @group 1. BODY -------------------- */
 
 body {
-
+	font:0.8125em/1.375em "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
 }
 
     /* @group 1.1. ACCESSIBILITY NAVIGATION ---------- */
@@ -412,37 +412,51 @@ div#content_wrapper {
 
 /* @end */
 
-div#browser {
+#browser {
     position:relative;
     width:960px;
     border:1px solid rgb(34,34,34);
     margin-bottom:20px;
 }
-div#browser:after {
+#browser:after {
 	content:" ";
 	clear:both;
 	display:block;
 }
-div#info {
+#info {
     padding: 20px;
     clear:both;
     background-color:#efefef;
 }
-div#create_grid {
+#create_grid {
     display:block;
     position:relative;
     float:right;
-	right:-101px;
-    width:80px;
-    padding:20px;
+	right:-14em;
+    width:10em;
+    padding:2em;
     margin:20px 0;
     clear:both;
+    color:#fff;
     background-color:rgb(32,32,32);
 }
-div#create_grid input[type="text"] {
-    width: 60px;
+#create_grid label {
+	display:block;
+	clear:both;
+	margin-bottom:0.5em;
 }
-div#create_grid .dragme {
+#create_grid input[type="text"] {
+    width:2.5em;
+    display:inline-block;
+}
+#create_grid div {
+	margin-bottom:0.5em;
+}
+#create_grid div.submit {
+	margin-bottom:0;
+	margin-top:1em;
+}
+#create_grid .dragme {
     width:31px;
     background-color:rgb(32,32,32);
     -webkit-border-top-left-radius:30px;
@@ -452,13 +466,13 @@ div#create_grid .dragme {
     position:absolute;
     left:-31px;
     top:50%;
-    margin-top:-25px;
+    margin:-25px 0 0 0;
     cursor:w-resize;
     text-indent:-999em;
     overflow:hidden;
 }
 
-div.col {
+#browser .col {
     height:100%;
     display:block;
     float:left;
@@ -471,7 +485,7 @@ div.col {
 	width:100%;
 	overflow:hidden;
 }
-.grid {
+#grid_list .grid {
 	position:absolute;
 	display:block;
 	overflow:hidden;

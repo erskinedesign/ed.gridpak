@@ -5,8 +5,11 @@ $(function() {
      *
      * @attribute (int) min_width
      * @attribute (int) col_num
+     * @attribute (int) col_padding_width
+     * @attribute (string) col_padding_width_type
      * @attribute (int) col_margin_width
      * @attribute (string) col_margin_type
+     * @attribute (int) baseline_height
      */
     window.Grid = Backbone.Model.extend({
 
@@ -61,11 +64,15 @@ $(function() {
         setOptions: function() {
             var min_width = this.model.get('min_width'),
                 col_num = this.model.get('col_num'),
+                col_padding_width = this.model.get('col_padding_width'),
+                col_padding_type = this.model.get('col_padding_type'),
                 col_margin_width = this.model.get('col_margin_width'),
                 col_margin_type = this.model.get('col_margin_type');
 
             this.$('.min_width').val(min_width);
             this.$('.col_num').val(col_num);
+            this.$('.col_padding_width').val(col_padding_width);
+            this.$('.col_padding_type').val(col_padding_type);
             this.$('.col_margin_width').val(col_margin_width);
             this.$('.col_margin_type').val(col_margin_type);
         },
@@ -74,6 +81,8 @@ $(function() {
             this.model.set({
                 min_width: this.$('.min_width').val(),
                 col_num: this.$('.col_num').val(),
+                col_padding_width: this.$('.col_padding_width').val(),
+                col_padding_type: this.$('.col_padding_type').val(),
                 col_margin_width: this.$('.col_margin_width').val(),
                 col_margin_type: this.$('.col_margin_type').val()
             });
@@ -125,11 +134,15 @@ $(function() {
 
             var min_width = $('#new_min_width').val();
             var col_num = $('#new_col_num').val();
+            var col_padding_width = $('#new_col_padding_width').val();
+            var col_padding_type= $('#new_col_padding_type').val();
             var col_margin_width = $('#new_col_margin_width').val();
             var col_margin_type= $('#new_col_margin_type').val();
             var new_grid = new Grid({
                 min_width: min_width,
                 col_num: col_num,
+                col_padding_width: col_padding_width,
+                col_padding_type: col_padding_type,
                 col_margin_width: col_margin_width,
                 col_margin_type: col_margin_type
             });
