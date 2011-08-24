@@ -50,7 +50,12 @@ $(function() {
         render: function() {
             $(this.el).html(this.template(this.model.toJSON()));
             this.setOptions();
+            this.stringify();
             return this;
+        },
+
+        stringify: function() {
+            $('#stringified').val(JSON.stringify(Grids));
         },
 
         setOptions: function() {
@@ -94,8 +99,7 @@ $(function() {
          el: $('#gridulator'),
 
          events: {
-             'click #save_grid': 'createGrid',
-             'click #stringify': 'stringify'
+             'click #save_grid': 'createGrid'
          },
 
          initialize: function() {
@@ -130,12 +134,6 @@ $(function() {
                 col_margin_type: col_margin_type
             });
             Grids.add(new_grid);
-        },
-
-        stringify: function(e) {
-
-            this.$('#hashme').val(JSON.stringify(Grids));
-
         },
 
         addOne: function(grid) {
