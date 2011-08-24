@@ -1,3 +1,4 @@
+/* @override http://127.0.0.1:8000/static/css/screen.css */
 /*
 
     [PROJECT NAME]
@@ -413,11 +414,14 @@ div#content_wrapper {
 
 div#browser {
     position:relative;
-    width: 200px;
-    height: 150px;
-    background-color:#ccc;
-    border:2px solid #333;
+    width: 600px;
+    border:1px solid rgb(34,34,34);
     margin-bottom:20px;
+}
+div#browser:after {
+	content:" ";
+	clear:both;
+	display:block;
 }
 div#info {
     padding: 20px;
@@ -426,38 +430,33 @@ div#info {
 }
 div#create_grid {
     display:block;
-    position:absolute;
-    top: 0;
-    right: -50px;
+    position:relative;
+    float:right;
+	right:-101px;
     width:80px;
-    padding:50px 10px 10px 10px;
-    background-color:#ccc;
+    padding:20px;
+    margin:20px 0;
+    clear:both;
+    background-color:rgb(32,32,32);
 }
 div#create_grid input[type="text"] {
     width: 60px;
 }
 div#create_grid .dragme {
-    width:30px;
-    background-color:red;
-    height:30px;
+    width:37px;
+    background-color:rgb(32,32,32);
+    -webkit-border-top-left-radius:20px;
+    -webkit-border-bottom-left-radius:20px;
+    height:50px;
     display:block;
     position:absolute;
-    right:30px;
-    top: 5px;
-    cursor:pointer;
+    left:-37px;
+    top:50%;
+    margin-top:-25px;
+    cursor:w-resize;
+    text-indent:-999em;
+    overflow:hidden;
 }
-
-.ui-resizable { position: relative;}
-.ui-resizable-handle { position: absolute;font-size: 0.1px;z-index: 99999; display: block; }
-.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
-.ui-resizable-n { cursor: n-resize; height: 7px; width: 100%; top: -5px; left: 0; }
-.ui-resizable-s { cursor: s-resize; height: 7px; width: 100%; bottom: -5px; left: 0; }
-.ui-resizable-e { cursor: e-resize; width: 7px; right: -5px; top: 0; height: 100%; }
-.ui-resizable-w { cursor: w-resize; width: 7px; left: -5px; top: 0; height: 100%; }
-.ui-resizable-se { cursor: se-resize; width: 12px; height: 12px; right: 1px; bottom: 1px; }
-.ui-resizable-sw { cursor: sw-resize; width: 9px; height: 9px; left: -5px; bottom: -5px; }
-.ui-resizable-nw { cursor: nw-resize; width: 9px; height: 9px; left: -5px; top: -5px; }
-.ui-resizable-ne { cursor: ne-resize; width: 9px; height: 9px; right: -5px; top: -5px;}
 
 div.col {
     height:100%;
