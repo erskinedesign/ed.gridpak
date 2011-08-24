@@ -119,6 +119,7 @@ $(function() {
             this.$('#browser').resizable({
                 handles: { e: $(".dragme") },
                 grid: 20,
+                minWidth: 300,
                 resize: function(e, ui) {
                     $('#new_min_width').val(ui.size.width);
                 }
