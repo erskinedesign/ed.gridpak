@@ -22,23 +22,27 @@
                         </div>
                         <div>
                             <label for="new_col_num">No. of columns</label>
-                            <input id="new_col_num" type="text" />
+                            <input id="new_col_num" type="text" value="12" />
                         </div>
                         <div>
                             <label for="new_col_padding_width">Column padding</label>
-                            <input id="new_col_padding_width" type="text" />
+                            <input id="new_col_padding_width" type="text" value="1" />
                             <select id="new_col_padding_type">
                                 <option value="px">pixels</option>
-                                <option value="%">%</option>
+                                <option value="%" selected="selected">%</option>
                             </select>
                         </div>
                         <div>
                             <label for="new_col_margin_width">Gutter width</label>
-                            <input id="new_col_margin_width" type="text" placeholder="Margin width" value="1" />
+                            <input id="new_col_margin_width" type="text" value="20" />
                             <select id="new_col_margin_type">
-                                <option value="px">pixels</option>
+                                <option value="px" selected="selected">pixels</option>
                                 <option value="%">%</option>
                             </select>
+                        </div>
+                        <div>
+                            <label for="new_baseline_height">Baseline height</label>
+                            <input id="new_baseline_height" type="text" value="22" /><small>px</small>
                         </div>
 
                         <div class="submit">
@@ -67,6 +71,7 @@
                 <input class="col_padding_type" type="text" value="" />
                 <input class="col_margin_width" type="text" value="" />
                 <input class="col_margin_type" type="text" value="" />
+                <input class="baseline_height" type="text" value="" />
                 <a href="#" class="remove">remove</a>,
                 <a href="#" class="update">update</a>
             </div>

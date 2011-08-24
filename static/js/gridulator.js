@@ -67,7 +67,8 @@ $(function() {
                 col_padding_width = this.model.get('col_padding_width'),
                 col_padding_type = this.model.get('col_padding_type'),
                 col_margin_width = this.model.get('col_margin_width'),
-                col_margin_type = this.model.get('col_margin_type');
+                col_margin_type = this.model.get('col_margin_type'),
+                baseline_height = this.model.get('baseline_height');
 
             this.$('.min_width').val(min_width);
             this.$('.col_num').val(col_num);
@@ -75,6 +76,7 @@ $(function() {
             this.$('.col_padding_type').val(col_padding_type);
             this.$('.col_margin_width').val(col_margin_width);
             this.$('.col_margin_type').val(col_margin_type);
+            this.$('.baseline_height').val(baseline_height);
         },
 
         updateOptions: function() {
@@ -84,7 +86,8 @@ $(function() {
                 col_padding_width: this.$('.col_padding_width').val(),
                 col_padding_type: this.$('.col_padding_type').val(),
                 col_margin_width: this.$('.col_margin_width').val(),
-                col_margin_type: this.$('.col_margin_type').val()
+                col_margin_type: this.$('.col_margin_type').val(),
+                baseline_height: this.$('.baseline_height').val()
             });
         },
 
@@ -138,13 +141,15 @@ $(function() {
             var col_padding_type= $('#new_col_padding_type').val();
             var col_margin_width = $('#new_col_margin_width').val();
             var col_margin_type= $('#new_col_margin_type').val();
+            var baseline_height = $('#new_baseline_height').val();
             var new_grid = new Grid({
                 min_width: min_width,
                 col_num: col_num,
                 col_padding_width: col_padding_width,
                 col_padding_type: col_padding_type,
                 col_margin_width: col_margin_width,
-                col_margin_type: col_margin_type
+                col_margin_type: col_margin_type,
+                baseline_height: baseline_height
             });
             Grids.add(new_grid);
         },

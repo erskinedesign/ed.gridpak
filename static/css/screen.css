@@ -163,6 +163,9 @@ sup {
 sub {
     vertical-align:sub;
 }
+small {
+	font-size:0.85em;
+}
 
     /* @group 2.1. FORMS ---------- */
     
@@ -448,6 +451,7 @@ div#content_wrapper {
 #create_grid input[type="text"] {
     width:2.5em;
     display:inline-block;
+    margin-right:0.5em;
 }
 #create_grid div {
 	margin-bottom:0.5em;
