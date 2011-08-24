@@ -414,7 +414,7 @@ div#content_wrapper {
 
 div#browser {
     position:relative;
-    width: 600px;
+    width:960px;
     border:1px solid rgb(34,34,34);
     margin-bottom:20px;
 }
@@ -443,14 +443,14 @@ div#create_grid input[type="text"] {
     width: 60px;
 }
 div#create_grid .dragme {
-    width:37px;
+    width:31px;
     background-color:rgb(32,32,32);
-    -webkit-border-top-left-radius:20px;
-    -webkit-border-bottom-left-radius:20px;
+    -webkit-border-top-left-radius:30px;
+    -webkit-border-bottom-left-radius:30px;
     height:50px;
     display:block;
     position:absolute;
-    left:-37px;
+    left:-31px;
     top:50%;
     margin-top:-25px;
     cursor:w-resize;
@@ -463,6 +463,20 @@ div.col {
     display:block;
     float:left;
     width: 10%;
-    background-color:red;
+    background-color:rgba(196,255,255,0.6);
     margin:0 10px;
+}
+
+#grid_list {
+	width:100%;
+	overflow:hidden;
+}
+.grid {
+	position:absolute;
+	display:block;
+	overflow:hidden;
+	height:100%;
+	background-color:rgb(196,255,255);
+	top:0;
+	left:0;
 }
