@@ -65,13 +65,11 @@
         <!-- TEMPLATES -->
         <script type="text/template" id="grid_template">
             <div class="grid" style="width:<%= min_width %>px;">
-                <input class="min_width" type="text" value="" />
-                <input class="col_num" type="text" value="" />
-                <input class="col_padding_width" type="text" value="" />
-                <input class="col_padding_type" type="text" value="" />
-                <input class="col_margin_width" type="text" value="" />
-                <input class="col_margin_type" type="text" value="" />
-                <input class="baseline_height" type="text" value="" />
+                <div class="cols">
+                    <% var i=0; for(i; i<=col_num; i++) { %>
+                    <div class="col" style="margin:0 <%= col_margin_width + col_margin_type %>; padding:0 <%= col_padding_width + col_padding_type %>;"  />
+                    <% } %>
+                </div><!-- // .cols -->
                 <a href="#" class="remove">remove</a>,
                 <a href="#" class="update">update</a>
             </div>

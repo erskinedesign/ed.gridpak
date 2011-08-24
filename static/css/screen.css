@@ -476,15 +476,6 @@ div#content_wrapper {
     overflow:hidden;
 }
 
-#browser .col {
-    height:100%;
-    display:block;
-    float:left;
-    width: 10%;
-    background-color:rgba(196,255,255,0.6);
-    margin:0 10px;
-}
-
 #grid_list {
 	width:100%;
 	overflow:hidden;
@@ -494,7 +485,16 @@ div#content_wrapper {
 	display:block;
 	overflow:hidden;
 	height:100%;
-	background-color:rgb(196,255,255);
 	top:0;
 	left:0;
+}
+#grid_list .cols {
+	height:100%;
+}
+#grid_list .col {
+	width:10px;
+	display:block;
+	float:left;
+	height:100%;
+	background-color:rgb(196,255,255);
 }

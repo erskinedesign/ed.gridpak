@@ -47,36 +47,23 @@ $(function() {
 
         events: {
             'click .remove' : 'clear',
-            'click .update' : 'updateOptions'
+            'click .update' : 'updateOptions',
+            'resize .grid' : 'updateWidths'
         },
 
         render: function() {
             $(this.el).html(this.template(this.model.toJSON()));
-            this.setOptions();
             this.stringify();
             return this;
         },
 
-        stringify: function() {
-            $('#stringified').val(JSON.stringify(Grids));
+        updateWidths: function() {
+            var browser_width = Math.round(App.$browser.innerWidth() / App.snap) * App.snap;
+            $('#stringified').val(browser_width);
         },
 
-        setOptions: function() {
-            var min_width = this.model.get('min_width'),
-                col_num = this.model.get('col_num'),
-                col_padding_width = this.model.get('col_padding_width'),
-                col_padding_type = this.model.get('col_padding_type'),
-                col_margin_width = this.model.get('col_margin_width'),
-                col_margin_type = this.model.get('col_margin_type'),
-                baseline_height = this.model.get('baseline_height');
-
-            this.$('.min_width').val(min_width);
-            this.$('.col_num').val(col_num);
-            this.$('.col_padding_width').val(col_padding_width);
-            this.$('.col_padding_type').val(col_padding_type);
-            this.$('.col_margin_width').val(col_margin_width);
-            this.$('.col_margin_type').val(col_margin_type);
-            this.$('.baseline_height').val(baseline_height);
+        stringify: function() {
+            $('#stringified').val(JSON.stringify(Grids));
         },
 
         updateOptions: function() {
@@ -108,33 +95,38 @@ $(function() {
      */
     window.AppView = Backbone.View.extend({
 
-         el: $('#gridulator'),
+        $browser: {},
+        snap: 20,
 
-         events: {
-             'click #save_grid': 'createGrid'
-         },
+        el: $('#gridulator'),
 
-         initialize: function() {
+        events: {
+            'click #save_grid': 'createGrid'
+        },
+
+        initialize: function() {
+            var that = this;
             this.input = this.$('#create_grid');
-            this.$('#browser').resizable({
+            this.$browser = $('#browser').resizable({
                 handles: { e: $(".dragme") },
-                grid: 20,
+                grid: this.snap,
                 minWidth: 300,
                 resize: function(e, ui) {
-                    $('#new_min_width').val(ui.size.width);
+                    // $('#new_min_width').val(ui.size.width);
+                    $('.grid').trigger('resize');
                 }
             });
 
             Grids.bind('add', this.addOne, this);
 
-         },
+        },
 
-         addGrid: function(grid) {
-             var view = new GridView({ model: grid });
-             this.$('#grid_list').append(view.render().el);
-         },
+        addGrid: function(grid) {
+            var view = new GridView({ model: grid });
+            this.$('#grid_list').append(view.render().el);
+        },
 
-         createGrid: function(e) {
+        createGrid: function(e) {
 
             var min_width = $('#new_min_width').val();
             var col_num = $('#new_col_num').val();
@@ -163,5 +155,6 @@ $(function() {
      });
 
      window.App = new AppView;
+     // _.enxtend(window.App, Backbone.Events);
 
 });
