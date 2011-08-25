@@ -152,7 +152,7 @@ small {
 
 /* @group 7. GLOBAL ELEMENTS -------------------- */
 
-summary {
+.information {
 	float: left;
 	width: 380px;
 	overflow: hidden;
@@ -183,6 +183,7 @@ summary {
     width:960px;
     border:1px solid rgb(34,34,34);
     margin-bottom:20px;
+    clear:both;
 }
 #browser:after {
 	content:" ";
