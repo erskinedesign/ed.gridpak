@@ -16,6 +16,7 @@
                     <ul id="grid_list"></ul>
 
                     <div id="create_grid">
+
                         <div class="dragme ui-resizable-handle ui-resizable-e">Drag me</div>
                         <div class="hidden">
                             <input id="new_min_width" type="hidden" />
@@ -67,7 +68,7 @@
             <div class="grid" style="width:<%= min_width %>px;">
                 <div class="cols">
                     <% var i=0; for(i; i<=col_num; i++) { %>
-                    <div class="col" style="margin:0 <%= col_margin_width + col_margin_type %>; padding:0 <%= col_padding_width + col_padding_type %>;"  />
+                        <div class="col" style="<% if (col_width) { %>width:<%= col_width %>px; <% } %>margin:0 <%= col_margin_width + col_margin_type %>; padding:0 <%= col_padding_width + col_padding_type %>;"  />
                     <% } %>
                 </div><!-- // .cols -->
                 <a href="#" class="remove">remove</a>,
