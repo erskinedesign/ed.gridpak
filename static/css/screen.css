@@ -182,8 +182,7 @@ small {
     position:relative;
     width:960px;
     border:1px solid rgb(34,34,34);
-    margin-bottom:20px;
-    clear:both;
+    margin-bottom:6em;
 }
 #browser:after {
 	content:" ";
@@ -242,18 +241,18 @@ small {
 
 #grid_list {
 	width:100%;
-	overflow:hidden;
 }
 #grid_list .grid {
 	position:absolute;
 	display:block;
-	overflow:hidden;
+	background:#fff;
 	height:100%;
 	top:0;
 	left:0;
 }
 #grid_list .cols {
 	height:100%;
+	overflow:hidden;
 }
 #grid_list .col {
 	width:10px;
@@ -261,4 +260,21 @@ small {
 	float:left;
 	height:100%;
 	background-color:rgb(196,255,255);
+}
+#grid_list .tab {
+	width:100%;
+	text-align:center;
+	position:absolute;
+	left:0;
+	bottom:-3em;
+	background:url(../images/site/grid_tab_arrows.png) no-repeat 0 0, url(../images/site/grid_tab_arrows.png) no-repeat 100% -26px, url(../images/site/grid_tab_arrows.png) repeat-x 0 -13px;
+	height:13px;
+}
+#grid_list .tab .link {
+	display:inline-block;
+	background-color:rgb(32,32,32);
+	padding:2px 5px;
+	color:#fff;
+	text-decoration:none;
+	-webkit-border-radius:4px;
 }

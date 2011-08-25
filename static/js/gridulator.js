@@ -53,13 +53,24 @@ $(function() {
 
         render: function() {
             $(this.el).html(this.template(this.model.toJSON()));
+            console.log(this.el);
             this.stringify();
             return this;
         },
 
         updateWidths: function() {
-            var browser_width = Math.round(App.$browser.innerWidth() / App.snap) * App.snap;
-            $('#stringified').val(browser_width);
+            var old_width = $('#new_min_width').val(),
+                current_width = App.getWidth(),
+                col_width = 0;
+
+            // ensure we only fire every time we snap to a new width
+            if (old_width == current_width) {
+                return false;
+            }
+
+            col_width = Math.floor((current_width / this.model.attributes.col_num) - (this.model.attributes.col_margin_width * 2));
+            this.model.set({ col_width: col_width });
+
         },
 
         stringify: function() {
@@ -112,13 +123,17 @@ $(function() {
                 grid: this.snap,
                 minWidth: 300,
                 resize: function(e, ui) {
-                    // $('#new_min_width').val(ui.size.width);
                     $('.grid').trigger('resize');
+                    $('#new_min_width').val(that.getWidth()); 
                 }
             });
 
             Grids.bind('add', this.addOne, this);
 
+        },
+
+        getWidth: function() {
+            return Math.round(App.$browser.innerWidth() / App.snap) * App.snap;
         },
 
         addGrid: function(grid) {
@@ -128,16 +143,19 @@ $(function() {
 
         createGrid: function(e) {
 
-            var min_width = $('#new_min_width').val();
-            var col_num = $('#new_col_num').val();
-            var col_padding_width = $('#new_col_padding_width').val();
-            var col_padding_type= $('#new_col_padding_type').val();
-            var col_margin_width = $('#new_col_margin_width').val();
-            var col_margin_type= $('#new_col_margin_type').val();
-            var baseline_height = $('#new_baseline_height').val();
+            var min_width = $('#new_min_width').val(),
+                col_num = $('#new_col_num').val(),
+                col_width = false,
+                col_padding_width = $('#new_col_padding_width').val(),
+                col_padding_type= $('#new_col_padding_type').val(),
+                col_margin_width = $('#new_col_margin_width').val(),
+                col_margin_type= $('#new_col_margin_type').val(),
+                baseline_height = $('#new_baseline_height').val();
+
             var new_grid = new Grid({
-                min_width: min_width,
+                min_width: this.getWidth(),
                 col_num: col_num,
+                col_width: col_width,
                 col_padding_width: col_padding_width,
                 col_padding_type: col_padding_type,
                 col_margin_width: col_margin_width,
