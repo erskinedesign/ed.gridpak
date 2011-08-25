@@ -25,28 +25,22 @@
         <link rel="icon" type="image/png" href="{{ STATIC_URL }}images/site/icons/favicon.png" />
         
         <!-- RSS -->
-        <!-- <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss/feed.xml" /> -->
-        
+        <!-- <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss/feed.xml" />
+         -->
+		
+		<!-- Script -->
+		<script type="text/javascript" src="http://use.typekit.com/pua6dog.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>        
     
     </head>
     
     <body class="{% block body_class %}{% endblock %}">
-    
-        <ul id="nav_access">
-            <li><a href="#navigation_pri">Skip to navigation</a></li>
-            <li><a href="#content_wrapper">Skip to content</a></li>
-        </ul> <!-- // #nav_access -->
         
         <div id="page">
         
             <div id="header">
             
                 {% block branding %}
-                    <p id="branding">
-                        <a href="/">
-                            <img src="{{ STATIC_URL }}images/site/branding/branding.png" alt="" width="480" height="100" />
-                        </a>
-                    </p> <!-- // #branding -->
                 {% endblock %} 
             
             {% block content %}{% endblock %}
@@ -61,6 +55,7 @@
     <script src="{{ STATIC_URL }}js/underscore-min.js"></script>
     <script src="{{ STATIC_URL }}js/backbone.js"></script>
     <script src="{{ STATIC_URL }}js/gridulator.js"></script>
+    <script src="{{ STATIC_URL }}js/grid.js"></script>
 
 
     
