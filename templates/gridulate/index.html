@@ -99,25 +99,25 @@
 
                 <footer>
                     <form method="post" action="{% url download %}">
-                        <input type="checkbox" name="css" id="css_checkbox"/>
-                        <label for="css_checkbox">CSS</label>
-                        
-                        <input type="checkbox" name="pngs" id="png_checkbox"/>
-                        <label for="png_checkbox">PNGs</label>
-                        
-                        <input type="checkbox" name="javascript" id="javascript_checkbox"/>
-                        <label for="css_checkbox">Javascript</label>
-                        
+                        <label for="css_checkbox">
+                            <input type="checkbox" name="css" id="css_checkbox"/>
+                            CSS
+                        </label>
+                        <label for="png_checkbox">
+                            <input type="checkbox" name="pngs" id="png_checkbox"/>
+                            PNGs
+                        </label>
+                        <label for="javascript_checkbox">
+                            <input type="checkbox" name="javascript" id="javascript_checkbox"/>
+                            Javascript
+                        </label>
                         <textarea id="stringified" name="grids" cols="80" rows="10"></textarea>
                         <input type="submit" value="Download your package" />
-                         <p>Created by Phil Swan, Wil Linsen &amp; Sam Quayle @Erskine</p>
                     </form>
-                   
+                    <p>Created by <a href="http://twitter.com/philswan">Phil Swan</a>, <a href="http://twitter.com/linssen">Wil Linssen</a> &amp; <a href="http://twitter.com/samquayle">Sam Quayle</a>at <a href="">Erskine</a></p>
                 </footer>
 
                 </div>
-            
-        <footer></footer>
 
         <!-- TEMPLATES -->
         <script type="text/template" id="grid_template">
@@ -128,9 +128,9 @@
                     <% } %>
                 </div><!-- // .cols -->
                 <div class="tab">
-                    <a href="#" class="link"><%= min_width %> - XXXpx</a>
+                    <a href="#" class="link"><%= min_width %> - </a>
                 </div>
-                <a href="#" class="remove">remove</a>,
+                <a href="#" class="remove">remove</a>
                 <a href="#" class="update">update</a>
             </div>
         </script>

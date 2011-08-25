@@ -4,7 +4,6 @@
 
 @import url(reset.css);
 
-
 body {
 	font: normal 400 0.813em/1.54 ff-din-web, Arial, sans-serif;
 	color: rgba(0,0,0,0.70);
@@ -12,7 +11,7 @@ body {
 	padding-top: 18px;
 }
 
-#branding span {
+span {
 	font-family: Arial, sans-serif;
 }
 
@@ -36,7 +35,6 @@ p a:hover {
 	background: rgba(157,205,255,1.0);
 	color: rgba(0,0,0,0.8);
 }
-
 
 
 /* @group Header*/
@@ -71,7 +69,7 @@ footer {
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	background: rgba(0,0,0,0.9);
+	background: rgba(0,0,0,0.8);
 	width: 100%;
 	padding: 20px 50px 30px 50px;
 	height: 20px;
@@ -81,12 +79,25 @@ footer p {
 	color: rgba(255,255,255,0.9);
 	float: left;
 	display: block;
+	font-size: 0.846em;
+	width: 260px;
+}
+
+footer a {
+	color: rgba(255,255,255,0.9);
+	background: none;
+}
+
+footer a:hover {
+	color: rgba(255,255,255,0.6);
+	background: none;
 }
 
 footer form {
 	position: relative;
-	z-index: 0;
-	
+	z-index: 2000;
+	width:  680px;
+	float: left;
 }
 
 footer label {
@@ -98,7 +109,12 @@ footer textarea {
 	display: none;
 }
 
-footer input[type="submit"] {
+footer input[type="checkbox"] {
+	margin-top: -2px;
+}
+
+
+input[type="submit"], #save_grid {
 	background: rgb(218,218,218);
 	border: none;
    -moz-border-radius: 5px;
@@ -107,8 +123,35 @@ footer input[type="submit"] {
    -moz-background-clip: padding; 
    -webkit-background-clip: padding-box; 
    background-clip: padding-box; 
-   padding: 8px 14px;
-	
+   padding: 5px 10px;
+   font-size: 0.923em;
+   margin-top: 0px;
+   -webkit-transition: background-color 0.2s ease-out;
+   -moz-transition: background-color 0.2s ease-out;
+   -ms-transition: background-color 0.2s ease-out;
+   -o-transition: background-color 0.2s ease-out;
+   transition: background-color 0.2s ease-out;
+   cursor: pointer;
+
+}
+
+input[type="submit"]:hover, #save_grid:hover {
+	background-color: rgb(255,255,255);
+}
+
+input[type="submit"] {
+	background-image: url(../images/site/icons/download.png);
+	background-position:8px center;
+	padding-left: 27px;
+	background-repeat: no-repeat;
+}
+
+#save_grid {
+	background-image: url(../images/site/icons/tick.png);
+	background-position:8px center;
+	padding-left: 27px;
+	background-repeat: no-repeat;
+	margin-top: 10px;
 }
 
 footer label {
@@ -126,7 +169,8 @@ footer label {
     position:relative;
     width:960px;
     border:1px solid rgb(34,34,34);
-    margin-bottom:6em;
+    margin-bottom:40px;
+    height: 350px!important
 }
 #browser:after {
 	content:" ";
@@ -142,23 +186,27 @@ footer label {
     display:block;
     position:relative;
     float:right;
-	right:-14em;
+	right: -190px;
     width:10em;
-    padding:2em;
-    margin:20px 0;
+    padding: 20px 30px 26px 30px;
+    margin:25px 0 0 0;
     clear:both;
     color:#fff;
-    background-color:rgb(32,32,32);
+    background: rgba(0,0,0,0.8);
+  
 }
 #create_grid label {
 	display:block;
 	clear:both;
 	margin-bottom:0.5em;
+	
 }
 #create_grid input[type="text"] {
-    width:2.5em;
+    width:30px;
     display:inline-block;
     margin-right:0.5em;
+    font-size: 1.077em;
+    padding: 2px 6px;
 }
 #create_grid div {
 	margin-bottom:0.5em;
@@ -168,14 +216,16 @@ footer label {
 	margin-top:1em;
 }
 #create_grid .dragme {
-    width:31px;
-    background-color:rgb(32,32,32);
-    -webkit-border-top-left-radius:30px;
-    -webkit-border-bottom-left-radius:30px;
-    height:50px;
+    width:34px;
+    background: rgba(0,0,0,0.9) url(../images/site/icons/slider.png);
+	background-position: 16px center;
+	padding-left: 27px;
+	background-repeat: no-repeat;
+    -webkit-border-radius:30px;
+    height:49px;
     display:block;
     position:absolute;
-    left:-31px;
+    left:-36px;
     top:50%;
     margin:-25px 0 0 0;
     cursor:w-resize;
