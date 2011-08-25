@@ -1,182 +1,64 @@
 /* @override http://localhost:8000/static/css/screen.css */
 
 /* @override http://127.0.0.1:8000/static/css/screen.css */
-/*
-
-    [PROJECT NAME]
-    
-    @version: 1.0
-    @author: Erskine Design
-    
-    CONTENTS ----------
-    
-        1. BODY
-            1.1. ACCESSIBILITY NAVIGATION
-        2. DEFAULT STYLING
-            2.1. FORMS
-            2.2. TABLES
-        3. HEADLINES
-        4. LINKS
-        5. LAYOUT
-            5.1. HEADER & BRANDING
-            5.2. FOOTER
-        6. NAVIGATION
-            6.1. HORIZONTAL CLASS
-            6.2. PRIMARY NAVIGATION
-        7. GLOBAL ELEMENTS
-            7.1. MISCELLANEOUS
-    
-    -------------------
-    
-    COLOURS -----------
-    
-        black: #000
-        white: #FFF
-    
-    -------------------
-    
-*/
-
-
 
 @import url(reset.css);
 
 
-
-/* @group 1. BODY -------------------- */
-
 body {
-	font: normal 400 0.813em/1.538 ff-din-web, Arial, sans-serif;
-	color: #414141;
+	font: normal 400 0.813em/1.54 ff-din-web, Arial, sans-serif;
+	color: rgba(0,0,0,0.65);
 	margin: 50px;
+	padding-top: 18px;
 }
 
-
-
-/* @end */
-
-
-
-/* @group 2. DEFAULT STYLING -------------------- */
-
-p, ul, dl, ol {
-
+p a {
+	background: rgba(157,205,255,0.75);
+	padding: 0 2px;
+	text-decoration: none; 
+	color: #414141;
+	display: inline-block;
+	line-height: 1.25;
+	
 }
 
-ul {
-    
-}
-ul li {
-    
+p a:hover {
+	background: rgba(157,205,255,1.0);
+	color: rgba(0,0,0,0.8);
 }
 
-dl {
-    
-}
-dl dt {
-    
-}
-dl dd {
-    
-}
+/* @group Header*/
 
-ol {
-    
-}
-ol li {
-    
-}
-
-hr {
-   
-}
-
-blockquote {
-    
-}
-blockquote p {
-    
-}
-blockquote cite {
-    
-}
-
-code,
-pre {
-    font-family:monospace;
-}
-code {
-    
-}
-pre {
-    
-}
-pre code {
-    
-}
-
-abbr {
-    
-}
-abbr:hover {
-    cursor:help;
-}
-
-del {
-    text-decoration:line-through;
-}
-
-strong {
-    font-weight:bold;
-}
-em {
-    font-style:italic;
-}
-
-sup {
-    vertical-align:super;
-}
-sub {
-    vertical-align:sub;
-}
-small {
-	font-size:0.85em;
-}
-
-
-
-
-
-
-
-
-/* @group 7. GLOBAL ELEMENTS -------------------- */
-
-.information {
+.about {
 	float: left;
-	width: 380px;
+	width: 358px;
 	overflow: hidden;
+	display: block;
+	margin: 21px 30px 0 0;
 }
 
+.feedback {
+	float: left;
+	width: 184px;
+	overflow: hidden;
+	display:  block;
+	margin: 21px 106px 0 0;
+}
 
-    /* @group 7.1. MISCELLANEOUS -------------------- */
-    
-    .hide {
-        display:none;
-    }
-    
-    .left {
-        float:left;
-    }
-    .right {
-        float:right;
-    }
-    
-    /* @end */
-
-
+header ul {
+	width:  280px;
+	float:  left;
+	overflow: hidden;
+	margin-top: 21px;
+}
 
 /* @end */
+
+
+#content_wrapper {
+	clear: both;
+	padding-top: 54px;	
+}
 
 #browser {
     position:relative;
