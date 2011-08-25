@@ -97,15 +97,27 @@
 
                 </div><!-- // #browser -->
 
-
-                <form method="post" action="{% url download %}">
-                    <textarea id="stringified" name="grids" cols="80" rows="10"></textarea>
-                    <input type="submit" value="Download" />
-                </form>
+                <footer>
+                    <form method="post" action="{% url download %}">
+                        <input type="checkbox" name="css" id="css_checkbox"/>
+                        <label for="css_checkbox">CSS</label>
+                        
+                        <input type="checkbox" name="pngs" id="png_checkbox"/>
+                        <label for="png_checkbox">PNGs</label>
+                        
+                        <input type="checkbox" name="javascript" id="javascript_checkbox"/>
+                        <label for="css_checkbox">Javascript</label>
+                        
+                        <textarea id="stringified" name="grids" cols="80" rows="10"></textarea>
+                        <input type="submit" value="Download your package" />
+                         <p>Created by Phil Swan, Wil Linsen &amp; Sam Quayle @Erskine</p>
+                    </form>
+                   
+                </footer>
 
                 </div>
             
-    
+        <footer></footer>
 
         <!-- TEMPLATES -->
         <script type="text/template" id="grid_template">

@@ -7,9 +7,20 @@
 
 body {
 	font: normal 400 0.813em/1.54 ff-din-web, Arial, sans-serif;
-	color: rgba(0,0,0,0.65);
+	color: rgba(0,0,0,0.70);
 	margin: 50px;
 	padding-top: 18px;
+}
+
+#branding span {
+	font-family: Arial, sans-serif;
+}
+
+#branding a {
+	text-decoration: none;
+	color: rgba(0,0,0,0.75);
+	font-weight: 700;
+	font-size: 1.077em;
 }
 
 p a {
@@ -19,13 +30,14 @@ p a {
 	color: #414141;
 	display: inline-block;
 	line-height: 1.25;
-	
 }
 
 p a:hover {
 	background: rgba(157,205,255,1.0);
 	color: rgba(0,0,0,0.8);
 }
+
+
 
 /* @group Header*/
 
@@ -52,6 +64,56 @@ header ul {
 	margin-top: 21px;
 }
 
+
+/* @group Footer*/
+
+footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.9);
+	width: 100%;
+	padding: 20px 50px 30px 50px;
+	height: 20px;
+}
+
+footer p {
+	color: rgba(255,255,255,0.9);
+	float: left;
+	display: block;
+}
+
+footer form {
+	position: relative;
+	z-index: 0;
+	
+}
+
+footer label {
+	padding-top: 2px;
+	margin-right: 20px;
+}
+
+footer textarea {
+	display: none;
+}
+
+footer input[type="submit"] {
+	background: rgb(218,218,218);
+	border: none;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;     
+   -moz-background-clip: padding; 
+   -webkit-background-clip: padding-box; 
+   background-clip: padding-box; 
+   padding: 8px 14px;
+	
+}
+
+footer label {
+	color:  rgb(255,255,255);
+}
 /* @end */
 
 
