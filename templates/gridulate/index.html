@@ -59,7 +59,7 @@
                     <ul id="grid_list"></ul>
 
                     <div id="create_grid">
-
+                        
                         <div class="dragme ui-resizable-handle ui-resizable-e">Drag me</div>
                         <div class="hidden">
                             <input id="new_min_width" type="hidden" />
@@ -112,7 +112,7 @@
                             Javascript
                         </label>
                         <textarea id="stringified" name="grids" cols="80" rows="10"></textarea>
-                        <input type="submit" value="Download your package" />
+                        <input type="submit" value="Download your package"><span></span></input>
                     </form>
                     <p>Created by <a href="http://twitter.com/philswan">Phil Swan</a>, <a href="http://twitter.com/linssen">Wil Linssen</a> &amp; <a href="http://twitter.com/samquayle">Sam Quayle</a>at <a href="">Erskine</a></p>
                 </footer>
@@ -128,7 +128,7 @@
                     <% } %>
                 </div><!-- // .cols -->
                 <div class="tab">
-                    <a href="#" class="link"><%= min_width %> - </a>
+                    <a href="#" class="link"><!--<%= min_width %>--> 0 - 960px </a>
                 </div>
                 <a href="#" class="remove">remove</a>
                 <a href="#" class="update">update</a>
