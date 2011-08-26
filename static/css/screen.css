@@ -69,7 +69,7 @@ footer {
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	background: rgba(0,0,0,0.81);
+	background: rgb(52,52,52);
 	width: 100%;
 	padding: 20px 50px 30px 50px;
 	height: 20px;
@@ -192,7 +192,7 @@ footer label {
     margin:25px 0 0 0;
     clear:both;
     color:#fff;
-    background: rgba(0,0,0,0.81);
+    background: rgb(52,52,52);
 }
 #create_grid label {
 	display:block;
@@ -216,8 +216,8 @@ footer label {
 }
 #create_grid .dragme {
     width:34px;
-    background: rgb(25,25,25) url(../images/site/icons/slider.png);
-	background-position: 17px center;
+    background: rgb(52,52,52) url(../images/site/icons/slider.png);
+	background-position: 15px center;
 	padding-left: 27px;
 	background-repeat: no-repeat;
     -moz-border-radius: 30px;
@@ -226,7 +226,7 @@ footer label {
     height:49px;
     display:block;
     position:absolute;
-    left:-36px;
+    left:-34px;
     top:50%;
     margin:-25px 0 0 0;
     cursor:w-resize;
