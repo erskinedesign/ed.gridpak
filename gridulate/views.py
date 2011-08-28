@@ -5,7 +5,9 @@ from django.http import HttpResponse
 from django.http import HttpRequest
 from django.template import RequestContext
 from django.conf import settings
+from django.core.files import File
 import simplejson as json
+import re
 
 def index(request):
     return render_to_response('gridulate/index.html', {
@@ -48,37 +50,31 @@ def _generate_file_contents(grids):
         files: a dict of files to be created
     """
 
-    css = ""
-    js = ""
+    css_file = open(settings.BUILDS_DIR + 'templates/grids.css', 'r')
+    js_file = open(settings.BUILDS_DIR + 'templates/grids.js', 'r')
+    css = css_file.read()
+    js = js_file.read()
+    pattern = re.compile(r'\{grids\}(.*)\{\/grids\}', re.S)
+
+    try:
+        css_template = pattern.split(css)[1]
+        js_template = pattern.split(js)[1]
+    except:
+        raise Exception('Poorly formatted template, do you have a {grids} tag?')
+
+    print css_template
 
     for grid in grids:
 
         """ CSS template 
         --------------------------------------------------------------------
         """
-        css += """
-/**
- * Media query for between %d and %d
- */
-@media only screen and (max-width: %d) {
-    /* Add your styles here /*
-}
-""" % (grid['min_width'], grid['min_width'], grid['min_width'])
-
+        css += "another\n"
 
         """ JavaScript template 
         --------------------------------------------------------------------
         """
-        js += """
-/**
- * Cool guy function
- *
- * @return void
-*/
-var grid_toggle = function() {
-    // stuff here
-}
-"""
+        js += "more js\n"
 
     files = {'css': css, 'js': js}
 

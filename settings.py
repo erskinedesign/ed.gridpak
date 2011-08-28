@@ -145,6 +145,8 @@ INSTALLED_APPS = (
 #     }
 # }
 
+BUILDS_DIR = '/var/somewhere'
+
 try:
     from local_settings import *
 except:
