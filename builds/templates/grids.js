@@ -2,6 +2,6 @@
  * JAVASCRIPT
  */
 
-{grids}
+{grids:loop}
 JS for the boys
-{/grids}
+{/grids:loop}

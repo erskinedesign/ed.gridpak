@@ -52,32 +52,68 @@ def _generate_file_contents(grids):
 
     css_file = open(settings.BUILDS_DIR + 'templates/grids.css', 'r')
     js_file = open(settings.BUILDS_DIR + 'templates/grids.js', 'r')
-    css = css_file.read()
-    js = js_file.read()
-    pattern = re.compile(r'\{grids\}(.*)\{\/grids\}', re.S)
+    pattern = re.compile(r'\{grids\:loop\}(.*?)\{\/grids\:loop\}', re.S)
 
-    try:
-        css_template = pattern.split(css)[1]
-        js_template = pattern.split(js)[1]
-    except:
-        raise Exception('Poorly formatted template, do you have a {grids} tag?')
+    css_loops = pattern.findall(css_file.read())
+    js_loops = pattern.findall(js_file.read())
 
-    print css_template
+    if len(css_loops) < 1 or len(js_loops) < 1:
+        raise Exception('Poorly formatted template(s), do you have a {grids:loop} tag?')
+
+    grid_count = 0
+    css_template = ''
+    js_template = ''
+
+    print len(css_loops)
 
     for grid in grids:
 
-        """ CSS template 
-        --------------------------------------------------------------------
-        """
-        css += "another\n"
+        grid_count = grid_count + 1
 
-        """ JavaScript template 
-        --------------------------------------------------------------------
-        """
-        js += "more js\n"
+        for loop in css_loops:
+            """ CSS template 
+            --------------------------------------------------------------------
+            """
+            css_r = _replace_vals(grid, loop)
 
-    files = {'css': css, 'js': js}
+            # also add our own one's we've made herein
+            css_r = css_r.replace('{{ count }}', str(grid_count))
+
+            css_template += css_r
+
+        for loop in js_loops:
+            """ JavaScript template 
+            --------------------------------------------------------------------
+            """
+            js_r = _replace_vals(grid, loop)
+
+            # also add our own one's we've made herein
+            js_r = js_r.replace('{{ count }}', str(grid_count))
+
+            js_template += js_r
+
+    files = {'css': css_template, 'js': js_template}
 
     return files
 
+def _replace_vals(key_val, string):
+    """ Replace the vars in the string with those in grid
+
+    Loops over the grid key => val and replaces {{ key }} with val in the
+    string
+
+    Args:
+        key_vals: a dict of the keys and vals we're going to replace
+    Returns:
+        string: the value replaced string
+    """
+    r = string
+
+    for key, val in key_val.items():
+        # replace all string vars by {{ key }} = var
+        for key, val in key_val.items():
+            if val:
+                r = r.replace('{{ ' + key + ' }}', str(val))
+
+    return r
 

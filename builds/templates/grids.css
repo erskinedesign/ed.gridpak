@@ -1,7 +1,26 @@
 /**
  * QUERIES
+ *
+ * @generator http://coolguys.erskinedesign.com/
+ * @credit Erskine Design
+ *
+ {grids:loop}* {{ count }}. min-width: {{ min_width }}px
+ {/grids:loop}
+ *
  */
 
-{grids}
-    All the cool stuff
-{/grids}
+
+
+{grids:loop}
+/**
+ * @group MEDIA QUERY {{ count }}
+ * ----------------------------------------------------------------------
+ */
+
+@media screen and (min-width: {{ min_width }}px) {
+
+    /* your CSS here */
+
+} /* // min_width: {{ min_width }}px /*
+
+{/grids:loop}
