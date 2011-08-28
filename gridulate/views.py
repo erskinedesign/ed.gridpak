@@ -8,6 +8,8 @@ from django.conf import settings
 from django.core.files import File
 import simplejson as json
 import re
+from StringIO import StringIO
+from zipfile import ZipFile
 
 def index(request):
     return render_to_response('gridulate/index.html', {
@@ -27,15 +29,30 @@ def download(request):
         return HttpResponseRedirect('/')
 
     grids = json.loads(request.POST['grids'])
-    file_contents = _generate_file_contents(grids)
+    templates = _generate_file_contents(grids)
 
-    message = """<h1>Response</h1>
-        <h2>CSS:</h2>
-        <pre>""" + file_contents['css'] + """</pre>
-        <h2>JavaScript</h2>
-        <pre>""" + file_contents['js'] + "</pre>"
+    """ Build the zip file in memory and serve it up
+    ----------------------------------------------------------------------------
+    """
+    buffer = StringIO()
+    zip = ZipFile(buffer, 'a')
 
-    return HttpResponse(message)
+    zip.writestr('ed_grids.css', str(templates['css'].decode('utf-8')))
+    zip.writestr('ed_grids.js', str(templates['js']))
+
+    # fix for Linux zip files read in Windows
+    for file in zip.filelist:
+        file.create_system = 0
+
+    zip.close()
+
+    response = HttpResponse(mimetype='application/zip')
+    response['Content-Disposition'] = 'attachment; filename=ed_grids.zip'
+
+    buffer.seek(0)
+    response.write(buffer.read())
+
+    return response
 
 
 def _generate_file_contents(grids):
@@ -62,8 +79,6 @@ def _generate_file_contents(grids):
 
     css_template = ''
     js_template = ''
-
-    print len(css_loops)
 
     for loop in css_loops:
 
