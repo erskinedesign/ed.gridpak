@@ -69,20 +69,21 @@ def _generate_file_contents(grids):
 
     css_file = open(settings.BUILDS_DIR + 'templates/grids.css', 'r')
     js_file = open(settings.BUILDS_DIR + 'templates/grids.js', 'r')
-    pattern = re.compile(r'\{grids\:loop\}(.*?)\{\/grids\:loop\}', re.S)
+    pattern = r'\{grids\:loop\}(.*?)\{\/grids\:loop\}';
 
-    css_loops = pattern.findall(css_file.read())
-    js_loops = pattern.findall(js_file.read())
+    css_template = css_file.read()
+    js_template = js_file.read()
+
+    css_loops = re.findall(pattern, css_template, re.S)
+    js_loops = re.findall(pattern, js_template, re.S)
 
     if len(css_loops) < 1 or len(js_loops) < 1:
         raise Exception('Poorly formatted template(s), do you have a {grids:loop} tag?')
 
-    css_template = ''
-    js_template = ''
-
     for loop in css_loops:
 
         grid_count = 0
+        r = ''
 
         for grid in grids:
 
@@ -95,15 +96,19 @@ def _generate_file_contents(grids):
             # also add our own one's we've made herein
             css_r = css_r.replace('{{ count }}', str(grid_count))
 
-            css_template += css_r
+            r += css_r
+
+        # css_template = pattern.sub(css_template, r, 1)
+        css_template = re.sub(pattern, r, css_template, 1, re.S)
 
     for loop in js_loops:
 
         grid_count = 0
+        r = ''
 
         for grid in grids:
 
-            grid_count = grid_count + 1
+            grid_count += 1
 
             """ JavaScript template 
             --------------------------------------------------------------------
@@ -112,10 +117,11 @@ def _generate_file_contents(grids):
             # also add our own one's we've made herein
             js_r = js_r.replace('{{ count }}', str(grid_count))
 
-            js_template += js_r
+            r += js_r
+
+        js_template = re.sub(pattern, r, js_template, 1, re.S)
 
     files = {'css': css_template, 'js': js_template}
-
     return files
 
 def _replace_vals(key_val, string):
