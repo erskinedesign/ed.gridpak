@@ -60,33 +60,40 @@ def _generate_file_contents(grids):
     if len(css_loops) < 1 or len(js_loops) < 1:
         raise Exception('Poorly formatted template(s), do you have a {grids:loop} tag?')
 
-    grid_count = 0
     css_template = ''
     js_template = ''
 
     print len(css_loops)
 
-    for grid in grids:
+    for loop in css_loops:
 
-        grid_count = grid_count + 1
+        grid_count = 0
 
-        for loop in css_loops:
+        for grid in grids:
+
+            grid_count = grid_count + 1
+
             """ CSS template 
             --------------------------------------------------------------------
             """
             css_r = _replace_vals(grid, loop)
-
             # also add our own one's we've made herein
             css_r = css_r.replace('{{ count }}', str(grid_count))
 
             css_template += css_r
 
-        for loop in js_loops:
+    for loop in js_loops:
+
+        grid_count = 0
+
+        for grid in grids:
+
+            grid_count = grid_count + 1
+
             """ JavaScript template 
             --------------------------------------------------------------------
             """
             js_r = _replace_vals(grid, loop)
-
             # also add our own one's we've made herein
             js_r = js_r.replace('{{ count }}', str(grid_count))
 
