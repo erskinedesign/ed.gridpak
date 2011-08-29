@@ -84,7 +84,7 @@ $(function() {
                 col_margin = ((current_width / 100) * this.model.attributes.col_margin_width) / 2;
             }
 
-            col_width = Math.floor((current_width / this.model.attributes.col_num) - (col_margin * 2));
+            col_width = Math.floor((current_width / this.model.attributes.col_num) - (col_margin * 2) - (col_padding * 2));
             this.model.set({ col_width: col_width });
 
         },
