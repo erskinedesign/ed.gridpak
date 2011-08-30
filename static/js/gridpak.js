@@ -13,6 +13,53 @@ $(function() {
      */
     window.Grid = Backbone.Model.extend({
 
+        defaults: {
+            min_width: 960,
+            col_num: 10,
+            col_padding_width: 10,
+            col_padding_type: 'px',
+            col_margin_width: 10,
+            col_margin_type: 'px',
+            baseline_height: 22,
+            col_width: 0,
+            current_width: 960
+        },
+
+        updateWidth: function() {
+            var old_width = $('#new_min_width').val(),
+                current_width = (typeof App != 'undefined') ? App.getWidth() : this.get('min_width'),
+                col_width = 0,
+                col_padding = 0,
+                col_margin = 0;
+
+            // ensure we only fire every time we snap to a new width
+            if (old_width == current_width) {
+                return false;
+            }
+
+            // fixed percentage width padding
+            if (this.col_padding_type == 'px') {
+                col_padding = this.get('col_padding_width');
+            // work the width from percentages
+            } else {
+                col_padding = Math.floor((current_width / 100) * this.get('col_padding_width'));
+            }
+
+            // fixed with margins
+            if (this.get('col_margin_type') == 'px') {
+                col_margin = this.get('col_margin_width') / 2;
+            } else {
+                col_margin = Math.floor(((current_width / 100) * this.col_margin_width) / 2);
+            }
+
+            col_width = Math.floor((current_width / this.get('col_num')) - (col_margin * 2) - (col_padding * 2));
+            this.set({ 
+                col_width: col_width,
+                current_width: current_width
+            });
+
+        },
+
     });
 
     /**
@@ -58,35 +105,7 @@ $(function() {
         },
 
         updateWidths: function() {
-            var old_width = $('#new_min_width').val(),
-                current_width = App.getWidth(),
-                col_width = 0,
-                col_padding = 0,
-                col_margin = 0;
-
-            // ensure we only fire every time we snap to a new width
-            if (old_width == current_width) {
-                return false;
-            }
-
-            // fixed percentage width padding
-            if (this.model.attributes.col_padding_type == 'px') {
-                col_padding = this.model.attributes.col_padding_width;
-            // work the width from percentages
-            } else {
-                col_padding = (current_width / 100) * this.model.attributes.col_padding_width;
-            }
-
-            // fixed with margins
-            if (this.model.attributes.col_margin_type == 'px') {
-                col_margin = this.model.attributes.col_margin_width / 2;
-            } else {
-                col_margin = ((current_width / 100) * this.model.attributes.col_margin_width) / 2;
-            }
-
-            col_width = Math.floor((current_width / this.model.attributes.col_num) - (col_margin * 2) - (col_padding * 2));
-            this.model.set({ col_width: col_width });
-
+            this.model.updateWidth();
         },
 
         stringify: function() {
@@ -132,7 +151,9 @@ $(function() {
         },
 
         initialize: function() {
-            var that = this;
+            var that = this,
+                first_grid = new Grid;
+
             this.input = this.$('#create_grid');
             this.$browser = $('#browser').resizable({
                 handles: { e: $(".dragme") },
@@ -146,10 +167,16 @@ $(function() {
 
             Grids.bind('add', this.addOne, this);
 
+            first_grid.set({ 
+                min_width: this.getWidth(),
+                current_width: this.getWidth()
+            });
+            Grids.add(first_grid);
+
         },
 
         getWidth: function() {
-            return Math.round(App.$browser.innerWidth() / App.snap) * App.snap;
+            return Math.round(this.$browser.innerWidth() / this.snap) * this.snap;
         },
 
         addGrid: function(grid) {
