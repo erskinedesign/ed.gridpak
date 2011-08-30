@@ -125,7 +125,7 @@ $(function() {
         $browser: {},
         snap: 20,
 
-        el: $('#gridulator'),
+        el: $('#gridpak'),
 
         events: {
             'click #save_grid': 'createGrid'
