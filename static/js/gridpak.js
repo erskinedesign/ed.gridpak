@@ -21,7 +21,7 @@ $(function() {
             col_margin_width: 10,
             col_margin_type: 'px',
             baseline_height: 22,
-            col_width: 0,
+            col_width: 56,
             current_width: 960
         },
 
@@ -38,7 +38,7 @@ $(function() {
             }
 
             // fixed percentage width padding
-            if (this.col_padding_type == 'px') {
+            if (this.get('col_padding_type') == 'px') {
                 col_padding = this.get('col_padding_width');
             // work the width from percentages
             } else {
@@ -47,12 +47,13 @@ $(function() {
 
             // fixed with margins
             if (this.get('col_margin_type') == 'px') {
-                col_margin = this.get('col_margin_width') / 2;
+                col_margin = this.get('col_margin_width');
             } else {
-                col_margin = Math.floor(((current_width / 100) * this.col_margin_width) / 2);
+                col_margin = Math.floor(((current_width / 100) * this.col_margin_width));
             }
 
             col_width = Math.floor((current_width / this.get('col_num')) - (col_margin * 2) - (col_padding * 2));
+
             this.set({ 
                 col_width: col_width,
                 current_width: current_width

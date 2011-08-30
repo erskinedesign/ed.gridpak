@@ -64,14 +64,14 @@
                         </div>
                         <div>
                             <label for="new_col_num">No. of columns</label>
-                            <input id="new_col_num" type="text" value="12" />
+                            <input id="new_col_num" type="text" value="10" />
                         </div>
                         <div>
                             <label for="new_col_padding_width">Column padding</label>
-                            <input id="new_col_padding_width" type="text" value="1" />
+                            <input id="new_col_padding_width" type="text" value="10" />
                             <select id="new_col_padding_type">
-                                <option value="px">pixels</option>
-                                <option value="%" selected="selected">%</option>
+                                <option value="px" selected="selected">pixels</option>
+                                <option value="%">%</option>
                             </select>
                         </div>
                         <div>
@@ -121,7 +121,7 @@
         <script type="text/template" id="grid_template">
             <div class="grid">
                 <div class="cols">
-                    <% var i=0; for(i; i<=col_num; i++) { %>
+                    <% var i=0; for(i; i<col_num; i++) { %>
                         <div class="col" style="<% if (col_width) { %>width:<%= col_width %>px; <% } %>margin:0 <%= col_margin_width + col_margin_type %>; padding:0 <%= col_padding_width + col_padding_type %>;">
                             <div class="visible"></div>
                         </div><!-- // .col -->
