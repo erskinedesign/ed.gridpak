@@ -76,7 +76,7 @@
                         </div>
                         <div>
                             <label for="new_col_margin_width">Gutter width</label>
-                            <input id="new_col_margin_width" type="text" value="20" />
+                            <input id="new_col_margin_width" type="text" value="10" />
                             <select id="new_col_margin_type">
                                 <option value="px" selected="selected">pixels</option>
                                 <option value="%">%</option>
@@ -119,14 +119,16 @@
 
         <!-- TEMPLATES -->
         <script type="text/template" id="grid_template">
-            <div class="grid" style="width:<%= min_width %>px;">
+            <div class="grid">
                 <div class="cols">
                     <% var i=0; for(i; i<=col_num; i++) { %>
-                        <div class="col" style="<% if (col_width) { %>width:<%= col_width %>px; <% } %>margin:0 <%= col_margin_width + col_margin_type %>; padding:0 <%= col_padding_width + col_padding_type %>;"  />
+                        <div class="col" style="<% if (col_width) { %>width:<%= col_width %>px; <% } %>margin:0 <%= col_margin_width + col_margin_type %>; padding:0 <%= col_padding_width + col_padding_type %>;">
+                            <div class="visible"></div>
+                        </div><!-- // .col -->
                     <% } %>
                 </div><!-- // .cols -->
-                <div class="tab">
-                    <a href="#" class="link"><!--<%= min_width %>--> 0 - 960px </a>
+                <div class="tab" style="width:<%= min_width %>px;">
+                    <a href="#" class="link"><%= min_width %> - XXXpx</a>
                 </div>
                 <a href="#" class="remove">remove</a>
                 <a href="#" class="update">update</a>

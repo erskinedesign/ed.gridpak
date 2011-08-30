@@ -53,7 +53,6 @@ $(function() {
 
         render: function() {
             $(this.el).html(this.template(this.model.toJSON()));
-            console.log(this.el);
             this.stringify();
             return this;
         },
@@ -61,14 +60,31 @@ $(function() {
         updateWidths: function() {
             var old_width = $('#new_min_width').val(),
                 current_width = App.getWidth(),
-                col_width = 0;
+                col_width = 0,
+                col_padding = 0,
+                col_margin = 0;
 
             // ensure we only fire every time we snap to a new width
             if (old_width == current_width) {
                 return false;
             }
 
-            col_width = Math.floor((current_width / this.model.attributes.col_num) - (this.model.attributes.col_margin_width * 2));
+            // fixed percentage width padding
+            if (this.model.attributes.col_padding_type == 'px') {
+                col_padding = this.model.attributes.col_padding_width;
+            // work the width from percentages
+            } else {
+                col_padding = (current_width / 100) * this.model.attributes.col_padding_width;
+            }
+
+            // fixed with margins
+            if (this.model.attributes.col_margin_type == 'px') {
+                col_margin = this.model.attributes.col_margin_width / 2;
+            } else {
+                col_margin = ((current_width / 100) * this.model.attributes.col_margin_width) / 2;
+            }
+
+            col_width = Math.floor((current_width / this.model.attributes.col_num) - (col_margin * 2) - (col_padding * 2));
             this.model.set({ col_width: col_width });
 
         },
