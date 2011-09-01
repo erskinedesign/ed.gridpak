@@ -5,14 +5,10 @@
 @import url(reset.css);
 
 body {
-	font: normal 400 0.813em/1.54 ff-din-web, Arial, sans-serif;
+	font: normal 400 0.813em/1.54  Arial, sans-serif;
 	color: rgba(0,0,0,0.85);
 	margin: 50px;
-	padding-top: 18px;
-}
-
-span {
-	font-family: Arial, sans-serif;
+	padding-top: 15px;
 }
 
 #branding a {
@@ -41,25 +37,25 @@ p a:hover {
 
 .about {
 	float: left;
-	width: 358px;
+	width: 310px;
 	overflow: hidden;
 	display: block;
-	margin: 21px 30px 0 0;
+	margin: 20px 90px 0 0;
 }
 
 .feedback {
 	float: left;
-	width: 184px;
+	width: 150px;
 	overflow: hidden;
 	display:  block;
-	margin: 21px 106px 0 0;
+	margin: 20px 90px 0 0;
 }
 
 header ul {
 	width:  280px;
 	float:  left;
 	overflow: hidden;
-	margin-top: 21px;
+	margin-top: 20px;
 }
 
 
@@ -96,7 +92,7 @@ footer a:hover {
 footer form {
 	position: relative;
 	z-index: 2000;
-	width:  680px;
+	width:  640px;
 	float: left;
 	margin-top: 3px;
 }
