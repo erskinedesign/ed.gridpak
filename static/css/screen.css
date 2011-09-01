@@ -8,32 +8,42 @@ body {
 	font: normal 400 0.813em/1.54  Arial, sans-serif;
 	color: rgba(0,0,0,0.85);
 	margin: 50px;
-	padding-top: 15px;
+	padding-top: 5px;
 }
+
+/* @group Header*/
 
 #branding a {
 	text-decoration: none;
-	color: rgba(0,0,0,0.75);
+	color: rgba(0,0,0,0.85);
 	font-weight: 700;
 	font-size: 1.077em;
+	 -webkit-transition: color 0.2s ease-out;
+   -moz-transition: color 0.2s ease-out;
+   -ms-transition: color 0.2s ease-out;
+   -o-transition: color 0.2s ease-out;
+   transition: color 0.2s ease-out;
 }
 
-p a {
+#branding a:hover {
+	color: rgba(0,0,0,0.45);
+}
+
+header p a {
 	background: rgba(157,205,255,0.75);
-	padding: 0 2px;
+	padding: 1px 3px;
+	margin-top: 11px;
 	text-decoration: none; 
-	color: #414141;
+	color: #1E1E1E;
 	display: inline-block;
 	line-height: 1.25;
 }
 
-p a:hover {
+header p a:hover {
 	background: rgba(157,205,255,1.0);
 	color: rgba(0,0,0,0.8);
 }
 
-
-/* @group Header*/
 
 .about {
 	float: left;
@@ -76,12 +86,13 @@ footer p {
 	float: left;
 	display: block;
 	font-size: 0.846em;
-	width: 260px;
+	width: 230px;
 }
 
 footer a {
 	color: rgba(255,255,255,0.9);
 	background: none;
+	text-decoration: none;
 }
 
 footer a:hover {
@@ -183,8 +194,8 @@ footer label {
     display:block;
     position:relative;
     float:right;
-	right: -193px;
-    padding: 15px 40px 26px 30px;
+	right: -205px;
+    padding: 15px 50px 26px 30px;
     margin:25px 0 0 0;
     clear:both;
     color:#fff;
