@@ -236,10 +236,19 @@ footer label {
     left:-34px;
     top:50%;
     margin:-25px 0 0 0;
-    cursor:w-resize;
+    cursor: col-resize;
     text-indent:-999em;
     overflow:hidden;
 }
+
+#create_grid .dragme:hover {
+	background-image: url(../images/site/icons/slider_hover.png);
+}
+
+#create_grid .dragme:active{
+	background-image: url(../images/site/icons/slider_hover.png);
+}
+
 
 #grid_list {
 	width:100%;
