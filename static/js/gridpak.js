@@ -75,7 +75,11 @@ $(function() {
 
     });
 
-    window.Grids = new GridList;
+    window.Grids = new GridList([
+        { min_width: 320, col_num: 4, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22 },
+        { min_width: 600, col_num: 8, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22 },
+        { min_width: 960, col_num: 10, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22 },
+    ]);
 
     /**
      * Grid info view
@@ -152,8 +156,7 @@ $(function() {
         },
 
         initialize: function() {
-            var that = this,
-                first_grid = new Grid;
+            var that = this;
 
             this.input = this.$('#create_grid');
             this.$browser = $('#browser').resizable({
@@ -166,14 +169,11 @@ $(function() {
                 }
             });
 
-            Grids.bind('add', this.addOne, this);
-
-            first_grid.set({ 
-                min_width: this.getWidth(),
-                current_width: this.getWidth()
+            Grids.each(function(grid) {
+                that.addGrid(grid);
             });
-            Grids.add(first_grid);
 
+            Grids.bind('add', this.addOne, this);
         },
 
         getWidth: function() {
