@@ -10,6 +10,9 @@ $(function() {
      * @attribute (int) col_margin_width
      * @attribute (string) col_margin_type
      * @attribute (int) baseline_height
+     * @attribute (int) current_width DO WE NEED THIS??
+     * @attribute (int) lower
+     * @attribute (int) upper
      */
     window.Grid = Backbone.Model.extend({
 
@@ -22,7 +25,9 @@ $(function() {
             col_margin_type: 'px',
             baseline_height: 22,
             col_width: 56,
-            current_width: 960
+            current_width: 960,
+            lower: 0,
+            upper: false
         },
 
         updateWidth: function() {
@@ -76,14 +81,25 @@ $(function() {
         comparator: function(grid)
         {
             return grid.get('min_width');
-        }
+        },
 
     });
 
+    // Use prototyping to add a check for the next and previous models
+    // then assign the lower and upper limits accordingly
+    GridList.prototype.add = function(grid) {
+
+        // TODO
+        // Find the index the model WOULD be inserted at
+        // the lower will be the prev's upper and the upper will be the next's lower
+
+        Backbone.Collection.prototype.add.call(this, grid);
+    };
+
     window.Grids = new GridList([
-        { min_width: 600, col_num: 8, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22 },
-        { min_width: 320, col_num: 4, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22 },
-        { min_width: 960, col_num: 10, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22 },
+        { min_width: 320, col_num: 4, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, lower: 0, upper: 600 },
+        { min_width: 600, col_num: 8, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, lower: 320, upper: 960 },
+        { min_width: 960, col_num: 10, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, lower: 960, upper: false },
     ]);
 
     /**
@@ -213,6 +229,5 @@ $(function() {
      });
 
      window.App = new AppView;
-     console.log(Grids);
 
 });
