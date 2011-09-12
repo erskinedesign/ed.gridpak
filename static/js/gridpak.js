@@ -186,25 +186,17 @@ $(function() {
 
         createGrid: function(e) {
 
-            var min_width = $('#new_min_width').val(),
-                col_num = $('#new_col_num').val(),
-                col_width = false,
-                col_padding_width = $('#new_col_padding_width').val(),
-                col_padding_type= $('#new_col_padding_type').val(),
-                col_margin_width = $('#new_col_margin_width').val(),
-                col_margin_type= $('#new_col_margin_type').val(),
-                baseline_height = $('#new_baseline_height').val();
-
             var new_grid = new Grid({
-                min_width: this.getWidth(),
-                col_num: col_num,
-                col_width: col_width,
-                col_padding_width: col_padding_width,
-                col_padding_type: col_padding_type,
-                col_margin_width: col_margin_width,
-                col_margin_type: col_margin_type,
-                baseline_height: baseline_height
+                min_width: $('#new_min_width').val(),
+                col_num: $('#new_col_num').val(),
+                col_width: false,
+                col_padding_width: $('#new_col_padding_width').val(),
+                col_padding_type: $('#new_col_padding_type').val(),
+                col_margin_width: $('#new_col_margin_width').val(),
+                col_margin_type: $('#new_col_margin_type').val(),
+                baseline_height: $('#new_baseline_height').val()
             });
+
             Grids.add(new_grid);
         },
 
