@@ -98,7 +98,7 @@ $(function() {
 
     window.Grids = new GridList([
         { min_width: 320, col_num: 4, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, lower: 0, upper: 600 },
-        { min_width: 600, col_num: 8, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, lower: 320, upper: 960 },
+        { min_width: 600, col_num: 8, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, lower: 600, upper: 960 },
         { min_width: 960, col_num: 10, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, lower: 960, upper: false },
     ]);
 
