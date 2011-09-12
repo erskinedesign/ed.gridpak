@@ -142,7 +142,6 @@ $(function() {
     /**
      * The application
      *
-     * --------------------------------------------------------------------------------------
      */
     window.AppView = Backbone.View.extend({
 
@@ -217,6 +216,5 @@ $(function() {
      });
 
      window.App = new AppView;
-     // _.enxtend(window.App, Backbone.Events);
 
 });
