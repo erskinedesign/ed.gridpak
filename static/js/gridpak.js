@@ -71,13 +71,18 @@ $(function() {
 
         model: Grid,
 
-        url: '/'
+        url: '/',
+
+        comparator: function(grid)
+        {
+            return grid.get('min_width');
+        }
 
     });
 
     window.Grids = new GridList([
-        { min_width: 320, col_num: 4, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22 },
         { min_width: 600, col_num: 8, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22 },
+        { min_width: 320, col_num: 4, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22 },
         { min_width: 960, col_num: 10, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22 },
     ]);
 
@@ -208,5 +213,6 @@ $(function() {
      });
 
      window.App = new AppView;
+     console.log(Grids);
 
 });
