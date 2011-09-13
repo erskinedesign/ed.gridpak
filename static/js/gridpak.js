@@ -81,7 +81,7 @@ $(function() {
         comparator: function(grid)
         {
             return grid.get('min_width');
-        },
+        }
 
     });
 
@@ -89,11 +89,50 @@ $(function() {
     // then assign the lower and upper limits accordingly
     GridList.prototype.add = function(grid) {
 
-        // TODO
-        // Find the index the model WOULD be inserted at
-        // the lower will be the prev's upper and the upper will be the next's lower
+        var lower = 0,
+            upper = false,
+            i = 0
+            size = 0,
+            agrid = {};
 
         Backbone.Collection.prototype.add.call(this, grid);
+
+        // get an iterator from the size of the collection
+        i  = this.size() - 1;
+
+        // Work on the grids at the limits
+        // first the last
+        agrid = this.at(i);
+        upper = agrid.get('min_width');
+        agrid.set({ upper: false, lower: upper });
+        console.log(i);
+
+        // then the first
+        agrid = this.at(0);
+        agrid.set({ lower: 0 });
+
+        // Now if there is only one (the first is also the last)
+        if (i < 1) return;
+
+        // The first grids max is the seconds min width
+        bgrid = this.at(1);
+        agrid.set({ upper: bgrid.get('min_width') });
+
+        // Now if there are only 2
+        if (i < 2) return;
+
+        // We've done the last, so ditch that
+        i--;
+        // Now start top to bottom adding
+        for(i; i>0; i--)
+        {
+            agrid = this.at(i);
+            lower = agrid.get('min_width');
+            agrid.set({ lower: lower, upper: upper })
+            // the next upper will be this one's lower
+            upper = lower;
+        }
+
     };
 
     window.Grids = new GridList([

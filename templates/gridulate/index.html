@@ -128,8 +128,8 @@
                     </div><!-- // .col -->
                 <% } %>
             </div><!-- // .cols -->
-            <div class="tab" style="left:<%= lower %>px; width:<%= (upper-lower) %>px;">
-                <a href="#" class="link">XXX - <%= min_width %></a>
+            <div class="tab" style="left:<%= lower %>px; width:<%= (!upper) ? '100%' : (upper-lower) + 'px' %>;">
+                <a href="#" class="link"><%= lower %> - <%= (!upper) ? '&#8734;' : upper %></a>
             </div>
             <a href="#" class="remove">remove</a>
             <a href="#" class="update">update</a>
