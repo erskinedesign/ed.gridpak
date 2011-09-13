@@ -105,7 +105,6 @@ $(function() {
         agrid = this.at(i);
         upper = agrid.get('min_width');
         agrid.set({ upper: false, lower: upper });
-        console.log(i);
 
         // then the first
         agrid = this.at(0);
