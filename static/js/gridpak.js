@@ -152,8 +152,8 @@ $(function() {
 
     window.Grids = new GridList([
         { min_width: 100, col_num: 4, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, current: false },
-        { min_width: 350, col_num: 8, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, current: false },
-        { min_width: 600, col_num: 10, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, current: true },
+        { min_width: 500, col_num: 8, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, current: false },
+        { min_width: 960, col_num: 20, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, current: true },
     ]);
 
     /**
