@@ -297,7 +297,7 @@ footer label {
 }
 #grid_list .tab .link {
 	display:inline-block;
-	background-color:rgb(45,45,45);
+	background-color:rgb(200,200,200);
 	padding:3px 7px 2px 7px;
 	color:#fff;
 	text-decoration:none;
@@ -305,4 +305,7 @@ footer label {
     -webkit-border-radius: 4px;
     border-radius: 4px;
     margin-top: -18px;
+}
+#grid_list .cur .tab .link {
+    background-color:rgb(45,45,45);
 }
