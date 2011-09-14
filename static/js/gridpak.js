@@ -27,7 +27,8 @@ $(function() {
             col_width: 56,
             current_width: 960,
             lower: 0,
-            upper: false
+            upper: false,
+            current: false
         },
 
         updateWidth: function() {
@@ -35,10 +36,25 @@ $(function() {
                 current_width = (typeof App != 'undefined') ? App.getWidth() : this.get('min_width'),
                 col_width = 0,
                 col_padding = 0,
-                col_margin = 0;
+                col_margin = 0,
+                new_cid = false,
+                new_grid = false;
 
             // ensure we only fire every time we snap to a new width
             if (old_width == current_width) {
+                return false;
+            }
+
+            // If we're out of bounds of the grid, switch to a new one
+            if (current_width < this.get('lower') || (this.get('upper') !== false && current_width > this.get('upper')))
+            {
+                // must now swap to the next view DOWN
+                this.set({ current: false });
+                new_cid = parseInt(this.cid.replace('c',''));
+                new_cid = (current_width < this.get('lower')) ? new_cid - 1 : new_cid + 1;
+                new_grid = this.collection.getByCid('c' + new_cid);
+                new_grid.set({ current: true });
+                console.log('switched to ' + new_grid.get('min_width'));
                 return false;
             }
 
@@ -135,9 +151,9 @@ $(function() {
     };
 
     window.Grids = new GridList([
-        { min_width: 320, col_num: 4, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, lower: 0, upper: 600 },
-        { min_width: 600, col_num: 8, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, lower: 600, upper: 960 },
-        { min_width: 960, col_num: 10, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, lower: 960, upper: false },
+        { min_width: 100, col_num: 4, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, current: false },
+        { min_width: 350, col_num: 8, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, current: false },
+        { min_width: 600, col_num: 10, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, current: true },
     ]);
 
     /**
@@ -153,7 +169,7 @@ $(function() {
         initialize: function() {
             this.model.bind('change', this.render, this);
             this.model.bind('destroy', this.remove, this);
-            Grids.fetch();
+            // Grids.fetch();
         },
 
         events: {
@@ -169,7 +185,11 @@ $(function() {
         },
 
         updateWidths: function() {
-            this.model.updateWidth();
+            // Only change the view for the grid we're currently editing
+            if (this.model.get('current'))
+            {
+                this.model.updateWidth();
+            }
         },
 
         stringify: function() {

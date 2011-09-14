@@ -239,6 +239,7 @@ footer label {
     cursor: col-resize;
     text-indent:-999em;
     overflow:hidden;
+    z-index:10;
 }
 
 #create_grid .dragme:hover {
@@ -261,7 +262,11 @@ footer label {
 	height:100%;
 	top:0;
 	left:0;
+    z-index:0;
 	font-size: 0.923em;
+}
+#grid_list .grid.cur {
+    z-index:1;
 }
 #grid_list .cols {
 	height:100%;
