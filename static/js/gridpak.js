@@ -174,7 +174,6 @@ $(function() {
         initialize: function() {
             this.model.bind('change', this.render, this);
             this.model.bind('destroy', this.remove, this);
-            // Grids.fetch();
         },
 
         events: {
@@ -183,6 +182,7 @@ $(function() {
         },
 
         render: function() {
+            this.updateWidths();
             $(this.el).html(this.template(this.model.toJSON()));
             this.stringify();
             return this;
@@ -223,7 +223,8 @@ $(function() {
 
         events: {
             'click #save_grid': 'createGrid',
-            'change #grid_options input[type="text"], #grid_options select': 'updateOptions'
+            'keyup #grid_options input[type="text"]': 'updateOptions',
+            'change #grid_options select': 'updateOptions'
         },
 
         initialize: function() {
@@ -257,16 +258,17 @@ $(function() {
         },
 
         updateOptions: function() {
-            console.log(Grids.current);
-            // .set({
-            //     min_width: this.$('.min_width').val(),
-            //     col_num: this.$('.col_num').val(),
-            //     col_padding_width: this.$('.col_padding_width').val(),
-            //     col_padding_type: this.$('.col_padding_type').val(),
-            //     col_margin_width: this.$('.col_margin_width').val(),
-            //     col_margin_type: this.$('.col_margin_type').val(),
-            //     baseline_height: this.$('.baseline_height').val()
-            // });
+            var grid = Grids.getByCid(Grids.current);
+            grid.set({
+                min_width: $('#new_min_width').val(),
+                col_num: $('#new_col_num').val(),
+                col_width: false,
+                col_padding_width: $('#new_col_padding_width').val(),
+                col_padding_type: $('#new_col_padding_type').val(),
+                col_margin_width: $('#new_col_margin_width').val(),
+                col_margin_type: $('#new_col_margin_type').val(),
+                baseline_height: $('#new_baseline_height').val()
+            });
         },
 
         createGrid: function(e) {
