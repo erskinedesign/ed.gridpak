@@ -6,7 +6,7 @@ $(function() {
      * @attribute (int) min_width
      * @attribute (int) col_num
      * @attribute (int) col_padding_width
-     * @attribute (string) col_padding_width_type
+     * @attribute (string) col_padding_type
      * @attribute (int) gutter_width
      * @attribute (string) gutter_type
      * @attribute (int) baseline_height
@@ -16,6 +16,45 @@ $(function() {
      * @attribute (boolean) current
      */
     window.Grid = Backbone.Model.extend({
+
+        validate: function(attrs) {
+
+            var settings = {
+                max_cols: 99,
+                allowed_types: ['px', '%']
+            };
+
+            // I got 99 cols but a bitch ain't one
+            if (attrs.col_num > settings.max_cols) {
+                return 'Can\'t have more than 99 cols';
+            }
+
+            // Int params must be integers
+            if (
+                (typeof(attrs.min_width) != 'undefined' && !this.isInt(attrs.min_width)) ||
+                (typeof(attrs.col_num) != 'undefined' && !this.isInt(attrs.col_num)) ||
+                (typeof(attrs.col_padding_width) != 'undefined' && !this.isInt(attrs.col_padding_width)) ||
+                (typeof(attrs.gutter_width) != 'undefined' && !this.isInt(attrs.gutter_width)) ||
+                (typeof(attrs.baseline_height) != 'undefined' && !this.isInt(attrs.baseline_height))
+            ) {
+                return 'Use integers for integers';
+            }
+
+            // px or % params
+            if (
+                typeof(attrs.col_padding_type) != 'undefined' && _.indexOf(settings.allowed_types, attrs.col_padding_type) || 
+                typeof(attrs.gutter_type) != 'undefined' && _.indexOf(settings.allowed_types, attrs.gutter_type)
+            ) {
+                return ('Wrong type of padding / gutter');
+            }
+
+        },
+
+        isInt: function(x) {
+            var y = parseInt(x); 
+            if (isNaN(y)) return false; 
+            return x == y && x.toString() == y.toString(); 
+         },
 
         updateWidth: function(force) {
             var old_width = $('#new_min_width').val(),
@@ -63,7 +102,6 @@ $(function() {
 
             col_width = Math.floor((current_width / this.get('col_num')) - gutter_width - (col_padding * 2));
             col_width += Math.floor(gutter_width / this.get('col_num'));
-            console.log(col_width);
 
             this.set({ 
                 col_width: col_width,
