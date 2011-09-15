@@ -13,23 +13,9 @@ $(function() {
      * @attribute (int) current_width DO WE NEED THIS??
      * @attribute (int) lower
      * @attribute (int) upper
+     * @attribute (boolean) current
      */
     window.Grid = Backbone.Model.extend({
-
-        defaults: {
-            min_width: 960,
-            col_num: 10,
-            col_padding_width: 10,
-            col_padding_type: 'px',
-            gutter_width: 10,
-            gutter_type: 'px',
-            baseline_height: 22,
-            col_width: 56,
-            current_width: 960,
-            lower: 0,
-            upper: false,
-            current: false
-        },
 
         updateWidth: function(force) {
             var old_width = $('#new_min_width').val(),
@@ -157,9 +143,9 @@ $(function() {
     };
 
     window.Grids = new GridList([
-        { min_width: 100, col_num: 4, col_padding_width: 5, col_padding_type: 'px', gutter_width: 5,  gutter_type: 'px', baseline_height: 22, current: false },
-        { min_width: 500, col_num: 8, col_padding_width: 5, col_padding_type: 'px', gutter_width: 5,  gutter_type: 'px', baseline_height: 22, current: false },
-        { min_width: 960, col_num: 20, col_padding_width: 5, col_padding_type: 'px', gutter_width: 5,  gutter_type: 'px', baseline_height: 22, current: true },
+        { min_width: 100, col_num: 4, col_padding_width: 5, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22, current: false },
+        { min_width: 500, col_num: 8, col_padding_width: 5, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22, current: false },
+        { min_width: 960, col_num: 16, col_padding_width: 10, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22, current: true },
     ]);
     // Set the current grid as the last in the collection
     window.Grids.current = 'c' + (Grids.size() - 1);
