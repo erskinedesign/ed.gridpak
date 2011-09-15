@@ -87,7 +87,7 @@
                         </div>
 
                         <div class="submit">
-                            <button id="save_grid">BUTTON NAME</button>
+                            <button id="save_grid">Create grid here</button>
                         </div>
 
                     </div><!-- // #create_grid -->
@@ -129,10 +129,11 @@
                 <% } %>
             </div><!-- // .cols -->
             <div class="tab" style="left:<%= lower %>px; width:<%= (!upper) ? '100%' : (upper-lower) + 'px' %>;">
-                <a href="#" class="link"><%= lower %> - <%= (!upper) ? '&#8734;' : upper %></a>
+                <ul class="actions">
+                    <li><a href="#" class="link"><%= lower %> - <%= (!upper) ? '&#8734;' : upper %></a></li>
+                    <li><a href="#" class="remove">remove</a></li>
+                </ul><!-- // .actions -->
             </div>
-            <a href="#" class="remove">remove</a>
-            <a href="#" class="update">update</a>
         </div>
     </script>
 

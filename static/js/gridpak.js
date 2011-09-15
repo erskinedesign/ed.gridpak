@@ -320,7 +320,10 @@ $(function() {
                 col_padding_type: $('#new_col_padding_type').val(),
                 gutter_width: $('#new_gutter_width').val(),
                 gutter_type: $('#new_gutter_type').val(),
-                baseline_height: $('#new_baseline_height').val()
+                baseline_height: $('#new_baseline_height').val(),
+                lower: 0,
+                upper: 0,
+                current: false
             });
 
             Grids.add(new_grid);
