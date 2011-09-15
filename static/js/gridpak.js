@@ -31,7 +31,7 @@ $(function() {
             current: false
         },
 
-        updateWidth: function() {
+        updateWidth: function(force) {
             var old_width = $('#new_min_width').val(),
                 current_width = (typeof App != 'undefined') ? App.getWidth() : this.get('min_width'),
                 col_width = 0,
@@ -41,7 +41,7 @@ $(function() {
                 new_grid = false;
 
             // ensure we only fire every time we snap to a new width
-            if (old_width == current_width) {
+            if (old_width == current_width && (typeof(force) == 'undefined' || force == false)) {
                 return false;
             }
 
@@ -182,7 +182,7 @@ $(function() {
         },
 
         render: function() {
-            this.updateWidths();
+            this.model.updateWidth(true);
             $(this.el).html(this.template(this.model.toJSON()));
             this.stringify();
             return this;
