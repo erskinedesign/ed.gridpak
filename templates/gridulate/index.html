@@ -63,31 +63,31 @@
                         </div>
                         <div>
                             <label for="new_col_num">No. of columns</label>
-                            <input id="new_col_num" type="text" value="10" />
+                            <input id="new_col_num" value="10" type="number" min="1" max="99" step="1" />
                         </div>
                         <div>
                             <label for="new_col_padding_width">Column padding</label>
-                            <input id="new_col_padding_width" type="text" value="10" />
+                            <input id="new_col_padding_width" value="10" type="number" min="1" max="99" step="1" />
                             <select id="new_col_padding_type">
                                 <option value="px" selected="selected">pixels</option>
                                 <option value="%">%</option>
                             </select>
                         </div>
                         <div>
-                            <label for="new_col_margin_width">Gutter width</label>
-                            <input id="new_col_margin_width" type="text" value="10" />
-                            <select id="new_col_margin_type">
+                            <label for="new_gutter_width">Gutter width</label>
+                            <input id="new_gutter_width" value="10" type="number" min="1" max="99" step="1" />
+                            <select id="new_gutter_type">
                                 <option value="px" selected="selected">pixels</option>
                                 <option value="%">%</option>
                             </select>
                         </div>
                         <div>
                             <label for="new_baseline_height">Baseline height</label>
-                            <input id="new_baseline_height" type="text" value="22" /><small>px</small>
+                            <input id="new_baseline_height" value="10" type="number" min="1" max="99" step="1" />
                         </div>
 
                         <div class="submit">
-                            <button id="save_grid">Save layout</button>
+                            <button id="save_grid">BUTTON NAME</button>
                         </div>
 
                     </div><!-- // #create_grid -->
@@ -123,7 +123,7 @@
         <div class="grid<%= (current) ? ' cur' : '' %>">
             <div class="cols">
                 <% var i=0; for(i; i<col_num; i++) { %>
-                    <div class="col" style="<% if (col_width) { %>width:<%= col_width %>px; <% } %>margin:0 <%= col_margin_width + col_margin_type %>; padding:0 <%= col_padding_width + col_padding_type %>;">
+                    <div class="col" style="<% if (col_width) { %>width:<%= col_width %>px; <% } %><% if ((i + 1) < col_num) { %>margin:0 <%= gutter_width + gutter_type %> 0 0; <% } %>padding:0 <%= col_padding_width + col_padding_type %>;">
                         <div class="visible"></div>
                     </div><!-- // .col -->
                 <% } %>

@@ -194,12 +194,14 @@ footer label {
     display:block;
     position:relative;
     float:right;
-	right: -205px;
-    padding: 15px 50px 26px 30px;
+    width:12em;
+	right:-16em;
+    padding: 15px 2em 26px 2em;
     margin:25px 0 0 0;
     clear:both;
     color:#fff;
     background: rgb(52,52,52);
+    z-index:99;
 }
 #grid_options label {
 	display:block;
@@ -207,8 +209,8 @@ footer label {
 	margin-bottom:0.5em;
 	
 }
-#grid_options input[type="text"] {
-    width:30px;
+#grid_options input[type="number"] {
+    width:3em;
     display:inline-block;
     margin-right:0.5em;
     font-size: 1.077em;

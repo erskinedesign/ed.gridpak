@@ -7,8 +7,8 @@ $(function() {
      * @attribute (int) col_num
      * @attribute (int) col_padding_width
      * @attribute (string) col_padding_width_type
-     * @attribute (int) col_margin_width
-     * @attribute (string) col_margin_type
+     * @attribute (int) gutter_width
+     * @attribute (string) gutter_type
      * @attribute (int) baseline_height
      * @attribute (int) current_width DO WE NEED THIS??
      * @attribute (int) lower
@@ -21,8 +21,8 @@ $(function() {
             col_num: 10,
             col_padding_width: 10,
             col_padding_type: 'px',
-            col_margin_width: 10,
-            col_margin_type: 'px',
+            gutter_width: 10,
+            gutter_type: 'px',
             baseline_height: 22,
             col_width: 56,
             current_width: 960,
@@ -36,7 +36,7 @@ $(function() {
                 current_width = (typeof App != 'undefined') ? App.getWidth() : this.get('min_width'),
                 col_width = 0,
                 col_padding = 0,
-                col_margin = 0,
+                gutter = 0,
                 new_cid = false,
                 new_grid = false;
 
@@ -60,6 +60,13 @@ $(function() {
                 return false;
             }
 
+            // fixed with gutters
+            if (this.get('gutter_type') == 'px') {
+                gutter_width = this.get('gutter_width');
+            } else {
+                gutter_width = Math.floor(((current_width / 100) * this.gutter_width));
+            }
+
             // fixed percentage width padding
             if (this.get('col_padding_type') == 'px') {
                 col_padding = this.get('col_padding_width');
@@ -68,14 +75,9 @@ $(function() {
                 col_padding = Math.floor((current_width / 100) * this.get('col_padding_width'));
             }
 
-            // fixed with margins
-            if (this.get('col_margin_type') == 'px') {
-                col_margin = this.get('col_margin_width');
-            } else {
-                col_margin = Math.floor(((current_width / 100) * this.col_margin_width));
-            }
-
-            col_width = Math.floor((current_width / this.get('col_num')) - (col_margin * 2) - (col_padding * 2));
+            col_width = Math.floor((current_width / this.get('col_num')) - gutter_width - (col_padding * 2));
+            col_width += Math.floor(gutter_width / this.get('col_num'));
+            console.log(col_width);
 
             this.set({ 
                 col_width: col_width,
@@ -155,9 +157,9 @@ $(function() {
     };
 
     window.Grids = new GridList([
-        { min_width: 100, col_num: 4, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, current: false },
-        { min_width: 500, col_num: 8, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, current: false },
-        { min_width: 960, col_num: 20, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, current: true },
+        { min_width: 100, col_num: 4, col_padding_width: 5, col_padding_type: 'px', gutter_width: 5,  gutter_type: 'px', baseline_height: 22, current: false },
+        { min_width: 500, col_num: 8, col_padding_width: 5, col_padding_type: 'px', gutter_width: 5,  gutter_type: 'px', baseline_height: 22, current: false },
+        { min_width: 960, col_num: 20, col_padding_width: 5, col_padding_type: 'px', gutter_width: 5,  gutter_type: 'px', baseline_height: 22, current: true },
     ]);
     // Set the current grid as the last in the collection
     window.Grids.current = 'c' + (Grids.size() - 1);
@@ -224,7 +226,8 @@ $(function() {
 
         events: {
             'click #save_grid': 'createGrid',
-            'keyup #grid_options input[type="text"]': 'updateOptions',
+            'click #grid_options input[type="number"]': 'updateOptions',
+            'keyup #grid_options input[type="number"]': 'updateOptions',
             'change #grid_options select': 'updateOptions'
         },
 
@@ -264,8 +267,8 @@ $(function() {
             $('#new_col_num').val(grid.get('col_num'));
             $('#new_col_padding_width').val(grid.get('col_padding_width'));
             $('#new_col_padding_type').val(grid.get('col_padding_type'));
-            $('#new_col_margin_width').val(grid.get('col_margin_width'));
-            $('#new_col_margin_type').val(grid.get('col_margin_type'));
+            $('#new_gutter_width').val(grid.get('gutter_width'));
+            $('#new_gutter_type').val(grid.get('gutter_type'));
             $('#new_baseline_height').val(grid.get('baseline_height'));
         },
 
@@ -277,8 +280,8 @@ $(function() {
                 col_width: false,
                 col_padding_width: $('#new_col_padding_width').val(),
                 col_padding_type: $('#new_col_padding_type').val(),
-                col_margin_width: $('#new_col_margin_width').val(),
-                col_margin_type: $('#new_col_margin_type').val(),
+                gutter_width: $('#new_gutter_width').val(),
+                gutter_type: $('#new_gutter_type').val(),
                 baseline_height: $('#new_baseline_height').val()
             });
         },
@@ -291,8 +294,8 @@ $(function() {
                 col_width: false,
                 col_padding_width: $('#new_col_padding_width').val(),
                 col_padding_type: $('#new_col_padding_type').val(),
-                col_margin_width: $('#new_col_margin_width').val(),
-                col_margin_type: $('#new_col_margin_type').val(),
+                gutter_width: $('#new_gutter_width').val(),
+                gutter_type: $('#new_gutter_type').val(),
                 baseline_height: $('#new_baseline_height').val()
             });
 
