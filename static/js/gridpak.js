@@ -54,7 +54,6 @@ $(function() {
                 new_cid = (current_width < this.get('lower')) ? new_cid - 1 : new_cid + 1;
                 new_grid = this.collection.getByCid('c' + new_cid);
                 new_grid.set({ current: true });
-                console.log('switched to ' + new_grid.get('min_width'));
                 return false;
             }
 
