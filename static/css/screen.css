@@ -190,7 +190,7 @@ footer label {
     clear:both;
     background-color:#efefef;
 }
-#create_grid {
+#grid_options {
     display:block;
     position:relative;
     float:right;
@@ -201,27 +201,27 @@ footer label {
     color:#fff;
     background: rgb(52,52,52);
 }
-#create_grid label {
+#grid_options label {
 	display:block;
 	clear:both;
 	margin-bottom:0.5em;
 	
 }
-#create_grid input[type="text"] {
+#grid_options input[type="text"] {
     width:30px;
     display:inline-block;
     margin-right:0.5em;
     font-size: 1.077em;
     padding: 2px 6px;
 }
-#create_grid div {
+#grid_options div {
 	margin-bottom:0.5em;
 }
-#create_grid div.submit {
+#grid_options div.submit {
 	margin-bottom:0;
 	margin-top:1em;
 }
-#create_grid .dragme {
+#grid_options .dragme {
     width:34px;
     background: rgb(52,52,52) url(../images/site/icons/slider.png);
 	background-position: 15px center;
@@ -242,11 +242,11 @@ footer label {
     z-index:10;
 }
 
-#create_grid .dragme:hover {
+#grid_options .dragme:hover {
 	background-image: url(../images/site/icons/slider_hover.png);
 }
 
-#create_grid .dragme:active{
+#grid_options .dragme:active{
 	background-image: url(../images/site/icons/slider_hover.png);
 }
 

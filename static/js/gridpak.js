@@ -49,11 +49,13 @@ $(function() {
             if (current_width < this.get('lower') || (this.get('upper') !== false && current_width > this.get('upper')))
             {
                 // must now swap to the next view DOWN
-                this.set({ current: false });
                 new_cid = parseInt(this.cid.replace('c',''));
                 new_cid = (current_width < this.get('lower')) ? new_cid - 1 : new_cid + 1;
-                new_grid = this.collection.getByCid('c' + new_cid);
+                new_cid = 'c' + new_cid;
+                new_grid = this.collection.getByCid(new_cid);
+                this.set({ current: false });
                 new_grid.set({ current: true });
+                Grids.current = new_cid;
                 return false;
             }
 
@@ -90,6 +92,8 @@ $(function() {
     window.GridList = Backbone.Collection.extend({
 
         model: Grid,
+
+        current: false,
 
         url: '/',
 
@@ -154,6 +158,8 @@ $(function() {
         { min_width: 500, col_num: 8, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, current: false },
         { min_width: 960, col_num: 20, col_padding_width: 5, col_padding_type: 'px', col_margin_width: 5,  col_margin_type: 'px', baseline_height: 22, current: true },
     ]);
+    // Set the current grid as the last in the collection
+    window.Grids.current = 'c' + (Grids.size() - 1);
 
     /**
      * Grid info view
@@ -173,7 +179,6 @@ $(function() {
 
         events: {
             'click .remove' : 'clear',
-            'click .update' : 'updateOptions',
             'resize .grid' : 'updateWidths'
         },
 
@@ -185,7 +190,7 @@ $(function() {
 
         updateWidths: function() {
             // Only change the view for the grid we're currently editing
-            if (this.model.get('current'))
+            if (this.model.cid == Grids.current)
             {
                 this.model.updateWidth();
             }
@@ -193,18 +198,6 @@ $(function() {
 
         stringify: function() {
             $('#stringified').val(JSON.stringify(Grids));
-        },
-
-        updateOptions: function() {
-            this.model.set({
-                min_width: this.$('.min_width').val(),
-                col_num: this.$('.col_num').val(),
-                col_padding_width: this.$('.col_padding_width').val(),
-                col_padding_type: this.$('.col_padding_type').val(),
-                col_margin_width: this.$('.col_margin_width').val(),
-                col_margin_type: this.$('.col_margin_type').val(),
-                baseline_height: this.$('.baseline_height').val()
-            });
         },
 
         remove: function() {
@@ -229,13 +222,14 @@ $(function() {
         el: $('#gridpak'),
 
         events: {
-            'click #save_grid': 'createGrid'
+            'click #save_grid': 'createGrid',
+            'change #grid_options input[type="text"], #grid_options select': 'updateOptions'
         },
 
         initialize: function() {
             var that = this;
 
-            this.input = this.$('#create_grid');
+            this.input = this.$('#grid_options');
             this.$browser = $('#browser').resizable({
                 handles: { e: $(".dragme") },
                 grid: this.snap,
@@ -260,6 +254,19 @@ $(function() {
         addGrid: function(grid) {
             var view = new GridView({ model: grid });
             this.$('#grid_list').append(view.render().el);
+        },
+
+        updateOptions: function() {
+            console.log(Grids.current);
+            // .set({
+            //     min_width: this.$('.min_width').val(),
+            //     col_num: this.$('.col_num').val(),
+            //     col_padding_width: this.$('.col_padding_width').val(),
+            //     col_padding_type: this.$('.col_padding_type').val(),
+            //     col_margin_width: this.$('.col_margin_width').val(),
+            //     col_margin_type: this.$('.col_margin_type').val(),
+            //     baseline_height: this.$('.baseline_height').val()
+            // });
         },
 
         createGrid: function(e) {
