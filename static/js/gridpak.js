@@ -56,6 +56,7 @@ $(function() {
                 this.set({ current: false });
                 new_grid.set({ current: true });
                 Grids.current = new_cid;
+                App.refreshOptions();
                 return false;
             }
 
@@ -255,6 +256,17 @@ $(function() {
         addGrid: function(grid) {
             var view = new GridView({ model: grid });
             this.$('#grid_list').append(view.render().el);
+        },
+
+        refreshOptions: function() {
+            var grid = Grids.getByCid(Grids.current);
+            $('#new_min_width').val(grid.get('min_width'));
+            $('#new_col_num').val(grid.get('col_num'));
+            $('#new_col_padding_width').val(grid.get('col_padding_width'));
+            $('#new_col_padding_type').val(grid.get('col_padding_type'));
+            $('#new_col_margin_width').val(grid.get('col_margin_width'));
+            $('#new_col_margin_type').val(grid.get('col_margin_type'));
+            $('#new_baseline_height').val(grid.get('baseline_height'));
         },
 
         updateOptions: function() {
