@@ -17,6 +17,14 @@ $(function() {
      */
     window.Grid = Backbone.Model.extend({
 
+        /**
+         * Validate the model
+         *
+         * Backbone method
+         *
+         * @param (object) attrs
+         * @return (string) error
+         */
         validate: function(attrs) {
 
             var settings = {
@@ -50,12 +58,22 @@ $(function() {
 
         },
 
+        /**
+         * Validate var is integer
+         *
+         * @param (string) x
+         * @return boolean
+         */
         isInt: function(x) {
             var y = parseInt(x); 
             if (isNaN(y)) return false; 
             return x == y && x.toString() == y.toString(); 
          },
 
+        /**
+         * Update the models current width
+         *
+         */
         updateWidth: function(force) {
             var old_width = $('#new_min_width').val(),
                 current_width = (typeof App != 'undefined') ? App.getWidth() : this.get('min_width'),
@@ -323,7 +341,7 @@ $(function() {
                 baseline_height: $('#new_baseline_height').val(),
                 lower: 0,
                 upper: 0,
-                current: false
+                current: true
             });
 
             Grids.add(new_grid);
