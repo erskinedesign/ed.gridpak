@@ -36,6 +36,7 @@ $(function() {
             gutter_type: 'px',
             baseline_height: 22,
             col_width: 0,
+            position: 0,
             current: true
         },
 
@@ -159,18 +160,18 @@ $(function() {
             // first the last
             agrid = this.at(i);
             upper = agrid.get('min_width');
-            agrid.set({ upper: false, lower: upper });
+            agrid.set({ upper: false, lower: upper, position: i });
 
             // then the first
             agrid = this.at(0);
-            agrid.set({ lower: 0 });
+            agrid.set({ lower: 0, position: 0 });
 
             // Now if there is only one (the first is also the last)
             if (i < 1) return;
 
             // The first grids max is the seconds min width
             bgrid = this.at(1);
-            agrid.set({ upper: bgrid.get('min_width') });
+            agrid.set({ upper: bgrid.get('min_width'), position: 1 });
 
             // Now if there are only 2
             if (i < 2) return;
@@ -182,7 +183,7 @@ $(function() {
             {
                 agrid = this.at(i);
                 lower = agrid.get('min_width');
-                agrid.set({ lower: lower, upper: upper })
+                agrid.set({ lower: lower, upper: upper, position: i })
                 // the next upper will be this one's lower
                 upper = lower;
             }
@@ -194,6 +195,10 @@ $(function() {
     // Use prototyping to add a check for the next and previous models
     // then assign the lower and upper limits accordingly
     GridList.prototype.add = function(grid) {
+        if (this.current) {
+            this.current.set({ current: false });
+            this.current = grid;
+        }
         Backbone.Collection.prototype.add.call(this, grid);
         this.determineUpperLowers();
     };
@@ -299,7 +304,9 @@ $(function() {
 
         resize: function(e, ui) {
             var old_width = $('#new_min_width').val(),
-                current_width = Math.round(ui.size.width / this.snap) * this.snap;
+                current_width = Math.round(ui.size.width / this.snap) * this.snap,
+                current_id = Grids.current.get('position'),
+                new_id = false;
 
             // ensure we only fire every time we snap to a new width
             if (old_width == current_width) return false;
@@ -308,10 +315,9 @@ $(function() {
             if (current_width < Grids.current.get('lower') || (Grids.current.get('upper') !== false && current_width > Grids.current.get('upper')))
             {
                 // must now swap to the next view DOWN
-                new_cid = parseInt(Grids.current.cid.replace('c',''));
-                new_cid = (current_width < Grids.current.get('lower')) ? new_cid - 1 : new_cid + 1;
+                new_id = (current_width < Grids.current.get('lower')) ? current_id - 1 : current_id + 1;
                 Grids.current.set({ current: false });
-                Grids.current = Grids.getByCid('c' + new_cid);
+                Grids.current = Grids.at(new_id);
                 Grids.current.set({ current: true });
                 App.refreshOptions();
                 return false;
