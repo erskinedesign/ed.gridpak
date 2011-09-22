@@ -99,12 +99,7 @@ $(function() {
         updateWidth: function(new_width) {
             var col_width = 0,
                 col_padding = 0,
-                gutter = 0,
-                new_cid = false,
-                new_grid = false;
-
-
-
+                gutter = 0;
 
             // fixed with gutters
             if (this.get('gutter_type') == 'px') {
