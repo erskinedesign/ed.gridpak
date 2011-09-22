@@ -56,7 +56,7 @@ $(function() {
 
             // I got 99 cols but a bitch ain't one
             if (attrs.col_num > settings.max_cols) {
-                return 'Can\'t have more than 99 cols';
+                return 'Can\'t have more than ' + settings.max_cols + ' cols';
             }
 
             // Int params must be integers
