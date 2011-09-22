@@ -1,3 +1,9 @@
+/*!
+ * Gridpak
+ *
+ *
+ * @author Erskine Design [Wil Linssen]
+ */
 $(function() {
 
     /**
