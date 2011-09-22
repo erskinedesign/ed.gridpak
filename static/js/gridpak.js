@@ -24,6 +24,22 @@ $(function() {
     window.Grid = Backbone.Model.extend({
 
         /**
+         * Model defaults
+         *
+         */
+        defaults: {
+            min_width: 960,
+            col_num: 16,
+            col_padding_width: 10,
+            col_padding_type: 'px',
+            gutter_width: 8,
+            gutter_type: 'px',
+            baseline_height: 22,
+            col_width: 0,
+            current: true
+        },
+
+        /**
          * Validate the model
          *
          * Backbone method
