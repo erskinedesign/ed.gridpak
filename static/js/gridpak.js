@@ -96,40 +96,21 @@ $(function() {
          * Update the models current width
          *
          */
-        updateWidth: function(force) {
-            var old_width = $('#new_min_width').val(),
-                current_width = (typeof App != 'undefined') ? App.getWidth() : this.get('min_width'),
-                col_width = 0,
+        updateWidth: function(new_width) {
+            var col_width = 0,
                 col_padding = 0,
                 gutter = 0,
                 new_cid = false,
                 new_grid = false;
 
-            // ensure we only fire every time we snap to a new width
-            if (old_width == current_width && (typeof(force) == 'undefined' || force == false)) {
-                return false;
-            }
 
-            // If we're out of bounds of the grid, switch to a new one
-            if (current_width < this.get('lower') || (this.get('upper') !== false && current_width > this.get('upper')))
-            {
-                // must now swap to the next view DOWN
-                new_cid = parseInt(this.cid.replace('c',''));
-                new_cid = (current_width < this.get('lower')) ? new_cid - 1 : new_cid + 1;
-                new_cid = 'c' + new_cid;
-                new_grid = this.collection.getByCid(new_cid);
-                this.set({ current: false });
-                new_grid.set({ current: true });
-                Grids.current = new_cid;
-                App.refreshOptions();
-                return false;
-            }
+
 
             // fixed with gutters
             if (this.get('gutter_type') == 'px') {
                 gutter_width = this.get('gutter_width');
             } else {
-                gutter_width = Math.floor(((current_width / 100) * this.gutter_width));
+                gutter_width = Math.floor(((new_width / 100) * this.gutter_width));
             }
 
             // fixed percentage width padding
@@ -137,15 +118,15 @@ $(function() {
                 col_padding = this.get('col_padding_width');
             // work the width from percentages
             } else {
-                col_padding = Math.floor((current_width / 100) * this.get('col_padding_width'));
+                col_padding = Math.floor((new_width / 100) * this.get('col_padding_width'));
             }
 
-            col_width = Math.floor((current_width / this.get('col_num')) - gutter_width - (col_padding * 2));
+            col_width = Math.floor((new_width / this.get('col_num')) - gutter_width - (col_padding * 2));
             col_width += Math.floor(gutter_width / this.get('col_num'));
 
             this.set({ 
                 col_width: col_width,
-                current_width: current_width
+                current_width: new_width
             });
 
         },
@@ -226,7 +207,7 @@ $(function() {
         { min_width: 960, col_num: 16, col_padding_width: 10, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22, current: true },
     ]);
     // Set the current grid as the last in the collection
-    window.Grids.current = 'c' + (Grids.size() - 1);
+    window.Grids.current = window.Grids.at(Grids.length - 1);
 
     /**
      * Grid info view
@@ -244,23 +225,13 @@ $(function() {
         },
 
         events: {
-            'click .remove' : 'clear',
-            'resize .grid' : 'updateWidths'
+            'click .remove' : 'clear'
         },
 
         render: function() {
-            this.model.updateWidth(true);
             $(this.el).html(this.template(this.model.toJSON()));
             this.stringify();
             return this;
-        },
-
-        updateWidths: function() {
-            // Only change the view for the grid we're currently editing
-            if (this.model.cid == Grids.current)
-            {
-                this.model.updateWidth();
-            }
         },
 
         stringify: function() {
@@ -296,28 +267,71 @@ $(function() {
         },
 
         initialize: function() {
-            var that = this;
+            var that = this,
+                width = 0;
 
             this.input = this.$('#grid_options');
+
             this.$browser = $('#browser').resizable({
                 handles: { e: $(".dragme") },
                 grid: this.snap,
                 minWidth: 300,
                 resize: function(e, ui) {
-                    $('.grid').trigger('resize');
-                    $('#new_min_width').val(that.getWidth()); 
+                    that.resize(e, ui);
                 }
             });
 
+            // Set the initial new min width / old width
+            width = this.$browser.width();
+            $('#new_min_width').val(width);
+
+            // Create the views and render them to the DOM
             Grids.each(function(grid) {
                 that.addGrid(grid);
             });
 
+            // Bind this.addOne every time a new model is added to the collection
             Grids.bind('add', this.addOne, this);
+
+            // Update the width of the current model
+            this.updateWidth(width);
         },
 
-        getWidth: function() {
-            return Math.round(this.$browser.innerWidth() / this.snap) * this.snap;
+
+        resize: function(e, ui) {
+            var old_width = $('#new_min_width').val(),
+                current_width = Math.round(ui.size.width / this.snap) * this.snap;
+
+            // ensure we only fire every time we snap to a new width
+            if (old_width == current_width) return false;
+
+            // If we're out of bounds of the grid, switch to a new one
+            if (current_width < Grids.current.get('lower') || (Grids.current.get('upper') !== false && current_width > Grids.current.get('upper')))
+            {
+                // must now swap to the next view DOWN
+                new_cid = parseInt(Grids.current.cid.replace('c',''));
+                new_cid = (current_width < Grids.current.get('lower')) ? new_cid - 1 : new_cid + 1;
+                new_cid = 'c' + new_cid;
+                new_grid = Grids.current.collection.getByCid(new_cid);
+                Grids.current.set({ current: false });
+                new_grid.set({ current: true });
+                Grids.current = new_grid;
+                App.refreshOptions();
+                return false;
+            }
+
+            this.updateWidth(current_width);
+
+        },
+
+        updateWidth: function(width) {
+
+            // Store the browser's width
+            $('#new_min_width').val(width);
+
+            // Update the current model's widths
+            Grids.current.updateWidth(width);
+
         },
 
         addGrid: function(grid) {
@@ -326,19 +340,17 @@ $(function() {
         },
 
         refreshOptions: function() {
-            var grid = Grids.getByCid(Grids.current);
-            $('#new_min_width').val(grid.get('min_width'));
-            $('#new_col_num').val(grid.get('col_num'));
-            $('#new_col_padding_width').val(grid.get('col_padding_width'));
-            $('#new_col_padding_type').val(grid.get('col_padding_type'));
-            $('#new_gutter_width').val(grid.get('gutter_width'));
-            $('#new_gutter_type').val(grid.get('gutter_type'));
-            $('#new_baseline_height').val(grid.get('baseline_height'));
+            $('#new_min_width').val(Grids.current.get('min_width'));
+            $('#new_col_num').val(Grids.current.get('col_num'));
+            $('#new_col_padding_width').val(Grids.current.get('col_padding_width'));
+            $('#new_col_padding_type').val(Grids.current.get('col_padding_type'));
+            $('#new_gutter_width').val(Grids.current.get('gutter_width'));
+            $('#new_gutter_type').val(Grids.current.get('gutter_type'));
+            $('#new_baseline_height').val(Grids.current.get('baseline_height'));
         },
 
         updateOptions: function() {
-            var grid = Grids.getByCid(Grids.current);
-            grid.set({
+            Grids.current.set({
                 min_width: $('#new_min_width').val(),
                 col_num: $('#new_col_num').val(),
                 col_width: false,
