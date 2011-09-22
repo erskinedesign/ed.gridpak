@@ -311,11 +311,9 @@ $(function() {
                 // must now swap to the next view DOWN
                 new_cid = parseInt(Grids.current.cid.replace('c',''));
                 new_cid = (current_width < Grids.current.get('lower')) ? new_cid - 1 : new_cid + 1;
-                new_cid = 'c' + new_cid;
-                new_grid = Grids.current.collection.getByCid(new_cid);
                 Grids.current.set({ current: false });
-                new_grid.set({ current: true });
-                Grids.current = new_grid;
+                Grids.current = Grids.getByCid('c' + new_cid);
+                Grids.current.set({ current: true });
                 App.refreshOptions();
                 return false;
             }
