@@ -77,7 +77,7 @@ $(function() {
                 typeof(attrs.col_padding_type) != 'undefined' && _.indexOf(settings.allowed_types, attrs.col_padding_type) || 
                 typeof(attrs.gutter_type) != 'undefined' && _.indexOf(settings.allowed_types, attrs.gutter_type)
             ) {
-                return ('Wrong type of padding / gutter');
+                return 'Wrong type of padding / gutter';
             }
 
             // Has to have a minimum grid width
@@ -85,7 +85,7 @@ $(function() {
                 (attrs.upper && attrs.lower) &&
                 (attrs.upper - attrs.lower) < settings.min_grid_width
             ) {
-                return ('Grid must be a minium width of ' + settings.min_grid_width + 'px');
+                return 'Grid must be a minium width of ' + settings.min_grid_width + 'px';
             }
 
         },
