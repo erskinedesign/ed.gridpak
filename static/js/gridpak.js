@@ -136,6 +136,34 @@ $(function() {
 
         },
 
+        /**
+         * Get the model in the collection x steps away up (+) or down (-)
+         *
+         * @return (object) grid
+         */
+        getRelativeTo: function(direction) {
+            return this.collection.at(this.collection.indexOf(this) + direction);
+        },
+
+        /**
+         * Find the upper and lower limits
+         *
+         */
+        getLimits: function() {
+            var prev = this.getRelativeTo(-1),
+                next = this.getRelativeTo(1),
+                limits = { upper: 0, lower: 0 };
+
+            // Work out the limits of the grid
+            if (prev) {
+                limts.lower = this.get('min_width');
+            }
+            if (next) {
+                limits.upper = next.get('min_width');
+            }
+
+        },
+
     });
 
     /**
