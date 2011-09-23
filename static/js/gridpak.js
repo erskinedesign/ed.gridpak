@@ -363,6 +363,7 @@ $(function() {
                 gutter_type: $('#new_gutter_type').val(),
                 baseline_height: $('#new_baseline_height').val()
             });
+            this.updateWidth(this.$browser.width());
         },
 
         createGrid: function(e) {
