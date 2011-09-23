@@ -58,7 +58,7 @@ $(function() {
 
             // I got 99 cols but a bitch ain't one
             if (attrs.col_num > settings.max_cols || attrs.col_num < 1) {
-                return 'Can\'t have more between 1 and ' + settings.max_cols + ' cols';
+                return 'Must be betwee 1 and ' + settings.max_cols + ' cols';
             }
 
             // Int params must be integers
