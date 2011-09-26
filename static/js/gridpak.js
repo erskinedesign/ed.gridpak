@@ -288,6 +288,7 @@ $(function() {
 
             // Stuff will have changed
             this.model.collection.current.updateWidth(width);
+            App.refreshOptions();
             this.model.destroy();
             if (prev) prev.setLimits();
             if (next) next.setLimits();
