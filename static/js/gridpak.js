@@ -153,11 +153,18 @@ $(function() {
          */
         setLimits: function(index) {
             var at = (typeof(index) != 'undefined') ? index : undefined,
+                cur = this.getRelativeTo(0, at),
                 prev = this.getRelativeTo(-1, at),
-                next = this.getRelativeTo(0, at),
+                next = false,
                 prev_limits_cache = {},
                 prev_limits = {},
                 this_limits = { lower: 0, upper: false };
+
+            if (typeof(cur) == 'undefined' || cur.cid != this.cid) {
+                next = cur;
+            } else {
+                next = this.getRelativeTo(1, at);
+            }
 
             // If there's a next model
             if (next) {
@@ -262,8 +269,28 @@ $(function() {
         },
 
         clear: function() {
+            var prev = this.model.getRelativeTo(-1),
+                next = this.model.getRelativeTo(1),
+                width = $('#new_min_width').val();
+
+            // Figure out which grid we'll now set as current
+            if (this.model.get('current') == true) {
+                if (prev) {
+                    prev.set({ current: true });
+                    this.model.collection.current = prev;
+                } else if (next) {
+                    next.set({ current: true });
+                    this.model.collection.current = next;
+                } else {
+                    this.model.collection.current = false;
+                }
+            }
+
+            // Stuff will have changed
+            this.model.collection.current.updateWidth(width);
             this.model.destroy();
-            Grids.determineUpperLowers();
+            if (prev) prev.setLimits();
+            if (next) next.setLimits();
         }
 
     });
