@@ -213,6 +213,9 @@ $(function() {
         var grid = new Grid(grid);
         grid.collection = this;
         if(grid.setLimits(this.sortedIndex(grid, this.comparator))) {
+            // Reset the current grid
+            if (that.current) that.current.set({ current: false });
+            that.current = grid;
             Backbone.Collection.prototype.add.call(that, grid);
         }
     };
