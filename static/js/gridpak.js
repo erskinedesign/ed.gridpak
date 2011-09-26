@@ -41,6 +41,12 @@ $(function() {
             current: true
         },
 
+        limits: {
+            max_cols: 99,
+            allowed_types: ['px', '%'],
+            min_grid_width: 200
+        },
+
         /**
          * Validate the model
          *
@@ -51,11 +57,7 @@ $(function() {
          */
         validate: function(attrs) {
 
-            var settings = {
-                max_cols: 99,
-                allowed_types: ['px', '%'],
-                min_grid_width: 200
-            };
+            var settings = this.limits;
 
             // I got 99 cols but a bitch ain't one
             if (attrs.col_num > settings.max_cols || attrs.col_num < 1) {
