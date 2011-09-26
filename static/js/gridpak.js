@@ -59,7 +59,7 @@ $(function() {
 
             // I got 99 cols but a bitch ain't one
             if (attrs.col_num > settings.max_cols || attrs.col_num < 1) {
-                return 'Must be betwee 1 and ' + settings.max_cols + ' cols';
+                return 'Must be between 1 and ' + settings.max_cols + ' cols';
             }
 
             // Int params must be integers
@@ -248,6 +248,7 @@ $(function() {
         initialize: function() {
             this.model.bind('change', this.render, this);
             this.model.bind('destroy', this.remove, this);
+            this.model.bind('error', this.errorHandler);
         },
 
         events: {
@@ -273,6 +274,11 @@ $(function() {
                 next = this.model.getRelativeTo(1),
                 width = $('#new_min_width').val();
 
+            if (this.model.collection.length == 1) {
+                this.errorHandler(this.model, 'You must have at least one grid');
+                return false;
+            }
+
             // Figure out which grid we'll now set as current
             if (this.model.get('current') == true) {
                 if (prev) {
@@ -292,6 +298,10 @@ $(function() {
             this.model.destroy();
             if (prev) prev.setLimits();
             if (next) next.setLimits();
+        },
+
+        errorHandler: function() {
+            alert(arguments[1]);
         }
 
     });
