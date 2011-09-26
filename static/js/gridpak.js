@@ -57,11 +57,9 @@ $(function() {
          */
         validate: function(attrs) {
 
-            var settings = this.limits;
-
             // I got 99 cols but a bitch ain't one
-            if (attrs.col_num > settings.max_cols || attrs.col_num < 1) {
-                return 'Must be betwee 1 and ' + settings.max_cols + ' cols';
+            if (attrs.col_num > this.limits.max_cols || attrs.col_num < 1) {
+                return 'Must be betwee 1 and ' + this.limits.max_cols + ' cols';
             }
 
             // Int params must be integers
@@ -77,8 +75,8 @@ $(function() {
 
             // px or % params
             if (
-                typeof(attrs.col_padding_type) != 'undefined' && _.indexOf(settings.allowed_types, attrs.col_padding_type) || 
-                typeof(attrs.gutter_type) != 'undefined' && _.indexOf(settings.allowed_types, attrs.gutter_type)
+                typeof(attrs.col_padding_type) != 'undefined' && _.indexOf(this.limits.allowed_types, attrs.col_padding_type) || 
+                typeof(attrs.gutter_type) != 'undefined' && _.indexOf(this.limits.allowed_types, attrs.gutter_type)
             ) {
                 return 'Wrong type of padding / gutter';
             }
@@ -86,9 +84,9 @@ $(function() {
             // Has to have a minimum grid width
             if (
                 (attrs.upper && attrs.lower) &&
-                (attrs.upper - attrs.lower) < settings.min_grid_width
+                (attrs.upper - attrs.lower) < this.limits.min_grid_width
             ) {
-                return 'Grid must be a minium width of ' + settings.min_grid_width + 'px';
+                return 'Grid must be a minium width of ' + this.limits.min_grid_width + 'px';
             }
 
         },
@@ -155,28 +153,34 @@ $(function() {
          */
         setLimits: function(index) {
             var at = (typeof(index) != 'undefined') ? index : undefined,
-                atat = this.collection.at(at),
-                is_new = (typeof(atat) == 'undefined' || atat.cid != this.cid) ? true : false,
                 prev = this.getRelativeTo(-1, at),
-                next = (is_new) ? this.getRelativeTo(0, at) : this.getRelativeTo(1, at),
-                limits = { lower: 0, upper: false };
+                next = this.getRelativeTo(0, at),
+                prev_limits_cache = {},
+                prev_limits = {},
+                this_limits = { lower: 0, upper: false };
 
-            // Work out the limits of the grid
-            if (prev) {
-                limits.lower = this.get('min_width');
-            }
-
-            // If there's a grid above us
+            // If there's a next model
             if (next) {
-                limits.upper = next.get('min_width');
-            // If not, we need to update the previous grids upper
-            } else if (prev) {
-                prev.set({ upper: this.get('min_width') });
+                this_limits.upper = next.get('lower');
             }
 
-            // Now set the limits of this model
-            this.set(limits);
+            // If there's a previous model to update
+            if (prev) {
+                prev_limits_cache.lower = prev.get('lower');
+                prev_limits_cache.upper = prev.get('upper');
+                prev_limits.upper = parseInt(this.get('min_width'));
+                prev_limits.lower = parseInt(prev.get('lower'));
+                this_limits.lower = parseInt(this.get('min_width'));
+                if (!prev.set(prev_limits)) return false;
+            }
 
+            // If the new model failed validation, reset prev and return false
+            if (!this.set(this_limits)) {
+                if (prev) prev.set(prev_limits_cache);
+                return false;
+            }
+
+            return true;
         },
 
     });
@@ -206,29 +210,18 @@ $(function() {
         var that = this;
 
         // Loop the array if it is one
-        if (_.isArray(grid)) {
-            _.each(grid, function(attrs) {
-                var grid = new Grid(attrs);
-                grid.collection = that;
-                if(grid.setLimits(that.sortedIndex(grid, that.comparator))) {
-                    Backbone.Collection.prototype.add.call(that, grid);
-                }
-            });
-        // Single model
-        } else {
-            var grid = new Grid(grid);
-            grid.collection = this;
-            if(grid.setLimits(this.sortedIndex(grid, this.comparator))) {
-                Backbone.Collection.prototype.add.call(that, grid);
-            }
+        var grid = new Grid(grid);
+        grid.collection = this;
+        if(grid.setLimits(this.sortedIndex(grid, this.comparator))) {
+            Backbone.Collection.prototype.add.call(that, grid);
         }
     };
 
-    window.Grids = new GridList([
-        { min_width: 100, col_num: 4, col_padding_width: 5, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22, current: false },
-        { min_width: 500, col_num: 8, col_padding_width: 5, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22, current: false },
-        { min_width: 960, col_num: 16, col_padding_width: 10, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22, current: true },
-    ]);
+    window.Grids = new GridList();
+    Grids.add(new Grid({ min_width: 100, col_num: 4, col_padding_width: 5, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22, current: false }));
+    Grids.add(new Grid({ min_width: 500, col_num: 8, col_padding_width: 5, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22, current: false }));
+    Grids.add(new Grid({ min_width: 960, col_num: 16, col_padding_width: 10, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22, current: true }));
+
     // Set the current grid as the last in the collection
     window.Grids.current = window.Grids.at(Grids.length - 1);
 
