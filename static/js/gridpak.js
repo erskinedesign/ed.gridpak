@@ -208,15 +208,17 @@ $(function() {
             _.each(grid, function(attrs) {
                 var grid = new Grid(attrs);
                 grid.collection = that;
-                grid.setLimits(that.sortedIndex(grid, that.comparator));
-                Backbone.Collection.prototype.add.call(that, grid);
+                if(grid.setLimits(that.sortedIndex(grid, that.comparator))) {
+                    Backbone.Collection.prototype.add.call(that, grid);
+                }
             });
         // Single model
         } else {
             var grid = new Grid(grid);
             grid.collection = this;
-            grid.setLimits(this.sortedIndex(grid, this.comparator));
-            Backbone.Collection.prototype.add.call(that, grid);
+            if(grid.setLimits(this.sortedIndex(grid, this.comparator))) {
+                Backbone.Collection.prototype.add.call(that, grid);
+            }
         }
     };
 
