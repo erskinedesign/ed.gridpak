@@ -153,8 +153,10 @@ $(function() {
          */
         setLimits: function(index) {
             var at = (typeof(index) != 'undefined') ? index : undefined,
+                atat = this.collection.at(at),
+                is_new = (typeof(atat) == 'undefined' || atat.cid != this.cid) ? true : false,
                 prev = this.getRelativeTo(-1, at),
-                next = this.getRelativeTo(0, at),
+                next = (is_new) ? this.getRelativeTo(0, at) : this.getRelativeTo(1, at),
                 limits = { lower: 0, upper: false };
 
             // Work out the limits of the grid
