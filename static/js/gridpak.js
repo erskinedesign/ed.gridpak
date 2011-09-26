@@ -41,12 +41,6 @@ $(function() {
             current: true
         },
 
-        limits: {
-            max_cols: 99,
-            allowed_types: ['px', '%'],
-            min_grid_width: 200
-        },
-
         /**
          * Validate the model
          *
@@ -57,9 +51,15 @@ $(function() {
          */
         validate: function(attrs) {
 
+            var settings = {
+                max_cols: 99,
+                allowed_types: ['px', '%'],
+                min_grid_width: 200
+            };
+
             // I got 99 cols but a bitch ain't one
-            if (attrs.col_num > this.limits.max_cols || attrs.col_num < 1) {
-                return 'Must be betwee 1 and ' + this.limits.max_cols + ' cols';
+            if (attrs.col_num > settings.max_cols || attrs.col_num < 1) {
+                return 'Must be betwee 1 and ' + settings.max_cols + ' cols';
             }
 
             // Int params must be integers
@@ -75,8 +75,8 @@ $(function() {
 
             // px or % params
             if (
-                typeof(attrs.col_padding_type) != 'undefined' && _.indexOf(this.limits.allowed_types, attrs.col_padding_type) || 
-                typeof(attrs.gutter_type) != 'undefined' && _.indexOf(this.limits.allowed_types, attrs.gutter_type)
+                typeof(attrs.col_padding_type) != 'undefined' && _.indexOf(settings.allowed_types, attrs.col_padding_type) || 
+                typeof(attrs.gutter_type) != 'undefined' && _.indexOf(settings.allowed_types, attrs.gutter_type)
             ) {
                 return 'Wrong type of padding / gutter';
             }
@@ -84,9 +84,9 @@ $(function() {
             // Has to have a minimum grid width
             if (
                 (attrs.upper && attrs.lower) &&
-                (attrs.upper - attrs.lower) < this.limits.min_grid_width
+                (attrs.upper - attrs.lower) < settings.min_grid_width
             ) {
-                return 'Grid must be a minium width of ' + this.limits.min_grid_width + 'px';
+                return 'Grid must be a minium width of ' + settings.min_grid_width + 'px';
             }
 
         },
