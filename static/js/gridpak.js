@@ -36,7 +36,8 @@ $(function() {
             gutter_type: 'px',
             baseline_height: 22,
             col_width: 0,
-            position: 0,
+            lower: 0,
+            upper: 0,
             current: true
         },
 
@@ -141,26 +142,36 @@ $(function() {
          *
          * @return (object) grid
          */
-        getRelativeTo: function(direction) {
-            return this.collection.at(this.collection.indexOf(this) + direction);
+        getRelativeTo: function(direction, index) {
+            var at = (typeof(index) != 'undefined') ? index : this.collection.indexOf(this);
+            return this.collection.at(at + direction);
         },
 
         /**
          * Find the upper and lower limits
          *
          */
-        getLimits: function() {
-            var prev = this.getRelativeTo(-1),
-                next = this.getRelativeTo(1),
-                limits = { upper: 0, lower: 0 };
+        setLimits: function(index) {
+            var at = (typeof(index) != 'undefined') ? index : undefined,
+                prev = this.getRelativeTo(-1, at),
+                next = this.getRelativeTo(0, at),
+                limits = { lower: 0, upper: false };
 
             // Work out the limits of the grid
             if (prev) {
-                limts.lower = this.get('min_width');
+                limits.lower = this.get('min_width');
             }
+
+            // If there's a grid above us
             if (next) {
                 limits.upper = next.get('min_width');
+            // If not, we need to update the previous grids upper
+            } else if (prev) {
+                prev.set({ upper: this.get('min_width') });
             }
+
+            // Now set the limits of this model
+            this.set(limits);
 
         },
 
@@ -181,50 +192,6 @@ $(function() {
         comparator: function(grid)
         {
             return grid.get('min_width');
-        },
-
-        determineUpperLowers: function() {
-            var lower = 0,
-                upper = false,
-                i = 0
-                size = 0,
-                agrid = {};
-
-            // get an iterator from the size of the collection
-            i  = this.size() - 1;
-
-            // Work on the grids at the limits
-            // first the last
-            agrid = this.at(i);
-            upper = agrid.get('min_width');
-            agrid.set({ upper: false, lower: upper, position: i });
-
-            // then the first
-            agrid = this.at(0);
-            agrid.set({ lower: 0, position: 0 });
-
-            // Now if there is only one (the first is also the last)
-            if (i < 1) return;
-
-            // The first grids max is the seconds min width
-            bgrid = this.at(1);
-            agrid.set({ upper: bgrid.get('min_width'), position: 1 });
-
-            // Now if there are only 2
-            if (i < 2) return;
-
-            // We've done the last, so ditch that
-            i--;
-            // Now start top to bottom adding
-            for(i; i>0; i--)
-            {
-                agrid = this.at(i);
-                lower = agrid.get('min_width');
-                agrid.set({ lower: lower, upper: upper, position: i })
-                // the next upper will be this one's lower
-                upper = lower;
-            }
-
         }
 
     });
@@ -232,12 +199,23 @@ $(function() {
     // Use prototyping to add a check for the next and previous models
     // then assign the lower and upper limits accordingly
     GridList.prototype.add = function(grid) {
-        if (this.current) {
-            this.current.set({ current: false });
-            this.current = grid;
+        var that = this;
+
+        // Loop the array if it is one
+        if (_.isArray(grid)) {
+            _.each(grid, function(attrs) {
+                var grid = new Grid(attrs);
+                grid.collection = that;
+                grid.setLimits(that.sortedIndex(grid, that.comparator));
+                Backbone.Collection.prototype.add.call(that, grid);
+            });
+        // Single model
+        } else {
+            var grid = new Grid(grid);
+            grid.collection = this;
+            grid.setLimits(this.sortedIndex(grid, this.comparator));
+            Backbone.Collection.prototype.add.call(that, grid);
         }
-        Backbone.Collection.prototype.add.call(this, grid);
-        this.determineUpperLowers();
     };
 
     window.Grids = new GridList([
@@ -278,7 +256,6 @@ $(function() {
         },
 
         remove: function() {
-
             $(this.el).remove();
         },
 
@@ -342,8 +319,7 @@ $(function() {
         resize: function(e, ui) {
             var old_width = $('#new_min_width').val(),
                 current_width = Math.round(ui.size.width / this.snap) * this.snap,
-                current_id = Grids.current.get('position'),
-                new_id = false;
+                direction = false;
 
             // ensure we only fire every time we snap to a new width
             if (old_width == current_width) return false;
@@ -352,9 +328,9 @@ $(function() {
             if (current_width < Grids.current.get('lower') || (Grids.current.get('upper') !== false && current_width > Grids.current.get('upper')))
             {
                 // must now swap to the next view DOWN
-                new_id = (current_width < Grids.current.get('lower')) ? current_id - 1 : current_id + 1;
+                direction = (current_width < Grids.current.get('lower')) ? - 1 : + 1;
                 Grids.current.set({ current: false });
-                Grids.current = Grids.at(new_id);
+                Grids.current = Grids.current.getRelativeTo(direction);
                 Grids.current.set({ current: true });
                 App.refreshOptions();
                 return false;
