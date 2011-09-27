@@ -403,14 +403,14 @@ $(function() {
 
         fetchOptions: function() {
             return {
-                min_width: $('#new_min_width').val(),
-                col_num: $('#new_col_num').val(),
+                min_width: parseInt($('#new_min_width').val()),
+                col_num: parseInt($('#new_col_num').val()),
                 col_width: false,
-                col_padding_width: $('#new_col_padding_width').val(),
+                col_padding_width: parseInt($('#new_col_padding_width').val()),
                 col_padding_type: $('#new_col_padding_type').val(),
-                gutter_width: $('#new_gutter_width').val(),
+                gutter_width: parseInt($('#new_gutter_width').val()),
                 gutter_type: $('#new_gutter_type').val(),
-                baseline_height: $('#new_baseline_height').val()
+                baseline_height: parseInt($('#new_baseline_height').val())
             };
         },
 
@@ -443,7 +443,6 @@ $(function() {
         addOne: function(grid) {
             var view = new GridView({ model: grid });
             this.$('#grid_list').append(view.render().el);
-            Grids.dump();
         }
 
      });
