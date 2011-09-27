@@ -207,6 +207,13 @@ $(function() {
         comparator: function(grid)
         {
             return grid.get('min_width');
+        },
+
+        dump: function()
+        {
+            this.each(function(grid) {
+                console.log(grid.cid + ': ' + grid.get('min_width') + "   \t\t" + grid.get('lower') + ' to ' + grid.get('upper'));
+            });
         }
 
     });
@@ -441,6 +448,7 @@ $(function() {
         addOne: function(grid) {
             var view = new GridView({ model: grid });
             this.$('#grid_list').append(view.render().el);
+            Grids.dump();
         }
 
      });
