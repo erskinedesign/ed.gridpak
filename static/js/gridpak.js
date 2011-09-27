@@ -151,43 +151,40 @@ $(function() {
          * Find the upper and lower limits
          *
          */
-        setLimits: function(index) {
-            var at = (typeof(index) != 'undefined') ? index : undefined,
-                cur = this.getRelativeTo(0, at),
-                prev = this.getRelativeTo(-1, at),
-                next = false,
-                prev_limits_cache = {},
-                prev_limits = {},
-                this_limits = { lower: 0, upper: false };
+        setLimits: function() {
+            var new_limits = { lower: 0, upper: false },
+                old_limits = { lower: 0, upper: false },
+                old_limits_cache = { lower: 0, upper: false };
 
-            if (typeof(cur) == 'undefined' || cur.cid != this.cid) {
-                next = cur;
-            } else {
-                next = this.getRelativeTo(1, at);
+            if (this.collection.current === false) {
+                // There isn't a current grid, so it must the first time around
+                // so we'll have to use the previous grid
+                this.set(new_limits);
+                return true;
             }
 
-            // If there's a next model
-            if (next) {
-                this_limits.upper = next.get('lower');
-            }
+            // We set the new grid to the right of the old one every time
+            // so the new upper is the old upper and the new lower is the current width
+            new_limits.lower = this.get('min_width');
+            new_limits.upper = old_limits_cache.upper = this.collection.current.get('upper');
 
-            // If there's a previous model to update
-            if (prev) {
-                prev_limits_cache.lower = prev.get('lower');
-                prev_limits_cache.upper = prev.get('upper');
-                prev_limits.upper = parseInt(this.get('min_width'));
-                prev_limits.lower = parseInt(prev.get('lower'));
-                this_limits.lower = parseInt(this.get('min_width'));
-                if (!prev.set(prev_limits)) return false;
-            }
+            // The old lower is remains the same, we're just moving the upper to make room
+            // for the new grid
+            old_limits.lower = old_limits_cache.lower = this.collection.current.get('lower');
+            old_limits.upper = this.get('min_width');
 
-            // If the new model failed validation, reset prev and return false
-            if (!this.set(this_limits)) {
-                if (prev) prev.set(prev_limits_cache);
+            // First we'll set the old limits and fail if there's a problem
+            if (!this.collection.current.set(old_limits)) return false;
+
+            // Now set the new limits, restoring the old limits upon failure
+            if (!this.set(new_limits)) {
+                this.collection.current.set(old_limits_cache);
                 return false;
             }
 
+            // If we've made it here, all is well
             return true;
+
         },
 
     });
