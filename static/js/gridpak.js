@@ -287,32 +287,35 @@ $(function() {
         clear: function() {
             var prev = this.model.getRelativeTo(-1),
                 next = this.model.getRelativeTo(1),
-                width = $('#new_min_width').val();
+                width = $('#new_min_width').val(),
+                is_cur = this.model.get('current'),
+                options = {};
 
             if (this.model.collection.length == 1) {
                 this.errorHandler(this.model, 'You must have at least one grid');
                 return false;
             }
 
-            // Figure out which grid we'll now set as current
-            if (this.model.get('current') == true) {
-                if (prev) {
-                    prev.set({ current: true });
-                    this.model.collection.current = prev;
-                } else if (next) {
-                    next.set({ current: true });
-                    this.model.collection.current = next;
-                } else {
-                    this.model.collection.current = false;
-                }
+            if (next) {
+                options.lower = this.model.get('lower');
+                target = next;
+            } else if (prev) {
+                options.upper = this.model.get('upper');
+                target = prev;
             }
+
+            // If the one we're removing was the active one, set the current to the target
+            if (is_cur) {
+                this.model.collection.current = target;
+                options.current = true;
+            }
+
+            target.set(options);
 
             // Stuff will have changed
             this.model.collection.current.updateWidth(width);
             App.refreshOptions();
             this.model.destroy();
-            if (prev) prev.setLimits();
-            if (next) next.setLimits();
         },
 
         errorHandler: function() {
