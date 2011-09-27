@@ -211,9 +211,11 @@ $(function() {
 
         dump: function()
         {
+            var message = '';
             this.each(function(grid) {
-                console.log(grid.cid + ': ' + grid.get('min_width') + "   \t\t" + grid.get('lower') + ' to ' + grid.get('upper'));
+                message += grid.cid + ': ' + grid.get('min_width') + "   \t\t" + grid.get('lower') + ' to ' + grid.get('upper') + "\n";
             });
+            console.log(message);
         }
 
     });
