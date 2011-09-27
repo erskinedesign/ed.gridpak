@@ -235,9 +235,9 @@ $(function() {
     };
 
     window.Grids = new GridList();
-    Grids.add(new Grid({ min_width: 100, col_num: 4, col_padding_width: 5, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22, current: false }));
-    Grids.add(new Grid({ min_width: 500, col_num: 8, col_padding_width: 5, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22, current: false }));
-    Grids.add(new Grid({ min_width: 960, col_num: 16, col_padding_width: 10, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22, current: true }));
+    Grids.add(new Grid({ min_width: 100, col_num: 4, col_padding_width: 5, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
+    Grids.add(new Grid({ min_width: 500, col_num: 8, col_padding_width: 5, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
+    Grids.add(new Grid({ min_width: 960, col_num: 16, col_padding_width: 10, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
 
     // Set the current grid as the last in the collection
     window.Grids.current = window.Grids.at(Grids.length - 1);
@@ -402,6 +402,19 @@ $(function() {
             this.$('#grid_list').append(view.render().el);
         },
 
+        fetchOptions: function() {
+            return {
+                min_width: $('#new_min_width').val(),
+                col_num: $('#new_col_num').val(),
+                col_width: false,
+                col_padding_width: $('#new_col_padding_width').val(),
+                col_padding_type: $('#new_col_padding_type').val(),
+                gutter_width: $('#new_gutter_width').val(),
+                gutter_type: $('#new_gutter_type').val(),
+                baseline_height: $('#new_baseline_height').val()
+            };
+        },
+
         refreshOptions: function() {
             $('#new_min_width').val(Grids.current.get('min_width'));
             $('#new_col_num').val(Grids.current.get('col_num'));
@@ -413,36 +426,19 @@ $(function() {
         },
 
         updateOptions: function() {
-            Grids.current.set({
-                min_width: $('#new_min_width').val(),
-                col_num: $('#new_col_num').val(),
-                col_width: false,
-                col_padding_width: $('#new_col_padding_width').val(),
-                col_padding_type: $('#new_col_padding_type').val(),
-                gutter_width: $('#new_gutter_width').val(),
-                gutter_type: $('#new_gutter_type').val(),
-                baseline_height: $('#new_baseline_height').val()
-            });
+            Grids.current.set(this.fetchOptions());
             this.updateWidth(this.$browser.width());
         },
 
         createGrid: function(e) {
 
-            var new_grid = new Grid({
-                min_width: $('#new_min_width').val(),
-                col_num: $('#new_col_num').val(),
-                col_width: false,
-                col_padding_width: $('#new_col_padding_width').val(),
-                col_padding_type: $('#new_col_padding_type').val(),
-                gutter_width: $('#new_gutter_width').val(),
-                gutter_type: $('#new_gutter_type').val(),
-                baseline_height: $('#new_baseline_height').val(),
-                lower: 0,
-                upper: 0,
-                current: true
-            });
+            var options = _.extend(
+                    this.fetchOptions(),
+                    { upper: 0, lower: 0, current: true }
+                ),
+                grid = new Grid(options);
 
-            Grids.add(new_grid);
+            Grids.add(grid);
         },
 
         addOne: function(grid) {
