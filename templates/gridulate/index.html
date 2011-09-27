@@ -59,7 +59,7 @@
 
                         <div class="dragme ui-resizable-handle ui-resizable-e">Drag me</div>
                         <div class="hidden">
-                            <input id="new_min_width" type="hidden" />
+                            <input id="new_min_width" type="text" disabled="disabled" />
                         </div>
                         <div>
                             <label for="new_col_num">No. of columns</label>
@@ -124,7 +124,7 @@
             <div class="cols">
                 <% var i=0; for(i; i<col_num; i++) { %>
                     <div class="col" style="<% if (col_width) { %>width:<%= col_width %>px; <% } %><% if ((i + 1) < col_num) { %>margin:0 <%= gutter_width + gutter_type %> 0 0; <% } %>padding:0 <%= col_padding_width + col_padding_type %>;">
-                        <div class="visible"></div>
+                        <div class="visible"><span class="width"><%= col_width %>px</span></div>
                     </div><!-- // .col -->
                 <% } %>
             </div><!-- // .cols -->
