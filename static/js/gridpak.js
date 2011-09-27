@@ -138,12 +138,21 @@ $(function() {
         },
 
         /**
+         * Get the model's position in the collection
+         *
+         * @return (int) index
+         */
+        getPosition: function() {
+            return this.collection.indexOf(this);
+        },
+
+        /**
          * Get the model in the collection x steps away up (+) or down (-)
          *
          * @return (object) grid
          */
         getRelativeTo: function(direction, index) {
-            var at = (typeof(index) != 'undefined') ? index : this.collection.indexOf(this);
+            var at = (typeof(index) != 'undefined') ? index : this.getPosition();
             return this.collection.at(at + direction);
         },
 
