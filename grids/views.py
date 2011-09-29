@@ -12,7 +12,7 @@ from StringIO import StringIO
 from zipfile import ZipFile
 
 def index(request):
-    return render_to_response('gridulate/index.html', {
+    return render_to_response('grids/index.html', {
     }, context_instance=RequestContext(request))
 
 def download(request):
