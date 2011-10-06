@@ -311,6 +311,9 @@ footer label {
     border-radius: 4px;
     margin-top: -18px;
 }
+#grid_list .cur .tab .actions {
+    background-color:rgb(52,52,52);
+}
 #grid_list .tab .actions li {
     display:inline;
     margin-right:7px;
