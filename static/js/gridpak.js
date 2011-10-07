@@ -54,13 +54,9 @@ $(function() {
             var settings = {
                 max_cols: 99,
                 allowed_types: ['px', '%'],
-                min_grid_width: 200
+                min_grid_width: 200,
+                min_min_width: 320,
             };
-
-            // I got 99 cols but a bitch ain't one
-            if (attrs.col_num > settings.max_cols || attrs.col_num < 1) {
-                return 'Must be between 1 and ' + settings.max_cols + ' cols';
-            }
 
             // Int params must be integers
             if (
@@ -71,6 +67,16 @@ $(function() {
                 (typeof(attrs.baseline_height) != 'undefined' && !this.isInt(attrs.baseline_height))
             ) {
                 return 'Use integers for integers';
+            }
+
+            // I got 99 cols but a bitch ain't one
+            if (attrs.col_num > settings.max_cols || attrs.col_num < 1) {
+                return 'Must be between 1 and ' + settings.max_cols + ' cols';
+            }
+
+            // Make sure it's bigger than the minimum the browser can be resized to
+            if (attrs.min_width < settings.min_min_width) {
+                return 'The smallest min_width you can have is ' + settings.min_width + '.';
             }
 
             // px or % params
