@@ -5,8 +5,7 @@
  * @credit Erskine Design
  *
  {grids:loop}* {{ count }}. min-width: {{ min_width }}px
- {/grids:loop}
- *
+ {/grids:loop}*
  */
 
 {grids:loop}
