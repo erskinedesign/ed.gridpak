@@ -149,6 +149,8 @@ $(function() {
         /**
          * Get the model in the collection x steps away up (+) or down (-)
          *
+         * @param (int) direction
+         * @param (int) index
          * @return (object) grid
          */
         getRelativeTo: function(direction, index) {
@@ -159,6 +161,7 @@ $(function() {
         /**
          * Find the upper and lower limits
          *
+         * @return (boolean)
          */
         setLimits: function() {
             var new_limits = { lower: 0, upper: false },
@@ -450,6 +453,7 @@ $(function() {
                 grid = new Grid(options);
 
             Grids.add(grid);
+            this.updateWidth(this.$browser.width());
         },
 
         addOne: function(grid) {
