@@ -154,6 +154,7 @@ input[type="submit"] {
 
 #gridpak {
     border-top:1px dashed rgb(218,218,218);
+    border-bottom:1px dashed rgb(218,218,218);
     height:388px;
 }
 
@@ -306,12 +307,24 @@ footer label {
 	position:absolute;
 	top:0;
 	border-right:1px dashed rgb(218,218,218);
-	border-bottom:1px solid rgb(218,218,218);
-	height:413px;
+	height:388px;
 }
-#grid_list .cur .tab {
-	border-bottom-color:rgb(52,52,52);	
+/* Arrows */
+#grid_list .tab:before {
+	content:" ";
+	display:block;
+	width:100%;
+	height:13px;
+	bottom:-33px;
+	position:absolute;
+	z-index:-1;
+	background:url(../images/site/grid_tab_arrows.png) no-repeat 0 0, url(../images/site/grid_tab_arrows.png) no-repeat 100% -26px, url(../images/site/grid_tab_arrows.png) repeat-x 0 -13px;
+	opacity:0.3;
 }
+#grid_list .cur .tab:before {
+	opacity:1.0;
+}
+
 #grid_list .tab .actions {
 	display:inline-block;
 	position:relative;
