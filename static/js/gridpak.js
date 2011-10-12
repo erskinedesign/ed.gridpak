@@ -375,8 +375,8 @@ $(function() {
                 that.addGrid(grid);
             });
 
-            // Bind this.addOne every time a new model is added to the collection
-            Grids.bind('add', this.addOne, this);
+            // Bind this.addGrid every time a new model is added to the collection
+            Grids.bind('add', this.addGrid, this);
 
             // Update the width of the current model
             this.updateWidth(width);
@@ -460,11 +460,6 @@ $(function() {
 
             Grids.add(grid);
             this.updateWidth(this.$browser.width());
-        },
-
-        addOne: function(grid) {
-            var view = new GridView({ model: grid });
-            this.$('#grid_list').append(view.render().el);
         }
 
      });
