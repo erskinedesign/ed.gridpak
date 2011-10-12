@@ -278,8 +278,12 @@ footer label {
 }
 #grid_list .cols {
 	height:100%;
-    width:100%;
+    width:120%;
+    display:none;
 	overflow:hidden;
+}
+#grid_list .cur .cols {
+    display:block;
 }
 #grid_list .col {
 	width:10px;
