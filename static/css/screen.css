@@ -305,18 +305,18 @@ footer label {
 #grid_list .tab .actions {
 	display:inline-block;
 	background-color:rgb(200,200,200);
-	padding:3px 7px 2px 7px;
-	-moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
+	padding:3px 5px 2px 7px;
+	-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
     margin-top: -18px;
 }
 #grid_list .tab .actions li {
     display:inline;
-    margin-right:7px;
+    margin-right:5px;
 }
 #grid_list .tab .actions a {
-    color:#fff;
+    color:#666666;
     text-decoration:none;
 }
 #grid_list .tab .actions a.remove {
