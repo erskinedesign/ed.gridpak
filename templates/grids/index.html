@@ -26,26 +26,27 @@
     </head>
     
     <body class="{% block body_class %}{% endblock %}">
-
-        <header>
-            <h1 id="branding">
-                <a href="http://www.twitter.com/gridpack">@Gridpak</a>
-            </h1> <!-- // #branding -->
-            <p class="about">
-            Gridpak allows you to set and export a fluid or adaptive grid at various layouts into one neat little package containing a CSS file with the appropriate media queries and grid, PNGs to use in your graphics program and a Javascript file that allows you to toggle the grid on and off in any browser.<br /> <a href="">&rarr; Watch the video</a> <a href="">&rarr; Read the article</a>
-            </p>
-            <p class="feedback">
-            We’re always looking to improve Gridpak so if you have any feedback or bugs please submit them through our <br /><a href="http://www.twitter.com/gridpak">&rarr; Twitter account</a>
-            </p> 
-            <ul>
-                <li><time>14/08/11</time> - Added Baseline functionality</li>
-                <li><time>12/08/11</time> - Bug fix</li>
-                <li><time>11/07/11</time> - Added Column padding</li>
-                <li><time>10/07/11</time> - Fixed Safari bug</li>
-                <li><time>08/08/11</time> - Added Margins</li>
-                <li><time>03/07/11</time> - Added Column padding</li>
-            </ul>
-        </header>
+		<div class="header_wrapper">
+        	<header>
+	            <h1 id="branding">
+	                <a href="">Gridpak</a>
+					<span>BETA</span>
+					<small><a href="http://www.erskinedesign.com">Created by Erskine</a></small>
+	            </h1> <!-- // #branding -->
+	            <p class="about">
+	            Create and export a <em>responive grid</em> into <em>a single zip file</em> containing a <em>CSS</em> file with the specified <em>media queries</em> and <em>responive CSS grid</em>, <em>PNGs</em> to use in your graphics program and a Javascript snippet that allows you to <em>toggle</em> the grid in <em>any browser</em>. 
+				<a class="button video" href="">Watch the demo</a>
+				<a class="button article" href="">Read the article</a>
+	            </p>
+			
+				<ul>
+					<li><img src="{{ STATIC_URL }}images/site/icons/png.png"> Use the PNG versions of your grids for smart and acurate wireframing and designs. </li>
+					<li><img src="{{ STATIC_URL }}images/site/icons/css.png">Speed up your builds with the responive CSS grid and pre-defined media queries. </li>
+					<li><img src="{{ STATIC_URL }}images/site/icons/keys.png">Toggle your entire grid, the baseline or just the vertical grid on & off in any browser. </li>
+					<li><img src="{{ STATIC_URL }}images/site/icons/responsive.png">Build pixel perfect responsive websites that look beautiful in any device.  </li>
+				</ul>
+	        </header>
+		</div>
 
         <div id="content_wrapper">
 
@@ -93,27 +94,28 @@
                     </div><!-- // #create_grid -->
 
                 </div><!-- // #browser -->
-
+				 <form method="post" action="{% url download %}">
+		                <label for="css_checkbox">
+		                    <input type="checkbox" name="css" id="css_checkbox"/>
+		                    CSS
+		                </label>
+		                <label for="png_checkbox">
+		                    <input type="checkbox" name="pngs" id="png_checkbox"/>
+		                    PNGs
+		                </label>
+		                <label for="javascript_checkbox">
+		                    <input type="checkbox" name="javascript" id="javascript_checkbox"/>
+		                    Javascript
+		                </label>
+		                <textarea id="stringified" name="grids" cols="80" rows="10"></textarea>
+		                <input type="submit" value="Download your package"><span></span></input>
+		            </form>
             </div><!-- // #gridpak -->
 
         <footer>
-            <form method="post" action="{% url grids_download %}">
-                <label for="css_checkbox">
-                    <input type="checkbox" name="css" id="css_checkbox"/>
-                    CSS
-                </label>
-                <label for="png_checkbox">
-                    <input type="checkbox" name="pngs" id="png_checkbox"/>
-                    PNGs
-                </label>
-                <label for="javascript_checkbox">
-                    <input type="checkbox" name="javascript" id="javascript_checkbox"/>
-                    Javascript
-                </label>
-                <textarea id="stringified" name="grids" cols="80" rows="10"></textarea>
-                <input type="submit" value="Download your package"><span></span></input>
-            </form>
-            <p>Created at <a href="">Erskine</a> by <a href="http://twitter.com/philswan">Phil Swan</a>, <a href="http://twitter.com/linssen">Wil Linssen</a> &amp; <a href="http://twitter.com/samquayle">Sam Quayle</a></p>
+            <p>Copyright 2011 <a href="">Erskine Design Limited</a>
+			Licensed under the Apache License, Version 2.0</p>
+			<p class="follow">For all updates please <a href="">follow @gridpak</a></p>
         </footer>
 
     </div><!-- // #content_wrapper -->
@@ -144,6 +146,8 @@
     <script src="{{ STATIC_URL }}js/backbone.js"></script>
     <script src="{{ STATIC_URL }}js/gridpak.js"></script>
     <script src="{{ STATIC_URL }}js/grid.js"></script>
+	<script type="text/javascript" src="http://use.typekit.com/pua6dog.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 <!--[if IE 6]>
 <script src="{{ STATIC_URL }}js/ie6/DD_belatedPNG_0.0.8a.js"></script>
