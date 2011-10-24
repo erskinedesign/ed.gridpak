@@ -54,13 +54,9 @@ $(function() {
             var settings = {
                 max_cols: 99,
                 allowed_types: ['px', '%'],
-                min_grid_width: 200
+                min_grid_width: 200,
+                min_min_width: 320,
             };
-
-            // I got 99 cols but a bitch ain't one
-            if (attrs.col_num > settings.max_cols || attrs.col_num < 1) {
-                return 'Must be between 1 and ' + settings.max_cols + ' cols';
-            }
 
             // Int params must be integers
             if (
@@ -71,6 +67,16 @@ $(function() {
                 (typeof(attrs.baseline_height) != 'undefined' && !this.isInt(attrs.baseline_height))
             ) {
                 return 'Use integers for integers';
+            }
+
+            // I got 99 cols but a bitch ain't one
+            if (attrs.col_num > settings.max_cols || attrs.col_num < 1) {
+                return 'Must be between 1 and ' + settings.max_cols + ' cols';
+            }
+
+            // Make sure it's bigger than the minimum the browser can be resized to
+            if (attrs.min_width < settings.min_min_width) {
+                return 'The smallest min_width you can have is ' + settings.min_width + '.';
             }
 
             // px or % params
@@ -149,6 +155,8 @@ $(function() {
         /**
          * Get the model in the collection x steps away up (+) or down (-)
          *
+         * @param (int) direction
+         * @param (int) index
          * @return (object) grid
          */
         getRelativeTo: function(direction, index) {
@@ -159,6 +167,7 @@ $(function() {
         /**
          * Find the upper and lower limits
          *
+         * @return (boolean)
          */
         setLimits: function() {
             var new_limits = { lower: 0, upper: false },
@@ -219,7 +228,7 @@ $(function() {
         {
             var message = '';
             this.each(function(grid) {
-                message += grid.cid + ': ' + grid.get('min_width') + "   \t\t" + grid.get('lower') + ' to ' + grid.get('upper') + "\n";
+                message += grid.cid + ': min_width(' + grid.get('min_width') + ")   \t\t" + grid.get('lower') + ' to ' + grid.get('upper') + "\n";
             });
             console.log(message);
         }
@@ -240,10 +249,11 @@ $(function() {
             that.current = grid;
             Backbone.Collection.prototype.add.call(that, grid);
         }
+        // this.dump();
     };
 
     window.Grids = new GridList();
-    Grids.add(new Grid({ min_width: 100, col_num: 4, col_padding_width: 5, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
+    Grids.add(new Grid({ min_width: 0, col_num: 4, col_padding_width: 5, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
     Grids.add(new Grid({ min_width: 500, col_num: 8, col_padding_width: 5, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
     Grids.add(new Grid({ min_width: 960, col_num: 16, col_padding_width: 10, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
 
@@ -316,6 +326,7 @@ $(function() {
             this.model.collection.current.updateWidth(width);
             App.refreshOptions();
             this.model.destroy();
+            // Grids.dump();
         },
 
         errorHandler: function() {
@@ -366,8 +377,8 @@ $(function() {
                 that.addGrid(grid);
             });
 
-            // Bind this.addOne every time a new model is added to the collection
-            Grids.bind('add', this.addOne, this);
+            // Bind this.addGrid every time a new model is added to the collection
+            Grids.bind('add', this.addGrid, this);
 
             // Update the width of the current model
             this.updateWidth(width);
@@ -450,11 +461,7 @@ $(function() {
                 grid = new Grid(options);
 
             Grids.add(grid);
-        },
-
-        addOne: function(grid) {
-            var view = new GridView({ model: grid });
-            this.$('#grid_list').append(view.render().el);
+            this.updateWidth(this.$browser.width());
         }
 
      });
