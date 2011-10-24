@@ -228,7 +228,7 @@ $(function() {
         {
             var message = '';
             this.each(function(grid) {
-                message += grid.cid + ': ' + grid.get('min_width') + "   \t\t" + grid.get('lower') + ' to ' + grid.get('upper') + "\n";
+                message += grid.cid + ': min_width(' + grid.get('min_width') + ")   \t\t" + grid.get('lower') + ' to ' + grid.get('upper') + "\n";
             });
             console.log(message);
         }
@@ -249,10 +249,11 @@ $(function() {
             that.current = grid;
             Backbone.Collection.prototype.add.call(that, grid);
         }
+        // this.dump();
     };
 
     window.Grids = new GridList();
-    Grids.add(new Grid({ min_width: 100, col_num: 4, col_padding_width: 5, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
+    Grids.add(new Grid({ min_width: 0, col_num: 4, col_padding_width: 5, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
     Grids.add(new Grid({ min_width: 500, col_num: 8, col_padding_width: 5, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
     Grids.add(new Grid({ min_width: 960, col_num: 16, col_padding_width: 10, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
 
@@ -325,6 +326,7 @@ $(function() {
             this.model.collection.current.updateWidth(width);
             App.refreshOptions();
             this.model.destroy();
+            // Grids.dump();
         },
 
         errorHandler: function() {
