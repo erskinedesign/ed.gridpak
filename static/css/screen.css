@@ -3,8 +3,8 @@
 @import url(reset.css);
 
 body {
-	font: normal 400 0.813em/1.54  Arial, sans-serif;
-	color: rgba(0,0,0,0.85);
+	font: normal 400 0.813em/1.54  ff-meta-web-pro, sans-serif;
+	color: rgba(0,0,0,0.80);
 	margin: 50px;
 	padding-top: 5px;
 }
@@ -13,9 +13,9 @@ body {
 
 #branding a {
 	text-decoration: none;
-	color: rgba(0,0,0,0.85);
+	color: rgba(0,0,0,1);
 	font-weight: 700;
-	font-size: 1.077em;
+	font-size: 21px;
 	 -webkit-transition: color 0.2s ease-out;
    -moz-transition: color 0.2s ease-out;
    -ms-transition: color 0.2s ease-out;
@@ -34,7 +34,7 @@ header p a {
 	text-decoration: none; 
 	color: #1E1E1E;
 	display: inline-block;
-	line-height: 1.25;
+	line-height: 18px;
 }
 
 header p a:hover {
