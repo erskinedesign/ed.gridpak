@@ -282,6 +282,16 @@ input {
 	font-weight: 500;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    
+    background-color: #000;
+    border: 1px solid #fff;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+/* My Comment */
 
 input[type="submit"] {
 	font-family: ff-meta-web-pro, sans-serif;
