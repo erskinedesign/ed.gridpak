@@ -130,7 +130,7 @@
                     </div><!-- // .col -->
                 <% } %>
             </div><!-- // .cols -->
-            <div class="tab" style="left:<%= lower %>px; width:<%= (!upper) ? $('#gridpak').width() - lower : upper-lower %>px;">
+            <div class="tab" style="left:<%= lower %>px; width:<%= (!upper) ? $('body').width() - lower : upper-lower %>px;">
                 <ul class="actions">
                     <li><a href="#" class="link"><%= lower %> - <%= (!upper) ? '&#8734;' : upper %></a></li>
                     <li><a href="#" class="remove">remove</a></li>

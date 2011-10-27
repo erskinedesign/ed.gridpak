@@ -1,25 +1,26 @@
 /*!
- * Gridpak
+ * Gridpak v0.1b
+ * http://gridpak.com/
  *
- *
- * @author Erskine Design [Wil Linssen]
+ * Copyright 2011, Erskine Design
+ * Author: Erskine Design [Wil Linssen]
  */
 $(function() {
 
     /**
      * Grid model
      *
-     * @attribute (int) min_width
-     * @attribute (int) col_num
-     * @attribute (int) col_padding_width
-     * @attribute (string) col_padding_type
-     * @attribute (int) gutter_width
-     * @attribute (string) gutter_type
-     * @attribute (int) baseline_height
-     * @attribute (int) current_width DO WE NEED THIS??
-     * @attribute (int) lower
-     * @attribute (int) upper
-     * @attribute (boolean) current
+     * @attribute integer min_width
+     * @attribute integer col_num
+     * @attribute integer col_padding_width
+     * @attribute string col_padding_type
+     * @attribute integer gutter_width
+     * @attribute string gutter_type
+     * @attribute integer baseline_height
+     * @attribute integer current_width DO WE NEED THIS??
+     * @attribute integer lower
+     * @attribute integer upper
+     * @attribute boolean current
      */
     window.Grid = Backbone.Model.extend({
 
@@ -46,8 +47,8 @@ $(function() {
          *
          * Backbone method
          *
-         * @param (object) attrs
-         * @return (string) error
+         * @param object attrs
+         * @return string error
          */
         validate: function(attrs) {
 
@@ -100,7 +101,7 @@ $(function() {
         /**
          * Validate var is integer
          *
-         * @param (string) x
+         * @param string x
          * @return boolean
          */
         isInt: function(x) {
@@ -146,7 +147,7 @@ $(function() {
         /**
          * Get the model's position in the collection
          *
-         * @return (int) index
+         * @return integer index
          */
         getPosition: function() {
             return this.collection.indexOf(this);
@@ -155,9 +156,9 @@ $(function() {
         /**
          * Get the model in the collection x steps away up (+) or down (-)
          *
-         * @param (int) direction
-         * @param (int) index
-         * @return (object) grid
+         * @param integer direction
+         * @param integer index
+         * @return Grid grid
          */
         getRelativeTo: function(direction, index) {
             var at = (typeof(index) != 'undefined') ? index : this.getPosition();
@@ -167,7 +168,7 @@ $(function() {
         /**
          * Find the upper and lower limits
          *
-         * @return (boolean)
+         * @return boolean
          */
         setLimits: function() {
             var new_limits = { lower: 0, upper: false },
@@ -308,6 +309,7 @@ $(function() {
 
             if (next) {
                 options.lower = this.model.get('lower');
+                options.min_width = options.lower;
                 target = next;
             } else if (prev) {
                 options.upper = this.model.get('upper');
@@ -419,6 +421,9 @@ $(function() {
 
         },
 
+        /**
+         * Bound to Grids collection 'add' method
+         */
         addGrid: function(grid) {
             var view = new GridView({ model: grid });
             this.$('#grid_list').append(view.render().el);
