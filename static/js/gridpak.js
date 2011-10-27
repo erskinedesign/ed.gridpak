@@ -309,6 +309,7 @@ $(function() {
 
             if (next) {
                 options.lower = this.model.get('lower');
+                options.min_width = options.lower;
                 target = next;
             } else if (prev) {
                 options.upper = this.model.get('upper');
