@@ -420,6 +420,9 @@ $(function() {
 
         },
 
+        /**
+         * Bound to Grids collection 'add' method
+         */
         addGrid: function(grid) {
             var view = new GridView({ model: grid });
             this.$('#grid_list').append(view.render().el);
