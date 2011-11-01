@@ -97,17 +97,18 @@ header ul {
 	width:  456px;
 	float:  left;
 	overflow: hidden;
+	margin-top: -2px;
 }
 
 header li {
 	width:  222px;
 	float: left;
-	margin-bottom: 13px;
+	margin: 2px 0 13px 0;
 	font-size: 12px;
 	line-height: 15px;
 }
 
-header li:nth-child(odd) {
+header li:nth-child(even) {
 	margin-right: 12px;
 }
 
@@ -255,7 +256,8 @@ footer input[type="checkbox"] {
 	font-size: 13px;
 	border: none;
 	padding: 7px 28px 7px 12px;
-    margin-top: 0px;
+	margin-top: 10px;
+	float: left;
    -moz-border-radius: 3px;
    -webkit-border-radius: 3px;
     border-radius: 3px;      
@@ -268,9 +270,9 @@ footer input[type="checkbox"] {
     background-image: url(../images/site/icons/tick.png);
 	background-position:109px 9px;
 	background-repeat: no-repeat;
-	margin-top: 10px;
 	font-family: ff-meta-web-pro, sans-serif;
 	color: #333333;
+	text-decoration: none;
 }
 
 #save_grid:hover {
@@ -366,7 +368,6 @@ input[type="number"]:focus {
 	padding: 54px 0 0 0;	
 	width: 100%;
 	margin: 200px 0 50px 0px;
-	
 }
 
 #browser {
@@ -376,7 +377,7 @@ input[type="number"]:focus {
     margin-bottom:40px;
     top:-1px;
     height: 388px;
-    z-index: 3000;
+    z-index: 0;
 }
 #browser:after {
 	content:" ";
@@ -394,8 +395,8 @@ input[type="number"]:focus {
     position:relative;
     float:right;
 	width: 159px;
-	right:-207px;
-    padding: 15px 9px 26px 39px;
+	right:-211px;
+    padding: 15px 12px 26px 39px;
     margin:25px 0 0 0;
     clear:both;
     color:#fff;
@@ -591,18 +592,18 @@ input[type="number"]:focus {
   padding: 5px;
   font-size: 11px;
   z-index: 1000;
-  filter: alpha(opacity=80);
-  -khtml-opacity: 0.8;
-  -moz-opacity: 0.8;
-  opacity: 0.8;
+  filter: alpha(opacity=100);
+  -khtml-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
   margin: -3px 0 0 1px;
-  font-size: 12px;
+  font-size: 13px;
 }
 .twipsy.fade.in {
-  filter: alpha(opacity=80);
-  -khtml-opacity: 0.8;
-  -moz-opacity: 0.8;
-  opacity: 0.8;
+  filter: alpha(opacity=100);
+  -khtml-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
 }
 .twipsy.above .twipsy-arrow {
   bottom: 0;
@@ -630,12 +631,13 @@ input[type="number"]:focus {
 }
 
 .twipsy-inner {
-  padding: 4px 12px 2px 12px;
+  padding: 8px 8px 10px 8px;
   background-color: #000000;
   color: #e5e5e5;
   text-align: center;
-  max-width: 200px;
+  max-width: 130px;
   text-decoration: none;
+  line-height: 18px;
   
 
 }
