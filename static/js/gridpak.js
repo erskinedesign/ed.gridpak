@@ -63,8 +63,8 @@ $(function() {
             if (
                 (typeof(attrs.min_width) != 'undefined' && !this.isInt(attrs.min_width)) ||
                 (typeof(attrs.col_num) != 'undefined' && !this.isInt(attrs.col_num)) ||
-                (typeof(attrs.col_padding_width) != 'undefined' && !this.isInt(attrs.col_padding_width)) ||
-                (typeof(attrs.gutter_width) != 'undefined' && !this.isInt(attrs.gutter_width)) ||
+                (typeof(attrs.col_padding_width) != 'undefined' && isNaN(attrs.col_padding_width)) ||
+                (typeof(attrs.gutter_width) != 'undefined' && isNaN(attrs.gutter_width)) ||
                 (typeof(attrs.baseline_height) != 'undefined' && !this.isInt(attrs.baseline_height))
             ) {
                 return 'Use integers for integers';
@@ -438,9 +438,9 @@ $(function() {
                 min_width: parseInt($('#new_min_width').val()),
                 col_num: parseInt($('#new_col_num').val()),
                 col_width: false,
-                col_padding_width: parseInt($('#new_col_padding_width').val()),
+                col_padding_width: parseFloat($('#new_col_padding_width').val()),
                 col_padding_type: $('#new_col_padding_type').val(),
-                gutter_width: parseInt($('#new_gutter_width').val()),
+                gutter_width: parseFloat($('#new_gutter_width').val()),
                 gutter_type: $('#new_gutter_type').val(),
                 baseline_height: parseInt($('#new_baseline_height').val())
             };
