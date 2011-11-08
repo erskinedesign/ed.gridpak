@@ -82,8 +82,8 @@ $(function() {
 
             // px or % params
             if (
-                typeof(attrs.col_padding_type) != 'undefined' && _.indexOf(settings.allowed_types, attrs.col_padding_type) || 
-                typeof(attrs.gutter_type) != 'undefined' && _.indexOf(settings.allowed_types, attrs.gutter_type)
+                (typeof(attrs.col_padding_type) != 'undefined' && _.indexOf(settings.allowed_types, attrs.col_padding_type) == -1) || 
+                (typeof(attrs.gutter_type) != 'undefined' && _.indexOf(settings.allowed_types, attrs.gutter_type) == -1)
             ) {
                 return 'Wrong type of padding / gutter';
             }
@@ -229,7 +229,12 @@ $(function() {
         {
             var message = '';
             this.each(function(grid) {
-                message += grid.cid + ': min_width(' + grid.get('min_width') + ")   \t\t" + grid.get('lower') + ' to ' + grid.get('upper') + "\n";
+                message += grid.cid + ': min_width(' + grid.get('min_width') + ")   \t\t" +
+                    grid.get('lower') + ' to ' + grid.get('upper') + "\t" +
+                    'padding: ' + grid.get('col_padding_width') + grid.get('col_padding_type') + ' | ' +
+                    'gutter: ' + grid.get('gutter_width') + grid.get('gutter_type') + ' | ' +
+                    'baseline: ' + grid.get('baseline_height') + "\n"
+                    ;
             });
             console.log(message);
         }
@@ -455,6 +460,7 @@ $(function() {
         updateOptions: function() {
             Grids.current.set(this.fetchOptions());
             this.updateWidth(this.$browser.width());
+            Grids.dump();
         },
 
         createGrid: function(e) {
