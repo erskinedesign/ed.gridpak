@@ -394,8 +394,7 @@ $(function() {
 
         resize: function(e, ui) {
             var old_width = $('#new_min_width').val(),
-                current_width = Math.round(ui.size.width / this.snap) * this.snap,
-                direction = false;
+                current_width = Math.round(ui.size.width / this.snap) * this.snap;
 
             // ensure we only fire every time we snap to a new width
             if (old_width == current_width) return false;
