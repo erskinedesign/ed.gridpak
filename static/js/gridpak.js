@@ -9,25 +9,11 @@ $(function() {
 
     /**
      * Grid model
-     *
-     * @attribute integer min_width
-     * @attribute integer col_num
-     * @attribute integer col_padding_width
-     * @attribute string col_padding_type
-     * @attribute integer gutter_width
-     * @attribute string gutter_type
-     * @attribute integer baseline_height
-     * @attribute integer current_width DO WE NEED THIS??
-     * @attribute integer lower
-     * @attribute integer upper
-     * @attribute boolean current
+     * -------------------------------------------------------------------------------------------------------
      */
     window.Grid = Backbone.Model.extend({
 
-        /**
-         * Model defaults
-         *
-         */
+        // Model's defaults
         defaults: {
             min_width: 960,
             col_num: 16,
@@ -113,6 +99,8 @@ $(function() {
         /**
          * Update the models current width
          *
+         * @param integer new_width
+         * @return void
          */
         updateWidth: function(new_width) {
             var col_width = 0,
@@ -208,9 +196,10 @@ $(function() {
 
     });
 
+
     /**
-     * Grid collection
-     *
+     * Grids collection
+     * -------------------------------------------------------------------------------------------------------
      */
     window.GridList = Backbone.Collection.extend({
 
@@ -220,11 +209,22 @@ $(function() {
 
         url: '/',
 
+        /**
+         * Comparator keeps the collection ordered
+         *
+         * @param Grid grid
+         * @return integer
+         */
         comparator: function(grid)
         {
             return grid.get('min_width');
         },
 
+        /**
+         * Dump the collection as a string to the console
+         *
+         * @return void
+         */
         dump: function()
         {
             var message = '';
@@ -241,8 +241,12 @@ $(function() {
 
     });
 
-    // Use prototyping to add a check for the next and previous models
-    // then assign the lower and upper limits accordingly
+    /**
+     * Prototyping the collections add function to set limits at the same time
+     *
+     * @param Grid grid
+     * @return void
+     */
     GridList.prototype.add = function(grid) {
         var that = this;
 
@@ -276,6 +280,11 @@ $(function() {
 
         template: _.template($('#grid_template').html()),
 
+        /**
+         * Constructor
+         *
+         * @return void
+         */
         initialize: function() {
             this.model.bind('change', this.render, this);
             this.model.bind('destroy', this.remove, this);
@@ -286,20 +295,40 @@ $(function() {
             'click .remove' : 'clear'
         },
 
+        /**
+         * Render the view
+         *
+         * @return this
+         */
         render: function() {
             $(this.el).html(this.template(this.model.toJSON()));
             this.stringify();
             return this;
         },
 
+        /**
+         * JSONafy the collection and set it to an input
+         *
+         * @return void
+         */
         stringify: function() {
             $('#stringified').val(JSON.stringify(Grids));
         },
 
+        /**
+         * Remove the view from the DOM
+         *
+         * @return void
+         */
         remove: function() {
             $(this.el).remove();
         },
 
+        /**
+         * Clear a grid from the view, set sibling limits accordingly
+         *
+         * @return void
+         */
         clear: function() {
             var prev = this.model.getRelativeTo(-1),
                 next = this.model.getRelativeTo(1),
@@ -342,9 +371,10 @@ $(function() {
 
     });
 
+
     /**
      * The application
-     *
+     * -------------------------------------------------------------------------------------------------------
      */
     window.AppView = Backbone.View.extend({
 
@@ -360,6 +390,11 @@ $(function() {
             'change #grid_options select': 'updateOptions'
         },
 
+        /**
+         * Constructor
+         *
+         * @return void
+         */
         initialize: function() {
             var that = this,
                 width = 0;
@@ -391,7 +426,11 @@ $(function() {
             this.updateWidth(width);
         },
 
-
+        /**
+         * Resize app, fired from jQuery UI resizable
+         *
+         * @return void
+         */
         resize: function(e, ui) {
             var old_width = $('#new_min_width').val(),
                 current_width = Math.round(ui.size.width / this.snap) * this.snap;
@@ -415,6 +454,12 @@ $(function() {
 
         },
 
+        /**
+         * Update the collection and form's current width
+         *
+         * @param integer width
+         * @return void
+         */
         updateWidth: function(width) {
 
             // Store the browser's width
@@ -427,12 +472,20 @@ $(function() {
 
         /**
          * Bound to Grids collection 'add' method
+         *
+         * @param Grid grid
+         * @return void
          */
         addGrid: function(grid) {
             var view = new GridView({ model: grid });
             this.$('#grid_list').append(view.render().el);
         },
 
+        /**
+         * Collects options from the form for a Grid
+         *
+         * @return object
+         */
         fetchOptions: function() {
             return {
                 min_width: parseInt($('#new_min_width').val()),
@@ -446,6 +499,11 @@ $(function() {
             };
         },
 
+        /**
+         * Sets the form from the current grid
+         *
+         * @return void
+         */
         refreshOptions: function() {
             $('#new_min_width').val(Grids.current.get('min_width'));
             $('#new_col_num').val(Grids.current.get('col_num'));
@@ -456,12 +514,22 @@ $(function() {
             $('#new_baseline_height').val(Grids.current.get('baseline_height'));
         },
 
+        /**
+         * Sets the Grid's options from the form
+         *
+         * @return void
+         */
         updateOptions: function() {
             Grids.current.set(this.fetchOptions());
             this.updateWidth(this.$browser.width());
-            Grids.dump();
+            // Grids.dump();
         },
 
+        /**
+         * Creates a new grid and adds it to the GridList collection
+         *
+         * @return void
+         */
         createGrid: function(e) {
 
             var options = _.extend(
@@ -476,6 +544,7 @@ $(function() {
 
      });
 
+     // Create the application
      window.App = new AppView;
 
 });
