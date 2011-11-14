@@ -246,7 +246,6 @@ form label {
 form textarea {
 	display: none;
 }
-
 footer input[type="checkbox"] {
 	margin-top: -2px;
 }
@@ -354,7 +353,15 @@ input[type="number"]:focus {
 }
 
 #grid_options  input[type="text"] {
-	display: none;
+	margin: -60px 0 0 -87px;
+	background: rgba(0,0,0,0.8);
+	border: none;
+	border-radius: 20px;
+	width: 34px;
+	font-size: 11px;
+	color: #ffffff;
+	padding: 3px 5px;
+	text-align: center;
 }
 
 /* @end */
@@ -397,7 +404,7 @@ input[type="number"]:focus {
 	width: 159px;
 	right:-211px;
     padding: 15px 12px 26px 39px;
-    margin:25px 0 0 0;
+    margin:18px 0 0 0;
     clear:both;
     color:#fff;
     background: rgb(52,52,52);
@@ -435,7 +442,7 @@ input[type="number"]:focus {
     left:-28px;
     top:50%;
     margin:-25px 0 0 0;
-    cursor: pointer;
+    cursor: ew-resize;
     text-indent:-999em;
     overflow:hidden;
     z-index:10;
@@ -534,11 +541,14 @@ input[type="number"]:focus {
 	font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
 }
 
-#grid_list .tab .actions:hover {
+#grid_list .actions:hover {
 	color: #000000;
-	background-color: #bbb;
+	cursor: ew-resize;
 }
 
+#grid_list .tab .actions:hover {
+	background-color: red;
+}
 
 
 #grid_list .cur .tab .actions {
