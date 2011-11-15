@@ -50,9 +50,7 @@
 body {
 	font: normal 400 13px/18px  ff-meta-web-pro, sans-serif;
 	color: #191919;
-	margin: 60px;
-	padding-top: 5px;
-	background: #E5E5E5;
+	background: #333333;
 }
 
 /* @end */
@@ -206,29 +204,15 @@ h4 {
 
 	/* @group 5.1. HEADER & BRANDING 
 	------------------------------------- */
-	.header_wrapper {
+	.site_header {
 		background: #fff;
-		float: left;
-		width: 100%;
-		position: absolute;
-		top:  0;
-		left: 0;
-		padding: 60px 60px 41px 60px;
-	}
-	
-	header {
-		float: left;
-		width: 924px;
+		padding: 41px 40px;
+		overflow: auto;
 	}
 	
 	#branding {
-		width: 144px;
-		float: left;
-		display: block;
-		margin: 1px 12px 0 0;
-	}
-	
-	#branding a {
+		width: 111px;
+		margin: 2px 12px -20px 0;
 		text-decoration: none;
 		color: rgba(0,0,0,1);
 		font-weight: 700;
@@ -238,120 +222,71 @@ h4 {
 	   -ms-transition: color 0.2s ease-out;
 	   -o-transition: color 0.2s ease-out;
 	   transition: color 0.2s ease-out;
-	   float: left;
-	}
-	header ul {
-		width:  456px;
-		float:  left;
-		overflow: hidden;
-		margin-top: -2px;
-	}
-	header li {
-		width:  222px;
-		float: left;
-		margin: 2px 0 13px 0;
-		font-size: 12px;
-		line-height: 15px;
-	}
-	header li:nth-child(even) {
-		margin-right: 12px;
-	}
-	header li img {
-		float: left;
-		margin: 0px 12px 0 0;
-	}
-	#branding a:hover {
-		color: rgba(0,0,0,0.45);
-	}
-	#branding span {
-		font-size: 9px;
-		color: #ac0000;
-		margin: -9px 1px 0 0;
-		float: left;
-	}
-	#branding small a {
-		font-size: 12px;
-		font-weight: normal;
-		color: #999999;
-		float: left;
-		margin-top: 4px;
-	}
-	header .about {
-		float: left;
-		width: 292px;
-		display: block;
-		margin: -2px 20px 0 0;
-	}
-	header .feedback {
-		float: left;
-		width: 150px;
-		overflow: hidden;
-		display:  block;
-		margin: 20px 90px 0 0;
-	}
-	header .button {
-		border: none;
-		padding: 7px 12px;
-		font-family: ff-meta-web-pro, sans-serif;
-		font-size: 13px;
-		webkit-border-radius: 3px;
-		-moz-border-radius: 3px;
-		border-radius: 3px;
-		color: rgba(0, 0, 0, 0.6);
-		cursor: pointer;
-		float: left;
-		text-decoration: none;
-		margin: 23px 8px 0 0;
-	}
-	header .video {
-		background-image: url(../images/site/icons/video.png) ;
-		padding-right: 24px;
-		display: inline;
-		position: relative;
-		background-repeat: no-repeat;
-		background-position: 109px 10px;
-		width: 95px;
-		background-color: rgba(0, 0, 0, 0.1);
-		-webkit-transition: background-color 0.3s ease-out;
-		-moz-transition: background-color all 0.3s ease-out;
-		-ms-transition: background-color all 0.3s ease-out;
-		-o-transition: background-color all 0.3s ease-out;
-		transition: background-color all 0.3s ease-out;
-	}
-	header .video:hover {
-		border: none;
-		background-color: rgba(0, 0, 0, 0.2);
-		background-image: url(../images/site/icons/video_hover.png);
-		background-repeat: no-repeat;
-		background-position: 109px 10px;
-		color: #000000;
-		cursor: pointer;
-	}
-	header .article {
-		background-image: url(../images/site/icons/article.png);
-		padding-right: 24px;
-		display: inline;
-		position: relative;
-		background-repeat: no-repeat;
-		background-position: 109px 9px;
-		width: 95px;
-		background-color: rgba(0, 0, 0, 0.1);
-		-webkit-transition: background-color 0.3s ease-out;
-		-moz-transition: background-color all 0.3s ease-out;
-		-ms-transition: background-color all 0.3s ease-out;
-		-o-transition: background-color all 0.3s ease-out;
-		transition: background-color all 0.3s ease-out;
-	}
-	header .article:hover {
-		border: none;
-		background-color: rgba(0, 0, 0, 0.2);
-		background-image: url(../images/site/icons/article_hover.png);
-		background-repeat: no-repeat;
-		background-position: 109px 10px;
-		color: #000000;
-		cursor: pointer;
 	}
 	
+	#branding sup {
+		font-size: 9px;
+		color: #ac0000;
+		vertical-align:super;
+		margin-top: -8px;
+		float: right;	
+	}
+	
+	.social {
+		float: right;
+		clear: both;
+	}
+	
+	.social li {
+		display: inline;
+	}
+	
+	.social a {
+	 	color: #191919;
+	 	text-decoration: none;
+	 	margin-right: 12px;
+	 	background:url(../images/site/icons/social.png) no-repeat;
+	 	padding-left: 20px;
+	 	float: left;
+	}
+	
+	.social a:hover {
+		color: #000;
+	}
+	
+	.social a:active {
+		margin: 1px 12px -1px 0;
+	}
+	
+	a.bookmark {
+		background-position: 0 0;	
+	}
+	
+	a.bookmark:hover {
+		background-position: 0 -20px;
+	}
+	
+	a.share {
+		background-position: 0 -40px;
+		padding-left: 23px;	
+	}
+	
+	a.share:hover {
+		background-position: 0 -60px;
+	}
+	
+	a.feedback {
+		background-position: 0 -79px;
+		padding-left: 23px;	
+	}
+	
+	a.feedback:hover {
+		background-position: 0 -99px;
+	}
+	
+	
+	
+		
 	/* @end */
 	
 	
@@ -408,6 +343,7 @@ h4 {
 
 #gridpak {
     height: 420px;
+    clear: both;
 }
 
 	/* @group 6.1. BROWSER
