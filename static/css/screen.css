@@ -170,6 +170,12 @@ article {
 /* @group 3. HEADLINES 
 ------------------------------------------ */
 
+h2 {
+	font-size: 35px;
+	color: #FFF;
+	line-height: 42px;
+}
+
 h4 {
 	font-size: 15px;
 	font-weight: bold;
@@ -177,13 +183,12 @@ h4 {
 	color: #AC0000;
 }
 
+
 /* @end */
 
 
 /* @group 4. LINKS
 ------------------------------------------ */
-
-
 
 
 /* @end */
@@ -195,9 +200,8 @@ h4 {
 
 #content_wrapper {
 	clear: both;
-	padding: 54px 0 0 0;	
-	width: 100%;
-	margin: 200px 0 50px 0px;
+	padding: 54px 40px 0 40px;	
+	margin: 0px 0 50px 0px;
 }
 
 
@@ -285,6 +289,52 @@ h4 {
 	}
 	
 	
+	.main_button {
+		background: #CCC;
+		text-decoration: none;
+		color: #323232;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+		padding: 8px 15px;
+	}
+	
+	
+#header_sec {
+  padding-left: 140px;   /* LC fullwidth */
+  padding-right: 184px;  /* RC fullwidth + CC padding */
+  
+}
+#header_sec .column {
+  position: relative;
+  float: left;
+  text-align: center;
+}
+#center {
+  padding: 0 20px;    /* CC padding */
+  width: 100%;
+  margin: -14px 0 40px 0;
+ 
+}
+
+#center p {
+	color: #999;
+}
+
+#left {
+  width: 120px;          /* LC width */
+  padding: 8px 10px;       /* LC padding */
+  right: 180px;          /* LC fullwidth + CC padding */
+  margin-left: -100%;
+}
+
+#right {
+  width: 112px;          /* RC width */
+  padding: 8px 10px;       /* RC padding */
+  margin-right: -190px;  
+}
+
+		
 	
 		
 	/* @end */
@@ -350,6 +400,16 @@ h4 {
 	--------------------------------------*/
 	
 	#browser {
+	    position:relative;
+	    width:960px;
+	    border:1px solid rgb(34,34,34);
+	    margin-bottom:40px;
+	    top:-1px;
+	    height: 388px;
+	    z-index: 0;
+	}
+
+#browser {
 	    position:relative;
 	    width:960px;
 	    border:1px solid rgb(34,34,34);
