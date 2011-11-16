@@ -661,7 +661,17 @@ h4 {
 	}
 	
 	#grid_list .cur .tab .actions {
-	    background-color:rgb(52,52,52);
+	    background-color: #E5E5E5;
+ 		background-image: -webkit-gradient(linear, left top, left bottom, from(#313131), to(#1F1F1F));
+ 		background-image: -webkit-linear-gradient(top, #313131, #1F1F1F);
+ 		background-image:    -moz-linear-gradient(top, #313131, #1F1F1F);
+		background-image:     -ms-linear-gradient(top, #313131, #1F1F1F);
+		background-image:      -o-linear-gradient(top, #313131, #1F1F1F);
+	    background-image:         linear-gradient(top, #313131, #1F1F1F);
+	    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.08) 1px 1px 0px inset;
+		-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.20), rgba(0,0,0,1) 0px 0px 10px inset;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#D4D4D4', EndColorStr='#B1B1B1');
+        text-shadow: -1px -1px 0px rgba(0,0,0,1);
 	}
 	
 	#grid_list .cur .tab .actions:hover {
