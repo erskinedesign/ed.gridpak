@@ -104,26 +104,9 @@ $(function() {
          */
         updateWidth: function(new_width) {
             var col_width = 0,
-                col_padding = 0,
-                gutter = 0;
+                col_num = this.get('col_num');
 
-            // fixed with gutters
-            if (this.get('gutter_type') == 'px') {
-                gutter_width = this.get('gutter_width');
-            } else {
-                gutter_width = Math.floor(((new_width / 100) * this.gutter_width));
-            }
-
-            // fixed percentage width padding
-            if (this.get('col_padding_type') == 'px') {
-                col_padding = this.get('col_padding_width');
-            // work the width from percentages
-            } else {
-                col_padding = Math.floor((new_width / 100) * this.get('col_padding_width'));
-            }
-
-            col_width = Math.floor((new_width / this.get('col_num')) - gutter_width - (col_padding * 2));
-            col_width += Math.floor(gutter_width / this.get('col_num'));
+            col_width = Math.floor(new_width / col_num);
 
             this.set({ 
                 col_width: col_width,
