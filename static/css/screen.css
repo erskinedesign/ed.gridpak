@@ -274,6 +274,11 @@ article {
 		background: #bbb url(../images/site/icons/number-down-hover.png) no-repeat 6px 6px;
 	}
 	
+	.number_input {
+		float: left;
+		height: 30px;
+	}
+	
 	.number:active {
 		-webkit-box-shadow:none; /* Saf3-4 */
 	     -moz-box-shadow: none; /* FF3.5 - 3.6 */
@@ -281,11 +286,11 @@ article {
 	}
 	
 	.switcher_container {
-		display:inline-block;
+		float: left;
 		width: 66px;
 		font-size: 12px;
 		color: #999999;
-		margin: 6px 0 0 15px;
+		margin: 6px 0 -3px 18px;
 	}
 	
 	.switcher {
@@ -606,11 +611,12 @@ h4 {
 	#grid_options label {
 		display:block;
 		clear:both;
-		margin-bottom: 4px;
+		margin-bottom: 1px;
+		font-size: 12px;
 	}
 	
 	#grid_options div {
-		margin-bottom:0.5em;
+		margin-bottom:10px;
 	}
 	#grid_options div.submit {
 		margin-bottom:0;
