@@ -53,7 +53,7 @@ $(function() {
                 (typeof(attrs.gutter_width) != 'undefined' && isNaN(attrs.gutter_width)) ||
                 (typeof(attrs.baseline_height) != 'undefined' && !this.isInt(attrs.baseline_height))
             ) {
-                return 'Use integers for integers';
+                return 'Numbers please';
             }
 
             // I got 99 cols but a bitch ain't one
