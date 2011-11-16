@@ -73,20 +73,30 @@ article {
 	------------------------------------- */
 	form {
 		z-index: 2000;
-		float: left;
-		margin: 43px 260px 118px;
-		background: #CECECE;
 		webkit-border-radius: 6px;
 		-moz-border-radius: 6px;
 		border-radius: 6px;
-		width: 414px;
-		padding: 15px 18px;
+		width: 444px;
+		color: #888;
 	}
 	
-	form label {
-		padding-top: 2px;
-		margin: 0 12px 0 0;
+	form h3 {
+		color: #FFF;
+		font-size: 15px;
+		float: left;
+		margin: 11px 12px 0 0;
 	}
+	
+	form p {
+		float: left;
+		margin: 13px 12px 0 0;
+		font-size: 12px;
+	}
+	
+	form p span {
+		color: #FFF;	
+	}
+	
 	
 	form textarea {
 		display: none;
@@ -108,28 +118,74 @@ article {
 	
 	/* My Comment */
 	
-	input[type="submit"] {
+	#download {
+		position: relative;
 		font-family: ff-meta-web-pro, sans-serif;
-		background-image: url(../images/site/icons/download.png);
-		background-position:170px 11px;
-		padding: 6px 32px 7px 15px;
-		background-repeat: no-repeat;
-		background-color: #ac0000;
+		padding: 7px 45px 7px 12px;
 		color: #fff;
-	    border: 1px solid #720000;
 	    text-shadow: -1px -1px -1px #720000;
 	   -moz-border-radius: 3px;
 	   -webkit-border-radius: 3px;
-	   border-radius: 3px;    
-	   cursor: pointer;
+	    border-radius: 3px;    
+	    cursor: pointer;
+	 	float: left;
+	 	background-color: #E5E5E5;
+ 		background-image: -webkit-gradient(linear, left top, left bottom, from(#BC0D13), to(#720704));
+ 		background-image: -webkit-linear-gradient(top, #BC0D13, #720704);
+ 		background-image:    -moz-linear-gradient(top, #BC0D13, #720704);
+		background-image:     -ms-linear-gradient(top, #BC0D13, #720704);
+		background-image:      -o-linear-gradient(top, #BC0D13, #720704);
+	    background-image:         linear-gradient(top, #BC0D13, #720704);
+	    -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 1px 1px 0px inset;
+		-moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15), rgba(0,0,0,1) 1px 1px 0px inset;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#BC0D13', EndColorStr='#720704');
+		font-size: 14px;
+		border: 1px solid #000;
 	}
 	
-	input[type="submit"]:hover {
-		background-color: #9E0700;
-		-webkit-box-shadow:none; /* Saf3-4 */
+	#download:after {
+		content:" ";
+		-webkit-border-radius: 0 3px 3px 0;
+		display: block;
+		position: absolute;
+		top: 0;
+		right:  0;
+		width: 31px;
+		height: 100%;
+		background:url(../images/site/icons/download.png) no-repeat 10px 50%, -webkit-gradient(linear, left top, left bottom, from(#720704), to(#5F0100));
+ 		background:url(../images/site/icons/download.png) no-repeat 10px 50%, -webkit-linear-gradient(top, #720704, );
+ 		background:url(../images/site/icons/download.png) no-repeat 10px 50%, -moz-linear-gradient(top, #720704, #5F0100);
+		background:url(../images/site/icons/download.png) no-repeat 10px 50%, -ms-linear-gradient(top, #720704, #5F0100);
+		background:url(../images/site/icons/download.png) no-repeat 10px 50%, -o-linear-gradient(top, #720704, #5F0100);
+	    background:url(../images/site/icons/download.png) no-repeat 10px 50%, linear-gradient(top, #720704, #5F0100);
+	     -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.15) 0px 1px 0px inset;
+		-moz-box-shadow: 0px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.15) 0px 1px 0px inset;
+	    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#720704', EndColorStr='#5F0100'); 
+	    border-left: 1px solid #440301;
+	}
+	
+	#download:hover {
+		background-color: #8C0909;
+		background-image: none;	
+	}
+	
+	#download:hover:after {
+		background:url(../images/site/icons/download-hover.png) no-repeat 10px 50%, -webkit-gradient(linear, left top, left bottom, from(#720704), to(#5F0100));
+ 		background:url(../images/site/icons/download-hover.png) no-repeat 10px 50%, -webkit-linear-gradient(top, #720704, );
+ 		background:url(../images/site/icons/download-hover.png) no-repeat 10px 50%, -moz-linear-gradient(top, #720704, #5F0100);
+		background:url(../images/site/icons/download-hover.png) no-repeat 10px 50%, -ms-linear-gradient(top, #720704, #5F0100);
+		background:url(../images/site/icons/download-hover.png) no-repeat 10px 50%, -o-linear-gradient(top, #720704, #5F0100);
+	    background:url(../images/site/icons/download-hover.png) no-repeat 10px 50%, linear-gradient(top, #720704, #5F0100);
+
+	}
+	
+	
+	#download:active, #download:active:after  {
+	-webkit-box-shadow:none; /* Saf3-4 */
 	     -moz-box-shadow: none; /* FF3.5 - 3.6 */
 	          box-shadow: none;
 	}
+	
 	
 	input[type="number"] {
 		padding: 6px 0 0 8px;
@@ -359,39 +415,13 @@ h4 {
 	------------------------------------- */
 	
 	footer {
-		position: fixed;
 		left: 0;
 		bottom: 0;
-		background: rgba(0,0,0,0.85);
-		width: 100%;
-		padding: 16px 60px 30px 60px;
-		height: 20px;
+		background: #242424;
+		padding: 20px 60px 20px 60px;
 		z-index: 2000;
-	}
-	footer p {
-		color: rgba(255,255,255,0.8);
-		float: left;
-		display: block;
-		font-size: 12px;
-		width: 270px;
-		line-height: 15px;
-		margin-top: 2px;
-	}
-	footer .follow {
-		float: right;
-		margin: 9px 60px 0 0;
-		font-size: 13px;
-	
-	}
-	footer a {
-		color: #fff;
-		background: none;
-		text-decoration: none;
-	
-	}
-	footer a:hover {
-		color: rgba(255,255,255,0.6);
-		background: none;
+		position: absolute;
+		width: 100%;
 	}
 	
 	/* @end */
@@ -424,7 +454,7 @@ h4 {
 	    z-index: 0;
 	}
 
-#browser {
+	#browser {
 	    position:relative;
 	    width:960px;
 	    border:1px solid rgb(34,34,34);
@@ -641,7 +671,6 @@ h4 {
 	}
 	
 	#grid_list .tab .actions {
-	
 		display:inline-block;
 		position:relative;
 		top:407px;
@@ -658,7 +687,7 @@ h4 {
 		background-image:      -o-linear-gradient(top, #E5E5E5, #B1B1B1);
 	    background-image:         linear-gradient(top, #E5E5E5, #B1B1B1);
 	    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0px inset;
-		-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.20), rgba(0,0,0,1) 0px 0px 10px inset;
+		-moz-box-shadow: 0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0px inset;
         filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#D4D4D4', EndColorStr='#B1B1B1');
 		font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
 		font-size: 13px;
@@ -672,6 +701,12 @@ h4 {
 		background-image: none;
 	}
 	
+	#grid_list .tab .actions:hover:active {
+		-webkit-box-shadow:none; /* Saf3-4 */
+	     -moz-box-shadow: none; /* FF3.5 - 3.6 */
+	          box-shadow: none;	
+	}
+	
 	#grid_list .cur .tab .actions {
 	    background-color: #1F1F1F;
  		background-image: -webkit-gradient(linear, left top, left bottom, from(#313131), to(#1F1F1F));
@@ -681,7 +716,7 @@ h4 {
 		background-image:      -o-linear-gradient(top, #313131, #1F1F1F);
 	    background-image:         linear-gradient(top, #313131, #1F1F1F);
 	    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.03) 1px 1px 0px inset;
-		-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.20), rgba(0,0,0,1) 0px 0px 10px inset;
+		-moz-box-shadow: 0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.03) 1px 1px 0px inset;
         filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#D4D4D4', EndColorStr='#B1B1B1');
         text-shadow: -1px -1px 0px rgba(0,0,0,1);
 	}

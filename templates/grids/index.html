@@ -53,28 +53,16 @@
                     </div><!-- // #create_grid -->
 
                 </div><!-- // #browser -->
-				 <form method="post" action="{% url grids_download %}">
-		                <label for="css_checkbox">
-		                    <input type="checkbox" name="css" id="css_checkbox"/>
-		                    CSS
-		                </label>
-		                <label for="png_checkbox">
-		                    <input type="checkbox" name="pngs" id="png_checkbox"/>
-		                    PNGs
-		                </label>
-		                <label for="javascript_checkbox">
-		                    <input type="checkbox" name="javascript" id="javascript_checkbox"/>
-		                    Javascript
-		                </label>
-		                <textarea id="stringified" name="grids" cols="80" rows="10"></textarea>
-		                <input type="submit" value="Download your package" ><span></span></input>
-		            </form>
+				 
             </div><!-- // #gridpak -->
 
         <footer>
-            <p>Copyright 2011 <a href="">Erskine Design</a>
-			Licensed under the Apache License, Version 2.0</p>
-			<p class="follow">For all updates please <a href="">follow @gridpak</a></p>
+			  <form method="post" action="{% url grids_download %}">
+					<h3>Your Gridpak:</h3>
+					<p>No. of grids:<span> 2</span></p>
+	                <textarea id="stringified" name="grids" cols="80" rows="10"></textarea>
+	                <button id ="download" type="submit">Download your Gridpak</button>
+	          </form> 
         </footer>
 
     </div><!-- // #content_wrapper -->
