@@ -406,8 +406,9 @@ h4 {
 ------------------------------------------*/
 
 #gridpak {
-    height: 420px;
+    height: 520px;
     clear: both;
+    background: url(../images/site/icons/ruler.png) no-repeat 0 453px;
 }
 
 	/* @group 6.1. BROWSER
@@ -613,7 +614,7 @@ h4 {
 		border:1px solid #414141;
 		border-right: none;
 		height:386px;
-		z-index:0;
+		z-index:-1;
 		background: url(../images/site/icons/pattern.png) ;
 	}
 	/* Arrows */
@@ -622,10 +623,10 @@ h4 {
 		display:block;
 		width:100%;
 		height:9px;
-		bottom:-33px;
+		bottom:-40px;
 		position:absolute;
 		z-index:0;
-		background:url(../images/site/icons/grid_tab_line.png) repeat-x 0 -2px;
+		background:url(../images/site/icons/grid_tab_line.png) repeat-x 0 0;
 	}
 	
 	#grid_list .cur .tab:before {
@@ -633,17 +634,17 @@ h4 {
 		display:block;
 		width:100%;
 		height:9px;
-		bottom:-33px;
+	
 		position:absolute;
 		z-index:0;
-		background:url(../images/site/icons/grid_tab_line_active.png) repeat-x 0 -22px;
+		background:url(../images/site/icons/grid_tab_line_active.png) repeat-x 0 0;
 	}
 	
 	#grid_list .tab .actions {
+	
 		display:inline-block;
 		position:relative;
-		top:406px;
-		margin-top: -18px;
+		top:407px;
 		padding:6px 5px 5px 8px;
 		border: 1px solid #1F1F1F;
 		-moz-border-radius: 3px;
