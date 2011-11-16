@@ -174,6 +174,7 @@ h2 {
 	font-size: 35px;
 	color: #FFF;
 	line-height: 42px;
+	margin-bottom: 3px;
 }
 
 h4 {
@@ -299,40 +300,53 @@ h4 {
 		padding: 8px 15px;
 	}
 	
+	.main_button:hover {
+		background-color:#FAFAFA;
+	}
 	
-#header_sec {
-  padding-left: 140px;   /* LC fullwidth */
-  padding-right: 184px;  /* RC fullwidth + CC padding */
-  
-}
-#header_sec .column {
-  position: relative;
-  float: left;
-  text-align: center;
-}
-#center {
-  padding: 0 20px;    /* CC padding */
-  width: 100%;
-  margin: -14px 0 40px 0;
- 
-}
-
-#center p {
-	color: #999;
-}
-
-#left {
-  width: 120px;          /* LC width */
-  padding: 8px 10px;       /* LC padding */
-  right: 180px;          /* LC fullwidth + CC padding */
-  margin-left: -100%;
-}
-
-#right {
-  width: 112px;          /* RC width */
-  padding: 8px 10px;       /* RC padding */
-  margin-right: -190px;  
-}
+	.main_button:active {
+		background-color:#999;
+	
+	}
+	
+	.inactive {
+		background: #666 !important;
+	}
+	
+	
+	#header_sec {
+	  padding-left: 140px;   /* LC fullwidth */
+	  padding-right: 184px;  /* RC fullwidth + CC padding */
+	  
+	}
+	#header_sec .column {
+	  position: relative;
+	  float: left;
+	  text-align: center;
+	}
+	#center {
+	  padding: 0 20px;    /* CC padding */
+	  width: 100%;
+	  margin: -14px 0 40px 0;
+	}
+	
+	#center p {
+		color: #999;
+		font-size: 15px;
+	}
+	
+	#left {
+	  width: 112px;          /* LC width */
+	  padding: 8px 10px;       /* LC padding */
+	  right: 180px;          /* LC fullwidth + CC padding */
+	  margin-left: -100%;
+	}
+	
+	#right {
+	  width: 120px;          /* RC width */
+	  padding: 8px 10px;       /* RC padding */
+	  margin-right: -190px;  
+	}
 
 		
 	
@@ -442,7 +456,7 @@ h4 {
 	    margin:25px 0 0 0;
 	    clear:both;
 	    color:#fff;
-	    background: rgb(52,52,52);
+	    background: #242424;
 	    z-index:99;
 	    -moz-border-radius: 0 5px 5px 0;
 	    -webkit-border-radius: 0 5px 5px 0;
@@ -481,7 +495,7 @@ h4 {
 	    text-indent:-999em;
 	    overflow:hidden;
 	    z-index:10;
-	    border: 6px solid rgb(52,52,52);
+	    border: 6px solid #242424;
 	}
 	
 	#grid_options .dragme:hover {
@@ -535,6 +549,7 @@ h4 {
 	
 	#grid_list {
 		width:100%;
+		z-index:1;
 	}
 	#grid_list .grid {
 		position:absolute;
@@ -544,7 +559,7 @@ h4 {
 		height:100%;
 		top:0;
 		left:0;
-	    z-index:0;
+	    z-index:1;
 		font-size: 0.923em;
 	}
 	#grid_list .grid.cur {
@@ -555,9 +570,11 @@ h4 {
 	    width:120%;
 	    display:none;
 		overflow:hidden;
+		z-index:1;
 	}
 	#grid_list .cur .cols {
 	    display:block;
+	    z-index:1;
 	}
 	#grid_list .col {
 		width:10px;
@@ -588,10 +605,11 @@ h4 {
 		text-align:center;
 		position:absolute;
 		top:0;
-		border:1px dashed rgb(204,204,204);
+		border:1px solid #414141;
 		border-right: none;
 		height:386px;
 		z-index:0;
+		background: url(../images/site/icons/pattern.png) ;
 	}
 	/* Arrows */
 	#grid_list .tab:before {
