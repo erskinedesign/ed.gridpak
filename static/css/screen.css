@@ -627,24 +627,32 @@ h4 {
 		display:inline-block;
 		position:relative;
 		top:406px;
-		padding:5px 7px 5px 7px;
+		margin-top: -18px;
+		padding:6px 5px 5px 8px;
+		border: 1px solid #1F1F1F;
 		-moz-border-radius: 3px;
 	    -webkit-border-radius: 3px;
-	    border-radius: 3px;
-	    margin-top: -18px;
-	    cursor: hover;
-	    background-color: #ccc;
-		-webkit-transition: background-color 0.3s ease-out;
-		-moz-transition: background-color all 0.3s ease-out;
-		-ms-transition: background-color all 0.3s ease-out;
-		-o-transition: background-color all 0.3s ease-out;
-		transition: background-color all 0.3s ease-out;
+	    border-radius: 3px; 
+		background-color: #E5E5E5;
+ 		background-image: -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1));
+ 		background-image: -webkit-linear-gradient(top, #E5E5E5, #B1B1B1);
+ 		background-image:    -moz-linear-gradient(top, #E5E5E5, #B1B1B1);
+		background-image:     -ms-linear-gradient(top, #E5E5E5, #B1B1B1);
+		background-image:      -o-linear-gradient(top, #E5E5E5, #B1B1B1);
+	    background-image:         linear-gradient(top, #E5E5E5, #B1B1B1);
+	    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0px inset;
+		-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.20), rgba(0,0,0,1) 0px 0px 10px inset;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#D4D4D4', EndColorStr='#B1B1B1');
 		font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+		font-size: 13px;
+		text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+		cursor: pointer;
 	}
 	
 	#grid_list .tab .actions:hover {
 		color: #000000;
 		background-color: #bbb;
+		background-image: none;
 	}
 	
 	#grid_list .cur .tab .actions {
@@ -668,10 +676,10 @@ h4 {
 	}
 	#grid_list .tab .actions a.remove {
 	     display:inline-block;
-	     width:13px;
-	     height:13px;
+	     width:17px;
+	     height:17px;
 	     position:relative;
-	     top:2px;
+	     top:0px;
 	     overflow:hidden;
 	     text-indent:-999em;
 	     background:url(../images/site/icons/remove.png) no-repeat 0 0;
