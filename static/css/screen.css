@@ -621,11 +621,22 @@ h4 {
 		content:" ";
 		display:block;
 		width:100%;
-		height:13px;
+		height:9px;
 		bottom:-33px;
 		position:absolute;
 		z-index:0;
-		background:url(../images/site/grid_tab_arrows.png) no-repeat 0 0, url(../images/site/grid_tab_arrows.png) no-repeat 100% -26px, url(../images/site/grid_tab_arrows.png) repeat-x 0 -13px;
+		background:url(../images/site/icons/grid_tab_line.png) repeat-x 0 -2px;
+	}
+	
+	#grid_list .cur .tab:before {
+		content:" ";
+		display:block;
+		width:100%;
+		height:9px;
+		bottom:-33px;
+		position:absolute;
+		z-index:0;
+		background:url(../images/site/icons/grid_tab_line_active.png) repeat-x 0 -22px;
 	}
 	
 	#grid_list .tab .actions {
@@ -661,21 +672,22 @@ h4 {
 	}
 	
 	#grid_list .cur .tab .actions {
-	    background-color: #E5E5E5;
+	    background-color: #1F1F1F;
  		background-image: -webkit-gradient(linear, left top, left bottom, from(#313131), to(#1F1F1F));
  		background-image: -webkit-linear-gradient(top, #313131, #1F1F1F);
  		background-image:    -moz-linear-gradient(top, #313131, #1F1F1F);
 		background-image:     -ms-linear-gradient(top, #313131, #1F1F1F);
 		background-image:      -o-linear-gradient(top, #313131, #1F1F1F);
 	    background-image:         linear-gradient(top, #313131, #1F1F1F);
-	    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.08) 1px 1px 0px inset;
+	    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.03) 1px 1px 0px inset;
 		-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.20), rgba(0,0,0,1) 0px 0px 10px inset;
         filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#D4D4D4', EndColorStr='#B1B1B1');
         text-shadow: -1px -1px 0px rgba(0,0,0,1);
 	}
 	
 	#grid_list .cur .tab .actions:hover {
-	    background-color:rgb(0,0,0);
+	    background-color:#272727;
+	    background-image: none;
 	}
 	
 	#grid_list .cur .tab .actions a {
@@ -704,12 +716,12 @@ h4 {
 	     background:url(../images/site/icons/remove_hover.png) no-repeat 0 0;
 	 }
 	 
-	#grid_list cur .tab .actions a.remove {
-	     background:url(../images/site/icons/remove_hover.png) no-repeat 0 0;
+	#grid_list .cur .tab .actions a.remove {
+	     background:url(../images/site/icons/active_remove.png) no-repeat 0 0;
 	}
 	 
-	#grid_list cur .tab .actions a.remove:hover {
-	     background:url(../images/site/icons/remove.png) no-repeat 0 0; 
+	#grid_list .cur .tab .actions a.remove:hover {
+	     background:url(../images/site/icons/active_remove_hover.png) no-repeat 0 0; 
 	}
 
 	/* @end */
