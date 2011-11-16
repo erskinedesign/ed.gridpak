@@ -62,8 +62,8 @@ $(function() {
             }
 
             // Make sure it's bigger than the minimum the browser can be resized to
-            if (attrs.min_width < settings.min_min_width) {
-                return 'The smallest min_width you can have is ' + settings.min_width + '.';
+            if (attrs.min_width != 0 && attrs.min_width < settings.min_min_width) {
+                return 'The smallest min_width you can have is ' + settings.min_min_width + '.';
             }
 
             // px or % params
