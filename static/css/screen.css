@@ -568,7 +568,7 @@ h4 {
 	}
 	#grid_list .cols {
 		height:100%;
-	    width:120%;
+	    width:100%;
 	    display:none;
 		overflow:hidden;
 		z-index:1;
