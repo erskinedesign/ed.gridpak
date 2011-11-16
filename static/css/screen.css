@@ -187,7 +187,7 @@ article {
 	
 	input[type="number"] {
 		position: relative;
-		left:  19px;
+		left: 19px;
 		padding: 7px 8px 0 8px;
 		webkit-border-radius: 0 3px 3px 0;
 		-moz-border-radius: 0 3px 3px 0;
@@ -197,7 +197,6 @@ article {
 		outline: none;
 		height: 21px;
 		width:  35px;
-	    margin-bottom: 5px;
 	    color: rgba(0,0,0,0.8);
 	   -webkit-transition: all 0.2s ease-out;
 	   -moz-transition: all 0.2s ease-out;
@@ -221,9 +220,12 @@ article {
 		color: rgba(0,0,0,0.9);
 	}
 	
+	input[type="number"]:active {
+		background: #FFF;
+	}
+	
 	.number {
 		width: 17px;
-		
 	}
 	
 	.increase {
@@ -247,7 +249,7 @@ article {
 	.decrease {
 		height: 14px;
 		position: absolute;
-		margin-top: 18px;
+		margin-top: 14px;
 		border-radius: 0 0 0 3px;
 		border-left: 1px solid #000;
 		border-top: 1px solid #707070;
@@ -264,7 +266,6 @@ article {
         filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#D4D4D4', EndColorStr='#B1B1B1');
 	}
 	
-	
 	.increase:hover {
 		background: #bbb url(../images/site/icons/number-up-hover.png) no-repeat 6px 5px;
 	}
@@ -279,7 +280,45 @@ article {
 	          box-shadow: none;	
 	}
 	
+	.switcher_container {
+		display:inline-block;
+		width: 66px;
+		font-size: 12px;
+		color: #999999;
+		margin: 6px 0 0 15px;
+	}
 	
+	.switcher {
+		float: left;
+		background: #191919;
+		height: 10px;
+		width: 30px;
+		border-radius: 5px;
+		 -webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.15);
+		-moz-box-shadow: 0px 1px 0px rgba(255,255,255,255.15);
+		margin: 3px 6px 0 4px;
+	}
+	
+	.switcher_container label {
+	 	float: left;
+	 	clear: none !important;
+	}
+	
+	.switcher span {
+		float: left;
+		background: url(../images/site/icons/controller.png);
+		height: 15px;
+		width: 15px;
+		margin-top: -2px;
+	}
+	
+	.switcher_container .selected {
+	 	color: #FFF;
+	}
+	
+	.number_input {
+		float: left;
+	}
 	
 	
 	/* @end */

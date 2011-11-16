@@ -15,36 +15,46 @@
                             <input id="new_min_width" type="text" disabled="disabled" />
                         </div>
                         <div>
-                            <label for="new_col_num">No. of columns</label>
-							<a href="" class="number increase"></a>
-							<a href="" class="number decrease"></a>
-                            <input id="new_col_num" value="16" type="number" min="1" max="99" step="1" />	
+							<label for="new_col_num">No. of columns</label>
+                            <div class="number_input">
+								<a href="" class="number increase"></a>
+								<a href="" class="number decrease"></a>
+                            	<input id="new_col_num" value="16" type="number" min="1" max="99" step="1" />	
+							</div>
                         </div>
-                        <div>
-                            <label for="new_col_padding_width">Column padding</label>
-							<a href="" class="number increase"></a>
-							<a href="" class="number decrease"></a>
-                            <input id="new_col_padding_width" value="10" type="number" min="0.01" max="99" step="1" />
-                            <select id="new_col_padding_type">
-                                <option value="px" selected="selected">pixels</option>
-                                <option value="%">%</option>
-                            </select>
+                        <div> 
+							<label for="new_col_padding_width">Column padding</label>
+							<div class="number_input">
+								<a href="" class="number increase"></a>
+								<a href="" class="number decrease"></a>
+	                            <input id="new_col_padding_width" value="10" type="number" min="0.01" max="99" step="1" />
+							</div>
+                            <div class="switcher_container">
+                            	<label class="selected">px</label>
+								<div class="switcher"><span class="controller"></span></div>
+								<label>%</label>
+                            </div>
                         </div>
                         <div>
                             <label for="new_gutter_width">Gutter width</label>
-							<a href="" class="number increase"></a>
-							<a href="" class="number decrease"></a>
-                            <input id="new_gutter_width" value="8" type="number" min="0.01" max="99" step="1" />
-                            <select id="new_gutter_type">
-                                <option value="px" selected="selected">pixels</option>
-                                <option value="%">%</option>
-                            </select>
+							<div class="number_input">
+								<a href="" class="number increase"></a>
+								<a href="" class="number decrease"></a>
+                            	<input id="new_gutter_width" value="8" type="number" min="0.01" max="99" step="1" />
+							</div>
+							<div class="switcher_container">
+                            	<label class="selected">px</label>
+								<div class="switcher"><span class="controller"></span></div>
+								<label>%</label>
+                            </div>
                         </div>
                         <div>
                             <label for="new_baseline_height">Baseline height</label>
-							<a href="" class="number increase"></a>
-							<a href="" class="number decrease"></a>
-                            <input id="new_baseline_height" value="22" type="number" min="1" max="99" step="1" />
+							<div class="number_input">
+								<a href="" class="number increase"></a>
+								<a href="" class="number decrease"></a>
+                            	<input id="new_baseline_height" value="22" type="number" min="1" max="99" step="1" />
+							</div>
                         </div>
 
                         <div class="submit">
