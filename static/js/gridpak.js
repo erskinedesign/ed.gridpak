@@ -371,7 +371,8 @@ $(function() {
             'click #save_grid': 'createGrid',
             'click #grid_options input[type="number"]': 'updateOptions',
             'keyup #grid_options input[type="number"]': 'updateOptions',
-            'change #grid_options select, input[type="radio"]': 'updateOptions',
+            'click #grid_options .switcher span': 'switchToggleClick',
+            'change #grid_options select, #grid_options input[type="radio"]': 'updateOptions',
             'change #grid_options .switcher_container input[type="radio"]': 'switchToggle'
         },
 
@@ -421,6 +422,18 @@ $(function() {
 
             $target.siblings('label').toggleClass('selected');
             $target.siblings('.switcher').toggleClass('left');
+        },
+
+        /**
+         * Have to also listen for clicks on the indicator
+         *
+         * @return void
+         */
+        switchToggleClick: function(e) {
+            var $target = $(e.target),
+                $input = $target.closest('.switcher_container').find('input[type="radio"]:not(:checked)');
+
+            $input.trigger('click');
         },
 
         /**
@@ -489,9 +502,9 @@ $(function() {
                 col_num: parseInt($('#new_col_num').val()),
                 col_width: false,
                 col_padding_width: parseFloat($('#new_col_padding_width').val()),
-                col_padding_type: $('input[name="col_padding_type"]').val(),
+                col_padding_type: $('input[name="col_padding_type"]:checked').val(),
                 gutter_width: parseFloat($('#new_gutter_width').val()),
-                gutter_type: $('input[name="gutter_type"]').val(),
+                gutter_type: $('input[name="gutter_type"]:checked').val(),
                 baseline_height: parseInt($('#new_baseline_height').val())
             };
         },
@@ -505,10 +518,11 @@ $(function() {
             $('#new_min_width').val(Grids.current.get('min_width'));
             $('#new_col_num').val(Grids.current.get('col_num'));
             $('#new_col_padding_width').val(Grids.current.get('col_padding_width'));
-            $('#new_col_padding_type').val(Grids.current.get('col_padding_type'));
+            $('input:radio[name="col_padding_type"][value="' + Grids.current.get('col_padding_type') + '"]').prop('checked', true);
             $('#new_gutter_width').val(Grids.current.get('gutter_width'));
-            $('#new_gutter_type').val(Grids.current.get('gutter_type'));
+            $('input:radio[name="gutter_type"][value="' + Grids.current.get('gutter_type') + '"]').prop('checked', true);
             $('#new_baseline_height').val(Grids.current.get('baseline_height'));
+            Grids.dump();
         },
 
         /**
