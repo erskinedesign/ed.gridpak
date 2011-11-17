@@ -143,8 +143,8 @@ em {
 	@-moz-document url-prefix() { 
 		#download {
 		padding: 6px 42px 6px 12px;
-	}
-	
+		margin-top: 2px;
+}
 	}
 	
 	#download:after {
