@@ -15,6 +15,10 @@ def index(request):
     return render_to_response('grids/index.html', {
     }, context_instance=RequestContext(request))
 
+def about(request):
+    return render_to_response('grids/about.html', {
+    }, context_instance=RequestContext(request))
+
 def download(request):
     """ Preps the download from the form post and delivers it
 
