@@ -1,1 +1,5 @@
-local_settings.py
+!.gitignore
+/static_collected
+/wsgi_handler.py
+*.pyc
+/local_settings.py
