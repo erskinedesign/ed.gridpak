@@ -97,15 +97,10 @@
                 <%
                     var gutter_width = gutter_width / 2,
                         col_width = 0;
-
-                    // If it's absolute we can use the box model and borders
                     if (gutter_type == 'px') {
                         col_width = 100 / col_num;
                         gutters = 'border-left-width: ' + gutter_width + 'px; ' +
                             'border-right-width: ' + gutter_width + 'px';
-
-                    // If it's percentage we must detract the widths from the total
-                    // and use margins
                     } else {
                         col_width = (100 - (gutter_width * col_num * 2)) / col_num;
                         gutters = 'margin: 0 ' + gutter_width + '%';
