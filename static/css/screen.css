@@ -330,6 +330,7 @@ em {
 	}
 	
 	.switcher {
+        position:relative;
 		float: left;
 		background: #191919;
 		height: 10px;
@@ -352,15 +353,19 @@ em {
     }
 	
 	.switcher span {
-		float: right;
+        cursor:pointer;
+		position:absolute;
+        top:0;
+        left:19px;
 		background: url(../images/site/icons/controller.png);
 		height: 15px;
 		width: 15px;
 		margin-top: -2px;
+        -webkit-transition: all 0.04s;
 	}
 
     .switcher.left span {
-        float:left;
+        left:0;
     }
 	
 	.switcher_container .selected {
