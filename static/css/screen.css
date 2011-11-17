@@ -300,15 +300,24 @@ em {
 	.switcher_container label {
 	 	float: left;
 	 	clear: none !important;
+        cursor:pointer;
 	}
+
+    .switcher_container input {
+        display:none;
+    }
 	
 	.switcher span {
-		float: left;
+		float: right;
 		background: url(../images/site/icons/controller.png);
 		height: 15px;
 		width: 15px;
 		margin-top: -2px;
 	}
+
+    .switcher.left span {
+        float:left;
+    }
 	
 	.switcher_container .selected {
 	 	color: #FFF;
