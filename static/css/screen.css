@@ -124,10 +124,10 @@ em {
 	 	background-color: #E5E5E5;
  		background-image: -webkit-gradient(linear, left top, left bottom, from(#BC0D13), to(#720704));
  		background-image: -webkit-linear-gradient(top, #BC0D13, #720704);
- 		background-image:    -moz-linear-gradient(top, #BC0D13, #720704);
-		background-image:     -ms-linear-gradient(top, #BC0D13, #720704);
-		background-image:      -o-linear-gradient(top, #BC0D13, #720704);
-	    background-image:         linear-gradient(top, #BC0D13, #720704);
+ 		background-image: -moz-linear-gradient(top, #BC0D13, #720704);
+		background-image: -ms-linear-gradient(top, #BC0D13, #720704);
+		background-image: -o-linear-gradient(top, #BC0D13, #720704);
+	    background-image: linear-gradient(top, #BC0D13, #720704);
 	    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 1px 1px 0px inset;
 		-moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 1px 1px 0px inset;
 		box-shadow: 1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 1px 1px 0px inset;
@@ -142,9 +142,16 @@ em {
 	
 	@-moz-document url-prefix() { 
 		#download {
-		padding: 6px 42px 6px 12px;
-		margin-top: 2px;
-}
+			padding: 6px 42px 6px 12px;
+			margin-top: 2px;
+		}
+	}
+	
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+		#download {
+			padding: 6px 38px 6px 12px;
+			margin-top: 2px;
+		}
 	}
 	
 	#download:after {
