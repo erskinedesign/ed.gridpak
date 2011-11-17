@@ -13,10 +13,12 @@ from zipfile import ZipFile
 
 def index(request):
     return render_to_response('grids/index.html', {
+        'cur_page': 'index',
     }, context_instance=RequestContext(request))
 
 def about(request):
     return render_to_response('grids/about.html', {
+        'cur_page': 'about',
     }, context_instance=RequestContext(request))
 
 def download(request):
