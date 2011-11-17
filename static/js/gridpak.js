@@ -313,7 +313,7 @@ $(function() {
                 // If relative, we use margins
                 extras.border_left = extras.border_right = 0;
                 // The col width must now account for the margins too
-                extras.col_width = (100 - (gutter_width * col_num * 2)) / col_num;
+                extras.col_width = (100 - (this.model.get('gutter_width') * (col_num - 1))) / col_num;
             }
 
             // Extend the model's attributes with these extras
