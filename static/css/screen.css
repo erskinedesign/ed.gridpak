@@ -103,7 +103,8 @@ em {
 	
 	input::-webkit-outer-spin-button,
 	input::-webkit-inner-spin-button {
-	      -webkit-appearance: none;
+	    -webkit-appearance: none;
+	    margin: 0;
 	    
 	}
 	
@@ -180,9 +181,8 @@ em {
 	
 	
 	input[type="number"] {
-		position: relative;
-		left: 19px;
-		padding: 7px 8px 0 8px;
+		margin-left: 19px;
+		padding: 3px 0px 4px 10px;
 		webkit-border-radius: 0 3px 3px 0;
 		-moz-border-radius: 0 3px 3px 0;
 		border-radius: 0 3px 3px 0;
@@ -190,20 +190,19 @@ em {
 		border-left: none;
 		outline: none;
 		height: 21px;
-		width:  35px;
+		width:  33px;
 	    color: rgba(0,0,0,0.8);
 	   -webkit-transition: all 0.2s ease-out;
 	   -moz-transition: all 0.2s ease-out;
 	   -ms-transition: all 0.2s ease-out;
 	   -o-transition: all 0.2s ease-out;
 	    transition: all 0.2s ease-out;
-	    background-color: #FFF;
-	    background: -webkit-gradient(linear, left top, left bottom, from(#C6C6C6), to(#FFFFFF));
- 		background: -webkit-linear-gradient(top, #C6C6C6, #FFFFFF);
- 		background: -moz-linear-gradient(top, #C6C6C6, #FFFFFF);
-		background: -ms-linear-gradient(top, #C6C6C6, #FFFFFF);
-		background: -o-linear-gradient(top, #C6C6C6, #FFFFFF);
-	    background: linear-gradient(top, #C6C6C6, #FFFFFF);
+	    background: #FFF -webkit-gradient(linear, left top, left bottom, from(#C6C6C6), to(#FFFFFF));
+ 		background: #FFF -webkit-linear-gradient(top, #C6C6C6, #FFFFFF);
+ 		background: #FFF -moz-linear-gradient(top, #C6C6C6, #FFFFFF);
+		background: #FFF -ms-linear-gradient(top, #C6C6C6, #FFFFFF);
+		background: #FFF -o-linear-gradient(top, #C6C6C6, #FFFFFF);
+	    background: #FFF linear-gradient(top, #C6C6C6, #FFFFFF);
 	    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#C6C6C6', EndColorStr='#FFFFFF'); 
 	     -webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.15), rgba(255,255,255,1) 0px 1px 0px inset;
 		-moz-box-shadow: 0px 1px 0px rgba(255,255,255,255.15), rgba(255,255,255,1) 0px 1px 0px inset;
@@ -284,7 +283,7 @@ em {
 		width: 67px;
 		font-size: 12px;
 		color: #999999;
-		margin: 6px 0 -3px 18px;
+		margin: 6px 0 -3px 7px;
 	}
 	
 	.switcher {
