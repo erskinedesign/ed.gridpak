@@ -371,7 +371,8 @@ $(function() {
             'click #save_grid': 'createGrid',
             'click #grid_options input[type="number"]': 'updateOptions',
             'keyup #grid_options input[type="number"]': 'updateOptions',
-            'change #grid_options select': 'updateOptions'
+            'change #grid_options select, input[type="radio"]': 'updateOptions',
+            'change #grid_options .switcher_container input[type="radio"]': 'switchToggle'
         },
 
         /**
@@ -408,6 +409,18 @@ $(function() {
 
             // Update the width of the current model
             this.updateWidth(width);
+        },
+
+        /**
+         * Toggles switches on and off
+         *
+         * @return void
+         */
+        switchToggle: function(e) {
+            var $target = $(e.target);
+
+            $target.siblings('label').toggleClass('selected');
+            $target.siblings('.switcher').toggleClass('left');
         },
 
         /**
@@ -476,9 +489,9 @@ $(function() {
                 col_num: parseInt($('#new_col_num').val()),
                 col_width: false,
                 col_padding_width: parseFloat($('#new_col_padding_width').val()),
-                col_padding_type: $('#new_col_padding_type').val(),
+                col_padding_type: $('input[name="col_padding_type"]').val(),
                 gutter_width: parseFloat($('#new_gutter_width').val()),
-                gutter_type: $('#new_gutter_type').val(),
+                gutter_type: $('input[name="gutter_type"]').val(),
                 baseline_height: parseInt($('#new_baseline_height').val())
             };
         },
