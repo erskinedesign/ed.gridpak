@@ -248,7 +248,7 @@ $(function() {
     // Instantiate the GridList collection, and add some grids to it
     window.Grids = new GridList();
     Grids.add(new Grid({ min_width: 0, col_num: 4, col_padding_width: 5, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
-    Grids.add(new Grid({ min_width: 500, col_num: 8, col_padding_width: 0.5, col_padding_type: '%', gutter_width: 8,  gutter_type: '%', baseline_height: 22 }));
+    Grids.add(new Grid({ min_width: 500, col_num: 8, col_padding_width: 1, col_padding_type: '%', gutter_width: 2,  gutter_type: '%', baseline_height: 22 }));
     Grids.add(new Grid({ min_width: 960, col_num: 16, col_padding_width: 10, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
 
     // Set the current grid as the last in the collection
@@ -285,6 +285,39 @@ $(function() {
          * @return this
          */
         render: function() {
+            // We'll extend the attributes with some template required vars
+            var extras = {
+                    border_left: 0,
+                    border_right: 0,
+                    margin_left: 0,
+                    margin_right: 0,
+                    col_width: 0,
+                },
+                gutter_width = 0,
+                col_num = 0;
+
+            // The gutters account for left and right of two cols
+            gutter_width = this.model.get('gutter_width') / 2;
+            col_num = this.model.get('col_num');
+
+            // Borders set from the gutter width
+            extras.border_left = extras.border_right = gutter_width;
+            extras.margin_left = extras.margin_right = gutter_width;
+
+            if (this.model.get('gutter_type') == 'px') {
+                // If the gutters are absolute, we use borders
+                extras.margin_left = extras.margin_right = 0;
+                // The box model allows us to set the width including the gutter
+                extras.col_width = 100 / col_num;
+            } else {
+                // If relative, we use margins
+                extras.border_left = extras.border_right = 0;
+                // The col width must now account for the margins too
+                extras.col_width = (100 - (this.model.get('gutter_width') * (col_num - 1))) / col_num;
+            }
+
+            // Extend the model's attributes with these extras
+            _.extend(this.model.attributes, extras);
             $(this.el).html(this.template(this.model.toJSON()));
             this.stringify();
             return this;

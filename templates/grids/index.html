@@ -94,20 +94,8 @@
     <script type="text/template" id="grid_template">
         <div class="grid<%= (current) ? ' cur' : '' %>">
             <div class="cols">
-                <%
-                    var gutter_width = gutter_width / 2,
-                        col_width = 0;
-                    if (gutter_type == 'px') {
-                        col_width = 100 / col_num;
-                        gutters = 'border-left-width: ' + gutter_width + 'px; ' +
-                            'border-right-width: ' + gutter_width + 'px';
-                    } else {
-                        col_width = (100 - (gutter_width * col_num * 2)) / col_num;
-                        gutters = 'margin: 0 ' + gutter_width + '%';
-                    }
-                %>
                 <% var i=0; for(i; i<col_num; i++) { %>
-                    <div class="col" style="width:<%= col_width  %>%; <%= gutters %>; padding:0 <%= col_padding_width + col_padding_type %>;">
+                    <div class="col" style="width:<%= col_width  %>%;<% if (i > 0) { %> border-left-width:<%= border_left %>px; margin-left:<%= margin_left %>%;<% } %><% if (i < (col_num - 1)) { %> border-right-width:<%= border_right %>px; margin-right:<%= margin_right %>%;<% } %> padding:0 <%= col_padding_width + col_padding_type %>;">
                         <div class="visible"><span class="width"><%= col_width %>px</span></div>
                     </div><!-- // .col -->
                 <% } %>
