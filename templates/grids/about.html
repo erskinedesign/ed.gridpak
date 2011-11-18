@@ -1,11 +1,14 @@
 {% extends 'grids/base.html' %}
 
 {% block content %}
+	{% load common %}
 	<div class="about_wrapper">
+		
 		<div class="about_column">
 			<p>Gridpak is the starting point for your responsive projects, improving your workflow and saving time.</p>
 			<p>Create your responsive grid system once using the simple interface and let Gridpak do the heavy lifting of generating CSS, PNGs and Javascript</p>
-		</div>
+		</div> <!-- // .about_column -->
+		
 		<div class="about_column">
 			<h3>How does it work?</h3>
 			<p>Choose your preferred layout, then download your very own Gridpak (a .zip file) containing your choice of:</p>
@@ -17,7 +20,8 @@
 			<h3>Why use Gridpak?</h3>
 			<p>It’s the most flexible system out there – you control every aspect of the grid
 			Our simple interface makes it quick and easy to visualise your responsive grid system and output it in the formats you need.</p>
-		</div>
+		</div> <!-- // .about_column -->
+		
 		<div class="about_column">
 			<h3>Beta</h3>
 			<p>Gridpak is raring to go, but we need your help to successfully release it into the wild. We are constantly looking to improve Gridpak, so if you have any suggestions please don’t hesitate to email hello@gridpak.com.</p>
@@ -33,6 +37,14 @@
 				<li>7/9/11 - Improved gutters</li>
 				<li>5/9/11 - Integrated with LESS</li>
 				<li>1/9/11 - Fixed margin bug</li>
-		</div>
-	</div>
+		</div> <!-- // .about_column -->
+
+	    <div id="grids">
+	        {% for i in 12|get_range %}
+	        <div class="grid"></div>
+	        {% endfor %}
+	    </div> <!-- // #grids -->
+
+	</div> <!-- // .about_wrapper -->
+
 {% endblock %}
