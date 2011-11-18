@@ -798,9 +798,23 @@ h4 {
 	 background-clip: padding-box;
 	}
 	
-	#grid_options  input[type="text"] {
-		display: none;
+	.total_width {
+		z-index: 4000;
+		position: relative;
+		float: right;
+		margin: 370px -216px 0 0;
 	}
+	
+	.total_width input {
+		font-size: 10px;
+		background: rgba(0,0,0,0.85);
+		border: none;
+		color: #FFF;
+		text-align: center;
+		padding: 2px 3px 3px ;
+		width: 30px;
+	}
+	
 	
 	/* @end */
 
