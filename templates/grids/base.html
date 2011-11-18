@@ -38,15 +38,7 @@
 				</ul>
 			</header>
 		</div>
-		<div id="content_wrapper">
-			<header id="header_sec">
-				<div id="center" class="column">
-					<h2>The <b>Responsive</b> grid generator</h2>
-					<p>Creating a responsive grid system just became a total breeze...</p>
-				</div>
-                <a href="{% url grids_index %}" id="left" class="main_button column{% if cur_page == 'index' %} cur{% endif %}">Use the generator</a>
-                <a href="{% url about %}" id="right" class="main_button column{% if cur_page == 'about' %} cur{% endif %}">Learn about Gripak</a>
-			</header>
+		
 		{% block content %}{% endblock %}
 	
 	  <!-- JAVASCRIPT -->
