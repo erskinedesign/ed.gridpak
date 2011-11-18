@@ -146,13 +146,7 @@ em {
 			margin-top: 2px;
 		}
 	}
-	
-	@media screen and (-webkit-min-device-pixel-ratio:0) {
-		#download {
-			padding: 6px 38px 6px 12px;
-			margin-top: 2px;
-		}
-	}
+
 	
 	#download:after {
 		content:" ";
@@ -537,7 +531,7 @@ h4 {
 	
 	}
 	
-	.inactive {
+	.cur {
 		background: #666 !important;
 	}
 	
@@ -1029,6 +1023,22 @@ h4 {
 ------------------------------------------*/
 
 
+
+
+/* @end */
+
+/* @group 8. ABOUT
+------------------------------------------*/
+
+	.about_wrapper {
+		
+	}
+	
+	.about_container {
+		width: 300px;
+		margin-right: 18px;
+		display: inline-block;
+	}
 
 
 /* @end */
