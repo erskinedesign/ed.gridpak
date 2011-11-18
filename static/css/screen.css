@@ -86,7 +86,7 @@ em {
 		color: #FFF;
 		font-size: 15px;
 		float: left;
-		margin: 11px 12px 0 0;
+		margin: 11px 12px 0 0 !important;
 	}
 	
 	form p {
@@ -410,6 +410,11 @@ h3 {
 	margin: 23px 0 13px 0;
 }
 
+h3:first-child {
+	margin-top: 0px;	
+}
+	
+}
 
 
 h4 {
@@ -449,8 +454,8 @@ h4 {
 		background: #fff;
 		padding: 41px 40px;
 		overflow: auto;
-		-webkit-box-shadow: 0px 3px 20px rgba(0,0,0,0.5); /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-        -moz-box-shadow: 0px 3px 20px rgba(0,0,0,0.5); /* FF3.5 - 3.6 */
+		-webkit-box-shadow: 0px 3px 20px rgba(0,0,0,0.5); 
+        -moz-box-shadow: 0px 3px 20px rgba(0,0,0,0.5);
         box-shadow: 0px 3px 20px rgba(0,0,0,0.5);
 	}
 	
@@ -554,7 +559,7 @@ h4 {
 	
 	
 	#header_sec { 
-	  padding: 54px 192px 100px 140px;
+	  padding: 54px 192px 99px 140px;
 	}
 	
 	#header_sec .column {
@@ -574,7 +579,7 @@ h4 {
 	}
 	
 	#left {
-	  width: 112px
+	  width: 112px;
 	  padding: 8px 10px;   
 	  right: 174px;        
 	  margin-left: -100%;
@@ -585,6 +590,39 @@ h4 {
 	  padding: 8px 10px; 
 	  margin-right: -190px;  
 	}
+	
+	@media only screen and (max-width: 599px) {
+			
+		#header_sec .column {
+		  position: relative;
+		  float: left;
+		  text-align: center;
+		}
+		#center {
+		  padding: 0 20px; 
+		  width: 100%;
+		  margin: -7px 0 40px 2px;
+		}
+		
+		#center p {
+			color: #999;
+			font-size: 15px;
+		}
+		
+		#left {
+		  width: 112px;
+		  padding: 8px 10px;   
+		  right: 174px;        
+		  margin-left: -100%;
+		}
+		
+		#right {
+		  width: 120px; 
+		  padding: 8px 10px; 
+		  margin-right: -190px;  
+		}
+		
+		}
 
 		
 	
@@ -683,7 +721,7 @@ h4 {
 	    float:right;
 		width: 159px;
 		right:-216px;
-	    padding: 10px 16px 18px 39px;
+	    padding: 16px 16px 18px 39px;
 	    margin:25px 0 0 0;
 	    clear:both;
 	    color:#fff;
@@ -1049,16 +1087,9 @@ h4 {
 
 
 
-/* @group 7. TOOLTIP
-------------------------------------------*/
 
 
-
-
-/* @end */
-
-
-/* @group 8. ABOUT
+/* @group 7. GRID
 ------------------------------------------*/
 
 .grid .col {
@@ -1083,15 +1114,10 @@ h4 {
 	border-width: 6px;
 	width: 33.3333333%; /* 100 / 3 % */
 }
-.grid_4_col .col {
+.grid_6_col .col {
 	padding: 0 8px;
 	border-width: 6px;
-	width:25%; /* 100 / 4 */
-}
-.grid_8_col .col {
-	padding: 0 8px;
-	border-width: 6px;
-	width:12.5%; /* 100 / 8 % */
+	width: 16.666666667%; /* 100 / 6 % */
 }
 .grid_12_col .col {
 	padding: 0 8px;
@@ -1113,21 +1139,29 @@ h4 {
 	margin: 0 auto;
 	position: relative;
 }
-.about_column a {
+.grid a {
 	text-decoration: none;
 	color: #FFF;
 }
 
-.about_wrapper p {
+.grid p {
 	margin-bottom: 6px;
 }	
 
-.about_column ul {
+.grid ul {
 	list-style: inside;
 }
 
-.about_column li {
-	margin-bottom: 6px;
+.grid li {
+	margin-bottom: 3px;
+}
+
+ul.updates {
+	list-style: none;	
+}
+
+.grid_3_col .col:first-child  {
+	
 }
 	
 	
@@ -1166,7 +1200,7 @@ h4 {
 		/* @group 8.1.1. 
 		----------------------------------*/
 		@media only screen and (max-width: 599px) {
-			.about_wrapper #grids .grid_4_col {
+			.about_wrapper #grids .grid_3_col {
 				display: block;
 			}
 		}
@@ -1177,7 +1211,7 @@ h4 {
 		/* @group 8.1.2. 600px
 		----------------------------------*/
 		@media only screen and (max-width: 959px) and (min-width: 599px) {
-			.about_wrapper #grids .grid_8_col {
+			.about_wrapper #grids .grid_6_col {
 				display: block;
 			}
 		}

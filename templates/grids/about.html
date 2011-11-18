@@ -15,8 +15,12 @@
 			<div class="grid grid_3_col">
 				
 				<div class="col">
+					<h3>What is it?</h3>
 					<p>Gridpak is the starting point for your responsive projects, improving your workflow and saving time.</p>
 					<p>Create your responsive grid system once using the simple interface and let Gridpak do the heavy lifting of generating CSS, PNGs and Javascript</p>
+					<h3>Why use Gridpak?</h3>
+					<p>It’s the most flexible system out there – you control every aspect of the grid
+					Our simple interface makes it quick and easy to visualise your responsive grid system and output it in the formats you need.</p>
 				</div> <!-- // .col -->
 			
 				<div class="col">
@@ -27,9 +31,7 @@
 						<li>A CSS files containing all the appropriate media queries and CSS grid.</li>
 						<li>A JavaScript snippet which allows you to toggle your grid on &amp; off in any browser.</li>
 					</ul>
-					<h3>Why use Gridpak?</h3>
-					<p>It’s the most flexible system out there – you control every aspect of the grid
-					Our simple interface makes it quick and easy to visualise your responsive grid system and output it in the formats you need.</p>
+					
 				</div> <!-- // .col -->
 		
 				<div class="col">
@@ -41,26 +43,27 @@
 					<a href="">Grid Systems: Principles of Organizing Type by Kimberly Elam</a>
 					<a href="">http://mediaqueri.es/</a>t
 					<h3>Updates</h3>
-					<ul>
+					<ul class="updates">
 						<li>13/9/11 - Added baseline functionality</li>
 						<li>7/9/11 - Fixed margin bug</li>
 						<li>7/9/11 - Improved gutters</li>
 						<li>5/9/11 - Integrated with LESS</li>
 						<li>1/9/11 - Fixed margin bug</li>
+					</ul>
 				</div> <!-- // .col -->
 			
 			</div> <!-- // .grid -->
 
 		    <div id="grids">
 		
-				<div class="grid grid_4_col">
-			        {% for i in 4|get_range %}
+				<div class="grid grid_3_col">
+			        {% for i in 3|get_range %}
 			        <div class="col"><div class="visible"></div></div>
 			        {% endfor %}
 				</div> <!-- // .grid_320 -->
 			
-				<div class="grid grid_8_col">
-			        {% for i in 8|get_range %}
+				<div class="grid grid_6_col">
+			        {% for i in 6|get_range %}
 			        <div class="col"><div class="visible"></div></div>
 			        {% endfor %}
 				</div> <!-- // .grid_500 -->
