@@ -1041,17 +1041,49 @@ h4 {
 
 /* @end */
 
-/* @group 8. ABOUT
-------------------------------------------*/
 
+
+/* @group 8. About
+------------------------------------------*/
+	
 	.about_wrapper {
-		
+		background:url(../images/site/icons/grid-vertical.png);
+		width: 960px;
+		height: 100%;
+		margin-top: -53px;
+		padding-top: 53px;
+		margin: -53px auto 0 auto;
 	}
 	
-	.about_container {
-		width: 300px;
-		margin-right: 18px;
-		display: inline-block;
+	.about_column:first-child {
+		font-size: 15px;
+		line-height: 21px;
+		color: #FFF;
+		margin-top: 21px;
+	}
+	
+	.about_wrapper a {
+		text-decoration: none;
+		color: #FFF;
+	}
+	
+	.about_wrapper p {
+		margin-bottom: 6px;
+	}	
+
+	.about_column {
+		width: 282px;
+		margin-right: 12px;
+		float:  left;
+		padding: 0 9px;
+	}
+	
+	.about_column ul {
+		list-style: inside;
+	}
+	
+	.about_column li {
+		margin-bottom: 6px;
 	}
 
 
