@@ -1,6 +1,7 @@
 {% extends 'grids/base.html' %}
 
 {% block content %}
+    {% load common %}
 	<div class="about_column">
 		<p>Gridpak is the starting point for your responsive projects, improving your workflow and saving time.</p>
 		<p>Create your responsive grid system once using the simple interface and let Gridpak do the heavy lifting of generating CSS, PNGs and Javascript</p>
@@ -33,4 +34,11 @@
 			<li>5/9/11 - Integrated with LESS</li>
 			<li>1/9/11 - Fixed margin bug</li>
 	</div>
+
+    <div id="grids">
+        {% for i in 12|get_range %}
+        <div class="grid"></div>
+        {% endfor %}
+    </div> <!-- // #grids -->
+
 {% endblock %}
