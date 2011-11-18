@@ -436,7 +436,7 @@ h4 {
 
 #content_wrapper {
 	clear: both;
-	padding: 0 40px 0 40px;	
+	padding: 0 40px 0 36px;	
 	margin: 0px 0 50px 0px;
 	height: 100%;
 }
@@ -553,23 +553,19 @@ h4 {
 	}
 	
 	
-	#header_sec {
-	  padding-left: 140px;   /* LC fullwidth */
-	  padding-right: 184px;
-	  padding-bottom: 100px;
-	  padding-top: 54px;  /* RC fullwidth + CC padding */
-
-	  
+	#header_sec { 
+	  padding: 54px 192px 100px 140px;
 	}
+	
 	#header_sec .column {
 	  position: relative;
 	  float: left;
 	  text-align: center;
 	}
 	#center {
-	  padding: 0 20px;    /* CC padding */
+	  padding: 0 20px; 
 	  width: 100%;
-	  margin: -7px 0 40px 0;
+	  margin: -7px 0 40px 2px;
 	}
 	
 	#center p {
@@ -578,15 +574,15 @@ h4 {
 	}
 	
 	#left {
-	  width: 112px;          /* LC width */
-	  padding: 8px 10px;       /* LC padding */
-	  right: 180px;          /* LC fullwidth + CC padding */
+	  width: 112px
+	  padding: 8px 10px;   
+	  right: 174px;        
 	  margin-left: -100%;
 	}
 	
 	#right {
-	  width: 120px;          /* RC width */
-	  padding: 8px 10px;       /* RC padding */
+	  width: 120px; 
+	  padding: 8px 10px; 
 	  margin-right: -190px;  
 	}
 
@@ -1062,6 +1058,50 @@ h4 {
 /* @end */
 
 
+/* @group 8. ABOUT
+------------------------------------------*/
+
+.grid .col {
+	float:  left;
+	padding: 0 0;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	width: 0%;
+	border-left: 0 solid rgba(255,255,255,0);
+	border-right: 0 solid rgba(255,255,255,0);
+}
+
+.grid .col:first-child {
+	border-left: none;
+}
+.grid .col:last-child {
+	border-right: none;
+}
+.grid_3_col .col {
+	padding: 0 8px;
+	border-width: 6px;
+	width: 33.3333333%; /* 100 / 3 % */
+}
+.grid_4_col .col {
+	padding: 0 8px;
+	border-width: 6px;
+	width:25%; /* 100 / 4 */
+}
+.grid_8_col .col {
+	padding: 0 8px;
+	border-width: 6px;
+	width:12.5%; /* 100 / 8 % */
+}
+.grid_12_col .col {
+	padding: 0 8px;
+	border-width: 6px;
+	width: 8.333333333%; /* 100 /12 */
+}
+
+/* @end */
+
+
 
 /* @group 8. ABOUT
 ------------------------------------------*/
@@ -1073,8 +1113,6 @@ h4 {
 	margin: 0 auto;
 	position: relative;
 }
-
-
 .about_column a {
 	text-decoration: none;
 	color: #FFF;
@@ -1083,31 +1121,6 @@ h4 {
 .about_wrapper p {
 	margin-bottom: 6px;
 }	
-
-.about_column {
-	float:  left;
-	padding: 0 8px;
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	box-sizing:border-box;
-	width: 33.33333333333333333%;
-	border-left: 6px solid rgba(255,255,255,0);
-	border-right: 6px solid rgba(255,255,255,0);
-}
-
-
-.about_column:first-child {
-	font-size: 15px;
-	line-height: 21px;
-	color: #FFF;
-	border-left: none;
-	
-}
-
-.about_column:last-child {
-	border-right: none;
-
-}
 
 .about_column ul {
 	list-style: inside;
@@ -1137,22 +1150,9 @@ h4 {
 	}
 	.about_wrapper #grids .col {
 		height:100%;
-		float:left;
-		-webkit-box-sizing:border-box;
-		-moz-box-sizing:border-box;
-		box-sizing:border-box;
-		border-left: 0 solid rgba(255,255,255,0);
-		border-right: 0 solid rgba(255,255,255,0);
 		background: url(../images/site/icons/about_grid_vertical.png) repeat-y 0 0, url(../images/site/icons/about_grid_vertical.png) repeat-y 100% 0;
 		
 	}
-	.about_wrapper #grids .col:first-child {
-		border-left:none;
-	}
-	.about_wrapper #grids .col:last-child {
-		border-right: none;
-	}
-	
 	.about_wrapper #grids .col .visible {
 		width: 100%;
 		height: 100%;
@@ -1165,14 +1165,8 @@ h4 {
 
 		/* @group 8.1.1. 
 		----------------------------------*/
-		.about_wrapper #grids .grid_min .col {
-			padding: 0 8px;
-			border-width: 6px;
-			width:25%; /* 100 / 4 */
-		}
-		
 		@media only screen and (max-width: 599px) {
-			.about_wrapper #grids .grid_min {
+			.about_wrapper #grids .grid_4_col {
 				display: block;
 			}
 		}
@@ -1182,14 +1176,8 @@ h4 {
 		
 		/* @group 8.1.2. 600px
 		----------------------------------*/
-		.about_wrapper #grids .grid_600 .col {
-			padding: 0 8px;
-			border-width: 6px;
-			width:12.5%; /* 100 / 8 % */
-		}
-		
 		@media only screen and (max-width: 959px) and (min-width: 599px) {
-			.about_wrapper #grids .grid_600 {
+			.about_wrapper #grids .grid_8_col {
 				display: block;
 			}
 		}
@@ -1199,14 +1187,8 @@ h4 {
 		
 		/* @group 8.1.3. 960px
 		----------------------------------*/
-		.about_wrapper #grids .grid_960 .col {
-			padding: 0 8px;
-			border-width: 6px;
-			width: 8.333333333%; /* 100 /12 */
-		}
-		
 		@media only screen and (min-width: 960px) {
-			.about_wrapper #grids .grid_960 {
+			.about_wrapper #grids .grid_12_col {
 				display: block;
 			}
 		}
