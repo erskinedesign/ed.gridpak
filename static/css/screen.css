@@ -58,7 +58,7 @@ body {
 }
 
 body.about {
-	background:  #333333 url(../images/site/icons/about_grid_baseline.png) 0 0;
+	background:  #333333 url(../images/site/icons/about_grid_baseline.png) 0 4px;
 }
 
 /* @end */
@@ -401,7 +401,7 @@ h2 {
 	font-size: 35px;
 	color: #FFF;
 	line-height: 36px;
-	margin: 16px 0 3px 0;
+	margin: 8px 0 3px 0;
 }
 
 h3 {
@@ -436,7 +436,7 @@ h4 {
 
 #content_wrapper {
 	clear: both;
-	padding: 54px 40px 0 40px;	
+	padding: 0 40px 0 40px;	
 	margin: 0px 0 50px 0px;
 	height: 100%;
 }
@@ -556,7 +556,8 @@ h4 {
 	#header_sec {
 	  padding-left: 140px;   /* LC fullwidth */
 	  padding-right: 184px;
-	  padding-bottom: 100px;  /* RC fullwidth + CC padding */
+	  padding-bottom: 100px;
+	  padding-top: 54px;  /* RC fullwidth + CC padding */
 
 	  
 	}
@@ -1085,7 +1086,7 @@ h4 {
 
 .about_column {
 	float:  left;
-	padding: 161px 8px 0 8px;
+	padding: 0 8px;
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
