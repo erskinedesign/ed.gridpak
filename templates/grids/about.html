@@ -40,9 +40,25 @@
 		</div> <!-- // .about_column -->
 
 	    <div id="grids">
-	        {% for i in 12|get_range %}
-	        <div class="grid"></div>
-	        {% endfor %}
+		
+			<div class="grid grid_min">
+		        {% for i in 4|get_range %}
+		        <div class="col"><div class="visible"></div></div>
+		        {% endfor %}
+			</div> <!-- // .grid_320 -->
+			
+			<div class="grid grid_600">
+		        {% for i in 8|get_range %}
+		        <div class="col"><div class="visible"></div></div>
+		        {% endfor %}
+			</div> <!-- // .grid_500 -->
+			
+			<div class="grid grid_960">
+		        {% for i in 12|get_range %}
+		        <div class="col"><div class="visible"></div></div>
+		        {% endfor %}
+			</div> <!-- // .grid_960 -->
+			
 	    </div> <!-- // #grids -->
 
 	</div> <!-- // .about_wrapper -->
