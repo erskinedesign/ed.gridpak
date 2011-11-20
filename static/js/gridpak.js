@@ -570,11 +570,11 @@ $(function() {
             $('#new_min_width').val(Grids.current.get('min_width'));
             $('#new_col_num').val(Grids.current.get('col_num'));
             $('#new_col_padding_width').val(Grids.current.get('col_padding_width'));
-            $('input:radio[name="col_padding_type"][value="' + Grids.current.get('col_padding_type') + '"]').prop('checked', true);
+            $('input:radio[name="col_padding_type"][value="' + Grids.current.get('col_padding_type') + '"]').trigger('click');
             $('#new_gutter_width').val(Grids.current.get('gutter_width'));
-            $('input:radio[name="gutter_type"][value="' + Grids.current.get('gutter_type') + '"]').prop('checked', true);
+            $('input:radio[name="gutter_type"][value="' + Grids.current.get('gutter_type') + '"]').trigger('click');
             $('#new_baseline_height').val(Grids.current.get('baseline_height'));
-            Grids.dump();
+            // Grids.dump();
         },
 
         /**
