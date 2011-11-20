@@ -66,3 +66,4 @@ function set_options() {
     draw_cols(options.width);
 
 }
+
