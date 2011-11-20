@@ -472,8 +472,8 @@ $(function() {
             e.preventDefault();
 
             val = $target.hasClass('increase') ? val + step : val - step;
-
             $number.val(val);
+            this.updateOptions();
         },
 
         /**
