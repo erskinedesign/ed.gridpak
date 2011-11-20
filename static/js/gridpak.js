@@ -406,7 +406,8 @@ $(function() {
             'keyup #grid_options input[type="number"]': 'updateOptions',
             'click #grid_options .switcher span': 'switchToggleClick',
             'change #grid_options select, #grid_options input[type="radio"]': 'updateOptions',
-            'change #grid_options .switcher_container input[type="radio"]': 'switchToggle'
+            'change #grid_options .switcher_container input[type="radio"]': 'switchToggle',
+            'click #grid_options a.number': 'spinnerClick'
         },
 
         /**
@@ -455,6 +456,24 @@ $(function() {
 
             $target.siblings('label').toggleClass('selected');
             $target.siblings('.switcher').toggleClass('left');
+        },
+
+        /**
+         * Spinner clicks to jog numbers
+         *
+         * @return void
+         */
+        spinnerClick: function(e) {
+            var $target = $(e.target)
+                $number = $target.parent().find('input'),
+                val = parseFloat($number.val()),
+                step = 1;
+
+            e.preventDefault();
+
+            val = $target.hasClass('increase') ? val + step : val - step;
+
+            $number.val(val);
         },
 
         /**
