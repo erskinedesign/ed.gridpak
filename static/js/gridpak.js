@@ -611,3 +611,25 @@ $(function() {
      window.App = new AppView;
 
 });
+
+var utils = {
+
+    /**
+     * Checks if the variable passed is an integer
+     *
+     * @param string num
+     * @return boolean
+     */
+    isInt: function(num) {
+        return typeof num == 'number' && num % 1 == 0;
+    },
+
+    /**
+     * Checks if the param is a float
+     *
+     * @param string num
+     */
+    isFloat: function(num) {
+        return num === +num && num === (num|0);
+    }
+};
