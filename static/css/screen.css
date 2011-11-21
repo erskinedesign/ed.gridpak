@@ -11,19 +11,17 @@
     
         1. BODY
         2. DEFAULT STYLING
-        	2.1. FORMS
-        3. HEADLINES
-        4. LINKS
+        3. TYPOGRAPHY
         5. LAYOUT
             5.1. HEADER & BRANDING
             5.2. FOOTER
         6. GRIDPAK APPLICATION
         	6.1. BROWSER
-        	6.2. OPTIONS DIALOGUE
+        	6.2. OPTIONS 
         	6.3. GRIDS
         	6.4. TABS
         	6.5. DOWNLOAD FORM
-        7. TOOLTIP / TWIPSY
+        7. ABOUT 
     
     -------------------
     
@@ -79,7 +77,7 @@ em {
 	footer form {
 		float: left;
 		z-index: 2000;
-		margin: 12px 8px 4px 36px;
+		margin: 12px 8px 3px 36px;
 		padding: 8px 8px 8px 12px;
 		background-color: rgba(0,0,0,0.3);
 		-moz-border-radius: 5px;
@@ -91,19 +89,20 @@ em {
 	@media only screen and (min-width: 481px) and (max-width: 680px) {
 		footer form {
 			float: none;
-			display: inline-table;
+			display: block;
 			margin: 12px auto 4px auto;
 			overflow: hidden;
+			width: 394px;
 		}	
 	}
 	
 	@media only screen and (max-width: 480px) {
 		footer form {
 			float: none;
-			display: inline-table;
-			margin: 15px auto -3px auto;
+			display: block;
+			margin: 12px auto 4px auto;
 			overflow: hidden;
-			width: 230px;
+			width: 212px;
 			padding: 8px 8px 8px 12px;
 		}	
 		
@@ -479,7 +478,7 @@ h4 {
 #content_wrapper {
 	clear: both;
 	padding: 0 40px 0 36px;	
-	margin: 0px 0 50px 0px;
+	margin: 0;
 	height: 100%;
 }
 
@@ -647,7 +646,13 @@ h4 {
 	@media only screen and (max-width: 599px) {
 	
 		#header_sec { 
-		  padding: 54px 0px 142px 0px;
+		  padding: 54px 0px 0 0px;
+		}
+		
+		#header_sec .column {
+		  position: relative;
+		  float: none;
+		  text-align: center;
 		}
 		
 		#center {
@@ -659,7 +664,7 @@ h4 {
 		#left {
 		  width:  120px; 
 		  right: 0px;
-		  display: inline-table;    
+		  display: block;    
 		  margin: 0 auto 50px auto;
 		 -webkit-box-sizing:border-box;
 		 -moz-box-sizing:border-box;
@@ -669,7 +674,7 @@ h4 {
 		#right {
 		  width: 132px;
 		  right: 0px;
-		  display: inline-table;   
+		  display: block;   
 		  margin: 0 auto 50px auto;
 		 -webkit-box-sizing:border-box;
 		 -moz-box-sizing:border-box;
@@ -699,7 +704,7 @@ h4 {
 		background: #242424;
 		padding: 3px 0 12px 0;
 		z-index: 2000;
-		position: absolute;
+		position: fixed;
 		width: 100%;
 		-webkit-animation: fadeInUp 0.8s 1;
 		-moz-animation: fadeInUp 1.4s 1;
