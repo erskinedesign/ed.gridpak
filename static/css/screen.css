@@ -76,10 +76,11 @@ em {
 
 	/* @group 2.1. FORMS. 
 	------------------------------------- */
-	form {
+	footer form {
 		z-index: 2000;
 		padding-left: 40px;
-		color: #888;
+		padding-top: 15px;
+		float: left;
 	}
 	
 	form h3 {
@@ -413,8 +414,6 @@ h3 {
 h3:first-child {
 	margin-top: 0px;	
 }
-	
-}
 
 
 h4 {
@@ -531,6 +530,24 @@ h4 {
 		background-position: 0 -99px;
 	}
 	
+	@media only screen and (max-width: 599px) {
+			.site_header {
+				padding: 41px 40px 25px 40px;
+			}
+
+	
+			#branding {
+				margin: 0 auto 16px auto;
+			}
+			
+			.social {
+				float: none;
+				margin: 0 auto;
+				width: 250px;
+				
+			}
+		}
+	
 	
 	.main_button {
 		background: #CCC;
@@ -590,38 +607,40 @@ h4 {
 	}
 	
 	@media only screen and (max-width: 599px) {
-			
-		#header_sec .column {
-		  position: absolute;
-		  float: left;
+	
+		#header_sec { 
+		  padding: 54px 0px 142px 0px;
 		}
 		
 		#center {
-		  padding: 0 20px; 
-		  width: 100%;
-		  margin: 53px 0 40px 0;
+		  margin: 0 0 28px 0;
 		  left: -20px;
 		  text-align: center;
 		}
 		
-		#center p {
-			color: #999;
-			font-size: 15px;
-		}
-		
 		#left {
-		  width: 112px;
-		  padding: 8px 10px;   
-		  right: 0px;        
-		  margin-left: 0;
-		  left: 0;
+		  width: 33.3333%; 
+		  right: 0px;
+		  left: 33.3%;      
+		  margin: 0 auto 50px auto;
+		 -webkit-box-sizing:border-box;
+		 -moz-box-sizing:border-box;
+		 box-sizing:border-box;
 		}
 		
 		#right {
-		  width: 120px; 
-		  padding: 8px 10px; 
-		  margin-right: 0px; 
-		  right: 0;
+		  width: 33.3333%;
+		  right: 0px;
+		  left: 33.3%;      
+		  margin: 0 auto 50px auto;
+		 -webkit-box-sizing:border-box;
+		 -moz-box-sizing:border-box;
+		 box-sizing:border-box;
+		}
+
+		
+		.cur {
+		 	display: none;
 		}
 		
 	}
@@ -640,7 +659,7 @@ h4 {
 		left: 0;
 		bottom: 0;
 		background: #242424;
-		padding: 20px 0;
+		padding: 3px 0 12px 0;
 		z-index: 2000;
 		position: absolute;
 		width: 100%;
@@ -654,19 +673,42 @@ h4 {
 	
 	.created_by {
 		float:right;
-		padding: 0px 110px 0 0;
+		padding: 15px 156px 0 0;
 		color: #888;
-		background: url(../images/site/icons/erskine.png) no-repeat 62px -1px;
-		height: 19px;
+		background: url(../images/site/icons/erskine.png) no-repeat 57px 0px;
+		height: 32px;
 		margin-top: 12px;
 		cursor: pointer;
+		font-size: 12px;
 	}
 	
 	.created_by:hover {
 		float:right;
 		color: #888;
-		background: url(../images/site/icons/erskine.png) no-repeat 62px -21px;
+		background: url(../images/site/icons/erskine.png) no-repeat 57px -52px;
 
+	}
+	
+	@media only screen and (max-width: 640px) {
+		.created_by {
+			clear: both;
+			float: none;
+			display: block;
+			margin: 0 auto;
+			padding: 15px 40px 0 40px;
+			width: 163px;
+			background: url(../images/site/icons/erskine.png) no-repeat 97px 0;
+	}
+	
+	.created_by:hover {
+			float: left;
+			margin: 0 auto;
+			padding: 15px 40px 0 40px;
+			width: 220px;
+			background: url(../images/site/icons/erskine.png) no-repeat 97px -52px;
+	}
+		
+		
 	}
 	
 	/* @end */
@@ -1127,6 +1169,10 @@ h4 {
 	width: 33.3333333%; /* 100 / 3 % */
 }
 
+.grid_3_col_up  {
+	clear: both;
+}
+
 .grid_3_col_up .col {
 	padding: 0 8px;
 	border-width: 6px;
@@ -1238,29 +1284,21 @@ ul.updates {
 		opacity: 0.03;
 		z-index: -1;
 	}
+	
+	
+	
 		/* @group 8.1.1. 
 		----------------------------------*/
-		@media only screen and (max-width: 599px) and (min-width: 535px) {
+		@media only screen and (max-width: 599px) {
 			.about_wrapper #grids .grid_3_col {
 				display: block;
 			}
 		
-			.about_wrapper .grid_3_col_up {
-				margin-top: 35px;
+			.grid_3_col_up .col {
+				width: 100%;
+				text-align: center;
 			}
 		}
-		
-		@media only screen and (max-width: 534px) {
-			
-			.about_wrapper #grids .grid_3_col {
-				display: block;
-			}
-			
-			.about_wrapper .grid_3_col_up {
-				margin-top: 95px;
-			}
-		}
-
 		
 		
 		/* @end */
