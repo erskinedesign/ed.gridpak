@@ -79,7 +79,7 @@ em {
 	footer form {
 		float: left;
 		z-index: 2000;
-		margin: 12px 8px 4px 40px;
+		margin: 12px 8px 4px 36px;
 		padding: 8px 8px 8px 12px;
 		background-color: rgba(0,0,0,0.3);
 		-moz-border-radius: 5px;
@@ -88,7 +88,7 @@ em {
 		
 	}
 	
-	@media only screen and (min-width: 421px) and (max-width: 650px) {
+	@media only screen and (min-width: 481px) and (max-width: 680px) {
 		footer form {
 			float: none;
 			display: inline-table;
@@ -97,29 +97,23 @@ em {
 		}	
 	}
 	
-	@media only screen and (max-width: 420px) {
+	@media only screen and (max-width: 480px) {
 		footer form {
 			float: none;
 			display: inline-table;
-			margin: 12px auto 8px auto;
+			margin: 15px auto -3px auto;
 			overflow: hidden;
 			width: 230px;
-			padding: 0px 8px 8px 12px;
+			padding: 8px 8px 8px 12px;
 		}	
 		
 		form h3 {
-			color: #FFF;
-			font-size: 15px;
-			float: none;
-			margin: 13px 8px 2px 14px !Important;
-			font-weight: 600;
+			display: none;
 			
 		}
 		
 		form p {
-			float: right;
-			margin: 14px 12px 0 0 !important;
-			font-size: 12px;
+			display: none;
 		}
 		
 	
@@ -504,7 +498,7 @@ h4 {
 		width: 111px;
 		margin: 2px 12px -20px 0;
 		text-decoration: none;
-		color: rgba(0,0,0,1);
+		color: #333333;
 		font-weight: 700;
 		font-size: 26px;
 		 -webkit-transition: color 0.2s ease-out;
@@ -663,9 +657,9 @@ h4 {
 		}
 		
 		#left {
-		  width: 33.3333%; 
+		  width:  120px; 
 		  right: 0px;
-		  left: 33.3%;      
+		  display: inline-table;    
 		  margin: 0 auto 50px auto;
 		 -webkit-box-sizing:border-box;
 		 -moz-box-sizing:border-box;
@@ -673,9 +667,9 @@ h4 {
 		}
 		
 		#right {
-		  width: 33.3333%;
+		  width: 132px;
 		  right: 0px;
-		  left: 33.3%;      
+		  display: inline-table;   
 		  margin: 0 auto 50px auto;
 		 -webkit-box-sizing:border-box;
 		 -moz-box-sizing:border-box;
@@ -684,7 +678,7 @@ h4 {
 
 		
 		.cur {
-		 	display: none;
+		 	display: none !important;
 		}
 		
 	}
@@ -733,23 +727,23 @@ h4 {
 
 	}
 	
-	@media only screen and (max-width: 650px) {
+	@media only screen and (max-width: 680px) {
 		.created_by {
 			clear: both;
 			float: none;
 			display: block;
 			margin: 0 auto;
 			padding: 15px 40px 0 40px;
-			width: 163px;
-			background: url(../images/site/icons/erskine.png) no-repeat 97px 0;
+			width: 113px;
+			background: url(../images/site/icons/erskine-2.png) no-repeat 97px 0;
 		}
 		
 		.created_by:hover {
 			float: none;
 			margin: 0 auto;
 			padding: 15px 40px 0 40px;
-			width: 163px;
-			background: url(../images/site/icons/erskine.png) no-repeat 97px -52px;
+			width: 113px;
+			background: url(../images/site/icons/erskine-2.png) no-repeat 97px -52px;
 		}
 		
 		
