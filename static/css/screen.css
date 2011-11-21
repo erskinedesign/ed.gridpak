@@ -77,17 +77,61 @@ em {
 	/* @group 2.1. FORMS. 
 	------------------------------------- */
 	footer form {
-		z-index: 2000;
-		padding-left: 40px;
-		padding-top: 15px;
 		float: left;
+		z-index: 2000;
+		margin: 12px 8px 4px 40px;
+		padding: 8px 8px 8px 12px;
+		background-color: rgba(0,0,0,0.3);
+		-moz-border-radius: 5px;
+	    -webkit-border-radius: 5px;
+	    border-radius: 5px; 
+		
 	}
+	
+	@media only screen and (min-width: 421px) and (max-width: 650px) {
+		footer form {
+			float: none;
+			display: inline-table;
+			margin: 12px auto 4px auto;
+			overflow: hidden;
+		}	
+	}
+	
+	@media only screen and (max-width: 420px) {
+		footer form {
+			float: none;
+			display: inline-table;
+			margin: 12px auto 8px auto;
+			overflow: hidden;
+			width: 230px;
+			padding: 0px 8px 8px 12px;
+		}	
+		
+		form h3 {
+			color: #FFF;
+			font-size: 15px;
+			float: none;
+			margin: 13px 8px 2px 14px !Important;
+			font-weight: 600;
+			
+		}
+		
+		form p {
+			float: right;
+			margin: 14px 12px 0 0 !important;
+			font-size: 12px;
+		}
+		
+	
+	}
+	
 	
 	form h3 {
 		color: #FFF;
 		font-size: 15px;
 		float: left;
-		margin: 11px 12px 0 0 !important;
+		margin: 13px 12px 0 0;
+		font-weight: 600;
 	}
 	
 	form p {
@@ -405,13 +449,13 @@ h2 {
 	margin: 8px 0 3px 0;
 }
 
-h3 {
+.col h3 {
 	font-size: 19px;
 	font-weight: 600;
 	margin: 23px 0 13px 0;
 }
 
-h3:first-child {
+.col h3:first-child {
 	margin-top: 0px;	
 }
 
@@ -677,7 +721,7 @@ h4 {
 		color: #888;
 		background: url(../images/site/icons/erskine.png) no-repeat 57px 0px;
 		height: 32px;
-		margin-top: 12px;
+		margin-top: 18px;
 		cursor: pointer;
 		font-size: 12px;
 	}
@@ -689,7 +733,7 @@ h4 {
 
 	}
 	
-	@media only screen and (max-width: 640px) {
+	@media only screen and (max-width: 650px) {
 		.created_by {
 			clear: both;
 			float: none;
@@ -698,15 +742,15 @@ h4 {
 			padding: 15px 40px 0 40px;
 			width: 163px;
 			background: url(../images/site/icons/erskine.png) no-repeat 97px 0;
-	}
-	
-	.created_by:hover {
-			float: left;
+		}
+		
+		.created_by:hover {
+			float: none;
 			margin: 0 auto;
 			padding: 15px 40px 0 40px;
-			width: 220px;
+			width: 163px;
 			background: url(../images/site/icons/erskine.png) no-repeat 97px -52px;
-	}
+		}
 		
 		
 	}
