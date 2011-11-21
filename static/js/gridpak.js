@@ -406,7 +406,8 @@ $(function() {
             'keyup #grid_options input[type="number"]': 'updateOptions',
             'click #grid_options .switcher span': 'switchToggleClick',
             'change #grid_options select, #grid_options input[type="radio"]': 'updateOptions',
-            'change #grid_options .switcher_container input[type="radio"]': 'switchToggle'
+            'change #grid_options .switcher_container input[type="radio"]': 'switchToggle',
+            'click #grid_options a.number': 'spinnerClick'
         },
 
         /**
@@ -455,6 +456,24 @@ $(function() {
 
             $target.siblings('label').toggleClass('selected');
             $target.siblings('.switcher').toggleClass('left');
+        },
+
+        /**
+         * Spinner clicks to jog numbers
+         *
+         * @return void
+         */
+        spinnerClick: function(e) {
+            var $target = $(e.target)
+                $number = $target.parent().find('input'),
+                val = parseFloat($number.val()),
+                step = 1;
+
+            e.preventDefault();
+
+            val = $target.hasClass('increase') ? val + step : val - step;
+            $number.val(val);
+            this.updateOptions();
         },
 
         /**
@@ -551,11 +570,11 @@ $(function() {
             $('#new_min_width').val(Grids.current.get('min_width'));
             $('#new_col_num').val(Grids.current.get('col_num'));
             $('#new_col_padding_width').val(Grids.current.get('col_padding_width'));
-            $('input:radio[name="col_padding_type"][value="' + Grids.current.get('col_padding_type') + '"]').prop('checked', true);
+            $('input:radio[name="col_padding_type"][value="' + Grids.current.get('col_padding_type') + '"]').trigger('click');
             $('#new_gutter_width').val(Grids.current.get('gutter_width'));
-            $('input:radio[name="gutter_type"][value="' + Grids.current.get('gutter_type') + '"]').prop('checked', true);
+            $('input:radio[name="gutter_type"][value="' + Grids.current.get('gutter_type') + '"]').trigger('click');
             $('#new_baseline_height').val(Grids.current.get('baseline_height'));
-            Grids.dump();
+            // Grids.dump();
         },
 
         /**
@@ -592,3 +611,25 @@ $(function() {
      window.App = new AppView;
 
 });
+
+var utils = {
+
+    /**
+     * Checks if the variable passed is an integer
+     *
+     * @param string num
+     * @return boolean
+     */
+    isInt: function(num) {
+        return typeof num == 'number' && num % 1 == 0;
+    },
+
+    /**
+     * Checks if the param is a float
+     *
+     * @param string num
+     */
+    isFloat: function(num) {
+        return num === +num && num === (num|0);
+    }
+};
