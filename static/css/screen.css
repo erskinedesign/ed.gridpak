@@ -138,57 +138,15 @@ a {
 	float:right;	
 }
 
-.social {
+ul.social {
 	float:right;
 	clear:both;
-	font-size:0.923076923em;/*12/13*/
 }
 
-.social li {
-	display:inline;
-}
-
-.social a {
- 	color:#191919;
- 	text-decoration:none;
- 	margin-right:12px;
- 	background:url(../images/site/icons/social.png) no-repeat;
- 	padding-left:20px;
- 	float:left;
-}
-
-.social a:hover {
-	color:#000;
-}
-
-.social a:active {
-	margin:1px 12px -1px 0;
-}
-
-a.bookmark {
-	background-position:0 0;	
-}
-
-a.bookmark:hover {
-	background-position:0 -20px;
-}
-
-a.share {
-	background-position:0 -40px;
-	padding-left:23px;	
-}
-
-a.share:hover {
-	background-position:0 -60px;
-}
-
-a.feedback {
-	background-position:0 -79px;
-	padding-left:23px;	
-}
-
-a.feedback:hover {
-	background-position:0 -99px;
+ul.social li {
+	display: inline;
+	margin-right: 8px;
+	
 }
 
 		@media only screen and (max-width:599px) {
@@ -1000,21 +958,9 @@ footer {
 			padding:8px 8px 8px 12px;
 		}	
 		
-		footer form h3 {
-			display:none;
-		}
-		
 		footer form p {
 			display:none;
 		}
-	}
-	
-	footer form h3 {
-		color:#FFF;
-		font-size:1.153846154em;/*15/13*/
-		float:left;
-		margin:13px 12px 0 0;
-		font-weight:600;
 	}
 	
 	footer form p {
@@ -1305,11 +1251,25 @@ ul.updates {
 			}
 		}
 		
-		@media only screen and (min-width:960px) {
+		@media only screen and (max-width:1000px) and (min-width:960px)  {
 			.about_wrapper #grids .grid_12_col {
 				display:block;
 			}
 		}
+		
+		@media only screen and (min-width:1001px)  {
+			
+			.about_wrapper #grids .grid_12_col {
+				display:block;
+				width: 980px;
+				margin: 0 auto;
+				display: block;
+			}
+		}
+		
+		
+		
+	
 	
 	/* @end */
 	
