@@ -520,7 +520,6 @@ $(function() {
                     grid.set({ current: true });
                     Grids.current = grid;
                     App.refreshOptions();
-                    return false;
                 }
             });
 
