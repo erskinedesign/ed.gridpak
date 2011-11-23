@@ -488,17 +488,15 @@ $(function() {
             // ensure we only fire every time we snap to a new width
             if (old_width == current_width) return false;
 
-            // If we're out of bounds of the grid, switch to a new one
-            if (current_width < Grids.current.get('lower') || (Grids.current.get('upper') !== false && current_width > Grids.current.get('upper')))
-            {
-                // must now swap to the next view DOWN
-                direction = (current_width < Grids.current.get('lower')) ? - 1 : + 1;
-                Grids.current.set({ current: false });
-                Grids.current = Grids.current.getRelativeTo(direction);
-                Grids.current.set({ current: true });
-                App.refreshOptions();
-                return false;
-            }
+            Grids.each(function(grid) {
+                if (current_width >= grid.get('min_width') && (current_width < grid.get('upper') || grid.get('upper') == false)) {
+                    Grids.current.set({ current: false });
+                    grid.set({ current: true });
+                    Grids.current = grid;
+                    App.refreshOptions();
+                    return false;
+                }
+            });
 
             this.updateWidth(current_width);
 
