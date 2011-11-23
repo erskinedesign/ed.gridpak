@@ -3,16 +3,29 @@
  *
  * @generator http://gridpak.com/
  * @credit Erskine Design
- *
  */
 
-/**
- * @group MEDIA QUERY
- * ----------------------------------------------------------------------
- */
+/*
 
-@media screen and (min-width: px) {
+    TABLE OF CONTENTS -----------
 
-    /* your CSS here */
+        {% for grid in grids %}{{ forloop.counter }}. {{ grid.min_width }}px
+        {% endfor %}
+    -----------------------------
 
-} /* // min_width: {{ min_width }}px */
+*/
+
+{% for grid in grids %}
+
+    /**
+     * @group {{ forloop.counter }}. MEDIA QUERY
+     * ----------------------------------------------------------------------
+     */
+
+    @media screen and (min-width: {{ grid.min_width }}px) {
+
+        /* your CSS here */
+
+    } /* // min_width: {{ grid.min_width }}px */
+
+{% endfor %}
