@@ -44,8 +44,9 @@ def download(request):
     zip_buff = StringIO()
     # A list of the templates we want to render and add to our zip
     templates = [
-        'grids/downloads/grids.css', 
-        'grids/downloads/grids.js',
+        'grids/downloads/gridpak.css', 
+        'grids/downloads/gridpak.js',
+		'grids/downloads/gridpak.less',
     ]
     # Set up a zipfile in the zip buffer that we'll write to
     zip_dl = ZipFile(zip_buff, 'w')
@@ -68,4 +69,4 @@ def download(request):
     zip_buff.seek(0)
     response.write(zip_buff.read())
 
-    # return response
+    return response
