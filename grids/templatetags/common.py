@@ -2,8 +2,34 @@ from django.template import Library
 
 register = Library()
 
+# This is a bit rank, found on Djangosnippets.
+
+numbers = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',
+           'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen',
+           'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eightteen',
+           'nineteen',]
+
+_first_ten = numbers[1:10]
+
+for decimal in ['twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy',
+                'eighty', 'ninety']:
+    numbers.append(decimal)
+    numbers.extend(decimal + "-" + num for num in _first_ten)
+
 @register.filter
-def get_range( value ):
+def cssnumber(num):
+    """like humanize appnum but goes the full gambit from 0 to 99.
+    Is not translated as this is intended for CSS use.
+    0 : zero
+    10: ten
+    45: fourty-five
+
+    use the filter tag if you want a translation...
+    """
+    return numbers[num]
+    
+@register.filter
+def get_range(value):
   """
     Filter - returns a list containing range made from given value
     Usage (in template):
@@ -21,4 +47,4 @@ def get_range( value ):
 
     Instead of 3 one may use the variable set in the views
   """
-  return range( value )
+  return range(value)
