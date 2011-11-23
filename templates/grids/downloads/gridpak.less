@@ -1,5 +1,5 @@
 {% load common %}
-/**
+/*
  * QUERIES
  *
  * @generator http://gridpak.com/
@@ -16,8 +16,7 @@
 
 */
 
-
-/* ------ DEFAULT COLUMN STYLES ------------------------------------------ */
+/* ------ DEFAULT COLUMN STYLING (Do not change) ------ */
 
 .column(@num: 1) {
 	-webkit-box-sizing:border-box;
@@ -25,7 +24,7 @@
 	box-sizing:border-box;
 	float:left;
 	border:0px solid rgba(0,0,0,0);
-	padding:0 8px;
+	padding:0 0;
 	border-right-width:@gutter_px; /* Used for fixed gutters */
 	margin:0 @gutter_pc 0 0; /* Used for flexible gutters */
 	-moz-background-clip:padding; 
@@ -34,29 +33,24 @@
 	width:100% / @max_columns * @num; /* 100 / The maximum number of colums and then * the number of columns */
 }
 
-/*--- The .end mixin is be used in conjunction with a column mixin if your element is the last in a row --*/
-
 .end {border-right:0;margin-right:0;}
+/*--- The .end mixin is be used in conjunction with a column mixin if your element is the last in a row ---*/
 
 {% for grid in grids %}
 
-	/* {{ forloop.counter }}. GRID {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper|add:"-1" }}px{% else %} infinity{% endif %}
-	----------------------------------------------------------------------- */
+	/* ------{{ forloop.counter }}. GRID {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper|add:"-1" }}px{% else %}infinity{% endif %} ------ */
 	
 	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper|add:"-1" }}px){% endif %} {
 
-		/* ------ VARIABLE GRIDPAK STYLES AFTER THE MEDIA QUERIES ------------------------------------------ */
+		/* ------ GRIDPAK VARIABLES ------ */
 
 		@max_columns: {{ grid.col_num }}; /* The maximum number of columns in this grid */
 		@column_padding: 0, {{ grid.col_padding_width }}{{ grid.col_padding_type }}; /* The internal column padding */
 		@gutter_px: {% if grid.gutter_type == 'px' %}{{ grid.gutter_width }}{% else %}0{% endif %}; /* Gutters width in 'px' (If chosen) */
 		@gutter_pc: {% if grid.gutter_type == '%' %}{{ grid.gutter_width }}{% else %}0{% endif %}; /* Gutters width in '%' (If chosen) */
 
-		/* ------ COLUMN MIXINS
-
-		Place the appropriate column mixin INSIDE your selectors  ------------------------------------------ */
-
-		
+		/* ------ COLUMN MIXINS (Place the appropriate column mixin INSIDE your selectors)  ------ */
+	
 		{% for i in grid.col_num|get_range %}.{{ i|add:"1"|cssnumber }} {.column({{ i|add:"1" }}, @column_padding, @gutter_px, @gutter_pc, @max_columns);} /* {{ i|add:"1" }} {% if i < 1 %}Column{% else %}Columns{% endif %} wide */
 		{% endfor %}
 	
