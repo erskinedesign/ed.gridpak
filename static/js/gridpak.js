@@ -334,12 +334,14 @@ $(function() {
          *
          * @return void
          */
-        clear: function() {
+        clear: function(e) {
             var prev = this.model.getRelativeTo(-1),
                 next = this.model.getRelativeTo(1),
                 width = $('#new_min_width').val(),
                 is_cur = this.model.get('current'),
                 options = {};
+
+            e.preventDefault();
 
             if (this.model.collection.length == 1) {
                 this.errorHandler(this.model, 'You must have at least one grid');
@@ -605,6 +607,7 @@ $(function() {
          */
         createGrid: function(e) {
 
+            e.preventDefault();
             var options = _.extend(
                     this.fetchOptions(),
                     { upper: 0, lower: 0, current: true }
