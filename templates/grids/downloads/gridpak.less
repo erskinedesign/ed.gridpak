@@ -38,9 +38,9 @@
 
 {% for grid in grids %}
 
-	/* ------{{ forloop.counter }}. GRID {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper|add:"-1" }}px{% else %}infinity{% endif %} ------ */
+	/* ------{{ forloop.counter }}. GRID {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}infinity{% endif %} ------ */
 	
-	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper|add:"-1" }}px){% endif %} {
+	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {
 
 		/* ------ GRIDPAK VARIABLES ------ */
 
@@ -51,11 +51,9 @@
 
 		/* ------ COLUMN MIXINS (Place the appropriate column mixin INSIDE your selectors)  ------ */
 	
-		{% for i in grid.col_num|get_range %}.{{ i|add:"1"|cssnumber }} {.column({{ i|add:"1" }}, @column_padding, @gutter_px, @gutter_pc, @max_columns);} /* {{ i|add:"1" }} {% if i < 1 %}Column{% else %}Columns{% endif %} wide */
-		{% endfor %}
+		{% for i in grid.col_num|get_range %}.{{ i|add:"1"|cssnumber }} {.column({{ i|add:"1" }}, @column_padding, @gutter_px, @gutter_pc, @max_columns);} /* {{ i|add:"1" }} {% if i < 1 %}Column{% else %}Columns{% endif %} wide */{% endfor %}
 	
 	} /* end media query */
-
 {% endfor %}
 
 
