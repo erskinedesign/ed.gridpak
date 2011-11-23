@@ -40,10 +40,10 @@
 
 {% for grid in grids %}
 
-	/* {{ forloop.counter }}. GRID {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper|add:"-1" }}px{% else %} infinity{% endif %}
+	/* {{ forloop.counter }}. GRID {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %} infinity{% endif %}
 	----------------------------------------------------------------------- */
 	
-	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper|add:"-1" }}px){% endif %} {
+	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {
 
 		/* ------ VARIABLE GRIDPAK STYLES AFTER THE MEDIA QUERIES ------------------------------------------ */
 

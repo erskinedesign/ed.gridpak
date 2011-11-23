@@ -47,11 +47,11 @@ $(function() {
 
             // Int params must be integers
             if (
-                (typeof(attrs.min_width) != 'undefined' && !this.isInt(attrs.min_width)) ||
-                (typeof(attrs.col_num) != 'undefined' && !this.isInt(attrs.col_num)) ||
+                (typeof(attrs.min_width) != 'undefined' && !utils.isInt(attrs.min_width)) ||
+                (typeof(attrs.col_num) != 'undefined' && !utils.isInt(attrs.col_num)) ||
                 (typeof(attrs.col_padding_width) != 'undefined' && isNaN(attrs.col_padding_width)) ||
                 (typeof(attrs.gutter_width) != 'undefined' && isNaN(attrs.gutter_width)) ||
-                (typeof(attrs.baseline_height) != 'undefined' && !this.isInt(attrs.baseline_height))
+                (typeof(attrs.baseline_height) != 'undefined' && !utils.isInt(attrs.baseline_height))
             ) {
                 return 'Numbers please';
             }
@@ -83,18 +83,6 @@ $(function() {
             }
 
         },
-
-        /**
-         * Validate var is integer
-         *
-         * @param string x
-         * @return boolean
-         */
-        isInt: function(x) {
-            var y = parseInt(x); 
-            if (isNaN(y)) return false; 
-            return x == y && x.toString() == y.toString(); 
-         },
 
         /**
          * Update the models current width
@@ -161,7 +149,7 @@ $(function() {
             // The old lower is remains the same, we're just moving the upper to make room
             // for the new grid
             old_limits.lower = old_limits_cache.lower = this.collection.current.get('lower');
-            old_limits.upper = this.get('min_width');
+            old_limits.upper = this.get('min_width') - 1;
 
             // First we'll set the old limits and fail if there's a problem
             if (!this.collection.current.set(old_limits)) return false;
