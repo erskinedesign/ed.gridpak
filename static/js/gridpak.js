@@ -395,7 +395,8 @@ $(function() {
             'click #grid_options .switcher span': 'switchToggleClick',
             'change #grid_options select, #grid_options input[type="radio"]': 'updateOptions',
             'change #grid_options .switcher_container input[type="radio"]': 'switchToggle',
-            'click #grid_options a.number': 'spinnerClick'
+            'click #grid_options a.number': 'spinnerClick',
+            'click .actions .link' : 'jumpToGrid',
         },
 
         /**
@@ -444,6 +445,29 @@ $(function() {
 
             $target.siblings('label').toggleClass('selected');
             $target.siblings('.switcher').toggleClass('left');
+        },
+
+        /**
+         * Jump to grid
+         *
+         * @return void
+         */
+        jumpToGrid: function(e) {
+            var $target = $(e.target),
+                jumpText = $target.html(),
+                jumpLimits = [],
+                jumpTo = 0
+                ui = { size: { width: {} } };
+
+            e.preventDefault();
+
+            jumpLimits = jumpText.split(' - ');
+            jumpTo = (jumpLimits[1] == '∞') ? jumpLimits[0] : Math.round((parseInt(jumpLimits[0]) + parseInt(jumpLimits[1])) / 2);
+
+            this.$browser.width(jumpTo);
+            ui.size.width = jumpTo;
+            this.resize(e, ui);
+
         },
 
         /**
