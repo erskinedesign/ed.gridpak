@@ -18,22 +18,22 @@
 
 /* ------ DEFAULT COLUMN STYLING (Do not change) ------ */
 
-.column(@num: 1) {
+.one, .two {
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
 	float:left;
-	border:0px solid rgba(0,0,0,0);
-	padding:0 0;
-	border-right-width:@gutter_px; /* Used for fixed gutters */
-	margin:0 @gutter_pc 0 0; /* Used for flexible gutters */
 	-moz-background-clip:padding; 
 	-webkit-background-clip:padding-box; 	
 	background-clip:padding-box;
-	width:100% / @max_columns * @num; /* 100 / The maximum number of colums and then * the number of columns */
+}
+
+.col(@max_columns: 1, @num: 1) {
+	width: width: 100% / @max_columns * @num;
 }
 
 .end {border-right:0;margin-right:0;}
+
 /*--- The .end mixin is be used in conjunction with a column mixin if your element is the last in a row ---*/
 
 {% for grid in grids %}
@@ -41,6 +41,11 @@
 	/* ------{{ forloop.counter }}. GRID {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}infinity{% endif %} ------ */
 	
 	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {
+		.one, .two	{
+			border:0px solid rgba(0,0,0,0);
+			padding:0 0;
+			margin:0 0;
+		}
 
 		/* ------ GRIDPAK VARIABLES ------ */
 
@@ -51,7 +56,11 @@
 
 		/* ------ COLUMN MIXINS (Place the appropriate column mixin INSIDE your selectors)  ------ */
 	
-		{% for i in grid.col_num|get_range %}.{{ i|add:"1"|cssnumber }} {.column({{ i|add:"1" }}, @column_padding, @gutter_px, @gutter_pc, @max_columns);} /* {{ i|add:"1" }} {% if i < 1 %}Column{% else %}Columns{% endif %} wide */{% endfor %}
+		{% for i in grid.col_num|get_range %}
+		.{{ i|add:"1"|cssnumber }} {
+			.col({{ grid.col_num }}, {{ i|add:"1" }});
+		} /* {{ i|add:"1" }} column{{ i|add:"1"|pluralize }} */
+		{% endfor %}
 	
 	} /* end media query */
 {% endfor %}

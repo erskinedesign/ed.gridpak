@@ -48,3 +48,13 @@ def get_range(value):
     Instead of 3 one may use the variable set in the views
   """
   return range(value)
+
+@register.filter
+def mult(value, arg):
+    "Multiplies the arg and the value"
+    return int(value) * int(arg)
+
+@register.filter    
+def div(value, arg):
+    "Divides the value by the arg"
+    return int(value) / int(arg)
