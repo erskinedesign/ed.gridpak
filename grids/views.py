@@ -44,8 +44,8 @@ def download(request):
     zip_buff = StringIO()
     # A list of the templates we want to render and add to our zip
     templates = [
-        'ed_grids/ed_grids.css', 
-        'ed_grids/ed_grids.js',
+        'grids/downloads/grids.css', 
+        'grids/downloads/grids.js',
     ]
     # Set up a zipfile in the zip buffer that we'll write to
     zip_dl = ZipFile(zip_buff, 'w')
@@ -55,17 +55,17 @@ def download(request):
         buff = StringIO()
         # Read the templates into string buffers
         buff.write(render_to_string(template, {
-            'cur_page': 'index',
+            'grids': grids,
         }).encode('ascii', 'ignore'))
 
-        zip_dl.writestr(template, buff.getvalue())
+        zip_dl.writestr(template.replace('grids/downloads/', ''), buff.getvalue())
 
     zip_dl.close()
 
     response = HttpResponse(mimetype='application/zip')
-    response['Content-Disposition'] = 'attachment; filename=ed_grids.zip'
+    response['Content-Disposition'] = 'attachment; filename=gridpak.zip'
 
     zip_buff.seek(0)
     response.write(zip_buff.read())
 
-    return response
+    # return response
