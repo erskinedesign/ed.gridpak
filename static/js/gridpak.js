@@ -47,11 +47,11 @@ $(function() {
 
             // Int params must be integers
             if (
-                (typeof(attrs.min_width) != 'undefined' && !this.isInt(attrs.min_width)) ||
-                (typeof(attrs.col_num) != 'undefined' && !this.isInt(attrs.col_num)) ||
+                (typeof(attrs.min_width) != 'undefined' && !utils.isInt(attrs.min_width)) ||
+                (typeof(attrs.col_num) != 'undefined' && !utils.isInt(attrs.col_num)) ||
                 (typeof(attrs.col_padding_width) != 'undefined' && isNaN(attrs.col_padding_width)) ||
                 (typeof(attrs.gutter_width) != 'undefined' && isNaN(attrs.gutter_width)) ||
-                (typeof(attrs.baseline_height) != 'undefined' && !this.isInt(attrs.baseline_height))
+                (typeof(attrs.baseline_height) != 'undefined' && !utils.isInt(attrs.baseline_height))
             ) {
                 return 'Numbers please';
             }
@@ -83,18 +83,6 @@ $(function() {
             }
 
         },
-
-        /**
-         * Validate var is integer
-         *
-         * @param string x
-         * @return boolean
-         */
-        isInt: function(x) {
-            var y = parseInt(x); 
-            if (isNaN(y)) return false; 
-            return x == y && x.toString() == y.toString(); 
-         },
 
         /**
          * Update the models current width
@@ -161,7 +149,7 @@ $(function() {
             // The old lower is remains the same, we're just moving the upper to make room
             // for the new grid
             old_limits.lower = old_limits_cache.lower = this.collection.current.get('lower');
-            old_limits.upper = this.get('min_width');
+            old_limits.upper = this.get('min_width') - 1;
 
             // First we'll set the old limits and fail if there's a problem
             if (!this.collection.current.set(old_limits)) return false;
@@ -407,7 +395,8 @@ $(function() {
             'click #grid_options .switcher span': 'switchToggleClick',
             'change #grid_options select, #grid_options input[type="radio"]': 'updateOptions',
             'change #grid_options .switcher_container input[type="radio"]': 'switchToggle',
-            'click #grid_options a.number': 'spinnerClick'
+            'click #grid_options a.number': 'spinnerClick',
+            'click .actions .link' : 'jumpToGrid',
         },
 
         /**
@@ -459,6 +448,29 @@ $(function() {
         },
 
         /**
+         * Jump to grid
+         *
+         * @return void
+         */
+        jumpToGrid: function(e) {
+            var $target = $(e.target),
+                jumpText = $target.html(),
+                jumpLimits = [],
+                jumpTo = 0
+                ui = { size: { width: {} } };
+
+            e.preventDefault();
+
+            jumpLimits = jumpText.split(' - ');
+            jumpTo = (jumpLimits[1] == '∞') ? jumpLimits[0] : Math.round((parseInt(jumpLimits[0]) + parseInt(jumpLimits[1])) / 2);
+
+            this.$browser.width(jumpTo);
+            ui.size.width = jumpTo;
+            this.resize(e, ui);
+
+        },
+
+        /**
          * Spinner clicks to jog numbers
          *
          * @return void
@@ -500,17 +512,15 @@ $(function() {
             // ensure we only fire every time we snap to a new width
             if (old_width == current_width) return false;
 
-            // If we're out of bounds of the grid, switch to a new one
-            if (current_width < Grids.current.get('lower') || (Grids.current.get('upper') !== false && current_width > Grids.current.get('upper')))
-            {
-                // must now swap to the next view DOWN
-                direction = (current_width < Grids.current.get('lower')) ? - 1 : + 1;
-                Grids.current.set({ current: false });
-                Grids.current = Grids.current.getRelativeTo(direction);
-                Grids.current.set({ current: true });
-                App.refreshOptions();
-                return false;
-            }
+            Grids.each(function(grid) {
+                if (current_width >= grid.get('min_width') && (current_width < grid.get('upper') || grid.get('upper') == false)) {
+                    Grids.current.set({ current: false });
+                    grid.set({ current: true });
+                    Grids.current = grid;
+                    App.refreshOptions();
+                    return false;
+                }
+            });
 
             this.updateWidth(current_width);
 
