@@ -578,7 +578,7 @@ $(function() {
          * @return void
          */
         refreshOptions: function() {
-            $('#new_min_width').val(Grids.current.get('min_width'));
+            // $('#new_min_width').val(Grids.current.get('min_width'));
             $('#new_col_num').val(Grids.current.get('col_num'));
             $('#new_col_padding_width').val(Grids.current.get('col_padding_width'));
             $('input:radio[name="col_padding_type"][value="' + Grids.current.get('col_padding_type') + '"]').trigger('click');
