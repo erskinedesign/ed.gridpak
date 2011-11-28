@@ -306,7 +306,7 @@ ul.social li {
 	width: 98px;
 }
 
-		@media only screen and (max-width:599px) {
+		@media only screen and (max-width:640px) {
 		.site_header {
 			padding:41px 40px 25px 40px;
 		}
@@ -317,13 +317,21 @@ ul.social li {
 		
 		ul.social {
 			float:none;
-			margin:0 auto;
-			width:272px;
+			margin:40px auto 20px auto;
+			width:162px;
 			overflow:hidden;
 		}
 		
 		ul.social li:last-child {
 			margin-right:0;
+		}
+		
+		nav {
+			display:block;
+			float:none;
+			height: 12px;
+			margin:-74px auto 36px auto;
+			width:251px;
 		}
 	}
 	
@@ -331,49 +339,20 @@ ul.social li {
 ------------------------------------- */
 	
 	#header_sec { 
-		padding:42px 192px 0 140px;
+		padding:39px 0 42px 0;
+		text-align:center;
+		max-width: 1040px;
+		margin:0 auto;
 	}
 	
-	#header_sec .column {
-		position:relative;
-		float:left;
+	.about #header_sec { 
+		padding:39px 0 25px 0;
 		text-align:center;
 	}
 	
-	#center {
-		padding:0 20px; 
-		width:100%;
-		margin:-7px 0 40px 2px;
-	}
-	
-	#center p {
+	#header_sec p {
 		font-size:1.153846154em;/*15/13*/
 	}
-	
-	
-	
-	
-		@media only screen and (max-width:599px) {
-		
-			#header_sec { 
-				padding:54px 0 0 0;
-			}
-			
-			#header_sec .column {
-				position:relative;
-				float:none;
-				text-align:center;
-			}
-			
-			#center {
-				margin:0 0 28px 0;
-				left:-20px;
-				text-align:center;
-			}
-
-	}
-
-	/* @end */
 	
 /* @end */
 	
@@ -393,7 +372,6 @@ footer {
 	-ms-animation:fadeInUp 1.4s 1;
 	-o-animation:fadeInUp 1.4s 1;
 	animation:fadeInUp 1.4s 1;
-	line-height: 1em;;
 }
 
 .footer_wrapper {
@@ -401,27 +379,45 @@ footer {
 	margin: 0 auto;
 }
 
+.about .created_by {
+	float:right;
+	padding:11px 0 4px 60px;
+	color:#888;
+	background:url(../images/site/icons/erskine.png) no-repeat 2px 4px;
+	margin-top:18px;
+	font-size:0.846153846em;/*12/13*/
+	width: 196px;
+}
+
 .created_by {
 	float:right;
-	padding:4px 0 10px 54px;
+	padding:11px 0 4px 60px;
 	color:#888;
-	background:url(../images/site/icons/erskine.png) no-repeat;
-	margin-top:18px;
-	font-size:0.923076923em;/*12/13*/
-	width: 200px;
+	background:url(../images/site/icons/erskine.png) no-repeat 2px 4px;
+	margin-top:10px;
+	font-size:0.846153846em;/*12/13*/
+	width: 196px;
+	line-height: 1.153846154em;
 }
 
 .created_by a {
 	color: #FFF;
 }
-.created_by:hover {
-	float:right;
-	color:#888;
-	background:url(../images/site/icons/erskine.png) no-repeat 0 -53px;
+
+.created_by a:hover {
+	color: #888;
 }
 
+
 	@media only screen and (max-width:680px) {
-	
+	.created_by {
+		float:none;
+		margin: 0 auto;
+		text-align: center;
+		background-image: none;
+		width: 196px;
+		padding: 11px 0 12px 0;
+	}
 	
 }
 
@@ -436,6 +432,7 @@ footer {
     height:520px;
     clear:both;
     background:url(../images/site/icons/ruler.png) no-repeat 0 453px;
+    padding-bottom: 132px;
 }
 
 	/* @group 6.1. BROWSER
@@ -443,9 +440,9 @@ footer {
 	
 	#browser {
 	    position:relative;
-	    width :960px;
+	    width:960px;
 	    border:1px solid #000;
-	    margin-bottom:40px;
+	    margin: 0 0 40px 0;
 	    top:-1px;
 	    height:388px;
 	    z-index:0;
@@ -1050,7 +1047,7 @@ footer {
 	p.numberOfGrids + a {
 		font-size:0.769230769em;/*10/13*/
 		float:right;
-		margin:12px 0 0 4px;
+		margin:13px 0 0 4px;
 		cursor:pointer;
 	}
 	
@@ -1212,15 +1209,17 @@ footer {
 	position:relative;
 }
 
-
-
 .about_content_wrapper {
 	display: block;
 	overflow: hidden;
 	position: relative;
 	padding-bottom: 30px;
 	clear: both;
-	margin-top: -20px;
+	-webkit-animation:fadeInUp 1s 1;
+	-moz-animation:fadeInUp 1s 1;
+	-ms-animation:fadeInUp 1s 1;
+	-o-animation:fadeInUp 1s 1;
+	animation:fadeInUp 1s 1;
 	
 }
 
@@ -1234,8 +1233,7 @@ footer {
     border-right-width:12px;
     -webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
-	box-sizing:border-box;  
-	 
+	box-sizing:border-box;   
 }
 
 .support {
@@ -1268,12 +1266,8 @@ footer {
 }
 
 .about_wrapper h3 {
-	margin-top: 21px;
-	font-size: 19px;	
-}
-
-.about_wrapper h3 {
 	margin:31px 0 5px 0;
+	font-size: 19px;	
 }
 
 .about_wrapper h3 span {
@@ -1343,7 +1337,7 @@ footer {
 .video_container {
 	height: 300px;
 	background: #252525;
-	margin: 4px 0 21px 0;
+	margin: 3px 0 7px 0;
 }
 
 
