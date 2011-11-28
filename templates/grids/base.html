@@ -32,20 +32,23 @@
     
     <body class="{% block body_class %}{% endblock %}">
         	<header class="site_header">
-	            <h1 id="branding">
+	            <div class="header_wrapper">
+	                <h1 id="branding">
 			            Gridpak<sup>BETA</sup>
-			    </h1>
-				<ul class="social">	
-					<li class="share">
-						<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="gridpak" data-related="erskinedesign:creators of Gridpak">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
-					</li>
-					<li class="like">
-						<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fgridpak.com&amp;send=false&amp;layout=button_count&amp;width=auto&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21&amp;appId=297295033635694" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:auto; height:21px;" allowTransparency="true"></iframe>
-					</li>
-					<li class="follow">
-						<a href="https://twitter.com/gridpak" class="twitter-follow-button" data-show-count="false">Follow @gridpak</a>
-					</li>
-				</ul>
+			        </h1>
+				    <ul class="social">	
+    					<li class="share">
+    						<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="gridpak" data-related="erskinedesign:creators of Gridpak">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+    					</li>
+    					<li class="like">
+    						<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fgridpak.com&amp;send=false&amp;layout=button_count&amp;width=auto&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21&amp;appId=297295033635694" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:auto; height:21px;" allowTransparency="true"></iframe>
+    					</li>
+    				</ul>
+    				<nav>
+    			        <a href="{% url grids_index %}" class="main_button column{% if cur_page == 'index' %} cur{% endif %}">Use the generator</a>
+                        <a href="{% url about %}" class="{% if cur_page == 'about' %} cur{% endif %}">Learn about Gripak</a
+    			    </nav>
+    			</div>
 			</header>
 		</div>
 		<div id="content_wrapper">
@@ -58,6 +61,7 @@
 	    <script src="{{ STATIC_URL }}js/backbone.js"></script>
 	    <script src="{{ STATIC_URL }}js/gridpak.js"></script>
 	    <script src="{{ STATIC_URL }}js/onload.js"></script>
+	    <script src="{{ STATIC_URL }}js/highlight.pack.js"></script>
 
 	<!--[if IE 6]>
 	<script src="{{ STATIC_URL }}js/ie6/DD_belatedPNG_0.0.8a.js"></script>
