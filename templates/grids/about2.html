@@ -1,0 +1,87 @@
+{% extends 'grids/base.html' %}
+{% block body_class %}about{% endblock %}
+{% block content %}
+	{% load common %}
+		<div class="about_wrapper">
+			<header id="header_sec">
+				<div id="center" class="column">
+					<h2>The <b>Responsive</b> grid generator</h2>
+					<p>Creating a responsive grid system just became a total breeze...</p>
+				</div>
+                <a href="{% url grids_index %}" id="left" class="main_button column{% if cur_page == 'index' %} cur{% endif %}">Use the generator</a>
+                <a href="{% url about %}" id="right" class="main_button column{% if cur_page == 'about' %} cur{% endif %}">Learn about Gripak</a>
+			</header>
+		
+	 	<div class="about_content_wrapper">
+			
+			<dl>
+				<dt>What is it?</dt>
+				<dd="content_middle">
+					<p>Gridpak is the starting point for your responsive projects, improving your workflow and saving time. Create your responsive grid system once using the simple interface and let Gridpak do the heavy lifting of generating CSS, PNGs and Javascript.</p>
+				</dd>	
+			
+				<dt>Why should I use it?</dt>
+				<dd>
+						<p>It’s the most flexible system out there – you control every aspect of the grid from column padding to where ‘break points’ occur. Our simple interface makes it quick and easy to visualise your responsive grid system and output it in the formats you need.</p>
+				</dd>
+			
+				<dt>What's in the download?</dt>
+				<dd>
+					<h3>PNGs</h3>
+					<p>A PNG version of each grid you have created, ready and waiting for your graphics program of  choice.</p>
+				
+					<h3>Presentational CSS</h3>
+					<p>Your download provides you with three options when it comes to ‘presentational’ CSS.</p>
+	
+					<h4>Gripak.CSS</h4>
+					<p>The first is a straight forward CSS which includes the appropriate media queries and pre-defined selectors based on the grids you have created. Whilst using this file doesn’t require a compiler and will result in a smaller file size it is less semantic than the .LESS and .SCSS files.</p>
+	
+					<h5>How to use</h5>
+					<p>cAdd the selector corresponding to the desired width of your element followed by the
+					class ‘column</p>
+				</dd>	
+			</dl>
+			
+			<div class="support">
+				<h3>Feedback</h3>
+				<p>We are constantly looking to improve Gridpak, so if you have any suggestions please don’t hesitate to email hello@gridpak.com.</p><p>If you use Gridpak for one of your projects we’d also love to here about it.</p>
+				<h3>Updates</h3>
+				<ul class="updates">
+					<li>13/9/11 - Added baseline functiona..</li>
+					<li>7/9/11 - Fixed margin bug</li>
+					<li>7/9/11 - Improved gutters</li>
+					<li>5/9/11 - Integrated with LESS</li>
+					<li>1/9/11 - Fixed margin bug</li>
+				</ul>
+				<p><a href="">View full changelog</a></p>
+			</div><!-- // .support-->
+			
+			
+			</div><!-- // .about_content_wrapper-->
+		    <div id="grids">
+		
+				<div class="grid grid_3_col">
+			        {% for i in 3|get_range %}
+			        <div class="col"><div class="visible"></div></div>
+			        {% endfor %}
+				</div> <!-- // .grid_320 -->
+			
+				<div class="grid grid_6_col">
+			        {% for i in 6|get_range %}
+			        <div class="col"><div class="visible"></div></div>
+			        {% endfor %}
+				</div> <!-- // .grid_500 -->
+			
+				<div class="grid grid_10_col">
+			        {% for i in 10|get_range %}
+			        <div class="col"><div class="visible"></div></div>
+			        {% endfor %}
+				</div> <!-- // .grid_960 -->
+			
+		    </div> <!-- // #grids -->
+		
+			<div class="baseline_grid"></div>
+
+	</div> <!-- // .about_wrapper -->
+
+{% endblock %}
