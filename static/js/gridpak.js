@@ -334,12 +334,14 @@ $(function() {
          *
          * @return void
          */
-        clear: function() {
+        clear: function(e) {
             var prev = this.model.getRelativeTo(-1),
                 next = this.model.getRelativeTo(1),
                 width = $('#new_min_width').val(),
                 is_cur = this.model.get('current'),
                 options = {};
+
+            e.preventDefault();
 
             if (this.model.collection.length == 1) {
                 this.errorHandler(this.model, 'You must have at least one grid');
@@ -518,7 +520,6 @@ $(function() {
                     grid.set({ current: true });
                     Grids.current = grid;
                     App.refreshOptions();
-                    return false;
                 }
             });
 
@@ -577,7 +578,7 @@ $(function() {
          * @return void
          */
         refreshOptions: function() {
-            $('#new_min_width').val(Grids.current.get('min_width'));
+            // $('#new_min_width').val(Grids.current.get('min_width'));
             $('#new_col_num').val(Grids.current.get('col_num'));
             $('#new_col_padding_width').val(Grids.current.get('col_padding_width'));
             $('input:radio[name="col_padding_type"][value="' + Grids.current.get('col_padding_type') + '"]').trigger('click');
@@ -605,6 +606,7 @@ $(function() {
          */
         createGrid: function(e) {
 
+            e.preventDefault();
             var options = _.extend(
                     this.fetchOptions(),
                     { upper: 0, lower: 0, current: true }
