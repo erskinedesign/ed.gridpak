@@ -225,9 +225,8 @@ pre .tex .special {
 
 #content_wrapper {
 	clear:both;
-	padding:0 40px 0 36px;	
+	padding:0 40px;	
 	margin:0;
-
 }
 
 /* @end */
@@ -238,7 +237,7 @@ pre .tex .special {
 
 .site_header {
 	background:#FFF;
-	padding:41px 40px;
+	padding:40px 40px;
 	overflow:auto;
 	-webkit-box-shadow:0 3px 20px rgba(0,0,0,0.5); 
     -moz-box-shadow:0 3px 20px rgba(0,0,0,0.5);
@@ -287,7 +286,7 @@ nav a:first-child {
 
 ul.social {
 	float:left;
-	display: block;
+	display:block;
 	margin-left: 140px;
 }
 
