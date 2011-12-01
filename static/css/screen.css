@@ -22,6 +22,164 @@
         	6.4. TABS
         	6.5. DOWNLOAD FORM
         7. ABOUT 
+
+/* @group 2. TYPOGRAPHY
+------------------------------------------ */
+
+h1 {
+	font-size:2em;/*26/13*/
+	font-weight:700;
+}
+
+h2, h3, h4, h5 {
+	font-weight:600;
+	color: #FFF;
+}
+
+h2 {
+	font-size:2.692307692em;/*35/13*/
+	color:#FFF;
+	line-height:36px;
+	margin:8px 0 3px 0;
+}
+
+h3 {
+	font-size: 1.307692308em;/*17/13*/
+	margin-bottom: 0.769230769em; /*9/13*/
+}
+
+
+h4 {
+	font-size:1.153846154em;/*15/13*/
+	margin:6px 0 9px 0;
+}
+
+h5 {
+	font-size:1.076923077em;/*15/13*/
+}
+
+em {
+	font-style:italic;
+}
+
+b {
+	font-weight:800;
+}
+
+a {
+	text-decoration:none;
+}
+
+p {
+	margin-bottom: 0.461538462em;/*6/13*/
+}
+
+pre {
+	background: #252525;
+	font-family: monaco;
+	webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding: 18px 18px;
+	font-size: 12px;
+	margin: 14px 0 16px 0;
+}
+
+pre .keyword,
+pre .literal,
+pre .change,
+pre .winutils,
+pre .flow,
+pre .lisp .title,
+pre .tex .special {
+  color: white;
+}
+
+pre code,
+pre .ruby .subst {
+  color: #DDD;
+}
+
+pre .attribute {
+	color: #888;
+}
+
+pre .string,
+pre .function .title,
+pre .class .title,
+pre .haskell .label,
+pre .ini .title,
+pre .tag .value,
+pre .css .rules .value,
+pre .preprocessor,
+pre .ruby .symbol,
+pre .ruby .symbol .string,
+pre .ruby .symbol .keyword,
+pre .ruby .symbol .keymethods,
+pre .ruby .instancevar,
+pre .ruby .class .parent,
+pre .built_in,
+pre .sql .aggregate,
+pre .django .template_tag,
+pre .django .variable,
+pre .smalltalk .class,
+pre .javadoc,
+pre .ruby .string,
+pre .django .filter .argument,
+pre .smalltalk .localvars,
+pre .smalltalk .array,
+pre .attr_selector,
+pre .pseudo,
+pre .addition,
+pre .stream,
+pre .envvar,
+pre .apache .tag,
+pre .apache .cbracket,
+pre .tex .command,
+pre .input_number,
+pre .value {
+
+  color: #CA4C54;
+}
+
+pre .comment,
+pre .java .annotation,
+pre .python .decorator,
+pre .template_comment,
+pre .pi,
+pre .doctype,
+pre .deletion,
+pre .shebang,
+pre .apache .sqbracket,
+pre .tex .formula {
+  color: #444;
+}
+
+pre .keyword,
+pre .literal,
+pre .css .id,
+pre .phpdoc,
+pre .function .title,
+pre .class .title,
+pre .haskell .label,
+pre .vbscript .built_in,
+pre .sql .aggregate,
+pre .rsl .built_in,
+pre .smalltalk .class,
+pre .xml .tag .title,
+pre .diff .header,
+pre .chunk,
+pre .winutils,
+pre .bash .variable,
+pre .lisp .title,
+pre .apache .tag,
+pre .tex .special {
+  color: #FFF;
+}
+
+
+
+/* @end */
         8. ABOUT 
     
     -------------------
@@ -242,6 +400,7 @@ pre .tex .special {
 	-webkit-box-shadow:0 3px 20px rgba(0,0,0,0.5); 
     -moz-box-shadow:0 3px 20px rgba(0,0,0,0.5);
     box-shadow:0 3px 20px rgba(0,0,0,0.5); 
+    
 }
 
 .header_wrapper {
@@ -338,14 +497,15 @@ ul.social li {
 ------------------------------------- */
 	
 	#header_sec { 
-		padding:39px 0 42px 0;
+		padding:41px 0 42px 0;
 		text-align:center;
 		max-width: 1040px;
 		margin:0 auto;
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
 	}
 	
 	.about #header_sec { 
-		padding:39px 0 25px 0;
+		padding:41px 0 25px 0;
 		text-align:center;
 	}
 	
@@ -1372,12 +1532,12 @@ footer {
 	.grid_6_col .col {
 		padding:0 12px;
 		border-right-width:12px;
-		width:16.666666667%; /* 100 / 6 % */
+		width:16.666666667%;  /*100 / 6 %*/ 
 	}
-	.grid_10_col .col {
+	.grid_5_col .col {
 		padding:0 12px;
 		border-right-width:12px;
-		width:10%; /* 100 /10 */
+		width:20%;  /*100 /10*/ 
 	}
 
 	.about_wrapper #grids {
@@ -1394,16 +1554,18 @@ footer {
 		-o-animation:fadeIn 1.8s 1;
 		animation:fadeIn 1.8s 1;
 	}
+	
 	.about_wrapper #grids .grid {
 		display:none;
 		height:100%;
 		width:100%;
 	}
+	
 	.about_wrapper #grids .col {
 		height:100%;
-		background:url(../images/site/icons/about_grid_vertical.png) repeat-y 0 0, url(../images/site/icons/about_grid_vertical.png) repeat-y 100% 0;
-		
+		background:url(../images/site/icons/about_grid_vertical.png) repeat-y 0 0, url(../images/site/icons/about_grid_vertical.png) repeat-y 100% 0;	
 	}
+	
 	.about_wrapper #grids .col .visible {
 		width:100%;
 		height:100%;
@@ -1415,7 +1577,7 @@ footer {
 	}
 	
 	.baseline_grid {
-		background:url(../images/site/icons/about_grid_baseline.png);
+		/*background:url(../images/site/icons/about_grid_baseline.png);*/
 		-webkit-animation:fadeIn 1.8s 1;
 		-moz-animation:fadeIn 1.8s 1;
 		-ms-animation:fadeIn 1.8s 1;
@@ -1441,28 +1603,23 @@ footer {
 			}
 		}
 		
-		@media only screen and (max-width:959px) and (min-width:599px) {
-			.about_wrapper #grids .grid_6_col {
-				display:block;
-			}
-		}
 		
-		@media only screen and (max-width:1114px) and (min-width:960px)  {
-			.about_wrapper #grids .grid_10_col {
+		@media only screen and (max-width:1114px) and (min-width:599px)  {
+			/*.about_wrapper #grids .grid_5_col {
 				display:block;
-			}
+			}*/
 			
 			
 		}
 		
 		@media only screen and (min-width:1115px)  {
 			
-			.about_wrapper #grids .grid_10_col, .grid {
+			/*.about_wrapper #grids .grid_5_col {
 				display:block;
 				width: 1040px;
 				margin: 0 auto;
 				display: block;
-			}
+			}*/
 			
 			.about_content_wrapper {
 				max-width: 1040px;
@@ -1470,10 +1627,7 @@ footer {
 			}
 			
 		}
-		
-		
-		
-	
+
 	
 	/* @end */
 	
