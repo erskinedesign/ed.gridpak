@@ -236,12 +236,12 @@ pre .tex .special {
 
 .site_header {
 	background:#FFF;
-	padding:40px 40px;
+	padding:30px 40px;
 	overflow:auto;
 	-webkit-box-shadow:0 3px 20px rgba(0,0,0,0.5); 
     -moz-box-shadow:0 3px 20px rgba(0,0,0,0.5);
     box-shadow:0 3px 20px rgba(0,0,0,0.5); 
-    
+
 }
 
 .header_wrapper {
@@ -251,29 +251,45 @@ pre .tex .special {
 
 #branding {
 	width:111px;
-	margin:2px 12px -20px 0;
 	color:#333;
+	position: absolute;
+	padding-top: 9px;
 }
 
 nav {
 	display: block;
 	float: right;
-	height: 12px;
+	height: 34px;
 }
 
 nav a {
-	color: #888;
-	padding: 0 10px;
-	line-height: 15px;
+	background: #333333;
 	display: inline-block;
+	padding: 8px 12px;
+	-moz-border-radius:54px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    color: #FFF;
 }
 
 nav a:hover {
-	color: #000;
+	-webkit-box-shadow:0 0 10px rgba(0,0,0,0.3); 
+    -moz-box-shadow:0 0 10px rgba(0,0,0,0.3);
+    box-shadow:0 0 10px rgba(0,0,0,0.3); 
 }
 
-nav a:first-child {
-	border-right: 1px solid #CCCCCC;
+nav a.cur {
+	padding: 0 12px;
+	line-height: 15px;
+	color: #888;
+	background:none;
+	cursor: default;
+}
+
+nav a.cur:hover {
+	-webkit-box-shadow:none; 
+    -moz-box-shadow:none;
+    box-shadow:none; 
 }
 
 #branding sup {
@@ -288,6 +304,7 @@ ul.social {
 	float:left;
 	display:block;
 	margin-left: 140px;
+	padding-top: 7px;
 }
 
 ul.social li {
@@ -1386,7 +1403,7 @@ footer {
 		position:absolute;
 		width:100%;
 		height:100%;
-		opacity:0.04;
+		opacity:0.10;
 		z-index:-1;
 		top:0;
 		-webkit-animation:fadeIn 1.8s 1;
@@ -1405,6 +1422,7 @@ footer {
 	.about_wrapper #grids .col {
 		height:100%;
 		background:url(../images/site/icons/about_grid_vertical.png) repeat-y 0 0, url(../images/site/icons/about_grid_vertical.png) repeat-y 100% 0;	
+		
 	}
 	
 	.about_wrapper #grids .col .visible {
@@ -1413,12 +1431,12 @@ footer {
 		-webkit-box-sizing:border-box;
 		-moz-box-sizing:border-box;
 		box-sizing:border-box;
-		border-right:1px dotted #fff;
-		border-left:1px dotted #fff;
+		border-right:1px solid #000;
+		border-left:1px solid #000;
 	}
 	
 	.baseline_grid {
-		/*background:url(../images/site/icons/about_grid_baseline.png);*/
+		background:url(../images/site/icons/about_grid_baseline.png);
 		-webkit-animation:fadeIn 1.8s 1;
 		-moz-animation:fadeIn 1.8s 1;
 		-ms-animation:fadeIn 1.8s 1;
@@ -1429,11 +1447,10 @@ footer {
 		position:fixed;
 		left:0;
 		top:4px;
-		opacity:0.03;
 		z-index:-1;
 	}
 		
-		@media only screen and (max-width:599px) {
+		@media only screen and (max-width:598px) {
 			.about_wrapper #grids .grid_3_col {
 				display:block;
 			}
@@ -1444,23 +1461,20 @@ footer {
 			}
 		}
 		
-		
-		@media only screen and (max-width:1114px) and (min-width:599px)  {
-			/*.about_wrapper #grids .grid_5_col {
+		@media only screen and (max-width:1039px) and (min-width:599px)  {
+			.about_wrapper #grids .grid_5_col {
 				display:block;
-			}*/
-			
-			
+			}
 		}
 		
-		@media only screen and (min-width:1115px)  {
+		@media only screen and (min-width:1040px)  {
 			
-			/*.about_wrapper #grids .grid_5_col {
+			.about_wrapper #grids .grid_5_col {
 				display:block;
 				width: 1040px;
 				margin: 0 auto;
 				display: block;
-			}*/
+			}
 			
 			.about_content_wrapper {
 				max-width: 1040px;
