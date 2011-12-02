@@ -37,15 +37,15 @@
 					    <h4>How to use</h4>
     					<p>Add the selector corresponding to the desired width of your element followed by the
     					class ‘column.</p>
-    					<pre><code class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"two column"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre>
+    					<pre><code class="xml"><span class="number">1</span><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"two column"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
     					<p>This would create an element two columns wide. The required presentational classes
                         can also be added to existing classes:</p>
-                        <pre><code class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"secondary_header eight column"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre>
+                        <pre><code class="xml"><span class="number">1</span><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"secondary_header eight column"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
                         <p>This would create an element eight columns wide.</p> 
                         <p>If your element appears at the end of a row you will also need to give it the class ‘end’.</p>
-                        <pre><code class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"recipe eight column"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"ingrediants two column"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"sidebar two column end"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre>
+                         <pre><code class="xml"><span class="number">1</span><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"recipe eight column"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
+<span class="number">2</span><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"ingrediants two column"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
+<span class="number">3</span><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"sidebar two column end"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
                         <p>By adding the ‘end’ class to the side bar you are removing any right padding or margin
                         allowing your elements to fit correctly within their container.</p>
                         <h4>Gripak.LESS &amp; Gripak.SCSS</h4>
@@ -53,42 +53,35 @@
                         <h4>How to use</h4>
                         <p>Add the mixin corresponding to the desired width inside the selector, alongside  any
                         other declerations.</p>
-                        <div class="half"><pre><code class="css"><span class="value">.recipe</span> {
-    .two();
-    <span class="attribute">background:</span> #FFF;	
-} </code></pre></div>
-                        <div class="half"><pre><code class="css"><span class="value">.recipe {</span>
-    @include two;
-    <span class="attribute">background:</span> #FFF;	
-} </code></pre></div>
+                        <div class="half"><pre><code class="css"><span class="number">1</span><span class="red">.recipe</span><span class="grey"> {</span>
+<span class="number">2</span>    <span class="white">.two()</span><span class="grey">;</span>
+<span class="number">3</span>    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+<span class="number">4</span>}</span></code></pre></div>
+                        <div class="half"><pre><code class="css"><span class="number">1</span><span class="red">.recipe</span><span class="grey"> {</span>
+<span class="number">2</span>    <span class="white">@include two</span><span class="grey">;</span>
+<span class="number">3</span>    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+<span class="number">4</span>}</span></code></pre></div>
                         <p>These two examples would result in an element that is two columns wide.</p>
                         <p>If your element appears at the end of a row you will also need to include the ‘end’ mixin.</p>
-                        <div class="half"><pre><code class="css"><span class="value">.recipe {</span>
-    .two();
-    .end();
-    <span class="attribute">background:</span> #FFF;	
-} </code></pre></div>
-                        <div class="half"><pre><code class="css"><span class="value">.recipe {</span>
-    @include two;
-    @include end;
-    <span class="attribute">background:</span> #FFF;	
-} </code></pre></div>
+                        <div class="half"><pre><code class="css"><span class="number">1</span><span class="red">.recipe</span><span class="grey"> {</span>
+<span class="number">2</span>    <span class="white">.two()</span><span class="grey">;</span>
+<span class="number">3</span>    <span class="white">.end()</span><span class="grey">;</span>
+<span class="number">4</span>    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+<span class="number">5</span>}</span></code></pre></div>
+                        <div class="half"><pre><code class="css"><span class="number">1</span><span class="red">.recipe</span><span class="grey"> {</span>
+<span class="number">2</span>    <span class="white">@include two</span><span class="grey">;</span>
+<span class="number">3</span>    <span class="white">@include end</span><span class="grey">;</span>
+<span class="number">4</span>    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+<span class="number">5</span>}</span></code></pre></div>
                         <p>By adding the ‘end’ mixin to the recipe elemtent you are removing any right padding or margin
                         allowing your elements to fit correctly within their container.</p>
                         <h3><span>&#9679;</span> Browser overlay</h3>
                         <p>A JavaScript file which allows you to toggle your grid on &amp; off in any browser using either: the ‘G’ key to toggle the whole grid, the ‘V’ key to toggle the vertical grid or the ‘B’ key to toggle the baseline.</p>  
                         <p>Simply add the following line to the head of your document and you’re away.</p>
-                        <pre><code class="xml"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"gridpak.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></pre>
+                        <pre><code class="xml"><span class="number">1</span><span class="grey">&lt;<span class="white">script type</span><span class="grey">=</span><span class="red">"text/javascript"</span> <span class="white">src</span><span class="grey">=</span><span class="red">"gridpak.js"</span><span class="grey">&gt;&lt;/<span>script</span>&gt;</span></code></pre>
                         <h4>Please note:</h4>
                         <p>The JavaScript file ‘appends the grid directly after your body tag. It does this because it assumes that this is the main content container. If this is not the case and your main content container is called something like ‘#content_wrapper’ then please change the following variable in the JavaScript file.</p>
 				    </div><!-- // .small_inset-->
-				    
-                    <footer>				    
-                        <p class="created_by">This site is licensed under a Creative Commons Attribution 3.0 License
-                  Created by <a href="">Erskine Design</a>
-                        </p>
-                        <a href="http://www.erskinedesign.com"><img class="erskine_two" src="{{ STATIC_URL }}/images/site/icons/erskine_two.png"/></a>
-                    </footer>
 				</dd>
 			
 			</dl>
@@ -102,11 +95,23 @@
 				<h4>Updates</h4>
 				<p>For all updates please follow <a href=""> @Gridpak</a></p>	
 			</div><!-- // .support-->
+			<footer>				    
+                <p class="created_by">This site is licensed under a Creative Commons Attribution 3.0 License
+          Created by <a href="">Erskine Design</a>
+                </p>
+                <a href="http://www.erskinedesign.com"><img class="erskine_two" src="{{ STATIC_URL }}/images/site/icons/erskine_two.png"/></a>
+            </footer>
 			</div><!-- // .about_content_wrapper-->
 		    <div id="grids">
 		
-				<div class="grid grid_3_col">
+		        <div class="grid grid_3_col">
 			        {% for i in 3|get_range %}
+			        <div class="col"><div class="visible"></div></div>
+			        {% endfor %}
+				</div> <!-- // .grid_500 -->
+		
+				<div class="grid grid_4_col">
+			        {% for i in 4|get_range %}
 			        <div class="col"><div class="visible"></div></div>
 			        {% endfor %}
 				</div> <!-- // .grid_320 -->
@@ -117,11 +122,7 @@
 			        {% endfor %}
 				</div> <!-- // .grid_960 -->
 			
-				<div class="grid grid_6_col">
-			        {% for i in 6|get_range %}
-			        <div class="col"><div class="visible"></div></div>
-			        {% endfor %}
-				</div> <!-- // .grid_500 -->
+			
 			
 				
 			
