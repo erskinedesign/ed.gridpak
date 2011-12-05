@@ -35,7 +35,6 @@
 					<div class="small_inset">
 					    <h4>Gripak.CSS</h4>
 					    <p>The first is a straight forward CSS which includes the appropriate media queries and pre-defined selectors based on the grids you have created. Whilst using this file doesn’t require a compiler and will result in a smaller file size it is less semantic than the .LESS and .SCSS files.</p>
-	
 					    <h4>How to use</h4>
     					<p>Add the selector corresponding to the desired width of your element followed by the
     					class ‘column.</p>
@@ -58,32 +57,34 @@
                         <div class="half"><pre><code class="css"><span class="number">1</span><span class="red">.recipe</span><span class="grey"> {</span>
 <span class="number">2</span>    <span class="white">.two()</span><span class="grey">;</span>
 <span class="number">3</span>    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-<span class="number">4</span>}</span></code></pre></div>
+<span class="number">4</span>}</span></code><span class="syntax">.LESS</span></pre></div>
                         <div class="half"><pre><code class="css"><span class="number">1</span><span class="red">.recipe</span><span class="grey"> {</span>
 <span class="number">2</span>    <span class="white">@include two</span><span class="grey">;</span>
 <span class="number">3</span>    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-<span class="number">4</span>}</span></code></pre></div>
+<span class="number">4</span>}</span></code><span class="syntax">.SCSS</span></pre></div>
                         <p>These two examples would result in an element that is two columns wide.</p>
                         <p>If your element appears at the end of a row you will also need to include the ‘end’ mixin.</p>
                         <div class="half"><pre><code class="css"><span class="number">1</span><span class="red">.recipe</span><span class="grey"> {</span>
 <span class="number">2</span>    <span class="white">.two()</span><span class="grey">;</span>
 <span class="number">3</span>    <span class="white">.end()</span><span class="grey">;</span>
 <span class="number">4</span>    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-<span class="number">5</span>}</span></code></pre></div>
+<span class="number">5</span>}</span></code><span class="syntax">.LESS</span></pre></div>
                         <div class="half"><pre><code class="css"><span class="number">1</span><span class="red">.recipe</span><span class="grey"> {</span>
 <span class="number">2</span>    <span class="white">@include two</span><span class="grey">;</span>
 <span class="number">3</span>    <span class="white">@include end</span><span class="grey">;</span>
 <span class="number">4</span>    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-<span class="number">5</span>}</span></code></pre></div>
+<span class="number">5</span>}</span></code><span class="syntax">.SCSS</span></pre></div>
                         <p>By adding the ‘end’ mixin to the recipe elemtent you are removing any right padding or margin
                         allowing your elements to fit correctly within their container.</p>
+                    </div><!-- // .small_inset-->
                         <h3><span>&#9679;</span> Browser overlay</h3>
-                        <p>A JavaScript file which allows you to toggle your grid on &amp; off in any browser using either: the ‘G’ key to toggle the whole grid, the ‘V’ key to toggle the vertical grid or the ‘B’ key to toggle the baseline.</p>  
-                        <p>Simply add the following line to the head of your document and you’re away.</p>
+                        <p>A JavaScript file which allows you to toggle your grid on &amp; off in any browser using either: the ‘G’ key to toggle the whole grid, the ‘V’ key to toggle the vertical grid or the ‘B’ key to toggle the baseline.Simply add the following line to the head of your document and you’re away.</p>
                         <pre><code class="xml"><span class="number">1</span><span class="grey">&lt;<span class="white">script type</span><span class="grey">=</span><span class="red">"text/javascript"</span> <span class="white">src</span><span class="grey">=</span><span class="red">"gridpak.js"</span><span class="grey">&gt;&lt;/<span>script</span>&gt;</span></code></pre>
                         <h4>Please note:</h4>
+                     <div class="small_inset">
                         <p>The JavaScript file ‘appends the grid directly after your body tag. It does this because it assumes that this is the main content container. If this is not the case and your main content container is called something like ‘#content_wrapper’ then please change the following variable in the JavaScript file.</p>
-				    </div><!-- // .small_inset-->
+                    </div><!-- // .small_inset-->
+				    
 				</dd>
 			
 			</dl>
@@ -97,7 +98,8 @@
 				<h4>Updates</h4>
 				<p>For all updates please follow <a href=""> @Gridpak</a></p>	
 			</div><!-- // .support-->
-			<footer>				    
+			<footer>	
+			    <div class="hr"><img src="{{ STATIC_URL }}/images/site/icons/line.svg"></div>
                 <p class="created_by">This site is licensed under a Creative Commons Attribution 3.0 License
           Created by <a href="">Erskine Design</a>
                 </p>

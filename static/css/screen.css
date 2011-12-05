@@ -27,10 +27,10 @@
     
     COLOURS -----------
     
-        Red:  #AC0000
+        Red:#AC0000
         Black:#000000
                 #191919        
-        Gray: #E5E5E5    
+        Gray:#E5E5E5    
         		#333333   
         White:#FFFFFF
     
@@ -118,7 +118,7 @@ pre {
 	-moz-border-radius:3px;
 	border-radius:3px;
 	padding:18px 18px;
-	font-size:12px;
+	font-size:0.923076923em; /*12/13*/
 	margin:14px 0 16px 0;
 	overflow:scroll;
 }
@@ -128,23 +128,34 @@ pre:hover {
 }
 
 pre .white {
-	color: #FFF;
+	color:#FFF;
 }
 
 pre .red {
-	color: #B42D35;
+	color:#B42D35;
 }
 
 pre .grey {
-	color: #888;
+	color:#888;
 }
 
 pre .number {
-	border-right: 1px solid #444;
-	margin: 0 12px 0 0px;
-	color: #555;
-	padding: 1px 12px 2px 0;
+	border-right:1px solid #444;
+	margin:0 12px 0 0;
+	color:#555;
+	padding:1px 12px 2px 0;
 }
+
+pre .syntax {
+	font-size:0.8333333339em; /*10/12*/
+	font-family:ff-meta-web-pro, sans-serif;
+	color:#555;
+	float:right;
+	padding-top:6px;
+	margin-bottom:-12px;
+}
+
+
 
 /* @end */
        
@@ -1143,7 +1154,6 @@ footer {
 	overflow:hidden;
 	margin:0 auto;
 	position:relative;
-
 }
 
 .about_content_wrapper {
@@ -1157,7 +1167,6 @@ footer {
 	-ms-animation:fadeInUp 1s 1;
 	-o-animation:fadeInUp 1s 1;
 	animation:fadeInUp 1s 1;
-	
 }
 
 .support,.about_wrapper dt, .about_wrapper dd, .half {
@@ -1171,6 +1180,10 @@ footer {
     -webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;   
+}
+
+.small_inset p {
+	font-size:1.076923077em !important;
 }
 
 .support {
@@ -1202,16 +1215,20 @@ footer {
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;   
-	padding:0 12px;
-	margin-top:30px;
-	padding-top:15px;
+	padding:15px 24px 0 12px;
+	margin:30px auto 0 auto;
+	float:none;
 	-webkit-animation:none;
 	-moz-animation:none;
 	-ms-animation:none;
 	-o-animation:none;
 	animation:none;
+	width:60%;	
+}
+
+.about_wrapper footer .hr img {
 	width:100%;
-	
+	padding-bottom:12px;
 }
 
 .about .created_by {
@@ -1245,13 +1262,18 @@ a:hover img.erskine_two {
 		.support {
 			width:25%;
 		}
+		
+		.about_wrapper footer {
+			float:left;
+			width:75%;	
+		}
 			
 }
 
 @media only screen and (max-width:630px) {
 		.about_wrapper dt {
 			clear:none;
-			width: 100%;
+			width:100%;
 		}
 		
 		.about_wrapper dd {
@@ -1269,11 +1291,16 @@ a:hover img.erskine_two {
 			padding:0px 12px;
 		}
 		
-		
 		.half {
 			width:100% !important;
 			border:none;
 			border-right-width:12px;
+		}
+		
+		.about_wrapper footer {
+			float:left;
+			width:100%;	
+			padding-right:12px;
 		}
 		
 		
@@ -1383,25 +1410,28 @@ a:hover img.erskine_two {
 .video_container {
 	height:auto;
 	margin:-3px 0 6px 0;
-	max-width: 100%;
+	max-width:100%;
+	background:#222;
+	-webkit-box-shadow:0 0 10px rgba(0,0,0,0.3); 
+    -moz-box-shadow:0 0 10px rgba(0,0,0,0.3);
+    box-shadow:0 0 10px rgba(0,0,0,0.3); 
 }
 
 .video_container {
-	position: relative;
-	padding-bottom: 56.25%;
-	padding-top: 30px;
-	height: 0;
-	overflow: hidden;
+	position:relative;
+	padding-bottom:56.25%;
+	height:0;
+	overflow:hidden;
 }
 
 .video_container iframe,  
 .video_container object,  
 .video_container embed {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	position:absolute;
+	top:0;
+	left:-1px;
+	width:100%;
+	height:100%;
 }
 
 
