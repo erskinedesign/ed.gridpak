@@ -1381,9 +1381,27 @@ a:hover img.erskine_two {
 }
 
 .video_container {
-	height:306px;
-	background:#252525;
+	height:auto;
 	margin:-3px 0 6px 0;
+	max-width: 100%;
+}
+
+.video_container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+
+.video_container iframe,  
+.video_container object,  
+.video_container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 
