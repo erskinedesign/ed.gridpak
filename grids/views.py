@@ -57,6 +57,7 @@ def download(request):
         # Read the templates into string buffers
         buff.write(render_to_string(template, {
             'grids': grids,
+            'max_cols': 16,
         }).encode('ascii', 'ignore'))
 
         zip_dl.writestr(template.replace('grids/downloads/', ''), buff.getvalue())

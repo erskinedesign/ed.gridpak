@@ -1,3 +1,5 @@
+{% load common %}
+
 /**
  * QUERIES
  *
@@ -15,6 +17,23 @@
 
 */
 
+/* ------ DEFAULT COLUMN STYLES ------------------------------------------ */
+
+.one_col{% for i in max_cols|get_range %},.{{ i|add:"2"|cssnumber }}_col{% endfor %} {
+    border:0px solid rgba(0,0,0,0);
+    float:left;
+    -webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	-moz-background-clip:padding; 
+	-webkit-background-clip:padding-box; 	
+	background-clip:padding-box;
+}
+
+/*--- The .end class is be used in conjunction with a column class if your element is the last in a row --*/
+
+.end {border-right:0;margin-right:0;}
+
 {% for grid in grids %}
 
     /**
@@ -22,7 +41,17 @@
      * ----------------------------------------------------------------------
      */
 
-    @media screen and (min-width: {{ grid.min_width }}px) {
+    	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {
+        
+        .one_col{% for i in grid.col_num|get_range %},.{{ i|add:"2"|cssnumber }}_col{% endfor %} {
+            border-right-width:{% if grid.gutter_type == 'px' %}{{ grid.gutter_width }}{% else %}0{% endif %}px; /* Used for fixed gutters */
+        	padding:0 {{ grid.col_padding_width }}{{ grid.col_padding_type }};
+        	margin-right:{% if grid.gutter_type == '%' %}{{ grid.gutter_width }}{% else %}0{% endif %}%; /* Used for flexible gutters */
+        }
+        
+        {% for i in grid.col_num|get_range %},.{{ i|add:"1"|cssnumber }}_col{
+            width:{{ 100 / col_number * i|add:"1" }};
+        {% endfor %}
 
         /* your CSS here */
 
