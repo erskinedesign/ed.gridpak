@@ -64,7 +64,7 @@ body.about {
 /* @end */
 
 h1 {
-	font-size:2em;/*26/13*/
+	font-size:1.769230769em;/*26/13*/
 	font-weight:700;
 }
 
@@ -165,7 +165,7 @@ pre .syntax {
 
 #content_wrapper {
 	clear:both;
-	padding:0 40px;	
+	padding:0 30px;	
 	margin:0;
 }
 
@@ -177,7 +177,7 @@ pre .syntax {
 
 .site_header {
 	background:#FFF;
-	padding:30px 40px;
+	padding:18px 30px 20px 30px;
 	overflow:auto;
 	-webkit-box-shadow:0 3px 20px rgba(0,0,0,0.5); 
     -moz-box-shadow:0 3px 20px rgba(0,0,0,0.5);
@@ -191,20 +191,24 @@ pre .syntax {
 }
 
 .header_wrapper {
-	max-width:1040px;
-	margin:0 auto;
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
-	padding:0 12px;
 }
 
-
 #branding {
-	width:111px;
+	width:101px;
 	color:#333;
 	position:absolute;
 	padding-top:9px;
+}
+
+#branding sup {
+	font-size:9px;
+	color:#AC0000;
+	vertical-align:super;
+	margin-top:-8px; 
+	float:right;	
 }
 
 nav {
@@ -214,19 +218,25 @@ nav {
 }
 
 nav a {
-	background:#333333;
 	display:inline-block;
-	padding:8px 15px;
-	-moz-border-radius:4px;
-    -webkit-border-radius:4px;
-    border-radius:4px;
-    color:#FFF;
+	padding:0px 10px;
+    color:#888;
+    -webkit-transition:all 0.3s ease-in-out;
+    -moz-transition:all 0.3s ease-in-out;
+    -ms-transition:all 0.3s ease-in-out; 
+    -o-transition:all 0.3s ease-in-out;
+    transition:all 0.3s ease-in-out;
+    font-size: 1em;
+    line-height: 1em;
+    margin-top: 10px;
+}
+
+nav a:first-child {
+	border-right: 1px solid #e1e1e1;
 }
 
 nav a:hover {
-	-webkit-box-shadow:0 0 10px rgba(0,0,0,0.3); 
-    -moz-box-shadow:0 0 10px rgba(0,0,0,0.3);
-    box-shadow:0 0 10px rgba(0,0,0,0.3); 
+	color: #000;
 }
 
 nav a:active {
@@ -234,14 +244,6 @@ nav a:active {
     -moz-box-shadow:none;
     box-shadow:none; 
     color:#888;
-}
-
-nav a.cur {
-	padding:0 18px;
-	line-height:15px;
-	color:#888;
-	background:none;
-	cursor:default;
 }
 
 	@media only screen and (max-width:510px) {
@@ -256,18 +258,12 @@ nav a.cur:hover {
     box-shadow:none; 
 }
 
-#branding sup {
-	font-size:9px;
-	color:#AC0000;
-	vertical-align:super;
-	margin-top:-8px; 
-	float:right;	
-}
+
 
 ul.social {
 	float:left;
 	display:block;
-	margin-left:140px;
+	margin-left:120px;
 	padding-top:7px;
 }
 
@@ -296,7 +292,7 @@ ul.social li {
 ------------------------------------- */
 	
 	#header_sec { 
-		padding:129px 0 42px 0;
+		padding:104px 0 0 0;
 		text-align:center;
 		max-width:1040px;
 		margin:0 auto;
@@ -304,8 +300,11 @@ ul.social li {
 	}
 	
 	.about #header_sec { 
-		padding:129px 0 24px 0;
+		padding-bottom: 14px;
 		text-align:center;
+		max-width:1040px;
+		margin:0 auto;
+		text-shadow:0 -1px 0 rgba(0, 0, 0, 0.3);
 	}
 
 /* My Comment */
@@ -321,21 +320,12 @@ ul.social li {
 ------------------------------------- */
 
 footer {
-	padding:3px 0 12px 0;
-	float:left;
-	width:100%;
+	padding:3px 30px;
+	display: block;
 }
-
-.footer_wrapper {
-	max-width:1040px;
-	margin:0 auto;
-}
-
-
-
 
 .created_by {
-	float:right;
+	float:left;
 	padding:11px 0 4px 60px;
 	color:#888;
 	background:url(../images/site/icons/erskine.png) no-repeat 2px 4px;
@@ -353,13 +343,10 @@ footer {
 	color:#888;
 }
 
-
-
-
 	@media only screen and (max-width:680px) {
 	.created_by {
 		float:none;
-		margin:0 auto;
+		margin:70px auto 0 auto;
 		text-align:center;
 		background-image:none;
 		width:196px;
@@ -376,10 +363,10 @@ footer {
 ------------------------------------------*/
 
 #gridpak {
-    height:370px;
+    height:480px;
     clear:both;
-    background:url(../images/site/icons/ruler.png) no-repeat 0 453px;
-    padding-bottom:132px;
+    background:url(../images/site/icons/ruler.png) no-repeat 0 500px;
+    padding:30px 0;
 }
 
 	/* @group 6.1. BROWSER
@@ -393,11 +380,11 @@ footer {
 	    top:-1px;
 	    height:388px;
 	    z-index:0;
-	    -webkit-animation:fadeInLeft 0.8s 1;
-		-moz-animation:fadeInLeft 0.8s 1;
-		-ms-animation:fadeInLeft 0.8s 1;
-		-o-animation:fadeInLeft 0.8s 1;
-		animation:fadeInLeft 0.8s 1;
+	    -webkit-animation:fadeInTwo 0.8s 1;
+		-moz-animation:fadeInTwo 0.8s 1;
+		-ms-animation:fadeInTwo 0.8s 1;
+		-o-animation:fadeInTwo 0.8s 1;
+		animation:fadeInTwo 0.8s 1;
 	}
 
 	#browser:after {
@@ -957,9 +944,9 @@ footer {
 	--------------------------------------*/
 	
 	footer form {
-		float:left;
+		float:right;
 		z-index:2000;
-		margin:12px 8px 3px 36px;
+		margin:12px 0px 3px 0px;
 		padding:8px 10px;
 		background-color:rgba(0,0,0,0.3);
 		-moz-border-radius:5px;
@@ -1006,9 +993,9 @@ footer {
 			footer form {
 				float:none;
 				display:block;
-				margin:12px auto 4px auto;
 				overflow:hidden;
 				width:279px;
+				margin:-120px auto 4px auto;
 			}	
 		}
 		
@@ -1016,7 +1003,7 @@ footer {
 			footer form {
 				float:none;
 				display:block;
-				margin:12px auto 4px auto;
+				margin:-120px auto 4px auto;
 				overflow:hidden;
 				width:211px;
 				padding:8px 8px 8px 12px;
@@ -1144,8 +1131,6 @@ footer {
 
 
 
-
-
 /* @group 7. ABOUT
 ------------------------------------------*/
 
@@ -1162,11 +1147,11 @@ footer {
 	position:relative;
 	padding-bottom:30px;
 	clear:both;
-	-webkit-animation:fadeInUp 1s 1;
-	-moz-animation:fadeInUp 1s 1;
-	-ms-animation:fadeInUp 1s 1;
-	-o-animation:fadeInUp 1s 1;
-	animation:fadeInUp 1s 1;
+	-webkit-animation:fadeInTwo 1s 1;
+	-moz-animation:fadeInTwo 1s 1;
+	-ms-animation:fadeInTwo 1s 1;
+	-o-animation:fadeInTwo 1s 1;
+	animation:fadeInTwo 1s 1;
 }
 
 .support,.about_wrapper dt, .about_wrapper dd, .half {
@@ -1193,6 +1178,11 @@ footer {
 	position:absolute;
 	right:0px;
 	padding:0px 12px;
+}
+
+#sidebar.scrolling {
+	position: fixed;
+	margin-top: -150px;
 }
 
 .about_wrapper dt {
@@ -1370,7 +1360,6 @@ a:hover img.erskine_two {
 	clear:both;	
 }
 
-
 .support a.feedback {
 	background:#222222;
 	display:inline-block;
@@ -1394,7 +1383,6 @@ a:hover img.erskine_two {
     box-shadow:none; 
     color:#888;
 }
-
 
 .half {
 	width:50%;
@@ -1583,26 +1571,22 @@ a:hover img.erskine_two {
 	------------------------------------------*/
 	
 	@-webkit-keyframes fadeIn {
-		0% {opacity:0;}
-		20% {opacity:0;}	
+		0% {opacity:0;}	
 		100% {opacity:0.1;}
 	}
 	
 	@-moz-keyframes fadeIn {
 		0% {opacity:0;}	
-		20% {opacity:0;}
 		100% {opacity:0.1;}
 	}
 	
 	@-ms-keyframes fadeIn {
 		0% {opacity:0;}	
-		20% {opacity:0;}
 		100% {opacity:0.1;}
 	}
 	
 	@-o-keyframes fadeIn {
 		0% {opacity:0;}	
-		20% {opacity:0;}
 		100% {opacity:0.1;}
 	}
 	
@@ -1613,127 +1597,34 @@ a:hover img.erskine_two {
 	}
 	
 	@-webkit-keyframes fadeInTwo {
-		0% {opacity:0;}
-		20% {opacity:0;}	
+		0% {opacity:0;}	
 		100% {opacity:1;}
 	}
 	
 	@-moz-keyframes fadeInTwo {
 		0% {opacity:0;}	
-		20% {opacity:0;}
 		100% {opacity:1;}
 	}
 	
 	@-ms-keyframes fadeInTwo {
 		0% {opacity:0;}	
-		20% {opacity:0;}
 		100% {opacity:1;}
 	}
 	
 	@-o-keyframes fadeInTwo {
 		0% {opacity:0;}	
-		20% {opacity:0;}
 		100% {opacity:1;}
 	}
 	
 	@keyframes fadeInTwo {
 		0% {opacity:0;}	
-		20% {opacity:0;}
-		100% {opacity:0.1;}
+		100% {opacity:1;}
 	}
 	
 	/* @end */
 	
-	/* @group 8.2 fadeInUp
-	------------------------------------------*/
-
-	@-webkit-keyframes fadeInUp {
-		0% {opacity:0;-webkit-transform:translateY(20px);}
-		100% {opacity:1;-webkit-transform:translateY(0px);}
-	}
 	
-	@-moz-keyframes fadeInUp {
-		0% {opacity:0;-moz-transform:translateY(20px);}
-		100% {opacity:1;-moz-transform:translateY(0px);}
-	}
-	
-	@-ms-keyframes fadeInUp {
-		0% {opacity:0;-ms-transform:translateY(20px);}
-		100% {opacity:1;-ms-transform:translateY(0px);}
-	}
-	
-	@-o-keyframes fadeInUp {
-		0% {opacity:0;-o-transform:translateY(20px);}
-		100% {opacity:1;-o-transform:translateY(0px);}
-	}
-	
-	@keyframes fadeInUp {
-		0% {opacity:0;transform:translateY(20px);}
-		100% {opacity:1;transform:translateY(0px);}
-	}
-	
-	/* @end */
-	
-	/* @group 8.2 fadeOutDown
-	------------------------------------------*/
-
-	@-webkit-keyframes fadeOutDown {
-		0% {opacity:1;-webkit-transform:translateY(0);}
-		100% {opacity:0;-webkit-transform:translateY(20px);}
-	}
-	
-	@-moz-keyframes fadeOutDown {
-		0% {opacity:1;-moz-transform:translateY(0);}
-		100% {opacity:0;-moz-transform:translateY(20px);}
-	}
-	
-	@-ms-keyframes fadeOutDown {
-		0% {opacity:1;-ms-transform:translateY(0);}
-		100% {opacity:0;-ms-transform:translateY(20px);}
-	}
-	
-	@-o-keyframes fadeOutDown {
-		0% {opacity:1;-o-transform:translateY(0);}
-		100% {opacity:0;-o-transform:translateY(20px);}
-	}
-	
-	@keyframes fadeOutDown {
-		0% {opacity:1;transform:translateY(0);}
-		100% {opacity:0;transform:translateY(20px);}
-	}
-	
-	/* @end */
-	
-	/* @group 8.2 fadeInLeft
-	------------------------------------------*/
-
-	@-webkit-keyframes fadeInLeft {
-		0% {opacity:0;-webkit-transform:translateX(-20px);}
-		100% {opacity:1;-webkit-transform:translateX(0);}
-	}
-	
-	@-moz-keyframes fadeInLeft {
-		0% {opacity:0;-moz-transform:translateX(-20px);}
-		100% {opacity:1;-moz-transform:translateX(0);}
-	}
-	
-	@-ms-keyframes fadeInLeft {
-		0% {opacity:0;-ms-transform:translateX(-20px);}
-		100% {opacity:1;-ms-transform:translateX(0);}
-	}
-	
-	@-o-keyframes fadeInLeft {
-		0% {opacity:0;-o-transform:translateX(-20px);}
-		100% {opacity:1;-o-transform:translateX(0);}
-	}
-	
-	@keyframes fadeInLeft {
-		0% {opacity:0;transform:translateX(-20px);}
-		100% {opacity:1;transform:translateX(0);}
-	}
-
-	/* @end */
-	
+		
 	/* @group 8.2 glow
 	------------------------------------------*/
 
