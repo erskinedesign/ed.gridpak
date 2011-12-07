@@ -1,11 +1,12 @@
 {% load common %}/**
- * QUERIES
+ * Gridpak Beta CSS
  *
- * @generator http://gridpak.com/
- * @credit Erskine Design 
+ * Generator - http://gridpak.com/
+ * Created by @erskinedesign
  */
 
-/* ------ DEFAULT COLUMN STYLES ------ */
+
+/* --- Default Gridpak column styles -- No need to change --- */
 
 .span_1{% for i in max_cols|get_range %}, .span_{{ i|add:"2" }}{% endfor %} {
     border:0px solid rgba(0,0,0,0);
@@ -21,13 +22,11 @@
 .end {
     border-right:0;
     margin-right:0;
-}/*--- The .end class is be used in conjunction with a column class if your element is the last in a row --*/
+} /*--- The .end class is be used in conjunction with a column class if your element is the last in a row --*/
 {% for grid in grids %}
-    /**
-     * @group {{ forloop.counter }}. MEDIA QUERY
-     * ----------------------------------------------------------------------
-     */
-
+    
+        /* ------{{ forloop.counter }}. Grid {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}Infinity{% endif %} ------ */
+        
     	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {
         
         .span_1{% for i in grid.col_num|get_range %}, .span_{{ i|add:"2" }}{% endfor %} {

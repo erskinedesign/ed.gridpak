@@ -12,8 +12,8 @@
 	
 	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {
         /* --- Gridpak variables ---*/ 
-        @max_columns: {{ grid.col_num }}; @column_padding: 0 {{ grid.col_padding_width }}{{ grid.col_padding_type }}; @gutter_px: {% if grid.gutter_type == 'px' %}{{ grid.gutter_width }}px{% else %}0{% endif %}; @gutter_pc: {% if grid.gutter_type == '%' %}{{ grid.gutter_width }}%{% else %}0{% endif %};
-	    .span(@num:1) {.col;}
+        $max_columns: {{ grid.col_num }}; $column_padding: 0 {{ grid.col_padding_width }}{{ grid.col_padding_type }}; $gutter_px: {% if grid.gutter_type == 'px' %}{{ grid.gutter_width }}px{% else %}0{% endif %}; $gutter_pc: {% if grid.gutter_type == '%' %}{{ grid.gutter_width }}%{% else %}0{% endif %};
+	    .span($num:1) {@include col;}
 	    
 	} /* end media query */
 {% endfor %}
@@ -22,10 +22,10 @@
 
 /* --- Default Gridpak column styles -- No need to change --- */
 
- @max_columns: 0; @column_padding: 0; @gutter_px: 0; @gutter_pc: 0; @num: 0; 
+ $max_columns: 0; $column_padding: 0; $gutter_px: 0; $gutter_pc: 0; $num: 0; 
 
- .col {
-     width:100% / @max_columns * @num;
+ @mixin col {
+     width:100% / $max_columns * $num;
      border:0px solid rgba(0,0,0,0);
      float:left;
      -webkit-box-sizing:border-box;
@@ -34,9 +34,9 @@
      -moz-background-clip:padding-box !important;
      -webkit-background-clip:padding-box !important;
  	 background-clip:padding-box !important;
- 	 border-right-width:@gutter_px;
-     padding:@column_padding;
-     margin-right:@gutter_pc;
+ 	 border-right-width:$gutter_px;
+     padding:$column_padding;
+     margin-right:$gutter_pc;
  }
 
   .end {
