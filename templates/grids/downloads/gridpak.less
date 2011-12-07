@@ -1,70 +1,45 @@
-{% load common %}
-/*
+{% load common %}/**
  * QUERIES
  *
  * @generator http://gridpak.com/
- * @credit Erskine Design
+ * @credit Erskine Design 
  */
 
-/*
-
-    TABLE OF CONTENTS -----------
-
-        {% for grid in grids %}{{ forloop.counter }}. {{ grid.min_width }}px
-        {% endfor %}
-    -----------------------------
-
-*/
-
-/* ------ DEFAULT COLUMN STYLING (Do not change) ------ */
-
-.one, .two {
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	box-sizing:border-box;
-	float:left;
-	-moz-background-clip:padding; 
-	-webkit-background-clip:padding-box; 	
-	background-clip:padding-box;
-}
-
-.col(@max_columns: 1, @num: 1) {
-	width: width: 100% / @max_columns * @num;
-}
-
-.end {border-right:0;margin-right:0;}
-
-/*--- The .end mixin is be used in conjunction with a column mixin if your element is the last in a row ---*/
 
 {% for grid in grids %}
 
 	/* ------{{ forloop.counter }}. GRID {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}infinity{% endif %} ------ */
 	
 	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {
-		.one, .two	{
-			border:0px solid rgba(0,0,0,0);
-			padding:0 0;
-			margin:0 0;
-		}
-
-		/* ------ GRIDPAK VARIABLES ------ */
-
-		@max_columns: {{ grid.col_num }}; /* The maximum number of columns in this grid */
-		@column_padding: 0, {{ grid.col_padding_width }}{{ grid.col_padding_type }}; /* The internal column padding */
-		@gutter_px: {% if grid.gutter_type == 'px' %}{{ grid.gutter_width }}{% else %}0{% endif %}; /* Gutters width in 'px' (If chosen) */
-		@gutter_pc: {% if grid.gutter_type == '%' %}{{ grid.gutter_width }}{% else %}0{% endif %}; /* Gutters width in '%' (If chosen) */
-
-		/* ------ COLUMN MIXINS (Place the appropriate column mixin INSIDE your selectors)  ------ */
-	
-		{% for i in grid.col_num|get_range %}
-		.{{ i|add:"1"|cssnumber }} {
-			.col({{ grid.col_num }}, {{ i|add:"1" }});
-		} /* {{ i|add:"1" }} column{{ i|add:"1"|pluralize }} */
-		{% endfor %}
-	
+        /* --- Gridpak variables ---*/ 
+        @max_columns: {{ grid.col_num }}; @column_padding: 0 {{ grid.col_padding_width }}{{ grid.col_padding_type }}; @gutter_px: {% if grid.gutter_type == 'px' %}{{ grid.gutter_width }}px{% else %}0{% endif %}; @gutter_pc: {% if grid.gutter_type == '%' %}{{ grid.gutter_width }}%{% else %}0{% endif %};
+	    .span(@num:1) {.col;}
+	    
 	} /* end media query */
 {% endfor %}
 
 
 
+/* --- Default Gridpak column styles -- No need to change --- */
 
+ @max_columns: 0; @column_padding: 0; @gutter_px: 0; @gutter_pc: 0; @num: 0; 
+
+ .col {
+     width: 100% / @max_columns * @num;
+     border:0px solid rgba(0,0,0,0);
+     float:left;
+     -webkit-box-sizing:border-box;
+ 	 -moz-box-sizing:border-box;
+ 	 box-sizing:border-box;
+     -moz-background-clip:padding-box !important;
+     -webkit-background-clip:padding-box !important;
+ 	 background-clip:padding-box !important;
+ 	 border-right-width: @gutter_px;
+     padding:@column_padding;
+     margin-right: @gutter_pc;
+ }
+
+  .end {
+      border-right:0;
+      margin-right:0;
+  } /*--- The .end class is be used in conjunction with a column class if your element is the last in a row --*/
