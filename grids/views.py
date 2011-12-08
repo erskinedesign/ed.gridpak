@@ -47,6 +47,7 @@ def download(request):
         'grids/downloads/gridpak.css', 
         'grids/downloads/gridpak.js',
 		'grids/downloads/gridpak.less',
+		'grids/downloads/gridpak.scss',
     ]
     # Set up a zipfile in the zip buffer that we'll write to
     zip_dl = ZipFile(zip_buff, 'w')
