@@ -4,7 +4,10 @@
  * Generator - http://gridpak.com/
  * Created by @erskinedesign
  */
-
+ 
+body {
+    width: 100%;
+}
 
 {% for grid in grids %}
 
@@ -34,12 +37,8 @@
      -moz-background-clip:padding-box !important;
      -webkit-background-clip:padding-box !important;
  	 background-clip:padding-box !important;
- 	 border-right-width:$gutter_px;
+ 	 border-right-width:$gutter / 2;
+ 	 border-left-width:$gutter / 2;
      padding:$column_padding;
      margin-right:$gutter_pc;
  }
-
-  .end {
-      border-right:0;
-      margin-right:0;
-  } /*--- The .end class is be used in conjunction with a column class if your element is the last in a row --*/
