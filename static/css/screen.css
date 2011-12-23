@@ -232,7 +232,7 @@ nav a {
 }
 
 nav a:first-child {
-	border-right: 1px solid #e1e1e1;
+	padding: 0 9px 0 10px;
 }
 
 nav a:hover {
@@ -263,7 +263,7 @@ nav a.cur:hover {
 ul.social {
 	float:left;
 	display:block;
-	margin-left:120px;
+	margin-left:125px;
 	padding-top:7px;
 }
 
@@ -279,7 +279,7 @@ ul.social li {
 }
 
 .share {
-	width:98px;
+	width:80px;
 }
 
 		@media only screen and (max-width:680px) {
@@ -324,8 +324,29 @@ footer {
 	display: block;
 }
 
+.footer_wrapper {
+	background:#222;
+	padding:20px;
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	padding: 0 7px 10px 28px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+.gridpak_info {
+	width:216px;
+	font-size:0.923076923em;
+	float: left;
+	line-height: 1.4em;
+	margin: 5px 0 0 10px;
+}
+
 .created_by {
-	float:left;
+	float:right;
 	padding:11px 0 4px 60px;
 	color:#888;
 	background:url(../images/site/icons/erskine.png) no-repeat 2px 4px;
@@ -343,17 +364,27 @@ footer {
 	color:#888;
 }
 
-	@media only screen and (max-width:680px) {
+
+	
+	@media only screen and (max-width:580px) {
 	.created_by {
-		float:none;
-		margin:70px auto 0 auto;
-		text-align:center;
 		background-image:none;
 		width:196px;
 		padding:11px 0 12px 0;
 	}
+	}
 	
-}
+	@media only screen and (max-width:480px) {
+	.created_by {
+		float:none;
+		margin:10px auto 0 auto;
+		text-align:center;
+		background-image:none;
+		width:196px;
+		padding:6px 0 12px 0;
+	}
+	
+	}
 
 /* @end */
 
@@ -363,11 +394,13 @@ footer {
 ------------------------------------------*/
 
 #gridpak {
-    height:480px;
+    height:470px;
     clear:both;
-    background:url(../images/site/icons/ruler.png) no-repeat 0 500px;
+    background:url(../images/site/icons/ruler.png) no-repeat 0 485px;
     padding:30px 0;
 }
+
+/* My Comment */
 
 	/* @group 6.1. BROWSER
 	--------------------------------------*/
@@ -944,7 +977,7 @@ footer {
 	--------------------------------------*/
 	
 	footer form {
-		float:right;
+		float:left;
 		z-index:2000;
 		margin:12px 0px 3px 0px;
 		padding:8px 10px;
@@ -953,6 +986,7 @@ footer {
 	    -webkit-border-radius:5px;
 	    border-radius:5px; 
 	    color:#FFF;
+	    width: 440px;
 	}
 	
 	.added {
@@ -964,53 +998,65 @@ footer {
 	}
 	
 	p.numberOfGrids {
-		float:left;
-		margin:-5px 0 0 -10px ;
-		font-size:0.769230769em;/*10/13*/
-		border-radius:12px;
-		background:#323232;
-		padding:7px 4px 8px 4px;
-		line-height:0;
-		text-align:center;
-		font-family:Helvetica, "Helvetica Neue", Arial, sans-serif;
-		z-index:9999;
-		position:relative;
+		display: none;
 		
 	}
 		
-	p.numberOfGrids + a {
-		font-size:0.769230769em;/*10/13*/
-		float:right;
-		margin:13px 0 0 4px;
-		cursor:pointer;
-	}
 	
-	p.numberOfGrids + a:hover {
-		color:#999;
-	}
-	
-		@media only screen and (min-width:481px) and (max-width:680px) {
+		@media only screen and (min-width:481px) and (max-width:780px) {
 			footer form {
-				float:none;
 				display:block;
 				overflow:hidden;
-				width:279px;
-				margin:-120px auto 4px auto;
-			}	
+				width:210px;
+			}
+			
+			.gridpak_info {
+				display: none;
+			}
+			
+			p.numberOfGrids {
+				display: block;
+				float:left;
+				margin:-5px 0 0 -10px ;
+				font-size:0.769230769em;/*10/13*/
+				border-radius:12px;
+				background:#323232;
+				padding:7px 4px 8px 4px;
+				line-height:0;
+				text-align:center;
+				font-family:Helvetica, "Helvetica Neue", Arial, sans-serif;
+				z-index:9999;
+				position:relative;
+			}			
 		}
 		
 		@media only screen and (max-width:480px) {
 			footer form {
 				float:none;
 				display:block;
-				margin:-120px auto 4px auto;
+				margin:12px auto 0 auto;
 				overflow:hidden;
 				width:211px;
 				padding:8px 8px 8px 12px;
+			}
+			
+			.gridpak_info {
+				display: none;
 			}	
 			
-			p.numberOfGrids + a {
-				display:none;
+			p.numberOfGrids {
+				display: block;
+				float:left;
+				margin:-5px 0 0 -10px ;
+				font-size:0.769230769em;/*10/13*/
+				border-radius:12px;
+				background:#323232;
+				padding:7px 4px 8px 4px;
+				line-height:0;
+				text-align:center;
+				font-family:Helvetica, "Helvetica Neue", Arial, sans-serif;
+				z-index:9999;
+				position:relative;
 			}			
 		}
 
