@@ -561,7 +561,7 @@ $(function() {
          */
         fetchOptions: function() {
             return {
-                min_width: parseInt($('#new_min_width').val()),
+                // min_width: parseInt($('#new_min_width').val()),
                 col_num: parseInt($('#new_col_num').val()),
                 col_width: false,
                 col_padding_width: parseFloat($('#new_col_padding_width').val()),
