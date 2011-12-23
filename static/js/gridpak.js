@@ -235,9 +235,10 @@ $(function() {
 
     // Instantiate the GridList collection, and add some grids to it
     window.Grids = new GridList();
-    Grids.add(new Grid({ min_width: 0, col_num: 4, col_padding_width: 5, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
-    Grids.add(new Grid({ min_width: 500, col_num: 8, col_padding_width: 1, col_padding_type: '%', gutter_width: 2,  gutter_type: '%', baseline_height: 22 }));
-    Grids.add(new Grid({ min_width: 960, col_num: 16, col_padding_width: 10, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
+    // Grids.add(new Grid({ min_width: 0, col_num: 4, col_padding_width: 5, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
+    // Grids.add(new Grid({ min_width: 500, col_num: 8, col_padding_width: 1, col_padding_type: '%', gutter_width: 2,  gutter_type: '%', baseline_height: 22 }));
+    // Grids.add(new Grid({ min_width: 960, col_num: 16, col_padding_width: 10, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
+    Grids.add(new Grid({ min_width: 0, col_num: 16, col_padding_width: 10, col_padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
 
     // Set the current grid as the last in the collection
     window.Grids.current = window.Grids.at(Grids.length - 1);
