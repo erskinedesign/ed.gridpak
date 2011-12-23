@@ -392,8 +392,8 @@ $(function() {
 
         events: {
             'click #save_grid': 'createGrid',
-            'click #grid_options input[type="number"]': 'updateOptions',
-            'keyup #grid_options input[type="number"]': 'updateOptions',
+            'click #grid_options input[type="text"]': 'updateOptions',
+            'keyup #grid_options input[type="text"]': 'updateOptions',
             'click #grid_options .switcher span': 'switchToggleClick',
             'change #grid_options select, #grid_options input[type="radio"]': 'updateOptions',
             'change #grid_options .switcher_container input[type="radio"]': 'switchToggle',
