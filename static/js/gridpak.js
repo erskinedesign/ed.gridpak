@@ -337,7 +337,7 @@ $(function() {
         clear: function(e) {
             var prev = this.model.getRelativeTo(-1),
                 next = this.model.getRelativeTo(1),
-                width = $('#new_min_width').val(),
+                width = parseInt($('#new_min_width').val()),
                 is_cur = this.model.get('current'),
                 options = {};
 
@@ -508,7 +508,7 @@ $(function() {
          * @return void
          */
         resize: function(e, ui) {
-            var old_width = $('#new_min_width').val(),
+            var old_width = parseInt($('#new_min_width').val()),
                 current_width = Math.round(ui.size.width / this.snap) * this.snap;
 
             // ensure we only fire every time we snap to a new width
@@ -613,7 +613,7 @@ $(function() {
                         upper: 0, 
                         lower: 0, 
                         current: true, 
-                        min_width: $('#new_min_width').val()
+                        min_width: parseInt($('#new_min_width').val())
                     }
                 ),
                 grid = new Grid(options);
