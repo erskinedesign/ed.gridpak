@@ -784,7 +784,6 @@ footer {
 	#grid_list .grid {
 		position:absolute;
 		display:block;
-		background:#FFF;
 	    width:100%;
 		height:100%;
 		top:0;
@@ -801,6 +800,7 @@ footer {
 	    display:none;
 		overflow:hidden;
 		z-index:1;
+        background-color:#fff;
 	}
 	#grid_list .cur .cols {
 	    display:block;
