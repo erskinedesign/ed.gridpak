@@ -609,7 +609,12 @@ $(function() {
             e.preventDefault();
             var options = _.extend(
                     this.fetchOptions(),
-                    { upper: 0, lower: 0, current: true }
+                    { 
+                        upper: 0, 
+                        lower: 0, 
+                        current: true, 
+                        min_width: $('#new_min_width').val()
+                    }
                 ),
                 grid = new Grid(options);
 
