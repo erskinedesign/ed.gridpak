@@ -45,8 +45,8 @@
     					</li>
     				</ul>
     				<nav>
-    			        <a href="{% url grids_index %}" class="main_button column{% if cur_page == 'index' %} cur{% endif %}">Use the generator</a>
-                        <a href="{% url about %}" class="{% if cur_page == 'about' %} cur{% endif %}">Learn about Gripak</a
+                        <a href="{% url about %}">Learn about Gripak</a>
+                        <a href="{% url grids_index %}">Create your Gridpak</a>
     			    </nav>
     			</div>
 			</header>
@@ -55,19 +55,17 @@
 		{% block content %}{% endblock %}
 	
 	  <!-- JAVASCRIPT -->
-
 	    <script src="{{ STATIC_URL }}js/jquery-ui-1.8.15.custom.min.js"></script>
 	    <script src="{{ STATIC_URL }}js/underscore-min.js"></script>
 	    <script src="{{ STATIC_URL }}js/backbone.js"></script>
 	    <script src="{{ STATIC_URL }}js/gridpak.js"></script>
 	    <script src="{{ STATIC_URL }}js/onload.js"></script>
-	    <script src="{{ STATIC_URL }}js/highlight.pack.js"></script>
 
 	<!--[if IE 6]>
 	<script src="{{ STATIC_URL }}js/ie6/DD_belatedPNG_0.0.8a.js"></script>
 	<script src="{{ STATIC_URL }}js/ie6/ie6.js"></script>
 	<![endif]-->
-
+    
 	</body>
 
 	</html>

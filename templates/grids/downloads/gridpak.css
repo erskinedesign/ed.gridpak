@@ -1,88 +1,44 @@
-/**
- * QUERIES
+{% load common %}/**
+ * Gridpak Beta CSS
  *
- * @generator http://gridpak.com/
- * @credit Erskine Design
+ * Generator - http://gridpak.com/
+ * Created by @erskinedesign
  */
 
-/*
 
-    TABLE OF CONTENTS -----------
+/* --- Default Gridpak column styles -- No need to change --- */
 
-        {% for grid in grids %}{{ forloop.counter }}. {{ grid.min_width }}px
-        {% endfor %}
-    -----------------------------
-
-*/
-
-{% for grid in grids %}
-
-    /**
-     * @group {{ forloop.counter }}. MEDIA QUERY
-     * ----------------------------------------------------------------------
-     */
-
-    @media screen and (min-width: {{ grid.min_width }}px) {
-
-        /* your CSS here */
-
-    } /* // min_width: {{ grid.min_width }}px */
-
-{% endfor %}
-
-
-/* ------ DEFAULT COLUMN STYLES ------------------------------------------ */
-
-.column(@num: 1) {
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	box-sizing:border-box;
-	float:left;
-	border:0px solid rgba(0,0,0,0);
-	padding:0 8px;
-	border-right-width:@gutter_px; /* Used for fixed gutters */
-	margin:0 @gutter_pc 0 0; /* Used for flexible gutters */
-	-moz-background-clip:padding; 
-	-webkit-background-clip:padding-box; 	
-	background-clip:padding-box;
-	width:100% / @max_columns * @num; /* 100 / The maximum number of colums and then * the number of columns */
+.span_1{% for i in max_cols|get_range %}, .span_{{ i|add:"2" }}{% endfor %} {
+    border:0px solid rgba(0,0,0,0);
+    float:left;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+	-moz-background-clip:padding-box !important;
+   	-webkit-background-clip:padding-box !important ;
+	background-clip:padding-box !important; /* Without these the background colours will spill out over the gutters */
 }
 
-/*--- The .end mixin is be used in conjunction with a column mixin if your element is the last in a row --*/
-
-.end {border-right:0;margin-right:0;}
-
+.end {
+    border-right:0;
+    margin-right:0;
+} /*--- The .end class is be used in conjunction with a column class if your element is the last in a row --*/
 {% for grid in grids %}
-
-	/* {{ forloop.counter }}. GRID (min_width: {{ grid.min_width }}) 
-	----------------------------------------------------------------------- */
-
-	/* ------ VARIABLE GRIDPAK STYLES AFTER THE MEDIA QUERIES ------------------------------------------ */
-
-	@max_columns: {{ grid.col_num }}; /* The maximum number of columns in this grid */
-	@column_padding: 0, {{ grid.col_padding }}{{ grid.col_padding_type }}; /* The internal column padding */
-	@gutter_px: {% if grid.gutter_type == 'px' %}{{ grid.gutter_width }}{% else %}0{% endif %}; /* Gutters width in 'px' (If chosen) */
-	@gutter_pc: {% if grid.gutter_type == '%' %}{{ grid.gutter_width }}{% else %}0{% endif %}; /* Gutters width in '%' (If chosen) */
-
-	/* ------ COLUMN MIXINS
-
-	Place the appropriate column mixin INSIDE your selectors  ------------------------------------------ */
-
-	.col_1 {.column(1, @column_padding, @gutter_px, @gutter_pc, @max_columns);} /*1 Column wide*/
-	.col_2 {.column(2, @column_padding, @gutter_px, @gutter_pc, @max_columns);} /*2 Columns wide*/ 
-	.col_3 {.column(3, @column_padding, @gutter_px, @gutter_pc, @max_columns);} /*3 Columns wide*/ 
-	.col_4 {.column(4, @column_padding, @gutter_px, @gutter_pc, @max_columns);} /*4 Columns wide*/ 
-	.col_5 {.column(5, @column_padding, @gutter_px, @gutter_pc, @max_columns);} /*5 Columns wide*/
-	.col_6 {.column(6, @column_padding, @gutter_px, @gutter_pc, @max_columns);} /*6 Columns wide*/
-	.col_7 {.column(7, @column_padding, @gutter_px, @gutter_pc, @max_columns);} /*7 Columns wide*/
-	.col_8 {.column(8, @column_padding, @gutter_px, @gutter_pc, @max_columns);} /*8 Columns wide*/
-	.col_9 {.column(9, @column_padding, @gutter_px, @gutter_pc, @max_columns);} /*9 Columns wide*/
-	.col_10 {.column(10, @column_padding, @gutter_px, @gutter_pc, @max_columns);} /*10 Columns wide*/
-	.col_11 {.column(11, @column_padding, @gutter_px, @gutter_pc, @max_columns);} /*11 Columns wide*/
-	.col_12 {.column(12, @column_padding, @gutter_px, @gutter_pc, @max_columns);} /*12 Columns wide*/
-
-{% endfor %}
-
-
-
-
+    
+        /* ------{{ forloop.counter }}. Grid {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}Infinity{% endif %} ------ */
+        
+    	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {
+        
+        .span_1{% for i in grid.col_num|get_range %}, .span_{{ i|add:"2" }}{% endfor %} {
+            border-right-width:{% if grid.gutter_type == 'px' %}{{ grid.gutter_width }}{% else %}0{% endif %}px; /* Used for fixed gutters */
+        	padding:0 {{ grid.col_padding_width }}{{ grid.col_padding_type }}; /* Column padding*/
+        	margin-right:{% if grid.gutter_type == '%' %}{{ grid.gutter_width }}{% else %}0{% endif %}; /* Used for flexible gutters */
+        }
+        
+        {% for i in grid.col_num|get_range %}.span_{{ i|add:"1" }} {
+            width:XXX%;
+        }
+        {% endfor %}
+    } /* // min_width: {{ grid.min_width }}px */ 
+    
+    {% endfor %}

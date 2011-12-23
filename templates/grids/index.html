@@ -1,15 +1,12 @@
 {% extends 'grids/base.html' %}
 
 {% block content %}
-		<header id="header_sec">
-			<div id="center" class="column">
-				<h2>The <b>Responsive</b> grid generator</h2>
-				<p>Creating a responsive grid system just became a total breeze...</p>
-			</div>
-		</header>
+            <header id="header_sec">
+					<h2>The <b>Responsive</b> grid generator</h2>
+					<p>Creating a responsive grid system just became a total breeze...</p>
+			</header>
             <div id="gridpak">
 					
-
                 <div id="browser">
 
                     <ul id="grid_list"></ul>
@@ -87,14 +84,14 @@
     
     <footer>
 		  <div class="footer_wrapper">
-		        <form id="download_form" method="post" action="{% url grids_download %}">
-                    <textarea id="stringified" name="grids" cols="80" rows="10"></textarea>
-	                <button id ="download" type="submit">Download your Gridpak</button>
-					<p class="numberOfGrids">2</p>
-					<a class="">What's inside?</a>
-	          </form> 
 	          <p class="created_by">This site is licensed under a Creative Commons Attribution 3.0 License
               Created by <a href="">Erskine Design</a></p>
+               <form id="download_form" method="post" action="{% url grids_download %}">
+                     <textarea id="stringified" name="grids" cols="80" rows="10"></textarea>
+  	                <button id ="download" type="submit">Download your Gridpak</button>
+  					<p class="numberOfGrids">2</p>
+  					<a class="">What's inside?</a>
+  	          </form>
 		</div>
     </footer>
 
