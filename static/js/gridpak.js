@@ -553,6 +553,7 @@ $(function() {
         addGrid: function(grid) {
             var view = new GridView({ model: grid });
             this.$('#grid_list').append(view.render().el);
+            this.updateOptions();
         },
 
         /**
@@ -597,6 +598,8 @@ $(function() {
         updateOptions: function() {
             Grids.current.set(this.fetchOptions());
             this.updateWidth(this.$browser.width());
+            console.log(Grids.size());
+            $('.numberOfGrids').html(Grids.size());
             // Grids.dump();
         },
 
