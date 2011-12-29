@@ -598,7 +598,6 @@ $(function() {
         updateOptions: function() {
             Grids.current.set(this.fetchOptions());
             this.updateWidth(this.$browser.width());
-            console.log(Grids.size());
             $('.numberOfGrids').html(Grids.size());
             // Grids.dump();
         },
