@@ -49,8 +49,8 @@ $(function() {
             if (
                 (typeof(attrs.min_width) != 'undefined' && !utils.isInt(attrs.min_width)) ||
                 (typeof(attrs.col_num) != 'undefined' && !utils.isInt(attrs.col_num)) ||
-                (typeof(attrs.padding_width) != 'undefined' && isNaN(attrs.padding_width)) ||
-                (typeof(attrs.gutter_width) != 'undefined' && isNaN(attrs.gutter_width)) ||
+                (typeof(attrs.padding_width) != 'undefined' && !utils.isNumber(attrs.padding_width)) ||
+                (typeof(attrs.gutter_width) != 'undefined' && !utils.isNumber(attrs.gutter_width)) ||
                 (typeof(attrs.baseline_height) != 'undefined' && !utils.isInt(attrs.baseline_height))
             ) {
                 return 'Numbers please';
@@ -562,15 +562,22 @@ $(function() {
          * @return object
          */
         fetchOptions: function() {
+            var col_num = parseInt($('#new_col_num').val()),
+                padding_width = parseFloat($('#new_padding_width').val()),
+                padding_type = $('input[name="padding_type"]:checked').val(),
+                gutter_width = parseFloat($('#new_gutter_width').val()),
+                gutter_type = $('input[name="gutter_type"]:checked').val(),
+                baseline_height = parseInt($('#new_baseline_height').val()),
+                col_width = 100 / col_num;
+
             return {
-                // min_width: parseInt($('#new_min_width').val()),
-                col_num: parseInt($('#new_col_num').val()),
-                col_width: false,
-                padding_width: parseFloat($('#new_padding_width').val()),
-                padding_type: $('input[name="padding_type"]:checked').val(),
-                gutter_width: parseFloat($('#new_gutter_width').val()),
-                gutter_type: $('input[name="gutter_type"]:checked').val(),
-                baseline_height: parseInt($('#new_baseline_height').val())
+                col_num: col_num,
+                col_width: col_width,
+                padding_width: padding_width,
+                padding_type: padding_type,
+                gutter_width: gutter_width,
+                gutter_type: gutter_type,
+                baseline_height: baseline_height
             };
         },
 
@@ -651,5 +658,15 @@ var utils = {
      */
     isFloat: function(num) {
         return num === +num && num === (num|0);
+    },
+
+    /**
+     * Checks is the variable is numeric
+     *
+     * @param string num
+     * @return boolean
+     */
+    isNumber: function(num) {
+        return !isNaN(parseFloat(num)) && isFinite(num);
     }
 };
