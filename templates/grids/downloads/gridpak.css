@@ -28,7 +28,7 @@
         
         .span_1{% for i in grid.col_num|get_range %}, .span_{{ i|add:"2" }}{% endfor %} {
             border-width:0 {% if grid.gutter_type == 'px' %}{{ grid.gutter_width }}{% else %}0{% endif %}px; /* Used for fixed gutters */
-        	padding:0 {{ grid.col_padding_width }}{{ grid.col_padding_type }}; /* Column padding*/
+        	padding:0 {{ grid.padding_width }}{{ grid.padding_type }}; /* Column padding*/
         	margin-right:{% if grid.gutter_type == '%' %}{{ grid.gutter_width }}{% else %}0{% endif %}; /* Used for flexible gutters */
         }
         

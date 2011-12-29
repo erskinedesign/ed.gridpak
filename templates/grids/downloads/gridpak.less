@@ -15,7 +15,7 @@ body {
 	
 	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {
         /* --- Gridpak variables ---*/ 
-        @max_columns: {{ grid.col_num }}; @column_padding: 0 {{ grid.col_padding_width }}{{ grid.col_padding_type }}; @gutter_px: {% if grid.gutter_type == 'px' %}{{ grid.gutter_width }}px{% else %}0{% endif %}; @gutter_pc: {% if grid.gutter_type == '%' %}{{ grid.gutter_width }}%{% else %}0{% endif %};
+        @max_columns: {{ grid.col_num }}; @column_padding: 0 {{ grid.padding_width }}{{ grid.padding_type }}; @gutter_px: {% if grid.gutter_type == 'px' %}{{ grid.gutter_width }}px{% else %}0{% endif %}; @gutter_pc: {% if grid.gutter_type == '%' %}{{ grid.gutter_width }}%{% else %}0{% endif %};
 	    .span(@num:1) {.col;}
 	    
 	} /* end media query */

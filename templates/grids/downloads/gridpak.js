@@ -49,8 +49,8 @@ var gridpak = {
                     col_num: {{ col_num }},
                     gutter_type: '{{ gutter_type }}',
                     gutter_width: {{ gutter_width }},
-                    col_padding_type: '{{ col_padding_type }}',
-                    col_padding_width: {{ col_padding_width }},
+                    padding_type: '{{ padding_type }}',
+                    padding_width: {{ padding_width }},
                     lower: {{ lower }},
                     upper: {{ upper }}
                 },
@@ -101,7 +101,7 @@ var gridpak = {
             style = 'width:' + width + '%; ' +
                 'border-left:' + border_left + grid.gutter_type + ' solid rgba(255,255,255,0.8); ' +
                 'border-right:' + border_right + grid.gutter_type + ' solid rgba(255,255,255,0.8); ' +
-                'padding:' + grid.col_padding_width + grid.col_padding_type + '; ' +
+                'padding:' + grid.padding_width + grid.padding_type + '; ' +
                 '-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; ' +
                 'display:block; ' +
                 'float:left; ' +

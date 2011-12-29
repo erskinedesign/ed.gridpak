@@ -23,18 +23,18 @@
 							</div>
                         </div>
                         <div> 
-							<label for="new_col_padding_width">Column padding</label>
+							<label for="new_padding_width">Column padding</label>
 							<div class="number_input">
 								<a href="#" class="number increase"></a>
 								<a href="#" class="number decrease"></a>
-	                            <input id="new_col_padding_width" value="10" type="text" min="0.01" max="99" step="1" />
+	                            <input id="new_padding_width" value="10" type="text" min="0.01" max="99" step="1" />
 							</div>
 							<div class="switcher_container">
-                            	<label for="col_padding_type_pixel" class="selected">px</label>
+                            	<label for="padding_type_pixel" class="selected">px</label>
 								<div class="switcher left"><span class="controller"></span></div>
-								<label for="col_padding_type_percent">%</label>
-                                <input type="radio" name="col_padding_type" checked="checked" id="col_padding_type_pixel" value="px" />
-                                <input type="radio" name="col_padding_type" id="col_padding_type_percent" value="%" />
+								<label for="padding_type_percent">%</label>
+                                <input type="radio" name="padding_type" checked="checked" id="padding_type_pixel" value="px" />
+                                <input type="radio" name="padding_type" id="padding_type_percent" value="%" />
                             </div>
                         </div>
                         <div>
@@ -103,7 +103,7 @@
         <div class="grid<%= (current) ? ' cur' : '' %>">
             <div class="cols">
                 <% var i=0; for(i; i<col_num; i++) { %>
-                    <div class="col" style="width:<%= col_width  %>%;<% if (i > 0) { %> border-left-width:<%= border_left %>px; margin-left:<%= margin_left %>%;<% } %><% if (i < (col_num - 1)) { %> border-right-width:<%= border_right %>px; margin-right:<%= margin_right %>%;<% } %> padding:0 <%= col_padding_width + col_padding_type %>;">
+                    <div class="col" style="width:<%= col_width  %>%;<% if (i > 0) { %> border-left-width:<%= border_left %>px; margin-left:<%= margin_left %>%;<% } %><% if (i < (col_num - 1)) { %> border-right-width:<%= border_right %>px; margin-right:<%= margin_right %>%;<% } %> padding:0 <%= padding_width + padding_type %>;">
                         <div class="visible"><span class="width"><%= col_width %>px</span></div>
                     </div><!-- // .col -->
                 <% } %>
