@@ -85,25 +85,6 @@ $(function() {
         },
 
         /**
-         * Update the models current width
-         *
-         * @param integer new_width
-         * @return void
-         */
-        updateWidth: function(new_width) {
-            var col_width = 0,
-                col_num = this.get('col_num');
-
-            col_width = Math.floor(new_width / col_num);
-
-            this.set({ 
-                col_width: col_width,
-                current_width: new_width
-            });
-
-        },
-
-        /**
          * Get the model's position in the collection
          *
          * @return integer index
@@ -367,7 +348,6 @@ $(function() {
             target.set(options);
 
             // Stuff will have changed
-            this.model.collection.current.updateWidth(width);
             App.refreshOptions();
             this.model.destroy();
             // Grids.dump();
@@ -538,10 +518,6 @@ $(function() {
 
             // Store the browser's width
             $('#new_min_width').val(width);
-
-            // Update the current model's widths
-            Grids.current.updateWidth(width);
-
         },
 
         /**
