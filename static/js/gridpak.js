@@ -567,17 +567,17 @@ $(function() {
                 padding_type = $('input[name="padding_type"]:checked').val(),
                 gutter_width = parseFloat($('#new_gutter_width').val()),
                 gutter_type = $('input[name="gutter_type"]:checked').val(),
-                baseline_height = parseInt($('#new_baseline_height').val()),
+                // baseline_height = parseInt($('#new_baseline_height').val()),
                 col_width = 100 / col_num;
 
             return {
                 col_num: col_num,
-                col_width: col_width,
                 padding_width: padding_width,
                 padding_type: padding_type,
                 gutter_width: gutter_width,
                 gutter_type: gutter_type,
-                baseline_height: baseline_height
+                // baseline_height: baseline_height,
+                col_width: col_width
             };
         },
 
