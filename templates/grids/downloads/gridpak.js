@@ -43,18 +43,18 @@ var gridpak = {
     init: function() {
         var gridOn = false,
             grids = [
-                {grids:loop}
+                {% for grid in grids %}
                 {
-                    min_width: {{ min_width }},
-                    col_num: {{ col_num }},
-                    gutter_type: '{{ gutter_type }}',
-                    gutter_width: {{ gutter_width }},
-                    padding_type: '{{ padding_type }}',
-                    padding_width: {{ padding_width }},
-                    lower: {{ lower }},
-                    upper: {{ upper }}
+                    min_width: {{ grid.min_width }},
+                    col_num: {{ grid.col_num }},
+                    gutter_type: '{{ grid.gutter_type }}',
+                    gutter_width: {{ grid.gutter_width }},
+                    padding_type: '{{ grid.padding_type }}',
+                    padding_width: {{ grid.padding_width }},
+                    lower: {{ grid.lower }},
+                    upper: {{ grid.upper }}
                 },
-                {/grids:loop}
+                {% endfor %}
             ],
             numGrids = grids.length - 1,
             i = 0,
