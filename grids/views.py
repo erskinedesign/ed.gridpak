@@ -11,6 +11,7 @@ import simplejson as json
 import re
 from StringIO import StringIO
 from zipfile import ZipFile
+from PIL import Image, ImageDraw
 
 def index(request):
     return render_to_response('grids/index.html', {
@@ -37,11 +38,23 @@ def download(request):
 
     grids = json.loads(request.POST['grids'])
 
+    # Set up a string buffer for the zip (we'll serve it from memory)
+    zip_buff = StringIO()
+    zip_dl = ZipFile(zip_buff, 'w')
+
+    """ Create a PNG for each grid
+    ----------------------------------------------------------------------------
+    """
+    im = Image.new('RGBA', (960, 1000), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(im)
+    draw.rectangle((5, 0, 45, 1000), fill='blue')
+    im_buff = StringIO()
+    im.save(im_buff, "PNG");
+    zip_dl.writestr('image.png', im_buff.getvalue());
+
     """ Build the zip file in memory and serve it up
     ----------------------------------------------------------------------------
     """
-    # Set up a string buffer for the zip (we'll serve it from memory)
-    zip_buff = StringIO()
     # A list of the templates we want to render and add to our zip
     templates = [
         'grids/downloads/gridpak.css', 
@@ -50,7 +63,6 @@ def download(request):
 		'grids/downloads/gridpak.scss',
     ]
     # Set up a zipfile in the zip buffer that we'll write to
-    zip_dl = ZipFile(zip_buff, 'w')
 
     # Loop the templates list
     for template in templates:
