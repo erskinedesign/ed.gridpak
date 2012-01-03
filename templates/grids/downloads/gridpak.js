@@ -1,9 +1,3 @@
-/**
- * JAVASCRIPT
- */
-
-
-
 /*!
  * JAVASCRIPT
  */
@@ -12,7 +6,7 @@ var gridpak = {
 
     $container: {},
 
-    css: '<style type="text/css">#gridpak { display: block; padding: 50px; background: red; }</style>',
+    css: '',
 
     /**
      * Insert jQuery if it's not already there
@@ -60,23 +54,51 @@ var gridpak = {
             i = 0,
             markup = '';
 
-        markup = '<div id="gridpak" style="' +
-            'position:fixed; ' +
-            'left:0; ' +
-            'top:0; ' +
-            'width:100%; ' +
-            'height:100%;' +
-            '" />';
+        markup = '<div id="gridpak" />';
+
+        this.css += '<style type="text/css"> ' +
+            '#gridpak { ' +
+                'width:100%; ' +
+                'height:100%; ' +
+                'display:block; ' +
+            '} ' +
+            '#gridpak .gridpak_grid { ' +
+                'width:100%; ' +
+                'height:100%; ' +
+                'display:block; ' +
+            '} ' +
+            '#gridpak .gridpak_col { ' +
+                'border-left:0 solid rgba(255,255,255,0); ' +
+                'border-right:0 solid rgba(255,255,255,0); ' +
+                '-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;' +
+                'padding:0; ' +
+                '-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; ' +
+                'display:block; ' +
+                'float:left; ' +
+                'height:100%; ' +
+                'background-color:rgba(153,0,0,0.2); ' +
+
+            '} ' +
+            '#gridpak .gridpak_visible { ' +
+                'width:100%; ' +
+                'height:100%; ' +
+                'display:block; ' +
+                'background:rgba(255,255,255,0.3); ' +
+            '} ';
 
         this.$container = $(markup);
-        $('body').append(gridpak.$container);
 
         // Put the grids on the screen
         for (i; i<=numGrids; i++) {
             gridpak.drawGrid(grids[i]);
         }
 
+        this.css += '</style>';
+        $('body').prepend(this.css);
+
         this.toggleGrid();
+
+        $('body').append(gridpak.$container);
 
      },
 
@@ -92,29 +114,19 @@ var gridpak = {
             width = 100 / grid.col_num
             border = grid.gutter_width / 2;
 
-        markup = '<div class="gridpak_grid" style="' +
-            'width:100%; ' +
-            'height:100%; ' +
-            'display:block;' +
-            '">';
+        markup = '<div class="gridpak_grid gridpak_grid_' + i + '">';
+
+        this.css += '#gridpak .gridpak_grid_' + i + ' .gridpak_col { ' +
+            'width:' + width + '%; ' +
+            'border-left-width:' + border + grid.gutter_type + '; ' +
+            'border-right-width:' + border + grid.gutter_type + '; ' +
+            'padding-left:' + grid.padding_width + grid.padding_type +'; ' +
+            'padding-right:' + grid.padding_width + grid.padding_type + '; ' +
+        '} ';
 
         for(i; i<=grid.col_num; i++) {
 
-            border_left = (i > 1) ? border : 0;
-            border_right = (i < grid.col_num) ? border : 0;
-
-            // Inline styles FTW
-            style = 'width:' + width + '%; ' +
-                'border-left:' + border_left + grid.gutter_type + ' solid rgba(255,255,255,1); ' +
-                'border-right:' + border_right + grid.gutter_type + ' solid rgba(255,255,255,1); ' +
-                'padding:0 ' + grid.padding_width + grid.padding_type + '; ' +
-                '-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; ' +
-                'display:block; ' +
-                'float:left; ' +
-                'height:100%; ' +
-                'background-color:rgba(153,0,0,0.2);';
-
-            markup += '<div class="gridpak_col" style="' + style + '"><div class="gridpak_visible" style="background-color:rgba(255,255,255,0.5); height:100%; width:100%; display:block;"></div></div>';
+            markup += '<div class="gridpak_col"><div class="gridpak_visible"></div></div> <!-- // .gridpak_col -->';
         }
 
         markup += '</div><!-- // .gridpak_grid -->';
