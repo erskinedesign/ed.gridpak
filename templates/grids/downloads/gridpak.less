@@ -6,12 +6,13 @@
  */
 
 body {
- 	width: 100%;
+ 	width:100%;
+ 	margin:0 auto;
 }
 
 {% for grid in grids %}
 
-	/* ------{{ forloop.counter }}. Grid {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}Infinity{% endif %} ------ */
+	/* ------{{ forloop.counter }}. {{ grid.col_num }} Column Grid {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}Infinity{% endif %} ------ */
 	
 	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {
         /* --- Gridpak variables ---*/ 

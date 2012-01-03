@@ -6,6 +6,12 @@
  */
 
 
+body {
+    margin:0 auto;
+    width:100%;
+}
+
+
 /* --- Default Gridpak column styles -- No need to change --- */
 
 .span_1{% for i in max_cols|get_range %}, .span_{{ i|add:"2" }}{% endfor %} {
@@ -22,7 +28,7 @@
 
 {% for grid in grids %}
 
-        /* {{ forloop.counter }}. Grid {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}Infinity{% endif %} 
+        /* {{ forloop.counter }}. {{ grid.col_num }} Column Grid {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}Infinity{% endif %} 
         ----------------------------------------------------------------------------- */
 
     	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {

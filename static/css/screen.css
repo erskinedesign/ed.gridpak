@@ -1241,6 +1241,13 @@ footer {
 	padding:6px 12px;
 }
 
+.about_wrapper dt p {
+	font-size:14px;
+	font-weight:400;
+	line-height: 1.25em;
+	margin-top: 8px;
+}
+
 .about_wrapper dd {
 	width:60%;
 	float:left;
@@ -1349,7 +1356,7 @@ a:hover img.erskine_two {
 }
 
 .about_wrapper h3 {
-	margin:31px 0 5px 0;
+	margin:31px 0 10px 0;
 	font-size:19px;	
 }
 
