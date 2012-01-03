@@ -31,7 +31,7 @@ var gridpak = {
             script.src= jquerySrc;
             // Insert it right after the opening body tag
             document.body.insertBefore(script, document.body.firstChild);
-            setTimeout('gridpak.init()', 200);
+            setTimeout('gridpak.init()', 500);
         } else {
             $('document').ready(this.init);
         }
@@ -43,18 +43,18 @@ var gridpak = {
     init: function() {
         var gridOn = false,
             grids = [
-                {% for grid in grids %}
+
                 {
-                    min_width: {{ grid.min_width }},
-                    col_num: {{ grid.col_num }},
-                    gutter_type: '{{ grid.gutter_type }}',
-                    gutter_width: {{ grid.gutter_width }},
-                    padding_type: '{{ grid.padding_type }}',
-                    padding_width: {{ grid.padding_width }},
-                    lower: {{ grid.lower }},
-                    upper: {{ grid.upper }}
+                    min_width: 0,
+                    col_num: 5,
+                    gutter_type: 'px',
+                    gutter_width: 8,
+                    padding_type: 'px',
+                    padding_width: 10,
+                    lower: 0,
+                    upper: false
                 },
-                {% endfor %}
+
             ],
             numGrids = grids.length - 1,
             i = 0,
@@ -76,15 +76,21 @@ var gridpak = {
             gridpak.drawGrid(grids[i]);
         }
 
+        this.toggleGrid();
+
      },
 
+     /**
+      * Draw grid
+      *
+      * Draws a single grid, usually called from a loop
+      */
      drawGrid: function(grid) {
         var markup = '',
             style = '',
-            i = 0,
+            i = 1,
             width = 100 / grid.col_num
             border = grid.gutter_width / 2;
-
 
         markup = '<div class="gridpak_grid" style="' +
             'width:100%; ' +
@@ -94,32 +100,44 @@ var gridpak = {
 
         for(i; i<=grid.col_num; i++) {
 
-            border_left = (i > 0) ? border : 0;
+            border_left = (i > 1) ? border : 0;
             border_right = (i < grid.col_num) ? border : 0;
 
             // Inline styles FTW
             style = 'width:' + width + '%; ' +
-                'border-left:' + border_left + grid.gutter_type + ' solid rgba(255,255,255,0.8); ' +
-                'border-right:' + border_right + grid.gutter_type + ' solid rgba(255,255,255,0.8); ' +
-                'padding:' + grid.padding_width + grid.padding_type + '; ' +
+                'border-left:' + border_left + grid.gutter_type + ' solid rgba(255,255,255,1); ' +
+                'border-right:' + border_right + grid.gutter_type + ' solid rgba(255,255,255,1); ' +
+                'padding:0 ' + grid.padding_width + grid.padding_type + '; ' +
                 '-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; ' +
                 'display:block; ' +
                 'float:left; ' +
                 'height:100%; ' +
-                'background-color:rgba(0,0,0,0.5);';
+                'background-color:rgba(153,0,0,0.2);';
 
-            markup += '<div class="gridpak_col" style="' + style + '"><div class="gridpak_visible"></div></div>';
+            markup += '<div class="gridpak_col" style="' + style + '"><div class="gridpak_visible" style="background-color:rgba(255,255,255,0.5); height:100%; width:100%; display:block;"></div></div>';
         }
 
         markup += '</div><!-- // .gridpak_grid -->';
 
         gridpak.$container.append(markup);
 
-     }
+     },
+
+     /**
+      * Toggles the grids visibility with a keypress
+      */
+     toggleGrid: function() {
+        var that = this;
+
+        $(document).keyup(function(e) {
+            if (e.keyCode == 71) {
+                that.$container.toggle();
+            }
+        });
+     },
 
  }
 
 
 // Kick it off!
 gridpak.bootstrap();
-
