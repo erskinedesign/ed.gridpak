@@ -3,7 +3,7 @@
 {% block content %}
             <header id="header_sec">
 					<h2>The <b>Responsive</b> grid generator</h2>
-					<p>Creating a responsive grid system just became a total breeze...</p>
+					<p>Creating a Responsive grid system just became a total breeze...</p>
 			</header>
             <div id="gridpak">
 					
@@ -13,7 +13,7 @@
 
                     <div id="grid_options">
 
-                        <div class="dragme ui-resizable-handle ui-resizable-e">Drag me</div>  
+                        <div class="dragme ui-resizable-handle ui-resizable-e tooltip small"><span>Drag me</span></div>  
                         <div>
 							<label for="new_col_num">No. of columns</label>
                             <div class="number_input">
@@ -71,7 +71,7 @@
                         {% endcomment %}
 
                         <div class="submit">
-                            <a href="#" id="save_grid">Add break point</a>
+                            <a href="#" class="tooltip large" id="save_grid">Add break point<span>By adding a 'break point' you are effectively creating a new grid and a media query.</span></a>
                         </div>
 
                     </div><!-- // #create_grid -->
