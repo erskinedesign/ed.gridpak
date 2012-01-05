@@ -7,11 +7,11 @@ from django.template import RequestContext
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.core.files import File
+from gridpak.grids.models import Grid
 import simplejson as json
 import re
 from StringIO import StringIO
 from zipfile import ZipFile
-from PIL import Image, ImageDraw
 
 def index(request):
     return render_to_response('grids/index.html', {
@@ -45,12 +45,21 @@ def download(request):
     """ Create a PNG for each grid
     ----------------------------------------------------------------------------
     """
-    im = Image.new('RGBA', (960, 1000), (0, 0, 0, 0))
-    draw = ImageDraw.Draw(im)
-    draw.rectangle((5, 0, 45, 1000), fill='blue')
-    im_buff = StringIO()
-    im.save(im_buff, "PNG");
-    zip_dl.writestr('image.png', im_buff.getvalue());
+    for g in grids:
+        grid = Grid(
+            min_width = g['min_width'],
+            col_num = g['col_num'],
+            padding_width = g['padding_width'],
+            padding_type = g['padding_type'],
+            gutter_width = g['gutter_width'],
+            gutter_type = g['gutter_type'],
+            upper = g['upper'],
+        )
+        im_buff = grid.create_image()
+        if g['upper'] == False:
+            g['upper'] = 'infinity'
+        im_name = "grid-%s_to_%s.png" % (g['min_width'], g['upper'])
+        zip_dl.writestr(im_name, im_buff.getvalue()); 
 
     """ Build the zip file in memory and serve it up
     ----------------------------------------------------------------------------
