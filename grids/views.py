@@ -46,6 +46,7 @@ def download(request):
     ----------------------------------------------------------------------------
     """
     for g in grids:
+        # Instantiate a Grid model object
         grid = Grid(
             min_width = g['min_width'],
             col_num = g['col_num'],
@@ -55,9 +56,12 @@ def download(request):
             gutter_type = g['gutter_type'],
             upper = g['upper'],
         )
+        # Draw the image into a string io buffer
         im_buff = grid.create_image()
+        # If upper is false, set a better name
         if g['upper'] == False:
             g['upper'] = 'infinity'
+        # Save the grid to the zip with a decent name
         im_name = "grid-%s_to_%s.png" % (g['min_width'], g['upper'])
         zip_dl.writestr(im_name, im_buff.getvalue()); 
 
