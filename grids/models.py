@@ -41,23 +41,24 @@ class Grid(models.Model):
         col_width = (total_width - total_padding - total_gutter) / self.col_num
         print "%d = %d - %d - %d" %(col_width, total_width, total_padding, total_gutter)
         x = 0
-        im = Image.new('RGBA', (total_width, 20), (0, 0, 0, 0))
+        image_height = 1000
+        im = Image.new('RGBA', (total_width, image_height), (0, 0, 0, 0))
         draw = ImageDraw.Draw(im)
         for i in range(self.col_num):
             # Draw the left padding
             left = x
             right = x + self.padding_width
-            draw.rectangle((left, 0, right, 20), fill=(220, 75, 82, 100))
+            draw.rectangle((left, 0, right, image_height), fill=(220, 75, 82, 100))
             # Move the pen along and draw the inner
             x = right
             left = x
             right = x + col_width
-            draw.rectangle((left, 0, right, 20), fill=(220, 75, 82, 65))
+            draw.rectangle((left, 0, right, image_height), fill=(220, 75, 82, 65))
             # Move the pen along and draw the right padding
             x = right
             left = x
             right = x + self.padding_width
-            draw.rectangle((left, 0, right, 20), fill=(220, 75, 82, 100))
+            draw.rectangle((left, 0, right, image_height), fill=(220, 75, 82, 100))
             # Move the pen along with width of the gutter
             x = right + self.gutter_width
 
