@@ -102,8 +102,8 @@
 
     <!-- TEMPLATES -->
     <script type="text/template" id="grid_template">
-        <div class="grid<%= (current) ? ' cur' : '' %>" style="margin-left:-<%= gutter_width + gutter_type %>;">
-            <div class="cols">
+        <div class="grid<%= (current) ? ' cur' : '' %>">
+            <div class="cols" style="margin-left:-<%= gutter_width + gutter_type %>;">
                 <% var i=0; for(i; i<col_num; i++) { %>
                     <div class="col" style="width:<%= col_width  %>%; border-left-width:<%= (gutter_type == 'px') ? gutter_width : 0 %>px; margin-left:<%= (gutter_type == '%') ? gutter_width : 0 %>%; padding:0 <%= padding_width + padding_type %>;">
                         <div class="visible"><span class="width"><%= col_width %>px</span></div>
