@@ -5,25 +5,18 @@
  * Created by @erskinedesign
  */
 
-
-body {
-    margin:0 auto;
-    width:100%;
-}
-
-
 /* --- Default Gridpak column styles -- No need to change --- */
 
-.span_1{% for i in max_cols|get_range %}, .span_{{ i|add:"2" }}{% endfor %} {
+.span_1{% for i in max_cols|get_range %}, .span_{{ i|add:"1" }}{% endfor %} {
     border:0px solid rgba(0,0,0,0);
     float:left;
     -webkit-box-sizing:border-box;
     -moz-box-sizing:border-box;
     box-sizing:border-box;
-	-moz-background-clip:padding-box !important;
-   	-webkit-background-clip:padding-box !important ;
-	background-clip:padding-box !important; /* Without these the background colours will spill out over the gutters */
-}
+    -moz-background-clip:padding-box !important;
+    -webkit-background-clip:padding-box !important;
+    background-clip:padding-box !important;
+ }
 
 
 {% for grid in grids %}
@@ -32,13 +25,15 @@ body {
         ----------------------------------------------------------------------------- */
 
     	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {
-
-        .span_1{% for i in grid.col_num|get_range %}, .span_{{ i|add:"1" }}{% endfor %} {
-            border-width:0 {% if grid.gutter_type == 'px' %}{{ grid.gutter_width }}{% else %}0{% endif %}px; /* Used for fixed gutters */
-        	padding:0 {{ grid.padding_width }}{{ grid.padding_type }}; /* Column padding*/
-        	margin-right:{% if grid.gutter_type == '%' %}{{ grid.gutter_width }}{% else %}0{% endif %}; /* Used for flexible gutters */
+        .row {
+            margin-left:-{{ grid.gutter_width }}{{ grid.gutter_type }};
         }
-
+        .span_1{% for i in grid.col_num|get_range %}, .span_{{ i|add:"1" }}{% endfor %} {
+            width:{{ grid.col_width }}%;
+            {% if grid.gutter_type == '%' %}margin-left:{{ grid.gutter_width }}%;{% endif %}
+            {% if grid.gutter_type == 'px' %}border-left-width:{{ grid.gutter_width }}px;{% endif %}
+        	padding:0 {{ grid.padding_width }}{{ grid.padding_type }};
+        }
         {% for i in grid.col_num|get_range %}.span_{{ i }} {
             width:{{ grid.col_width|mult:i }}%;
         }

@@ -1,6 +1,6 @@
 from django.db import models
 from PIL import Image, ImageDraw
-from StringIO import StringIO
+from cStringIO import StringIO
 
 class Grid(models.Model):
 
@@ -39,7 +39,6 @@ class Grid(models.Model):
         # Gutter is one less than the number of cols
         total_gutter = self.gutter_width * (self.col_num - 1)
         col_width = (total_width - total_padding - total_gutter) / self.col_num
-        print "%d = %d - %d - %d" %(col_width, total_width, total_padding, total_gutter)
         x = 0
         image_height = 1000
         im = Image.new('RGBA', (total_width, image_height), (0, 0, 0, 0))

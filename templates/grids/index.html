@@ -28,8 +28,9 @@
 							<div class="number_input">
 								<a href="#" class="number increase"></a>
 								<a href="#" class="number decrease"></a>
-	                            <input id="new_padding_width" value="10" type="text" min="0.01" max="99" step="1" />
+	                            <input id="new_padding_width" value="8" type="text" min="0" max="99" step="1" />
 							</div>
+                            {% comment %}
 							<div class="switcher_container">
                             	<label for="padding_type_pixel" class="selected">px</label>
 								<div class="switcher left"><span class="controller"></span></div>
@@ -37,14 +38,16 @@
                                 <input type="radio" name="padding_type" checked="checked" id="padding_type_pixel" value="px" />
                                 <input type="radio" name="padding_type" id="padding_type_percent" value="%" />
                             </div>
+                            {% endcomment %}
                         </div>
                         <div>
                             <label for="new_gutter_width">Gutter width</label>
 							<div class="number_input">
 								<a href="#" class="number increase"></a>
 								<a href="#" class="number decrease"></a>
-                            	<input id="new_gutter_width" value="8" type="text" min="0.01" max="99" step="1" />
+                            	<input id="new_gutter_width" value="16" type="text" min="0" max="99" step="1" />
 							</div>
+                            {% comment %}
 							<div class="switcher_container">
                                 <label class="selected" for="gutter_type_pixel">px</label>
 								<div class="switcher left"><span class="controller"></span></div>
@@ -52,6 +55,7 @@
                                 <input type="radio" name="gutter_type" checked="checked" id="gutter_type_pixel" value="px" />
                                 <input type="radio" name="gutter_type" id="gutter_type_percent" value="%" />
                             </div>
+                            {% endcomment %}
                         </div>
                         {% comment %}
                         <div>
@@ -104,9 +108,9 @@
     <!-- TEMPLATES -->
     <script type="text/template" id="grid_template">
         <div class="grid<%= (current) ? ' cur' : '' %>">
-            <div class="cols">
+            <div class="cols" style="margin-left:-<%= gutter_width + gutter_type %>;">
                 <% var i=0; for(i; i<col_num; i++) { %>
-                    <div class="col" style="width:<%= col_width  %>%; border-left-width:<%= (gutter_type == 'px' && i > 0) ? gutter_width : 0 %>px; margin-left:<%= (gutter_type == '%' && i > 0) ? gutter_width : 0 %>%; padding:0 <%= padding_width + padding_type %>;">
+                    <div class="col" style="width:<%= col_width  %>%; border-left-width:<%= (gutter_type == 'px') ? gutter_width : 0 %>px; margin-left:<%= (gutter_type == '%') ? gutter_width : 0 %>%; padding:0 <%= padding_width + padding_type %>;">
                         <div class="visible"><span class="width"><%= col_width %>px</span></div>
                     </div><!-- // .col -->
                 <% } %>

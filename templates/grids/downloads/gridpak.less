@@ -5,19 +5,17 @@
  * Created by @erskinedesign
  */
 
-body {
- 	width:100%;
- 	margin:0 auto;
-}
-
 {% for grid in grids %}
 
 	/* ------{{ forloop.counter }}. {{ grid.col_num }} Column Grid {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}Infinity{% endif %} ------ */
 	
 	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {
+        .row {
+            margin-left:-{{ grid.gutter_width }}{{ grid.gutter_type }};
+        }
         /* --- Gridpak variables ---*/ 
         @max_columns: {{ grid.col_num }}; @column_padding: 0 {{ grid.padding_width }}{{ grid.padding_type }}; @gutter_px: {% if grid.gutter_type == 'px' %}{{ grid.gutter_width }}px{% else %}0{% endif %}; @gutter_pc: {% if grid.gutter_type == '%' %}{{ grid.gutter_width }}%{% else %}0{% endif %};
-	    .mixin-span(@num:1) {.mixin-col;}
+	    .mixin-span(@num:1) { .mixin-col; }
 
 	} /* end media query */
 {% endfor %}
@@ -41,8 +39,4 @@ body {
  	 border-left-width:@gutter_px;
      padding:@column_padding;
      margin-left:@gutter_pc;
- }
- .mixin-span_first {
-    margin-left:0;
-    border-left:0;
  }

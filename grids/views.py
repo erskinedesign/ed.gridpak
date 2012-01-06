@@ -10,7 +10,7 @@ from django.core.files import File
 from gridpak.grids.models import Grid
 import simplejson as json
 import re
-from StringIO import StringIO
+from cStringIO import StringIO
 from zipfile import ZipFile
 
 def index(request):
@@ -37,6 +37,7 @@ def download(request):
         return HttpResponseRedirect('/')
 
     grids = json.loads(request.POST['grids'])
+    max_cols = 0
 
     # Set up a string buffer for the zip (we'll serve it from memory)
     zip_buff = StringIO()
@@ -46,6 +47,9 @@ def download(request):
     ----------------------------------------------------------------------------
     """
     for g in grids:
+        # Work out which grid has the highest number of cols
+        if g['col_num'] > max_cols:
+            max_cols = g['col_num']
         # Instantiate a Grid model object
         grid = Grid(
             min_width = g['min_width'],
@@ -85,7 +89,7 @@ def download(request):
         # Read the templates into string buffers
         buff.write(render_to_string(template, {
             'grids': grids,
-            'max_cols': 16,
+            'max_cols': max_cols,
         }).encode('ascii', 'ignore'))
 
         zip_dl.writestr(template.replace('grids/downloads/', ''), buff.getvalue())
