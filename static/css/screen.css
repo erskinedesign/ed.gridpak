@@ -789,11 +789,14 @@ footer {
 		left:0;
 	    z-index:1;
 		font-size:0.923076923em;/*12/13*/
-        background-color:#fff;
+        background-color:none;
 	}
+    #grid_list .cur {
+        background-color:#fff;
+    }
 	#grid_list .gridnav {
 	    z-index:99;
-	}
+    }
 	#grid_list .cols {
 		height:100%;
 	    display:none;
