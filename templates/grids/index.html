@@ -105,7 +105,7 @@
         <div class="grid<%= (current) ? ' cur' : '' %>">
             <div class="cols">
                 <% var i=0; for(i; i<col_num; i++) { %>
-                    <div class="col" style="width:<%= col_width  %>%; border-left-width:<%= border_left %>px; margin-left:<%= margin_left %>%; border-right-width:<%= border_right %>px; margin-right:<%= margin_right %>%; padding:0 <%= padding_width + padding_type %>;">
+                    <div class="col" style="width:<%= col_width  %>%; border-left-width:<%= (gutter_type == 'px' && i > 0) ? gutter_width : 0 %>px; margin-left:<%= (gutter_type == '%' && i > 0) ? gutter_width : 0 %>%; padding:0 <%= padding_width + padding_type %>;">
                         <div class="visible"><span class="width"><%= col_width %>px</span></div>
                     </div><!-- // .col -->
                 <% } %>

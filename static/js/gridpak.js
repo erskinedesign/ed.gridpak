@@ -255,39 +255,6 @@ $(function() {
          * @return this
          */
         render: function() {
-            // We'll extend the attributes with some template required vars
-            var extras = {
-                    border_left: 0,
-                    border_right: 0,
-                    margin_left: 0,
-                    margin_right: 0,
-                    col_width: 0,
-                },
-                gutter_width = 0,
-                col_num = 0;
-
-            // The gutters account for left and right of two cols
-            gutter_width = this.model.get('gutter_width') / 2;
-            col_num = this.model.get('col_num');
-
-            // Borders set from the gutter width
-            extras.border_left = extras.border_right = gutter_width;
-            extras.margin_left = extras.margin_right = gutter_width;
-
-            if (this.model.get('gutter_type') == 'px') {
-                // If the gutters are absolute, we use borders
-                extras.margin_left = extras.margin_right = 0;
-                // The box model allows us to set the width including the gutter
-                extras.col_width = 100 / col_num;
-            } else {
-                // If relative, we use margins
-                extras.border_left = extras.border_right = 0;
-                // The col width must now account for the margins too
-                extras.col_width = (100 - (this.model.get('gutter_width') * (col_num - 1))) / col_num;
-            }
-
-            // Extend the model's attributes with these extras
-            _.extend(this.model.attributes, extras);
             $(this.el).html(this.template(this.model.toJSON()));
             this.stringify();
             return this;
@@ -544,8 +511,8 @@ $(function() {
                 gutter_width = parseFloat($('#new_gutter_width').val()),
                 gutter_type = $('input[name="gutter_type"]:checked').val(),
                 // baseline_height = parseInt($('#new_baseline_height').val()),
-                col_width = 100 / col_num;
-
+                gutter_remove = gutter_type == '%' ? gutter_width * col_num : 0,
+                col_width = (100 - gutter_remove) / col_num;
             return {
                 col_num: col_num,
                 padding_width: padding_width,
