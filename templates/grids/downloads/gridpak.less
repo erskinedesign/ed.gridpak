@@ -17,8 +17,8 @@ body {
 	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {
         /* --- Gridpak variables ---*/ 
         @max_columns: {{ grid.col_num }}; @column_padding: 0 {{ grid.padding_width }}{{ grid.padding_type }}; @gutter_px: {% if grid.gutter_type == 'px' %}{{ grid.gutter_width }}px{% else %}0{% endif %}; @gutter_pc: {% if grid.gutter_type == '%' %}{{ grid.gutter_width }}%{% else %}0{% endif %};
-	    .span(@num:1) {.col;}
-	    
+	    .mixin-span(@num:1) {.mixin-col;}
+
 	} /* end media query */
 {% endfor %}
 
@@ -28,7 +28,7 @@ body {
 
  @max_columns: 0; @column_padding: 0; @gutter_px: 0; @gutter_pc: 0; @num: 0; 
 
- .col {
+.mixin-col {
      width:(100% - (@gutter_pc * @max_columns)) / @max_columns * @num;
      border:0px solid rgba(0,0,0,0);
      float:left;
@@ -42,7 +42,7 @@ body {
      padding:@column_padding;
      margin-left:@gutter_pc;
  }
- .col_first {
+ .mixin-span_first {
     margin-left:0;
     border-left:0;
  }
