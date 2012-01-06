@@ -39,9 +39,8 @@ body {
             {% if grid.gutter_type == 'px' %}border-left-width:{{ grid.gutter_width }}px;{% endif %}
         	padding:0 {{ grid.padding_width }}{{ grid.padding_type }};
         }
-        .span_1:first-child{% for i in grid.col_num|get_range %}, .span_{{ i|add:"1" }}:first-child{% endfor %} {
-            border-left:0;
-            margin-left:0;
+        .row {
+            margin-left:-{{ grid.gutter_width }}{{ grid.gutter_type }};
         }
         {% for i in grid.col_num|get_range %}.span_{{ i }} {
             width:{{ grid.col_width|mult:i }}%;
