@@ -511,7 +511,7 @@ $(function() {
                 gutter_width = parseFloat($('#new_gutter_width').val()),
                 gutter_type = $('input[name="gutter_type"]:checked').val(),
                 // baseline_height = parseInt($('#new_baseline_height').val()),
-                gutter_remove = gutter_type == '%' ? gutter_width * col_num : 0,
+                gutter_remove = (gutter_type == '%') ? gutter_width * (col_num - 1) : 0,
                 col_width = (100 - gutter_remove) / col_num;
             return {
                 col_num: col_num,
