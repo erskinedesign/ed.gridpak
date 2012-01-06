@@ -211,54 +211,90 @@ pre .syntax {
 	float:right;	
 }
 
-nav {
+§ {
 	display:block;
 	float:right;
 	height:34px;
 }
 
-nav a {
-	display:inline-block;
-	padding:0px 10px;
-    color:#888;
-    -webkit-transition:all 0.3s ease-in-out;
-    -moz-transition:all 0.3s ease-in-out;
-    -ms-transition:all 0.3s ease-in-out; 
-    -o-transition:all 0.3s ease-in-out;
-    transition:all 0.3s ease-in-out;
-    font-size: 1em;
-    line-height: 1em;
-    margin-top: 10px;
+nav {
+	float: right;
+	margin-top: 7px;
 }
 
-nav a:first-child {
-	padding: 0 9px 0 10px;
+body.index nav a {
+	color: #999;
+	background:url(../images/site/icons/about_icon.png) no-repeat 0 -999px;
+	padding-left: 21px;
+	
 }
 
-nav a:hover {
-	color: #000;
+body.index nav a:hover {
+	color: #333;
+	background-position: 0 1px;
+	
 }
 
-nav a:active {
-	-webkit-box-shadow:none; 
-    -moz-box-shadow:none;
-    box-shadow:none; 
-    color:#888;
+body.about nav a {
+	position:relative;
+	font-family:ff-meta-web-pro, sans-serif;
+	padding:7px 35px 7px 12px;
+	color:#FFF;
+	text-shadow:-1px -1px -1px #720000;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+    border-radius:3px;    
+    cursor:pointer;
+ 	float:left;
+ 	background-color:#E5E5E5;
+	background-image:-webkit-gradient(linear, left top, left bottom, from(#BC0D13), to(#720704));
+	background-image:-webkit-linear-gradient(top, #BC0D13, #720704);
+	background-image:-moz-linear-gradient(top, #BC0D13, #720704);
+	background-image:-ms-linear-gradient(top, #BC0D13, #720704);
+	background-image:-o-linear-gradient(top, #BC0D13, #720704);
+    background-image:linear-gradient(top, #BC0D13, #720704);
+    -webkit-box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 1px 1px 0 inset;
+	-moz-box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 1px 1px 0 inset;
+	box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 1px 1px 0 inset;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#BC0D13', EndColorStr='#720704');
+	font-size:1.076923077em;/*14/13*/
+	-moz-background-clip:padding; 
+	-webkit-background-clip:padding-box; 
+	background-clip:padding-box;
+	line-height:21px;
+	margin-top: -7px;
+	margin-bottom: -2px;
 }
 
-	@media only screen and (max-width:510px) {
-		nav a.cur {
-			display:none;
-		}
-	}
-
-nav a.cur:hover {
-	-webkit-box-shadow:none; 
-    -moz-box-shadow:none;
-    box-shadow:none; 
+body.about nav a:after{
+	content:" ";
+	-webkit-border-radius:0 3px 3px 0;
+	-moz-border-radius:0 3px 3px 0;
+    border-radius:0 3px 3px 0;
+	position:absolute;
+	float:left;
+	margin:3px 0 0 12px;
+	width:32px;
+	height:35px;
+	overflow:hidden;
+	background:url(../images/site/icons/create_icon.png) no-repeat 0 0;
 }
 
 
+body.about nav a:hover {
+	background-color:#8C0909;
+	background-image:none;	
+	-moz-background-clip:padding; 
+    -webkit-background-clip:padding-box; 
+	background-clip:padding-box;
+}
+	
+body.about nav a:active {
+	-webkit-box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0) 1px 1px 0 inset;
+	-moz-box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0) 1px 1px 0 inset;
+	box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0) 1px 1px 0 inset;
+}
+	
 
 ul.social {
 	float:left;
@@ -1395,13 +1431,13 @@ a:hover img.erskine_two {
 	font-size:.8em;
 }
 
-.support a {
+.support a, p a {
 	background:url(../images/site/icons/underline.png);
 	background-position:bottom;
 	color:#FFF;
 }
 
-.support a:hover {
+.support a:hover, p a:hover {
 	background-image:none;
 	background-color:#666;	
 }

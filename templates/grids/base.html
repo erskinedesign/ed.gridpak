@@ -44,8 +44,7 @@
     					</li>
     				</ul>
     				<nav>
-                        <a href="{% url about %}">Learn about Gripak</a>
-                        <a href="{% url grids_index %}">Create your Gridpak</a>
+                        {% block nav_item %}{% endblock %}
     			    </nav>
     			</div>
 			</header>
