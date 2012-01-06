@@ -29,7 +29,7 @@ body {
  @max_columns: 0; @column_padding: 0; @gutter_px: 0; @gutter_pc: 0; @num: 0; 
 
  .col {
-     width:100% / @max_columns * @num;
+     width:(100% - (@gutter_pc * @max_columns)) / @max_columns * @num;
      border:0px solid rgba(0,0,0,0);
      float:left;
      -webkit-box-sizing:border-box;
@@ -38,8 +38,11 @@ body {
      -moz-background-clip:padding-box !important;
      -webkit-background-clip:padding-box !important;
  	 background-clip:padding-box !important;
- 	 border-right-width:@gutter_px / 2;
- 	 border-left-width:@gutter_px / 2;
+ 	 border-left-width:@gutter_px;
      padding:@column_padding;
-     margin-right:@gutter_pc;
+     margin-left:@gutter_pc;
+ }
+ .col_first {
+    margin-left:0;
+    border-left:0;
  }
