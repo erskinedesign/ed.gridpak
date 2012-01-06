@@ -10,7 +10,7 @@ from django.core.files import File
 from gridpak.grids.models import Grid
 import simplejson as json
 import re
-from StringIO import StringIO
+from cStringIO import StringIO
 from zipfile import ZipFile
 
 def index(request):
