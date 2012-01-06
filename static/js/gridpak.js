@@ -219,7 +219,7 @@ $(function() {
     // Grids.add(new Grid({ min_width: 0, col_num: 4, padding_width: 5, padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
     // Grids.add(new Grid({ min_width: 500, col_num: 8, padding_width: 1, padding_type: '%', gutter_width: 2,  gutter_type: '%', baseline_height: 22 }));
     // Grids.add(new Grid({ min_width: 960, col_num: 16, padding_width: 10, padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
-    Grids.add(new Grid({ min_width: 0, col_num: 16, padding_width: 10, padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
+    Grids.add(new Grid({ min_width: 0, col_num: 16, padding_width: 8, padding_type: 'px', gutter_width: 16,  gutter_type: 'px', baseline_height: 22 }));
 
     // Set the current grid as the last in the collection
     window.Grids.current = window.Grids.at(Grids.length - 1);
@@ -509,14 +509,15 @@ $(function() {
                 padding_width = parseFloat($('#new_padding_width').val()),
                 padding_type = $('input[name="padding_type"]:checked').val(),
                 gutter_width = parseFloat($('#new_gutter_width').val()),
-                gutter_type = $('input[name="gutter_type"]:checked').val(),
+                // gutter_type = $('input[name="gutter_type"]:checked').val(),
+                gutter_type = 'px';
                 // baseline_height = parseInt($('#new_baseline_height').val()),
                 gutter_remove = (gutter_type == '%') ? gutter_width * (col_num - 1) : 0,
                 col_width = (100 - gutter_remove) / col_num;
             return {
                 col_num: col_num,
                 padding_width: padding_width,
-                padding_type: padding_type,
+                // padding_type: padding_type,
                 gutter_width: gutter_width,
                 gutter_type: gutter_type,
                 // baseline_height: baseline_height,
@@ -533,9 +534,9 @@ $(function() {
             // $('#new_min_width').val(Grids.current.get('min_width'));
             $('#new_col_num').val(Grids.current.get('col_num'));
             $('#new_padding_width').val(Grids.current.get('padding_width'));
-            $('input:radio[name="padding_type"][value="' + Grids.current.get('padding_type') + '"]').trigger('click');
+            // $('input:radio[name="padding_type"][value="' + Grids.current.get('padding_type') + '"]').trigger('click');
             $('#new_gutter_width').val(Grids.current.get('gutter_width'));
-            $('input:radio[name="gutter_type"][value="' + Grids.current.get('gutter_type') + '"]').trigger('click');
+            // $('input:radio[name="gutter_type"][value="' + Grids.current.get('gutter_type') + '"]').trigger('click');
             $('#new_baseline_height').val(Grids.current.get('baseline_height'));
             // Grids.dump();
         },

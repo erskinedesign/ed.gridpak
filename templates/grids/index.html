@@ -27,8 +27,9 @@
 							<div class="number_input">
 								<a href="#" class="number increase"></a>
 								<a href="#" class="number decrease"></a>
-	                            <input id="new_padding_width" value="10" type="text" min="0.01" max="99" step="1" />
+	                            <input id="new_padding_width" value="8" type="text" min="0" max="99" step="1" />
 							</div>
+                            {% comment %}
 							<div class="switcher_container">
                             	<label for="padding_type_pixel" class="selected">px</label>
 								<div class="switcher left"><span class="controller"></span></div>
@@ -36,14 +37,16 @@
                                 <input type="radio" name="padding_type" checked="checked" id="padding_type_pixel" value="px" />
                                 <input type="radio" name="padding_type" id="padding_type_percent" value="%" />
                             </div>
+                            {% endcomment %}
                         </div>
                         <div>
                             <label for="new_gutter_width">Gutter width</label>
 							<div class="number_input">
 								<a href="#" class="number increase"></a>
 								<a href="#" class="number decrease"></a>
-                            	<input id="new_gutter_width" value="8" type="text" min="0.01" max="99" step="1" />
+                            	<input id="new_gutter_width" value="16" type="text" min="0" max="99" step="1" />
 							</div>
+                            {% comment %}
 							<div class="switcher_container">
                                 <label class="selected" for="gutter_type_pixel">px</label>
 								<div class="switcher left"><span class="controller"></span></div>
@@ -51,6 +54,7 @@
                                 <input type="radio" name="gutter_type" checked="checked" id="gutter_type_pixel" value="px" />
                                 <input type="radio" name="gutter_type" id="gutter_type_percent" value="%" />
                             </div>
+                            {% endcomment %}
                         </div>
                         {% comment %}
                         <div>
