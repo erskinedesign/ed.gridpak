@@ -60,9 +60,11 @@ def download(request):
         im_buff = grid.create_image()
         # If upper is false, set a better name
         if g['upper'] == False:
-            g['upper'] = 'infinity'
+            upper_name = 'infinity'
+        else:
+            upper_name = g['upper']
         # Save the grid to the zip with a decent name
-        im_name = "grid-%s_to_%s.png" % (g['min_width'], g['upper'])
+        im_name = "grid-%s_to_%s.png" % (g['min_width'], upper_name)
         zip_dl.writestr(im_name, im_buff.getvalue()); 
 
     """ Build the zip file in memory and serve it up
