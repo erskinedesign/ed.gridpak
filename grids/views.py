@@ -81,7 +81,6 @@ def download(request):
 		'grids/downloads/gridpak.less',
 		'grids/downloads/gridpak.scss',
     ]
-    # Set up a zipfile in the zip buffer that we'll write to
 
     # Loop the templates list
     for template in templates:
