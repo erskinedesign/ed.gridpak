@@ -29,13 +29,16 @@
             margin-left:-{{ grid.gutter_width }}{{ grid.gutter_type }};
         }
         .span_1{% for i in grid.col_num|get_range %}, .span_{{ i|add:"1" }}{% endfor %} {
-            width:{{ grid.col_width }}%;
             {% if grid.gutter_type == '%' %}margin-left:{{ grid.gutter_width }}%;{% endif %}
             {% if grid.gutter_type == 'px' %}border-left-width:{{ grid.gutter_width }}px;{% endif %}
         	padding:0 {{ grid.padding_width }}{{ grid.padding_type }};
         }
         {% for i in grid.col_num|get_range %}.span_{{ i }} {
             width:{{ grid.col_width|mult:i }}%;
+        }
+        
+        .span_{{ grid.col_num }} {
+            width:100%;
         }
         {% endfor %}
     } /* // min_width: {{ grid.min_width }}px */ 
