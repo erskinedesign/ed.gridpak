@@ -52,14 +52,8 @@ html, body {
 body {
 	font:normal 400 13px/18px ff-meta-web-pro, sans-serif;
 	color:#E5E5E5;
-	background:#333;
+	background:#2c2c2c;
 }
-
-body.about {
-	background-color:#333;
-}
-
-
 
 /* @end */
 
@@ -83,13 +77,12 @@ h2 {
 h3 {
 	font-size:1.538461538em;/*17/13*/
 	margin-bottom:0.461538462em; /*9/13*/
-	line-height: 1.2em
+	line-height: 1.2em;
 }
-
 
 h4 {
 	font-size:1.153846154em;/*15/13*/
-	margin:6px 0 9px 0;
+	margin:12px 0 9px 0;
 }
 
 h5 {
@@ -1260,7 +1253,7 @@ footer {
 
 .about_header_wrapper {
 	max-width: 800px;
-	margin: 0 auto 40px auto;	
+	margin: 0 auto;	
 	overflow: hidden;
 }
 
@@ -1295,17 +1288,7 @@ footer {
     -webkit-background-clip:padding-box !important;
     background-clip:padding-box !important;
  }
- 
-.video_container {
-	
-}
 
-.included_wrapper {
-	background:#2C2C2C;
-	clear: both;
-	margin: 0 -40px;
-	padding-top: 20px;
-}
 
 .included {
 	max-width: 800px;
@@ -1344,29 +1327,14 @@ footer {
 
 
 
-        /* 2. 2 Column Grid 500px - 799px 
+      
+
+
+
+        /* 2. 8 Column Grid 800px - Infinity 
         ----------------------------------------------------------------------------- */
 
-	    	@media screen and (min-width: 500px) and (max-width: 799px) {
-	        .row {
-	            margin-left:-20px;
-	        }
-	        .span_1, .span_2 {
-	            border-left-width:20px;
-	        	padding:0 12px;
-	        }
-	        .span_1 {
-	            width:50.0%;
-	        }
-	        
-	    } /* // min_width: 500px */ 
-
-
-
-        /* 3. 8 Column Grid 800px - Infinity 
-        ----------------------------------------------------------------------------- */
-
-    	@media screen and (min-width: 800px) {
+    	@media screen and (min-width: 500px) {
 	        .row {
 	            margin-left:-20px;
 	        }
@@ -1432,9 +1400,6 @@ footer {
 				padding-left: 10px;
 
 			}
-			
-			
-			
         
         
         }
