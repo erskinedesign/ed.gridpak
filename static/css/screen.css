@@ -1289,13 +1289,130 @@ footer {
     background-clip:padding-box !important;
  }
 
-
 .included {
 	max-width: 800px;
 	margin: 0 auto;
-	padding-top: 40px;
+	padding: 7px 0 32px 0;
 	overflow: hidden;
 }
+
+.included_wrapper {
+	background: #242424;
+	margin: 0 -40px;
+}
+
+header.included_header {
+	max-width: 800px;
+	margin: 30px auto 38px auto;
+	display: block;
+	text-align: center;	
+}
+
+header.included_header h2 {
+	font-size:1.846153846em;
+	line-height: 1.2em;
+}
+
+.included table {
+	width: 100%;
+	color: #ccc;
+}
+
+
+.included table tr {
+	padding: 20px 0 14px 0;
+	height: 80px;
+	display: block;
+}
+
+.included table.presentational tr {
+	height: 100px;
+	margin-bottom: 27px;
+	padding-top: 30px;
+	background: rgba(0,0,0,0.08) url(../images/site/icons/dropdown_icon.png) no-repeat 97% 59px;
+	cursor: pointer;
+}
+
+.included table.presentational small {
+	font-size: 0.769230769em;
+	color: #888;
+	display: none;
+}
+
+.included table.presentational tr:hover {
+	background: rgba(0,0,0,0.13) url(../images/site/icons/dropdown_icon.png) no-repeat 97% -83px;
+	color: #fff;
+}
+
+.included table.presentational tr:hover small {
+	display: inline;
+}
+
+.included table td {
+	float: left;
+	width: 100%;
+}
+
+.included table td.file_type {
+	width:19%;
+}
+
+.included table td.file_type h3 {
+	line-height: 1em;
+	margin-bottom: -14px;
+}
+
+.included table td.file_type, .included table td.definition, .included table td.included_images {
+	border-left-width:20px;
+	padding:0 20px;
+	border:0px solid rgba(0,0,0,0);
+    float:left;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    -moz-background-clip:padding-box !important;
+    -webkit-background-clip:padding-box !important;
+    background-clip:padding-box !important;
+}
+
+.included table td.definition {
+	width: 31%;
+	margin-top: 3px;
+}
+
+.included table td.included_images {
+	width: 50%;	
+	padding: 0;
+
+}
+
+.included table .included_image_wrapper img {
+	margin: 0 auto 6px auto;
+} 
+
+.included table .included_image_wrapper {
+	float: left;
+	width: 71px;
+
+}
+
+.included table .included_image_wrapper + .included_image_wrapper  {
+	background:url(../images/site/icons/plus_icon.png) no-repeat 8px 30px;
+	padding-left: 30px;
+}
+
+
+.included_image_wrapper p {
+	text-align: center;
+	font-size: .923076923em;
+}
+
+.included table tr.hidden {
+	display: none;
+
+}
+
+
 
 
  
@@ -1384,15 +1501,6 @@ footer {
 			div.two_boxes div {
 				 width:50.0%;
 				 margin-bottom: 20px;
-			}
-			
-			.left_column {
-				 width:25.0%;
-			}
-			
-			.right_column {
-				 width:75.0%;
-				 float: right;
 			}
 			
 			.row {

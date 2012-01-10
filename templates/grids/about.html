@@ -33,84 +33,121 @@
         			    </div>
             	    </div><!-- two_boxes -->
             	</div>
+            <header class="included_header">
+                <h2>What's included in the download?</h2>
+				<p>Your Gridpak is a download file that contains:</p>
+            </header>
     		<div class="included_wrapper">
     		    <div class="included">
-    		        <div class="row">
-    		        <div class="left_column">
-    		            <h3>What&rsquo;s included in the download?</h3>
-    		        </div>
-    				<div class="right_column">
-    				    <h3>Presentational CSS</h3>
-    			    	<p>You’ll have several options for ‘presentational’ CSS.</p>
-    			    	
-        				<h4 id="css">Gridpak.css</h4>
-        			    <p>A straightforward CSS which contains the appropriate media queries and pre-defined selectors based on the grids you have created. Using this file doesn’t require a compiler and will result in a smaller file size but is less semantic than .less and .scss files.</p>
-			    
-        			    <h4>How to use</h4>
-        				<p>Add the selector corresponding to the desired width of your element.</p>
-				
-        				<pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
-				
-        				<p>This would create an element two columns wide. The required presentational classes
-                        can also be added to existing classes:</p>
-                
-                        <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"secondary_header span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
-                
-                        <p>This would create an element eight columns wide.</p> 
-                
-                        <p>If your element appears at the end of a row you will also need to give it the class ‘end’.</p>
-                
-                        <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"recipe span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
-        <span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"ingrediants span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
-        <span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"sidebar span_2 end"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
+    		            <table>
+    		                    <tr>
+    		                    <td class="file_type"><h3>PNGs</h3></td>
+    		                    <td class="definition">A PNG version of each grid you have created, ready and waiting for your graphics program of  choice.</td>
+    		                    <td class="included_images">
+    		                        <div class="included_image_wrapper">
+        				                <img src="{{ STATIC_URL }}/images/site/icons/png_icon.png">
+            				            <p>.PNGs</p>
+        				            </div>
+        				        </td>
+    		                </tr>
+    		                    <td>
+    		                        <table class="presentational">
+        		                        <tr>
+            		                        <td class="file_type"><h3>CSS</h3><br /><p>(Presentational)</p></td>
+            		                        <td class="definition">You’ll have several options for ‘presentational’ CSS.<br /><br /><small>VIEW DOCUMENTATION</small></td>
+            		                        <td class="included_images">
+            		                            <div class="included_image_wrapper">
+                				                    <img src="{{ STATIC_URL }}/images/site/icons/css_icon.png">
+                    				                <p>Gridpak.CSS</p>
+                				                </div>
+                				                <div class="included_image_wrapper">
+                				                    <img src="{{ STATIC_URL }}/images/site/icons/less_icon.png">
+                    				                <p>Gridpak.LESS</p>
+                				                </div>
+                				                <div class="included_image_wrapper">
+                				                    <img src="{{ STATIC_URL }}/images/site/icons/scss_icon.png">
+                				                    <p>Gridpak.SCSS</p>
+                				                </div>
+                				            </td>
+                				        </tr>
+            				            <tr class="hidden">
+                				            <td>
+                				                <h4 id="css">Gridpak.css</h4>
+                            			    <p>A straightforward CSS which contains the appropriate media queries and pre-defined selectors based on the grids you have created. Using this file doesn’t require a compiler and will result in a smaller file size but is less semantic than .less and .scss files.</p>
 
-                        <p>By adding the ‘end’ class to the side bar you are removing any right padding or margin allowing your elements to fit correctly within their container.</p>
-                
-                        <h4>Gridpak.less &amp; Gridpak.scss</h4>   
-                        <p>These options also include the appropriate media queries. However, unlike the Gridpak-styles.CSS these files use a combination of ‘Mixins’ and variables rather than selectors, allowing your markup to be more semantic.</p>
-                
-                        <h4>How to use</h4>
-                        <p>Add the Mixin corresponding to the desired width inside the selector, alongside any other declerations.</p>
-                
-                        <div class="half"><pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
-        <span class="white">.span(2)</span><span class="grey">;</span>
-        <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-        }</span></code><span class="syntax">.less</span></pre></div>
+                            			    <h4>How to use</h4>
+                            				<p>Add the selector corresponding to the desired width of your element.</p>
 
-                        <div class="half"><pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
-        <span class="white">@include span(2)</span><span class="grey">;</span>
-        <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-        }</span></code><span class="syntax">.scss</span></pre></div>
-        
-                        <p>These two examples would result in an element that is two columns wide. If your element appears at the end of a row you will also need to include the ‘end’ Mixin.</p>
-                
-                        <div class="half"><pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
-        <span class="white">.span(2)</span><span class="grey">;</span>
-        <span class="white">.end()</span><span class="grey">;</span>
-        <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-        }</span></code><span class="syntax">.less</span></pre></div>
+                            				<pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
 
-                        <div class="half"><pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
-        <span class="white">@include span(2)</span><span class="grey">;</span>
-        <span class="white">@include end</span><span class="grey">;</span>
-        <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-        }</span></code><span class="syntax">.scss</span></pre></div>
+                            				<p>This would create an element two columns wide. The required presentational classes
+                                            can also be added to existing classes:</p>
 
-                        <p>By adding the ‘end’ Mixin to the recipe element you are removing any right padding or margin allowing your elements to fit correctly within their container.</p>
-                        
-                        <h3 id="javascript">Browser overlay</h3>
-                        <p>A JavaScript file which allows you to toggle your grid on &amp; off in any browser using either the ‘G’ key to toggle the whole grid, the ‘V’ key to toggle the vertical grid or the ‘B’ key to toggle the baseline. Simply add the following line to the head of your document and you’re on your way.</p>
-                        <pre><code class="xml"><span class="grey">&lt;<span class="white">script type</span><span class="grey">=</span><span class="red">"text/javascript"</span> <span class="white">src</span><span class="grey">=</span><span class="red">"gridpak.js"</span><span class="grey">&gt;&lt;/<span>script</span>&gt;</span></code></pre>
-                        
-                        <h4>Please note:</h4>
-                        <p>The JavaScript file appends the grid directly after your body tag. It does this because it assumes that this is the main content container. If this is not the case and your main content container is called something like ‘#content_wrapper’ then please change the following variable in the JavaScript file.</p>
-                        
-                        <h3 id="pngs">PNGs</h3>
-        				<p>A PNG version of each grid you have created, ready and waiting for your graphics program of  choice.</p>
-        				</div>
-        			</div><!-- // .right_column -->
+                                            <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"secondary_header span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
+
+                                            <p>This would create an element eight columns wide.</p> 
+
+                                            <p>If your element appears at the end of a row you will also need to give it the class ‘end’.</p>
+
+                                            <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"recipe span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
+                            <span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"ingrediants span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
+                            <span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"sidebar span_2 end"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
+
+                                            <p>By adding the ‘end’ class to the side bar you are removing any right padding or margin allowing your elements to fit correctly within their container.</p>
+                                            </td>
+        				            
+        				            
+        				            
+        				            
+            				                <td><h4>Gridpak.less &amp; Gridpak.scss</h4>   
+                                            <p>These options also include the appropriate media queries. However, unlike the Gridpak-styles.CSS these files use a combination of ‘Mixins’ and variables rather than selectors, allowing your markup to be more semantic.</p>
+
+                                            <h4>How to use</h4>
+                                            <p>Add the Mixin corresponding to the desired width inside the selector, alongside any other declerations.</p>
+
+                                            <div class="half"><pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
+                            <span class="white">.span(2)</span><span class="grey">;</span>
+                            <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+                            }</span></code><span class="syntax">.less</span></pre></div>
+
+                                            <div class="half"><pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
+                            <span class="white">@include span(2)</span><span class="grey">;</span>
+                            <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+                            }</span></code><span class="syntax">.scss</span></pre></div>
+
+                                            <p>These two examples would result in an element that is two columns wide. If your element appears at the end of a row you will also need to include the ‘end’ Mixin.</p>
+
+                                            <div class="half"><pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
+                            <span class="white">.span(2)</span><span class="grey">;</span>
+                            <span class="white">.end()</span><span class="grey">;</span>
+                            <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+                            }</span></code><span class="syntax">.less</span></pre></div>
+
+                                            <div class="half"><pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
+                            <span class="white">@include span(2)</span><span class="grey">;</span>
+                            <span class="white">@include end</span><span class="grey">;</span>
+                            <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+                            }</span></code><span class="syntax">.scss</span></pre></div>
+                                            <p>By adding the ‘end’ Mixin to the recipe element you are removing any right padding or margin allowing your elements to fit correctly within their container.</p>
+                                            </td>
+                				        </tr>
+            		                </table>
+            		            </td><!--// hidden -->
+    		                <tr>
+		                        <td class="file_type"><h3>Javascript</h3><br /><p>(Browser overlay)</p></td>
+		                        <td class="definition">A JavaScript file which allows you to toggle your grid on &amp; off in any browser using either the ‘G’ key to toggle the whole grid, the ‘V’ key to toggle the vertical grid or the ‘B’ key to toggle the baseline.</td>
+		                        <td class="included_images">
+  				                    <div class="included_image_wrapper">
+  				                        <img src="{{ STATIC_URL }}/images/site/icons/javascript_icon.png">
+  				                        <p>Gridpak.JS</p>
+  				                    </div>
+  				                </td>
+		                    </tr>
+    		            </table> 
             	</div><!-- // .included -->
             </div><!-- // .included_wrapper -->
+            <h4>Please note:</h4>
+            <p>The JavaScript file appends the grid directly after your body tag. It does this because it assumes that this is the main content container. If this is not the case and your main content container is called something like ‘#content_wrapper’ then please change the following variable in the JavaScript file.</p>
     		<footer>	
 			    <div class="hr"><img src="{{ STATIC_URL }}/images/site/icons/line.svg"></div>
                 <p class="created_by">This site is licensed under a Creative Commons Attribution 3.0 License
