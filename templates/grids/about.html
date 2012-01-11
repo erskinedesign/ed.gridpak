@@ -133,9 +133,9 @@
                 				        </tr>
             		                </table>
             		            </td><!--// hidden -->
-    		                <tr>
+    		                <tr class="javascript">
 		                        <td class="file_type"><h3>Javascript</h3><br /><p>(Browser overlay)</p></td>
-		                        <td class="definition">A JavaScript file which allows you to toggle your grid on &amp; off in any browser using either the ‘G’ key to toggle the whole grid, the ‘V’ key to toggle the vertical grid or the ‘B’ key to toggle the baseline.</td>
+		                        <td class="definition">A JavaScript file which allows you to toggle your grid on &amp; off in any browser using either the ‘G’ key.</td>
 		                        <td class="included_images">
   				                    <div class="included_image_wrapper">
   				                        <img src="{{ STATIC_URL }}/images/site/icons/javascript_icon.png">
@@ -146,14 +146,18 @@
     		            </table> 
             	</div><!-- // .included -->
             </div><!-- // .included_wrapper -->
-            <h4>Please note:</h4>
-            <p>The JavaScript file appends the grid directly after your body tag. It does this because it assumes that this is the main content container. If this is not the case and your main content container is called something like ‘#content_wrapper’ then please change the following variable in the JavaScript file.</p>
+            
     		<footer>	
-			    <div class="hr"><img src="{{ STATIC_URL }}/images/site/icons/line.svg"></div>
-                <p class="created_by">This site is licensed under a Creative Commons Attribution 3.0 License
+    		    <div class="please_note">
+    		        <h4>Please note:</h4>
+                    <p>The JavaScript file appends the grid directly after your body tag. It does this because it assumes that this is the main content container. If this is not the case and your main content container is called something like ‘#content_wrapper’ then please change variable <code>'<span class="grey">$</span>append'</code> in the JavaScript file.</p>
+                </div>
+                <div class="call_to">
+                    <a href="{% url grids_index %}" class="create">Create your Gridpak</a>
+                    <p class="created_by">This site is licensed under a Creative Commons Attribution 3.0 License
           Created by <a href="">Erskine Design</a>
-                </p>
-                <a href="http://www.erskinedesign.com"><img class="erskine_two" src="{{ STATIC_URL }}/images/site/icons/erskine_two.png"/></a>
+                    </p>
+                </div>
             </footer>
 		    <div id="grids">
 		        <div class="grid grid_3_col">
