@@ -125,7 +125,7 @@ code {
 }
 
 pre:hover {
-	background:#202020;
+	background:;
 }
 
 code .white {
@@ -242,7 +242,7 @@ nav {
 
 body.index nav a {
 	color: #999;
-	background:url(../images/site/icons/about_icon.png) no-repeat 0 -999px;
+	background: url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -1029px;
 	padding-left: 21px;
 	margin-top: 5px;
 	float: left;
@@ -251,7 +251,7 @@ body.index nav a {
 
 body.index nav a:hover {
 	color: #333;
-	background-position: 0 1px;
+	background-position: 0 -889px;
 	
 }
 
@@ -299,11 +299,11 @@ body.about nav a:after{
 	width:34px;
 	height:35px;
 	overflow:hidden;
-	background:url(../images/site/icons/create_icon.png) no-repeat 6px 6px, -webkit-linear-gradient(top, #910403, #890504);
- 	background:url(../images/site/icons/create_icon.png) no-repeat 6px 6px, -moz-linear-gradient(top, #910403, #890504);
-	background:url(../images/site/icons/create_icon.png) no-repeat 6px 6px, -ms-linear-gradient(top, #910403, #890504);
-	background:url(../images/site/icons/create_icon.png) no-repeat 6px 6px, -o-linear-gradient(top, #910403, #890504);
-	background:url(../images/site/icons/create_icon.png) no-repeat 6px 6px, linear-gradient(top, #910403, #890504);
+	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -webkit-linear-gradient(top, #910403, #890504);
+ 	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -moz-linear-gradient(top, #910403, #890504);
+	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -ms-linear-gradient(top, #910403, #890504);
+	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -o-linear-gradient(top, #910403, #890504);
+	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, linear-gradient(top, #910403, #890504);
 	-webkit-box-shadow:rgba(255,255,255,0.22) 0 1px 0 inset;
 	-moz-box-shadow:rgba(255,255,255,0.22) 0 1px 0 inset;
 	box-shadow:rgba(255,255,255,0.22) 0 1px 0 inset;
@@ -413,7 +413,7 @@ footer {
 	float:right;
 	padding:11px 0 4px 60px;
 	color:#888;
-	background:url(../images/site/icons/erskine.png) no-repeat 2px 4px;
+	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 2px -3682px;
 	margin-top:10px;
 	font-size:0.846153846em;/*12/13*/
 	width:196px;
@@ -561,8 +561,8 @@ footer {
 	
 	#grid_options .dragme {
 	    width:22px;
-	    background:#1E1E1E url(../images/site/icons/slider.png);
-		background-position:11px center;
+	    background:#1E1E1E url(../images/site/icons/gridpak-sprite.png);
+		background-position:11px -4102px;
 		padding-left:27px;
 		background-repeat:no-repeat;
 	    -moz-border-radius:30px;
@@ -574,7 +574,6 @@ footer {
 	    left:-34px;
 	    top:103px;
 	    cursor:col-resize;
-
 	    z-index:10;
 	    border:7px solid #242424;
 		-webkit-box-shadow:0 -1px 0 rgba(255,255,255,0.20) inset;
@@ -584,11 +583,11 @@ footer {
 	}
 	
 	#grid_options .dragme:hover {
-		background-image:url(../images/site/icons/slider_hover.png);
+		background-position:11px -5032px;
 	}
 	
 	#grid_options .dragme:active{
-		background-image:url(../images/site/icons/slider_hover.png);
+		background-position:11px -5032px;
 	}
 	
 	#grid_options input {
@@ -649,12 +648,12 @@ footer {
 		border-left:1px solid #000;
 		border-top:1px solid #000;
 		background-color:#E5E5E5;
- 		background:url(../images/site/icons/number-up.png) no-repeat 6px 5px, -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1));
- 		background:url(../images/site/icons/number-up.png) no-repeat 6px 5px, -webkit-linear-gradient(top, #E5E5E5, #B1B1B1);
- 		background:url(../images/site/icons/number-up.png) no-repeat 6px 5px, -moz-linear-gradient(top, #E5E5E5, #B1B1B1);
-		background:url(../images/site/icons/number-up.png) no-repeat 6px 5px, -ms-linear-gradient(top, #E5E5E5, #B1B1B1);
-		background:url(../images/site/icons/number-up.png) no-repeat 6px 5px, -o-linear-gradient(top, #E5E5E5, #B1B1B1);
-	    background:url(../images/site/icons/number-up.png) no-repeat 6px 5px, linear-gradient(top, #E5E5E5, #B1B1B1);
+ 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1));
+ 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -webkit-linear-gradient(top, #E5E5E5, #B1B1B1);
+ 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -moz-linear-gradient(top, #E5E5E5, #B1B1B1);
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -ms-linear-gradient(top, #E5E5E5, #B1B1B1);
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -o-linear-gradient(top, #E5E5E5, #B1B1B1);
+	    background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, linear-gradient(top, #E5E5E5, #B1B1B1);
 	    -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0 inset;
 		-moz-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0 inset;
 		box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0 inset;
@@ -673,12 +672,12 @@ footer {
 		border-top:1px solid #707070;
 		border-bottom:1px solid #000;
 		background-color:#E5E5E5;
- 		background:url(../images/site/icons/number-down.png) no-repeat 6px 6px, -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1));
- 		background:url(../images/site/icons/number-down.png) no-repeat 6px 6px, -webkit-linear-gradient(top, #E5E5E5, #B1B1B1);
- 		background:url(../images/site/icons/number-down.png) no-repeat 6px 6px, -moz-linear-gradient(top, #E5E5E5, #B1B1B1);
-		background:url(../images/site/icons/number-down.png) no-repeat 6px 6px, -ms-linear-gradient(top, #E5E5E5, #B1B1B1);
-		background:url(../images/site/icons/number-down.png) no-repeat 6px 6px, -o-linear-gradient(top, #E5E5E5, #B1B1B1);
-	    background:url(../images/site/icons/number-down.png) no-repeat 6px 6px, linear-gradient(top, #E5E5E5, #B1B1B1);
+ 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1));
+ 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -webkit-linear-gradient(top, #E5E5E5, #B1B1B1);
+ 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -moz-linear-gradient(top, #E5E5E5, #B1B1B1);
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -ms-linear-gradient(top, #E5E5E5, #B1B1B1);
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -o-linear-gradient(top, #E5E5E5, #B1B1B1);
+	    background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, linear-gradient(top, #E5E5E5, #B1B1B1);
 	    -webkit-box-shadow:0 1px 0 rgba(255,255,255,0.15), rgba(255,255,255,0.7) 1px 0 0 inset;
 		-moz-box-shadow:0 1px 0 rgba(255,255,255,0.15), rgba(255,255,255,0.7) 1px 0 0 inset;
 		box-shadow:0 1px 0 rgba(255,255,255,0.15), rgba(255,255,255,0.7) 1px 0 0 inset;
@@ -689,11 +688,11 @@ footer {
 	}
 	
 	.increase:hover {
-		background:#bbb url(../images/site/icons/number-up-hover.png) no-repeat 6px 5px;
+		background:#bbb url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2195px;
 	}
 	
 	.decrease:hover {
-		background:#bbb url(../images/site/icons/number-down-hover.png) no-repeat 6px 6px;
+		background:#bbb url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -1914px;
 	}
 	
 	.number_input {
@@ -743,7 +742,7 @@ footer {
 		position:absolute;
         top:0;
         left:19px;
-		background:url(../images/site/icons/controller.png);
+		background:url(../images/site/icons/gridpak-sprite.png) 0 -3890px;
 		height:15px;
 		width:15px;
 		margin-top:-2px;
@@ -776,12 +775,12 @@ footer {
 		-moz-border-radius:3px;
 	    -webkit-border-radius:3px;
 	    border-radius:3px;
- 		background:url(../images/site/icons/add.png) no-repeat 4px 10px, -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1)) #E5E5E5;
- 		background:url(../images/site/icons/add.png) no-repeat 4px 10px, -webkit-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
- 		background:url(../images/site/icons/add.png) no-repeat 4px 10px, -moz-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
-		background:url(../images/site/icons/add.png) no-repeat 4px 10px, -ms-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
-		background:url(../images/site/icons/add.png) no-repeat 4px 10px, -o-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
-	    background:url(../images/site/icons/add.png) no-repeat 4px 10px, linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+ 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1)) #E5E5E5;
+ 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -webkit-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+ 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -moz-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -ms-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -o-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+	    background:url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
 	    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#E5E5E5', EndColorStr='#B1B1B1');
 	   -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.50) 0 1px 0 inset;
 	   -moz-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.50) 0 1px 0 inset;
@@ -793,7 +792,7 @@ footer {
 	}
 	
 	#save_grid:before {
-		background:url(../images/site/icons/point.png) no-repeat 0 0 !important;
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0px -4240px !important;
 		height:36px;
 		width:30px;
 		position:block;
@@ -805,18 +804,18 @@ footer {
 	
 	#save_grid:hover {
 		color:#000000;
-		background:#bbb url(../images/site/icons/add-hover.png) no-repeat 4px 10px;
+		background:#bbb url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -3830px;
 		-moz-background-clip:padding; 
 		-webkit-background-clip:padding-box; 
 		background-clip:padding-box;
 	}
 	
 	#save_grid:hover:before {
-		background:url(../images/site/icons/point-hover.png) no-repeat 0 0 !important;
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -4380px !important;
 	}
 	
 	#save_grid:active:before {
-		background:url(../images/site/icons/point-active.png) no-repeat 0 0 !important;
+		background:url(../images/site/icons/gridpak-sprite.png no-repeat 0 -4520 !important;
 	}
 	
 	#save_grid:active {
@@ -925,7 +924,7 @@ footer {
 		border-right:none;
 		height:386px;
 		z-index:-1;
-		background:url(../images/site/icons/pattern.png) ;
+		background:url(../images/site/icons/pattern.png);
 	}
 	/* Arrows */
 	#grid_list .tab:before {
@@ -1037,19 +1036,19 @@ footer {
 	     top:0px;
 	     overflow:hidden;
 	     text-indent:-999em;
-	     background:url(../images/site/icons/remove.png) no-repeat 0 0;
+	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -4659px;
 	 }
 	 
 	#grid_list .tab .actions a.remove:hover {
-	     background:url(../images/site/icons/remove_hover.png) no-repeat 0 0;
+	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -4799px;
 	 }
 	 
 	#grid_list .cur .tab .actions a.remove {
-	     background:url(../images/site/icons/active_remove.png) no-repeat 0 0;
+	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -3019px;
 	}
 	 
 	#grid_list .cur .tab .actions a.remove:hover {
-	     background:url(../images/site/icons/active_remove_hover.png) no-repeat 0 0; 
+	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -3149px; 
 	}
 
 	/* @end */
@@ -1204,12 +1203,12 @@ footer {
 		width:32px;
 		height:35px;
 		overflow:hidden;
-		background:url(../images/site/icons/download.png) no-repeat 10px 50%, -webkit-gradient(linear, left top, left bottom, from(#720704), to(#5F0100));
- 		background:url(../images/site/icons/download.png) no-repeat 10px 50%, -webkit-linear-gradient(top, #720704, #5F0100) );
- 		background:url(../images/site/icons/download.png) no-repeat 10px 50%, -moz-linear-gradient(top, #720704, #5F0100);
-		background:url(../images/site/icons/download.png) no-repeat 10px 50%, -ms-linear-gradient(top, #720704, #5F0100);
-		background:url(../images/site/icons/download.png) no-repeat 10px 50%, -o-linear-gradient(top, #720704, #5F0100);
-	    background:url(../images/site/icons/download.png) no-repeat 10px 50%, linear-gradient(top, #720704, #5F0100);
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -webkit-gradient(linear, left top, left bottom, from(#720704), to(#5F0100));
+ 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -webkit-linear-gradient(top, #720704, #5F0100) );
+ 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -moz-linear-gradient(top, #720704, #5F0100);
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -ms-linear-gradient(top, #720704, #5F0100);
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -o-linear-gradient(top, #720704, #5F0100);
+	    background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, linear-gradient(top, #720704, #5F0100);
 	    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#720704', EndColorStr='#5F0100'); 
 	    -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.15) 0 1px 0 inset;
 		-moz-box-shadow:0 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.15) 0 1px 0 inset;
@@ -1228,12 +1227,12 @@ footer {
 	}
 	
 	#download:hover:after {
-		background:url(../images/site/icons/download-hover.png) no-repeat 10px 50%, -webkit-gradient(linear, left top, left bottom, from(#720704), to(#5F0100));
- 		background:url(../images/site/icons/download-hover.png) no-repeat 10px 50%, -webkit-linear-gradient(top, #720704, #5F0100);
- 		background:url(../images/site/icons/download-hover.png) no-repeat 10px 50%, -moz-linear-gradient(top, #720704, #5F0100);
-		background:url(../images/site/icons/download-hover.png) no-repeat 10px 50%, -ms-linear-gradient(top, #720704, #5F0100);
-		background:url(../images/site/icons/download-hover.png) no-repeat 10px 50%, -o-linear-gradient(top, #720704, #5F0100);
-	    background:url(../images/site/icons/download-hover.png) no-repeat 10px 50%, linear-gradient(top, #720704, #5F0100);
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px 50%, -webkit-gradient(linear, left top, left bottom, from(#720704), to(#5F0100));
+ 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px 50%, -webkit-linear-gradient(top, #720704, #5F0100);
+ 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px 50%, -moz-linear-gradient(top, #720704, #5F0100);
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px 50%, -ms-linear-gradient(top, #720704, #5F0100);
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px 50%, -o-linear-gradient(top, #720704, #5F0100);
+	    background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px 50%, linear-gradient(top, #720704, #5F0100);
 	    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#720704', EndColorStr='#5F0100'); 
 	     -moz-background-clip:padding; 
 		 -webkit-background-clip:padding-box; 
@@ -1367,6 +1366,7 @@ header.included_header h2 {
 	padding-top: 30px;
 	background: rgba(0,0,0,0.08) url(../images/site/icons/dropdown_icon.png) no-repeat 97% 59px;
 	cursor: pointer;
+	-webkit-transition:all 2s;
 }
 
 .included table.presentational small {
@@ -1394,7 +1394,12 @@ header.included_header h2 {
 	margin-bottom: -14px;
 }
 
-.included table td.file_type, .included table td.definition, .included table td.included_images, footer .please_note h4, footer .please_note p {
+.included table td.file_type, 
+.included table td.definition, 
+.included table td.included_images, 
+footer .please_note h4, 
+footer .please_note p,
+.included table tr.hidden td  {
 	border-left-width:20px;
 	padding:0 20px;
 	border:0px solid rgba(0,0,0,0);
@@ -1456,8 +1461,34 @@ tr.javascript td.file_type {
 
 .included table tr.hidden {
 	display: none;
+	background-image: none;
+	background-color: rgba(0,0,0,0.13);
+	margin-top: -27px;
+	color: #fff;
+	height: auto;
+	overflow: auto;
+	cursor: default;
 }
 
+.included table tr.hidden h3 {
+	font-size: 1.307692308em;
+}
+
+.included table tr.hidden:hover {
+	background-image: none;
+}
+
+
+.included table tr.hidden td {
+	width: 50%;
+	
+}
+
+.included table tr.hidden td:last-child {
+	margin-left: -20px;
+	padding-right: 0 ;
+	
+}
 
 .about footer .call_to a.create {
 	font-family:ff-meta-web-pro, sans-serif;

@@ -52,7 +52,7 @@
     		                </tr>
     		                    <td>
     		                        <table class="presentational">
-        		                        <tr>
+        		                        <tr class="show_hide">
             		                        <td class="file_type"><h3>CSS</h3><br /><p>(Presentational)</p></td>
             		                        <td class="definition">You’ll have several options for ‘presentational’ CSS.<br /><br /><small>VIEW DOCUMENTATION</small></td>
             		                        <td class="included_images">
@@ -72,7 +72,7 @@
                 				        </tr>
             				            <tr class="hidden">
                 				            <td>
-                				                <h4 id="css">Gridpak.css</h4>
+                				                <h3 id="css">Gridpak.css</h3>
                             			    <p>A straightforward CSS which contains the appropriate media queries and pre-defined selectors based on the grids you have created. Using this file doesn’t require a compiler and will result in a smaller file size but is less semantic than .less and .scss files.</p>
 
                             			    <h4>How to use</h4>
@@ -90,8 +90,8 @@
                                             <p>If your element appears at the end of a row you will also need to give it the class ‘end’.</p>
 
                                             <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"recipe span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
-                            <span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"ingrediants span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
-                            <span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"sidebar span_2 end"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
+<span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"ingrediants span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
+<span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"sidebar span_2 end"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
 
                                             <p>By adding the ‘end’ class to the side bar you are removing any right padding or margin allowing your elements to fit correctly within their container.</p>
                                             </td>
@@ -99,35 +99,35 @@
         				            
         				            
         				            
-            				                <td><h4>Gridpak.less &amp; Gridpak.scss</h4>   
+            				                <td><h3>Gridpak.less &amp; Gridpak.scss</h3>   
                                             <p>These options also include the appropriate media queries. However, unlike the Gridpak-styles.CSS these files use a combination of ‘Mixins’ and variables rather than selectors, allowing your markup to be more semantic.</p>
 
                                             <h4>How to use</h4>
                                             <p>Add the Mixin corresponding to the desired width inside the selector, alongside any other declerations.</p>
 
                                             <div class="half"><pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
-                            <span class="white">.span(2)</span><span class="grey">;</span>
-                            <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-                            }</span></code><span class="syntax">.less</span></pre></div>
+    <span class="white">.span(2)</span><span class="grey">;</span>
+    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+}</span></code><span class="syntax"> .less</span></pre></div>
 
                                             <div class="half"><pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
-                            <span class="white">@include span(2)</span><span class="grey">;</span>
-                            <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-                            }</span></code><span class="syntax">.scss</span></pre></div>
+    <span class="white">@include span(2)</span><span class="grey">;</span>
+    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+}</span></code><span class="syntax"> .scss</span></pre></div>
 
                                             <p>These two examples would result in an element that is two columns wide. If your element appears at the end of a row you will also need to include the ‘end’ Mixin.</p>
 
                                             <div class="half"><pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
-                            <span class="white">.span(2)</span><span class="grey">;</span>
-                            <span class="white">.end()</span><span class="grey">;</span>
-                            <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-                            }</span></code><span class="syntax">.less</span></pre></div>
+    <span class="white">.span(2)</span><span class="grey">;</span>
+    <span class="white">.end()</span><span class="grey">;</span>
+    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+}</span></code><span class="syntax"> .less</span></pre></div>
 
                                             <div class="half"><pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
-                            <span class="white">@include span(2)</span><span class="grey">;</span>
-                            <span class="white">@include end</span><span class="grey">;</span>
-                            <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-                            }</span></code><span class="syntax">.scss</span></pre></div>
+    <span class="white">@include span(2)</span><span class="grey">;</span>
+    <span class="white">@include end</span><span class="grey">;</span>
+    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+}</span></code><span class="syntax"> .scss</span></pre></div>
                                             <p>By adding the ‘end’ Mixin to the recipe element you are removing any right padding or margin allowing your elements to fit correctly within their container.</p>
                                             </td>
                 				        </tr>
