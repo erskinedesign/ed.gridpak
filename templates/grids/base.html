@@ -12,7 +12,8 @@
         <title>Gridpak</title>
         
 		<!-- TYPEKIT -->
-		<script type="text/javascript" src="http://use.typekit.com/pua6dog.js"></script>
+		<script type="text/javascript" src="//use.typekit.com/pua6dog.js"></script>
+        <script src="{{ STATIC_URL }}js/EDJ.bootstrap.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	
         <!-- CSS -->
@@ -57,10 +58,19 @@
 	  <!-- JAVASCRIPT -->
     <script src="{{ STATIC_URL }}js/jquery-1.7.1.js"></script>
     <script src="{{ STATIC_URL }}js/jquery-ui-1.8.16.custom.min.js"></script>
-    <script src="{{ STATIC_URL }}js/underscore-min.js"></script>
-    <script src="{{ STATIC_URL }}js/backbone.js"></script>
-    <script src="{{ STATIC_URL }}js/gridpak.js"></script>
-    <script src="{{ STATIC_URL }}js/onload.js"></script>
+    <script src="{{ STATIC_URL }}js/EDJ.js"></script>
+    {% block javascript %}{% endblock %}
+
+    <!-- CALL DOC READY FUNCTIONS -->
+    <script>
+    $(document).ready(function() {
+        var settings = {
+            debug: true,
+            STATIC_URL: '{{ STATIC_URL }}'
+        };
+        EDJ.on_ready(settings);
+    });
+    </script>
 
 	<!--[if IE 6]>
 	<script src="{{ STATIC_URL }}js/ie6/DD_belatedPNG_0.0.8a.js"></script>
