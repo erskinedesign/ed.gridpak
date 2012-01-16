@@ -1340,115 +1340,7 @@ header.included_header h2 {
 	line-height:1.2em;
 }
 
-.included table {
-	width:100%;
-	color:#ccc;
-}
 
-.included table tr {
-	padding:20px 0 14px 0;
-	height:80px;
-	display:block;
-}
-
-.included table.presentational tr {
-	height:100px;
-	margin-bottom:27px;
-	padding-top:30px;
-	background:rgba(0,0,0,0.08) url(../images/site/icons/gridpak-sprite.png) no-repeat 102% -2350px;
-	cursor:pointer;
-}
-
-.included table.presentational small {
-	font-size:0.769230769em;
-	color:#888;
-	display:none;
-}
-
-.included table.presentational tr:hover {
-	background:rgba(0,0,0,0.13) url(../images/site/icons/gridpak-sprite.png) no-repeat 102% -2490px;
-	color:#fff;
-}
-
-.included table.presentational tr:hover small {
-	display:inline;
-}
-
-.included table.presentational tr.hidden {
-    display:table-row;
-}
-.included table.presentational tr.hidden td {
-   display:none; 
-}
-
-.included table td {
-	float:left;
-	width:100%;
-}
-
-.included table td.file_type h3 {
-	line-height:1em;
-	margin-bottom:-14px;
-}
-
-.included table td.file_type, 
-.included table td.definition, 
-.included table td.included_images, 
-footer .please_note h4, 
-footer .please_note p,
-.included table tr.hidden td  {
-	border-left-width:20px;
-	padding:0 20px;
-	border:0px solid rgba(0,0,0,0);
-    float:left;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box;
-    -moz-background-clip:padding-box !important;
-    -webkit-background-clip:padding-box !important;
-    background-clip:padding-box !important;
-}
-
-
-.included table td.file_type {
-	width:22%;
-	padding-left:45px;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 15px -1157px; 
-	height:50px;
-	padding-top:5px;
-}
-
-table.presentational td.file_type {
-	background-position:15px -1268px;
-}
-
-tr.javascript td.file_type {
-	background-position:15px -1386px;
-}
-
-.included table td.definition {
-	width:28%;
-	margin-top:8px;
-}
-
-.included table td.included_images {
-	width:50%;	
-	padding:0;
-}
-
-.included table .included_image_wrapper img {
-	margin:0 auto 6px auto;
-} 
-
-.included table .included_image_wrapper {
-	float:left;
-	width:71px;
-}
-
-.included table .included_image_wrapper + .included_image_wrapper  {
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 13px -4910px;
-	padding-left:40px;
-}
 
 
 .included_image_wrapper p {
@@ -1456,34 +1348,7 @@ tr.javascript td.file_type {
 	font-size:0.923076923em;
 }
 
-.included table tr.hidden {
-	display:none;
-	background-image:none;
-	background-color:rgba(0,0,0,0.13);
-	margin-top:-27px;
-	color:#fff;
-	height:auto;
-	overflow:auto;
-	cursor:default;
-}
 
-.included table tr.hidden h3 {
-	font-size:1.307692308em;
-}
-
-.included table tr.hidden:hover {
-	background-image:none;
-}
-
-.included table tr.hidden td {
-	width:50%;
-	
-}
-
-.included table tr.hidden td:last-child {
-	margin-left:-20px;
-	padding-right:0;
-}
 
 .about footer .call_to a.create {
 	font-family:ff-meta-web-pro, sans-serif;
