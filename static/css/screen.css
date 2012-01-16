@@ -1569,6 +1569,15 @@ tr.javascript td.file_type {
 	width:220px;
 }
 
+.about .description {
+    -webkit-column-count:2;
+    -webkit-column-gap:14px;
+    -moz-column-count:2;
+    -moz-column-gap:14px;
+    column-count:2;
+    column-gap:14px;
+}
+
 @media screen and (min-width:0px) and (max-width:745px) {
         .included table .included_image_wrapper {
 			display:none;
@@ -1677,6 +1686,12 @@ tr.javascript td.file_type {
 			width:179px;
 			display:block;
 		}
+
+        .about .description {
+            -webkit-column-count:1;
+            -moz-column-count:1;
+            column-count:1;
+        }
 	
 }
 
@@ -1687,32 +1702,26 @@ tr.javascript td.file_type {
         ----------------------------------------------------------------------------- */
 
     	@media screen and (min-width:0px) and (max-width:499px) {
-        .row {
-            margin-left:-20px;
-        }
-        .span_1, .span_2, .span_3, .span_4 {
-            width:25%;
+            .row {
+                margin-left:-20px;
+            }
+            .span_1, .span_2, .span_3, .span_4 {
+                width:25%;
+                
+                border-left-width:20px;
+                padding:0 12px;
+            }
+            .span_1 {
+                width:25.0%;
+            }
+            .span_2 {
+                width:50.0%;
+            }
+            .span_3 {
+                width:75.0%;
+            }
             
-            border-left-width:20px;
-        	padding:0 12px;
-        }
-        .span_1 {
-            width:25.0%;
-        }
-        .span_2 {
-            width:50.0%;
-        }
-        .span_3 {
-            width:75.0%;
-        }
-        
-        div.two_boxes div {
-			 width:100.0%;
-			 margin-bottom:25px;
-		}
-        
-        
-    } /* // min_width:0px */ 
+        } /* // min_width:0px */ 
 
 
         /* 2. 8 Column Grid 800px - Infinity 
@@ -1722,7 +1731,7 @@ tr.javascript td.file_type {
 	        .row {
 	            margin-left:-20px;
 	        }
-	        .span_1, .span_2, .span_3, .span_4, .span_5, .span_6, .span_7, .span_8, div.two_boxes div, right_column, .left_column {
+	        .span_1, .span_2, .span_3, .span_4, .span_5, .span_6, .span_7, .span_8, .left_column {
 	            border-left-width:20px;
 	        	padding:0 12px;
 	        	border:0px solid rgba(0,0,0,0);
@@ -1755,22 +1764,7 @@ tr.javascript td.file_type {
 	        .span_7 {
 	            width:87.5%;
 	        }
-	        
-	        div.two_boxes {
-				margin-left:-20px;
-				padding-left:10px;
-			}
-			
-			div.two_boxes:after {
-				clear:both;
-			}
-			
-			div.two_boxes div {
-				 width:50.0%;
-				 margin-bottom:20px;
-			}
-			
-			.row {
+	       .row {
 				margin-left:-20px;
 				padding-left:10px;
 			}
