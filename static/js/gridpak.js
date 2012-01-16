@@ -416,6 +416,9 @@ $(function() {
 
             e.preventDefault();
 
+            // We only want to jump if there's 2 or more Grids
+            if (Grids.size() < 2) return false;
+
             jumpLimits = jumpText.split(' - ');
             jumpTo = (jumpLimits[1] == '∞') ? jumpLimits[0] : jumpLimits[1];
 
