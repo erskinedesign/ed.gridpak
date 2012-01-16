@@ -1,6 +1,7 @@
 EDJ.run_list = [
     'navigation',
-    'glow_btn'
+    'glow_btn',
+    'dropdown'
 ];
 
 
@@ -97,11 +98,6 @@ EDJ.navigation = {
 
 };
 
-//$('.presentational').delegate('.show_hide', 'click', function(){
-    //console.log('here');
-    //$(this).next('tr').toggleClass('hidden');
-//});
-
 /**
  * Glow button
  *
@@ -127,3 +123,24 @@ EDJ.glow_btn = {
         });
     }
 };
+
+/**
+ * Dropdown
+ *
+ * Presentational rows are dropped down or hidden
+ */
+EDJ.dropdown = {
+    $dropdown: {},
+
+    run: function() {
+        this.$dropdown = $('.presentational');
+        return this.$dropdown.length > 0;
+    },
+
+    init: function() {
+        this.$dropdown.delegate('.show_hide', 'click', function() {
+            $(this).next('tr').find('td').slideToggle(350);
+            $(this).toggleClass('open');
+        });
+    }
+}

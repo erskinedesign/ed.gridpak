@@ -1371,6 +1371,13 @@ header.included_header h2 {
 	display:inline;
 }
 
+.included table.presentational tr.hidden {
+    display:table-row;
+}
+.included table.presentational tr.hidden td {
+   display:none; 
+}
+
 .included table td {
 	float:left;
 	width:100%;
