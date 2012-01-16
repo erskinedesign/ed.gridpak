@@ -111,7 +111,7 @@ p {
 
 pre {
 	background:#252525;
-	webkit-border-radius:3px;
+	-webkit-border-radius:3px;
 	-moz-border-radius:3px;
 	border-radius:3px;
 	padding:18px 18px;
@@ -434,22 +434,22 @@ footer {
 }
 	
 	@media only screen and (max-width:580px) {
-	.created_by {
-		background-image:none;
-		width:196px;
-		padding:11px 0 12px 0;
-	}
+        .created_by {
+            background-image:none;
+            width:196px;
+            padding:11px 0 12px 0;
+        }
 	}
 	
 	@media only screen and (max-width:480px) {
-	.created_by {
-		float:none;
-		margin:10px auto 0 auto;
-		text-align:center;
-		background-image:none;
-		width:196px;
-		padding:6px 0 12px 0;
-	}
+        .created_by {
+            float:none;
+            margin:10px auto 0 auto;
+            text-align:center;
+            background-image:none;
+            width:196px;
+            padding:6px 0 12px 0;
+        }
 	
 	}
 
@@ -784,7 +784,6 @@ footer {
 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0px -4240px !important;
 		height:36px;
 		width:30px;
-		position:block;
 		content:'';
 		position:absolute;
 		left:-14px;
