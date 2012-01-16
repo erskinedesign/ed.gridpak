@@ -156,3 +156,8 @@ EDJ.navigation = {
     }
 
 };
+
+$('.presentational').delegate('.show_hide', 'click', function(){
+    console.log('here');
+    $(this).next('tr').toggleClass('hidden');
+});
