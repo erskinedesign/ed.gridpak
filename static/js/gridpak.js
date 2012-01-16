@@ -255,6 +255,11 @@ $(function() {
          * @return this
          */
         render: function() {
+            var extras = {
+                num_grids: this.model.collection.length
+            };
+            // Extras gives us an opportunity to add extra params to the model just before we render it
+            _.extend(this.model.attributes, extras);
             $(this.el).html(this.template(this.model.toJSON()));
             this.stringify();
             return this;
