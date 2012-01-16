@@ -124,10 +124,6 @@ code {
 	font-family:monaco;
 }
 
-pre:hover {
-	background:;
-}
-
 code .white {
 	color:#FFF;
 }
@@ -278,7 +274,7 @@ body.about nav a {
     -webkit-box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 1px 1px 0 inset;
 	-moz-box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 1px 1px 0 inset;
 	box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 1px 1px 0 inset;
-	font-size:1.076923077em;14/13
+	font-size:1.076923077em;/*14/13*/
 	-moz-background-clip:padding; 
 	-webkit-background-clip:padding-box; 
 	background-clip:padding-box;
@@ -370,11 +366,9 @@ ul.social li {
 		margin:0 auto;
 		text-shadow:0 -1px 0 rgba(0, 0, 0, 0.3);
 	}
-
- My Comment 
 	
 	#header_sec p {
-		font-size:1.153846154em;15/13
+		font-size:1.153846154em;
 	}
 	
 /* @end */
@@ -415,7 +409,7 @@ footer {
 	color:#888;
 	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 2px -3682px;
 	margin-top:10px;
-	font-size:0.846153846em;12/13
+	font-size:0.846153846em;
 	width:196px;
 	line-height:1.153846154em;
 }
@@ -426,7 +420,7 @@ footer {
 	color:#888;
 	background:none;
 	margin-top:10px;
-	font-size:0.846153846em;12/13
+	font-size:0.846153846em;
 	width:196px;
 	line-height:1.153846154em;
 }
@@ -438,8 +432,6 @@ footer {
 .created_by a:hover {
 	color:#888;
 }
-
-
 	
 	@media only screen and (max-width:580px) {
 	.created_by {
@@ -464,7 +456,6 @@ footer {
 /* @end */
 
 
-
 /* @group 6. GRIPDAK APPLICATION 
 ------------------------------------------*/
 
@@ -474,8 +465,6 @@ footer {
     background:url(../images/site/icons/ruler.png) no-repeat 0 585px;
     padding:30px 0;
 }
-
-/* My Comment */
 
 	/* @group 6.1. BROWSER
 	--------------------------------------*/
@@ -786,9 +775,9 @@ footer {
 	   -moz-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.50) 0 1px 0 inset;
 	    box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.50) 0 1px 0 inset;
 		cursor:pointer;
-		 -moz-background-clip:padding; 
-		 -webkit-background-clip:padding-box; 
-		 background-clip:padding-box;
+		-moz-background-clip:padding; 
+		-webkit-background-clip:padding-box; 
+		background-clip:padding-box;
 	}
 	
 	#save_grid:before {
@@ -815,7 +804,7 @@ footer {
 	}
 	
 	#save_grid:active:before {
-		background:url(../images/site/icons/gridpak-sprite.png no-repeat 0 -4520 !important;
+		background:url(../images/site/icons/gridpak-sprite.png no-repeat 0 -4520px !important;
 	}
 	
 	#save_grid:active {
@@ -1481,7 +1470,6 @@ tr.javascript td.file_type {
 	background-image: none;
 }
 
-
 .included table tr.hidden td {
 	width: 50%;
 	
@@ -1490,7 +1478,6 @@ tr.javascript td.file_type {
 .included table tr.hidden td:last-child {
 	margin-left: -20px;
 	padding-right: 0 ;
-	
 }
 
 .about footer .call_to a.create {
@@ -1781,7 +1768,6 @@ tr.javascript td.file_type {
 			.row {
 				margin-left: -20px;
 				padding-left: 10px;
-
 			}
         
         
