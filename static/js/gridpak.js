@@ -42,7 +42,7 @@ $(function() {
                 max_cols: 99,
                 allowed_types: ['px', '%'],
                 min_grid_width: 40,
-                min_min_width: 320,
+                min_min_width: 300,
             };
 
             // Int params must be integers
