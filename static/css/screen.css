@@ -278,7 +278,7 @@ body.about nav a {
     -webkit-box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 1px 1px 0 inset;
 	-moz-box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 1px 1px 0 inset;
 	box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 1px 1px 0 inset;
-	font-size:1.076923077em;/*14/13*/
+	font-size:1.076923077em;14/13
 	-moz-background-clip:padding; 
 	-webkit-background-clip:padding-box; 
 	background-clip:padding-box;
@@ -371,10 +371,10 @@ ul.social li {
 		text-shadow:0 -1px 0 rgba(0, 0, 0, 0.3);
 	}
 
-/* My Comment */
+ My Comment 
 	
 	#header_sec p {
-		font-size:1.153846154em;/*15/13*/
+		font-size:1.153846154em;15/13
 	}
 	
 /* @end */
@@ -415,7 +415,7 @@ footer {
 	color:#888;
 	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 2px -3682px;
 	margin-top:10px;
-	font-size:0.846153846em;/*12/13*/
+	font-size:0.846153846em;12/13
 	width:196px;
 	line-height:1.153846154em;
 }
@@ -426,7 +426,7 @@ footer {
 	color:#888;
 	background:none;
 	margin-top:10px;
-	font-size:0.846153846em;/*12/13*/
+	font-size:0.846153846em;12/13
 	width:196px;
 	line-height:1.153846154em;
 }
@@ -819,12 +819,12 @@ footer {
 	}
 	
 	#save_grid:active {
-	-webkit-box-shadow:none; /* Saf3-4 */
-	-moz-box-shadow:none; /* FF3.5 - 3.6 */
-	 box-shadow:none;	
-	 -moz-background-clip:padding; 
-	 -webkit-background-clip:padding-box; 
-	 background-clip:padding-box;
+		-webkit-box-shadow:none; /* Saf3-4 */
+		-moz-box-shadow:none; /* FF3.5 - 3.6 */
+		 box-shadow:none;	
+		 -moz-background-clip:padding; 
+		 -webkit-background-clip:padding-box; 
+		 background-clip:padding-box;
 	}
 	
 	.total_width {
@@ -854,6 +854,7 @@ footer {
 		width:100%;
 		z-index:1;
 	}
+	
 	#grid_list .grid {
 		position:absolute;
 		display:block;
@@ -864,25 +865,28 @@ footer {
 	    z-index:1;
 		font-size:0.923076923em;/*12/13*/
         background-color:none;
-        
 	}
+	
     #grid_list .cur {
-        background-color:#fff;
-        
+        background-color:#fff;  
     }
+    
 	#grid_list .gridnav {
 	    z-index:99;
     }
+    
 	#grid_list .cols {
 		height:100%;
 	    display:none;
 		overflow:hidden;
 		z-index:3000;
 	}
+	
 	#grid_list .cur .cols {
 	    display:block;
 	    z-index:3000;
 	}
+	
 	#grid_list .col {
 		width:10px;
 		-webkit-box-sizing:border-box;
@@ -1026,9 +1030,9 @@ footer {
 	    color:#333;
 	    text-decoration:none;
 	    float:left;
-	    line-height:1em;
-	    
+	    line-height:1em;	    
 	}
+	
 	#grid_list .tab .actions a.remove {
 	     margin:0 5px 0 8px;
 	     width:17px;
@@ -1717,11 +1721,6 @@ tr.javascript td.file_type {
         
         
     } /* // min_width: 0px */ 
-
-
-
-      
-
 
 
         /* 2. 8 Column Grid 800px - Infinity 
