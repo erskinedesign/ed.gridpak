@@ -41,8 +41,8 @@ $(function() {
             var settings = {
                 max_cols: 99,
                 allowed_types: ['px', '%'],
-                min_grid_width: 200,
-                min_min_width: 320,
+                min_grid_width: 40,
+                min_min_width: 300,
             };
 
             // Int params must be integers
@@ -255,6 +255,11 @@ $(function() {
          * @return this
          */
         render: function() {
+            var extras = {
+                num_grids: this.model.collection.length
+            };
+            // Extras gives us an opportunity to add extra params to the model just before we render it
+            _.extend(this.model.attributes, extras);
             $(this.el).html(this.template(this.model.toJSON()));
             this.stringify();
             return this;
@@ -411,11 +416,15 @@ $(function() {
 
             e.preventDefault();
 
+            // We only want to jump if there's 2 or more Grids
+            if (Grids.size() < 2) return false;
+
             jumpLimits = jumpText.split(' - ');
-            jumpTo = (jumpLimits[1] == '∞') ? jumpLimits[0] : Math.round((parseInt(jumpLimits[0]) + parseInt(jumpLimits[1])) / 2);
+            jumpTo = (jumpLimits[1] == '∞') ? jumpLimits[0] : jumpLimits[1];
 
             this.$browser.width(jumpTo);
             ui.size.width = jumpTo;
+            ui.precise = true;
             this.resize(e, ui);
 
         },
@@ -457,13 +466,13 @@ $(function() {
          */
         resize: function(e, ui) {
             var old_width = parseInt($('#new_min_width').val()),
-                current_width = Math.round(ui.size.width / this.snap) * this.snap;
+                current_width = (ui.precise !== true) ? Math.round(ui.size.width / this.snap) * this.snap : ui.size.width;
 
             // ensure we only fire every time we snap to a new width
-            if (old_width == current_width) return false;
+            if (old_width == current_width && ui.precise !== true) return false;
 
             Grids.each(function(grid) {
-                if (current_width >= grid.get('min_width') && (current_width < grid.get('upper') || grid.get('upper') == false)) {
+                if (current_width >= grid.get('min_width') && (current_width <= grid.get('upper') || grid.get('upper') == false)) {
                     Grids.current.set({ current: false });
                     grid.set({ current: true });
                     Grids.current = grid;
@@ -573,7 +582,7 @@ $(function() {
                 grid = new Grid(options);
 
             Grids.add(grid);
-            this.updateWidth(this.$browser.width());
+            this.updateWidth(options.min_width);
         }
 
      });
