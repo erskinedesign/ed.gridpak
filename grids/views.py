@@ -80,6 +80,7 @@ def download(request):
         'grids/downloads/gridpak.js',
 		'grids/downloads/gridpak.less',
 		'grids/downloads/gridpak.scss',
+		'grids/downloads/README.md',
     ]
 
     # Loop the templates list
