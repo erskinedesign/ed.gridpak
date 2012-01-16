@@ -582,7 +582,7 @@ $(function() {
                 grid = new Grid(options);
 
             Grids.add(grid);
-            this.updateWidth(this.$browser.width());
+            this.updateWidth(options.min_width);
         }
 
      });
