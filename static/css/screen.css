@@ -1269,6 +1269,10 @@ footer {
 	padding:0 0 40px 0;
 }
 
+.about code {
+	font-size:0.923076923em;
+}
+
 footer .please_note {
 	margin:10px 0;
 }
