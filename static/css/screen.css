@@ -1471,6 +1471,8 @@ header.included_header h2 {
     display:none;
     margin-top:50px;
     clear:both;
+    overflow:hidden;
+    padding-bottom:32px;
 }
 .included dd .more h3 {
 	-webkit-column-break-before:always;
