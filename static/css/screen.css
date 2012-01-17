@@ -1375,28 +1375,41 @@ header.included_header h2 {
 	line-height:1.2em;
 }
 
-.included_item_wrapper {
+.included_item_wrapper,
+.included_item_wrapper_css {
 	width: 100%;
-	height: 70px;
-	padding: 23px 0 45px 0;
+	min-height:70px;
+	padding:23px 0 0 0;
+	clear:both;
+	overflow:hidden;
+	position:relative;
 }
 
 .included_item_wrapper_css {
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 101% -2362px;
 	background-color: rgba(0,0,0,0.12);
-	float: left;
-	padding: 20px 0 45px 0;
-	height: 70px;
-	cursor: pointer;
-	margin-bottom: 30px;
-	width: 100%;
 }
 
 .included_item_wrapper_css:hover {
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 101% -2502px;
 	background-color: rgba(0,0,0,0.22);
 	float: left;
-	padding: 20px 0 45px 0;
+}
+
+.included_item_wrapper_css p.reveal a {
+	position:absolute;
+	right:12px;
+	top:49px;
+	width:19px;
+	height:19px;
+	text-indent:-999em;
+	overflow:hidden;
+	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -2410px;
+}
+.included_item_wrapper_css p.reveal a:hover,
+.included_item_wrapper_css p.reveal a:focus {
+	background-position:0 -2550px;
+}
+.included_wrapper .expanded p.reveal a {
+	background-position:0 -5245px;
 }
 
 .included h3.file_type {
@@ -1462,6 +1475,7 @@ header.included_header h2 {
     width: 50%;
     float: left;
     padding:0;
+    margin-bottom:23px;
 }
 
 .included ul.images li {
@@ -1505,6 +1519,9 @@ header.included_header h2 {
 
 .included_item_wrapper_css .row {
 	display: none;
+	margin-bottom:23px;
+	clear:both;
+	float:left;
 }
 
 /*-----------------------HERE*/
