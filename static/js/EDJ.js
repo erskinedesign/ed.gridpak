@@ -142,7 +142,7 @@ EDJ.dropdown = {
             e.preventDefault();
             $(this).parent('dd')
                 .toggleClass('expanded')
-                .find('.more').slideToggle();
+                .find('.row').slideToggle(350);
         });
     }
 }
