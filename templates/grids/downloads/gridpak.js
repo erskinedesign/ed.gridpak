@@ -71,7 +71,6 @@ var gridpak = {
                 'left:0; ' +
             '} ' +
             '#gridpak .gridpak_grid { ' +
-                'width:100%; ' +
                 'height:100%; ' +
                 'display:none; ' +
             '} ' +
@@ -99,13 +98,7 @@ var gridpak = {
         // Put the grids on the screen
         for (i; i<=numGrids; i++) {
             gridpak.drawGrid(grids[i], i);
-             this.css += '@media screen and (min-width: ' + grids[i].min_width + 'px) ';
-             if (grids[i].upper != false) this.css += 'and (max-width: ' + grids[i].upper + 'px) ';
-             this.css += ' { ' +
-                '#gridpak .gridpak_grid_' + i + ' { ' +
-                    'display: block; ' +
-                '} ' +
-            '} ';
+
         }
 
         this.css += '</style>';
@@ -126,17 +119,26 @@ var gridpak = {
         var markup = '',
             style = '',
             i = 1,
-            width = 100 / grid.col_num
-            border = grid.gutter_width / 2;
+            width = 100 / grid.col_num;
 
         markup = '<div class="gridpak_grid gridpak_grid_' + num + '">';
 
-        this.css += '#gridpak .gridpak_grid_' + num + ' .gridpak_col { ' +
+        this.css += '#gridpak .gridpak_grid_' + num + ' { ' +
+            'margin-left:-' + grid.gutter_width + grid.gutter_type + '; ' +
+        '} ' +
+        '#gridpak .gridpak_grid_' + num + ' .gridpak_col { ' +
             'width:' + width + '%; ' +
-            'border-left-width:' + border + grid.gutter_type + '; ' +
-            'border-right-width:' + border + grid.gutter_type + '; ' +
+            'border-left-width:' + grid.gutter_width + grid.gutter_type + '; ' +
             'padding-left:' + grid.padding_width + grid.padding_type +'; ' +
             'padding-right:' + grid.padding_width + grid.padding_type + '; ' +
+        '} ';
+
+        this.css += '@media screen and (min-width: ' + grid.min_width + 'px) ';
+        if (grid.upper != false) this.css += 'and (max-width: ' + grid.upper + 'px) ';
+        this.css += ' { ' +
+            '#gridpak .gridpak_grid_' + num + ' { ' +
+                'display: block; ' +
+            '} ' +
         '} ';
 
         for(i; i<=grid.col_num; i++) {
