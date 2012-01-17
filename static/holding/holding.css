@@ -1,0 +1,139 @@
+/*
+
+    HOLDING PAGE
+    
+    @version: 1.1
+    @author: Erskine Design
+    
+    CONTENTS ----------
+    
+        1. BODY
+        2. DEFAULT STYLING
+        3. HEADLINES
+        4. LINKS
+        5. LAYOUT
+            5.1. USER MESSAGES
+    
+    -------------------
+    
+*/
+
+
+
+/* @group 1. BODY -------------------- */
+
+body {
+    background:#EEE;
+    color:#333;
+    font:13px/20px Helvetica, Arial, sans-serif;
+    text-shadow:0 0 0 rgba(0,0,0,0.01);
+}
+
+/* @end */
+
+
+
+/* @group 2. DEFAULT STYLING -------------------- */
+
+p,ul,dl,ol {
+    margin:0 0 13px;
+}
+
+strong {
+    font-weight:bold;
+}
+em {
+    font-style:italic;
+}
+
+/* @end */
+
+
+
+/* @group 3. HEADLINES -------------------- */
+
+h2 {
+    color:#587FAA;
+    font-size:18px;
+    font-weight:bold;
+    line-height:1.2em;
+    margin:0 0 12px 0;
+}
+
+/* @end */
+
+
+
+/* @group 4. LINKS -------------------- */
+
+a:link,
+a:visited {
+    color:red;
+}
+a:hover,
+a:focus {
+    color:blue;
+}
+
+/* @end */
+
+
+
+/* @group 5. LAYOUT -------------------- */
+
+    /* @group 5.1. USER MESSAGES -------------------- */
+    
+    div#user_message {
+        background:#FFF;
+        -moz-box-shadow:0 0 10px rgba(0,0,0,0.1);
+        -webkit-box-shadow:0 0 10px rgba(0,0,0,0.1);
+        box-shadow:0 0 10px rgba(0,0,0,0.1);
+        margin:15% auto 0 auto;
+        width:600px;
+    }
+    
+    div#branding {
+        margin:0;
+        padding:30px 0 0 0;
+    }
+    div#branding h1 {
+        margin:0 0 30px 30px;
+    }
+    
+    div#message_title {
+        background:#666;
+        padding:12px 30px;
+    }
+    div#message_title h2 {
+        color:#FFF;
+        font-size:15px;
+        margin:0;
+    }
+    
+    div#message_content {
+        padding:30px 30px 17px 30px;
+    }
+    
+    div#message_action {
+        background:#EEE;
+        -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        border-radius:5px;
+        margin:0 30px;
+        padding:10px 15px;
+    }
+    div#message_action p {
+        margin:0;
+    }
+    div#message_action p a {
+        font-size:14px;
+        font-weight:bold;
+    }
+    
+    /* @end */
+
+
+
+/* @end */
+
+

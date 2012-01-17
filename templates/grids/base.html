@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="js-disabled">
+
+    <head>
+    
+        <!-- METADATA -->
+        <meta charset="UTF-8" />
+        <meta name="description" content="" />
+        <meta name="author" content="Erskine Design" />
+        <link rel="author" type="text/plain" href="{{ STATIC_URL }}humans.txt" />
+        
+        <title>{% block page_title %}{% endblock %}Gridpak Responsive grid generator</title>
+        
+		<!-- TYPEKIT -->
+		<script type="text/javascript" src="//use.typekit.com/pua6dog.js"></script>
+        <script src="{{ STATIC_URL }}js/EDJ.bootstrap.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	
+        <!-- CSS -->
+        <link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/screen.css" />
+        
+        <!-- ICONS -->
+        <link rel="icon" href="{{ STATIC_URL }}images/site/icons/favicon.ico" />   
+    
+    </head>
+    
+    <body class="{% block body_class %}{% endblock %}">
+        	<header class="site_header">
+	            <div class="header_wrapper">
+	                <h1 id="branding">
+                        <a href="{% url grids_index %}">Gridpak<sup>BETA</sup></a>
+			        </h1>
+			        <p>The Responsive grid generator<br />Created by Erskine Design</p>
+
+    				<nav>
+    				    <ul class="social">	
+        					<li class="share">
+        						<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="gridpak" data-related="erskinedesign:creators of Gridpak">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+        					</li>
+        					<li class="like">
+        						<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fgridpak.com&amp;send=false&amp;layout=button_count&amp;width=auto&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21&amp;appId=297295033635694"></iframe>
+        					</li>
+        				</ul>
+                        {% block nav_item %}{% endblock %}
+    			    </nav>
+    			</div>
+			</header>
+	    	<div id="content_wrapper">
+    		{% block content %}{% endblock %}
+
+    <!-- JAVASCRIPT -->
+    <script src="{{ STATIC_URL }}js/jquery-1.7.1.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery-ui-1.8.16.custom.min.js"></script>
+    <script src="{{ STATIC_URL }}js/EDJ.js"></script>
+    {% block javascript %}{% endblock %}
+
+    <!-- CALL DOC READY FUNCTIONS -->
+    <script>
+    $(document).ready(function() {
+        var settings = {
+            debug: true,
+            STATIC_URL: '{{ STATIC_URL }}'
+        };
+        EDJ.on_ready(settings);
+    });
+    </script>
+    
+	</body>
+
+	</html>

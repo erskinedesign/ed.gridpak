@@ -1,0 +1,187 @@
+{% extends 'grids/base.html' %}
+{% block page_title %}About | {% endblock %}
+{% block body_class %}about{% endblock %}
+{% block nav_item %}<a href="{% url grids_index %}">Create your Gridpak</a>{% endblock %}
+{% block content %}
+	{% load common %}
+		<div class="about_wrapper">
+			    <div class="about_header_wrapper">
+    			    <header id="header_sec">
+    					<h2>The <b>Responsive</b> grid generator</h2>
+    					<p>Creating a Responsive grid system just became a total breeze&hellip;</p>
+    					<div class="video_container ">  
+                            <iframe
+                                src="http://player.vimeo.com/video/30641795?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="800" height="460" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    				    </div>
+    			    </header>
+                    <div class="description">
+
+                        <div class="row">
+
+                            <div class="item">
+                                <h3>What is it?</h3>
+                                <p>Gridpak is the starting point for your responsive projects, improving your workflow
+                                and saving time. Create your responsive grid system once using the simple interface and 
+                                let Gridpak do the heavy lifting by generating <a href="#pngs">PNGs</a>, <a href="#css">CSS</a> 
+                                and <a href="#javascript">JavaScript</a>.</p> 
+                            </div> <!-- // .,item -->
+
+                            <div class="item">
+                                <h3>Why should I use it?</h3>
+                                <p>We think it’s the best and most flexible way to devise a responsive layout. You control 
+                                every aspect of the grid from column padding to where &lsquo;break points&rsquo; occur. Our simple 
+                                interface makes it quick and easy to visualise your responsive grid system and output it 
+                                in the formats you need to make a lightning quick start to any project</p>
+                            </div> <!-- // .item -->
+                        </div> <!--  // .row -->
+
+                        <div class="row">
+                            <div class="item">
+        			        <h3>Compatability</h3>
+                                <p>The CSS that Gridpak generates is compatible with IE 8+, however it makes use of some
+                                more experimental CSS properties such as the <code>media query</code>, <code>box-sizing</code> 
+                                and <code>background-clip</code> property so we suggest using it in conjunction with a library
+                                such as <a href="http://www.modernizr.com/">Modernizr</a> to ensure backwards compatibility.</p>
+                            </div> <!-- // .item -->
+
+                            <div class="item">
+                                <h3>Feedback</h3>
+                                <p>As the title says, we are currently in Beta and will be actively developing and improving
+                                Gridpak. If you have any feedback, feature requests or use Gridpak for a web project
+                                <a href="MAILTO:hello@gridpak.com">we’d love to hear from you</a>. For all the latest updates
+                                please follow <a href="http://twitter.com/gridpak">@Gridpak</a> on Twitter.
+                                </p>
+                            </div> <!-- // .item -->
+                        </div> <!--  // .row -->
+
+            	    </div> <!-- // .description -->
+            	</div><!-- about_header_wrapper-->
+
+            <header class="included_header">
+                <h2>What&rsquo;s included in the download?</h2>
+				<p>Your Gridpak is a download file that contains:</p>
+            </header>
+
+    		<div class="included_wrapper">
+    		    <div class="included">
+                    <div class="included_item_wrapper">
+                        <h3 class="file_type png"><abbr title="Portable Network Graphics">PNGs</abbr></h3>
+                        <p class="small_description">A PNG version of each grid you have created, ready and waiting for your graphics program of choice.</p>
+                        <ul class="images">
+                            <li class="pngs">.PNGs</li>
+                        </ul>
+                    </div>
+                    <div class="included_item_wrapper_css">
+                        <h3 class="file_type css"><abbr title="Cascading Style Sheets">CSS</abbr><br /><small>(Presentational)</small></h3>
+                            <p class="small_description">You&rsquo;ll have several options for &lsquo;presentational&rsquo; CSS.</p>
+                            <ul class="images">
+                                <li class="css">Gridpak.CSS <span>&amp;</span></li>
+                                <li class="less">Gridpak.LESS <span>&amp;</span></li>
+                                <li class="scss">Gridpak.SCSS</li>
+                            </ul>
+                            <p class="reveal"><a href="#">Show more</a></p>
+    
+                            <div class="row">
+
+                                <div class="item">
+                                    <h3 id="css">Gridpak.css</h3>
+                                    <p>A straightforward CSS which contains the appropriate media queries and pre-defined selectors
+                                    based on the grids you have created. Using this file doesn&rsquo;t require a compiler and will result
+                                    in a smaller file size but is less semantic than .less and .scss files.</p>
+
+                                    <h4>How to use</h4>
+                                    <p>Add the selector corresponding to the desired width of your element.</p>
+
+                                    <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
+
+                                    <p>This would create an element two columns wide. The required presentational classes can also
+                                    be added to existing classes:</p>
+
+                                    <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"secondary_header span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
+
+                                    <p>This would create an element eight columns wide.</p> 
+
+                                    <p>If your element appears at the end of a row you will also need to give it the class ‘end’.</p>
+
+                                    <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"recipe span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
+    <span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"ingrediants span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
+    <span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"sidebar span_2 end"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
+
+                                    <p>By adding the &lsquo;end&rsquo; class to the side bar you are removing any right padding or 
+                                    margin allowing your elements to fit correctly within their container.</p>
+                                </div> <!-- // .item --> 
+
+                                <div class="item">
+                                    <h3 id="less_scss">Gridpak.less &amp; Gridpak.scss</h3>   
+                                    <p>These options also include the appropriate media queries. However, unlike the Gridpak-styles.CSS
+                                    these files use a combination of &lsquo;Mixins&rsquo; and variables rather than selectors, allowing your
+                                    markup to be more semantic.</p>
+
+                                    <h4>How to use</h4>
+                                    <p>Add the Mixin corresponding to the desired width inside the selector, alongside any other
+                                    declerations.</p>
+
+                                    <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
+    <span class="white">.span(2)</span><span class="grey">;</span>
+    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+    }</span></code><span class="syntax"> .less</span></pre>
+
+                                    <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
+    <span class="white">@include span(2)</span><span class="grey">;</span>
+    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+    }</span></code><span class="syntax"> .scss</span></pre>
+
+                                    <p>These two examples would result in an element that is two columns wide. If your element appears
+                                    at the end of a row you will also need to include the &lsquo;end&rsquo; Mixin.</p>
+
+                                    <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
+    <span class="white">.span(2)</span><span class="grey">;</span>
+    <span class="white">.end()</span><span class="grey">;</span>
+    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+    }</span></code><span class="syntax"> .less</span></pre>
+
+                                    <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
+    <span class="white">@include span(2)</span><span class="grey">;</span>
+    <span class="white">@include end</span><span class="grey">;</span>
+    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+    }</span></code><span class="syntax"> .scss</span></pre>
+
+                                    <p>By adding the &lsquo;end&rsquo; Mixin to the recipe element you are removing any right padding or
+                                    margin allowing your elements to fit correctly within their container.</p>
+
+                                </div> <!-- // .item -->
+
+                            </div> <!-- // .row -->
+
+                    </div> <!-- // .included_item_wrapper_css -->
+
+                    <div class="included_item_wrapper">
+                        <h3 class="file_type javascript">JavaScript<br /><small>(Overlay)</small></h3> 
+                        <p class="small_description">A JavaScript file which allows you to toggle your grid on & off in any browser using the ‘G’ key.</p>
+                        <ul class="images">
+                            <li class="js">Gridpak.js</li>
+                        </ul>
+                    </div>
+    		            
+                </div> <!-- // .included -->
+            </div>
+            
+    		<footer>	
+    		    <div class="please_note">
+    		        <h4>Please note:</h4>
+                    <p>The JavaScript file appends the grid directly after your body tag. It does this because it assumes that this
+                    is the main content container. If this is not the case and your main content container is called something like 
+                    &lsquo;#content_wrapper&rsquo; then please change variable <code>'<span class="grey">$</span>append'</code>
+                    in the JavaScript file.</p>
+                </div>
+                <div class="call_to">
+                    <a href="{% url grids_index %}" class="create">Create your Gridpak</a>
+                    <p class="created_by">This site is licensed under a Creative Commons Attribution 3.0 License
+                    Created by <a href="http://erskinedesign.com/">Erskine Design</a>
+                    </p>
+                </div>
+            </footer>
+
+	</div><!-- // .content_wrapper -->
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% load common %}/**
+ * Gridpak Beta LESS
+ *
+ * Generator - http://gridpak.com/
+ * Created by @erskinedesign
+ */
+ 
+body {
+    width:100%;
+    margin:0 auto;
+}
+
+{% for grid in grids %}
+
+	/* ------{{ forloop.counter }}. {{ grid.col_num }} Column Grid {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}Infinity{% endif %} ------ */
+	
+	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {
+        /* --- Gridpak variables ---*/ 
+        $max_columns: {{ grid.col_num }}; $column_padding: 0 {{ grid.padding_width }}{{ grid.padding_type }}; $gutter_px: {% if grid.gutter_type == 'px' %}{{ grid.gutter_width }}px{% else %}0{% endif %}; $gutter_pc: {% if grid.gutter_type == '%' %}{{ grid.gutter_width }}%{% else %}0{% endif %};
+	    @mixin span($num:1) {@include col;}
+	    
+	} /* end media query */
+{% endfor %}
+
+
+
+/* --- Default Gridpak column styles -- No need to change --- */
+
+ $max_columns: 0; $column_padding: 0; $gutter_px: 0; $gutter_pc: 0; $num: 0; 
+
+ @mixin col {
+     width:(100% -($gutter_pc * $max_columns)) / $max_columns * $num;
+     border:0px solid rgba(0,0,0,0);
+     float:left;
+     -webkit-box-sizing:border-box;
+ 	 -moz-box-sizing:border-box;
+ 	 box-sizing:border-box;
+     -moz-background-clip:padding-box !important;
+     -webkit-background-clip:padding-box !important;
+ 	 background-clip:padding-box !important;
+ 	 border-left-width:$gutter;
+     padding:$column_padding;
+     margin-left:$gutter_pc;
+ }
+ @mixin span_first {
+     margin-left:0;
+     border-left:0;
+ }
