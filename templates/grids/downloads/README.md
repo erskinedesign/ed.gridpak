@@ -7,10 +7,11 @@ Each Gridpak is a collection of at least five files:
   responsive grid layout.
 * A LESS file with much the same information but including variables,
   mixins and methods to help you.
-* An SCSS file like the LESS file, but in SCSS
+* An SCSS file like the LESS file, but in SCSS.
 * A semi transparent PNG image for each grid you have created to help
   with your design, or with lining things up in your front end.
-* A javascript 
+* A javascript snippet which will allow you to toggle an overlay of your 
+grid on and off in any browser using the 'G' key.  
 
 ## Using the application
 
@@ -88,8 +89,7 @@ them, so they always make sense in the grid and in the CSS. Let's say we
 have a Gridpak with 2 grids, one with 16 columns and a min-width of 800
 and another with 3 columns at a min-width of 0 and max-width of 799:
 
-    .span_1, .span_2, .span_3, .span_4, .span_5, .span_6, .span_7, .span_8, .span_9, .span_10, .span_11, .span_12, .span_13, .span_14, .span_15, .span_16,
-    .item_listing .item {
+    .span_1, .span_2, .span_3, .span_4, .item_listing .item {
     ...
 
     @media screen and (min-width: 0px) and (max-width: 799px) {
