@@ -1293,17 +1293,33 @@ footer {
 footer .please_note {
 	margin:10px 0;
 	float:left;
+	width: 100%;
 }
 
 footer .please_note h4 {
-	width:22%;
+	width:15%;
+	border-left-width:12px;
+	padding:4px 12px 0 12px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    float: left;
+    border:0px solid rgba(0,0,0,0);
 }
 
 footer .please_note p {
-	width:39%;
+	width:46%;
+    border:0px solid rgba(0,0,0,0);
+    border-left-width:20px;
 	font-size:0.923076923em;
 	margin-top:14px;
 	line-height:16px;
+	padding:4px 12px 0 12px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    float: left;
+  
 }
 
 .about_header_wrapper {
@@ -1359,17 +1375,37 @@ header.included_header h2 {
 	line-height:1.2em;
 }
 
-.included dl {
-	position:relative;
+.included_item_wrapper {
+	width: 100%;
+	height: 70px;
+	padding: 23px 0 45px 0;
 }
 
-.included dt {
+.included_item_wrapper_css {
+	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 101% -2362px;
+	background-color: rgba(0,0,0,0.12);
+	float: left;
+	padding: 20px 0 45px 0;
+	height: 70px;
+	cursor: pointer;
+	margin-bottom: 30px;
+	width: 100%;
+}
+
+.included_item_wrapper_css:hover {
+	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 101% -2502px;
+	background-color: rgba(0,0,0,0.22);
+	float: left;
+	padding: 20px 0 45px 0;
+}
+
+.included h3.file_type {
 	width: 15%;
 	float: left;
 	font-size: 1.461538462em;
 	border:0px solid rgba(0,0,0,0);         
 	border-left-width:12px;
-	padding:4px 12px 0 12px;
+	padding:4px 12px 0 30px;
     -webkit-box-sizing:border-box;
     -moz-box-sizing:border-box;
     box-sizing:border-box;
@@ -1379,39 +1415,27 @@ header.included_header h2 {
     background:url(../images/site/icons/gridpak-sprite.png) no-repeat;
 }
 
-.included_item_wrapper {
-	width: 100%;
-	height: 70px;
-	padding: 20px 0 45px 0;
-}
-
-.included_item_wrapper_css {
-	background: rgba(0,0,0,0.8);
-	
-}
-
-.included dt abbr {
+.included .file_type h3 {
 	font-weight: 600;
-	padding-left: 18px;
 	float: left;
+	font-size: 19px;
+	margin-bottom: 0;
 }
 
-.included dt.png {
+.included h3.file_type.png {
 	background-position: 0 -1161px;
 }
-.included dt.css {
+.included h3.file_type.css {
 	background-position:0px -1272px;
 }
-.included dt.js {
-	background-position:0px -1365px;
+.included h3.file_type.javascript {
+	background-position:0px -1389px;
 }
-.included dt small {
+.included h3.file_type small {
 	font-size:.684210526em; /* 13 / 17 */
 	color:#888;
-	display:block;
-	clear:both;
 }
-.included dd.small_description {
+.included p.small_description {
 	width: 35%;
 	border:0px solid rgba(0,0,0,0);         
 	border-left-width:20px;
@@ -1423,13 +1447,10 @@ header.included_header h2 {
     -webkit-background-clip:padding-box !important;
     background-clip:padding-box !important;
     float: left;
+    margin-top: 7px;
 }
 
-dd.small_description p {
-	margin-top: 6px;
-}
-
-.included dd.images  {
+.included ul.images  {
 	border-left-width:20px;
 	 border:0px solid rgba(0,0,0,0);  
     -webkit-box-sizing:border-box;
@@ -1443,9 +1464,50 @@ dd.small_description p {
     padding:0;
 }
 
+.included ul.images li {
+	display:inline-block;
+	width:27%;
+	text-align:center;
+	padding:74px 0 0 0;
+	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 50% 0;
+	margin-right:0%;
+	position:relative;
+}
+.included ul.images li.css {
+	background-position:50% 0;
+}
+.included ul.images li.less {
+	background-position:50% -180px;
+}
+.included ul.images ul li.scss {
+	background-position:50% -360px;
+}
+.included ul.images span {
+	display:block;
+	overflow:hidden;
+	text-indent:-999em;
+	position:absolute;
+	top:30px;
+	right:-6px;
+	width:12px;
+	height:12px;
+	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -4940px;
+}
+.included ul.images li.pngs {
+	background-position:50% -700px;
+}
+.included ul.images li.js {
+	background-position:50% -520px;
+}
+.included ul.images .row {
+	display:none;
+}
 
+.included_item_wrapper_css .row {
+	display: none;
+}
 
-
+/*-----------------------HERE*/
 
 .included dd.expands {
 	background-color:rgba(0,0,0,0.18);
@@ -1481,44 +1543,6 @@ dd.small_description p {
 }
 
 
-.included dd > ul li {
-	display:inline-block;
-	width:27%;
-	text-align:center;
-	padding:74px 0 0 0;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 50% 0;
-	margin-right:0%;
-	position:relative;
-}
-.included dd > ul li.css {
-	background-position:50% 0;
-}
-.included dd > ul li.less {
-	background-position:50% -180px;
-}
-.included dd > ul li.scss {
-	background-position:50% -360px;
-}
-.included dd > ul span {
-	display:block;
-	overflow:hidden;
-	text-indent:-999em;
-	position:absolute;
-	top:30px;
-	right:-6px;
-	width:12px;
-	height:12px;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -4940px;
-}
-.included dd > ul li.pngs {
-	background-position:50% -700px;
-}
-.included dd > ul li.js {
-	background-position:50% -520px;
-}
-.included dd .row {
-	display:none;
-}
 .included dd .more h3 {
 	-webkit-column-break-before:always;
 	-webkit-column-break-after:avoid;
@@ -1555,7 +1579,7 @@ dd.small_description p {
 	-webkit-background-clip:padding-box; 
 	background-clip:padding-box;
 	line-height:21px;
-	margin-top:13px;
+	margin-top:28px;
 }
 
 .about footer .call_to a.create:after{
