@@ -1431,6 +1431,15 @@ header.included_header h2 {
 	margin-right:0%;
 	position:relative;
 }
+.included dd > ul li.css {
+	background-position:50% 0;
+}
+.included dd > ul li.less {
+	background-position:50% -180px;
+}
+.included dd > ul li.scss {
+	background-position:50% -360px;
+}
 .included dd > ul span {
 	display:block;
 	overflow:hidden;
