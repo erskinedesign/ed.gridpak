@@ -1396,8 +1396,8 @@ header.included_header h2 {
 
 .included_item_wrapper_css p.reveal a {
 	position:absolute;
-	right:12px;
-	top:49px;
+	right:26px;
+	top:50px;
 	width:19px;
 	height:19px;
 	text-indent:-999em;
@@ -1519,9 +1519,13 @@ header.included_header h2 {
 
 .included_item_wrapper_css .row {
 	display: none;
-	margin-bottom:23px;
+	margin:12px 12px 23px -12px;
 	clear:both;
 	float:left;
+}
+
+.included_item_wrapper_css .row h3 {
+	font-size: 17px;
 }
 
 /*-----------------------HERE*/

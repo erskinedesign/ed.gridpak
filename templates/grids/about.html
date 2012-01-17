@@ -85,23 +85,48 @@
 
                                 <div class="item">
                                     <h3 id="css">Gridpak.css</h3>
-                                    <p>A straightforward CSS which contains the appropriate media queries and pre-defined selectors
-                                    based on the grids you have created. Using this file doesn&rsquo;t require a compiler and will result
-                                    in a smaller file size but is less semantic than .less and .scss files.</p>
+                                    <p>A straightforward CSS which contains the appropriate media queries and pre-defined selectors based on the grids you have created. The system relies on .rows and .spans. You can either attach the classes to your HTML elements or re-purpose their properties to allow for more semantic markup (suggested).</p>
 
                                     <h4>How to use</h4>
-                                    <p>Add the selector corresponding to the desired width of your element.</p>
+                                    <p>First create a row.</p>
 
-                                    <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
+                                    <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"row"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
 
-                                    <p>This would create an element two columns wide. The required presentational classes can also
-                                    be added to existing classes:</p>
+                                    <p>Add the selector corresponding to the desired width of your element like so, where the number refers to the amount of columns you would like your element to span.</p>
 
-                                    <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"secondary_header span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
+                                    <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"row"</span><span class="grey">&gt;</span>
+    <span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
+<span class="grey">&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
 
-                                    <p>This would create an element eight columns wide.</p> 
+                                    <p>This would create an element two columns wide. The required presentational classes can also be added to existing classes:</p> 
+                                    
+                                    <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"article span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
 
-                                    <p>If your element appears at the end of a row you will also need to give it the class ‘end’.</p>
+                                    <p>When using these files, if you are using more than one grid it's
+                                    probably a good idea to use the naming conventions as a reference only.
+                                    If for example you use the class name 'span_6' on an item, but then a
+                                    lower media query means you only have three columns: you'll be in
+                                    trouble.</p>
+
+                                    <p>Our suggestion would be to use semantic naming conventions in your
+                                    markup then in our CSS file, we can add those classnames right where we want
+                                    them, so they always make sense in the grid and in the CSS.</p>
+                                    
+                                    <pre><code class="xml"><span class="red">.span_1, .span_2, 
+.span_3, .span_4, 
+.item_listing .item</span> <span class="grey">{</span>
+                                    
+<span class="white">...</span>
+
+<span class="red">@media</span><span class="grey"> screen and (min-width: </span><span class="white">0px</span><span class="grey">) and (max-width:</span><span class="white"> 799px</span><span class="grey">) {</span>
+    <span class="red">.row</span> <span class="grey">{</span>
+    <span class="white">...</span><span class="grey">
+    }</span>
+    <span class="red">.span_1, .span_2, .span_3,
+    .item_listing .item</span> <span class="grey">{</span>
+    <span class="white">...</span><span class="grey">
+    }
+}</span></code></pre>
 
                                     <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"recipe span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
     <span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"ingrediants span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
