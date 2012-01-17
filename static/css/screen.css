@@ -1568,15 +1568,6 @@ header.included_header h2 {
 	width:220px;
 }
 
-.about .description {
-    -webkit-column-count:2;
-    -webkit-column-gap:14px;
-    -moz-column-count:2;
-    -moz-column-gap:14px;
-    column-count:2;
-    column-gap:14px;
-}
-
 @media screen and (min-width:0px) and (max-width:745px) { 
 		
 
@@ -1653,7 +1644,6 @@ header.included_header h2 {
 			display:block;
 		}
 
-        .about .description,
         .included dd .more {
             -webkit-column-count:1;
             -moz-column-count:1;
@@ -1671,12 +1661,20 @@ header.included_header h2 {
     	@media screen and (min-width:0px) and (max-width:499px) {
             .row {
                 margin-left:-20px;
+                padding:0;
             }
-            .span_1, .span_2, .span_3, .span_4 {
-                width:25%;
-                
-                border-left-width:20px;
-                padding:0 12px;
+            .span_1, .span_2, .span_3, .span_4,
+            .about .description .item {
+	        	padding:0 12px;
+	        	border:0px solid rgba(0,0,0,0);         
+	        	border-left-width:20px;
+	        	padding:0 12px;
+                -webkit-box-sizing:border-box;
+			    -moz-box-sizing:border-box;
+			    box-sizing:border-box;
+			    -moz-background-clip:padding-box !important;
+			    -webkit-background-clip:padding-box !important;
+			    background-clip:padding-box !important;
             }
             .span_1 {
                 width:25.0%;
@@ -1687,6 +1685,9 @@ header.included_header h2 {
             .span_3 {
                 width:75.0%;
             }
+            .about .description .item {
+				width:100%;
+			}
             
         } /* // min_width:0px */ 
 
@@ -1696,12 +1697,14 @@ header.included_header h2 {
 
     	@media screen and (min-width:500px) {
 	        .row {
+				padding:0;
 	            margin-left:-20px;
 	        }
-	        .span_1, .span_2, .span_3, .span_4, .span_5, .span_6, .span_7, .span_8, .left_column {
-	            border-left-width:20px;
+	        .span_1, .span_2, .span_3, .span_4, .span_5, .span_6, .span_7, .span_8, .left_column, 
+	        .about .description .item {
 	        	padding:0 12px;
 	        	border:0px solid rgba(0,0,0,0);
+	            border-left-width:20px;
 			    float:left;
 			    -webkit-box-sizing:border-box;
 			    -moz-box-sizing:border-box;
@@ -1719,7 +1722,8 @@ header.included_header h2 {
 	        .span_3 {
 	            width:37.5%;
 	        }
-	        .span_4 {
+	        .span_4,
+	        .about .description .item {
 	            width:50.0%;
 	        }
 	        .span_5 {
@@ -1730,12 +1734,7 @@ header.included_header h2 {
 	        }
 	        .span_7 {
 	            width:87.5%;
-	        }
-	       .row {
-				margin-left:-20px;
-				padding-left:10px;
-			}
-        
+	        }        
         
         }
 	
