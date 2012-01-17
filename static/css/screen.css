@@ -1365,25 +1365,67 @@ header.included_header h2 {
 .included dd {
 	padding:14px;
     background:rgba(0,0,0,0.08);
+    overflow:hidden;
+}
+.included dd.expands {
+	cursor:pointer;
+	background-color:rgba(0,0,0,0.22);
+}
+.included dd.expands:hover {
+	background-color:rgba(0,0,0,0.30);
+}
+.included dd.expands > ul {
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 100% -2380px;
+}
+.included dd.expands:hover > ul {
+		background-position:100% -2520px;
+}
+.included dd.expanded > ul {
+		background-position:100% -2520px;
 }
 .included dd > p {
-	padding-left:40%;
-	margin:-14px;
-	padding:14px 14px 14px 40%;
+	width:30%;
+	margin-left:20%;
+	float:left;
 	display:block;
    	min-height:3em;
 }
-.included dd > p.reveal {
-	cursor:pointer;
+.included dd > ul {
+	width:50%;
+	float:left;
 }
-.included dd > p.reveal:hover {
-	background-color:#000;
+.included dd > ul li {
+	display:inline-block;
+	width:30%;
+	text-align:center;
+	padding:74px 0 0 0;
+	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 50% 0;
+	margin-right:0%;
+	position:relative;
+}
+.included dd > ul span {
+	display:block;
+	overflow:hidden;
+	text-indent:-999em;
+	position:absolute;
+	top:30px;
+	right:-6px;
+	width:12px;
+	height:12px;
+	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -4940px;
+}
+.included dd > ul li.pngs {
+	background-position:50% -700px;
+}
+.included dd > ul li.js {
+	background-position:50% -520px;
 }
 .included dd .more {
     -webkit-column-count:2;
     -webkit-column-gap:14px;
     display:none;
     margin-top:50px;
+    clear:both;
 }
 .included dd .more h3 {
 	-webkit-column-break-before:always;

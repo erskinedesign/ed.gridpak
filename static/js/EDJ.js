@@ -133,15 +133,15 @@ EDJ.dropdown = {
     $dropdown: {},
 
     run: function() {
-        this.$dropdown = $('.included .reveal');
+        this.$dropdown = $('.included .expands');
         return this.$dropdown.length > 0;
     },
 
     init: function() {
         this.$dropdown.live('click', function() {
             $(this)
-                .toggleClass('open')
-                .next('.more').slideToggle();
+                .toggleClass('expanded')
+                .find('.more').slideToggle();
         });
     }
 }
