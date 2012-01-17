@@ -7,10 +7,11 @@ Each Gridpak is a collection of at least five files:
   responsive grid layout.
 * A LESS file with much the same information but including variables,
   mixins and methods to help you.
-* An SCSS file like the LESS file, but in SCSS
+* An SCSS file like the LESS file, but in SCSS.
 * A semi transparent PNG image for each grid you have created to help
   with your design, or with lining things up in your front end.
-* A javascript 
+* A javascript snippet which will allow you to toggle an overlay of your 
+grid on and off in any browser using the 'G' key.  
 
 ## Using the application
 
