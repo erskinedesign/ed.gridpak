@@ -1405,7 +1405,8 @@ header.included_header h2 {
 .included dd.expands p.expand a:hover {
 	background-position:0 -2550px;
 }
-.included dd.expanded p.expand a {
+.included dd.expanded p.expand a,
+.included dd.expanded p.expand a:hover {
 	background-position:0 -5245px;
 }
 .included dd.expands:hover,
