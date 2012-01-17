@@ -61,6 +61,16 @@ $(function() {
                 return 'Must be between 1 and ' + settings.max_cols + ' cols';
             }
 
+            // Params that must be more than 0
+            if (
+                (typeof(attrs.padding_width) != 'undefined' && attrs.padding_width < 0) ||
+                (typeof(attrs.gutter_width) != 'undefined' && attrs.gutter_width < 0) ||
+                (typeof(attrs.baseline_height) != 'undefined' && attrs.baseline_height < 0)
+            ) {
+                return 'Must be greater than 0';
+            }
+
+
             // Make sure it's bigger than the minimum the browser can be resized to
             if (attrs.min_width != 0 && attrs.min_width < settings.min_min_width) {
                 return 'The smallest min_width you can have is ' + settings.min_min_width + '.';
