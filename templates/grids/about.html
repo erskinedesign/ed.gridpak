@@ -66,106 +66,122 @@
     		    <div class="included">
 
                 <dl>
-                    <div class="">
-                        <dt class="png"><abbr title="Portable Network Graphics">PNGs</abbr></dt>
-                        <dd>
+                    <div class="included_item_wrapper">
+                        <dt class="png">
+                            <abbr title="Portable Network Graphics">PNGs</abbr>
+                        </dt>
+                        <dd class="small_description">
                             <p>A PNG version of each grid you have created, ready and waiting for your graphics program of choice.</p>
+                        </dd>
+                        <dd class="images">
                             <ul>
                                 <li class="pngs">.PNGs</li>
                             </ul>
                         </dd>
                     </div>
-                    <dt class="css"><abbr title="Cascading Style Sheets">CSS</abbr><small>(Presentational)</small></dt>
-                    <dd class="expands">
-                        <p class="reveal">You&rsquo;ll have several options for &lsquo;presentational&rsquo; CSS.</p>
-                        <ul>
-                            <li class="css">Gridpak.CSS <span>&amp;</span></li>
-                            <li class="less">Gridpak.LESS <span>&amp;</span></li>
-                            <li class="scss">Gridpak.SCSS</li>
-                        </ul>
-                        <p class="expand"><a href="#">Show more</a></p>
+                    <div class="included_item_wrapper_css">
+                        <dt class="css">
+                            <abbr title="Cascading Style Sheets">CSS</abbr><small>(Presentational)</small>
+                        </dt>
+                        <dd class="small_description">
+                            <p >You&rsquo;ll have several options for &lsquo;presentational&rsquo; CSS.</p>
+                        </dd>
+                        <dd class="images">
+                            <ul>
+                                <li class="css">Gridpak.CSS <span>&amp;</span></li>
+                                <li class="less">Gridpak.LESS <span>&amp;</span></li>
+                                <li class="scss">Gridpak.SCSS</li>
+                            </ul>
+                        </dd>
 
-                        <div class="row">
+                            <div class="row">
 
-                            <div class="item">
-                                <h3 id="css">Gridpak.css</h3>
-                                <p>A straightforward CSS which contains the appropriate media queries and pre-defined selectors
-                                based on the grids you have created. Using this file doesn&rsquo;t require a compiler and will result
-                                in a smaller file size but is less semantic than .less and .scss files.</p>
+                                <div class="item">
+                                    <h3 id="css">Gridpak.css</h3>
+                                    <p>A straightforward CSS which contains the appropriate media queries and pre-defined selectors
+                                    based on the grids you have created. Using this file doesn&rsquo;t require a compiler and will result
+                                    in a smaller file size but is less semantic than .less and .scss files.</p>
 
-                                <h4>How to use</h4>
-                                <p>Add the selector corresponding to the desired width of your element.</p>
+                                    <h4>How to use</h4>
+                                    <p>Add the selector corresponding to the desired width of your element.</p>
 
-                                <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
+                                    <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
 
-                                <p>This would create an element two columns wide. The required presentational classes can also
-                                be added to existing classes:</p>
+                                    <p>This would create an element two columns wide. The required presentational classes can also
+                                    be added to existing classes:</p>
 
-                                <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"secondary_header span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
+                                    <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"secondary_header span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
 
-                                <p>This would create an element eight columns wide.</p> 
+                                    <p>This would create an element eight columns wide.</p> 
 
-                                <p>If your element appears at the end of a row you will also need to give it the class ‘end’.</p>
+                                    <p>If your element appears at the end of a row you will also need to give it the class ‘end’.</p>
 
-                                <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"recipe span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
-<span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"ingrediants span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
-<span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"sidebar span_2 end"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
+                                    <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"recipe span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
+    <span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"ingrediants span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
+    <span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"sidebar span_2 end"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
 
-                                <p>By adding the &lsquo;end&rsquo; class to the side bar you are removing any right padding or 
-                                margin allowing your elements to fit correctly within their container.</p>
-                            </div> <!-- // .item --> 
+                                    <p>By adding the &lsquo;end&rsquo; class to the side bar you are removing any right padding or 
+                                    margin allowing your elements to fit correctly within their container.</p>
+                                </div> <!-- // .item --> 
 
-                            <div class="item">
-                                <h3 id="less_scss">Gridpak.less &amp; Gridpak.scss</h3>   
-                                <p>These options also include the appropriate media queries. However, unlike the Gridpak-styles.CSS
-                                these files use a combination of &lsquo;Mixins&rsquo; and variables rather than selectors, allowing your
-                                markup to be more semantic.</p>
+                                <div class="item">
+                                    <h3 id="less_scss">Gridpak.less &amp; Gridpak.scss</h3>   
+                                    <p>These options also include the appropriate media queries. However, unlike the Gridpak-styles.CSS
+                                    these files use a combination of &lsquo;Mixins&rsquo; and variables rather than selectors, allowing your
+                                    markup to be more semantic.</p>
 
-                                <h4>How to use</h4>
-                                <p>Add the Mixin corresponding to the desired width inside the selector, alongside any other
-                                declerations.</p>
+                                    <h4>How to use</h4>
+                                    <p>Add the Mixin corresponding to the desired width inside the selector, alongside any other
+                                    declerations.</p>
 
-                                <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
-<span class="white">.span(2)</span><span class="grey">;</span>
-<span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-}</span></code><span class="syntax"> .less</span></pre>
+                                    <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
+    <span class="white">.span(2)</span><span class="grey">;</span>
+    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+    }</span></code><span class="syntax"> .less</span></pre>
 
-                                <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
-<span class="white">@include span(2)</span><span class="grey">;</span>
-<span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-}</span></code><span class="syntax"> .scss</span></pre>
+                                    <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
+    <span class="white">@include span(2)</span><span class="grey">;</span>
+    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+    }</span></code><span class="syntax"> .scss</span></pre>
 
-                                <p>These two examples would result in an element that is two columns wide. If your element appears
-                                at the end of a row you will also need to include the &lsquo;end&rsquo; Mixin.</p>
+                                    <p>These two examples would result in an element that is two columns wide. If your element appears
+                                    at the end of a row you will also need to include the &lsquo;end&rsquo; Mixin.</p>
 
-                                <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
-<span class="white">.span(2)</span><span class="grey">;</span>
-<span class="white">.end()</span><span class="grey">;</span>
-<span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-}</span></code><span class="syntax"> .less</span></pre>
+                                    <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
+    <span class="white">.span(2)</span><span class="grey">;</span>
+    <span class="white">.end()</span><span class="grey">;</span>
+    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+    }</span></code><span class="syntax"> .less</span></pre>
 
-                                <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
-<span class="white">@include span(2)</span><span class="grey">;</span>
-<span class="white">@include end</span><span class="grey">;</span>
-<span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-}</span></code><span class="syntax"> .scss</span></pre>
+                                    <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
+    <span class="white">@include span(2)</span><span class="grey">;</span>
+    <span class="white">@include end</span><span class="grey">;</span>
+    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
+    }</span></code><span class="syntax"> .scss</span></pre>
 
-                                <p>By adding the &lsquo;end&rsquo; Mixin to the recipe element you are removing any right padding or
-                                margin allowing your elements to fit correctly within their container.</p>
+                                    <p>By adding the &lsquo;end&rsquo; Mixin to the recipe element you are removing any right padding or
+                                    margin allowing your elements to fit correctly within their container.</p>
 
-                            </div> <!-- // .item -->
+                                </div> <!-- // .item -->
 
-                        </div> <!-- // .row -->
+                            </div> <!-- // .row -->
 
-                    </dd>
+                        </dd>
+                    </div> <!-- // .included_item_wrapper_css -->
 
-                    <dt class="js">JavaScript <small>(Overlay)</small></dt>
-                    <dd>
-                        <p>Intro</p>
-                        <ul>
-                            <li class="js">Gridpak.js</li>
-                        </ul>
-                    </dd>
+                    <div class="included_item_wrapper">
+                        <dt class="js">
+                            <abbr>JavaScript</abbr> <small>(Overlay)</small>
+                        </dt>
+                        <dd class="small_description">
+                            <p>A JavaScript file which allows you to toggle your grid on & off in any browser using the ‘G’ key.</p>
+                        </dd>
+                         <dd class="images">   
+                             <ul>
+                                <li class="js">Gridpak.js</li>
+                            </ul>
+                        </dd>
+                    </div>
                 </dl>
     		            
                 </div> <!-- // .included -->

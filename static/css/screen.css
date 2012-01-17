@@ -1352,11 +1352,6 @@ header.included_header h2 {
 	line-height:1.2em;
 }
 
-.included_image_wrapper p {
-	text-align:center;
-	font-size:0.923076923em;
-}
-
 .included dl {
 	position:relative;
 }
@@ -1366,6 +1361,52 @@ header.included_header h2 {
 	float: left;
 	font-size: 1.461538462em;
 	border:0px solid rgba(0,0,0,0);         
+	border-left-width:12px;
+	padding:4px 12px 0 12px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    -moz-background-clip:padding-box !important;
+    -webkit-background-clip:padding-box !important;
+    background-clip:padding-box !important;
+    background:url(../images/site/icons/gridpak-sprite.png) no-repeat;
+}
+
+.included_item_wrapper {
+	width: 100%;
+	height: 70px;
+	padding: 20px 0 45px 0;
+}
+
+.included_item_wrapper_css {
+	background: rgba(0,0,0,0.8);
+	
+}
+
+.included dt abbr {
+	font-weight: 600;
+	padding-left: 18px;
+	float: left;
+}
+
+.included dt.png {
+	background-position: 0 -1161px;
+}
+.included dt.css {
+	background-position:0px -1272px;
+}
+.included dt.js {
+	background-position:0px -1365px;
+}
+.included dt small {
+	font-size:.684210526em; /* 13 / 17 */
+	color:#888;
+	display:block;
+	clear:both;
+}
+.included dd.small_description {
+	width: 35%;
+	border:0px solid rgba(0,0,0,0);         
 	border-left-width:20px;
 	padding:0 12px;
     -webkit-box-sizing:border-box;
@@ -1374,34 +1415,31 @@ header.included_header h2 {
     -moz-background-clip:padding-box !important;
     -webkit-background-clip:padding-box !important;
     background-clip:padding-box !important;
-    background: rgba(0,0,0,0.20);
+    float: left;
 }
 
-.included dt abbr {
-	font-weight: 600;
+dd.small_description p {
+	margin-top: 6px;
 }
 
-.included dt.png {
-	background-position:15px -1135px;
+.included dd.images  {
+	border-left-width:20px;
+	 border:0px solid rgba(0,0,0,0);  
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    -moz-background-clip:padding-box !important;
+    -webkit-background-clip:padding-box !important;
+    background-clip:padding-box !important;
+    width: 50%;
+    float: left;
+    padding:0;
 }
-.included dt.css {
-	background-position:15px -1242px;
-}
-.included dt.js {
-	background-position:15px -1365px;
-}
-.included dt small {
-	font-size:.684210526em; /* 13 / 17 */
-	color:#888;
-	display:block;
-	clear:both;
-}
-.included dd {
-	padding:25px 14px 0 14px;
-	min-height:56px;
-    overflow:hidden;
-    position:relative;
-}
+
+
+
+
+
 .included dd.expands {
 	background-color:rgba(0,0,0,0.18);
 }
@@ -1435,26 +1473,7 @@ header.included_header h2 {
 	background-color:rgba(0,0,0,0.30);
 }
 
-.included dd > p {
-	width: 35%;
-	padding:0 12px;
-	border:0px solid rgba(0,0,0,0);         
-	border-left-width:20px;
-	padding:0 12px;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box;
-    -moz-background-clip:padding-box !important;
-    -webkit-background-clip:padding-box !important;
-    background-clip:padding-box !important;
-    float: left;
 
-}
-.included dd > ul {
-	width:50%;
-	float:left;
-	margin-bottom:32px;
-}
 .included dd > ul li {
 	display:inline-block;
 	width:27%;
