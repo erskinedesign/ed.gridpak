@@ -1035,7 +1035,7 @@ footer {
 	    background-image:none;
 	}
 	
-	#grid_list .cur .tab .actions a {
+	#grid_list .cur .tab .actions span {
 	    color:#FFF;
 	}
 	#grid_list .tab .actions li {
@@ -1047,14 +1047,14 @@ footer {
 		float:left;
 	}
 	
-	#grid_list .tab .actions a {
+	#grid_list .tab .actions span {
 	    color:#333;
 	    text-decoration:none;
 	    float:left;
 	    line-height:1em;	    
 	}
 	
-	#grid_list .tab .actions a.remove {
+	#grid_list .tab .actions span.remove {
 	     width:17px;
 	     height:17px;
          margin-left:5px;
@@ -1064,17 +1064,17 @@ footer {
 	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -4659px;
 	 }
 	 
-	#grid_list .tab .actions a.remove:hover,
-	#grid_list .tab .actions a.remove:focus {
+	#grid_list .tab .actions span.remove:hover,
+	#grid_list .tab .actions span.remove:focus {
 	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -4799px;
 	 }
 	 
-	#grid_list .cur .tab .actions a.remove {
+	#grid_list .cur .tab .actions span.remove {
 	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -3019px;
 	}
 	 
-	#grid_list .cur .tab .actions a.remove:hover,
-	#grid_list .cur .tab .actions a.remove:focus {
+	#grid_list .cur .tab .actions span.remove:hover,
+	#grid_list .cur .tab .actions span.remove:focus {
 	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -3149px; 
 	}
 
