@@ -128,33 +128,25 @@
     }
 }</span></code></pre>
 
-                                    <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"recipe span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
-    <span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"ingrediants span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
-    <span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"sidebar span_2 end"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
-
-                                    <p>By adding the &lsquo;end&rsquo; class to the side bar you are removing any right padding or 
-                                    margin allowing your elements to fit correctly within their container.</p>
                                 </div> <!-- // .item --> 
 
                                 <div class="item">
                                     <h3 id="less_scss">Gridpak.less &amp; Gridpak.scss</h3>   
-                                    <p>These options also include the appropriate media queries. However, unlike the Gridpak-styles.CSS
-                                    these files use a combination of &lsquo;Mixins&rsquo; and variables rather than selectors, allowing your
-                                    markup to be more semantic.</p>
+                                    
+                                    <p>These options also include the appropriate media queries and allow you to use a combination of &lsquo;Mixins&rsquo; and variables rather than selectors to style your elements. Like Gridpak.css this system relies on &lsquo;rows&rsquo; however you can add the &lsquo;row&rsquo; mixin to any element that has column children.</p>
 
                                     <h4>How to use</h4>
-                                    <p>Add the Mixin corresponding to the desired width inside the selector, alongside any other
-                                    declerations.</p>
+                                    <p>Add the mixin corresponding to the desired width inside the selector, alongside any other properties.</p>
 
-                                    <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
-    <span class="white">.span(2)</span><span class="grey">;</span>
+                                    <pre><code class="css"><span class="red">.main_container</span><span class="grey"> {</span>
+    <span class="white">.row</span><span class="grey">;</span>
     <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-    }</span></code><span class="syntax"> .less</span></pre>
+}</span></code><span class="syntax"> .less</span></pre>
 
                                     <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
     <span class="white">@include span(2)</span><span class="grey">;</span>
     <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-    }</span></code><span class="syntax"> .scss</span></pre>
+}</span></code><span class="syntax"> .scss</span></pre>
 
                                     <p>These two examples would result in an element that is two columns wide. If your element appears
                                     at the end of a row you will also need to include the &lsquo;end&rsquo; Mixin.</p>
