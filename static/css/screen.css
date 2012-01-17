@@ -201,6 +201,13 @@ code .syntax {
 	position:absolute;
 	padding-top:12px;
 }
+#branding a {
+    color:#333;
+}
+#branding a:hover,
+#branding a:focus {
+    color:#000;
+}
 
 .header_wrapper p {
 	font-size:11px;
