@@ -133,13 +133,14 @@ EDJ.dropdown = {
     $dropdown: {},
 
     run: function() {
-        this.$dropdown = $('.included .expands');
+        this.$dropdown = $('.included .expand');
         return this.$dropdown.length > 0;
     },
 
     init: function() {
-        this.$dropdown.live('click', function() {
-            $(this)
+        this.$dropdown.live('click', function(e) {
+            e.preventDefault();
+            $(this).parent('dd')
                 .toggleClass('expanded')
                 .find('.more').slideToggle();
         });

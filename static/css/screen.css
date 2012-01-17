@@ -1366,23 +1366,38 @@ header.included_header h2 {
 	padding:14px;
     background:rgba(0,0,0,0.08);
     overflow:hidden;
+    position:relative;
 }
 .included dd.expands {
-	cursor:pointer;
 	background-color:rgba(0,0,0,0.22);
 }
-.included dd.expands:hover {
+.included dd.expands p.expand {
+	margin:0;
+	padding:0;
+	min-height:0;
+}
+.included dd.expands p.expand a {
+	position:absolute;
+	display:block;
+	right:30px;
+	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -2410px;
+	top:42px;
+	width:19px;
+	height:19px;
+	text-indent:-999em;
+	overflow:hidden;
+}
+.included dd.expands p.expand a:hover {
+	background-position:0 -2550px;
+}
+.included dd.expanded p.expand a {
+	background-position:0 -5245px;
+}
+.included dd.expands:hover,
+.included dd.expanded {
 	background-color:rgba(0,0,0,0.30);
 }
-.included dd.expands > ul {
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 100% -2380px;
-}
-.included dd.expands:hover > ul {
-		background-position:100% -2520px;
-}
-.included dd.expanded > ul {
-		background-position:100% -2520px;
-}
+
 .included dd > p {
 	width:30%;
 	margin-left:20%;
