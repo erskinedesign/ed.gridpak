@@ -67,7 +67,7 @@ $(function() {
                 (typeof(attrs.gutter_width) != 'undefined' && attrs.gutter_width < 0) ||
                 (typeof(attrs.baseline_height) != 'undefined' && attrs.baseline_height < 0)
             ) {
-                return 'Must be greater than 0';
+                return 'Must be 0 or greater';
             }
 
 
@@ -330,8 +330,10 @@ $(function() {
             target.set(options);
 
             // Stuff will have changed
-            App.refreshOptions();
             this.model.destroy();
+            App.refreshOptions();
+            App.updateOptions();
+
             // Grids.dump();
         },
 

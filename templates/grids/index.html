@@ -1,6 +1,6 @@
 {% extends 'grids/base.html' %}
 {% block body_class %}index{% endblock %}
-{% block nav_item %}<a href="{% url about %}">Learn about Gripak</a>{% endblock %}
+{% block nav_item %}<a href="{% url about %}">Learn about Gridpak</a>{% endblock %}
 {% block content %}
             <header id="header_sec">
 					<h2>The <b>Responsive</b> grid generator</h2>
@@ -28,7 +28,7 @@
 							<div class="number_input">
 								<a href="#" class="number increase"></a>
 								<a href="#" class="number decrease"></a>
-	                            <input id="new_padding_width" value="8" type="text" />
+	                            <input id="new_padding_width" value="8" type="text" /> px
 							</div>
                             {% comment %}
 							<div class="switcher_container">
@@ -45,7 +45,7 @@
 							<div class="number_input">
 								<a href="#" class="number increase"></a>
 								<a href="#" class="number decrease"></a>
-                            	<input id="new_gutter_width" value="16" type="text" />
+                            	<input id="new_gutter_width" value="16" type="text" /> px
 							</div>
                             {% comment %}
 							<div class="switcher_container">
@@ -96,7 +96,7 @@
 	                <button id ="download" type="submit">Download your Gridpak</button>
 					<p class="numberOfGrids">1</p>
 					<p class="gridpak_info">Your download includes:
-                    <strong class="number numberOfGrids">1</strong> PNGs, <strong class="number">1</strong> CSS, 
+                    <strong class="number numberOfGrids">1</strong> PNG(s), <strong class="number">1</strong> CSS, 
                     <strong class="number">1</strong> LESS, <strong class="number">1</strong> SCSS and <strong class="number">1</strong> JavaScript file</p>
     	      </form>
 	          <p class="created_by">This site is licensed under a Creative Commons Attribution 3.0 License

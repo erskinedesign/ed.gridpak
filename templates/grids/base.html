@@ -7,9 +7,9 @@
         <meta charset="UTF-8" />
         <meta name="description" content="" />
         <meta name="author" content="Erskine Design" />
-        <link rel="author" type="text/plain" href="/humans.txt" />
+        <link rel="author" type="text/plain" href="{{ STATIC_URL }}humans.txt" />
         
-        <title>Gridpak</title>
+        <title>{% block page_title %}{% endblock %}Gridpak Responsive grid generator</title>
         
 		<!-- TYPEKIT -->
 		<script type="text/javascript" src="//use.typekit.com/pua6dog.js"></script>
@@ -18,12 +18,6 @@
 	
         <!-- CSS -->
         <link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/screen.css" />
-        
-        <!-- INTERNET EXPLORER CSS -->
-        <!--[if IE 8]><link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/ie/screen_ie8.css" /><![endif]-->
-        <!--[if lte IE 7]><link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/ie/screen_ie.css" /><![endif]-->
-        <!--[if IE 7]><link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/ie/screen_ie7.css" /><![endif]-->
-        <!--[if IE 6]><link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/ie/screen_ie6.css" /><![endif]-->
         
         <!-- ICONS -->
         <link rel="icon" type="image/png" href="{{ STATIC_URL }}images/site/icons/favicon.png" />   
@@ -71,11 +65,6 @@
         EDJ.on_ready(settings);
     });
     </script>
-
-	<!--[if IE 6]>
-	<script src="{{ STATIC_URL }}js/ie6/DD_belatedPNG_0.0.8a.js"></script>
-	<script src="{{ STATIC_URL }}js/ie6/ie6.js"></script>
-	<![endif]-->
     
 	</body>
 
