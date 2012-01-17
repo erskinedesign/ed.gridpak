@@ -947,7 +947,7 @@ footer {
 		display:inline-block;
 		position:relative;
 		top:407px;
-		padding:6px 3px 6px 10px;
+		padding:6px 10px 6px 10px;
 		border:1px solid #1F1F1F;
 		-moz-border-radius:3px;
 	    -webkit-border-radius:3px;
@@ -970,6 +970,9 @@ footer {
 		-webkit-background-clip:padding-box; 
 		background-clip:padding-box;
 	}
+    #grid_list li:only-child .tab .actions .remove {
+        display:none;
+    }
 	
 	#grid_list .tab .actions:hover {
 		color:#000;
@@ -1025,9 +1028,9 @@ footer {
 	}
 	
 	#grid_list .tab .actions a.remove {
-	     margin:0 5px 0 8px;
 	     width:17px;
 	     height:17px;
+         margin-left:5px;
 	     top:0px;
 	     overflow:hidden;
 	     text-indent:-999em;
