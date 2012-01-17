@@ -447,7 +447,8 @@ footer {
 
 .created_by a:hover,
 .created_by a:focus {
-	color:#888;
+	/*color:#888;*/
+	text-decoration:underline;
 }
 	
 	@media only screen and (max-width:580px) {
