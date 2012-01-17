@@ -1358,18 +1358,20 @@ header.included_header h2 {
 .included dt {
 	position:absolute;
 	font-size:1.307692308em; /* 17 / 13 */
+	line-height:1em;
+	font-weight:600;
 	color:#fff;
-	padding:32px 14px 14px 47px;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 15px -1126px;
+	padding:34px 14px 14px 47px;
+	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 15px -1124px;
 }
 .included dt.png {
-	background-position:15px -1126px;
+	background-position:15px -1128px;
 }
 .included dt.css {
-	background-position:15px -1236px;
+	background-position:15px -1237px;
 }
 .included dt.js {
-	background-position:15px -1356px;
+	background-position:15px -1357px;
 }
 .included dt small {
 	font-size:.764705882em; /* 13 / 17 */
@@ -1421,6 +1423,8 @@ header.included_header h2 {
 	display:block;
    	min-height:3em;
 	width:28.8%;
+	position:relative;
+	top:-0.3em;
 }
 .included dd > ul {
 	width:50%;
@@ -1462,8 +1466,8 @@ header.included_header h2 {
 .included dd > ul li.js {
 	background-position:50% -520px;
 }
-.included dd .more {
-
+.included dd .row {
+	display:none;
 }
 .included dd .more h3 {
 	-webkit-column-break-before:always;
