@@ -100,9 +100,17 @@ b {
 a {
 	text-decoration:none;
 }
+a:hover,
+a:focus {
+    outline:0;
+}
 
 p a {
 	color:#fff;
+}
+p a:hover,
+p a:focus {
+    text-decoration:underline;
 }
 
 p {
