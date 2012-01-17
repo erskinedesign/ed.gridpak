@@ -856,6 +856,7 @@ footer {
 	
     #grid_list .cur {
         background-color:#fff;  
+        z-index:99;
     }
     
 	#grid_list .gridnav {
@@ -879,7 +880,7 @@ footer {
 		-webkit-box-sizing:border-box;
 		-moz-box-sizing:border-box;
 		box-sizing:border-box;
-		border-left:0 solid rgba(255,255,255,0);
+		border-left:0 solid rgba(255,255,255,1);
 		border-right:0 solid rgba(255,255,255,0);
         -moz-background-clip:padding-box;
         -webkit-background-clip:padding-box;
@@ -889,6 +890,9 @@ footer {
 		height:100%;
 		background-color:#E78484;
 	}
+    #grid_list .col:first-child {
+        border-left-color:rgba(255,255,255,0);
+    }
 	#grid_list .col .width {
 	   display:none;
 	}
