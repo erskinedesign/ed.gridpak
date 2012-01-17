@@ -5,7 +5,13 @@
 var gridpak = {
 
     $container: {},
+
+    /**
+     * DOM element to append the Gridpak too
+     *
+     */
     append: 'body',
+
     css: '',
 
     /**
@@ -60,7 +66,7 @@ var gridpak = {
                 'width:100%; ' +
                 'height:100%; ' +
                 'display:block; ' +
-                'position:fixed; ' +
+                'position:absolute; ' +
                 'top:0; ' +
                 'left:0; ' +
             '} ' +
