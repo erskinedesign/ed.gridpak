@@ -1354,16 +1354,19 @@ header.included_header h2 {
 }
 .included dt {
 	position:absolute;
-	padding:14px 14px 14px 47px;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 15px -1148px;
+	font-size:1.307692308em; /* 17 / 13 */
+	color:#fff;
+	padding:32px 14px 14px 47px;
+	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 15px -1126px;
 }
 .included dt small {
+	font-size:.764705882em; /* 13 / 17 */
 	color:#888;
 	display:block;
 	clear:both;
 }
 .included dd {
-	padding:14px;
+	padding:32px 14px;
     background:rgba(0,0,0,0.08);
     overflow:hidden;
     position:relative;
@@ -1381,7 +1384,7 @@ header.included_header h2 {
 	display:block;
 	right:30px;
 	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -2410px;
-	top:42px;
+	top:57px;
 	width:19px;
 	height:19px;
 	text-indent:-999em;
@@ -1399,19 +1402,20 @@ header.included_header h2 {
 }
 
 .included dd > p {
-	width:30%;
 	margin-left:20%;
 	float:left;
 	display:block;
    	min-height:3em;
+	width:28.8%;
 }
 .included dd > ul {
 	width:50%;
 	float:left;
+	margin-bottom:32px;
 }
 .included dd > ul li {
 	display:inline-block;
-	width:30%;
+	width:27%;
 	text-align:center;
 	padding:74px 0 0 0;
 	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 50% 0;
