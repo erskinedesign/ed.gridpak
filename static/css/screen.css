@@ -253,7 +253,8 @@ body.index nav a {
 	float:left;
 }
 
-body.index nav a:hover {
+body.index nav a:hover,
+body.index nav a:focus {
 	color:#333;
 	background-position:0 -889px;
 }
@@ -313,7 +314,8 @@ body.about nav a:after{
 }
 
 
-body.about nav a:hover {
+body.about nav a:hover,
+body.about nav a:focus {
 	background-color:#9A0704;
 	background-image:none;	
 	-moz-background-clip:padding; 
@@ -435,7 +437,8 @@ footer {
 	color:#FFF;
 }
 
-.created_by a:hover {
+.created_by a:hover,
+.created_by a:focus {
 	color:#888;
 }
 	
@@ -577,7 +580,8 @@ footer {
 		margin:3px 6px 0 4px;
 	}
 	
-	#grid_options .dragme:hover {
+	#grid_options .dragme:hover,
+	#grid_options .dragme:focus {
 		background-position:11px -5032px;
 	}
 	
@@ -682,11 +686,13 @@ footer {
 		background-clip:padding-box;
 	}
 	
-	.increase:hover {
+	.increase:hover,
+	.increase:focus {
 		background:#bbb url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2195px;
 	}
 	
-	.decrease:hover {
+	.decrease:hover,
+	.decrease:focus {
 		background:#bbb url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -1914px;
 	}
 	
@@ -796,7 +802,8 @@ footer {
 		top:-1px;
 	}
 	
-	#save_grid:hover {
+	#save_grid:hover,
+	#save_grid:focus {
 		color:#000000;
 		background:#bbb url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -3830px;
 		-moz-background-clip:padding; 
@@ -804,7 +811,8 @@ footer {
 		background-clip:padding-box;
 	}
 	
-	#save_grid:hover:before {
+	#save_grid:hover:before,
+	#save_grid:focus:before {
 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -4380px !important;
 	}
 	
@@ -981,13 +989,15 @@ footer {
         display:none;
     }
 	
-	#grid_list .tab .actions:hover {
+	#grid_list .tab .actions:hover,
+	#grid_list .tab .actions:focus {
 		color:#000;
 		background-color:#BBB;
 		background-image:none;
 	}
 	
-	#grid_list .tab .actions:hover:active {
+	#grid_list .tab .actions:hover:active,
+	#grid_list .tab .actions:focus:active {
 		-webkit-box-shadow:none;
 	    -moz-box-shadow:none;
 	    box-shadow:none;	
@@ -1010,7 +1020,8 @@ footer {
 		background-clip:padding-box;
 	}
 	
-	#grid_list .cur .tab .actions:hover {
+	#grid_list .cur .tab .actions:hover,
+	#grid_list .cur .tab .actions:focus {
 	    background-color:#272727;
 	    background-image:none;
 	}
@@ -1044,7 +1055,8 @@ footer {
 	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -4659px;
 	 }
 	 
-	#grid_list .tab .actions a.remove:hover {
+	#grid_list .tab .actions a.remove:hover,
+	#grid_list .tab .actions a.remove:focus {
 	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -4799px;
 	 }
 	 
@@ -1052,7 +1064,8 @@ footer {
 	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -3019px;
 	}
 	 
-	#grid_list .cur .tab .actions a.remove:hover {
+	#grid_list .cur .tab .actions a.remove:hover,
+	#grid_list .cur .tab .actions a.remove:focus {
 	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -3149px; 
 	}
 
@@ -1222,7 +1235,8 @@ footer {
 		background-clip:padding-box;
 	}
 	
-	#download:hover {
+	#download:hover,
+	#download:focus {
 		background-color:#8C0909;
 		background-image:none;	
 		-moz-background-clip:padding; 
@@ -1230,7 +1244,8 @@ footer {
 		background-clip:padding-box;
 	}
 	
-	#download:hover:after {
+	#download:hover:after,
+	#download:focus:after {
 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -webkit-gradient(linear, left top, left bottom, from(#720704), to(#5F0100));
  		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -webkit-linear-gradient(top, #720704, #5F0100);
  		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -moz-linear-gradient(top, #720704, #5F0100);
@@ -1394,7 +1409,8 @@ header.included_header h2 {
 	background-color: rgba(0,0,0,0.12);
 }
 
-.included_item_wrapper_css:hover {
+.included_item_wrapper_css:hover,
+.included_item_wrapper_css:focus {
 	background-color: rgba(0,0,0,0.22);
 	float: left;
 }
@@ -1550,14 +1566,17 @@ header.included_header h2 {
 	height:22px;
 	text-indent:-999em;
 }
-.included dd.expands p.expand a:hover {
+.included dd.expands p.expand a:hover,
+.included dd.expands p.expand a:focus {
 	background-position:0 -2550px;
 }
 .included dd.expanded p.expand a,
-.included dd.expanded p.expand a:hover {
+.included dd.expanded p.expand a:hover,
+.included dd.expanded p.expand a:focus {
 	background-position:0 -5245px;
 }
 .included dd.expands:hover,
+.included dd.expands:focus,
 .included dd.expanded {
 	background-color:rgba(0,0,0,0.30);
 }
@@ -1629,7 +1648,8 @@ header.included_header h2 {
 }
 
 
-.about footer .call_to a.create:hover {
+.about footer .call_to a.create:hover,
+.about footer .call_to a.create:focus {
 	background-color:#8C0909;
 	background-image:none;	
 	-moz-background-clip:padding; 
@@ -2030,7 +2050,8 @@ header.included_header h2 {
 /*     border:8px solid;   */
 /* }*/
 
-.tooltip:hover span{
+.tooltip:hover span,
+.tooltip:focus span{
 	/* display:inline; */
 	position:absolute; 
 	webkit-border-radius:3px;
@@ -2064,23 +2085,27 @@ header.included_header h2 {
 }
 
 
-.tooltip.large:hover span {
+.tooltip.large:hover span,
+.tooltip.large:focus span {
 	right:0;
 	bottom:-98px;
 }
 
-.tooltip.large:hover span:before {
+.tooltip.large:hover span:before,
+.tooltip.large:focus span:before {
 	top:-15px;
 	left:58px;
 	border-color:transparent transparent #FFFAD9 transparent;  
 }
 
-.tooltip.small:hover span {
+.tooltip.small:hover span,
+.tooltip.small:focus span {
 	left:-5px;
 	top:-40px;
 }
 
-.tooltip.small:hover span:before {
+.tooltip.small:hover span:before,
+.tooltip.small:focus span:before {
 	top:27px;
 	left:23px;
 	border-color:#FFF4AA transparent transparent transparent;  
