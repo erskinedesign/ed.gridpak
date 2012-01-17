@@ -1366,7 +1366,7 @@ header.included_header h2 {
 	clear:both;
 }
 .included dd {
-	padding:32px 14px;
+	padding:32px 14px 0 14px;
     background:rgba(0,0,0,0.08);
     overflow:hidden;
     position:relative;
