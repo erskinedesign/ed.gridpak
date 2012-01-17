@@ -333,6 +333,7 @@ $(function() {
             this.model.destroy();
             App.refreshOptions();
             App.updateOptions();
+            this.stringify();
 
             // Grids.dump();
         },
