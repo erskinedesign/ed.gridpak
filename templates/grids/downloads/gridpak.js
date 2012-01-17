@@ -5,7 +5,7 @@
 var gridpak = {
 
     $container: {},
-
+    append: 'body',
     css: '',
 
     /**
@@ -37,18 +37,17 @@ var gridpak = {
     init: function() {
         var gridOn = false,
             grids = [
-
+                {% for grid in grids %}
                 {
-                    min_width: 0,
-                    col_num: 5,
-                    gutter_type: 'px',
-                    gutter_width: 8,
-                    padding_type: 'px',
-                    padding_width: 10,
-                    lower: 0,
-                    upper: false
+                    min_width: {{ grid.min_width }},
+                    col_num: {{ grid.col_num }},
+                    gutter_type: '{{ grid.gutter_type }}',
+                    gutter_width: {{ grid.gutter_width }},
+                    padding_type: '{{ grid.padding_type }}',
+                    padding_width: {{ grid.padding_width }},
+                    upper: {% if grid.upper %}{{ grid.upper }}{% else %}false{% endif %}
                 },
-
+                {% endfor %}
             ],
             numGrids = grids.length - 1,
             i = 0,
@@ -61,11 +60,14 @@ var gridpak = {
                 'width:100%; ' +
                 'height:100%; ' +
                 'display:block; ' +
+                'position:fixed; ' +
+                'top:0; ' +
+                'left:0; ' +
             '} ' +
             '#gridpak .gridpak_grid { ' +
                 'width:100%; ' +
                 'height:100%; ' +
-                'display:block; ' +
+                'display:none; ' +
             '} ' +
             '#gridpak .gridpak_col { ' +
                 'border-left:0 solid rgba(255,255,255,0); ' +
@@ -90,15 +92,22 @@ var gridpak = {
 
         // Put the grids on the screen
         for (i; i<=numGrids; i++) {
-            gridpak.drawGrid(grids[i]);
+            gridpak.drawGrid(grids[i], i);
+             this.css += '@media screen and (min-width: ' + grids[i].min_width + 'px) ';
+             if (grids[i].upper != false) this.css += 'and (max-width: ' + grids[i].upper + 'px) ';
+             this.css += ' { ' +
+                '#gridpak .gridpak_grid_' + i + ' { ' +
+                    'display: block; ' +
+                '} ' +
+            '} ';
         }
 
         this.css += '</style>';
-        $('body').prepend(this.css);
+        $(this.append).prepend(this.css);
 
         this.toggleGrid();
 
-        $('body').append(gridpak.$container);
+        $(this.append).append(gridpak.$container);
 
      },
 
@@ -107,16 +116,16 @@ var gridpak = {
       *
       * Draws a single grid, usually called from a loop
       */
-     drawGrid: function(grid) {
+     drawGrid: function(grid, num) {
         var markup = '',
             style = '',
             i = 1,
             width = 100 / grid.col_num
             border = grid.gutter_width / 2;
 
-        markup = '<div class="gridpak_grid gridpak_grid_' + i + '">';
+        markup = '<div class="gridpak_grid gridpak_grid_' + num + '">';
 
-        this.css += '#gridpak .gridpak_grid_' + i + ' .gridpak_col { ' +
+        this.css += '#gridpak .gridpak_grid_' + num + ' .gridpak_col { ' +
             'width:' + width + '%; ' +
             'border-left-width:' + border + grid.gutter_type + '; ' +
             'border-right-width:' + border + grid.gutter_type + '; ' +
