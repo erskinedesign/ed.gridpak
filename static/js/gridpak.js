@@ -330,8 +330,10 @@ $(function() {
             target.set(options);
 
             // Stuff will have changed
-            App.refreshOptions();
             this.model.destroy();
+            App.refreshOptions();
+            App.updateOptions();
+
             // Grids.dump();
         },
 
