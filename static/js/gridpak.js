@@ -333,6 +333,7 @@ $(function() {
             this.model.destroy();
             App.refreshOptions();
             App.updateOptions();
+            this.stringify();
 
             // Grids.dump();
         },
@@ -455,6 +456,9 @@ $(function() {
             e.preventDefault();
 
             val = $target.hasClass('increase') ? val + step : val - step;
+
+            if (val < 0) return false;
+
             $number.val(val);
             this.updateOptions();
         },

@@ -20,7 +20,7 @@
         <link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/screen.css" />
         
         <!-- ICONS -->
-        <link rel="icon" type="image/png" href="{{ STATIC_URL }}images/site/icons/favicon.png" />   
+        <link rel="icon" href="{{ STATIC_URL }}images/site/icons/favicon.ico" />   
     
     </head>
     
@@ -28,7 +28,7 @@
         	<header class="site_header">
 	            <div class="header_wrapper">
 	                <h1 id="branding">
-			            Gridpak<sup>BETA</sup>
+                        <a href="{% url grids_index %}">Gridpak<sup>BETA</sup></a>
 			        </h1>
 			        <p>The Responsive grid generator<br />Created by Erskine</p>
 
@@ -48,8 +48,7 @@
 	    	<div id="content_wrapper">
     		{% block content %}{% endblock %}
 
-	
-	  <!-- JAVASCRIPT -->
+    <!-- JAVASCRIPT -->
     <script src="{{ STATIC_URL }}js/jquery-1.7.1.js"></script>
     <script src="{{ STATIC_URL }}js/jquery-ui-1.8.16.custom.min.js"></script>
     <script src="{{ STATIC_URL }}js/EDJ.js"></script>
@@ -69,4 +68,3 @@
 	</body>
 
 	</html>
-	

@@ -21,10 +21,10 @@
 
 {% for grid in grids %}
 
-        /* {{ forloop.counter }}. {{ grid.col_num }} Column Grid {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}Infinity{% endif %} 
-        ----------------------------------------------------------------------------- */
+    /* {{ forloop.counter }}. {{ grid.col_num }} Column Grid {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}Infinity{% endif %} 
+    ----------------------------------------------------------------------------- */
 
-    	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {
+    @media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {
         .row {
             margin-left:-{{ grid.gutter_width }}{{ grid.gutter_type }};
         }
