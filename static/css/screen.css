@@ -1328,6 +1328,11 @@ footer .please_note p {
 	overflow:hidden;
 }
 
+.about_header_wrapper .row {
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
 .video_container {
 	position:relative;
 	padding-bottom:56.25%;
@@ -1413,7 +1418,7 @@ header.included_header h2 {
 }
 
 .included h3.file_type {
-	width: 15%;
+	width: 20%;
 	float: left;
 	font-size: 1.461538462em;
 	border:0px solid rgba(0,0,0,0);         
@@ -1428,12 +1433,6 @@ header.included_header h2 {
     background:url(../images/site/icons/gridpak-sprite.png) no-repeat;
 }
 
-.included .file_type h3 {
-	font-weight: 600;
-	float: left;
-	font-size: 19px;
-	margin-bottom: 0;
-}
 
 .included h3.file_type.png {
 	background-position: 0 -1161px;
@@ -1449,7 +1448,7 @@ header.included_header h2 {
 	color:#888;
 }
 .included p.small_description {
-	width: 35%;
+	width: 30%;
 	border:0px solid rgba(0,0,0,0);         
 	border-left-width:20px;
 	padding:0 12px;
@@ -1688,17 +1687,29 @@ header.included_header h2 {
 		.call_to a.create {
 			margin-right:50px;
 		}
+		
+		h3.file_type small {
+			display: none;
+		}
+		
+		h3.file_type {
+			font-size: 1.307692308em !important;
+			width: 25% !important;
+		}
+		
+		p.small_description {
+			width: 60% !important;
+		}
+		
+		ul.images  {
+			display: none;
+		}
+		
+		
  
 } 
 
 @media screen and (min-width:0px) and (max-width:474px) {
-		td.file_type p {
-			display:none;
-		}
-		
-		td.file_type h3 {
-			font-size:1.307692308em;
-		}
 		
 		.call_to {
 			position:relative !important;

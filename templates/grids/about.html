@@ -139,32 +139,24 @@
                                     <p>Add the mixin corresponding to the desired width inside the selector, alongside any other properties.</p>
 
                                     <pre><code class="css"><span class="red">.main_container</span><span class="grey"> {</span>
-    <span class="white">.row</span><span class="grey">;</span>
-    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-}</span></code><span class="syntax"> .less</span></pre>
+    <span class="white">.row</span><span class="grey">;</span>	
+}</span>
 
-                                    <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
-    <span class="white">@include span(2)</span><span class="grey">;</span>
-    <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-}</span></code><span class="syntax"> .scss</span></pre>
-
-                                    <p>These two examples would result in an element that is two columns wide. If your element appears
-                                    at the end of a row you will also need to include the &lsquo;end&rsquo; Mixin.</p>
-
-                                    <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
+<span class="red">article</span><span class="grey"> {</span>
     <span class="white">.span(2)</span><span class="grey">;</span>
-    <span class="white">.end()</span><span class="grey">;</span>
     <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-    }</span></code><span class="syntax"> .less</span></pre>
+}</span><span class="syntax"> .less</span></code></pre>
 
-                                    <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
-    <span class="white">@include span(2)</span><span class="grey">;</span>
-    <span class="white">@include end</span><span class="grey">;</span>
+<pre><code class="css"><span class="red">.main_container</span><span class="grey"> {</span>
+    <span class="white">@include row</span><span class="grey">;</span>	
+}</span>
+
+<span class="red">article</span><span class="grey"> {</span>
+    <span class="white">@ include span(2)</span><span class="grey">;</span>
     <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
-    }</span></code><span class="syntax"> .scss</span></pre>
+}</span><span class="syntax"> .scss</span></code></pre>
 
-                                    <p>By adding the &lsquo;end&rsquo; Mixin to the recipe element you are removing any right padding or
-                                    margin allowing your elements to fit correctly within their container.</p>
+                                    <p>These two examples would result in an element that is two columns wide.</p>
 
                                 </div> <!-- // .item -->
 
