@@ -1379,6 +1379,7 @@ header.included_header h2 {
 }
 .included dd {
 	padding:32px 14px 0 14px;
+	min-height:56px;
     background:rgba(0,0,0,0.08);
     overflow:hidden;
     position:relative;
@@ -1462,17 +1463,7 @@ header.included_header h2 {
 	background-position:50% -520px;
 }
 .included dd .more {
-    -webkit-column-count:2;
-    -webkit-column-gap:14px;
-    -moz-column-count:2;
-    -moz-column-gap:14px;
-    column-count:2;
-    column-gap:14px;
-    display:none;
-    margin-top:50px;
-    clear:both;
-    overflow:hidden;
-    padding-bottom:32px;
+
 }
 .included dd .more h3 {
 	-webkit-column-break-before:always;
@@ -1643,12 +1634,6 @@ header.included_header h2 {
 			width:179px;
 			display:block;
 		}
-
-        .included dd .more {
-            -webkit-column-count:1;
-            -moz-column-count:1;
-            column-count:1;
-        }
 	
 }
 
@@ -1664,7 +1649,7 @@ header.included_header h2 {
                 padding:0;
             }
             .span_1, .span_2, .span_3, .span_4,
-            .about .description .item {
+            .about .row .item {
 	        	padding:0 12px;
 	        	border:0px solid rgba(0,0,0,0);         
 	        	border-left-width:20px;
@@ -1685,14 +1670,36 @@ header.included_header h2 {
             .span_3 {
                 width:75.0%;
             }
-            .about .description .item {
+            .about .row .item {
 				width:100%;
+			}
+			.about .more {
+
 			}
             
         } /* // min_width:0px */ 
 
 
-        /* 2. 8 Column Grid 800px - Infinity 
+        /* 2. Grid 0px - 600px 
+        ----------------------------------------------------------------------------- */
+
+    	@media screen and (min-width:0px) and (max-width:720px) {
+			.included dt small {
+				display:none;
+			}
+			.included dd > p {
+				width:56%;
+				margin-left:35%;
+			}
+			.included dd > ul {
+				display:none;
+			}
+			.included dd.expands p.expand a {
+				top:33px;
+			}
+		}
+
+        /* 3. 8 Column Grid 800px - Infinity 
         ----------------------------------------------------------------------------- */
 
     	@media screen and (min-width:500px) {
@@ -1701,7 +1708,7 @@ header.included_header h2 {
 	            margin-left:-20px;
 	        }
 	        .span_1, .span_2, .span_3, .span_4, .span_5, .span_6, .span_7, .span_8, .left_column, 
-	        .about .description .item {
+	        .about .row .item {
 	        	padding:0 12px;
 	        	border:0px solid rgba(0,0,0,0);
 	            border-left-width:20px;
@@ -1723,7 +1730,7 @@ header.included_header h2 {
 	            width:37.5%;
 	        }
 	        .span_4,
-	        .about .description .item {
+	        .about .row .item {
 	            width:50.0%;
 	        }
 	        .span_5 {

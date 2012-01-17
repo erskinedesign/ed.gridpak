@@ -84,68 +84,77 @@
                         <p class="expand"><a href="#">Show more</a></p>
                         <div class="more">
 
-                            <h3 id="css">Gridpak.css</h3>
-                            <p>A straightforward CSS which contains the appropriate media queries and pre-defined selectors
-                            based on the grids you have created. Using this file doesn&rsquo;t require a compiler and will result
-                            in a smaller file size but is less semantic than .less and .scss files.</p>
+                            <div class="row">
 
-                            <h4>How to use</h4>
-                            <p>Add the selector corresponding to the desired width of your element.</p>
+                                <div class="item">
+                                    <h3 id="css">Gridpak.css</h3>
+                                    <p>A straightforward CSS which contains the appropriate media queries and pre-defined selectors
+                                    based on the grids you have created. Using this file doesn&rsquo;t require a compiler and will result
+                                    in a smaller file size but is less semantic than .less and .scss files.</p>
 
-                            <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
+                                    <h4>How to use</h4>
+                                    <p>Add the selector corresponding to the desired width of your element.</p>
 
-                            <p>This would create an element two columns wide. The required presentational classes can also
-                            be added to existing classes:</p>
+                                    <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
 
-                            <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"secondary_header span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
+                                    <p>This would create an element two columns wide. The required presentational classes can also
+                                    be added to existing classes:</p>
 
-                            <p>This would create an element eight columns wide.</p> 
+                                    <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"secondary_header span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
 
-                            <p>If your element appears at the end of a row you will also need to give it the class ‘end’.</p>
+                                    <p>This would create an element eight columns wide.</p> 
 
-                            <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"recipe span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
+                                    <p>If your element appears at the end of a row you will also need to give it the class ‘end’.</p>
+
+                                    <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"recipe span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
 <span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"ingrediants span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
 <span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"sidebar span_2 end"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
 
-                            <p>By adding the &lsquo;end&rsquo; class to the side bar you are removing any right padding or 
-                            margin allowing your elements to fit correctly within their container.</p>
-                    
-                            <h3 id="less_scss">Gridpak.less &amp; Gridpak.scss</h3>   
-                            <p>These options also include the appropriate media queries. However, unlike the Gridpak-styles.CSS
-                            these files use a combination of &lsquo;Mixins&rsquo; and variables rather than selectors, allowing your
-                            markup to be more semantic.</p>
+                                    <p>By adding the &lsquo;end&rsquo; class to the side bar you are removing any right padding or 
+                                    margin allowing your elements to fit correctly within their container.</p>
+                                </div> <!-- // .item --> 
 
-                            <h4>How to use</h4>
-                            <p>Add the Mixin corresponding to the desired width inside the selector, alongside any other
-                            declerations.</p>
+                                <div class="item">
+                                    <h3 id="less_scss">Gridpak.less &amp; Gridpak.scss</h3>   
+                                    <p>These options also include the appropriate media queries. However, unlike the Gridpak-styles.CSS
+                                    these files use a combination of &lsquo;Mixins&rsquo; and variables rather than selectors, allowing your
+                                    markup to be more semantic.</p>
 
-                            <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
+                                    <h4>How to use</h4>
+                                    <p>Add the Mixin corresponding to the desired width inside the selector, alongside any other
+                                    declerations.</p>
+
+                                    <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
     <span class="white">.span(2)</span><span class="grey">;</span>
     <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
 }</span></code><span class="syntax"> .less</span></pre>
 
-                            <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
+                                    <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
     <span class="white">@include span(2)</span><span class="grey">;</span>
     <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
 }</span></code><span class="syntax"> .scss</span></pre>
 
-                            <p>These two examples would result in an element that is two columns wide. If your element appears
-                            at the end of a row you will also need to include the &lsquo;end&rsquo; Mixin.</p>
+                                    <p>These two examples would result in an element that is two columns wide. If your element appears
+                                    at the end of a row you will also need to include the &lsquo;end&rsquo; Mixin.</p>
 
-                            <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
+                                    <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
     <span class="white">.span(2)</span><span class="grey">;</span>
     <span class="white">.end()</span><span class="grey">;</span>
     <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
 }</span></code><span class="syntax"> .less</span></pre>
 
-                            <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
+                                    <pre><code class="css"><span class="red">.recipe</span><span class="grey"> {</span>
     <span class="white">@include span(2)</span><span class="grey">;</span>
     <span class="white">@include end</span><span class="grey">;</span>
     <span class="grey">background:</span> <span class="white">#FFF</span><span class="grey">;	
 }</span></code><span class="syntax"> .scss</span></pre>
 
-                            <p>By adding the &lsquo;end&rsquo; Mixin to the recipe element you are removing any right padding or
-                            margin allowing your elements to fit correctly within their container.</p>
+                                    <p>By adding the &lsquo;end&rsquo; Mixin to the recipe element you are removing any right padding or
+                                    margin allowing your elements to fit correctly within their container.</p>
+
+                                </div> <!-- // .item -->
+
+                            </div> <!-- // .row -->
 
                         </div> <!-- // .more -->
                     </dd>
