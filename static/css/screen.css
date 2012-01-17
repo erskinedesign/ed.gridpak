@@ -1460,6 +1460,10 @@ header.included_header h2 {
 .included dd .more {
     -webkit-column-count:2;
     -webkit-column-gap:14px;
+    -moz-column-count:2;
+    -moz-column-gap:14px;
+    column-count:2;
+    column-gap:14px;
     display:none;
     margin-top:50px;
     clear:both;
@@ -1467,6 +1471,10 @@ header.included_header h2 {
 .included dd .more h3 {
 	-webkit-column-break-before:always;
 	-webkit-column-break-after:avoid;
+	-moz-column-break-before:always;
+	-moz-column-break-after:avoid;
+	column-break-before:always;
+	column-break-after:avoid;
 }
 
 
