@@ -957,21 +957,18 @@ footer {
 		content:" ";
 		display:block;
 		width:100%;
-		height:9px;
-		bottom:-40px;
+		padding:0 5px;
+		height:24px;
+		bottom:-47px;
+		margin:0 -5px;
 		position:absolute;
 		z-index:-1;
-		background:url(../images/site/icons/grid_tab_line.png) repeat-x 0 0;
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat -52px -5440px, url(../images/site/icons/gridpak-sprite.png) no-repeat 100% -5440px, url(../images/site/icons/grid_tab_line.png) repeat-x 0 50%;
+		/*background:url(../images/site/icons/gridpak-sprite.png) 0 -5440px;*/
 	}
 	
 	#grid_list .cur .tab:before {
-		content:" ";
-		display:block;
-		width:100%;
-		height:9px;
-		position:absolute;
-		z-index:-1;
-		background:url(../images/site/icons/grid_tab_line_active.png) repeat-x 0 0;
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat -52px -5440px, url(../images/site/icons/gridpak-sprite.png) no-repeat 100% -5440px, url(../images/site/icons/grid_tab_line_active.png) repeat-x 0 50%;
 	}
 	
 	#grid_list .tab .actions {
