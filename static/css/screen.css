@@ -353,17 +353,18 @@ ul.social {
 ul.social li {
 	display:inline;
 	margin-right:8px;
-	overflow:hidden;
+    overflow:hidden;
 	float:left;
 }
 
 .like {
-	width:46px;
+    width:51px;
+}
+.share {
+    width:59px;
 }
 
-.share {
-	width:80px;
-}
+
 
 		@media only screen and (max-width:580px) {
 			ul.social {
