@@ -353,15 +353,15 @@ ul.social {
 ul.social li {
 	display:inline;
 	margin-right:8px;
-    overflow:hidden;
+/*    overflow:hidden;*/
 	float:left;
 }
 
 .like {
-    width:51px;
+    width:80px;
 }
 .share {
-    width:59px;
+    width:55px;
 }
 
 
