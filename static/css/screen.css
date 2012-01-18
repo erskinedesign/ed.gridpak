@@ -260,7 +260,7 @@ nav {
 	min-width:180px;
 }
 
-body.index nav a {
+body.index nav a.learn {
 	color:#999;
 	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -1029px;
 	padding-left:21px;
