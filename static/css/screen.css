@@ -365,9 +365,13 @@ ul.social li {
 	width:80px;
 }
 
-		@media only screen and (max-width:580px) {
+		@media only screen and (max-width:680px) {
 			ul.social {
 				display:none;
+			}
+			
+			.header_wrapper p {
+				display: none;
 			}
 	}
 	
@@ -393,6 +397,7 @@ ul.social li {
 	#header_sec p {
 		font-size:1.153846154em;
 	}
+	
 	
 /* @end */
 	
