@@ -373,6 +373,10 @@ ul.social li {
 			.header_wrapper p {
 				display: none;
 			}
+			
+			body.index nav a {
+				float: right;
+			}
 	}
 	
 	/* @group 4.1 SECOND HEADER
