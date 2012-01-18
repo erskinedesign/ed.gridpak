@@ -365,10 +365,18 @@ ul.social li {
 }
 
 
+	@media only screen and (max-width:680px) {
 
-		@media only screen and (max-width:580px) {
 			ul.social {
 				display:none;
+			}
+			
+			.header_wrapper p {
+				display: none;
+			}
+			
+			body.index nav a {
+				float: right;
 			}
 	}
 	
@@ -394,6 +402,7 @@ ul.social li {
 	#header_sec p {
 		font-size:1.153846154em;
 	}
+	
 	
 /* @end */
 	
@@ -490,6 +499,7 @@ footer {
     clear:both;
     background:url(../images/site/icons/ruler.png) no-repeat 0 585px;
     padding:30px 0 90px;
+    overflow: visible;
 }
 
 	/* @group 6.1. BROWSER
@@ -853,8 +863,8 @@ footer {
 		margin:369px -203px 0 0;
 		background:rgba(0,0,0,0.85);
 		font-size:.846153846em;
-		color:#e5e5e5;
-		padding:2px 3px 0 3px;
+		padding:2px 5px 0 3px;
+		color:#FFF;
 	}
 	
 	.total_width input {
@@ -863,8 +873,12 @@ footer {
 		border:none;
 		text-align:right;
 		width:25px;
-		color:#FFF !important;
+		color:#FFF;
 		margin: -1px 0 0 0;	
+	}
+	.total_width input:disabled {
+		color:#FFF;
+
 	}
 	
 	/* @end */
@@ -962,18 +976,24 @@ footer {
 		content:" ";
 		display:block;
 		width:100%;
-		padding:0 5px;
+		padding:0 6px;
 		height:24px;
 		bottom:-47px;
-		margin:0 -5px;
+		margin:0 -5px 0 -6px;
 		position:absolute;
 		z-index:-1;
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat -52px -5440px, url(../images/site/icons/gridpak-sprite.png) no-repeat 100% -5440px, url(../images/site/icons/grid_tab_line.png) repeat-x 0 50%;
-		/*background:url(../images/site/icons/gridpak-sprite.png) 0 -5440px;*/
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat -51px -5440px, url(../images/site/icons/gridpak-sprite.png) no-repeat 100% -5440px, url(../images/site/icons/grid_tab_line.png) repeat-x 0 50%;
+		
 	}
 	
+	#grid_list .tab li:first-child:before{
+		outline: 10px solid red;
+		
+	}
+	
+	
 	#grid_list .cur .tab:before {
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat -52px -5440px, url(../images/site/icons/gridpak-sprite.png) no-repeat 100% -5440px, url(../images/site/icons/grid_tab_line_active.png) repeat-x 0 50%;
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat -51px -5440px, url(../images/site/icons/gridpak-sprite.png) no-repeat 100% -5440px, url(../images/site/icons/grid_tab_line_active.png) repeat-x 0 50%;
 	}
 	
 	#grid_list .tab .actions {
@@ -1376,6 +1396,7 @@ footer .please_note p {
 	margin:32px 0;
 	max-width:100%;
 	height:auto;
+	
 }
 
 .video_container iframe,  
