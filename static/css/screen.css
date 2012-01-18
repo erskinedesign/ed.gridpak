@@ -845,17 +845,21 @@ footer {
 		z-index:4000;
 		position:relative;
 		float:right;
-		margin:370px -203px 0 0;
+		margin:369px -203px 0 0;
+		background:rgba(0,0,0,0.85);
+		font-size:.846153846em;
+		color:#e5e5e5;
+		padding:2px 3px 0 3px;
 	}
 	
 	.total_width input {
-		font-size:0.769230769em;/*10/13*/
-		background:rgba(0,0,0,0.85);
+	    font-size:1em;/*10/13*/
+		background:none;
 		border:none;
-		color:#FFF;
-		text-align:center;
-		padding:2px 3px 3px ;
-		width:30px;
+		text-align:right;
+		width:25px;
+		color:#FFF !important;
+		margin: -1px 0 0 0;	
 	}
 	
 	/* @end */
