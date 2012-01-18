@@ -1809,7 +1809,40 @@ header.included_header h2 {
 		.description .row{
 			margin-bottom: 0px;
 		}
-	
+		
+		.about nav a,
+		header p,
+		nav ul,
+		#gridpak,
+		.footer_wrapper form {
+		    display:none;
+		}
+		
+		header{
+		    padding-right:0;
+		}
+		
+		header nav{
+		    float:right;
+		    margin-right:-50px;
+		}
+		
+		.index header:after{
+		    background:url("../images/site/mobile-no-no.png") no-repeat center center;
+		    content:" ";
+		    display:block;
+		    height:150px;
+		    width:100%;
+		    float:left;
+		    margin-top:60px;
+		}
+		
+		
+	    .header_wrapper p{
+	        font-size:10px;
+	        margin-top:3px;
+	        text-align:right;
+	    }
 }
 
 
