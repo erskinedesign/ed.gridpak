@@ -47,7 +47,7 @@
                             <div class="item">
                                 <h3>Feedback</h3>
                                 <p>As the title says, we are currently in Beta and will be actively developing and improving
-                                Gridpak. If you have any feedback, feature requests or use Gridpak for a web project
+                                Gridpak. If you have any feedback, feature requests or use Gridpak for a web project<br />
                                 <a href="MAILTO:hello@gridpak.com">we’d love to hear from you</a>. For all the latest updates
                                 please follow <a href="http://twitter.com/gridpak">@Gridpak</a> on Twitter.
                                 </p>
@@ -98,19 +98,30 @@
     <span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"span_2"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span>
 <span class="grey">&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
 
+
                                     <p>This would create an element two columns wide. The required presentational classes can also be added to existing classes:</p> 
                                     
                                     <pre><code class="xml"><span class="grey">&lt;</span>div <span class="white">class</span><span class="grey">=</span><span class="red">"article span_8"</span><span class="grey">&gt;&lt;/</span><span class="white">div</span><span class="grey">&gt;</span></code></pre>
 
-                                    <p>When using these files, if you are using more than one grid it's
+                                    <p>When using these files, if you are using more than one grid it&rsquo;s
                                     probably a good idea to use the naming conventions as a reference only.
                                     If for example you use the class name 'span_6' on an item, but then a
-                                    lower media query means you only have three columns: you'll be in
+                                    lower media query means you only have three columns: you&rsquo;ll be in
                                     trouble.</p>
 
                                     <p>Our suggestion would be to use semantic naming conventions in your
-                                    markup then in our CSS file, we can add those classnames right where we want
-                                    them, so they always make sense in the grid and in the CSS.</p>
+                                    markup then in your CSS file, you can add those class names right where                         you want them, so they always make sense in the grid and in the CSS.</p>
+                                    
+                                    <pre><code><span class="grey">&lt;</span><span class="white">div class</span>=<span class="red">"row"</span><span class="grey">></span>
+    <span class="grey">&lt;</span><span class="white">ul class</span><span class="grey">=</span><span class="red">"item_listing"</span><span class="grey">></span>
+          <span class="grey">&lt;</span><span class="white">li class</span><span class="grey">=</span><span class="red">"item"</span>><span class="grey"></span>
+              <span class="grey">&lt;</span><span class="white">p</span><span class="grey">></span><span class="white">This is my item.</span><span class="grey">&lt;/</span><span class="white">p</span><span class="grey">></span>
+           <span class="grey">&lt;/</span><span class="white">li</span><span class="grey">></span>
+           <span class="grey">&lt;</span><span class="white">li class</span><span class="grey">=</span><span class="red">"item"</span>><span class="grey"></span>
+              <span class="grey">&lt;</span><span class="white">p</span><span class="grey">></span><span class="white">This is my item.</span><span class="grey">&lt;/</span><span class="white">p</span><span class="grey">></span>
+           <span class="grey">&lt;/</span><span class="white">li</span><span class="grey">></span>
+    <span class="grey">&lt;/</span><span class="white">ul</span><span class="grey">></span>
+<span class="grey">&lt;/</span><span class="white">div<span class"grey">></span></code></pre>
                                     
                                     <pre><code class="xml"><span class="red">.span_1, .span_2, 
 .span_3, .span_4, 
@@ -133,10 +144,10 @@
                                 <div class="item">
                                     <h3 id="less_scss">Gridpak.less &amp; Gridpak.scss</h3>   
                                     
-                                    <p>These options also include the appropriate media queries and allow you to use a combination of &lsquo;Mixins&rsquo; and variables rather than selectors to style your elements. Like Gridpak.css this system relies on &lsquo;rows&rsquo; however you can add the &lsquo;row&rsquo; mixin to any element that has column children.</p>
+                                    <p>These options also include the appropriate media queries and allow you to use a combination of mixins and variables rather than selectors to style your elements. Like Gridpak.css this system relies on &lsquo;rows&rsquo; however you can add the &lsquo;row&rsquo; mixin to any element that has column children.</p>
 
                                     <h4>How to use</h4>
-                                    <p>Add the mixin corresponding to the desired width inside the selector, alongside any other properties.</p>
+                                    <p>Parse the amount of columns you wish the object to span as a parameter in the mixin alongside any other properties</p>
 
                                     <pre><code class="css"><span class="red">.main_container</span><span class="grey"> {</span>
     <span class="white">.row</span><span class="grey">;</span>	
@@ -166,7 +177,7 @@
 
                     <div class="included_item_wrapper">
                         <h3 class="file_type javascript">JavaScript<br /><small>(Overlay)</small></h3> 
-                        <p class="small_description">A JavaScript file which allows you to toggle your grid on & off in any browser using the ‘G’ key.</p>
+                        <p class="small_description">A JavaScript file which allows you to toggle your grid on &amps; off in any browser using the ‘G’ key.</p>
                         <ul class="images">
                             <li class="js">Gridpak.js</li>
                         </ul>
@@ -180,7 +191,7 @@
     		        <h4>Please note:</h4>
                     <p>The JavaScript file appends the grid directly after your body tag. It does this because it assumes that this
                     is the main content container. If this is not the case and your main content container is called something like 
-                    &lsquo;#content_wrapper&rsquo; then please change variable <code>'<span class="grey">$</span>append'</code>
+                    &lsquo;#content_wrapper&rsquo; then please change variable <code><span class="grey">append:</span> 'body'</code>
                     in the JavaScript file.</p>
                 </div>
                 <div class="call_to">
