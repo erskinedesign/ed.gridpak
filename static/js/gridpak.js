@@ -339,7 +339,9 @@ $(function() {
         },
 
         errorHandler: function() {
-            alert(arguments[1]);
+            $('.errors')
+                .removeClass('hidden')
+                .html(arguments[1]);
         }
 
     });
@@ -398,6 +400,11 @@ $(function() {
 
             // Bind this.addGrid every time a new model is added to the collection
             Grids.bind('add', this.addGrid, this);
+            Grids.bind('change', function() {
+                $('.errors')
+                    .html('')
+                    .addClass('hidden');
+            });
 
             // Update the width of the current model
             this.updateWidth(width);

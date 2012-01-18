@@ -166,6 +166,10 @@ code .syntax {
 	margin-bottom:-12px;
 }
 
+.hidden {
+    display:none;
+}
+
 
 
 /* @end */
@@ -2156,4 +2160,33 @@ header.included_header h2 {
 /* @end */
 
 
-
+.errors {
+    clear:both;
+    margin-top:10px;
+    width:72.6%;
+	webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px; 
+	border:1px solid #EEDE7D;
+	-webkit-box-shadow:1px 1px 4px rgba(0,0,0,0.5), rgba(255,255,255,0.22) 1px 1px 0 inset;
+	-moz-box-shadow:1px 1px 4px rgba(0,0,0,0.5), rgba(255,255,255,0.22) 1px 1px 0 inset;
+	box-shadow:1px 1px 4px rgba(0,0,0,0.5), rgba(255,255,255,0.22) 1px 1px 0 inset;
+	padding:7px 9px;
+	background:#1a94e2 -webkit-gradient(linear, left top, left bottom, from(#FFFAD9), to(#FFF4AA));
+ 	background:#1a94e2 -webkit-linear-gradient(top, #FFFAD9, #FFF4AA);
+ 	background:#1a94e2 -moz-linear-gradient(top, #FFFAD9, #FFF4AA);
+	background:#1a94e2 -ms-linear-gradient(top, #FFFAD9, #FFF4AA);
+	background:#1a94e2 -o-linear-gradient(top, #FFFAD9, #FFF4AA);
+	background:#1a94e2 linear-gradient(top, #FFFAD9, #FFF4AA);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#FFFAD9', EndColorStr='#FFF4AA'); 
+	font-size:0.8em;
+	line-height:1.3em;
+	font-family:Helvetica, "Helvetica Neue", Arial, sans-serif;
+	color:#555;
+	text-shadow:-1px -1px 0 rgba(255, 255, 255, 0.3);
+	-webkit-animation:fadeInDown 0.4s 0;
+	-moz-animation:fadeInDown 0.4s 0;
+	-ms-animation:fadeInDown 0.4s 0;
+	-o-animation:fadeInDown 0.4s 0;
+	animation:fadeInDown 0.4s 0;
+}
