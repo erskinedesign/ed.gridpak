@@ -260,7 +260,7 @@ nav {
 	min-width:180px;
 }
 
-body.index nav a {
+body.index nav a.learn {
 	color:#999;
 	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -1029px;
 	padding-left:21px;
@@ -353,19 +353,20 @@ ul.social {
 ul.social li {
 	display:inline;
 	margin-right:8px;
-	overflow:hidden;
+/*    overflow:hidden;*/
 	float:left;
 }
 
 .like {
-	width:46px;
+    width:80px;
 }
-
 .share {
-	width:80px;
+    width:55px;
 }
 
-		@media only screen and (max-width:680px) {
+
+	@media only screen and (max-width:680px) {
+
 			ul.social {
 				display:none;
 			}
