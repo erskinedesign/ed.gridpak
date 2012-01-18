@@ -106,11 +106,14 @@ a:focus {
 }
 
 p a {
-	color:#fff;
+	background:url(../images/site/icons/gridpak-sprite.png) repeat-x 30px -5346px;
+	font-weight: 600;
+	color: #E5E5E5;
 }
 p a:hover,
 p a:focus {
-    text-decoration:underline;
+    background-image: none;
+    color:#fff;
 }
 
 p {
@@ -1293,18 +1296,19 @@ footer {
 	margin:0 auto;
 	position:relative;
 	display:block;
-	padding-bottom:30px;
+	padding-bottom:40px;
 	clear:both;
 	-webkit-animation:fadeInTwo 1s 1;
 	-moz-animation:fadeInTwo 1s 1;
 	-ms-animation:fadeInTwo 1s 1;
 	-o-animation:fadeInTwo 1s 1;
 	animation:fadeInTwo 1s 1;
+
 }
 
 .about footer {
 	max-width:800px;
-	margin:0 auto 80px auto;
+	margin:0 auto 100px auto;
 	position:relative;
 	display:block;
 	padding:0 0 40px 0;
@@ -1321,7 +1325,7 @@ footer .please_note {
 }
 
 footer .please_note h4 {
-	width:15%;
+	width:20%;
 	border-left-width:12px;
 	padding:4px 12px 0 12px;
     -webkit-box-sizing:border-box;
@@ -1332,7 +1336,7 @@ footer .please_note h4 {
 }
 
 footer .please_note p {
-	width:46%;
+	width:42%;
     border:0px solid rgba(0,0,0,0);
     border-left-width:20px;
 	font-size:0.923076923em;
@@ -1532,8 +1536,10 @@ header.included_header h2 {
 	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -4940px;
 }
 .included ul.images li.pngs {
-	background-position:50% -700px;
+	background-position:56% -700px;
+	margin-left: -1px;
 }
+
 .included ul.images li.js {
 	background-position:50% -520px;
 }
@@ -1683,6 +1689,7 @@ header.included_header h2 {
 	position:absolute;
 	right:0;
 	width:220px;
+	margin-top: -1px;
 }
 
 @media screen and (min-width:0px) and (max-width:745px) { 
@@ -1702,7 +1709,7 @@ header.included_header h2 {
 		.call_to {
 			position:relative !important;
 			width:294px !important;
-			margin-left:37%;
+			margin-left:30.344545%;
 			padding:0 20px 40px 0;
 			border:0px solid rgba(0,0,0,0);
 		    -webkit-box-sizing:border-box;
@@ -1726,7 +1733,11 @@ header.included_header h2 {
 			width: 25% !important;
 		}
 		
-		p.small_description {
+		.please_note h4 {
+			width: 25% !important;
+		}
+		
+		p.small_description, .please_note p {
 			width: 60% !important;
 		}
 		
@@ -1734,6 +1745,18 @@ header.included_header h2 {
 			display: none;
 		}
 		
+		.included_item_wrapper_css p.reveal a {
+			margin-top: -13px;
+			background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -2410px;
+		}
+		
+		.description .item {
+			margin-bottom: 20px;
+		}
+		
+		.description .row{
+			margin-bottom: 0px;
+		}
 		
  
 } 
@@ -1771,6 +1794,14 @@ header.included_header h2 {
 			float:none !important;
 			width:179px;
 			display:block;
+		}
+		
+		.description .item {
+			margin-bottom: 20px;
+		}
+		
+		.description .row{
+			margin-bottom: 0px;
 		}
 	
 }
