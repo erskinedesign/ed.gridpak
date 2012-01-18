@@ -1378,6 +1378,7 @@ footer .please_note p {
 	margin:32px 0;
 	max-width:100%;
 	height:auto;
+	
 }
 
 .video_container iframe,  
@@ -1387,7 +1388,7 @@ footer .please_note p {
 	top:0;
 	left:0;
 	width:100%;
-
+	height:100%;
 }
 
 .included {
