@@ -489,6 +489,7 @@ footer {
     clear:both;
     background:url(../images/site/icons/ruler.png) no-repeat 0 585px;
     padding:30px 0 90px;
+    overflow: visible;
 }
 
 	/* @group 6.1. BROWSER
@@ -852,8 +853,8 @@ footer {
 		margin:369px -203px 0 0;
 		background:rgba(0,0,0,0.85);
 		font-size:.846153846em;
-		color:#999;
 		padding:2px 5px 0 3px;
+		color:#FFF;
 	}
 	
 	.total_width input {
@@ -866,7 +867,7 @@ footer {
 		margin: -1px 0 0 0;	
 	}
 	.total_width input:disabled {
-		color:#fff;
+		color:#FFF;
 
 	}
 	
@@ -965,17 +966,24 @@ footer {
 		content:" ";
 		display:block;
 		width:100%;
-		padding:0 5px;
+		padding:0 6px;
 		height:24px;
 		bottom:-47px;
-		margin:0 -5px;
+		margin:0 -5px 0 -6px;
 		position:absolute;
 		z-index:-1;
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat -52px -5440px, url(../images/site/icons/gridpak-sprite.png) no-repeat 100.3% -5440px, url(../images/site/icons/grid_tab_line.png) repeat-x 0 50%;
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat -51px -5440px, url(../images/site/icons/gridpak-sprite.png) no-repeat 100% -5440px, url(../images/site/icons/grid_tab_line.png) repeat-x 0 50%;
+		
 	}
 	
+	#grid_list .tab li:first-child:before{
+		outline: 10px solid red;
+		
+	}
+	
+	
 	#grid_list .cur .tab:before {
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat -52px -5440px, url(../images/site/icons/gridpak-sprite.png) no-repeat 100.3% -5440px, url(../images/site/icons/grid_tab_line_active.png) repeat-x 0 50%;
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat -51px -5440px, url(../images/site/icons/gridpak-sprite.png) no-repeat 100% -5440px, url(../images/site/icons/grid_tab_line_active.png) repeat-x 0 50%;
 	}
 	
 	#grid_list .tab .actions {
