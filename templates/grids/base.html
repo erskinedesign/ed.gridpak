@@ -89,7 +89,7 @@
     <script>
     $(document).ready(function() {
         var settings = {
-            debug: true,
+            debug: {{ debug|lower }},
             STATIC_URL: '{{ STATIC_URL }}'
         };
         EDJ.on_ready(settings);

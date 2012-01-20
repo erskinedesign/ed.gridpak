@@ -16,11 +16,13 @@ from zipfile import ZipFile
 def index(request):
     return render_to_response('grids/index.html', {
         'cur_page': 'index',
+        'debug': settings.DEBUG,
     }, context_instance=RequestContext(request))
 
 def about(request):
     return render_to_response('grids/about.html', {
         'cur_page': 'about',
+        'debug': settings.DEBUG,
     }, context_instance=RequestContext(request))
 
 def download(request):
