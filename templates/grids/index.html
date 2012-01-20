@@ -1,4 +1,5 @@
 {% extends 'grids/base.html' %}
+{% load compress %}
 {% block body_class %}index{% endblock %}
 {% block nav_item %}<a href="{% url about %}" class="learn">Learn about Gridpak</a>{% endblock %}
 {% block content %}
@@ -131,7 +132,9 @@
 
   
     {% block javascript %}
+    {% compress js %}
     <script src="{{ STATIC_URL }}js/underscore-min.js"></script>
     <script src="{{ STATIC_URL }}js/backbone.js"></script>
     <script src="{{ STATIC_URL }}js/gridpak.js"></script>
+    {% endcompress %}
     {% endblock %}
