@@ -1,4 +1,3 @@
-{% load compress %}
 <!DOCTYPE html>
 <html lang="en" class="js-disabled">
 
@@ -20,9 +19,7 @@
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         
         <!-- CSS -->
-        {% compress css %}
-            <link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/screen.css" />
-        {% endcompress %}
+        <link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/screen.css" />
         
         <!-- ICONS -->
         <link rel="icon" href="{{ STATIC_URL }}images/site/icons/favicon.ico" />
@@ -89,7 +86,7 @@
     <script>
     $(document).ready(function() {
         var settings = {
-            debug: false,
+            debug: true,
             STATIC_URL: '{{ STATIC_URL }}'
         };
         EDJ.on_ready(settings);
