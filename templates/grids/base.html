@@ -20,7 +20,10 @@
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         
         <!-- CSS -->
+        {% compress css %}
+        <link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/reset.css" />
         <link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/screen.css" />
+        {% endcompress %}
         
         <!-- ICONS -->
         <link rel="icon" href="{{ STATIC_URL }}images/site/icons/favicon.ico" />

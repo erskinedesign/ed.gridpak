@@ -149,6 +149,10 @@ INSTALLED_APPS = (
 #     }
 # }
 
+COMPRESS_CSS_FILTERS = (
+    'compressor.filters.cssmin.CSSMinFilter',
+)
+
 # For the debug toolbar
 INTERNAL_IPS = (
     '127.0.0.1',
