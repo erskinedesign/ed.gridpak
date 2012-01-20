@@ -5,9 +5,9 @@ from girru.environments import *
 env.project = 'gridpak'
 # You can specify environments here
 # 
-# def production():
-#     env.hosts = [default_production_server]
-#     env.path = '/var/www/erskinelabs.com'
+def production():
+    env.hosts = [default_production_server]
+    env.path = '/var/www/gridpak.com'
 
 def staging():
     env.hosts = [default_staging_server]

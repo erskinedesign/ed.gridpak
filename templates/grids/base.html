@@ -1,3 +1,4 @@
+{% load compress %}
 <!DOCTYPE html>
 <html lang="en" class="js-disabled">
 
@@ -19,7 +20,10 @@
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         
         <!-- CSS -->
+        {% compress css %}
+        <link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/reset.css" />
         <link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/screen.css" />
+        {% endcompress %}
         
         <!-- ICONS -->
         <link rel="icon" href="{{ STATIC_URL }}images/site/icons/favicon.ico" />
@@ -66,9 +70,11 @@
     		{% block content %}{% endblock %}
 
     <!-- JAVASCRIPT -->
+    {% compress js %}
     <script src="{{ STATIC_URL }}js/jquery-1.7.1.js"></script>
     <script src="{{ STATIC_URL }}js/jquery-ui-1.8.16.custom.min.js"></script>
     <script src="{{ STATIC_URL }}js/EDJ.js"></script>
+    {% endcompress %}
     {% block javascript %}{% endblock %}
 
     <!-- SOCIAL -->
@@ -86,7 +92,7 @@
     <script>
     $(document).ready(function() {
         var settings = {
-            debug: true,
+            debug: {{ debug|lower }},
             STATIC_URL: '{{ STATIC_URL }}'
         };
         EDJ.on_ready(settings);
