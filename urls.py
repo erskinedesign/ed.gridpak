@@ -13,7 +13,7 @@ urlpatterns = patterns('',
 
     #(r'^(?P<page>.*)', 'views.static_page'),
     # Example:
-    (r'^', include('gridpak.gridulate.urls')),
+    (r'^', include('gridpak.grids.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
