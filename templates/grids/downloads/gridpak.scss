@@ -21,7 +21,7 @@
      padding:$padding;
      margin-left:$gutter_pc;
  }
- @mixin span-first {
+ @mixin span_first {
      margin-left:0;
  }
  
@@ -45,12 +45,11 @@
         .span_1 {
             @include span(1, $gutter_pc, $gutter_px, $padding, $max_columns);
         }
-        // Only use the first child for % gutters, px based ones don't need it
 
         // Only use the first child for % gutters, px based ones don't need it
         {% if grid.gutter_type == '%' %}
         .span_1:first-child {
-            @include span-first;
+            @include span_first;
         }
         {% endif %}
 
