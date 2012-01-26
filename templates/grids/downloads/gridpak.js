@@ -119,19 +119,33 @@ var gridpak = {
         var markup = '',
             style = '',
             i = 1,
+            gutter_pc = (grid.gutter_type == '%') ? grid.gutter_width : 0,
+            gutter_px = (grid.gutter_type == 'px') ? grid.gutter_width : 0,
+            width = 0;
+
+        if (grid.gutter_type == 'px') {
             width = 100 / grid.col_num;
+        } else {
+            width = (100 - (gutter_pc * (grid.col_num - 1))) / grid.col_num;
+        }
 
         markup = '<div class="gridpak_grid gridpak_grid_' + num + '">';
 
         this.css += '#gridpak .gridpak_grid_' + num + ' { ' +
-            'margin-left:-' + grid.gutter_width + grid.gutter_type + '; ' +
+            'margin-left:-' + gutter_px + 'px; ' +
         '} ' +
         '#gridpak .gridpak_grid_' + num + ' .gridpak_col { ' +
             'width:' + width + '%; ' +
-            'border-left-width:' + grid.gutter_width + grid.gutter_type + '; ' +
+            'margin-left:' + gutter_pc + '%; ' +
+            'border-left-width:' + gutter_px + 'px; ' +
             'padding-left:' + grid.padding_width + grid.padding_type +'; ' +
             'padding-right:' + grid.padding_width + grid.padding_type + '; ' +
         '} ';
+        if (grid.gutter_type == '%') {
+            this.css += '#gridpak .gridpak_grid_' + num + ' .gridpak_col:first-child { ' +
+                'margin-left:0;' +
+            '} ';
+        }
 
         this.css += '@media screen and (min-width: ' + grid.min_width + 'px) ';
         if (grid.upper != false) this.css += 'and (max-width: ' + grid.upper + 'px) ';
