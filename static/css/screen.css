@@ -399,6 +399,10 @@ ul.social li {
 			body.index nav a {
 				float: right;
 			}
+			
+			body.index nav a.learn {
+				float: right;
+			}
 	}
 	
 	/* @group 4.1 SECOND HEADER
@@ -1432,6 +1436,7 @@ footer .please_note p {
 	margin:0 auto;
 	padding:7px 0 32px 0;
 	overflow:hidden;
+
 }
 
 .included_wrapper {
