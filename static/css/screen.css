@@ -106,7 +106,7 @@ a:focus {
 }
 
 p a {
-	background:url(../images/site/icons/gridpak-sprite.png) repeat-x 30px -5346px;
+	background:url(/static/images/site/icons/gridpak-sprite.png) repeat-x 30px -5346px;
 	font-weight: 600;
 	color: #E5E5E5;
 }
@@ -283,7 +283,7 @@ nav {
 
 body.index nav a.learn {
 	color:#999;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -1029px;
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -1029px;
 	padding-left:21px;
 	margin-top:5px;
 	float:left;
@@ -338,11 +338,11 @@ body.about nav a:after{
 	width:34px;
 	height:35px;
 	overflow:hidden;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -webkit-linear-gradient(top, #910403, #890504);
- 	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -moz-linear-gradient(top, #910403, #890504);
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -ms-linear-gradient(top, #910403, #890504);
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -o-linear-gradient(top, #910403, #890504);
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, linear-gradient(top, #910403, #890504);
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -webkit-linear-gradient(top, #910403, #890504);
+ 	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -moz-linear-gradient(top, #910403, #890504);
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -ms-linear-gradient(top, #910403, #890504);
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -o-linear-gradient(top, #910403, #890504);
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, linear-gradient(top, #910403, #890504);
 	-webkit-box-shadow:rgba(255,255,255,0.22) 0 1px 0 inset;
 	-moz-box-shadow:rgba(255,255,255,0.22) 0 1px 0 inset;
 	box-shadow:rgba(255,255,255,0.22) 0 1px 0 inset;
@@ -479,7 +479,7 @@ footer {
 	float:right;
 	padding:11px 0 4px 60px;
 	color:#888;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 2px -3682px;
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 2px -3682px;
 	margin-top:10px;
 	font-size:0.846153846em;
 	width:196px;
@@ -536,7 +536,7 @@ footer {
 #gridpak {
     height:570px;
     clear:both;
-    background:url(../images/site/icons/ruler.png) no-repeat 0 585px;
+    background:url(/static/images/site/icons/ruler.png) no-repeat 0 585px;
     padding:30px 0 90px;
     overflow: visible;
 }
@@ -625,7 +625,7 @@ footer {
 	
 	#grid_options .dragme {
 	    width:22px;
-	    background:#1E1E1E url(../images/site/icons/gridpak-sprite.png);
+	    background:#1E1E1E url(/static/images/site/icons/gridpak-sprite.png);
 		background-position:11px -4102px;
 		padding-left:27px;
 		background-repeat:no-repeat;
@@ -713,12 +713,12 @@ footer {
 		border-left:1px solid #000;
 		border-top:1px solid #000;
 		background-color:#E5E5E5;
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1));
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -webkit-linear-gradient(top, #E5E5E5, #B1B1B1);
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -moz-linear-gradient(top, #E5E5E5, #B1B1B1);
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -ms-linear-gradient(top, #E5E5E5, #B1B1B1);
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -o-linear-gradient(top, #E5E5E5, #B1B1B1);
-	    background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, linear-gradient(top, #E5E5E5, #B1B1B1);
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1));
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -webkit-linear-gradient(top, #E5E5E5, #B1B1B1);
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -moz-linear-gradient(top, #E5E5E5, #B1B1B1);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -ms-linear-gradient(top, #E5E5E5, #B1B1B1);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -o-linear-gradient(top, #E5E5E5, #B1B1B1);
+	    background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, linear-gradient(top, #E5E5E5, #B1B1B1);
 	    -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0 inset;
 		-moz-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0 inset;
 		box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0 inset;
@@ -737,12 +737,12 @@ footer {
 		border-top:1px solid #707070;
 		border-bottom:1px solid #000;
 		background-color:#E5E5E5;
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1));
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -webkit-linear-gradient(top, #E5E5E5, #B1B1B1);
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -moz-linear-gradient(top, #E5E5E5, #B1B1B1);
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -ms-linear-gradient(top, #E5E5E5, #B1B1B1);
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -o-linear-gradient(top, #E5E5E5, #B1B1B1);
-	    background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, linear-gradient(top, #E5E5E5, #B1B1B1);
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1));
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -webkit-linear-gradient(top, #E5E5E5, #B1B1B1);
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -moz-linear-gradient(top, #E5E5E5, #B1B1B1);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -ms-linear-gradient(top, #E5E5E5, #B1B1B1);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -o-linear-gradient(top, #E5E5E5, #B1B1B1);
+	    background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, linear-gradient(top, #E5E5E5, #B1B1B1);
 	    -webkit-box-shadow:0 1px 0 rgba(255,255,255,0.15), rgba(255,255,255,0.7) 1px 0 0 inset;
 		-moz-box-shadow:0 1px 0 rgba(255,255,255,0.15), rgba(255,255,255,0.7) 1px 0 0 inset;
 		box-shadow:0 1px 0 rgba(255,255,255,0.15), rgba(255,255,255,0.7) 1px 0 0 inset;
@@ -754,12 +754,12 @@ footer {
 	
 	.increase:hover,
 	.increase:focus {
-		background:#bbb url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2195px;
+		background:#bbb url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2195px;
 	}
 	
 	.decrease:hover,
 	.decrease:focus {
-		background:#bbb url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -1914px;
+		background:#bbb url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -1914px;
 	}
 	
 	.number_input {
@@ -809,7 +809,7 @@ footer {
 		position:absolute;
         top:0;
         left:19px;
-		background:url(../images/site/icons/gridpak-sprite.png) 0 -3980px;
+		background:url(/static/images/site/icons/gridpak-sprite.png) 0 -3980px;
 		height:15px;
 		width:15px;
 		margin-top:-2px;
@@ -842,12 +842,12 @@ footer {
 		-moz-border-radius:3px;
 	    -webkit-border-radius:3px;
 	    border-radius:3px;
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1)) #E5E5E5;
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -webkit-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -moz-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -ms-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -o-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
-	    background:url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1)) #E5E5E5;
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -webkit-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -moz-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -ms-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -o-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+	    background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
 	    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#E5E5E5', EndColorStr='#B1B1B1');
 	   -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.50) 0 1px 0 inset;
 	   -moz-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.50) 0 1px 0 inset;
@@ -859,7 +859,7 @@ footer {
 	}
 	
 	#save_grid:before {
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -4240px !important;
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -4240px !important;
 		height:36px;
 		width:30px;
 		content:'';
@@ -871,7 +871,7 @@ footer {
 	#save_grid:hover,
 	#save_grid:focus {
 		color:#000000;
-		background:#bbb url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -3830px;
+		background:#bbb url(/static/images/site/icons/gridpak-sprite.png) no-repeat 4px -3830px;
 		-moz-background-clip:padding; 
 		-webkit-background-clip:padding-box; 
 		background-clip:padding-box;
@@ -879,11 +879,11 @@ footer {
 	
 	#save_grid:hover:before,
 	#save_grid:focus:before {
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -4380px !important;
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -4380px !important;
 	}
 	
 	#save_grid:active:before {
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -4520px !important;
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -4520px !important;
 	}
 	
 	#save_grid:active {
@@ -1008,7 +1008,7 @@ footer {
 		border-right:none;
 		height:386px;
 		z-index:-1;
-		background:url(../images/site/icons/pattern.png);
+		background:url(/static/images/site/icons/pattern.png);
 	}
 	/* Arrows */
 	#grid_list .tab:before {
@@ -1021,7 +1021,7 @@ footer {
 		margin:0 -5px 0 -6px;
 		position:absolute;
 		z-index:-1;
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat -51px -5440px, url(../images/site/icons/gridpak-sprite.png) no-repeat 100% -5440px, url(../images/site/icons/grid_tab_line.png) repeat-x 0 50%;
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat -51px -5440px, url(/static/images/site/icons/gridpak-sprite.png) no-repeat 100% -5440px, url(/static/images/site/icons/grid_tab_line.png) repeat-x 0 50%;
 		
 	}
 	
@@ -1032,7 +1032,7 @@ footer {
 	
 	
 	#grid_list .cur .tab:before {
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat -51px -5440px, url(../images/site/icons/gridpak-sprite.png) no-repeat 100% -5440px, url(../images/site/icons/grid_tab_line_active.png) repeat-x 0 50%;
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat -51px -5440px, url(/static/images/site/icons/gridpak-sprite.png) no-repeat 100% -5440px, url(/static/images/site/icons/grid_tab_line_active.png) repeat-x 0 50%;
 	}
 	
 	#grid_list .tab .actions {
@@ -1129,21 +1129,21 @@ footer {
 	     top:0px;
 	     overflow:hidden;
 	     text-indent:-999em;
-	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -4659px;
+	     background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 1px -4659px;
 	 }
 	 
 	#grid_list .tab .actions span.remove:hover,
 	#grid_list .tab .actions span.remove:focus {
-	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -4799px;
+	     background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 1px -4799px;
 	 }
 	 
 	#grid_list .cur .tab .actions span.remove {
-	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -3019px;
+	     background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 1px -3019px;
 	}
 	 
 	#grid_list .cur .tab .actions span.remove:hover,
 	#grid_list .cur .tab .actions span.remove:focus {
-	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -3149px; 
+	     background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 1px -3149px; 
 	}
 
 	/* @end */
@@ -1297,12 +1297,12 @@ footer {
 		width:32px;
 		height:35px;
 		overflow:hidden;
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -webkit-gradient(linear, left top, left bottom, from(#720704), to(#5F0100));
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -webkit-linear-gradient(top, #720704, #5F0100);
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -moz-linear-gradient(top, #720704, #5F0100);
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -ms-linear-gradient(top, #720704, #5F0100);
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -o-linear-gradient(top, #720704, #5F0100);
-	    background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, linear-gradient(top, #720704, #5F0100);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -webkit-gradient(linear, left top, left bottom, from(#720704), to(#5F0100));
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -webkit-linear-gradient(top, #720704, #5F0100);
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -moz-linear-gradient(top, #720704, #5F0100);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -ms-linear-gradient(top, #720704, #5F0100);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -o-linear-gradient(top, #720704, #5F0100);
+	    background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, linear-gradient(top, #720704, #5F0100);
 	    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#720704', EndColorStr='#5F0100'); 
 	    -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.15) 0 1px 0 inset;
 		-moz-box-shadow:0 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.15) 0 1px 0 inset;
@@ -1323,12 +1323,12 @@ footer {
 	
 	#download:hover:after,
 	#download:focus:after {
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -webkit-gradient(linear, left top, left bottom, from(#720704), to(#5F0100));
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -webkit-linear-gradient(top, #720704, #5F0100);
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -moz-linear-gradient(top, #720704, #5F0100);
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -ms-linear-gradient(top, #720704, #5F0100);
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -o-linear-gradient(top, #720704, #5F0100);
-	    background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, linear-gradient(top, #720704, #5F0100);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -webkit-gradient(linear, left top, left bottom, from(#720704), to(#5F0100));
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -webkit-linear-gradient(top, #720704, #5F0100);
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -moz-linear-gradient(top, #720704, #5F0100);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -ms-linear-gradient(top, #720704, #5F0100);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -o-linear-gradient(top, #720704, #5F0100);
+	    background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, linear-gradient(top, #720704, #5F0100);
 	    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#720704', EndColorStr='#5F0100'); 
 	     -moz-background-clip:padding; 
 		 -webkit-background-clip:padding-box; 
@@ -1487,7 +1487,7 @@ header.included_header h2 {
 	height:19px;
 	text-indent:-999em;
 	overflow:hidden;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -2410px;
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -2410px;
 }
 .included_item_wrapper_css p.reveal a:hover,
 .included_item_wrapper_css p.reveal a:focus {
@@ -1510,7 +1510,7 @@ header.included_header h2 {
     -moz-background-clip:padding-box !important;
     -webkit-background-clip:padding-box !important;
     background-clip:padding-box !important;
-    background:url(../images/site/icons/gridpak-sprite.png) no-repeat;
+    background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat;
 }
 
 
@@ -1562,7 +1562,7 @@ header.included_header h2 {
 	width:27%;
 	text-align:center;
 	padding:74px 0 0 0;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 50% 0;
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 50% 0;
 	margin-right:0%;
 	position:relative;
 }
@@ -1584,7 +1584,7 @@ header.included_header h2 {
 	right:-6px;
 	width:12px;
 	height:12px;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -4940px;
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -4940px;
 }
 .included ul.images li.pngs {
 	background-position:56% -700px;
@@ -1627,7 +1627,7 @@ header.included_header h2 {
 }
 .included dd.expands p.expand a {
 	display:block;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -2409px;
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -2409px;
 	width:22px;
 	height:22px;
 	text-indent:-999em;
@@ -1697,12 +1697,12 @@ header.included_header h2 {
 	margin:-10px 0 0 16px;
 	width:39px;
 	height:41px;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -webkit-gradient(linear, left top, left bottom, from(#720704), to(#5F0100));
- 	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -webkit-linear-gradient(top, #720704, #5F0100);
- 	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -moz-linear-gradient(top, #720704, #5F0100);
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -ms-linear-gradient(top, #720704, #5F0100);
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -o-linear-gradient(top, #720704, #5F0100);
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, linear-gradient(top, #720704, #5F0100);
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -webkit-gradient(linear, left top, left bottom, from(#720704), to(#5F0100));
+ 	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -webkit-linear-gradient(top, #720704, #5F0100);
+ 	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -moz-linear-gradient(top, #720704, #5F0100);
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -ms-linear-gradient(top, #720704, #5F0100);
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -o-linear-gradient(top, #720704, #5F0100);
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, linear-gradient(top, #720704, #5F0100);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#720704', EndColorStr='#5F0100'); 
 	-webkit-box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 0 1px 0 inset;
 	-moz-box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 0 1px 0 inset;
@@ -1764,7 +1764,7 @@ header.included_header h2 {
 
 .sorry_message p {
 	padding-left: 25px;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -5550px;
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -5550px;
 	font-weight: 600;
 	color: #888;
 	font-size: .846153846em;
@@ -1832,7 +1832,7 @@ header.included_header h2 {
 		
 		.included_item_wrapper_css p.reveal a {
 			margin-top: -13px;
-			background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -2410px;
+			background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -2410px;
 		}
 		
 		.description .item {
@@ -1907,7 +1907,7 @@ header.included_header h2 {
 		}
 		
 		.index header:after{
-		    background:url("../images/site/mobile-no-no.png") no-repeat center center;
+		    background:url("/static/images/site/mobile-no-no.png") no-repeat center center;
 		    content:" ";
 		    display:block;
 		    height:150px;
