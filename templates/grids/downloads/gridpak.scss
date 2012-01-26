@@ -1,9 +1,29 @@
 {% load common %}/**
- * Gridpak Beta LESS
+ * Gridpak Beta SCSS 
  *
  * Generator - http://gridpak.com/
  * Created by @erskinedesign
  */
+
+/* --- Default Gridpak column styles -- No need to change --- */
+
+ @mixin span($num, $gutter_pc, $gutter_px, $padding, $max_columns) {
+     width:(100% -($gutter_pc * ($max_columns - 1))) / $max_columns * $num;
+     border:0px solid rgba(0,0,0,0);
+     float:left;
+     -webkit-box-sizing:border-box;
+ 	 -moz-box-sizing:border-box;
+ 	 box-sizing:border-box;
+     -moz-background-clip:padding-box !important;
+     -webkit-background-clip:padding-box !important;
+ 	 background-clip:padding-box !important;
+ 	 border-left-width:$gutter_px;
+     padding:$padding;
+     margin-left:$gutter_pc;
+ }
+ @mixin span-first {
+     margin-left:0;
+ }
  
 {% for grid in grids %}
 
@@ -17,52 +37,22 @@
         {% endif %}
         /* --- Gridpak variables ---*/ 
         $max_columns: {{ grid.col_num }};
-        $column_padding: 0 {{ grid.padding_width }}{{ grid.padding_type }};
+        $padding: 0 {{ grid.padding_width }}{{ grid.padding_type }};
         $gutter_px: {% if grid.gutter_type == 'px' %}{{ grid.gutter_width }}px{% else %}0{% endif %};
         $gutter_pc: {% if grid.gutter_type == '%' %}{{ grid.gutter_width }}%{% else %}0{% endif %};
-	    @mixin span($num:1) {
-            @include col;
-        }
         
         // Example span:
         .span_1 {
-            @include span(1);
+            @include span(1, $gutter_pc, $gutter_px, $padding, $max_columns);
         }
+        // Only use the first child for % gutters, px based ones don't need it
+
         // Only use the first child for % gutters, px based ones don't need it
         {% if grid.gutter_type == '%' %}
         .span_1:first-child {
-            @include first-child;
+            @include span-first;
         }
         {% endif %}
 
 	} /* end media query */
 {% endfor %}
-
-
-
-/* --- Default Gridpak column styles -- No need to change --- */
-
- $max_columns: 0;
- $column_padding: 0;
- $gutter_px: 0;
- $gutter_pc: 0;
- $num: 0; 
-
- @mixin col {
-     width:(100% -($gutter_pc * ($max_columns - 1))) / $max_columns * $num;
-     border:0px solid rgba(0,0,0,0);
-     float:left;
-     -webkit-box-sizing:border-box;
- 	 -moz-box-sizing:border-box;
- 	 box-sizing:border-box;
-     -moz-background-clip:padding-box !important;
-     -webkit-background-clip:padding-box !important;
- 	 background-clip:padding-box !important;
- 	 border-left-width:$gutter;
-     padding:$column_padding;
-     margin-left:$gutter_pc;
- }
- @mixin span-first {
-     margin-left:0;
-     border-left:0;
- }
