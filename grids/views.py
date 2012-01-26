@@ -19,6 +19,11 @@ def index(request):
         'debug': settings.DEBUG,
     }, context_instance=RequestContext(request))
 
+def mobile(request):
+    return render_to_response('grids/mobile.html', {
+        'cur_page': 'mobile',
+    }, context_instance=RequestContext(request))
+
 def about(request):
     return render_to_response('grids/about.html', {
         'cur_page': 'about',

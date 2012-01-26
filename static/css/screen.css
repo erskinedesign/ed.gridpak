@@ -38,6 +38,8 @@
     
 */
 
+@import url(reset.css);
+
 
 
 /* @group 1. BODY 
@@ -189,7 +191,7 @@ code .syntax {
 
 .site_header {
 	background:#FFF;
-	padding:24px 30px 56px 30px;
+	padding:15px 30px 35px 30px;
 	-webkit-box-shadow:0 3px 20px rgba(0,0,0,0.5); 
     -moz-box-shadow:0 3px 20px rgba(0,0,0,0.5);
     box-shadow:0 3px 20px rgba(0,0,0,0.5); 
@@ -199,7 +201,28 @@ code .syntax {
     -webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
-	height:90px;
+	height:70px;
+}
+
+.about.mobile .site_header {
+	background:#FFF;
+	padding:15px 30px 35px 30px;
+    box-shadow:none;
+    margin-top: 0px;
+    width:100%;
+    z-index:300;
+    -webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	height:70px;
+	position:relative;
+}
+
+.about.mobile #branding {
+	float:none;
+	margin: 0 auto;
+	width: 101px;
+	position: relative;
 }
 
 .header_wrapper {
@@ -254,7 +277,7 @@ code .syntax {
 
 nav {
 	float:right;
-	margin-top:7px;
+	margin-top:5px;
 	min-width:180px;
 }
 
@@ -356,10 +379,10 @@ ul.social li {
 }
 
 .like {
-    width:80px;
+    width:90px;
 }
 .share {
-    width:55px;
+    width:82px;
 }
 
 
@@ -376,13 +399,29 @@ ul.social li {
 			body.index nav a {
 				float: right;
 			}
+			
+			body.index nav a.learn {
+				float: right;
+			}
 	}
 	
 	/* @group 4.1 SECOND HEADER
 ------------------------------------- */
 	
 	#header_sec { 
-		padding:120px 0 0 0;
+		padding:97px 0 0 0;
+		text-align:center;
+		max-width:1040px;
+		margin:0 auto;
+		text-shadow:0 -1px 0 rgba(0, 0, 0, 0.3);
+	}
+	
+	.about.mobile #header_sec {
+		padding:30px 0 0 0;
+	}
+	
+	.about #header_sec { 
+		padding-bottom:14px;
 		text-align:center;
 		max-width:1040px;
 		margin:0 auto;
@@ -400,6 +439,8 @@ ul.social li {
 	#header_sec p {
 		font-size:1.153846154em;
 	}
+	
+	
 	
 	
 /* @end */
@@ -1386,33 +1427,16 @@ footer .please_note p {
 }
 
 .video_container {
-	position:relative;
-	padding-bottom:56.25%;
-	padding-top:0px;
-	height:0;
-	overflow:hidden;
-	margin:32px 0;
-	max-width:100%;
-	height:auto;
-	
+	margin: 30px 0;
 }
 
-.video_container iframe,  
-.video_container object,  
-.video_container embed {
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-    min-height:505px;
-}
 
 .included {
 	max-width:800px;
 	margin:0 auto;
 	padding:7px 0 32px 0;
 	overflow:hidden;
+
 }
 
 .included_wrapper {
@@ -1420,6 +1444,7 @@ footer .please_note p {
 	margin:0 -40px;
 	padding:0 40px;
 	width: 100%;
+	
 }
 
 header.included_header {
@@ -1718,6 +1743,40 @@ header.included_header h2 {
 	margin-top: -1px;
 }
 
+.about.mobile footer .call_to {
+	float:left;
+	margin:0;
+	position: relative;
+	margin-left: 10px;
+}
+
+.sorry_message {
+	background: #e5e5e5;
+	width: 100%;
+	color: #656565;	
+	line-height: 1.2em;
+	padding: 15px 30px 13px 30px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	border-bottom: 1px solid #ccc;
+}
+
+.sorry_message p {
+	padding-left: 25px;
+	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -5550px;
+	font-weight: 600;
+	color: #888;
+	font-size: .846153846em;
+	margin: 0 auto;
+	float: none;
+	max-width: 640px;
+}
+
+.sorry_message p b {
+	color: #666;
+}
+
 @media screen and (min-width:0px) and (max-width:745px) { 
 		
 
@@ -1830,7 +1889,7 @@ header.included_header h2 {
 			margin-bottom: 0px;
 		}
 		
-		.about nav a,
+		/*.about nav a,
 		header p,
 		nav ul,
 		#gridpak,
@@ -1862,7 +1921,7 @@ header.included_header h2 {
 	        font-size:10px;
 	        margin-top:3px;
 	        text-align:right;
-	    }
+	    }*/
 }
 
 
