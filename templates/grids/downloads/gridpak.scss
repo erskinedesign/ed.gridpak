@@ -5,20 +5,36 @@
  * Created by @erskinedesign
  */
  
-body {
-    width:100%;
-    margin:0 auto;
-}
-
 {% for grid in grids %}
 
 	/* ------{{ forloop.counter }}. {{ grid.col_num }} Column Grid {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}Infinity{% endif %} ------ */
 	
 	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {
+        {% if grid.gutter_type == 'px' %}
+        .row {
+            margin-left:-{{ grid.gutter_width }}{{ grid.gutter_type }};
+        }
+        {% endif %}
         /* --- Gridpak variables ---*/ 
-        $max_columns: {{ grid.col_num }}; $column_padding: 0 {{ grid.padding_width }}{{ grid.padding_type }}; $gutter_px: {% if grid.gutter_type == 'px' %}{{ grid.gutter_width }}px{% else %}0{% endif %}; $gutter_pc: {% if grid.gutter_type == '%' %}{{ grid.gutter_width }}%{% else %}0{% endif %};
-	    @mixin span($num:1) {@include col;}
-	    
+        $max_columns: {{ grid.col_num }};
+        $column_padding: 0 {{ grid.padding_width }}{{ grid.padding_type }};
+        $gutter_px: {% if grid.gutter_type == 'px' %}{{ grid.gutter_width }}px{% else %}0{% endif %};
+        $gutter_pc: {% if grid.gutter_type == '%' %}{{ grid.gutter_width }}%{% else %}0{% endif %};
+	    @mixin span($num:1) {
+            @include col;
+        }
+        
+        // Example span:
+        .span_1 {
+            @include span(1);
+        }
+        // Only use the first child for % gutters, px based ones don't need it
+        {% if grid.gutter_type == '%' %}
+        .span_1:first-child {
+            @include first-child;
+        }
+        {% endif %}
+
 	} /* end media query */
 {% endfor %}
 
@@ -26,10 +42,14 @@ body {
 
 /* --- Default Gridpak column styles -- No need to change --- */
 
- $max_columns: 0; $column_padding: 0; $gutter_px: 0; $gutter_pc: 0; $num: 0; 
+ $max_columns: 0;
+ $column_padding: 0;
+ $gutter_px: 0;
+ $gutter_pc: 0;
+ $num: 0; 
 
  @mixin col {
-     width:(100% -($gutter_pc * $max_columns)) / $max_columns * $num;
+     width:(100% -($gutter_pc * ($max_columns - 1))) / $max_columns * $num;
      border:0px solid rgba(0,0,0,0);
      float:left;
      -webkit-box-sizing:border-box;
@@ -42,7 +62,7 @@ body {
      padding:$column_padding;
      margin-left:$gutter_pc;
  }
- @mixin span_first {
+ @mixin span-first {
      margin-left:0;
      border-left:0;
  }
