@@ -1,5 +1,7 @@
 # Gridpak
 
+Version: 1.1
+
 ## The easy way to produce customisable Responsive layouts
 
 The project is live at Gridpak.com
