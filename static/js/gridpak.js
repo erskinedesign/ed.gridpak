@@ -89,7 +89,7 @@ $(function() {
                 (attrs.upper && attrs.lower) &&
                 (attrs.upper - attrs.lower) < settings.min_grid_width
             ) {
-                return 'Grid must be a minium width of ' + settings.min_grid_width + 'px';
+                return 'Grid must be a minimum width of ' + settings.min_grid_width + 'px';
             }
 
         },
