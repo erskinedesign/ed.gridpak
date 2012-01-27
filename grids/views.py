@@ -12,7 +12,7 @@ import simplejson as json
 import re
 from cStringIO import StringIO
 from zipfile import ZipFile
-from minidetector import detect_mobile
+from gridpak.minidetector import detect_mobile
 
 @detect_mobile
 def index(request):
