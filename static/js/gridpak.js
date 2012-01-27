@@ -362,7 +362,6 @@ $(function() {
             'click #save_grid': 'createGrid',
             'click #grid_options input[type="text"]': 'updateOptions',
             'keyup #grid_options input[type="text"]': 'updateOptions',
-            'click #grid_options .switcher span': 'switchToggleClick',
             'change #grid_options select, #grid_options input[type="radio"]': 'updateOptions',
             'change #grid_options .switcher_container input[type="radio"]': 'switchToggle',
             'click #grid_options a.number': 'spinnerClick',
@@ -419,7 +418,6 @@ $(function() {
             var $target = $(e.target);
 
             $target.siblings('label').toggleClass('selected');
-            $target.siblings('.switcher').toggleClass('left');
         },
 
         /**

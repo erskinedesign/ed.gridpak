@@ -762,6 +762,65 @@ footer {
 		background:#bbb url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -1914px;
 	}
 	
+	/* Switchers */
+	.switcher_container {
+		display:block;
+		height:auto;
+		width:auto;
+		float:left;
+		margin-left:0.5em;
+		border:1px solid #000;
+		overflow:hidden;
+		-webkit-border-radius:3px;
+		-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.1);
+		-moz-background-clip:padding; 
+		-webkit-background-clip:padding-box; 
+		background-clip:padding-box;
+		cursor:pointer;
+	}
+	.switcher_container input {
+		display:none;
+	}
+	#grid_options .switcher_container label {
+		display:block;
+		float:left;
+		color:rgba(255,255,255,0.36);
+		clear:none;
+		padding:0.49em 0.8em;
+		margin:0;
+		background:-webkit-linear-gradient(top, rgba(64,64,64,1.0), rgba(18,18,18,1.0));
+		background:-moz-linear-gradient(top, rgba(64,64,64,1.0), rgba(18,18,18,1.0));
+		background:-o-linear-gradient(top, rgba(64,64,64,1.0), rgba(18,18,18,1.0));
+		background:-ms-linear-gradient(top, rgba(64,64,64,1.0), rgba(18,18,18,1.0));
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#404040', EndColorStr='#121212');
+		background:linear-gradient(top, rgba(64,64,64,1.0), rgba(18,18,18,1.0));
+		-webkit-box-shadow:1px 1px 0 rgba(255,255,255,0.1) inset;
+	}
+	#grid_options .switcher_container label:hover,
+	#grid_options .switcher_container label:focus {
+		color:rgba(255,255,255,0.9);
+	}
+	#grid_options .switcher_container label:active {
+		background:-webkit-linear-gradient(top, rgba(18,18,18,1.0), rgba(36,36,36,1.0));
+		background:-moz-linear-gradient(top, rgba(18,18,18,1.0), rgba(36,36,36,1.0));
+		background:-o-linear-gradient(top, rgba(18,18,18,1.0), rgba(36,36,36,1.0));
+		background:-ms-linear-gradient(top, rgba(18,18,18,1.0), rgba(36,36,36,1.0));
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#232323', EndColorStr='#1C1C1C');
+	}
+	#grid_options .switcher_container label.selected {
+		color:rgba(255,255,255,1.0);
+		font-weight:bold;
+		background:-webkit-linear-gradient(top, rgba(102,102,102,1.0), rgba(64,64,64,1.0));
+		background:-moz-linear-gradient(top, rgba(102,102,102,1.0), rgba(64,64,64,1.0));
+		background:-o-linear-gradient(top, rgba(102,102,102,1.0), rgba(64,64,64,1.0));
+		background:-ms-linear-gradient(top, rgba(102,102,102,1.0), rgba(64,64,64,1.0));
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#666666', EndColorStr='#414141');
+		cursor:default;
+	}
+	#grid_options .switcher_container label:nth-child(2) {
+		border-left:1px solid #000;
+	}
+	
 	.number_input {
 		float:left;
 		height:30px;
@@ -772,58 +831,7 @@ footer {
 	    -moz-box-shadow:none;
 	    box-shadow:none;	
 	}
-	
-	.switcher_container {
-		float:left;
-		width:67px;
-		font-size:0.923076923em;/*12/13*/
-		color:#999999;
-		margin:6px 0 -3px 7px;
-	}
-	
-	.switcher {
-        position:relative;
-		float:left;
-		background:#191919;
-		height:10px;
-		width:33px;
-		border-radius:5px;
-		-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.15);
-		-moz-box-shadow:0 1px 0 rgba(255,255,255,0.15);
-		box-shadow:0 1px 0 rgba(255,255,255,0.15);
-		margin:3px 6px 0 4px;
-	}
-	
-	.switcher_container label {
-	 	float:left;
-	 	clear:none !important;
-        cursor:pointer;
-	}
 
-    .switcher_container input {
-        display:none;
-    }
-	
-	.switcher span {
-        cursor:pointer;
-		position:absolute;
-        top:0;
-        left:19px;
-		background:url(../images/site/icons/gridpak-sprite.png) 0 -3980px;
-		height:15px;
-		width:15px;
-		margin-top:-2px;
-        -webkit-transition:all 0.04s;
-	}
-
-    .switcher.left span {
-        left:0;
-    }
-	
-	.switcher_container .selected {
-	 	color:#FFF;
-	}
-	
 	.number_input {
 		float:left;
 	}
