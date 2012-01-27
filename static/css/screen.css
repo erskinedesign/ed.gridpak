@@ -795,6 +795,7 @@ footer {
 		filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#404040', EndColorStr='#121212');
 		background:linear-gradient(top, rgba(64,64,64,1.0), rgba(18,18,18,1.0));
 		-webkit-box-shadow:1px 1px 0 rgba(255,255,255,0.1) inset;
+		font-family:"Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
 	}
 	#grid_options .switcher_container label:hover,
 	#grid_options .switcher_container label:focus {
@@ -809,7 +810,6 @@ footer {
 	}
 	#grid_options .switcher_container label.selected {
 		color:rgba(255,255,255,1.0);
-		font-weight:bold;
 		background:-webkit-linear-gradient(top, rgba(102,102,102,1.0), rgba(64,64,64,1.0));
 		background:-moz-linear-gradient(top, rgba(102,102,102,1.0), rgba(64,64,64,1.0));
 		background:-o-linear-gradient(top, rgba(102,102,102,1.0), rgba(64,64,64,1.0));
@@ -1053,18 +1053,17 @@ footer {
 		-moz-border-radius:3px;
 	    -webkit-border-radius:3px;
 	    border-radius:3px; 
- 		background:-webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1)) #E5E5E5;
- 		background:-webkit-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
- 		background:-moz-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
-		background:-ms-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
-		background:-o-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
-	    background:linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
-	    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#E5E5E5', EndColorStr='#B1B1B1');
-	    -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0 inset;
-		-moz-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0 inset;
-		box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0 inset;
+		background:-webkit-linear-gradient(top, rgba(102,102,102,1.0), rgba(64,64,64,1.0));
+		background:-moz-linear-gradient(top, rgba(102,102,102,1.0), rgba(64,64,64,1.0));
+		background:-o-linear-gradient(top, rgba(102,102,102,1.0), rgba(64,64,64,1.0));
+		background:-ms-linear-gradient(top, rgba(102,102,102,1.0), rgba(64,64,64,1.0));
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#666666', EndColorStr='#414141');
+	    -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.2) 1px 1px 0 inset;
+		-moz-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.2) 1px 1px 0 inset;
+		box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.2) 1px 1px 0 inset;
 		font-family:Helvetica, "Helvetica Neue", Arial, sans-serif;
-		text-shadow:1px 1px 0 rgba(255,255,255,0.5);
+		text-shadow:-1px -1px 0 rgba(0,0,0,0.1);
+		color:rgba(255,255,255,0.36);
 		cursor:pointer;
 		line-height:1em;
 		-moz-background-clip:padding; 
@@ -1077,30 +1076,31 @@ footer {
 	
 	#grid_list .tab .actions:hover,
 	#grid_list .tab .actions:focus {
-		color:#000;
-		background-color:#BBB;
-		background-image:none;
+		color:rgba(255,255,255,1);
 	}
 	
-	#grid_list .tab .actions:hover:active,
-	#grid_list .tab .actions:focus:active {
-		-webkit-box-shadow:none;
-	    -moz-box-shadow:none;
-	    box-shadow:none;	
+	#grid_list .tab .actions:active {
+		color:rgba(255,255,255,0.5);
+		background:-webkit-linear-gradient(top, rgba(18,18,18,1.0), rgba(36,36,36,1.0));
+		background:-moz-linear-gradient(top, rgba(18,18,18,1.0), rgba(36,36,36,1.0));
+		background:-o-linear-gradient(top, rgba(18,18,18,1.0), rgba(36,36,36,1.0));
+		background:-ms-linear-gradient(top, rgba(18,18,18,1.0), rgba(36,36,36,1.0));
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#232323', EndColorStr='#1C1C1C');
 	}
 	
 	#grid_list .cur .tab .actions {
- 		background-image:-webkit-gradient(linear, left top, left bottom, from(#313131), to(#1F1F1F));
- 		background-image:-webkit-linear-gradient(top, #313131, #1F1F1F);
- 		background-image:-moz-linear-gradient(top, #313131, #1F1F1F);
-		background-image:-ms-linear-gradient(top, #313131, #1F1F1F);
-		background-image:-o-linear-gradient(top, #313131, #1F1F1F);
-	    background-image:linear-gradient(top, #313131, #1F1F1F);
-	    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#313131', EndColorStr='#1F1F1F');
+	 	background:-webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1)) #E5E5E5;
+ 		background:-webkit-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+ 		background:-moz-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+		background:-ms-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+		background:-o-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+	    background:linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+	    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#E5E5E5', EndColorStr='#B1B1B1');
+		color:rgba(0,0,0,0.6);
 	    -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.03) 1px 1px 0 inset;
 		-moz-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.03) 1px 1px 0 inset;
 		box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.03) 1px 1px 0 inset; 
-        text-shadow:-1px -1px 0 rgba(0,0,0,1);
+        text-shadow:1px 1px 0 rgba(255,255,255,.6);
         -moz-background-clip:padding; 
 		-webkit-background-clip:padding-box; 
 		background-clip:padding-box;
@@ -1108,12 +1108,11 @@ footer {
 	
 	#grid_list .cur .tab .actions:hover,
 	#grid_list .cur .tab .actions:focus {
-	    background-color:#272727;
-	    background-image:none;
+		
 	}
 	
 	#grid_list .cur .tab .actions span {
-	    color:#FFF;
+		
 	}
 	#grid_list .tab .actions li {
 	    display:inline;
@@ -1125,7 +1124,6 @@ footer {
 	}
 	
 	#grid_list .tab .actions span {
-	    color:#333;
 	    text-decoration:none;
 	    float:left;
 	    line-height:1em;	    
@@ -1138,7 +1136,7 @@ footer {
 	     top:0px;
 	     overflow:hidden;
 	     text-indent:-999em;
-	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -4659px;
+	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -3019px;
 	 }
 	 
 	#grid_list .tab .actions span.remove:hover,
@@ -1147,7 +1145,8 @@ footer {
 	 }
 	 
 	#grid_list .cur .tab .actions span.remove {
-	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -3019px;
+		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -4659px;
+	     
 	}
 	 
 	#grid_list .cur .tab .actions span.remove:hover,
