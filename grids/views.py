@@ -3,6 +3,7 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from django.http import HttpRequest
+from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from django.template.loader import render_to_string
 from django.conf import settings
@@ -18,7 +19,7 @@ from gridpak.minidetector import detect_mobile
 def index(request):
     # Show them the mobile template if they're on mobile
     if request.mobile:
-        return mobile(request)
+        return  HttpResponseRedirect(reverse('mobile'))
     else:
         return render_to_response('grids/index.html', {
             'cur_page': 'index',
