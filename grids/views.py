@@ -12,16 +12,23 @@ import simplejson as json
 import re
 from cStringIO import StringIO
 from zipfile import ZipFile
+from minidetector import detect_mobile
 
+@detect_mobile
 def index(request):
-    return render_to_response('grids/index.html', {
-        'cur_page': 'index',
-        'debug': settings.DEBUG,
-    }, context_instance=RequestContext(request))
+    # Show them the mobile template if they're on mobile
+    if request.mobile:
+        return mobile(request)
+    else:
+        return render_to_response('grids/index.html', {
+            'cur_page': 'index',
+            'debug': settings.DEBUG,
+        }, context_instance=RequestContext(request))
 
 def mobile(request):
     return render_to_response('grids/mobile.html', {
         'cur_page': 'mobile',
+        'debug': settings.DEBUG,
     }, context_instance=RequestContext(request))
 
 def about(request):
