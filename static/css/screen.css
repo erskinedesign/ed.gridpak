@@ -796,6 +796,8 @@ footer {
 		background:linear-gradient(top, rgba(64,64,64,1.0), rgba(18,18,18,1.0));
 		-webkit-box-shadow:1px 1px 0 rgba(255,255,255,0.1) inset;
 		font-family:"Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+		cursor:pointer;
+		text-shadow:-1px -1px 0 rgba(0,0,0,0.5);
 	}
 	#grid_options .switcher_container label:hover,
 	#grid_options .switcher_container label:focus {
