@@ -1023,13 +1023,14 @@ footer {
 		content:" ";
 		display:block;
 		width:100%;
-		padding:0 6px;
-		height:24px;
+		height:20px;
 		bottom:-47px;
-		margin:0 -5px 0 -6px;
+		margin:0 -1px;
 		position:absolute;
 		z-index:-1;
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat -51px -5440px, url(../images/site/icons/gridpak-sprite.png) no-repeat 100% -5440px, url(../images/site/icons/grid_tab_line.png) repeat-x 0 50%;
+		border-left:1px solid #C2C2C2;
+		border-right:1px solid #C2C2C2;
+		background:url(../images/site/icons/grid_tab_line.png) repeat-x 0 50%;
 		
 	}
 	
@@ -1040,7 +1041,7 @@ footer {
 	
 	
 	#grid_list .cur .tab:before {
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat -51px -5440px, url(../images/site/icons/gridpak-sprite.png) no-repeat 100% -5440px, url(../images/site/icons/grid_tab_line_active.png) repeat-x 0 50%;
+		background:url(../images/site/icons/grid_tab_line_active.png) repeat-x 0 50%;
 	}
 	
 	#grid_list .tab .actions {
