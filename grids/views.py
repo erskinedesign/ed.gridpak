@@ -3,6 +3,7 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from django.http import HttpRequest
+from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from django.template.loader import render_to_string
 from django.conf import settings
@@ -12,16 +13,23 @@ import simplejson as json
 import re
 from cStringIO import StringIO
 from zipfile import ZipFile
+from gridpak.minidetector import detect_mobile
 
+@detect_mobile
 def index(request):
-    return render_to_response('grids/index.html', {
-        'cur_page': 'index',
-        'debug': settings.DEBUG,
-    }, context_instance=RequestContext(request))
+    # Show them the mobile template if they're on mobile
+    if request.mobile:
+        return  HttpResponseRedirect(reverse('mobile'))
+    else:
+        return render_to_response('grids/index.html', {
+            'cur_page': 'index',
+            'debug': settings.DEBUG,
+        }, context_instance=RequestContext(request))
 
 def mobile(request):
     return render_to_response('grids/mobile.html', {
         'cur_page': 'mobile',
+        'debug': settings.DEBUG,
     }, context_instance=RequestContext(request))
 
 def about(request):

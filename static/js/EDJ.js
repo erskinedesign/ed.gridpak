@@ -1,7 +1,8 @@
 EDJ.run_list = [
     'navigation',
     'glow_btn',
-    'dropdown'
+    'dropdown',
+    'fitvids'
 ];
 
 
@@ -146,3 +147,21 @@ EDJ.dropdown = {
         });
     }
 }
+
+/**
+ * Fit vids
+ *
+ * Uses jQuery plugin fitvids
+ */
+EDJ.fitvids = {
+    $vids: {},
+
+    run: function() {
+        this.$vids = $('.video_container');
+        return this.$vids.length > 0;
+    },
+
+    init: function() {
+        this.$vids.fitVids(); 
+    }
+};

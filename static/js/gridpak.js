@@ -1,5 +1,5 @@
 /*!
- * Gridpak v0.1b
+ * Gridpak v0.1.1b
  * http://gridpak.com/
  *
  * Copyright 2011, Erskine Design
@@ -89,7 +89,7 @@ $(function() {
                 (attrs.upper && attrs.lower) &&
                 (attrs.upper - attrs.lower) < settings.min_grid_width
             ) {
-                return 'Grid must be a minium width of ' + settings.min_grid_width + 'px';
+                return 'Grid must be a minimum width of ' + settings.min_grid_width + 'px';
             }
 
         },
@@ -229,7 +229,7 @@ $(function() {
     // Grids.add(new Grid({ min_width: 0, col_num: 4, padding_width: 5, padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
     // Grids.add(new Grid({ min_width: 500, col_num: 8, padding_width: 1, padding_type: '%', gutter_width: 2,  gutter_type: '%', baseline_height: 22 }));
     // Grids.add(new Grid({ min_width: 960, col_num: 16, padding_width: 10, padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
-    Grids.add(new Grid({ min_width: 0, col_num: 16, padding_width: 8, padding_type: 'px', gutter_width: 16,  gutter_type: 'px', baseline_height: 22 }));
+    Grids.add(new Grid({ min_width: 0, col_num: 6, padding_width: 1.5, padding_type: '%', gutter_width: 2,  gutter_type: '%', baseline_height: 22 }));
 
     // Set the current grid as the last in the collection
     window.Grids.current = window.Grids.at(Grids.length - 1);
