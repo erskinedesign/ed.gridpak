@@ -2,4 +2,5 @@
 /static_collected
 /wsgi_handler.py
 *.pyc
+/static/css/screen.css
 /local_settings.py
