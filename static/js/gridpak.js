@@ -1,5 +1,5 @@
 /*!
- * Gridpak v0.1b
+ * Gridpak v0.2b
  * http://gridpak.com/
  *
  * Copyright 2011, Erskine Design
@@ -89,7 +89,7 @@ $(function() {
                 (attrs.upper && attrs.lower) &&
                 (attrs.upper - attrs.lower) < settings.min_grid_width
             ) {
-                return 'Grid must be a minium width of ' + settings.min_grid_width + 'px';
+                return 'Grid must be a minimum width of ' + settings.min_grid_width + 'px';
             }
 
         },
@@ -229,7 +229,7 @@ $(function() {
     // Grids.add(new Grid({ min_width: 0, col_num: 4, padding_width: 5, padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
     // Grids.add(new Grid({ min_width: 500, col_num: 8, padding_width: 1, padding_type: '%', gutter_width: 2,  gutter_type: '%', baseline_height: 22 }));
     // Grids.add(new Grid({ min_width: 960, col_num: 16, padding_width: 10, padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
-    Grids.add(new Grid({ min_width: 0, col_num: 16, padding_width: 8, padding_type: 'px', gutter_width: 16,  gutter_type: 'px', baseline_height: 22 }));
+    Grids.add(new Grid({ min_width: 0, col_num: 6, padding_width: 1.5, padding_type: '%', gutter_width: 2,  gutter_type: '%', baseline_height: 22 }));
 
     // Set the current grid as the last in the collection
     window.Grids.current = window.Grids.at(Grids.length - 1);
@@ -362,7 +362,6 @@ $(function() {
             'click #save_grid': 'createGrid',
             'click #grid_options input[type="text"]': 'updateOptions',
             'keyup #grid_options input[type="text"]': 'updateOptions',
-            'click #grid_options .switcher span': 'switchToggleClick',
             'change #grid_options select, #grid_options input[type="radio"]': 'updateOptions',
             'change #grid_options .switcher_container input[type="radio"]': 'switchToggle',
             'click #grid_options a.number': 'spinnerClick',
@@ -416,10 +415,14 @@ $(function() {
          * @return void
          */
         switchToggle: function(e) {
-            var $target = $(e.target);
+            var $target = $(e.target),
+                $labels = $target.siblings('label');
 
-            $target.siblings('label').toggleClass('selected');
-            $target.siblings('.switcher').toggleClass('left');
+            $labels
+                .removeClass('selected')
+                .filter('[for="' + $target.prop('id') + '"]')
+                .addClass('selected');
+
         },
 
         /**
@@ -541,15 +544,14 @@ $(function() {
                 padding_width = parseFloat($('#new_padding_width').val()),
                 padding_type = $('input[name="padding_type"]:checked').val(),
                 gutter_width = parseFloat($('#new_gutter_width').val()),
-                // gutter_type = $('input[name="gutter_type"]:checked').val(),
-                gutter_type = 'px';
+                gutter_type = $('input[name="gutter_type"]:checked').val(),
                 // baseline_height = parseInt($('#new_baseline_height').val()),
                 gutter_remove = (gutter_type == '%') ? gutter_width * (col_num - 1) : 0,
                 col_width = (100 - gutter_remove) / col_num;
             return {
                 col_num: col_num,
                 padding_width: padding_width,
-                // padding_type: padding_type,
+                padding_type: padding_type,
                 gutter_width: gutter_width,
                 gutter_type: gutter_type,
                 // baseline_height: baseline_height,

@@ -26,18 +26,28 @@ class Grid(models.Model):
             self
         """
         # If upper is false, but this is the only grid
-        if self.upper == False and self.min_width == 0:
+        if self.upper == False:
             total_width = 960
-        # If upper is false
-        elif self.upper == False:
-            total_width = self.min_width
         # Otherwise we can use the actual values
         else:
-            total_width = self.upper - self.min_width
+            total_width = self.upper
+
+        # Calculate the gutter width based on it's type
+        if self.gutter_type == '%':
+            gutter_width = (total_width / 100) * self.gutter_width
+        else:
+            gutter_width = self.gutter_width
+
+        # Calculate the padding width based on it's type
+        if self.padding_type == '%':
+            padding_width = (total_width / 100) * self.padding_width
+        else:
+            padding_width = self.padding_width
+
         # Padding occurs twice for each grid (one either side)
-        total_padding = self.padding_width * (self.col_num * 2)
+        total_padding = padding_width * (self.col_num * 2)
         # Gutter is one less than the number of cols
-        total_gutter = self.gutter_width * (self.col_num - 1)
+        total_gutter = gutter_width * (self.col_num - 1)
         col_width = (total_width - total_padding - total_gutter) / self.col_num
         x = 0
         image_height = 1000
@@ -46,7 +56,7 @@ class Grid(models.Model):
         for i in range(self.col_num):
             # Draw the left padding
             left = x
-            right = x + self.padding_width
+            right = x + padding_width
             draw.rectangle((left, 0, right, image_height), fill=(220, 75, 82, 100))
             # Move the pen along and draw the inner
             x = right
@@ -56,10 +66,10 @@ class Grid(models.Model):
             # Move the pen along and draw the right padding
             x = right
             left = x
-            right = x + self.padding_width
+            right = x + padding_width
             draw.rectangle((left, 0, right, image_height), fill=(220, 75, 82, 100))
             # Move the pen along with width of the gutter
-            x = right + self.gutter_width
+            x = right + gutter_width
 
         im_buff = StringIO()
         im.save(im_buff, "PNG");

@@ -38,7 +38,48 @@
     
 */
 
-@import url(reset.css);
+// LESS variables
+@base_size: 13;
+@base_stack: "ff-meta-web-pro", Arial, sans-serif;
+
+// LESS MIXINS
+.sub_font(@size, @base: @base_size, @unit:1em) {
+	font-size:@size/@base_size*@unit;
+}
+.mixin-border_radius(@radius) {
+	-webkit-border-radius:@radius;
+	-moz-border-radius:@radius;
+	border-radius:@radius;
+	-webkit-background-clip:padding-box;
+	-moz-background-clip:padding-box;
+	background-clip:padding-box;
+}
+.mixin-box_shadow(@horizontal, @vertical, @blur, @color, @spread: '', @inset: '') {
+    -webkit-box-shadow:@horizontal @vertical @blur @spread @color @inset;
+    -moz-box-shadow:@horizontal @vertical @blur @spread @color @inset;
+    box-shadow:@horizontal @vertical @blur @spread @color @inset;
+}
+.mixin-bg_gradient(@start_color, @stop_color) {
+    background-color:@start_color;
+	background-image:-webkit-linear-gradient(top, @start_color, @stop_color);
+	background-image:-moz-linear-gradient(top, @start_color, @stop_color);
+	background-image:-ms-linear-gradient(top, @start_color, @stop_color);
+	background-image:-o-linear-gradient(top, @start_color, @stop_color);
+    background-image:linear-gradient(top, @start_color, @stop_color);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='@start_color', EndColorStr='@stop_color');
+}
+.mixin-bg_gradient_low {
+    .mixin-bg_gradient(rgba(64,64,64,1.0), rgba(18,18,18,1.0));
+}
+.mixin-bg_gradient_med {
+    .mixin-bg_gradient(rgba(102,102,102,1.0), rgba(64,64,64,1.0));
+}
+.mixin-bg_gradient_high {
+    .mixin-bg_gradient(rgba(227,227,227,1.0), rgba(179,179,179,1.0));
+}
+.mixin-bg_gradient_active {
+	.mixin-bg_gradient(rgba(18,18,18,1.0), rgba(36,36,36,1.0));
+}
 
 
 
@@ -106,7 +147,7 @@ a:focus {
 }
 
 p a {
-	background:url(../images/site/icons/gridpak-sprite.png) repeat-x 30px -5346px;
+	background:url(/static/images/site/icons/gridpak-sprite.png) repeat-x 30px -5346px;
 	font-weight: 600;
 	color: #E5E5E5;
 }
@@ -191,7 +232,7 @@ code .syntax {
 
 .site_header {
 	background:#FFF;
-	padding:24px 30px 56px 30px;
+	padding:15px 30px 35px 30px;
 	-webkit-box-shadow:0 3px 20px rgba(0,0,0,0.5); 
     -moz-box-shadow:0 3px 20px rgba(0,0,0,0.5);
     box-shadow:0 3px 20px rgba(0,0,0,0.5); 
@@ -201,7 +242,28 @@ code .syntax {
     -webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
-	height:90px;
+	height:70px;
+}
+
+.about.mobile .site_header {
+	background:#FFF;
+	padding:15px 30px 35px 30px;
+    box-shadow:none;
+    margin-top: 0px;
+    width:100%;
+    z-index:300;
+    -webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	height:70px;
+	position:relative;
+}
+
+.about.mobile #branding {
+	float:none;
+	margin: 0 auto;
+	width: 101px;
+	position: relative;
 }
 
 .header_wrapper {
@@ -256,13 +318,13 @@ code .syntax {
 
 nav {
 	float:right;
-	margin-top:7px;
+	margin-top:5px;
 	min-width:180px;
 }
 
 body.index nav a.learn {
 	color:#999;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -1029px;
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -1029px;
 	padding-left:21px;
 	margin-top:5px;
 	float:left;
@@ -317,11 +379,11 @@ body.about nav a:after{
 	width:34px;
 	height:35px;
 	overflow:hidden;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -webkit-linear-gradient(top, #910403, #890504);
- 	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -moz-linear-gradient(top, #910403, #890504);
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -ms-linear-gradient(top, #910403, #890504);
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -o-linear-gradient(top, #910403, #890504);
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, linear-gradient(top, #910403, #890504);
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -webkit-linear-gradient(top, #910403, #890504);
+ 	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -moz-linear-gradient(top, #910403, #890504);
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -ms-linear-gradient(top, #910403, #890504);
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, -o-linear-gradient(top, #910403, #890504);
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, linear-gradient(top, #910403, #890504);
 	-webkit-box-shadow:rgba(255,255,255,0.22) 0 1px 0 inset;
 	-moz-box-shadow:rgba(255,255,255,0.22) 0 1px 0 inset;
 	box-shadow:rgba(255,255,255,0.22) 0 1px 0 inset;
@@ -358,10 +420,10 @@ ul.social li {
 }
 
 .like {
-    width:80px;
+    width:90px;
 }
 .share {
-    width:55px;
+    width:82px;
 }
 
 
@@ -378,13 +440,29 @@ ul.social li {
 			body.index nav a {
 				float: right;
 			}
+			
+			body.index nav a.learn {
+				float: right;
+			}
 	}
 	
 	/* @group 4.1 SECOND HEADER
 ------------------------------------- */
 	
 	#header_sec { 
-		padding:120px 0 0 0;
+		padding:97px 0 0 0;
+		text-align:center;
+		max-width:1040px;
+		margin:0 auto;
+		text-shadow:0 -1px 0 rgba(0, 0, 0, 0.3);
+	}
+	
+	.about.mobile #header_sec {
+		padding:30px 0 0 0;
+	}
+	
+	.about #header_sec { 
+		padding-bottom:14px;
 		text-align:center;
 		max-width:1040px;
 		margin:0 auto;
@@ -402,6 +480,8 @@ ul.social li {
 	#header_sec p {
 		font-size:1.153846154em;
 	}
+	
+	
 	
 	
 /* @end */
@@ -440,7 +520,7 @@ footer {
 	float:right;
 	padding:11px 0 4px 60px;
 	color:#888;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 2px -3682px;
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 2px -3682px;
 	margin-top:10px;
 	font-size:0.846153846em;
 	width:196px;
@@ -497,7 +577,7 @@ footer {
 #gridpak {
     height:570px;
     clear:both;
-    background:url(../images/site/icons/ruler.png) no-repeat 0 585px;
+    background:url(/static/images/site/icons/ruler.png) no-repeat 0 585px;
     padding:30px 0 90px;
     overflow: visible;
 }
@@ -586,7 +666,7 @@ footer {
 	
 	#grid_options .dragme {
 	    width:22px;
-	    background:#1E1E1E url(../images/site/icons/gridpak-sprite.png);
+	    background:#1E1E1E url(/static/images/site/icons/gridpak-sprite.png);
 		background-position:11px -4102px;
 		padding-left:27px;
 		background-repeat:no-repeat;
@@ -674,12 +754,12 @@ footer {
 		border-left:1px solid #000;
 		border-top:1px solid #000;
 		background-color:#E5E5E5;
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1));
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -webkit-linear-gradient(top, #E5E5E5, #B1B1B1);
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -moz-linear-gradient(top, #E5E5E5, #B1B1B1);
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -ms-linear-gradient(top, #E5E5E5, #B1B1B1);
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -o-linear-gradient(top, #E5E5E5, #B1B1B1);
-	    background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, linear-gradient(top, #E5E5E5, #B1B1B1);
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1));
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -webkit-linear-gradient(top, #E5E5E5, #B1B1B1);
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -moz-linear-gradient(top, #E5E5E5, #B1B1B1);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -ms-linear-gradient(top, #E5E5E5, #B1B1B1);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, -o-linear-gradient(top, #E5E5E5, #B1B1B1);
+	    background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, linear-gradient(top, #E5E5E5, #B1B1B1);
 	    -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0 inset;
 		-moz-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0 inset;
 		box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0 inset;
@@ -698,12 +778,12 @@ footer {
 		border-top:1px solid #707070;
 		border-bottom:1px solid #000;
 		background-color:#E5E5E5;
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1));
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -webkit-linear-gradient(top, #E5E5E5, #B1B1B1);
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -moz-linear-gradient(top, #E5E5E5, #B1B1B1);
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -ms-linear-gradient(top, #E5E5E5, #B1B1B1);
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -o-linear-gradient(top, #E5E5E5, #B1B1B1);
-	    background:url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, linear-gradient(top, #E5E5E5, #B1B1B1);
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1));
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -webkit-linear-gradient(top, #E5E5E5, #B1B1B1);
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -moz-linear-gradient(top, #E5E5E5, #B1B1B1);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -ms-linear-gradient(top, #E5E5E5, #B1B1B1);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, -o-linear-gradient(top, #E5E5E5, #B1B1B1);
+	    background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, linear-gradient(top, #E5E5E5, #B1B1B1);
 	    -webkit-box-shadow:0 1px 0 rgba(255,255,255,0.15), rgba(255,255,255,0.7) 1px 0 0 inset;
 		-moz-box-shadow:0 1px 0 rgba(255,255,255,0.15), rgba(255,255,255,0.7) 1px 0 0 inset;
 		box-shadow:0 1px 0 rgba(255,255,255,0.15), rgba(255,255,255,0.7) 1px 0 0 inset;
@@ -715,12 +795,57 @@ footer {
 	
 	.increase:hover,
 	.increase:focus {
-		background:#bbb url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -2195px;
+		background:#bbb url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2195px;
 	}
 	
 	.decrease:hover,
 	.decrease:focus {
-		background:#bbb url(../images/site/icons/gridpak-sprite.png) no-repeat 6px -1914px;
+		background:#bbb url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -1914px;
+	}
+	
+	/* Switchers */
+	.switcher_container {
+		display:block;
+		height:auto;
+		width:auto;
+		float:left;
+		margin-left:0.5em;
+		border:1px solid #000;
+		overflow:hidden;
+		.mixin-border_radius(3px);
+		-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.1);
+		cursor:pointer;
+	}
+	.switcher_container input {
+		display:none;
+	}
+	#grid_options .switcher_container label {
+		display:block;
+		float:left;
+		color:rgba(255,255,255,0.6);
+		clear:none;
+		padding:0.49em 0.8em;
+		margin:0;
+		.mixin-bg_gradient_low;
+		-webkit-box-shadow:1px 1px 0 rgba(255,255,255,0.1) inset;
+		font-family:"Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+		cursor:pointer;
+		text-shadow:-1px -1px 0 rgba(0,0,0,0.5);
+	}
+	#grid_options .switcher_container label:hover,
+	#grid_options .switcher_container label:focus {
+		color:rgba(255,255,255,0.9);
+	}
+	#grid_options .switcher_container label:active {
+		.mixin-bg_gradient_active;
+	}
+	#grid_options .switcher_container label.selected {
+		color:rgba(255,255,255,1.0);
+		.mixin-bg_gradient_med;
+		cursor:default;
+	}
+	#grid_options .switcher_container label:nth-child(2) {
+		border-left:1px solid #000;
 	}
 	
 	.number_input {
@@ -733,58 +858,7 @@ footer {
 	    -moz-box-shadow:none;
 	    box-shadow:none;	
 	}
-	
-	.switcher_container {
-		float:left;
-		width:67px;
-		font-size:0.923076923em;/*12/13*/
-		color:#999999;
-		margin:6px 0 -3px 7px;
-	}
-	
-	.switcher {
-        position:relative;
-		float:left;
-		background:#191919;
-		height:10px;
-		width:33px;
-		border-radius:5px;
-		-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.15);
-		-moz-box-shadow:0 1px 0 rgba(255,255,255,0.15);
-		box-shadow:0 1px 0 rgba(255,255,255,0.15);
-		margin:3px 6px 0 4px;
-	}
-	
-	.switcher_container label {
-	 	float:left;
-	 	clear:none !important;
-        cursor:pointer;
-	}
 
-    .switcher_container input {
-        display:none;
-    }
-	
-	.switcher span {
-        cursor:pointer;
-		position:absolute;
-        top:0;
-        left:19px;
-		background:url(../images/site/icons/gridpak-sprite.png) 0 -3890px;
-		height:15px;
-		width:15px;
-		margin-top:-2px;
-        -webkit-transition:all 0.04s;
-	}
-
-    .switcher.left span {
-        left:0;
-    }
-	
-	.switcher_container .selected {
-	 	color:#FFF;
-	}
-	
 	.number_input {
 		float:left;
 	}
@@ -803,12 +877,12 @@ footer {
 		-moz-border-radius:3px;
 	    -webkit-border-radius:3px;
 	    border-radius:3px;
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1)) #E5E5E5;
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -webkit-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -moz-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -ms-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -o-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
-	    background:url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1)) #E5E5E5;
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -webkit-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -moz-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -ms-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, -o-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+	    background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
 	    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#E5E5E5', EndColorStr='#B1B1B1');
 	   -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.50) 0 1px 0 inset;
 	   -moz-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.50) 0 1px 0 inset;
@@ -820,7 +894,7 @@ footer {
 	}
 	
 	#save_grid:before {
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -4240px !important;
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -4240px !important;
 		height:36px;
 		width:30px;
 		content:'';
@@ -832,7 +906,7 @@ footer {
 	#save_grid:hover,
 	#save_grid:focus {
 		color:#000000;
-		background:#bbb url(../images/site/icons/gridpak-sprite.png) no-repeat 4px -3830px;
+		background:#bbb url(/static/images/site/icons/gridpak-sprite.png) no-repeat 4px -3830px;
 		-moz-background-clip:padding; 
 		-webkit-background-clip:padding-box; 
 		background-clip:padding-box;
@@ -840,11 +914,11 @@ footer {
 	
 	#save_grid:hover:before,
 	#save_grid:focus:before {
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -4380px !important;
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -4380px !important;
 	}
 	
 	#save_grid:active:before {
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -4520px !important;
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -4520px !important;
 	}
 	
 	#save_grid:active {
@@ -969,21 +1043,21 @@ footer {
 		border-right:none;
 		height:386px;
 		z-index:-1;
-		background:url(../images/site/icons/pattern.png);
+		background:url(/static/images/site/icons/pattern.png);
 	}
 	/* Arrows */
 	#grid_list .tab:before {
 		content:" ";
 		display:block;
 		width:100%;
-		padding:0 6px;
-		height:24px;
+		height:20px;
 		bottom:-47px;
-		margin:0 -5px 0 -6px;
+		margin:0 -1px;
 		position:absolute;
 		z-index:-1;
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat -51px -5440px, url(../images/site/icons/gridpak-sprite.png) no-repeat 100% -5440px, url(../images/site/icons/grid_tab_line.png) repeat-x 0 50%;
-		
+		background:url(/static/images/site/icons/grid_tab_line.png) repeat-x 0 50%;
+        border-left:1px solid #C2C2C2;
+		border-right:1px solid #C2C2C2;
 	}
 	
 	#grid_list .tab li:first-child:before{
@@ -993,7 +1067,7 @@ footer {
 	
 	
 	#grid_list .cur .tab:before {
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat -51px -5440px, url(../images/site/icons/gridpak-sprite.png) no-repeat 100% -5440px, url(../images/site/icons/grid_tab_line_active.png) repeat-x 0 50%;
+		background:url(/static/images/site/icons/grid_tab_line_active.png) repeat-x 0 50%;
 	}
 	
 	#grid_list .tab .actions {
@@ -1002,26 +1076,17 @@ footer {
 		top:407px;
 		padding:6px 10px 6px 10px;
 		border:1px solid #1F1F1F;
-		-moz-border-radius:3px;
-	    -webkit-border-radius:3px;
-	    border-radius:3px; 
- 		background:-webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#B1B1B1)) #E5E5E5;
- 		background:-webkit-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
- 		background:-moz-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
-		background:-ms-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
-		background:-o-linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
-	    background:linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
-	    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#E5E5E5', EndColorStr='#B1B1B1');
-	    -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0 inset;
-		-moz-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0 inset;
-		box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0 inset;
+		.mixin-border_radius(3px);
+		.mixin-bg_gradient_low;
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#666666', EndColorStr='#414141');
+	    -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.2) 1px 1px 0 inset;
+		-moz-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.2) 1px 1px 0 inset;
+		box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.2) 1px 1px 0 inset;
 		font-family:Helvetica, "Helvetica Neue", Arial, sans-serif;
-		text-shadow:1px 1px 0 rgba(255,255,255,0.5);
-		cursor:pointer;
+		text-shadow:-1px -1px 0 rgba(0,0,0,0.3);
+		color:rgba(255,255,255,0.6);
+		cursor:pointer; 
 		line-height:1em;
-		-moz-background-clip:padding; 
-		-webkit-background-clip:padding-box; 
-		background-clip:padding-box;
 	}
     #grid_list li:only-child .tab .actions .remove {
         display:none;
@@ -1029,43 +1094,28 @@ footer {
 	
 	#grid_list .tab .actions:hover,
 	#grid_list .tab .actions:focus {
-		color:#000;
-		background-color:#BBB;
-		background-image:none;
+		color:rgba(255,255,255,1);
 	}
 	
-	#grid_list .tab .actions:hover:active,
-	#grid_list .tab .actions:focus:active {
-		-webkit-box-shadow:none;
-	    -moz-box-shadow:none;
-	    box-shadow:none;	
+	#grid_list .tab .actions:active {
+		color:rgba(255,255,255,0.5);
+		.mixin-bg_gradient_active;
 	}
 	
 	#grid_list .cur .tab .actions {
- 		background-image:-webkit-gradient(linear, left top, left bottom, from(#313131), to(#1F1F1F));
- 		background-image:-webkit-linear-gradient(top, #313131, #1F1F1F);
- 		background-image:-moz-linear-gradient(top, #313131, #1F1F1F);
-		background-image:-ms-linear-gradient(top, #313131, #1F1F1F);
-		background-image:-o-linear-gradient(top, #313131, #1F1F1F);
-	    background-image:linear-gradient(top, #313131, #1F1F1F);
-	    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#313131', EndColorStr='#1F1F1F');
-	    -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.03) 1px 1px 0 inset;
-		-moz-box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.03) 1px 1px 0 inset;
-		box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.03) 1px 1px 0 inset; 
-        text-shadow:-1px -1px 0 rgba(0,0,0,1);
-        -moz-background-clip:padding; 
-		-webkit-background-clip:padding-box; 
-		background-clip:padding-box;
+	 	.mixin-bg_gradient_med;
+	 	.mixin-box_shadow(0, 1px, 1px, rgba(0,0,0,0.2));
+		color:rgba(255,255,255,1);
+        text-shadow:-1px -1px 0 rgba(0,0,0,.3);
 	}
 	
 	#grid_list .cur .tab .actions:hover,
 	#grid_list .cur .tab .actions:focus {
-	    background-color:#272727;
-	    background-image:none;
+		
 	}
 	
 	#grid_list .cur .tab .actions span {
-	    color:#FFF;
+		
 	}
 	#grid_list .tab .actions li {
 	    display:inline;
@@ -1077,7 +1127,6 @@ footer {
 	}
 	
 	#grid_list .tab .actions span {
-	    color:#333;
 	    text-decoration:none;
 	    float:left;
 	    line-height:1em;	    
@@ -1090,21 +1139,22 @@ footer {
 	     top:0px;
 	     overflow:hidden;
 	     text-indent:-999em;
-	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -4659px;
+	     opacity:0.8;
+	     background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 1px -3019px;
 	 }
 	 
 	#grid_list .tab .actions span.remove:hover,
 	#grid_list .tab .actions span.remove:focus {
-	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -4799px;
+		opacity:1;
 	 }
 	 
 	#grid_list .cur .tab .actions span.remove {
-	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -3019px;
+
 	}
 	 
 	#grid_list .cur .tab .actions span.remove:hover,
 	#grid_list .cur .tab .actions span.remove:focus {
-	     background:url(../images/site/icons/gridpak-sprite.png) no-repeat 1px -3149px; 
+
 	}
 
 	/* @end */
@@ -1118,9 +1168,7 @@ footer {
 		margin:12px 0 3px 0;
 		padding:8px 10px;
 		background-color:rgba(0,0,0,0.3);
-		-moz-border-radius:5px;
-	    -webkit-border-radius:5px;
-	    border-radius:5px; 
+		.mixin-border_radius(3px);
 	    color:#FFF;
 	}
 	
@@ -1205,27 +1253,15 @@ footer {
 		padding:7px 45px 7px 12px;
 		color:#FFF;
 	    text-shadow:-1px -1px -1px #720000;
-	   -moz-border-radius:3px;
-	   -webkit-border-radius:3px;
-	    border-radius:3px;    
 	    cursor:pointer;
 	 	float:left;
-	 	background-color:#E5E5E5;
- 		background-image:-webkit-gradient(linear, left top, left bottom, from(#BC0D13), to(#720704));
- 		background-image:-webkit-linear-gradient(top, #BC0D13, #720704);
- 		background-image:-moz-linear-gradient(top, #BC0D13, #720704);
-		background-image:-ms-linear-gradient(top, #BC0D13, #720704);
-		background-image:-o-linear-gradient(top, #BC0D13, #720704);
-	    background-image:linear-gradient(top, #BC0D13, #720704);
+	 	.mixin-border_radius(3px);
+	 	.mixin-bg_gradient(#BC0D13, #720704);
 	    -webkit-box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 1px 1px 0 inset;
 		-moz-box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 1px 1px 0 inset;
 		box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 1px 1px 0 inset;
-        filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#BC0D13', EndColorStr='#720704');
 		font-size:1.076923077em;/*14/13*/
 		border:1px solid #000;
-		-moz-background-clip:padding; 
-		-webkit-background-clip:padding-box; 
-		background-clip:padding-box;
 		line-height:21px;
 	}
 	
@@ -1258,12 +1294,12 @@ footer {
 		width:32px;
 		height:35px;
 		overflow:hidden;
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -webkit-gradient(linear, left top, left bottom, from(#720704), to(#5F0100));
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -webkit-linear-gradient(top, #720704, #5F0100);
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -moz-linear-gradient(top, #720704, #5F0100);
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -ms-linear-gradient(top, #720704, #5F0100);
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -o-linear-gradient(top, #720704, #5F0100);
-	    background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, linear-gradient(top, #720704, #5F0100);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -webkit-gradient(linear, left top, left bottom, from(#720704), to(#5F0100));
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -webkit-linear-gradient(top, #720704, #5F0100);
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -moz-linear-gradient(top, #720704, #5F0100);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -ms-linear-gradient(top, #720704, #5F0100);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, -o-linear-gradient(top, #720704, #5F0100);
+	    background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3419px, linear-gradient(top, #720704, #5F0100);
 	    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#720704', EndColorStr='#5F0100'); 
 	    -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.15) 0 1px 0 inset;
 		-moz-box-shadow:0 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.15) 0 1px 0 inset;
@@ -1284,12 +1320,12 @@ footer {
 	
 	#download:hover:after,
 	#download:focus:after {
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -webkit-gradient(linear, left top, left bottom, from(#720704), to(#5F0100));
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -webkit-linear-gradient(top, #720704, #5F0100);
- 		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -moz-linear-gradient(top, #720704, #5F0100);
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -ms-linear-gradient(top, #720704, #5F0100);
-		background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -o-linear-gradient(top, #720704, #5F0100);
-	    background:url(../images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, linear-gradient(top, #720704, #5F0100);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -webkit-gradient(linear, left top, left bottom, from(#720704), to(#5F0100));
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -webkit-linear-gradient(top, #720704, #5F0100);
+ 		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -moz-linear-gradient(top, #720704, #5F0100);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -ms-linear-gradient(top, #720704, #5F0100);
+		background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, -o-linear-gradient(top, #720704, #5F0100);
+	    background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 10px -3279px, linear-gradient(top, #720704, #5F0100);
 	    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#720704', EndColorStr='#5F0100'); 
 	     -moz-background-clip:padding; 
 		 -webkit-background-clip:padding-box; 
@@ -1388,33 +1424,16 @@ footer .please_note p {
 }
 
 .video_container {
-	position:relative;
-	padding-bottom:56.25%;
-	padding-top:0px;
-	height:0;
-	overflow:hidden;
-	margin:32px 0;
-	max-width:100%;
-	height:auto;
-	
+	margin: 30px 0;
 }
 
-.video_container iframe,  
-.video_container object,  
-.video_container embed {
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-    min-height:505px;
-}
 
 .included {
 	max-width:800px;
 	margin:0 auto;
 	padding:7px 0 32px 0;
 	overflow:hidden;
+
 }
 
 .included_wrapper {
@@ -1422,6 +1441,7 @@ footer .please_note p {
 	margin:0 -40px;
 	padding:0 40px;
 	width: 100%;
+	
 }
 
 header.included_header {
@@ -1464,7 +1484,7 @@ header.included_header h2 {
 	height:19px;
 	text-indent:-999em;
 	overflow:hidden;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -2410px;
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -2410px;
 }
 .included_item_wrapper_css p.reveal a:hover,
 .included_item_wrapper_css p.reveal a:focus {
@@ -1487,7 +1507,7 @@ header.included_header h2 {
     -moz-background-clip:padding-box !important;
     -webkit-background-clip:padding-box !important;
     background-clip:padding-box !important;
-    background:url(../images/site/icons/gridpak-sprite.png) no-repeat;
+    background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat;
 }
 
 
@@ -1539,7 +1559,7 @@ header.included_header h2 {
 	width:27%;
 	text-align:center;
 	padding:74px 0 0 0;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 50% 0;
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 50% 0;
 	margin-right:0%;
 	position:relative;
 }
@@ -1561,7 +1581,7 @@ header.included_header h2 {
 	right:-6px;
 	width:12px;
 	height:12px;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -4940px;
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -4940px;
 }
 .included ul.images li.pngs {
 	background-position:56% -700px;
@@ -1604,7 +1624,7 @@ header.included_header h2 {
 }
 .included dd.expands p.expand a {
 	display:block;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -2409px;
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -2409px;
 	width:22px;
 	height:22px;
 	text-indent:-999em;
@@ -1674,12 +1694,12 @@ header.included_header h2 {
 	margin:-10px 0 0 16px;
 	width:39px;
 	height:41px;
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -webkit-gradient(linear, left top, left bottom, from(#720704), to(#5F0100));
- 	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -webkit-linear-gradient(top, #720704, #5F0100);
- 	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -moz-linear-gradient(top, #720704, #5F0100);
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -ms-linear-gradient(top, #720704, #5F0100);
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -o-linear-gradient(top, #720704, #5F0100);
-	background:url(../images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, linear-gradient(top, #720704, #5F0100);
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -webkit-gradient(linear, left top, left bottom, from(#720704), to(#5F0100));
+ 	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -webkit-linear-gradient(top, #720704, #5F0100);
+ 	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -moz-linear-gradient(top, #720704, #5F0100);
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -ms-linear-gradient(top, #720704, #5F0100);
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, -o-linear-gradient(top, #720704, #5F0100);
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2767px, linear-gradient(top, #720704, #5F0100);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#720704', EndColorStr='#5F0100'); 
 	-webkit-box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 0 1px 0 inset;
 	-moz-box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 0 1px 0 inset;
@@ -1718,6 +1738,40 @@ header.included_header h2 {
 	right:0;
 	width:220px;
 	margin-top: -1px;
+}
+
+.about.mobile footer .call_to {
+	float:left;
+	margin:0;
+	position: relative;
+	margin-left: 10px;
+}
+
+.sorry_message {
+	background: #e5e5e5;
+	width: 100%;
+	color: #656565;	
+	line-height: 1.2em;
+	padding: 15px 30px 13px 30px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	border-bottom: 1px solid #ccc;
+}
+
+.sorry_message p {
+	padding-left: 25px;
+	background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -5550px;
+	font-weight: 600;
+	color: #888;
+	font-size: .846153846em;
+	margin: 0 auto;
+	float: none;
+	max-width: 640px;
+}
+
+.sorry_message p b {
+	color: #666;
 }
 
 @media screen and (min-width:0px) and (max-width:745px) { 
@@ -1775,7 +1829,7 @@ header.included_header h2 {
 		
 		.included_item_wrapper_css p.reveal a {
 			margin-top: -13px;
-			background:url(../images/site/icons/gridpak-sprite.png) no-repeat 0 -2410px;
+			background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -2410px;
 		}
 		
 		.description .item {
@@ -1832,7 +1886,7 @@ header.included_header h2 {
 			margin-bottom: 0px;
 		}
 		
-		.about nav a,
+		/*.about nav a,
 		header p,
 		nav ul,
 		#gridpak,
@@ -1850,7 +1904,7 @@ header.included_header h2 {
 		}
 		
 		.index header:after{
-		    background:url("../images/site/mobile-no-no.png") no-repeat center center;
+		    background:url("/static/images/site/mobile-no-no.png") no-repeat center center;
 		    content:" ";
 		    display:block;
 		    height:150px;
@@ -1864,7 +1918,7 @@ header.included_header h2 {
 	        font-size:10px;
 	        margin-top:3px;
 	        text-align:right;
-	    }
+	    }*/
 }
 
 
