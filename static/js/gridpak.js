@@ -415,9 +415,14 @@ $(function() {
          * @return void
          */
         switchToggle: function(e) {
-            var $target = $(e.target);
+            var $target = $(e.target),
+                $labels = $target.siblings('label');
 
-            $target.siblings('label').toggleClass('selected');
+            $labels
+                .removeClass('selected')
+                .filter('[for="' + $target.prop('id') + '"]')
+                .addClass('selected');
+
         },
 
         /**
