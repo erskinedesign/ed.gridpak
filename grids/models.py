@@ -26,14 +26,11 @@ class Grid(models.Model):
             self
         """
         # If upper is false, but this is the only grid
-        if self.upper == False and self.min_width == 0:
+        if self.upper == False:
             total_width = 960
-        # If upper is false
-        elif self.upper == False:
-            total_width = self.min_width
         # Otherwise we can use the actual values
         else:
-            total_width = self.upper - self.min_width
+            total_width = self.upper
 
         # Calculate the gutter width based on it's type
         if self.gutter_type == '%':
