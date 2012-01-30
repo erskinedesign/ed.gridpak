@@ -81,8 +81,6 @@
 	.mixin-bg_gradient(rgba(18,18,18,1.0), rgba(36,36,36,1.0));
 }
 
-@import url(reset.css);
-
 
 
 /* @group 1. BODY 
@@ -824,7 +822,7 @@ footer {
 	#grid_options .switcher_container label {
 		display:block;
 		float:left;
-		color:rgba(255,255,255,0.36);
+		color:rgba(255,255,255,0.6);
 		clear:none;
 		padding:0.49em 0.8em;
 		margin:0;
@@ -1086,8 +1084,8 @@ footer {
 		box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.2) 1px 1px 0 inset;
 		font-family:Helvetica, "Helvetica Neue", Arial, sans-serif;
 		text-shadow:-1px -1px 0 rgba(0,0,0,0.3);
-		color:rgba(255,255,255,0.36);
-		cursor:pointer;
+		color:rgba(255,255,255,0.6);
+		cursor:pointer; 
 		line-height:1em;
 	}
     #grid_list li:only-child .tab .actions .remove {
@@ -1141,21 +1139,22 @@ footer {
 	     top:0px;
 	     overflow:hidden;
 	     text-indent:-999em;
-	     background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 1px -4659px;
+	     opacity:0.8;
+	     background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 1px -3019px;
 	 }
 	 
 	#grid_list .tab .actions span.remove:hover,
 	#grid_list .tab .actions span.remove:focus {
-	     background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 1px -4799px;
+		opacity:1;
 	 }
 	 
 	#grid_list .cur .tab .actions span.remove {
-	     background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 1px -3019px;
+
 	}
 	 
 	#grid_list .cur .tab .actions span.remove:hover,
 	#grid_list .cur .tab .actions span.remove:focus {
-	     background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 1px -3149px; 
+
 	}
 
 	/* @end */
