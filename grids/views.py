@@ -50,8 +50,13 @@ def download(request):
     # redirect if it's not a post
     if request.method != 'POST':
         return HttpResponseRedirect('/')
+    
+    # Ensure our formatting is solid
+    try:
+        grids = json.loads(request.POST['grids'])
+    except ValueError:
+        raise ValueError('The grid you chose to download was poorly formatted.')
 
-    grids = json.loads(request.POST['grids'])
     max_cols = 0
 
     # Set up a string buffer for the zip (we'll serve it from memory)
