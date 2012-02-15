@@ -1,6 +1,6 @@
 # Gridpak
 
-Version: 0.2b
+Version: 0.2.1b
 
 ## The easy way to produce customisable Responsive layouts
 
