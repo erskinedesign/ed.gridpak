@@ -53,21 +53,29 @@ class Grid(models.Model):
         image_height = 1000
         im = Image.new('RGBA', (total_width, image_height), (0, 0, 0, 0))
         draw = ImageDraw.Draw(im)
+        padding_fill = (220, 75, 82, 100)
+        inner_fill = (220, 75, 82, 65)
         for i in range(self.col_num):
             # Draw the left padding
             left = x
             right = x + padding_width
-            draw.rectangle((left, 0, right, image_height), fill=(220, 75, 82, 100))
+            points = [(left, 0), (right-1, image_height)]
+            draw.rectangle(points, fill=padding_fill)
+
             # Move the pen along and draw the inner
             x = right
             left = x
             right = x + col_width
-            draw.rectangle((left, 0, right, image_height), fill=(220, 75, 82, 65))
+            points = [(left, 0), (right-1, image_height)]
+            draw.rectangle(points, fill=inner_fill)
+
             # Move the pen along and draw the right padding
             x = right
             left = x
             right = x + padding_width
-            draw.rectangle((left, 0, right, image_height), fill=(220, 75, 82, 100))
+            points = [(left, 0), (right-1, image_height)]
+            draw.rectangle(points, fill=padding_fill)
+
             # Move the pen along with width of the gutter
             x = right + gutter_width
 
