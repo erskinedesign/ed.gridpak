@@ -568,9 +568,9 @@ $(function() {
             // $('#new_min_width').val(Grids.current.get('min_width'));
             $('#new_col_num').val(Grids.current.get('col_num'));
             $('#new_padding_width').val(Grids.current.get('padding_width'));
-            // $('input:radio[name="padding_type"][value="' + Grids.current.get('padding_type') + '"]').trigger('click');
+            $('input:radio[name="padding_type"][value="' + Grids.current.get('padding_type') + '"]').trigger('click');
             $('#new_gutter_width').val(Grids.current.get('gutter_width'));
-            // $('input:radio[name="gutter_type"][value="' + Grids.current.get('gutter_type') + '"]').trigger('click');
+            $('input:radio[name="gutter_type"][value="' + Grids.current.get('gutter_type') + '"]').trigger('click');
             $('#new_baseline_height').val(Grids.current.get('baseline_height'));
             // Grids.dump();
         },
