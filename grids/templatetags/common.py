@@ -32,3 +32,17 @@ def mult(value, arg):
 def div(value, arg):
     "Divides the value by the arg"
     return float(value) / float(arg)
+
+@register.filter
+def span_width(grid, span):
+    """
+    Returns the col width by how many it's spanning
+
+    {{ grid|col_width:3 }}
+    """
+    if (grid['gutter_type'] == '%'):
+        gutter_pc = float(grid['gutter_width'])
+    else:
+        gutter_pc = 0
+    span = (grid['col_width'] * int(span)) + (gutter_pc * (int(span) - 1))
+    return span
