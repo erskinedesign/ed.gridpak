@@ -6,18 +6,19 @@
  */
 
 .mixin-span(@num, @gutter_pc, @gutter_px, @padding, @max_columns) {
-     width:(100% - (@gutter_pc * (@max_columns - 1))) / @max_columns * @num;
-     border:0px solid rgba(0,0,0,0);
-     float:left;
-     -webkit-box-sizing:border-box;
- 	 -moz-box-sizing:border-box;
- 	 box-sizing:border-box;
-     -moz-background-clip:padding-box !important;
-     -webkit-background-clip:padding-box !important;
- 	 background-clip:padding-box !important;
- 	 border-left-width:@gutter_px;
-     padding:@padding;
-     margin-left:@gutter_pc;
+    @one_col:(100% - (@gutter_pc * (@max_columns - 1))) / @max_columns; 
+    width:(@one_col * @num) + (@gutter_pc * (@num - 1));
+    border:0px solid rgba(0,0,0,0);
+    float:left;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    -moz-background-clip:padding-box !important;
+    -webkit-background-clip:padding-box !important;
+    background-clip:padding-box !important;
+    border-left-width:@gutter_px;
+    padding:@padding;
+    margin-left:@gutter_pc;
  }
  .mixin-span_first {
     margin-left:0;

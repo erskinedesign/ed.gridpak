@@ -41,7 +41,7 @@
         }
         {% endif %}
         {% for i in grid.col_num|get_range %}.span_{{ i }} {
-            width:{{ grid.col_width|mult:i }}%;
+            width:{{ grid|span_width:i }}%;
         }
         {% endfor %}.span_{{ grid.col_num }} {
             width:100%;

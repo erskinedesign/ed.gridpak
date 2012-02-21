@@ -33,7 +33,7 @@ var gridpak = {
             document.body.insertBefore(script, document.body.firstChild);
             setTimeout('gridpak.init()', 500);
         } else {
-            $('document').ready(this.init);
+            $(function() { that.init(); });
         }
     },
 
