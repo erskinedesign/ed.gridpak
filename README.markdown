@@ -9,8 +9,9 @@ The project is live at Gridpak.com
 In your Gridpak you get
 
 * A CSS file with your media queries, and grid points
-* A LESS file that compiles down to CSS
-* A JavaScript file that will overlay your grids at the touch of a
+* A LESS (.less) file that compiles down to CSS
+* A SCSS (.scss) file that compiles down to CSS
+* A JavaScript (.js) file that will overlay your grids at the touch of a
   button
 * Some PNGs for your baseline backgrounds as well as for use in your
   designs
