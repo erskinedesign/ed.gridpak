@@ -16,6 +16,28 @@ In your Gridpak you get
 * Some PNGs for your baseline backgrounds as well as for use in your
   designs
 
-### Usage instructions
+## Usage instructions
 
-Just look at the website!
+### Running Gridpak locally
+
+Gridpak is a [Django][] application with a frontend controlled mostly by [Backbone.js][].
+
+We prefer to run our Django projects using [virtualenv][], and while we won't go into detail on installing it, (you're all clever people: surely you can find a tutuorial that suits you) here's the basic rundown:
+
+1 Create the directory to house Gridpak `mkdir gridpak && cd gridpak`
+2 Clone this repo into your directory, __careful to use the name gridpak__, otherwise Djano will throw a hissy fit `git clone git@github.com:erskinedesign/ed.gridpak.git gridpak`
+3 Start a new virtual virtual environment `virtualenv --distribute env`
+4 Activate that virtual environemtn `source env/bin/activate` you should then see that you're in the `env` environent in your bash
+5 Install all the requisit packages `pip install -r gridpak/packages`
+6 Compile the [LESS][] file so you don't get an error about not being able to find the layout stylesheets
+6 You should now be able to run the app `cd gridpak && python manage.oy runserver`
+7 Visit the url in your browser (`http://localhost:8000` by default,) and you're away
+
+## Feedback
+
+We'd love feedback on the project, which you can send by email to gridpak [at] erskinedesign.com, or from the issues on this GitHub project. 
+
+[Django]: http://djangoproject.com/
+[Backbone.js]: /http://documentcloud.github.com/backbone/
+[virtualenv]: http://pypi.python.org/pypi/virtualenv
+[Less]: http://lesscss.org/
