@@ -24,14 +24,14 @@ Gridpak is a [Django][] application with a frontend controlled mostly by [Backbo
 
 We prefer to run our Django projects using [virtualenv][], and while we won't go into detail on installing it, (you're all clever people: surely you can find a tutuorial that suits you) here's the basic rundown:
 
-1 Create the directory to house Gridpak `mkdir gridpak && cd gridpak`
-2 Clone this repo into your directory, __careful to use the name gridpak__, otherwise Djano will throw a hissy fit `git clone git@github.com:erskinedesign/ed.gridpak.git gridpak`
-3 Start a new virtual virtual environment `virtualenv --distribute env`
-4 Activate that virtual environemtn `source env/bin/activate` you should then see that you're in the `env` environent in your bash
-5 Install all the requisit packages `pip install -r gridpak/packages`
-6 Compile the [LESS][] file so you don't get an error about not being able to find the layout stylesheets
-6 You should now be able to run the app `cd gridpak && python manage.oy runserver`
-7 Visit the url in your browser (`http://localhost:8000` by default,) and you're away
+1. Create the directory to house Gridpak `mkdir gridpak && cd gridpak`
+1. Clone this repo into your directory, __careful to use the name gridpak__, otherwise Djano will throw a hissy fit `git clone git@github.com:erskinedesign/ed.gridpak.git gridpak`
+1. Start a new virtual virtual environment `virtualenv --distribute env`
+1. Activate that virtual environemtn `source env/bin/activate` you should then see that you're in the `env` environent in your bash
+1. Install all the requisit packages `pip install -r gridpak/packages`
+1. Compile the [LESS][] file so you don't get an error about not being able to find the layout stylesheets
+1. You should now be able to run the app `cd gridpak && python manage.oy runserver`
+1. Visit the url in your browser (`http://localhost:8000` by default,) and you're away
 
 ## Feedback
 
