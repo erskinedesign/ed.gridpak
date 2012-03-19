@@ -363,7 +363,7 @@ $(function() {
             'click #grid_options input[type="text"]': 'updateOptions',
             'keyup #grid_options input[type="text"]': 'updateOptions',
             'change #grid_options select, #grid_options input[type="radio"]': 'updateOptions',
-            'change #grid_options .switcher_container input[type="radio"]': 'switchToggle',
+            'change #grid_options .switcher_container input[type="radio"]': 'clickSwitch',
             'click #grid_options a.number': 'spinnerClick',
             'click .actions .link' : 'jumpToGrid',
         },
@@ -414,7 +414,7 @@ $(function() {
          *
          * @return void
          */
-        switchToggle: function(e) {
+        clickSwitch: function(e) {
             var $target = $(e.target),
                 $labels = $target.siblings('label');
 
@@ -471,18 +471,6 @@ $(function() {
 
             $number.val(val);
             this.updateOptions();
-        },
-
-        /**
-         * Have to also listen for clicks on the indicator
-         *
-         * @return void
-         */
-        switchToggleClick: function(e) {
-            var $target = $(e.target),
-                $input = $target.closest('.switcher_container').find('input[type="radio"]:not(:checked)');
-
-            $input.trigger('click');
         },
 
         /**
