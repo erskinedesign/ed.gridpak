@@ -497,14 +497,19 @@ $(function() {
             // ensure we only fire every time we snap to a new width
             if (old_width == current_width && ui.precise !== true) return false;
 
-            Grids.each(function(grid) {
-                if (current_width >= grid.get('min_width') && (current_width <= grid.get('upper') || grid.get('upper') == false)) {
-                    Grids.current.set({ current: false });
-                    grid.set({ current: true });
-                    Grids.current = grid;
-                    App.refreshOptions();
-                }
-            });
+            if (Grids.length > 1) {
+                Grids.each(function(grid) {
+                    if (grid.get('current') != true &&
+                        current_width >= grid.get('min_width') &&
+                        (current_width <= grid.get('upper') || grid.get('upper') == false)
+                    ) {
+                        Grids.current.set({ current: false });
+                        grid.set({ current: true });
+                        Grids.current = grid;
+                        App.refreshOptions();
+                    }
+                });
+            }
 
             this.updateWidth(current_width);
 
