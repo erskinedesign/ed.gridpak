@@ -4,10 +4,11 @@
  * Generator - http://gridpak.com/
  * Created by @erskinedesign
  */
+ 
+ 
 
-/* --- Default Gridpak column styles -- No need to change --- */
-
-.span_1{% for i in max_cols|get_range %}, .span_{{ i|add:"1" }}{% endfor %} {
+/* Reusable column setup */
+.col {
     border:0px solid rgba(0,0,0,0);
     float:left;
     -webkit-box-sizing:border-box;
@@ -16,36 +17,45 @@
     -moz-background-clip:padding-box !important;
     -webkit-background-clip:padding-box !important;
     background-clip:padding-box !important;
- }
+}
 
 
 {% for grid in grids %}
-
     /* {{ forloop.counter }}. {{ grid.col_num }} Column Grid {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}Infinity{% endif %} 
+    ----------------------------------------------------------------------------- 
+    
+    {% for i in grid.col_num|get_range %}Span {{ i }}: {{ grid|span_width:i }}%{% endfor %}
+    
     ----------------------------------------------------------------------------- */
 
     @media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {
+        {% if grid.gutter_type == 'px' %}
         .row {
-            {% if grid.gutter_type == 'px' %}
             margin-left:-{{ grid.gutter_width }}{{ grid.gutter_type }};
-            {% endif %}
-        }
-        .span_1{% for i in grid.col_num|get_range %}, .span_{{ i|add:"1" }}{% endfor %} {
-            {% if grid.gutter_type == '%' %}margin-left:{{ grid.gutter_width }}%;{% endif %}
-            {% if grid.gutter_type == 'px' %}border-left-width:{{ grid.gutter_width }}px;{% endif %}
+        }{% endif %}
+        .col {
+            {% if grid.gutter_type == '%' %}margin-left:{{ grid.gutter_width }}%;{% else %}border-left-width:{{ grid.gutter_width }}px;{% endif %}
         	padding:0 {{ grid.padding_width }}{{ grid.padding_type }};
         }
         {% if grid.gutter_type == '%' %}
-        .span_1:first-child{% for i in grid.col_num|get_range %}, .span_{{ i|add:"1" }}:first-child{% endfor %}, .span_first_child {
+        .row .col:first-child {
             margin-left:0;
+        }{% endif %}
+        
+        /*
+        Add your semantic classnames in alongside their corresponding spans here. e.g.
+        
+        .span_3,
+        .my_semantic_class_name {
+            ...
         }
-        {% endif %}
+        */
+        
         {% for i in grid.col_num|get_range %}.span_{{ i }} {
             width:{{ grid|span_width:i }}%;
         }
         {% endfor %}.span_{{ grid.col_num }} {
             width:100%;
         }
-    } /* // min_width: {{ grid.min_width }}px */ 
-
+    }
 {% endfor %}

@@ -65,13 +65,13 @@ markup, perhaps like this:
 
     <div class="row">
         <ul class="item_listing">
-            <li class="item">
+            <li class="col item">
                 <p>This is my item, there are many others like it but this one is mine.</p>
             </li>
-            <li class="item">
+            <li class="col item">
                 <p>This is my item, there are many others like it but this one is mine.</p>
             </li>
-            <li class="item">
+            <li class="col item">
                 <p>This is my item, there are many others like it but this one is mine.</p>
             </li>
         </ul> <!-- // .item_listing -->
@@ -82,17 +82,16 @@ them, so they always make sense in the grid and in the CSS. Let's say we
 have a Gridpak with 2 grids, one with 16 columns and a min-width of 800
 and another with 3 columns at a min-width of 0 and max-width of 799:
 
-    .span_1, .span_2, .span_3, .span_4, .item_listing .item {
     ...
-
-    @media screen and (min-width: 0px) and (max-width: 799px) {
-        .row {
-        ...
-        }
-        .span_1, .span_2, .span_3,
-        .item_listing .item {
-        ...
-        }
+    .span_1 {
+        width:15.0%;
+    }
+    .span_2 {
+        width:32.0%;
+    }
+    .span_3,
+    item_listing .item {
+        width:49.0%;
     }
 
 All we've done is pop an extra selector in next to the items that
