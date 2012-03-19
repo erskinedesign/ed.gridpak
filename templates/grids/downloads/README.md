@@ -3,15 +3,11 @@
 Gridpak is an interactive tool for creating responsive grid layouts.
 Each Gridpak is a collection of at least five files:
 
-* A CSS file with all the classes and properties you need to create a
-  responsive grid layout.
-* A LESS file with much the same information but including variables,
-  mixins and methods to help you.
+* A CSS file with all the classes and properties you need to create a responsive grid layout.
+* A LESS file with much the same information but including variables, mixins and methods to help you.
 * An SCSS file like the LESS file, but in SCSS.
-* A semi transparent PNG image for each grid you have created to help
-  with your design, or with lining things up in your front end.
-* A javascript snippet that allows you to toggle an overlay of your 
-grid on and off in any browser using the 'G' key.  
+* A semi transparent PNG image for each grid you have created to help with your design, or with lining things up in your front end.
+* A javascript snippet that allows you to toggle an overlay of your grid on and off in any browser using the 'G' key.  
 
 ## Using the application
 
@@ -107,7 +103,7 @@ correspond, and we're not tied to a potentially incorrect naming scheme.
 We would suggest you only use the JavaScript in your development
 environment, since you should only ever need it when you are building.
 
-Pop in the followig code, just before the closing body tag. If you're
+Pop in the following code, just before the closing body tag. If you're
 not including jQuery already, it will do that for you.
 
     <script src="//path/to/gridpak.js"></script>
@@ -119,7 +115,7 @@ update too.
 
 ## Contributing
 
-This is a beta, not finished the finished aticle and we plan to add many features over the coming weeks and months. We would very much like your input, so please get in touch with any suggestions or comments. 
+This is a beta, not finished the finished article and we plan to add many features over the coming weeks and months. We would very much like your input, so please get in touch with any suggestions or comments. 
 
 We have a [Trello board](https://trello.com/board/gridpak/4ec2949a6f575b8735025392)
 set up where you can vote on features we are choosing to develop or just
