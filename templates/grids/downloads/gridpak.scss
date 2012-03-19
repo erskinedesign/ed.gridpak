@@ -6,6 +6,7 @@
  */
 
 /* Reusable column setup */
+
 @mixin col {
      border:0px solid rgba(0,0,0,0);
         float:left;
@@ -16,6 +17,7 @@
         -webkit-background-clip:padding-box !important;
         background-clip:padding-box !important;
 }
+
 .col {
    @include col;
 }
@@ -27,10 +29,10 @@
     padding:$padding;
     margin-left:$gutter_pc;
 }
+
 @mixin span_first {
     margin-left:0;
 }
- 
  
 {% for grid in grids %}
     /* {{ forloop.counter }}. {{ grid.col_num }} Column Grid {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}Infinity{% endif %} 
