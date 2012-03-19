@@ -561,9 +561,13 @@ $(function() {
             // $('#new_min_width').val(Grids.current.get('min_width'));
             $('#new_col_num').val(Grids.current.get('col_num'));
             $('#new_padding_width').val(Grids.current.get('padding_width'));
-            $('input:radio[name="padding_type"][value="' + Grids.current.get('padding_type') + '"]').trigger('click');
+            $('input:radio[name="padding_type"][value="' + Grids.current.get('padding_type') + '"]').prop('checked'. true);
+            $('label[for^="padding_type"]').removeClass('selected');
+            $('label[for^="padding_type"]:contains("' + Grids.current.get('padding_type') + '")').addClass('selected');
             $('#new_gutter_width').val(Grids.current.get('gutter_width'));
-            $('input:radio[name="gutter_type"][value="' + Grids.current.get('gutter_type') + '"]').trigger('click');
+            $('input:radio[name="gutter_type"][value="' + Grids.current.get('gutter_type') + '"]').prop('checked', true);
+            $('label[for^="gutter_type"]').removeClass('selected');
+            $('label[for^="gutter_type"]:contains("' + Grids.current.get('gutter_type') + '")').addClass('selected');
             $('#new_baseline_height').val(Grids.current.get('baseline_height'));
             // Grids.dump();
         },
