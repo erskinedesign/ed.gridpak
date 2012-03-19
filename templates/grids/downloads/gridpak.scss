@@ -36,9 +36,11 @@
  
 {% for grid in grids %}
     /* {{ forloop.counter }}. {{ grid.col_num }} Column Grid {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}Infinity{% endif %} 
-
-    {% for i in grid.col_num|get_range %}Span {{ i }}:   {{ grid|span_width:i }}%
+    ----------------------------------------------------------------------------- 
+    
+    {% for i in grid.col_num|get_range %}Span {{ i }}:{{ grid|span_width:i }}%
     {% endfor %}
+    
     ----------------------------------------------------------------------------- */	
     
 	@media screen and (min-width: {{ grid.min_width }}px){% if grid.upper %} and (max-width: {{ grid.upper }}px){% endif %} {

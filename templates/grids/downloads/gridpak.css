@@ -24,7 +24,8 @@
     /* {{ forloop.counter }}. {{ grid.col_num }} Column Grid {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}Infinity{% endif %} 
     ----------------------------------------------------------------------------- 
     
-    {% for i in grid.col_num|get_range %}Span {{ i }}: {{ grid|span_width:i }}%{% endfor %}
+    {% for i in grid.col_num|get_range %}Span {{ i }}: {{ grid|span_width:i }}%
+    {% endfor %}
     
     ----------------------------------------------------------------------------- */
 
@@ -55,6 +56,7 @@
             width:{{ grid|span_width:i }}%;
         }
         {% endfor %}.span_{{ grid.col_num }} {
+            margin-left:0;
             width:100%;
         }
     }
