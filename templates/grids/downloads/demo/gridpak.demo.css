@@ -5,16 +5,24 @@
  * Created by @erskinedesign
  */
  
- body {
+body,
+html,
+div {
      margin: 0;
+     padding:0;
  }
  
- .page {
+/*
+Page is our center aligned 95% width container. We have set it's 'position' as relative
+so that the Gridpak overlay will appear in the correct position. We have also updated
+the gridpak.js file to use #page as it's container.
+*/
+.page {
      margin: 0 auto;
      max-width: 95%;
      overflow:hidden;
      position:relative;
- }
+}
 
 /* Reusable column setup */
 .col {
@@ -36,10 +44,11 @@
     ----------------------------------------------------------------------------- 
     
     Span 1: 50%
+    Span 2: 100%
     
     ----------------------------------------------------------------------------- */
 
-    @media screen and (min-width: 0px) and (max-width: 319px) {
+    @media screen and (min-width: 0px) and (max-width: 499px) {
         
         .row {
             margin-left:-12px;
@@ -47,6 +56,7 @@
         .col {
             border-left-width:12px;
         	padding:0 12px;
+            height:100px;
         }
         
         
@@ -62,7 +72,9 @@
         .span_1 {
             width:50%;
         }
-        .span_2 {
+        /* Using .col to target ALL columns and make them 100% */
+        .span_2,
+        .col {
             width:100%;
         }
     }
@@ -75,18 +87,18 @@
     Span 3: 49.0%
     Span 4: 66.0%
     Span 5: 83.0%
+    Span 6: 1000%
     
     ----------------------------------------------------------------------------- */
 
-    @media screen and (min-width: 320px) and (max-width: 919px) {
+    @media screen and (min-width: 500px) and (max-width: 919px) {
         
         .col {
             margin-left:2%;
         	padding:0 2%;
         }
         
-        .row .col:first-child,
-        .span_6 {
+        .row .col:first-child {
             margin-left:0;
         }
         
@@ -102,15 +114,16 @@
         .span_1 {
             width:15.0%;
         }
+        /*
+        Here we have used our semantic names 'navigation' and 'media_block' and appended
+        them next to their corresponding widths
+        */
         .span_2, .navigation, .media_block {
             width:32.0%;
         }
-        
         .navigation {
             height: 400px;
         }
-    
-        
         .span_3 {
             width:49.0%;
         }
@@ -121,10 +134,13 @@
         .span_5 {
             width:83.0%;
         }
-        .span_6, .header, .footer, .related_content {
-            m
+        .span_6,
+        .header,
+        .footer,
+        .related_content {
             width:100%;
             height: 100px;
+            margin-left:0;
         }
     }
 
@@ -142,6 +158,7 @@
     Span 9: 75.0%
     Span 10: 83.3333333333%
     Span 11: 91.6666666667%
+    Span 12: 100%
     
     ----------------------------------------------------------------------------- */
 
