@@ -48,7 +48,7 @@ the gridpak.js file to use #page as it's container.
     
     ----------------------------------------------------------------------------- */
 
-    @media screen and (min-width: 0px) and (max-width: 499px) {
+    @media screen and (min-width: 0px) and (max-width: 319px) {
         
         .row {
             margin-left:-12px;
@@ -91,7 +91,7 @@ the gridpak.js file to use #page as it's container.
     
     ----------------------------------------------------------------------------- */
 
-    @media screen and (min-width: 500px) and (max-width: 919px) {
+    @media screen and (min-width: 320px) and (max-width: 919px) {
         
         .col {
             margin-left:2%;
