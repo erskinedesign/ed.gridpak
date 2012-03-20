@@ -1,0 +1,236 @@
+/*!
+ * Gridpak Beta CSS
+ *
+ * Generator - http://gridpak.com/
+ * Created by @erskinedesign
+ */
+ 
+body,
+html,
+div {
+     margin: 0;
+     padding:0;
+ }
+ 
+/*
+Page is our center aligned 95% width container. We have set it's 'position' as relative
+so that the Gridpak overlay will appear in the correct position. We have also updated
+the gridpak.js file to use '.page' as it's container.
+*/
+.page {
+     margin: 0 auto;
+     max-width: 95%;
+     overflow:hidden;
+     position:relative;
+}
+
+/* Reusable column setup */
+.col {
+    border:0px solid rgba(0,0,0,0);
+    float:left;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    -moz-background-clip:padding-box !important;
+    -webkit-background-clip:padding-box !important;
+    background-clip:padding-box !important;
+    background: #777;
+	margin-bottom: 12px;
+}
+
+
+
+    /* 1. 2 Column Grid 0px - 319px 
+    ----------------------------------------------------------------------------- 
+    
+    Span 1: 50%
+    Span 2: 100%
+    
+    ----------------------------------------------------------------------------- */
+
+    @media screen and (min-width: 0px) and (max-width: 319px) {
+        
+        .row {
+            margin-left:-12px;
+        }
+        .col {
+            border-left-width:12px;
+        	padding:0 12px;
+            height:100px;
+        }
+        
+        
+        /*
+        Add your semantic classnames in alongside their corresponding spans here. e.g.
+        
+        .span_3,
+        .my_semantic_class_name {
+            ...
+        }
+        */
+        
+        .span_1 {
+            width:50%;
+        }
+        /* Using .col to target ALL columns and make them 100% */
+        .span_2,
+        .col {
+            width:100%;
+            margin-left:0;
+        }
+    }
+
+    /* 2. 6 Column Grid 320px - 919px 
+    ----------------------------------------------------------------------------- 
+    
+    Span 1: 15.0%
+    Span 2: 32.0%
+    Span 3: 49.0%
+    Span 4: 66.0%
+    Span 5: 83.0%
+    Span 6: 1000%
+    
+    ----------------------------------------------------------------------------- */
+
+    @media screen and (min-width: 320px) and (max-width: 919px) {
+        
+        .col {
+            margin-left:2%;
+        	padding:0 2%;
+        }
+        
+        .row .col:first-child {
+            margin-left:0;
+        }
+        
+        /*
+        Add your semantic classnames in alongside their corresponding spans here. e.g.
+        
+        .span_3,
+        .my_semantic_class_name {
+            ...
+        }
+        */
+        
+        .span_1 {
+            width:15.0%;
+        }
+        /*
+        Here we have used our semantic names 'navigation' and 'media_block' and appended
+        them next to their corresponding widths
+        */
+        .span_2,
+        .navigation,
+        .media_block {
+            width:32.0%;
+        }
+        .navigation {
+            height: 400px;
+        }
+        .span_3 {
+            width:49.0%;
+        }
+        .span_4,
+        .main_content {
+            width:66.0%;
+            height: 400px;
+        }
+        .span_5 {
+            width:83.0%;
+        }
+        .span_6,
+        .header,
+        .footer,
+        .related_content {
+            width:100%;
+            height: 100px;
+            margin-left:0;
+        }
+    }
+
+    /* 3. 12 Column Grid 920px - Infinity 
+    ----------------------------------------------------------------------------- 
+    
+    Span 1: 8.33333333333%
+    Span 2: 16.6666666667%
+    Span 3: 25.0%
+    Span 4: 33.3333333333%
+    Span 5: 41.6666666667%
+    Span 6: 50.0%
+    Span 7: 58.3333333333%
+    Span 8: 66.6666666667%
+    Span 9: 75.0%
+    Span 10: 83.3333333333%
+    Span 11: 91.6666666667%
+    Span 12: 100%
+    
+    ----------------------------------------------------------------------------- */
+
+    @media screen and (min-width: 920px) {
+        
+        .row {
+            margin-left:-12px;
+        }
+        .col {
+            border-left-width:12px;
+        	padding:0 12px;
+        }
+        
+        
+        /*
+        Add your semantic classnames in alongside their corresponding spans here. e.g.
+        
+        .span_3,
+        .my_semantic_class_name {
+            ...
+        }
+        */
+        
+        .span_1 {
+            width:8.33333333333%;
+        }
+        .span_2 {
+            width:16.6666666667%;
+        }
+        .span_3,
+        .navigation,
+        .related_content {
+            width:25.0%;
+            height: 400px;
+        }
+        .span_4,
+        .media_block {
+            width:33.3333333333%;
+            height: 200px;
+        }
+        .span_5 {
+            width:41.6666666667%;
+        }
+        .span_6,
+        .main_content {
+            width:50.0%;
+            height: 400px;
+        }
+        .span_7 {
+            width:58.3333333333%;
+        }
+        .span_8,  {
+            width:66.6666666667%;
+        }
+        .span_9 {
+            width:75.0%;
+        }
+        .span_10 {
+            width:83.3333333333%;
+        }
+        .span_11 {
+            width:91.6666666667%;
+        }
+        .span_12,
+        .header,
+        .footer {
+            width:100%;
+            height: 100px;
+            margin-left:0;
+        }
+    }

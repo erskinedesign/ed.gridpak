@@ -7,6 +7,8 @@ ADMINS = (
     ('Erskine Design', 'dev@erskinedesign.com'),
 )
 
+CUR_DIR = ''
+
 MANAGERS = ADMINS
 
 DATABASES = {

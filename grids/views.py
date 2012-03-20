@@ -11,6 +11,8 @@ from django.core.files import File
 from gridpak.grids.models import Grid
 import simplejson as json
 import re
+import os
+from django.conf import settings
 from cStringIO import StringIO
 from zipfile import ZipFile
 from gridpak.minidetector import detect_mobile
@@ -113,6 +115,13 @@ def download(request):
         }).encode('ascii', 'ignore'))
 
         zip_dl.writestr(template.replace('grids/downloads/', ''), buff.getvalue())
+
+    # Now add the demo directory as is
+    path = os.path.join(settings.CUR_DIR, 'templates/grids/downloads/demo');
+    for root, dirs, files in os.walk(path):
+        for filename in files:
+            # Writes the file to the zip inside one dir called demo
+            zip_dl.write(os.path.join(root, filename), os.path.join('demo', filename))
 
     zip_dl.close()
 
