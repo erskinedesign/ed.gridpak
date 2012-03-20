@@ -42,7 +42,7 @@ $(function() {
                 max_cols: 99,
                 allowed_types: ['px', '%'],
                 min_grid_width: 100,
-                min_min_width: 300,
+                min_min_width: 220,
             };
 
             // Int params must be integers
@@ -72,8 +72,8 @@ $(function() {
 
 
             // Make sure it's bigger than the minimum the browser can be resized to
-            if (attrs.min_width != 0 && attrs.min_width < settings.min_min_width) {
-                return 'The smallest min_width you can have is ' + settings.min_min_width + '.';
+            if (attrs.lower!= 0 && attrs.lower < settings.min_min_width) {
+                return 'The smallest min_width you can have is ' + settings.min_min_width;
             }
 
             // px or % params
@@ -382,7 +382,7 @@ $(function() {
             this.$browser = $('#browser').resizable({
                 handles: { e: $(".dragme") },
                 grid: this.snap,
-                minWidth: 300,
+                minWidth: 200,
                 resize: function(e, ui) {
                     that.resize(e, ui);
                 }
