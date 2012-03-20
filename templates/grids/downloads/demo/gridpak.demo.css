@@ -15,7 +15,7 @@ div {
 /*
 Page is our center aligned 95% width container. We have set it's 'position' as relative
 so that the Gridpak overlay will appear in the correct position. We have also updated
-the gridpak.js file to use #page as it's container.
+the gridpak.js file to use '.page' as it's container.
 */
 .page {
      margin: 0 auto;
