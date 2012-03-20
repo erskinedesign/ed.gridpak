@@ -76,6 +76,7 @@ the gridpak.js file to use #page as it's container.
         .span_2,
         .col {
             width:100%;
+            margin-left:0;
         }
     }
 
@@ -230,5 +231,6 @@ the gridpak.js file to use #page as it's container.
         .footer {
             width:100%;
             height: 100px;
+            margin-left:0;
         }
     }
