@@ -1,0 +1,24 @@
+import os
+
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+
+CUR_DIR = os.getcwd()
+
+TEMPLATE_DIRS = (
+    CUR_DIR + '/templates/',
+)
+
+# STATIC_ROOT not required for development
+STATIC_ROOT = CUR_DIR + '/static_collected/'
+COMPRESS_ROOT = STATIC_ROOT
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    CUR_DIR + '/static/',
+)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = CUR_DIR + '/media/'
+
+COMPRESS = False 
+COMPRESS_ENABLED = False 
