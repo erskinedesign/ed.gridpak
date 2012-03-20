@@ -20,6 +20,8 @@
 
 .col {
    @include col;
+   background:#777;
+   margin-bottom:12px;
 }
 
 @mixin span($num, $gutter_pc, $gutter_px, $padding, $max_columns) {
@@ -34,10 +36,31 @@
     margin-left:0;
 }
  
+body,
+html,
+div {
+     margin: 0;
+     padding:0;
+ }
+ 
+/*
+Page is our center aligned 95% width container. We have set it's 'position' as relative
+so that the Gridpak overlay will appear in the correct position. We have also updated
+the gridpak.js file to use #page as it's container.
+*/
+.page {
+     margin: 0 auto;
+     max-width: 95%;
+     overflow:hidden;
+     position:relative;
+}
+
+
 
     /* 1. 2 Column Grid 0px - 319px 
 
     Span 1:   50%
+    Span 2:   100%
     
     ----------------------------------------------------------------------------- */	
     
@@ -50,6 +73,7 @@
         .col {
             border-left-width:12px;
             padding:0 12px;
+            height:100px;
         }
         
         /* --- Gridpak variables ---*/ 
@@ -73,9 +97,12 @@
         .span_1 {
             @include span(1, $gutter_pc, $gutter_px, $padding, $max_columns);
         }
-        .span_2 {
+        /* Using .col to target ALL columns and make them 100% */
+        .span_2,
+        .col {
             @include span_first;
             width:100%;
+            margin-left:0;
         }
     }
 
@@ -86,6 +113,7 @@
     Span 3:   49.0%
     Span 4:   66.0%
     Span 5:   83.0%
+    Span 6:   100%
     
     ----------------------------------------------------------------------------- */	
     
@@ -121,21 +149,37 @@
         .span_1 {
             @include span(1, $gutter_pc, $gutter_px, $padding, $max_columns);
         }
-        .span_2 {
+        /*
+        Here we have used our semantic names 'navigation' and 'media_block' and appended
+        them next to their corresponding widths
+        */
+        .span_2,
+        .navigation,
+        .media_block {
             @include span(2, $gutter_pc, $gutter_px, $padding, $max_columns);
+        }
+        .navigation {
+            height:400px;
         }
         .span_3 {
             @include span(3, $gutter_pc, $gutter_px, $padding, $max_columns);
         }
-        .span_4 {
+        .span_4,
+        .main_content {
             @include span(4, $gutter_pc, $gutter_px, $padding, $max_columns);
+            height:400px;
         }
         .span_5 {
             @include span(5, $gutter_pc, $gutter_px, $padding, $max_columns);
         }
-        .span_6 {
+        .span_6,
+        .header,
+        .footer,
+        .related_content {
             @include span_first;
             width:100%;
+            height:100px;
+            margin-left:0;
         }
     }
 
@@ -152,6 +196,7 @@
     Span 9:   75.0%
     Span 10:   83.3333333333%
     Span 11:   91.6666666667%
+    Span 12:   100%
     
     ----------------------------------------------------------------------------- */	
     
@@ -190,17 +235,24 @@
         .span_2 {
             @include span(2, $gutter_pc, $gutter_px, $padding, $max_columns);
         }
-        .span_3 {
+        .span_3,
+        .navigation,
+        .related_content {
             @include span(3, $gutter_pc, $gutter_px, $padding, $max_columns);
+            height:400px;
         }
-        .span_4 {
+        .span_4,
+        .media_block {
             @include span(4, $gutter_pc, $gutter_px, $padding, $max_columns);
+            height:200px;
         }
         .span_5 {
             @include span(5, $gutter_pc, $gutter_px, $padding, $max_columns);
         }
-        .span_6 {
+        .span_6,
+        .main_content {
             @include span(6, $gutter_pc, $gutter_px, $padding, $max_columns);
+            height:400px;
         }
         .span_7 {
             @include span(7, $gutter_pc, $gutter_px, $padding, $max_columns);
@@ -217,9 +269,13 @@
         .span_11 {
             @include span(11, $gutter_pc, $gutter_px, $padding, $max_columns);
         }
-        .span_12 {
+        .span_12,
+        .header,
+        .footer {
             @include span_first;
             width:100%;
+            margin-left:0;
+            height:100px;
         }
     }
  
