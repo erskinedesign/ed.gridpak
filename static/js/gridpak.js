@@ -363,7 +363,7 @@ $(function() {
             'click #grid_options input[type="text"]': 'updateOptions',
             'keyup #grid_options input[type="text"]': 'updateOptions',
             'change #grid_options select, #grid_options input[type="radio"]': 'updateOptions',
-            'change #grid_options .switcher_container input[type="radio"]': 'switchToggle',
+            'change #grid_options .switcher_container input[type="radio"]': 'clickSwitch',
             'click #grid_options a.number': 'spinnerClick',
             'click .actions .link' : 'jumpToGrid',
         },
@@ -414,7 +414,7 @@ $(function() {
          *
          * @return void
          */
-        switchToggle: function(e) {
+        clickSwitch: function(e) {
             var $target = $(e.target),
                 $labels = $target.siblings('label');
 
@@ -474,18 +474,6 @@ $(function() {
         },
 
         /**
-         * Have to also listen for clicks on the indicator
-         *
-         * @return void
-         */
-        switchToggleClick: function(e) {
-            var $target = $(e.target),
-                $input = $target.closest('.switcher_container').find('input[type="radio"]:not(:checked)');
-
-            $input.trigger('click');
-        },
-
-        /**
          * Resize app, fired from jQuery UI resizable
          *
          * @return void
@@ -497,14 +485,19 @@ $(function() {
             // ensure we only fire every time we snap to a new width
             if (old_width == current_width && ui.precise !== true) return false;
 
-            Grids.each(function(grid) {
-                if (current_width >= grid.get('min_width') && (current_width <= grid.get('upper') || grid.get('upper') == false)) {
-                    Grids.current.set({ current: false });
-                    grid.set({ current: true });
-                    Grids.current = grid;
-                    App.refreshOptions();
-                }
-            });
+            if (Grids.length > 1) {
+                Grids.each(function(grid) {
+                    if (grid.get('current') != true &&
+                        current_width >= grid.get('min_width') &&
+                        (current_width <= grid.get('upper') || grid.get('upper') == false)
+                    ) {
+                        Grids.current.set({ current: false });
+                        grid.set({ current: true });
+                        Grids.current = grid;
+                        App.refreshOptions();
+                    }
+                });
+            }
 
             this.updateWidth(current_width);
 
@@ -568,9 +561,13 @@ $(function() {
             // $('#new_min_width').val(Grids.current.get('min_width'));
             $('#new_col_num').val(Grids.current.get('col_num'));
             $('#new_padding_width').val(Grids.current.get('padding_width'));
-            $('input:radio[name="padding_type"][value="' + Grids.current.get('padding_type') + '"]').trigger('click');
+            $('input:radio[name="padding_type"][value="' + Grids.current.get('padding_type') + '"]').prop('checked'. true);
+            $('label[for^="padding_type"]').removeClass('selected');
+            $('label[for^="padding_type"]:contains("' + Grids.current.get('padding_type') + '")').addClass('selected');
             $('#new_gutter_width').val(Grids.current.get('gutter_width'));
-            $('input:radio[name="gutter_type"][value="' + Grids.current.get('gutter_type') + '"]').trigger('click');
+            $('input:radio[name="gutter_type"][value="' + Grids.current.get('gutter_type') + '"]').prop('checked', true);
+            $('label[for^="gutter_type"]').removeClass('selected');
+            $('label[for^="gutter_type"]:contains("' + Grids.current.get('gutter_type') + '")').addClass('selected');
             $('#new_baseline_height').val(Grids.current.get('baseline_height'));
             // Grids.dump();
         },
