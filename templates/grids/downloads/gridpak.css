@@ -24,8 +24,8 @@
     /* {{ forloop.counter }}. {{ grid.col_num }} Column Grid {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}Infinity{% endif %} 
     ----------------------------------------------------------------------------- 
     
-    {% for i in grid.col_num|get_range %}Span {{ i }}: {{ grid|span_width:i }}%
-    {% endfor %}
+    {% for i in grid.col_num|get_range %}Span {{ i }}:    {{ grid|span_width:i }}%
+    {% endfor %}Span {{ grid.col_num }}:    100%
     
     ----------------------------------------------------------------------------- */
 
@@ -43,6 +43,7 @@
             margin-left:0;
         }{% endif %}
         
+        {% if forloop.counter == 1 %}
         /*
         Add your semantic classnames in alongside their corresponding spans here. e.g.
         
@@ -50,7 +51,7 @@
         .my_semantic_class_name {
             ...
         }
-        */
+        */{% endif %}
         
         {% for i in grid.col_num|get_range %}.span_{{ i }} {
             width:{{ grid|span_width:i }}%;

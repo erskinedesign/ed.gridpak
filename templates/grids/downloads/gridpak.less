@@ -1,5 +1,5 @@
 {% load common %}/**
- * Gridpak Beta SCSS 
+ * Gridpak Beta LESS
  *
  * Generator - http://gridpak.com/
  * Created by @erskinedesign
@@ -36,8 +36,8 @@
     /* {{ forloop.counter }}. {{ grid.col_num }} Column Grid {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}Infinity{% endif %} 
     ----------------------------------------------------------------------------- 
     
-    {% for i in grid.col_num|get_range %}Span {{ i }}:   {{ grid|span_width:i }}%
-    {% endfor %}
+    {% for i in grid.col_num|get_range %}Span {{ i }}:    {{ grid|span_width:i }}%
+    {% endfor %}Span {{ grid.col_num }}:    100%
     
     ----------------------------------------------------------------------------- */	
     
@@ -64,7 +64,7 @@
             .mixin-span_first;
         }
         {% endif %}
-        
+        {% if forloop.counter == 1 %}
         /*
         Add your semantic classnames in alongside their corresponding spans here. e.g.
         
@@ -73,7 +73,7 @@
             ...
         }
         
-        */
+        */{% endif %}
         {% for i in grid.col_num|get_range %}.span_{{ i }} {
             .mixin-span({{ i }}, @gutter_pc, @gutter_px, @padding, @max_columns);
         }

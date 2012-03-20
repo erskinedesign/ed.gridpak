@@ -8,14 +8,14 @@
 /* Reusable column setup */
 
 @mixin col {
-     border:0px solid rgba(0,0,0,0);
-        float:left;
-        -webkit-box-sizing:border-box;
-        -moz-box-sizing:border-box;
-        box-sizing:border-box;
-        -moz-background-clip:padding-box !important;
-        -webkit-background-clip:padding-box !important;
-        background-clip:padding-box !important;
+    border:0px solid rgba(0,0,0,0);
+    float:left;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    -moz-background-clip:padding-box !important;
+    -webkit-background-clip:padding-box !important;
+    background-clip:padding-box !important;
 }
 
 .col {
@@ -38,8 +38,8 @@
     /* {{ forloop.counter }}. {{ grid.col_num }} Column Grid {{ grid.min_width }}px - {% if grid.upper %}{{ grid.upper }}px{% else %}Infinity{% endif %} 
     ----------------------------------------------------------------------------- 
     
-    {% for i in grid.col_num|get_range %}Span {{ i }}:{{ grid|span_width:i }}%
-    {% endfor %}
+    {% for i in grid.col_num|get_range %}Span {{ i }}:    {{ grid|span_width:i }}%
+    {% endfor %}Span {{ grid.col_num }}:    100%
     
     ----------------------------------------------------------------------------- */	
     
@@ -66,7 +66,7 @@
             @include span_first;
         }
         {% endif %}
-        
+        {% if forloop.counter == 1 %}
         /*
         Add your semantic classnames in alongside their corresponding spans here. e.g.
         
@@ -75,7 +75,7 @@
             ...
         }
         
-        */
+        */{% endif %}
         {% for i in grid.col_num|get_range %}.span_{{ i }} {
             @include span({{ i }}, $gutter_pc, $gutter_px, $padding, $max_columns);
         }
