@@ -118,7 +118,9 @@ the gridpak.js file to use #page as it's container.
         Here we have used our semantic names 'navigation' and 'media_block' and appended
         them next to their corresponding widths
         */
-        .span_2, .navigation, .media_block {
+        .span_2,
+        .navigation,
+        .media_block {
             width:32.0%;
         }
         .navigation {
@@ -127,7 +129,8 @@ the gridpak.js file to use #page as it's container.
         .span_3 {
             width:49.0%;
         }
-        .span_4, .main_content {
+        .span_4,
+        .main_content {
             width:66.0%;
             height: 400px;
         }
@@ -188,18 +191,22 @@ the gridpak.js file to use #page as it's container.
         .span_2 {
             width:16.6666666667%;
         }
-        .span_3, .navigation, .related_content {
+        .span_3,
+        .navigation,
+        .related_content {
             width:25.0%;
             height: 400px;
         }
-        .span_4, .media_block {
+        .span_4,
+        .media_block {
             width:33.3333333333%;
             height: 200px;
         }
         .span_5 {
             width:41.6666666667%;
         }
-        .span_6, .main_content {
+        .span_6,
+        .main_content {
             width:50.0%;
             height: 400px;
         }
@@ -218,7 +225,9 @@ the gridpak.js file to use #page as it's container.
         .span_11 {
             width:91.6666666667%;
         }
-        .span_12, .header, .footer {
+        .span_12,
+        .header,
+        .footer {
             width:100%;
             height: 100px;
         }
