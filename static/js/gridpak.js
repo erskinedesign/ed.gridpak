@@ -1,5 +1,5 @@
 /*!
- * Gridpak v0.2.3b
+ * Gridpak v0.2.5b
  * http://gridpak.com/
  *
  * Copyright 2011, Erskine Design
