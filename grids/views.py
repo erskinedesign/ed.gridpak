@@ -12,7 +12,7 @@ from gridpak.grids.models import Grid
 import simplejson as json
 import re
 import os
-import settings
+from django.conf import settings
 from cStringIO import StringIO
 from zipfile import ZipFile
 from gridpak.minidetector import detect_mobile
