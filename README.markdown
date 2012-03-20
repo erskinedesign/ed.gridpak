@@ -1,6 +1,6 @@
 # Gridpak
 
-Version: 0.2.1b
+Version: 0.2.5b
 
 ## The easy way to produce customisable Responsive layouts
 
@@ -29,6 +29,7 @@ We prefer to run our Django projects using [virtualenv][], and while we won't go
 1. Start a new virtual environment `virtualenv --distribute env`
 1. Activate that virtual environment `source env/bin/activate` you should then see that you're in the `env` environent in your bash
 1. Install all the requisit packages `pip install -r gridpak/packages`
+1. Create a `local_settings.py` file (you can copy the `local_settings.sample.txt` and it should work fine)
 1. Compile the [LESS][] file so you don't get an error about not being able to find the layout stylesheets
 1. You should now be able to run the app `cd gridpak && python manage.py runserver`
 1. Visit the url in your browser (`http://localhost:8000` by default,) and you're away
