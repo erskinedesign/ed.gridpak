@@ -1,5 +1,11 @@
+import simplejson as json
+import re
+import os
+from cStringIO import StringIO
+from zipfile import ZipFile
+
 from django.shortcuts import render_to_response
-#from django.http import Http404
+from django.http import Http404
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from django.http import HttpRequest
@@ -8,13 +14,8 @@ from django.template import RequestContext
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.core.files import File
+
 from gridpak.grids.models import Grid
-import simplejson as json
-import re
-import os
-from django.conf import settings
-from cStringIO import StringIO
-from zipfile import ZipFile
 from gridpak.minidetector import detect_mobile
 
 @detect_mobile
@@ -56,8 +57,8 @@ def download(request):
     # Ensure our formatting is solid
     try:
         grids = json.loads(request.POST['grids'])
-    except ValueError:
-        raise ValueError('The grid you chose to download was poorly formatted.')
+    except ValueError: # Raised if grid is poorly formatted
+        raise Http404
 
     max_cols = 0
 
