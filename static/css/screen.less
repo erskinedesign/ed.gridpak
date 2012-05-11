@@ -1045,6 +1045,10 @@ footer {
 		z-index:-1;
 		background:url(/static/images/site/icons/pattern.png);
 	}
+	#grid_list .tab a {
+		display:block;
+	}
+
 	/* Arrows */
 	#grid_list .tab:before {
 		content:" ";
@@ -1074,7 +1078,6 @@ footer {
 		display:inline-block;
 		position:relative;
 		top:407px;
-		padding:6px 10px 6px 10px;
 		border:1px solid #1F1F1F;
 		.mixin-border_radius(3px);
 		.mixin-bg_gradient_low;
@@ -1085,7 +1088,6 @@ footer {
 		font-family:Helvetica, "Helvetica Neue", Arial, sans-serif;
 		text-shadow:-1px -1px 0 rgba(0,0,0,0.3);
 		color:rgba(255,255,255,0.6);
-		cursor:pointer; 
 		line-height:1em;
 	}
     #grid_list li:only-child .tab .actions .remove {
@@ -1118,12 +1120,14 @@ footer {
 		
 	}
 	#grid_list .tab .actions li {
-	    display:inline;
+		position:absolute;
+		right:8px;
+		top:5px;
 	}
 	
 	#grid_list .tab .actions li:first-child {
-		margin-top:2px;
 		float:left;
+		position:static;
 	}
 	
 	#grid_list .tab .actions span {
@@ -1132,10 +1136,16 @@ footer {
 	    line-height:1em;	    
 	}
 	
+	#grid_list .tab .actions span.link {
+		padding:8px 32px 8px 10px;
+	}
+	#grid_list li:only-child .tab .actions span.link {
+		padding-right:10px;
+	}
+
 	#grid_list .tab .actions span.remove {
 	     width:17px;
 	     height:17px;
-         margin-left:5px;
 	     top:0px;
 	     overflow:hidden;
 	     text-indent:-999em;
