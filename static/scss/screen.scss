@@ -460,8 +460,9 @@ div#content_wrapper {
     // @start FOOTER
     // ----------------------------------------------------
 
-    #footer {
-        
+    footer {
+        background-color:#FFF;
+        padding:20px;
     }
 
     // @end FOOTER //
@@ -500,7 +501,7 @@ div#content_wrapper {
         float:right;
 
         li {
-            
+            margin:10px;    
         }
         a {
             

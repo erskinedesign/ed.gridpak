@@ -52,9 +52,10 @@
     // @start COLOURS -------------------- //
 
     $black:#212121;
-    $grey2:#353535;
-    $grey1:lighten($grey2, 10%);
-    $grey3:darken($grey2, 10%);
+
+    $grey1:#CCC;
+    $grey2:#DDD;
+    $grey3:#EEE;
 
 
     // @end COLOURS //
@@ -175,6 +176,16 @@
     }
 
     // @end BOX SIZING //
+
+    // @start HIDE TEXT -------------------- //
+
+    @mixin hide-text($value: border-box) {
+        text-indent: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    // @end HIDE TEXT //
 
 // @end MIXINS //
 

@@ -52,7 +52,7 @@
         <div id="app">
             
             <nav id="breakpoint_tabs">
-                <ul class="horizontal tabs">
+                <ul class="horizontal">
                     <li class="cur"><a href="#">0 - 760px</a> <span>x</span></li>
                     <li><a href="#">0 - 760px</a> <span>x</span></li>
                     <li><a href="#">0 - 760px</a> <span>x</span></li>
@@ -63,13 +63,13 @@
             <div id="options">
 
                 <dl>
-                    <dt><label for="col_num_id">No. of columns</label></dt>
-                    <dd><input name="col_num" id="col_num_id" type="number" min="1" max="99"></dd>
-                    <dt><label for="gutter_width_id">Gutter width</label></dt>
-                    <dd><input name="gutter_width" id="gutter_width_id" type="number" min="0" max="99"></dd>
-                    <dt><label for="gutter_unit_id">Gutter unit</label></dt>
+                    <dt><label for="col_num">No. of columns</label></dt>
+                    <dd><input name="col_num" id="col_num" type="number" min="1" max="99"></dd>
+                    <dt><label for="gutter_width">Gutter width</label></dt>
+                    <dd><input name="gutter_width" id="gutter_width" type="number" min="0" max="99"></dd>
+                    <dt><label for="gutter_unit">Gutter unit</label></dt>
                     <dd>
-                        <select name="gutter_unit" id="gutter_unit_id">
+                        <select name="gutter_unit" id="gutter_unit">
                             <option value="pixel">px</option>
                             <option value="percent">%</option>
                         </select>
@@ -89,7 +89,7 @@
 
             <div id="grid"> 
 
-                <input name="current_width" id="current_width_id" type="number" min="200" value="760px">
+                <input name="current_width" id="current_width" type="number" min="200" value="760px">
 
                 <ul class="horizontal">
                     <li class="column" style="width:13.5%"><span>13.33%</span></li>
@@ -104,26 +104,23 @@
                     <li class="gutter" style="width:7px;"></li>
                     <li class="column" style="width:13.5%"><span>13.33%</span></li>
                     <li class="gutter" style="width:20px;"></li>
-                    <li class="column" style="width:21.232%"><span>21.232%</span></li>
+                    <li class="column" style="width:10.232%"><span>10.232%</span></li>
                 </ul>
 
             </div> <!-- // #grid -->
 
-            <div id="download">
+            <footer>
 
-                <button name="download" id="download_id" type="submit">Download your Gridpak</button>
+                <button name="download" id="download" type="submit">Download your Gridpak</button>
 
                 <p class="customise"><a href="#">Customise your download</a></p>
 
-            </div> <!-- // #download -->
+                <p class="credit">A project by <a href="http://erskinedesign.com/">Erskine</a></p>
+
+
+            </footer>
 
         </div> <!-- // #app -->
-
-        <footer>
-
-            <p>A project by <a href="http://erskinedesign.com/">Erskine</a></p>
-
-        </footer>
 
     </body>
 

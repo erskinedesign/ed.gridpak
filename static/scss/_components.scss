@@ -110,33 +110,127 @@
 
 // @start TABS -------------------- //
 
-.tabs {
+#breakpoint_tabs {
     
+    background-color:$grey1;
+
+    ul {
+
+    }
+
     li {
-    
+        position:relative;   
     }
     
     a {
-        @include inline-block;
-        padding:calc-em(11) calc-em(23);
+        background-color:darken($grey1, 20%);
+        color:#FFF;
+        padding:15px 45px 15px 20px;
+
+        &:hover,
+        &:focus {
+            background-color:darken($grey1, 30%);
+        }
+    }
+
+    span {
+        background:#DDD;
+        color:#000;
+        display:block;
+        height:12px;
+        padding:0 0 5px 5px;
+        position:absolute;
+        right:15px;
+        top:15px;
+        width:12px;
+
+        &:hover,
+        &:focus {
+            background:#FFF;
+            cursor: pointer;
+        }
     }
 }
 
 // @end TABS
 
+
+// @start OPTIONS -------------------- //
+
+#options {
+    
+    background-color:$grey2;
+    overflow:hidden;
+    padding:20px;
+
+    dt,
+    dd {
+        float:left;
+        margin-right:10px;
+    }
+}
+
+// @end OPTIONS
 
 // @start RULER -------------------- //
 
-.tabs {
+#ruler {
+
+    background-color:$grey3;
     
     li {
-    
+        @include hide-text;
     }
     
     a {
-        @include inline-block;
-        padding:calc-em(11) calc-em(23);
+        background-color:$grey1;
+        width:10px;        
     }
 }
 
-// @end TABS
+// @end RULER
+
+// @start GRID -------------------- //
+
+#grid {
+    
+    @include clearfix;
+    position:relative;
+
+    #current_width{
+        position:absolute;
+        right:0;
+        top:0;
+    }
+
+    li {
+        background:gold;
+        border-right:2px solid #EEE;
+        float:left;
+        height:400px;
+    }
+    
+}
+
+// @end GRID
+
+// @start FOOTER -------------------- //
+
+footer {
+    
+    button {
+        background:#000;
+        border:none;
+        color:#FFF;
+        float:left;
+        padding:10px;
+    }
+    
+    .credit {
+        float:right;
+    }
+}
+
+// @end FOOTER
+
+
