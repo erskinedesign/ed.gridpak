@@ -5,21 +5,21 @@
     <head>
 
         <!-- META -->
-        <meta charset="utf-8" />
-        <meta name="author" content="Erskine Design" />
-        <meta name="description" content="A Responsive Web Design tool for creating grids by Erskine Design" />
+        <meta charset="utf-8">
+        <meta name="author" content="Erskine Design">
+        <meta name="description" content="A Responsive Web Design tool for creating grids by Erskine Design">
 
         <title>{% block page_title %}{% endblock %}Gridpak - For Responsive web design</title>
 
-        <link rel="author" type="text/plain" href="/humans.txt" />
+        <link rel="author" type="text/plain" href="/humans.txt">
 
         <!-- CSS -->
         {% compress css %}
-        <link rel="stylesheet" media="all" type="text/x-scss" href="{{ STATIC_URL }}scss/screen.scss" />
+        <link rel="stylesheet" media="all" type="text/x-scss" href="{{ STATIC_URL }}scss/screen.scss">
         {% endcompress %}
 
         <!-- ICONS -->
-        <link rel="icon" type="image/png" href="{{ STATIC_URL }}images/icons/favicon.png" />
+        <link rel="icon" type="image/png" href="{{ STATIC_URL }}images/icons/favicon.png">
 
         <!-- HEAD JS -->
         <script src="{{ STATIC_URL }}js/modernizr.js"></script>
@@ -30,6 +30,100 @@
 
     <body class="{% block body_class %}{% endblock %}" dir="ltr">
 
+        <header>
+
+            <a href="/">
+                <hgroup>
+                    <h1>Gridpak</h1>
+                    <h2>For Responsive web design</h2>
+                </hgroup>
+            </a>
+
+            <nav id="nav_pri">
+                <ul class="horizontal">
+                    <li><a href="#">Learn more</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Sign in</a><li>
+                </ul> <!-- // #nav_pri -->
+            </nav>
+
+        </header>
+        
+        <div id="app">
+            
+            <nav id="breakpoint_tabs">
+                <ul class="horizontal">
+                    <li class="cur"><a href="#">0 - 760px</a> <span>x</span></li>
+                    <li><a href="#">0 - 760px</a> <span>x</span></li>
+                    <li><a href="#">0 - 760px</a> <span>x</span></li>
+                    <li><a href="#">0 - 760px</a> <span>x</span></li>
+                </ul>
+            </nav> <!-- // #breadkpoint_tabs -->
+
+            <div id="options">
+
+                <dl>
+                    <dt><label for="col_num_id">No. of columns</label></dt>
+                    <dd><input name="col_num" id="col_num_id" type="number" min="1" max="99"></dd>
+                    <dt><label for="gutter_width_id">Gutter width</label></dt>
+                    <dd><input name="gutter_width" id="gutter_width_id" type="number" min="0" max="99"></dd>
+                    <dt><label for="gutter_unit_id">Gutter unit</label></dt>
+                    <dd>
+                        <select name="gutter_unit" id="gutter_unit_id">
+                            <option value="pixel">px</option>
+                            <option value="percent">%</option>
+                        </select>
+                    </dd>
+                </dl>
+
+            </div> <!-- // #options -->
+
+            <div id="ruler">
+                <ul class="horizontal">
+                    <li id="marker_0" class="cur"><a href="#">Drag me</a></li>
+                    <li id="marker_1"><a href="#">Drag me</a></li>
+                    <li id="marker_2"><a href="#">Drag me</a></li>
+                    <li id="marker_3"><a href="#">Drag me</a></li>
+                </ul>
+            </div> <!-- // #ruler -->
+
+            <div id="grid"> 
+
+                <input name="current_width" id="current_width_id" type="number" min="200" value="760px">
+
+                <ul class="horizontal">
+                    <li class="column" style="width:13.5%"><span>13.33%</span></li>
+                    <li class="gutter" style="width:7px;"></li>
+                    <li class="column" style="width:13.5%"><span>13.33%</span></li>
+                    <li class="gutter" style="width:7px;"></li>
+                    <li class="column" style="width:13.5%"><span>13.33%</span></li>
+                    <li class="gutter" style="width:7px;"></li>
+                    <li class="column" style="width:13.5%"><span>13.33%</span></li>
+                    <li class="gutter" style="width:7px;"></li>
+                    <li class="column" style="width:13.5%"><span>13.33%</span></li>
+                    <li class="gutter" style="width:7px;"></li>
+                    <li class="column" style="width:13.5%"><span>13.33%</span></li>
+                    <li class="gutter" style="width:20px;"></li>
+                    <li class="column" style="width:21.232%"><span>21.232%</span></li>
+                </ul>
+
+            </div> <!-- // #grid -->
+
+            <div id="download">
+
+                <button name="download" id="download_id" type="submit">Download your Gridpak</button>
+
+                <p class="customise"><a href="#">Customise your download</a></p>
+
+            </div> <!-- // #download -->
+
+        </div> <!-- // #app -->
+
+        <footer>
+
+            <p>A project by <a href="http://erskinedesign.com/">Erskine</a></p>
+
+        </footer>
 
     </body>
 
