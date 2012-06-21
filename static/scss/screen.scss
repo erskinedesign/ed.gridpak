@@ -8,7 +8,8 @@
     @version: 1.0
     @author: Erskine Design
 
-    CONTENTS ----------
+    CONTENTS 
+    -------------------------------------------------------
 
         - BODY
             - ACCESSIBILITY NAVIGATION
@@ -25,12 +26,13 @@
             - PRIMARY NAVIGATION
         - GLOBAL ELEMENTS & COMPONENTS
 
-    -------------------
+    -------------------------------------------------------
 
 */
 
 
-// @start BODY -------------------- //
+// @start BODY
+// -------------------------------------------------------- 
 
 body {
     background-color:$white;
@@ -39,7 +41,8 @@ body {
     line-height:(20 / $basefont);
 }
 
-    // @start ACCESSIBILITY NAVIGATION -------------------- //
+    // @start ACCESSIBILITY NAVIGATION
+    // ----------------------------------------------------
     
     ul#nav_access {
         list-style:none;
@@ -81,7 +84,8 @@ body {
 
 
 
-// @start DEFAULT STYLING -------------------- //
+// @start DEFAULT STYLING 
+// --------------------------------------------------------
 
 address,
 dl,
@@ -222,7 +226,8 @@ video {
     max-width:100%;
 }
 
-    // @start FORMS -------------------- //
+    // @start FORMS
+    // ----------------------------------------------------
 
     form {
         
@@ -287,7 +292,8 @@ video {
 
     // @end FORMS //
 
-    // @start TABLES -------------------- //
+    // @start TABLES
+    // ----------------------------------------------------
 
     table {
         
@@ -343,7 +349,8 @@ video {
 
 
 
-// @start HEADLINES -------------------- //
+// @start HEADLINES 
+// --------------------------------------------------------
 
 h1,
 h2,
@@ -394,7 +401,8 @@ h4 {
 
 
 
-// @start LINKS -------------------- //
+// @start LINKS 
+// --------------------------------------------------------
 
 a {
     
@@ -409,7 +417,8 @@ a {
 
 
 
-// @start LAYOUT -------------------- //
+// @start LAYOUT
+// --------------------------------------------------------
 
 div#page {
     
@@ -427,7 +436,8 @@ div#content_wrapper {
     
 }
 
-    // @start HEADER & BRANDING -------------------- //
+    // @start HEADER & BRANDING 
+    // ----------------------------------------------------
 
     #header {
         
@@ -456,7 +466,8 @@ div#content_wrapper {
 
     // @end HEADER & BRANDING //
 
-    // @start FOOTER -------------------- //
+    // @start FOOTER
+    // ----------------------------------------------------
 
     #footer {
         
@@ -468,9 +479,11 @@ div#content_wrapper {
 
 
 
-// @start NAVIGATION -------------------- //
+// @start NAVIGATION 
+// --------------------------------------------------------
 
-    /* @start HORIZONTAL CLASS -------------------- */
+    // @start HORIZONTAL CLASS 
+    // ----------------------------------------------------
 
     .horizontal {
         list-style:none;
@@ -488,7 +501,8 @@ div#content_wrapper {
     
     // @end HORIZONTAL CLASS //
     
-    // @start PRIMARY NAVIGATION -------------------- //
+    // @start PRIMARY NAVIGATION 
+    // ----------------------------------------------------
     
     ul#nav_pri {
         
@@ -512,7 +526,8 @@ div#content_wrapper {
 
 
 
-// @start GLOBAL ELEMENTS & COMPONENTS -------------------- //
+// @start GLOBAL ELEMENTS & COMPONENTS 
+// --------------------------------------------------------
 
 .hide {
     display:none;
@@ -532,5 +547,3 @@ div#content_wrapper {
 @import "components";
 
 // @end GLOBAL ELEMENTS & COMPONENTS //
-
-
