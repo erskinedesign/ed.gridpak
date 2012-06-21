@@ -108,3 +108,35 @@
 // @end CTA BUTTONS //
 
 
+// @start TABS -------------------- //
+
+.tabs {
+    
+    li {
+    
+    }
+    
+    a {
+        @include inline-block;
+        padding:calc-em(11) calc-em(23);
+    }
+}
+
+// @end TABS
+
+
+// @start RULER -------------------- //
+
+.tabs {
+    
+    li {
+    
+    }
+    
+    a {
+        @include inline-block;
+        padding:calc-em(11) calc-em(23);
+    }
+}
+
+// @end TABS

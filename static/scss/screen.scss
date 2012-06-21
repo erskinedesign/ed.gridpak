@@ -35,7 +35,7 @@
 // -------------------------------------------------------- 
 
 body {
-    background-color:$white;
+    background:#fff url(/static/images/bg.png);
     color:$black;
     font:$normal percentage($basefont/16) $sans1;
     line-height:(20 / $basefont);
@@ -439,30 +439,21 @@ div#content_wrapper {
     // @start HEADER & BRANDING 
     // ----------------------------------------------------
 
-    #header {
-        
-    }
+    header {
+        background-color:$black;        
+        color:$grey2;
+        overflow:hidden;
+        padding:calc-em(23);
 
-    #branding {
-        margin:0;
-        padding:0;
+        hgroup {
+            float:left;
+        }
 
         a {
-            display:block;
-            height:102px;
-            width:160px;
+            color:#fff;
+            text-decoration:none;
         }
-
-        .svg & {
-            background-image:url("../images/branding/branding.svg");
-            background-repeat:no-repeat;
-
-            img {
-                visibility:hidden;
-            }
-        }
-
-    } // #branding
+    }
 
     // @end HEADER & BRANDING //
 
@@ -504,8 +495,9 @@ div#content_wrapper {
     // @start PRIMARY NAVIGATION 
     // ----------------------------------------------------
     
-    ul#nav_pri {
+    #nav_pri {
         
+        float:right;
 
         li {
             

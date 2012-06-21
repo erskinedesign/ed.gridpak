@@ -25,20 +25,18 @@
 
     // @start FONT STACKS -------------------- //
 
-    $sans1:'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
-    $sans2:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
+    $sans1:'ff-meta-web-pro', Helvetica, Arial, sans-serif;
+    $sans2:Arial, sans-serif;
 
     // @end FONT STACKS //
 
     // @start FONT SIZES -------------------- //
 
-    $basefont:14;
-    $baseh1:26;
-    $baseh2:20;
-    $baseh3:17;
-    $baseh4:14;
-    // $baseh5:;
-    // $baseh6:;
+    $basefont:13;
+    $baseh1:20;
+    $baseh2:14;
+    $baseh3:13;
+    $baseh4:13;
 
     // @end FONT SIZES //
 
@@ -53,15 +51,11 @@
 
     // @start COLOURS -------------------- //
 
-    $branding:#AC0000;
+    $black:#212121;
+    $grey2:#353535;
+    $grey1:lighten($grey2, 10%);
+    $grey3:darken($grey2, 10%);
 
-    $black:#000;
-    $white:#FFF;
-
-    $blue1:#4C81AE; // Default link
-    $blue2:#427097; // Default link hover
-
-    $pink1:#D71379; // Error
 
     // @end COLOURS //
 
