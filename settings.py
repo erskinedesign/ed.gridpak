@@ -155,6 +155,9 @@ INSTALLED_APPS = (
 COMPRESS_CSS_FILTERS = (
     'compressor.filters.cssmin.CSSMinFilter',
 )
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'sass --scss {infile} {outfile}'),
+)
 
 # For the debug toolbar
 INTERNAL_IPS = (

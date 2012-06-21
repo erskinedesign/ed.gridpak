@@ -1,108 +1,35 @@
 {% load compress %}
 <!DOCTYPE html>
-<html lang="en" class="js-disabled">
+<html lang="en" class="no-js">
 
     <head>
-    
-        <!-- METADATA -->
-        <meta charset="UTF-8" />
-        <meta name="description" content="A Responsive Web Design tool for creating grids by Erskine Design" />
+
+        <!-- META -->
+        <meta charset="utf-8" />
         <meta name="author" content="Erskine Design" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">  
-        <link rel="author" type="text/plain" href="{{ STATIC_URL }}humans.txt" />
-        
-        
-        <title>{% block page_title %}{% endblock %}Gridpak - The Responsive grid generator</title>
-        
-        <!-- TYPEKIT -->
-        <script type="text/javascript" src="//use.typekit.com/pua6dog.js"></script>
-        <script src="{{ STATIC_URL }}js/EDJ.bootstrap.js"></script>
-        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-        
+        <meta name="description" content="A Responsive Web Design tool for creating grids by Erskine Design" />
+
+        <title>{% block page_title %}{% endblock %}Gridpak - For Responsive grids</title>
+
+        <link rel="author" type="text/plain" href="/humans.txt" />
+
         <!-- CSS -->
         {% compress css %}
-        <link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/reset.css" />
-        <link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/screen.css" />
+        <link rel="stylesheet" media="all" type="text/x-scss" href="{{ STATIC_URL }}scss/screen.scss" />
         {% endcompress %}
-        
+
         <!-- ICONS -->
-        <link rel="icon" href="{{ STATIC_URL }}images/site/icons/favicon.ico" />
+        <link rel="icon" type="image/png" href="{{ STATIC_URL }}images/icons/favicon.png" />
 
-        <!-- ANALYTICS -->
-        <script type="text/javascript">
+        <!-- HEAD JS -->
+        <script src="{{ STATIC_URL }}js/modernizr.js"></script>
+        <script type="text/javascript" src="//use.typekit.com/pua6dog.js"></script>
 
-          var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-27024034-1']);
-          _gaq.push(['_trackPageview']);
-
-          (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
-
-        </script>
-    
     </head>
-    
-    <body class="{% block body_class %}{% endblock %}">
-            {% block sorry %}{% endblock %}
-        	<header class="site_header">
-	            <div class="header_wrapper">
-	                <h1 id="branding">
-                        <a href="{% url grids_index %}">Gridpak<sup>BETA</sup></a>
-			        </h1>
-			        <p>The Responsive grid generator<br />Created by Erskine Design</p>
 
-    				<nav>
-    				    {% block social %}
-    				    <ul class="social">	
-        					<li class="like">
-        						<div class="fb-like" data-href="http://gridpak.com/" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false"></div>
-        					</li>
-        					<li class="share">
-        						<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="gridpak" data-related="erskinedesign:creators of Gridpak">Tweet</a>
-        					</li>
-        				</ul>
-        				{% endblock %}
-                        {% block nav_item %}{% endblock %}
-    			    </nav>
-    			</div>
-			</header>
-	    	<div id="content_wrapper">
-    		{% block content %}{% endblock %}
+    <body class="{% block body_class %}{% endblock %}" dir="ltr">
 
-    <!-- JAVASCRIPT -->
-    {% compress js %}
-    <script src="{{ STATIC_URL }}js/jquery-1.7.1.js"></script>
-    <script src="{{ STATIC_URL }}js/jquery-ui-1.8.16.custom.min.js"></script>
-    <script src="{{ STATIC_URL }}js/EDJ.js"></script>
-    <script src="{{ STATIC_URL }}js/jquery.fitvids.js"></script>
-    {% endcompress %}
-    {% block javascript %}{% endblock %}
 
-    <!-- SOCIAL -->
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=242706075751659";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-    <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
-
-    <!-- CALL DOC READY FUNCTIONS -->
-    <script>
-    $(document).ready(function() {
-        var settings = {
-            debug: {{ debug|lower }},
-            STATIC_URL: '{{ STATIC_URL }}'
-        };
-        EDJ.on_ready(settings);
-    });
-    </script>
-
-	</body>
+    </body>
 
 </html>

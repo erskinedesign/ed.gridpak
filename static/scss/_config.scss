@@ -1,0 +1,187 @@
+// SCSS CONFIGURATION LIBRARY
+
+// @author: Erskine Design
+
+// CONTENTS ------------
+//  - DEFAULT VARIABLES
+//      - FONT STACKS
+//      - FONT SIZES
+//      - FONT WEIGHTS
+//      - COLOURS
+//      - SPRITE
+//  - FUNCTIONS
+//      - EM CALC
+//  - MIXINS
+//      - SPRITE BACKGROUND
+//      - BORDER RADIUS
+//      - LINEAR GRADIENT
+//      - MICRO CLEARFIX
+//      - INLINE BLOCK
+//      - BOX SIZING
+// ---------------------
+
+
+// @start DEFAULT VARIABLES -------------------- //
+
+    // @start FONT STACKS -------------------- //
+
+    $sans1:'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+    $sans2:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
+
+    // @end FONT STACKS //
+
+    // @start FONT SIZES -------------------- //
+
+    $basefont:14;
+    $baseh1:26;
+    $baseh2:20;
+    $baseh3:17;
+    $baseh4:14;
+    // $baseh5:;
+    // $baseh6:;
+
+    // @end FONT SIZES //
+
+    // @start FONT WEIGHTS -------------------- //
+
+    $lighter:300;
+    $normal:400;
+    $semibold:600;
+    $bold:700;
+
+    // @end FONT WEIGHTS //
+
+    // @start COLOURS -------------------- //
+
+    $branding:#AC0000;
+
+    $black:#000;
+    $white:#FFF;
+
+    $blue1:#4C81AE; // Default link
+    $blue2:#427097; // Default link hover
+
+    $pink1:#D71379; // Error
+
+    // @end COLOURS //
+
+    // @start SPRITE -------------------- //
+
+    $sprite: twitter, facebook, email;
+
+    // @end SPRITE //
+
+// @end DEFAULT VARIABLES //
+
+
+
+// @start FUNCTIONS -------------------- //
+
+    // @start EM CALC -------------------- //
+
+    @function calc-em($target, $context: $basefont) {
+        @return ($target / $context) * 1em;
+    }
+
+    // @end EM CALC //
+
+// @end FUNCTIONS //
+
+
+
+// @start MIXINS -------------------- //
+
+    // @start SPRITE BACKGROUND -------------------- //
+
+    @mixin sprite-bg($crop, $x:0, $y:$x, $hover:true) {
+        $spritegrid:500;
+        $i:0;
+        @each $part in $sprite {
+            @if ($part == $crop) {
+                $i:index($sprite, $part);
+            }
+        }
+        @if $i == 0 {
+            @warn "sprite-bg can't find '#{$crop}' in $sprite";
+        }
+        background-image:url("/static/images/icons/sprite.png");
+        background-position-x: ($x * 1px);
+        background-position-y: ((($i - 1) * ($spritegrid * -1px)) + $y);
+        background-repeat:no-repeat;
+        @if $hover {
+            &:hover,
+            &:focus {        
+                background-position-x: (($spritegrid * -1px) + ($x * 1px));
+            }
+        }
+        .svg & {
+            background-image:url("/static/images/icons/sprite.svg");
+        }
+    }
+
+    // @end SPRITE BACKGROUND //
+
+    // @start BORDER RADIUS -------------------- //
+
+    @mixin border-radius($radii) {
+                border-radius:$radii;
+        -webkit-border-radius:$radii;
+    }
+
+    // @end BORDER RADIUS //
+
+    // @start INLINE BLOCK (http://bit.ly/thoughtbot-bourbon-inline-block) -------------------- //
+
+    @mixin inline-block {
+        display:inline-block;
+        vertical-align:baseline;
+        zoom:1;
+        *display:inline;
+        *vertical-align:auto;
+    }
+
+    // @end INLINE BLOCK //
+
+    // @start LINEAR GRADIENT -------------------- //
+
+    @mixin gradient($from, $to, $fallback: $to) {
+        background-color:$fallback;
+        background-image:       -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+        background-image:-webkit-linear-gradient(top, $from, $to);
+        background-image:   -moz-linear-gradient(top, $from, $to);
+        background-image:    -ms-linear-gradient(top, $from, $to);
+        background-image:     -o-linear-gradient(top, $from, $to);
+        background:              linear-gradient(to left bottom, $from, $to);
+    }
+
+    // @end LINEAR GRADIENT //
+
+    // @start MICRO CLEARFIX (http://bit.ly/thoughtbot-bourbon-clearfix) -------------------- //
+
+    @mixin clearfix {
+        &:before,
+        &:after {
+            content:"";
+            display:table;
+        }
+        &:after {
+            clear:both;
+        }
+        zoom:1;
+    }
+
+    // @end MICRO CLEARFIX //
+
+    // @start BOX SIZING -------------------- //
+
+    @mixin box_sizing($value: border-box) {
+        -moz-box-sizing:$value;
+        -webkit-box-sizing:$value;
+        box-sizing:$value;
+    }
+
+    // @end BOX SIZING //
+
+// @end MIXINS //
+
+

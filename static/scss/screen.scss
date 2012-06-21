@@ -1,0 +1,536 @@
+@import "config", "reset";
+
+
+/*
+
+    [PROJECT NAME]
+
+    @version: 1.0
+    @author: Erskine Design
+
+    CONTENTS ----------
+
+        - BODY
+            - ACCESSIBILITY NAVIGATION
+        - DEFAULT STYLING
+            - FORMS
+            - TABLES
+        - HEADLINES
+        - LINKS
+        - LAYOUT
+            - HEADER & BRANDING
+            - FOOTER
+        - NAVIGATION
+            - HORIZONTAL CLASS
+            - PRIMARY NAVIGATION
+        - GLOBAL ELEMENTS & COMPONENTS
+
+    -------------------
+
+*/
+
+
+// @start BODY -------------------- //
+
+body {
+    background-color:$white;
+    color:$black;
+    font:$normal percentage($basefont/16) $sans1;
+    line-height:(20 / $basefont);
+}
+
+    // @start ACCESSIBILITY NAVIGATION -------------------- //
+    
+    ul#nav_access {
+        list-style:none;
+        margin:0;
+        position:relative;
+
+        li {
+            height:0;
+        }
+        a {
+            background:#FFC;
+            border:2px solid #DDD;
+            display:block;
+            font-size:11px;
+            font-weight:bold;
+            left:-9999px;
+            padding:10px;
+            position:absolute;
+            top:0;
+
+            &:hover,
+            &:focus {
+                color:#333;
+                left:0;
+            }
+        } // ul#nav_access a
+
+    } // ul#nav_access
+
+    // Don't outline for nav_access users
+    #nav_pri:focus,
+    #content_wrapper:focus {
+        outline:0;
+    }
+
+    // @end ACCESSIBILITY NAVIGATION //
+
+// @end BODY //
+
+
+
+// @start DEFAULT STYLING -------------------- //
+
+address,
+dl,
+fieldset,
+figure,
+form,
+hr,
+ol,
+p,
+pre,
+table,
+ul {
+    // margin-bottom:;
+
+    & + h2 {
+        // padding-top:;
+    }
+    & + h3 {
+        // padding-top:;
+    }
+    & + h4 {
+        // padding-top:;
+    }
+    // & + h5 {
+    //     padding-top:;
+    // }
+    // & + h6 {
+    //     padding-top:;
+    // }
+
+}
+
+ul {
+    
+
+    li {
+        
+    }
+}
+
+ol {
+    
+
+    li {
+        
+    }
+}
+
+dl {
+    
+
+    dt {
+        
+    }
+    dd {
+        
+    }
+}
+
+hr {
+    
+}
+
+blockquote {
+    
+
+    p {
+        
+    }
+    cite {
+        
+    }
+}
+
+code,
+pre {
+    font-family:monospace;
+}
+code {
+    
+}
+pre {
+    
+
+    code {
+        
+    }
+}
+
+abbr {
+    
+
+    &:hover {
+        cursor:help;
+    }
+}
+
+del {
+    text-decoration:line-through;
+}
+
+b,
+strong {
+    font-weight:bold;
+}
+em,
+i {
+    font-style:italic;
+}
+
+sup {
+    vertical-align:super;
+}
+sub {
+    vertical-align:sub;
+}
+
+small {
+    
+}
+
+figure {
+    
+
+    img {
+        
+    }
+    figcaption {
+        
+    }
+}
+
+iframe,
+img,
+object,
+video {
+    height:auto;
+    max-width:100%;
+}
+
+    // @start FORMS -------------------- //
+
+    form {
+        
+
+        dl {
+            
+
+            dt {
+                
+            }
+            dd {
+                
+            }
+        }
+
+        ul {
+            
+        }
+        li {
+            
+        }
+
+    } // form
+
+    fieldset {
+        
+    }
+
+    label {
+        
+
+        em {
+            
+        }
+    } // label
+
+    input[type="text"],
+    textarea {
+        
+    }
+    input[type="checkbox"],
+    input[type="radio"] {
+        
+    }
+    textarea {
+        
+    }
+
+    .error input,
+    .error textarea {
+        
+    }
+
+    form .cta_button {
+        
+        button {
+            border:0;
+            cursor:pointer;
+            vertical-align:baseline;
+        }
+    }
+
+    // @end FORMS //
+
+    // @start TABLES -------------------- //
+
+    table {
+        
+    }
+
+    caption {
+        
+    }
+    legend {
+        
+    }
+
+    tr {
+        
+    }
+
+    th,
+    td {
+        
+    }
+    th {
+        
+    }
+    td {
+        
+    }
+
+    thead {
+        
+
+        th {
+            
+        }
+        td {
+            
+        }
+    } // thead
+
+    tbody {
+        
+
+        th {
+            
+        }
+        td {
+            
+        }
+    } // tbody
+
+    // @end TABLES //
+
+// @end DEFAULT STYLING //
+
+
+
+// @start HEADLINES -------------------- //
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    
+}
+
+h1 {
+    font-size:calc-em($baseh1);
+    // line-height:;
+    // margin-bottom:calc-em(20, $baseh1);
+}
+
+h2 {
+    font-size:calc-em($baseh2);
+    // line-height:;
+    // margin-bottom:calc-em(20, $baseh2);
+}
+
+h3 {
+    font-size:calc-em($baseh3);
+    // line-height:;
+    // margin-bottom:calc-em(20, $baseh3);
+}
+
+h4 {
+    font-size:calc-em($baseh4);
+    // line-height:;
+    // margin-bottom:calc-em(20, $baseh4);
+}
+
+// h5 {
+//     font-size:calc-em($baseh5);
+//     line-height:;
+//     margin-bottom:calc-em(20, $baseh5);
+// }
+
+// h6 {
+//     font-size:calc-em($baseh6);
+//     line-height:;
+//     margin-bottom:calc-em(20, $baseh6);
+// }
+
+// @end HEADLINES //
+
+
+
+// @start LINKS -------------------- //
+
+a {
+    
+
+    &:hover,
+    &:focus {
+        
+    }
+}
+
+// @end LINKS //
+
+
+
+// @start LAYOUT -------------------- //
+
+div#page {
+    
+}
+
+div#content_wrapper {
+    
+}
+
+.content_pri {
+    
+}
+
+.content_sec {
+    
+}
+
+    // @start HEADER & BRANDING -------------------- //
+
+    #header {
+        
+    }
+
+    #branding {
+        margin:0;
+        padding:0;
+
+        a {
+            display:block;
+            height:102px;
+            width:160px;
+        }
+
+        .svg & {
+            background-image:url("../images/branding/branding.svg");
+            background-repeat:no-repeat;
+
+            img {
+                visibility:hidden;
+            }
+        }
+
+    } // #branding
+
+    // @end HEADER & BRANDING //
+
+    // @start FOOTER -------------------- //
+
+    #footer {
+        
+    }
+
+    // @end FOOTER //
+
+// @end LAYOUT //
+
+
+
+// @start NAVIGATION -------------------- //
+
+    /* @start HORIZONTAL CLASS -------------------- */
+
+    .horizontal {
+        list-style:none;
+
+        dd,
+        dt,
+        li {
+            @include inline-block;
+            margin-left:0;
+        }
+        a {
+            display:block;
+        }
+    }
+    
+    // @end HORIZONTAL CLASS //
+    
+    // @start PRIMARY NAVIGATION -------------------- //
+    
+    ul#nav_pri {
+        
+
+        li {
+            
+        }
+        a {
+            
+
+            &:hover,
+            &:focus {
+                
+            }
+        }
+    }
+
+    // @end PRIMARY NAVIGATION //
+
+// @end NAVIGATION //
+
+
+
+// @start GLOBAL ELEMENTS & COMPONENTS -------------------- //
+
+.hide {
+    display:none;
+}
+
+.left {
+    float:left;
+}
+.right {
+    float:right;
+}
+
+.clearfix {
+    @include clearfix;
+}
+
+@import "components";
+
+// @end GLOBAL ELEMENTS & COMPONENTS //
+
+
