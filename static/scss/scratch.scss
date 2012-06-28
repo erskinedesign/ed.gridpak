@@ -1,0 +1,12 @@
+.ui-resizable {
+    position:relative;
+}
+.ui-resizable-handle {
+    position:absolute;
+    width:7px;
+    height:100%;
+    background:red;
+    display:block;
+    top:0;
+    right:0;
+}
