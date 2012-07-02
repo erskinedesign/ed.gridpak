@@ -1,0 +1,87 @@
+{% extends 'grids/base.html' %}
+{% block page_title %}About | {% endblock %}
+{% block body_class %}about mobile{% endblock %}
+{% block nav_item %}{% endblock %}
+{% block social %}{% endblock %}
+{% block sorry %}
+
+  <div class="sorry_message">
+	       <p><b>Please note:</b> The Gridpak generator is not designed for use on a mobile device, please use a desktop browser. We are aware of the irony.</p>
+  </div>
+{% endblock %}
+{% block content %}
+	{% load common %}
+		<div class="about_wrapper">
+		    
+			    <div class="about_header_wrapper">
+			        
+    			    <header id="header_sec">
+    					<h2>The <b>Responsive</b> grid generator</h2>
+    					<p>Creating a Responsive grid system just became a total breeze&hellip;</p>
+    					<div class="video_container ">  
+                            <iframe src="http://player.vimeo.com/video/35256595?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="780px" height="505px" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    				    </div>
+    			    </header>
+    			   
+                    <div class="description">
+
+                        <div class="row">
+
+                            <div class="item">
+                                <h3>What is it?</h3>
+                                <p>Gridpak is the starting point for your responsive projects, improving your workflow
+                                and saving time. Create your responsive grid system once using the simple interface and 
+                                let Gridpak do the heavy lifting by generating PNGs, CSS 
+                                and JavaScript.</p> 
+                            </div> <!-- // .,item -->
+
+                            <div class="item">
+                                <h3>Why should I use it?</h3>
+                                <p>We think it&rsquo;s the best and most flexible way to devise a responsive layout. You control 
+                                every aspect of the grid from column padding to where &lsquo;break points&rsquo; occur. Our simple 
+                                interface makes it quick and easy to visualise your responsive grid system and output it 
+                                in the formats you need to make a lightning quick start to any project.</p>
+                            </div> <!-- // .item -->
+                        </div> <!--  // .row -->
+
+                        <div class="row">
+                            <div class="item">
+        			        <h3>Compatibility</h3>
+                                <p>The CSS that Gridpak generates is compatible with IE 8+, however it makes use of some
+                                more experimental CSS properties such as the <code>media query</code>, <code>box-sizing</code> 
+                                and <code>background-clip</code> properties so we suggest using it in conjunction with a library
+                                such as <a href="http://www.modernizr.com/">Modernizr</a> to ensure backwards compatibility.</p>
+                            </div> <!-- // .item -->
+                            
+                             <div class="item">
+                                    <h3>What do I get?</h3>
+                                    <p>A CSS file with all the classes and properties you need to create a
+                                      responsive grid layout. A LESS file with much the same information but including variables,
+                                      mixins and methods to help you. An SCSS file like the LESS file, but in SCSS.A semi transparent PNG image for each grid you have created to help with your design, or with lining things up in your front end. And a JavaScript snippet that allows you to toggle an overlay of your 
+                                    grid on and off in any browser using the 'G' key.
+                                    </p>
+                                </div>
+
+                            <div class="item">
+                                <h3>Feedback</h3>
+                                <p>As the title says, we are currently in open Beta and will be actively developing and improving
+                                Gridpak. If you have any feedback, feature requests or use Gridpak for a web project<br />
+                                <a href="MAILTO:gridpak@erskinedesign.com">we&rsquo;d love to hear from you</a>. For all the latest updates
+                                please follow <a href="http://twitter.com/gridpak">@Gridpak</a> on Twitter.
+                                </p>
+                            </div> <!-- // .item -->
+                        </div> <!--  // .row -->
+                        
+            	    </div> <!-- // .description -->
+            	</div><!-- about_header_wrapper-->   
+    		<footer>	
+                <div class="call_to">
+                    <p class="created_by">This site is licensed under a Creative Commons Attribution 3.0 License
+                    Created by <a href="http://erskinedesign.com/">Erskine Design</a>
+                    </p>
+                </div>
+            </footer>
+
+	</div><!-- // .content_wrapper -->
+
+{% endblock %}

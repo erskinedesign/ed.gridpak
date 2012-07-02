@@ -1,0 +1,30 @@
+/* CORE TEAM */
+    Team:           Erskine Design
+    URL:            http://erskinedesign.com
+    Contact:        hello [at] erskinedesign.com
+    Twitter:        @erskinedesign
+    From:           Nottingham, UK
+
+    Dev lead:       Wil Linssen
+    Contact:        wil [at] erskinedesign.com
+    Personal:       http://wil-linssen.com/
+    Twitter:        @linssen
+    From:           Nottingham, UK
+
+    Design lead:    Sam Quayle
+    Contact:        sam [at] erskinedesign.com
+    Personal:       http://pelicanfly.com/
+    Twitter:        @samquayle
+    From:           Nottingham, UK
+
+    Design:         Phil Swan
+    Contact:        phil [at] erskinedesign.com
+    Personal:       http://philswan.co.uk/
+    Twitter:        @philswan
+    From:           Beeston, Middle Earth
+
+/* SITE */
+    Last update:    30th Nov 2011
+    Language:       English
+    Doctype:        HTML
+    Tools:          Fireworks, CSSEdit, Vim, TextMate

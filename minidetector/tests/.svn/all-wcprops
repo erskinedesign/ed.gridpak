@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/21/trunk/minidetector/tests
+END
+other_useragents.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/14/trunk/minidetector/tests/other_useragents.txt
+END
+mobile_useragents.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/21/trunk/minidetector/tests/mobile_useragents.txt
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7/trunk/minidetector/tests/__init__.py
+END
