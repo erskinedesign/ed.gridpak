@@ -36,7 +36,9 @@ We prefer to run our Django projects using [virtualenv][], and while we won't go
 
 ## Feedback
 
-We'd love feedback on the project, which you can send by email to gridpak [at] erskinedesign.com, or from the issues on this GitHub project. 
+We'd love feedback on the project, which you can send by email to gridpak [at] erskinedesign.com, or from the issues on this GitHub project.
+
+<a href="https://github.com/erskinedesign/ed.ultimate_package"><img src="https://github.com/erskinedesign/ed.gridpak/raw/master/static/images/site/badge-up.png"/></a>
 
 [Django]: http://djangoproject.com/
 [Backbone.js]: /http://documentcloud.github.com/backbone/
