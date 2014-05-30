@@ -1,0 +1,269 @@
+// ==========================================================================
+// DIALOGUE MODULE
+// ========================================================================== 
+
+// This module styles the dialogue box where users input information 
+// such as the column padding and number of grids.
+
+
+#grid_options {
+    display:block;
+    position:relative;
+    float: right;
+    width: 204px;
+    right: -204px;
+    padding: 16px 2px 18px 39px;
+    margin: 100px 0 0 0;
+    clear: both;
+    color: #FFF;
+    background: #404345;
+    z-index: 99; // lol
+}
+
+input {
+    font-family:Helvetica, "Helvetica Neue", Arial, sans-serif;
+    font-size:1.153846154em;/*15/13*/
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance:none;
+    margin:0; 
+}
+
+#grid_options label {
+    display:block;
+    clear:both;
+    margin-bottom: 1px;
+    font-size: 0.923076923em;/*12/13*/
+}
+
+#grid_options div {
+    margin-bottom:10px;
+}
+
+#grid_options div.submit {
+    float:left;
+    margin:13px 0 0 -39px;
+    width:160px;
+    padding:18px 0 0 40px;
+}
+
+#grid_options .dragme {
+    width: 64px;
+    height: 64px;
+    background: #3B3F41 url(/static/images/site/icons/gridpak-sprite.png);
+    background-position: 19px -4095px;
+    background-repeat:no-repeat;
+    border-radius: 100%;
+    
+    position:absolute;
+    left: -34px;
+    top: 103px;
+    margin: 0;
+    
+    cursor: ew-resize;
+    z-index: 10;
+    box-shadow: 0px -1px 2px #4D5052 inset;
+}
+    
+#grid_options input {
+    margin-left:19px;
+    padding:3px 2px 4px 8px;
+    border-radius:0 3px 3px 0;
+    border:1px solid #000;
+    border-left:none;
+    outline:none;
+    height:21px;
+    width:33px;
+    color:#333;
+    transition:all 0.2s ease-out;
+    background:#FFF linear-gradient(top, #C6C6C6, #FFF);
+    box-shadow:0 1px 0 rgba(255,255,255,0.15), rgba(255,255,255,1) 0 1px 0 inset;
+    background-clip:padding-box;
+}
+    
+    #grid_options input:focus {
+        background:#FFF;
+        color:rgba(0,0,0,0.9);
+        background-clip:padding-box;
+    }
+    
+    #grid_options input:active {
+        background:#FFF;
+        background-clip:padding-box;
+    }
+    
+    .number {
+        width:17px;
+    }
+    
+    .increase {
+        height:14px;
+        position:absolute;
+        border-radius:3px 0 0 0;
+        border-left:1px solid #000;
+        border-top:1px solid #000;
+        background-color:#E5E5E5;
+        background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, linear-gradient(top, #E5E5E5, #B1B1B1);
+        box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0 inset;
+        background-clip:padding-box;
+    }
+    
+    .decrease {
+        height:14px;
+        position:absolute;
+        margin-top:14px;
+        border-radius:0 0 0 3px;
+        border-left:1px solid #000;
+        border-top:1px solid #707070;
+        border-bottom:1px solid #000;
+        background-color:#E5E5E5;
+        background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, linear-gradient(top, #E5E5E5, #B1B1B1);
+        box-shadow:0 1px 0 rgba(255,255,255,0.15), rgba(255,255,255,0.7) 1px 0 0 inset;
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#D4D4D4', EndColorStr='#B1B1B1');
+        -moz-background-clip:padding; 
+        -webkit-background-clip:padding-box; 
+        background-clip:padding-box;
+    }
+    
+    .increase:hover,
+    .increase:focus {
+        background:#bbb url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2195px;
+    }
+    
+    .decrease:hover,
+    .decrease:focus {
+        background:#bbb url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -1914px;
+    }
+    
+    /* Switchers */
+    .switcher_container {
+        display: block;
+        height: auto;
+        width: auto;
+        float: left;
+        margin-left: 0.5em;
+        cursor: pointer;
+    }
+    .switcher_container input {
+        display: none;
+    }
+    #grid_options .switcher_container label {
+        display: block;
+        float: left;
+        color: #919293;
+        background-color: #37393A;
+        clear: none;
+        padding: 7px 10px;
+        margin: 0;
+        cursor: pointer;
+    }
+    #grid_options .switcher_container label:hover,
+    #grid_options .switcher_container label:focus {
+        color: #fff;
+        color: rgba(255,255,255,0.9);
+    }
+
+    #grid_options .switcher_container label.selected {
+        color: rgba(255,255,255,1.0);
+        margin-right: 1px; // to make sure that the box shadow doesn’t bump into it’s neighbour
+        box-shadow: 0 0 0 1px #111;
+        background-color: #535353;
+        cursor: default;
+    }
+
+    .number_input {
+        float: left;
+        height: 30px;
+    }
+    
+    .number:active {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;    
+    }
+
+    .number_input {
+        float:left;
+    }
+    
+    #save_grid { // more lol
+        font-family:ff-meta-web-pro, sans-serif !important;
+        font-size:1.076923077em;/*14/13*/
+        color:#333333;
+        text-decoration:none;
+        float:left;
+        position:relative;
+        margin-left:-1px;
+        padding:8px 12px 8px 26px;
+        border:1px solid #1F1F1F;
+        border-radius:3px;
+        background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
+        box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.50) 0 1px 0 inset;
+        cursor:pointer;
+        background-clip:padding-box;
+    }
+    
+    #save_grid:before {
+        background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -4240px !important;
+        height:36px;
+        width:30px;
+        content:'';
+        position:absolute;
+        left:-14px;
+        top:-1px;
+    }
+    
+    #save_grid:hover,
+    #save_grid:focus {
+        color:#000000;
+        background:#bbb url(/static/images/site/icons/gridpak-sprite.png) no-repeat 4px -3830px;
+        background-clip:padding-box;
+    }
+    
+    #save_grid:hover:before,
+    #save_grid:focus:before {
+        background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -4380px !important;
+    }
+    
+    #save_grid:active:before {
+        background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -4520px !important;
+    }
+    
+    #save_grid:active {
+         box-shadow:none;   
+         background-clip:padding-box;
+    }
+    
+    .total_width {
+        z-index: 4000;
+        position: absolute; // because I’m not touching the HTML I have to do some yucky stuff
+        top: -370px;
+        right: 203px;
+        float: right;
+        margin: 369px -203px 0 0;
+        background-color: rbg(0,0,0);
+        background-color: rgba(0,0,0,0.8);
+        border-right: 1px solid #111111;
+        border-top: 1px solid #111111;
+        font-size: .846153846em;
+        padding: 5px 10px;
+        color: #FFF;
+    }
+    
+    .total_width input {
+        font-size:1em;/*10/13*/
+        background:none;
+        border:none;
+        text-align:right;
+        width:25px;
+        color:#FFF;
+        margin: -1px 0 0 0; 
+    }
+    .total_width input:disabled {
+        color:#FFF;
+
+    }
+    
+    /* @end */

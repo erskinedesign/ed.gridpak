@@ -1,0 +1,157 @@
+// ==========================================================================
+// ANIMATIONS MODULE
+// ========================================================================== 
+
+@-webkit-keyframes fadeIn {
+    0% {opacity:0;} 
+    100% {opacity:0.1;}
+}
+
+@-moz-keyframes fadeIn {
+    0% {opacity:0;} 
+    100% {opacity:0.1;}
+}
+
+@-ms-keyframes fadeIn {
+    0% {opacity:0;} 
+    100% {opacity:0.1;}
+}
+
+@-o-keyframes fadeIn {
+    0% {opacity:0;} 
+    100% {opacity:0.1;}
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;} 
+    20% {opacity:0;}
+    100% {opacity:0.1;}
+}
+
+@-webkit-keyframes fadeInTwo {
+    0% {opacity:0;} 
+    100% {opacity:1;}
+}
+
+@-moz-keyframes fadeInTwo {
+    0% {opacity:0;} 
+    100% {opacity:1;}
+}
+
+@-ms-keyframes fadeInTwo {
+    0% {opacity:0;} 
+    100% {opacity:1;}
+}
+
+@-o-keyframes fadeInTwo {
+    0% {opacity:0;} 
+    100% {opacity:1;}
+}
+
+@keyframes fadeInTwo {
+    0% {opacity:0;} 
+    100% {opacity:1;}
+}
+
+/* @end */
+    
+    
+    
+/* @group 8.2 glow
+------------------------------------------*/
+
+@-webkit-keyframes glow {
+    0% {-webkit-box-shadow:0 0 0 rgba(255,255,255,0);-moz-box-shadow:0 0 0 rgba(255,255,255,0);box-shadow:0 0 0 rgba(255,255,255,0);}   
+    35% {-webkit-box-shadow:0 0 8px rgba(255,255,255,0.2);-moz-box-shadow:0 0 8px rgba(255,255,255,0.2);box-shadow:0 0 8px rgba(255,255,255,0.2);}
+    100% {-webkit-box-shadow:0 0 0 rgba(255,255,255,0);-moz-box-shadow:0 0 0 rgba(255,255,255,0);box-shadow:0 0 0 rgba(255,255,255,0);}
+    
+}
+
+@-moz-keyframes glow {
+    0% {-webkit-box-shadow:0 0 0 rgba(255,255,255,0);-moz-box-shadow:0 0 0 rgba(255,255,255,0);box-shadow:0 0 0 rgba(255,255,255,0);}   
+    35% {-webkit-box-shadow:0 0 8px rgba(255,255,255,0.2);-moz-box-shadow:0 0 8px rgba(255,255,255,0.2);box-shadow:0 0 8px rgba(255,255,255,0.2);}
+    100% {-webkit-box-shadow:0 0 0 rgba(255,255,255,0);-moz-box-shadow:0 0 0 rgba(255,255,255,0);box-shadow:0 0 0 rgba(255,255,255,0);}
+}
+
+@-ms-keyframes glow {
+    0% {-webkit-box-shadow:0 0 0 rgba(255,255,255,0);-moz-box-shadow:0 0 0 rgba(255,255,255,0);box-shadow:0 0 0 rgba(255,255,255,0);}   
+    35% {-webkit-box-shadow:0 0 8px rgba(255,255,255,0.2);-moz-box-shadow:0 0 8px rgba(255,255,255,0.2);box-shadow:0 0 8px rgba(255,255,255,0.2);}
+    100% {-webkit-box-shadow:0 0 0 rgba(255,255,255,0);-moz-box-shadow:0 0 0 rgba(255,255,255,0);box-shadow:0 0 0 rgba(255,255,255,0);}
+}
+
+@-o-keyframes glow {
+    0% {-webkit-box-shadow:0 0 0 rgba(255,255,255,0);-moz-box-shadow:0 0 0 rgba(255,255,255,0);box-shadow:0 0 0 rgba(255,255,255,0);}   
+    35% {-webkit-box-shadow:0 0 8px rgba(255,255,255,0.2);-moz-box-shadow:0 0 8px rgba(255,255,255,0.2);box-shadow:0 0 8px rgba(255,255,255,0.2);}
+    100% {-webkit-box-shadow:0 0 0 rgba(255,255,255,0);-moz-box-shadow:0 0 0 rgba(255,255,255,0);box-shadow:0 0 0 rgba(255,255,255,0);}
+}
+
+@keyframes glow {
+    0% {-webkit-box-shadow:0 0 0 rgba(255,255,255,0);-moz-box-shadow:0 0 0 rgba(255,255,255,0);box-shadow:0 0 0 rgba(255,255,255,0);}   
+    35% {-webkit-box-shadow:0 0 8px rgba(255,255,255,0.2);-moz-box-shadow:0 0 8px rgba(255,255,255,0.2);box-shadow:0 0 8px rgba(255,255,255,0.2);}
+    100% {-webkit-box-shadow:0 0 0 rgba(255,255,255,0);-moz-box-shadow:0 0 0 rgba(255,255,255,0);box-shadow:0 0 0 rgba(255,255,255,0);}
+}
+
+/* @end */
+
+
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity:0;
+        -webkit-transform:translateY(-20px);
+    }
+
+    100% {
+        opacity:1;
+        -webkit-transform:translateY(0);
+    }
+}
+
+@-moz-keyframes fadeInDown {
+    0% {
+        opacity:0;
+        -moz-transform:translateY(-20px);
+    }
+
+    100% {
+        opacity:1;
+        -moz-transform:translateY(0);
+    }
+}
+
+
+@-ms-keyframes fadeInDown {
+    0% {
+        opacity:0;
+        -ms-transform:translateY(-20px);
+    }
+
+    100% {
+        opacity:1;
+        -ms-transform:translateY(0);
+    }
+}
+
+@-o-keyframes fadeInDown {
+    0% {
+        opacity:0;
+        -ms-transform:translateY(-20px);
+    }
+
+    100% {
+        opacity:1;
+        -ms-transform:translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity:0;
+        transform:translateY(-20px);
+    }
+
+    100% {
+        opacity:1;
+        transform:translateY(0);
+    }
+}

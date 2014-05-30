@@ -1,0 +1,105 @@
+// ==========================================================================
+// TABS MODULE
+// ========================================================================== 
+
+#grid_list .tab {
+    width:100%;
+    height: 100%;
+    text-align:center;
+    position:absolute;
+    top: -80px;
+    border-right:none;
+    z-index:-1;
+
+    // the border that sits on the right of each tab
+    &:after {
+        content: "";
+        position: absolute;
+        top: 54px;
+        right: 0;
+        bottom: 0;
+        background-color: #596164;
+        width: 1px;
+        height: 100%;
+    }
+}
+
+// Grid buttons at the top of the screen.
+#grid_list .tab a {
+    position: relative;
+}
+
+
+#grid_list .tab li:first-child:before{
+    outline: 10px solid red;
+    
+}
+
+#grid_list .cur .tab:before {
+    background:url(/static/images/site/icons/grid_tab_line_active.png) repeat-x 0 50%;
+}
+
+#grid_list .tab .actions {
+    display:inline-block;
+    position:relative;
+    background-color: #ccc;
+    color: #222;
+    line-height:1em;
+    width: 100%;
+}
+
+#grid_list li:only-child .tab .actions .remove {
+    display:none;
+}
+
+#grid_list .tab .actions:hover,
+#grid_list .tab .actions:focus {
+    color:rgba(255,255,255,1);
+}
+
+#grid_list .tab .actions:active {
+    color:rgba(255,255,255,0.5);
+}
+
+#grid_list .cur .tab .actions {
+    background-color: #E55652;
+    color: #fff;
+}
+
+#grid_list .tab .actions li {
+    display: inline-block;
+}
+
+#grid_list .tab .actions li:first-child {
+    position:static;
+}
+
+#grid_list .tab .actions span {
+    text-decoration:none;
+    display: block;
+    line-height:1em;        
+}
+
+#grid_list .tab .actions span.link {
+    padding:8px 5px 8px 10px;
+}
+#grid_list li:only-child .tab .actions span.link {
+    padding-right:10px;
+}
+
+#grid_list .tab .actions span.remove {
+    display: inline-block;
+    width:17px;
+    height:17px;
+    opacity:0.8;
+    background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 1px -3019px;
+    // text replacement
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+ }
+ 
+#grid_list .tab .actions span.remove:hover,
+#grid_list .tab .actions span.remove:focus {
+    opacity:1;
+ }

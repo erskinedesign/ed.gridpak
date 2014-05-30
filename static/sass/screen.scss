@@ -1,0 +1,365 @@
+/* @override http://localhost:8000/static/css/screen.css */
+
+/*
+
+    [ERSKINE DESIGN]
+     
+    @version:1.0
+    @author:Erskine Design
+    
+    CONTENTS ----------
+    
+        1. BODY
+        2. TYPOGRAPHY
+        3. LAYOUT
+        4. HEADER
+        4.1 SECOND HEADER
+        5. ]
+        6. GRIDPAK APPLICATION
+            6.1. BROWSER
+            6.2. OPTIONS 
+            6.3. GRIDS
+            6.4. TABS
+            6.5. DOWNLOAD FORM
+        7. ABOUT 
+*/
+
+
+@import "compass";
+@import "compass/reset";
+@import "mixins";
+
+
+
+/* @group 1. BODY 
+------------------------------------------ */
+
+html {
+    height:100%;
+    font-size: 100%;
+}
+
+* {
+    &, &:before, &:after {
+        -ms-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing:border-box;
+        box-sizing: border-box;
+    }
+}
+
+body {
+    color:#E5E5E5;
+    height: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* @end */
+
+h1 {
+    font-size:1.769230769em;/*26/13*/
+    font-weight:700;
+}
+
+h2, h3, h4, h5 {
+    font-weight:600;
+    color:#FFF;
+}
+
+h2 {
+    font-size:2.461538462em;/*35/13*/
+    color:#FFF;
+    line-height:36px;
+    margin:8px 0 0 0;
+}
+
+h3 {
+    font-size:1.538461538em;/*17/13*/
+    margin-bottom:0.461538462em; /*9/13*/
+    line-height:1.2em;
+}
+
+h4 {
+    font-size:1.153846154em;/*15/13*/
+    margin:12px 0 9px 0;
+}
+
+h5 {
+    font-size:1.076923077em;/*15/13*/
+}
+
+em {
+    font-style:italic;
+}
+
+b {
+    font-weight:800;
+}
+
+a {
+    text-decoration:none;
+}
+a:hover,
+a:focus {
+    outline:0;
+}
+
+p a {
+    background:url(/static/images/site/icons/gridpak-sprite.png) repeat-x 30px -5346px;
+    font-weight: 600;
+    color: #E5E5E5;
+}
+p a:hover,
+p a:focus {
+    background-image: none;
+    color:#fff;
+}
+
+p {
+    margin-bottom:0.461538462em;/*6/13*/
+}
+
+pre {
+    background:#252525;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    padding:18px 18px;
+    font-size:0.923076923em; /*12/13*/
+    margin:14px 0 16px 0;
+    overflow-x:auto;
+    -webkit-background-clip:padding-box;
+    -moz-background-clip:padding-box;
+    background-clip:padding-box;
+}
+
+code {
+    font-family:monaco;
+}
+
+code .white {
+    color:#FFF;
+}
+
+code .red {
+    color:#B42D35;
+}
+
+code .grey {
+    color:#888;
+}
+
+code .number {
+    border-right:1px solid #444;
+    margin:0 12px 0 0;
+    color:#555;
+    padding:1px 12px 2px 0;
+}
+
+code .syntax {
+    font-size:0.8333333339em; /*10/12*/
+    font-family:ff-meta-web-pro, sans-serif;
+    color:#555;
+    float:right;
+    padding-top:6px;
+    margin-bottom:-12px;
+}
+
+.hidden {
+    display:none;
+}
+
+
+
+/* @end */
+       
+
+/* @group 3.LAYOUT 
+------------------------------------------*/
+
+#content_wrapper {
+    @include clearfix();
+    background-color: #3B3F41;
+    clear:both;
+    padding-top: 80px; // height of the tabs (tabs have to be positioned absolute to sit about grid items)
+    padding-left: 30px; 
+    margin:0;
+    height: 100%;
+}
+
+/* @end */
+
+@import "header";
+
+    
+    /* @group 4.1 SECOND HEADER
+------------------------------------- */
+    
+#header_sec { 
+    padding:97px 0 0 0;
+    text-align:center;
+    max-width:1040px;
+    margin:0 auto;
+}
+
+.about.mobile #header_sec {
+    padding:30px 0 0 0;
+}
+
+.about #header_sec { 
+    padding-bottom:14px;
+    text-align:center;
+    max-width:1040px;
+    margin:0 auto;
+}
+
+.about #header_sec { 
+    padding-bottom:14px;
+    text-align:center;
+    max-width:1040px;
+    margin:0 auto;
+}
+
+#header_sec p {
+    font-size:1.153846154em;
+}
+/* @end */
+ 
+
+@import "footer";   
+    
+
+
+/* @group 6. GRIPDAK APPLICATION 
+------------------------------------------*/
+
+#gridpak {
+    clear:both;
+    background:url(/static/images/site/icons/pattern.png);
+    overflow: visible;
+    position: relative;
+    height: 100%;
+    
+    // absolutely positioned ruler that sits beneath the tabs
+    &:before {
+        content: "";
+        position: absolute;
+        top: -55px;
+        left: 0;
+        right: 0;
+        height: 30px;
+        width: 100%;
+        background:url(/static/images/site/icons/ruler.png);
+    }
+}
+
+
+/* @group 6.1. BROWSER
+--------------------------------------*/
+
+#browser {
+    position:relative;
+    width:960px;
+    margin:0 0 40px 0;
+    height: 100%;
+    z-index:0;
+    animation:fadeInTwo 0.8s 1;
+}
+
+/* @end */
+
+
+/* LAYOUT
+--------------------------------------*/
+
+@import "dialogue";
+
+@import "grids";
+    
+@import "tabs";
+
+/* --------------------------------------*/
+
+@import "animations";
+
+
+.tooltip span {
+    display:none; 
+    
+}
+
+/* .tooltip:hover span:before {*/
+/*     content:' ';  */
+/*     position:absolute;  */
+/*     width:0;  */
+/*     height:0;  */
+/*     border:8px solid;   */
+/* }*/
+
+.tooltip:hover span,
+.tooltip:focus span{
+    /* display:inline; */
+    position:absolute; 
+    border-radius:3px; 
+    border:1px solid #EEDE7D;
+    box-shadow:1px 1px 4px rgba(0,0,0,0.5), rgba(255,255,255,0.22) 1px 1px 0 inset;
+    padding:7px 9px;
+    min-width:40px;
+    max-width:120px; 
+    background:#1a94e2 linear-gradient(top, #FFFAD9, #FFF4AA);
+    font-size:0.8em;
+    line-height:1.3em;
+    text-align:center;
+    color:#555;
+    text-shadow:-1px -1px 0 rgba(255, 255, 255, 0.3);
+    animation:fadeInDown 0.4s 0;
+}
+
+
+.tooltip.large:hover span,
+.tooltip.large:focus span {
+    right:0;
+    bottom:-98px;
+}
+
+.tooltip.large:hover span:before,
+.tooltip.large:focus span:before {
+    top:-15px;
+    left:58px;
+    border-color:transparent transparent #FFFAD9 transparent;  
+}
+
+.tooltip.small:hover span,
+.tooltip.small:focus span {
+    left:-5px;
+    top:-40px;
+}
+
+.tooltip.small:hover span:before,
+.tooltip.small:focus span:before {
+    top:27px;
+    left:23px;
+    border-color:#FFF4AA transparent transparent transparent;  
+}
+
+
+/* @end */
+
+
+.errors {
+    clear:both;
+    margin-top:10px;
+    width:72.6%;
+    border-radius:3px; 
+    border:1px solid #EEDE7D;
+    box-shadow:1px 1px 4px rgba(0,0,0,0.5), rgba(255,255,255,0.22) 1px 1px 0 inset;
+    padding:7px 9px;
+    background:#1a94e2 linear-gradient(top, #FFFAD9, #FFF4AA);
+    font-size:0.8em;
+    line-height:1.3em;
+    color:#555;
+    text-shadow:-1px -1px 0 rgba(255, 255, 255, 0.3);
+    animation:fadeInDown 0.4s 0;
+}

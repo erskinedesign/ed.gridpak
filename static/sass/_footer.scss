@@ -1,0 +1,81 @@
+// ==========================================================================
+// FOOTER MODULE
+// ========================================================================== 
+
+// Styles for the footer at the bottom.
+
+
+footer {
+    padding:3px 30px;
+    display:block;
+}
+
+.footer_wrapper {
+    background:#222;
+    padding:20px;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:0 7px 10px 28px;
+}
+
+.gridpak_info {
+    width:216px;
+    font-size:0.923076923em;
+    float:left;
+    line-height:1.4em;
+    margin:5px 0 0 10px;
+}
+
+.created_by {
+    float:right;
+    padding:11px 0 4px 60px;
+    color:#888;
+    background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 2px -3682px;
+    margin-top:10px;
+    font-size:0.846153846em;
+    width:196px;
+    line-height:1.153846154em;
+}
+
+.about .created_by {
+    float:right;
+    padding:11px 0 4px 60px;
+    color:#888;
+    background:none;
+    margin-top:10px;
+    font-size:0.846153846em;
+    width:196px;
+    line-height:1.153846154em;
+}
+
+.created_by a {
+    color:#FFF;
+}
+
+.created_by a:hover,
+.created_by a:focus {
+    /*color:#888;*/
+    text-decoration:underline;
+}
+    
+@media only screen and (max-width:580px) {
+    .created_by {
+        background-image:none;
+        width:196px;
+        padding:11px 0 12px 0;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .created_by {
+        float:none;
+        margin:10px auto 0 auto;
+        text-align:center;
+        background-image:none;
+        width:196px;
+        padding:6px 0 12px 0;
+    }
+
+}
