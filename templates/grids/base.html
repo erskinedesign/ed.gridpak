@@ -21,8 +21,7 @@
         
         <!-- CSS -->
         {% compress css %}
-        <link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/reset.css" />
-        <link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}css/screen.css" />
+        <link rel="stylesheet" media="all" type="text/css" href="{{ STATIC_URL }}stylesheets/screen.css" />
         {% endcompress %}
         
         <!-- ICONS -->
@@ -47,30 +46,30 @@
     
     <body class="{% block body_class %}{% endblock %}">
             {% block sorry %}{% endblock %}
-        	<header class="site_header">
-	            <div class="header_wrapper">
-	                <h1 id="branding">
+            <header class="site_header">
+                <div class="header_wrapper">
+                    <h1 id="branding">
                         <a href="{% url grids_index %}">Gridpak<sup>BETA</sup></a>
-			        </h1>
-			        <p>The Responsive grid generator<br />Created by Erskine Design</p>
+                    </h1>
+                    <p>The Responsive grid generator<br />Created by Erskine Design</p>
 
-    				<nav>
-    				    {% block social %}
-    				    <ul class="social">	
-        					<li class="like">
-        						<div class="fb-like" data-href="http://gridpak.com/" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false"></div>
-        					</li>
-        					<li class="share">
-        						<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="gridpak" data-related="erskinedesign:creators of Gridpak">Tweet</a>
-        					</li>
-        				</ul>
-        				{% endblock %}
+                    <nav>
+                        {% block social %}
+                        <ul class="social"> 
+                            <li class="like">
+                                <div class="fb-like" data-href="http://gridpak.com/" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false"></div>
+                            </li>
+                            <li class="share">
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="gridpak" data-related="erskinedesign:creators of Gridpak">Tweet</a>
+                            </li>
+                        </ul>
+                        {% endblock %}
                         {% block nav_item %}{% endblock %}
-    			    </nav>
-    			</div>
-			</header>
-	    	<div id="content_wrapper">
-    		{% block content %}{% endblock %}
+                    </nav>
+                </div>
+            </header>
+            <div id="content_wrapper">
+            {% block content %}{% endblock %}
 
     <!-- JAVASCRIPT -->
     {% compress js %}
@@ -103,6 +102,6 @@
     });
     </script>
 
-	</body>
+    </body>
 
 </html>
