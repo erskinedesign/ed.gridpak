@@ -1,43 +1,28 @@
-/* @override http://localhost:8000/static/css/screen.css */
 
-/*
-
-    [ERSKINE DESIGN]
-     
-    @version:1.0
-    @author:Erskine Design
-    
-    CONTENTS ----------
-    
-        1. BODY
-        2. TYPOGRAPHY
-        3. LAYOUT
-        4. HEADER
-        4.1 SECOND HEADER
-        5. ]
-        6. GRIDPAK APPLICATION
-            6.1. BROWSER
-            6.2. OPTIONS 
-            6.3. GRIDS
-            6.4. TABS
-            6.5. DOWNLOAD FORM
-        7. ABOUT 
-*/
 
 
 @import "compass";
 @import "compass/reset";
-@import "mixins";
 
 
-
-/* @group 1. BODY 
+/* CONFIG
 ------------------------------------------ */
+@import "config/font-settings";
 
-html {
-    height:100%;
-    font-size: 100%;
-}
+/* TOOLS
+------------------------------------------ */
+@import "tools/font-scale";
+@import "tools/clearfix";
+
+
+
+// HTML & BODY
+// ==========================================================================
+//
+// 1. Border-box fix.
+// 2. html styles.
+// 3. body styles.
+//
 
 * {
     &, &:before, &:after {
@@ -48,12 +33,19 @@ html {
     }
 }
 
+html {
+    height:100%;
+    font-size: 100%;
+}
+
 body {
+    @include font-family(apercu);
+    @include font-scale(small);
     color:#E5E5E5;
-    height: 100%;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
+    height: 100%;
 }
 
 /* @end */
@@ -119,52 +111,6 @@ p a:focus {
 
 p {
     margin-bottom:0.461538462em;/*6/13*/
-}
-
-pre {
-    background:#252525;
-    -webkit-border-radius:3px;
-    -moz-border-radius:3px;
-    border-radius:3px;
-    padding:18px 18px;
-    font-size:0.923076923em; /*12/13*/
-    margin:14px 0 16px 0;
-    overflow-x:auto;
-    -webkit-background-clip:padding-box;
-    -moz-background-clip:padding-box;
-    background-clip:padding-box;
-}
-
-code {
-    font-family:monaco;
-}
-
-code .white {
-    color:#FFF;
-}
-
-code .red {
-    color:#B42D35;
-}
-
-code .grey {
-    color:#888;
-}
-
-code .number {
-    border-right:1px solid #444;
-    margin:0 12px 0 0;
-    color:#555;
-    padding:1px 12px 2px 0;
-}
-
-code .syntax {
-    font-size:0.8333333339em; /*10/12*/
-    font-family:ff-meta-web-pro, sans-serif;
-    color:#555;
-    float:right;
-    padding-top:6px;
-    margin-bottom:-12px;
 }
 
 .hidden {

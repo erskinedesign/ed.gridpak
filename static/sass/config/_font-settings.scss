@@ -1,0 +1,102 @@
+// ==========================================================================
+// FONT-SETTINGS MODULE
+// ==========================================================================
+//
+// This module contains all of the default font sizes and line heights.
+//
+// After settings the base font-size we group these settings into specific
+// font-families.
+//
+//
+// CONTENTS
+// 1. Base font-size variable.
+// 2. Font-set variables.
+
+
+// FONT STACK VARIABLES
+// ==========================================================================
+//
+
+$font-default: apercu !global;
+
+// BASE FONT-SIZE
+// ==========================================================================
+//
+// This variable sets the base font-size that can be used for calculating REM
+// values with a specific tool such as rem.scss.
+//
+
+$font-base-size: 16 !global;
+
+$font-sans-fallback-stack: "Helvetica, Arial, sans-serif" !global;
+
+
+
+// FONT-SET VARIABLES
+// ==========================================================================
+//
+// We’re using two fonts in this project, the Apercu sans-serif and the serif
+// typeface FF Tisa.
+//
+$fonts: (
+    apercu: (
+        family-per-weight: true,
+        normal: ('Apercu Regular', #{$font-sans-fallback-stack}),
+        semi-bold: ('Apercu Medium', #{$font-sans-fallback-stack}),
+        bold: ('Apercu Bold', #{$font-sans-fallback-stack}),
+
+        x-small: (
+            font-size: 12,
+            line-height: 17
+        ),
+
+        small: (
+            font-size: 14,
+            line-height: 20
+        ),
+
+        base: (
+            font-size: 16,
+            line-height: 20
+        ),
+
+        mid-large: (
+            font-size: 20,
+            line-height: 25
+        ),
+
+        large: (
+            font-size: 25,
+            line-height: 30
+        ),
+
+        x-large: (
+            font-size: 33,
+            line-height: 40
+        )
+    ),
+    tisa: (
+        normal: (ff-tisa-web-pro, Georgia, serif),
+        base: (
+            font-size: 16,
+            line-height: 25
+        ),
+        large: (
+            font-size: 19,
+            line-height: 30
+        )
+    ),
+    mono: (
+        normal: (Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace),
+
+        base: (
+            font-size: 13,
+            line-height: 18
+        ),
+
+        large: (
+            font-size: 15,
+            line-height: 20
+        )
+    )
+);

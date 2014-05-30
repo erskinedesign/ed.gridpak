@@ -1,0 +1,139 @@
+// ==========================================================================
+// FONT SCALE TOOL
+// ==========================================================================
+//
+// A tool which uses a Sass map to calculate the line-height and font-sizes of 
+// particular type families.
+// 
+// The functions beneath allow us to create a typographic scale in a Sass map
+// instead of using magic numbers and hard-to-remember variable names.
+//
+//
+// CONTENTS
+// 1. Font-set function.
+// 2. Font-set and line-height functions.
+// 3. Font-scale mixin.
+// 4. Font-family mixin.
+// 
+
+
+
+// 1.FONTSET FUNCTION
+// ==========================================================================
+// This function iterates over a type-family list from _font-sizes.scss and
+// sets a feature (line-height/font-size) which can then be passed into another
+// function as shown below.
+//
+
+@function _fontset-feature($feature, $face:$font-default, $size-name: 'base') {
+
+    // get the target set of values from the requested face name
+    $family: map-get($fonts, $face);
+
+    // get the values for the named size
+    $size-values: map-get($family, $size-name);
+
+    // get the value for the feature we want
+    $result: map-get($size-values, $feature);
+
+    // rem me baby, oh yeah
+    @return rem-calc($result);
+}
+
+
+// Returns the font-family from the 'stack' key in a Sass list
+@function _fontset-family($family, $weight: normal) {
+
+    $result: map-get($family, $weight);
+
+    @if not $result {
+        $result: map-get($family, normal);
+    }
+
+    @return unquote($result);
+}
+
+
+// 2.FONT-SIZE AND LINE-HEIGHT FUNCTIONS
+// ==========================================================================
+// These functions return a REM value of the font-size or line-height depending
+// on the $family list. To avoid duplication these functions call the FONTSET-GET
+// function.
+//
+//
+// Example:
+//
+// h1 {
+//     font-size: calc-font-size(large);
+// }
+//
+
+@function calc-font-size($size-name, $face:$font-default) {
+    @return _fontset-feature(font-size, $face, $size-name);
+}
+
+
+@function calc-line-height($size-name, $face:$font-default) {
+    @return _fontset-feature(line-height, $face,  $size-name);
+}
+
+
+// 3. FONT-SCALE MIXIN
+// ==========================================================================
+// Often we’ll want to set the font-size and the line-height of a particular
+// module at the same time. This font-scale mixin can be used to do just that.
+//
+//
+// EXAMPLE:
+//
+// h1 {
+//      @include font-scale(x-large);
+// }
+//
+// OUTPUT:
+//
+// h1 {
+//      font-size: 1.7rem;
+//      line-height: 1.95rem;
+// }
+//
+
+@mixin font-scale($font-size, $face:$font-default, $line-height:$font-size, $weight: normal) {
+    font-size: calc-font-size($font-size, $face);
+    line-height: calc-line-height($line-height, $face);
+}
+
+// 4. FONT-FAMILY MIXIN
+// ==========================================================================
+//
+// Set a font-family and optional weight (as our font's serve variant weights
+// as alt family names)
+//
+// EXAMPLE:
+//
+// h1 {
+//      @include font-family(apercu, bold);
+// }
+// pre {
+//      @include font-family(mono);
+// }
+// OUTPUT:
+//
+// h1 {
+//      font-family: Apercu Bold', Helvetica, Arial, sans-serif;
+// }
+//
+// pre {
+//      font-family: Monaco, Consolas, "Lucida Console", monospace;
+// }
+
+@mixin font-family ($face, $weight: normal) {
+
+    $family: map-get($fonts, $face);
+
+    font-family: _fontset-family($family, $weight);
+
+    @if not map-get($family, family-per-weight) and $weight != 'normal' {
+        font-weight: $weight;
+    }
+}
