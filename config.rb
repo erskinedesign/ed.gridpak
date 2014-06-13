@@ -1,4 +1,6 @@
+require 'breakpoint'
 
 
-set :sass_dir, '/sass'
-set :css_dir, '/css'
+sass_dir = '/static/sass'
+css_dir = '/static/stylesheets'
+images_dir = '/static/images'
