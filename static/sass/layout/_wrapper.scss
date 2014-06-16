@@ -1,0 +1,25 @@
+// ==========================================================================
+// WRAPPER MODULE
+// ========================================================================== 
+
+// Sets the default max-width of the page
+
+.wrapper {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 rem-calc(15);
+
+    @include respond-to("small and above") {
+        padding: 0 rem-calc(20);
+    }
+
+    @include respond-to("medium and above") {
+        padding: 0 rem-calc(36);
+        max-width: rem-calc(707);
+    }
+
+    @include respond-to("largest only") {
+        max-width: rem-calc(1007);
+    }
+}

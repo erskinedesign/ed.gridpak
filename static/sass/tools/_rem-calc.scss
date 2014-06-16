@@ -1,0 +1,54 @@
+// ==========================================================================
+// REM-CALC FUNCTION
+// ==========================================================================
+//
+// Calculates rem size based on required pixel size and context. It uses 
+// $font-base-size and uses that as the context.
+//
+// Depending on the capabilities of the browser, this mixin will calculate REM
+// values from a pixel value.
+//
+// EXAMPLES
+//
+// h1 {
+//    margin-bottom: rem-calc(30);
+// }
+//
+// OUTPUT
+// h1 {
+//    margin-bottom: 1.875rem;
+// }
+//
+// $target: (required) Required pixel size. Multiple sizes as a list
+// Returns: Rem value
+//
+
+@function rem-calc($target) {
+    $max: length($target);
+    $values: ();
+    $context: $font-base-size;
+
+
+    @for $i from 1 through $max {
+        $x: 0;
+
+        @if map-get($supports, rem) == true {
+            // Export REM value of $target depending on base-font-size
+            $x: (nth($target, $i) / $context) * 1rem;
+        }
+        @else {
+            $x: nth($target, $i) * 1px;
+        }
+
+        @if abs($x) == 0 {
+            $values: append($values, 0);
+        }
+
+        @else {
+            $values: append($values, $x);
+        }
+
+    }
+
+    @return $values;
+}

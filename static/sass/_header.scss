@@ -9,69 +9,26 @@
     background:#FFF;
     width:100%;
     z-index:300;
-    height: 70px;
-}
-
-.about.mobile .site_header {
-    background:#FFF;
-    padding:15px 30px 35px 30px;
-    box-shadow:none;
-    margin-top: 0px;
-    width:100%;
-    z-index:300;
-    height:70px;
-    position:relative;
-}
-
-.about.mobile #branding {
-    float:none;
-    margin: 0 auto;
-    width: 101px;
-    position: relative;
+    padding: rem-calc(33 30);
 }
 
 #branding {
-    width:101px;
-    color:#333;
-    position:absolute;
-    padding-top:12px;
-}
-#branding a {
-    color:#333;
-}
-#branding a:hover,
-#branding a:focus {
-    color:#000;
+    display: inline;
+    margin-right: rem-calc(5);
+
+    a {
+        color:#333;
+
+        &:hover,
+        &:focus {
+            color:#000;
+        }
+    }
 }
 
-.header_wrapper p {
-    font-size:11px;
-    font-weight:normal;
-    color:#999;
-    line-height:1.2em;
-    float:left;
-    margin:7px 0 0 140px;
-}
-
-.header_wrapper p a {
-    background-image:none;
-    color:#999;
-}
-
-.about .header_wrapper p {
-    display:none;
-}
-
-.index header#header_sec { // lol
-    display:none;
-}
-
-#branding sup {
-    font-size:9px;
-    color:#AC0000;
-    position: absolute;
-    margin:-8px 0 0 6px; 
-    float:right;    
+.byline {
+    display: inline;
+    @include font-family(apercu, normal);
 }
 
 nav {
@@ -80,73 +37,11 @@ nav {
     min-width:180px;
 }
 
-body.index nav a.learn {
-    color:#999;
-    background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -1029px;
-    padding-left:21px;
-    margin-top:5px;
-    float:left;
-}
-
 body.index nav a:hover,
 body.index nav a:focus {
     color:#333;
     background-position:0 -889px;
 }
-
-body.about nav a {
-    position:relative;
-    font-family:ff-meta-web-pro, sans-serif;
-    padding:7px 46px 7px 12px;
-    color:#FFF;
-    text-shadow:-1px -1px -1px #720000;
-    border:1px solid #780100;
-    -moz-border-radius:3px;
-    -webkit-border-radius:3px;
-    border-radius:3px;    
-    cursor:pointer;
-    float:left;
-    background-color:#E5E5E5;
-    background-image:linear-gradient(top, #CA0C12, #8A0704);
-    box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0.22) 1px 1px 0 inset;
-    font-size:1.076923077em;/*14/13*/
-    -moz-background-clip:padding; 
-    -webkit-background-clip:padding-box; 
-    background-clip:padding-box;
-    line-height:21px;
-    margin-top:-4px;
-}
-
-body.about nav a:after{
-    content:" ";
-    -webkit-border-radius:0 3px 3px 0;
-    -moz-border-radius:0 3px 3px 0;
-    border-radius:0 3px 3px 0;
-    position:absolute;
-    float:left;
-    margin:-7px 0 0 12px;
-    border-left:1px solid #780100;
-    width:34px;
-    height:35px;
-    overflow:hidden;
-    background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 11px -2688px, linear-gradient(top, #910403, #890504);
-    box-shadow:rgba(255,255,255,0.22) 0 1px 0 inset;
-}
-
-
-body.about nav a:hover,
-body.about nav a:focus {
-    background-color:#9A0704;
-    background-image:none;  
-    -moz-background-clip:padding; 
-    -webkit-background-clip:padding-box; 
-    background-clip:padding-box;
-}
-    
-body.about nav a:active {
-    box-shadow:1px 1px 1px rgba(0,0,0,0.15), rgba(255,255,255,0) 1px 1px 0 inset;
-}
-    
 
 ul.social {
     float:left;
@@ -167,6 +62,16 @@ ul.social li {
     width:82px;
 }
 
+.header_wrapper {
+    .btn--cta {
+        display: none;
+
+        @include respond-to("large and above"){
+            display: block;
+        }
+    }
+}
+
 
 @media only screen and (max-width:680px) {
     ul.social {
@@ -178,10 +83,6 @@ ul.social li {
     }
     
     body.index nav a {
-        float: right;
-    }
-    
-    body.index nav a.learn {
         float: right;
     }
 }

@@ -1,0 +1,20 @@
+// ==========================================================================
+// COLOR PALETTE FUNCTION
+// ==========================================================================
+// Generates color values for other modules.
+//
+// Grabs the Sass source map $palette and gets color value from color key.
+//
+// Example:
+//
+// a {
+//     color: palette(yellow, light);
+// }
+//
+// The map variable can be set in config/colors/
+//
+
+@function palette($palette, $tone: 'base') {
+    @return map-get(map-get($palettes, $palette), $tone);
+}
+

@@ -2,8 +2,7 @@
 // CLEARFIX 
 // ========================================================================== 
 
-// A collection of global mixins
-
+// A clearfix hack
 
 
 @mixin clearfix {
@@ -16,4 +15,8 @@
     &:after {
         clear: both;
     }
+}
+
+.cf {
+    @include clearfix;
 }

@@ -1,0 +1,241 @@
+// ==========================================================================
+// LONGFORM CONTAINER
+// ========================================================================== 
+
+// Custom styles for longform text
+
+.longform {
+    @include font-family(tisa);
+    @include font-scale(base, tisa);
+    @include gradient-link(dark);
+
+    // Scale font-size up on medium breakpoints and above
+    @include respond-to("medium and above") {
+        @include font-scale(large, tisa);
+    }
+
+    .bold,
+    b,
+    strong {
+        @include font-family(tisa);
+        font-weight: bold;
+        line-height: 1;
+    }
+
+    p {
+        margin-bottom: base-spacing(3);
+
+        @include respond-to("medium and above") {
+            margin-bottom: base-spacing(4);
+        }
+    }
+
+    code {
+        @include font-family(mono);
+        @include font-scale(base, mono);
+        background-color: #eee;
+        border-radius: rem-calc(3);
+        padding: 0 rem-calc(3);
+
+        @include respond-to("medium and above") {
+            @include font-scale(large, mono);
+        }
+    }
+
+    // HEADING ADJUSTMENTS
+    // To align headings to the baseline we need to increase padding and margins
+    // to specific elements.
+    h1, .h1, 
+    h2, .h2,
+    h3, .h3,
+    h4, .h4, 
+    h5, .h5 {
+        @include font-family(apercu, bold);
+    }
+
+    h1, .h1 {
+        @include font-scale(large);
+        margin-bottom: base-spacing(4);
+
+        @include respond-to("large and above"){
+            @include font-scale(x-large);
+        }
+    }
+
+    h2, .h2 {
+        @include font-scale(mid-large);
+        padding-top: base-spacing(4);
+        margin-bottom: base-spacing(4);
+
+
+        @include respond-to("medium and above") {
+            @include font-scale(large);
+            padding-top: base-spacing(6);
+            margin-bottom: base-spacing(3);
+        }
+    }
+
+    h2 + h3 {
+        padding-top: base-spacing(2);
+
+        @include respond-to("medium and above") {
+            padding-top: base-spacing(2);
+        }
+    }
+
+    h3, .h3 {
+        padding-top: base-spacing(4);
+        margin-bottom: base-spacing(3);
+        @include font-scale(base);
+
+        @include respond-to("medium and above") {
+            @include font-scale(mid-large);
+            padding-top: base-spacing(3);
+            margin-bottom: base-spacing(4);
+        }
+    }
+
+    h4, .h4 {
+        @include font-scale(small);
+    }
+
+    // LIST ADJUSTMENTS
+    ul, ol {
+        padding-top: base-spacing(2);
+        margin-bottom: base-spacing(4);
+
+        @include respond-to("medium and above") {
+            margin-bottom: base-spacing(5);
+        }
+    }
+
+    ul {
+        li {
+            position: relative;
+            list-style-type: none;
+            padding-left: base-spacing(3);
+
+            @include respond-to("medium and above") {
+                padding-left: base-spacing(4);
+            }
+
+            &:before {
+                @include font-scale(mid-large);
+                content: "•";
+                position: absolute;
+                left: rem-calc(-2);
+                top: rem-calc(-2);
+
+                @include respond-to("medium and above") {
+                    @include font-scale(large);
+                    top: rem-calc(-4);
+                }
+            }
+        }
+    }
+
+    // BLOCKQUOTES ADJUSTMENT
+    // Quotes need to be posititioned absolutely for the artisinal design.
+    blockquote {
+        margin-bottom: base-spacing(4);
+        padding-top: base-spacing(2);
+
+        @include respond-to("medium and above") {
+            margin-bottom: base-spacing(5);
+        }
+
+        > p {
+            text-indent: rem-calc(-6);
+            quotes: "“" "”";
+            margin-bottom: 0;
+            padding-bottom: base-spacing(3);
+            padding-left: base-spacing(3);
+
+            @include respond-to("large and above") {
+                padding-left: base-spacing(3);
+            }
+
+            &:before {
+                content: open-quote;
+            }
+
+            &:after {
+                content: close-quote;
+            }
+
+            &:last-of-type,
+            &:only-of-type {
+                padding-bottom: 0;
+            }
+        }
+
+        cite {
+            @include font-family(apercu, semi-bold);
+            @include font-scale(small);
+            display: block;
+            padding-top: base-spacing(3);
+        }
+    }
+
+
+    // FIGURE ADJUSTMENTS
+    // To align headings to the baseline we need to increase padding and margins
+    // to specific elements.
+
+    figure {
+        padding-top: base-spacing(1);
+        margin-bottom: base-spacing(2);
+
+        @include respond-to("medium and above") {
+            padding-top: base-spacing(2);
+            margin-bottom: base-spacing(3);
+        }
+
+        img {
+            margin-bottom: base-spacing(1);
+        }
+        > a {
+            background-image: none !important;
+        }
+    }
+
+    figcaption {
+        @include font-family(apercu);
+        margin-bottom: base-spacing(4);
+
+        @include respond-to("medium and above") {
+            margin-bottom: base-spacing(5);
+        }
+    }
+
+    .small {
+        @include font-scale(small, apercu);
+        @include font-family(apercu);
+    }
+
+    hr {
+        border: none;
+
+        &:after {
+            @include font-family(apercu);
+            content: "* * *";
+            display: block;
+            color: palette(grey, mid-dark);
+            text-align: center;
+            margin-left: rem-calc(-20); // visually align with the text
+        }
+    }
+}
+
+.longform--reverse {
+    @include gradient-link(light);
+    color: #DBDBDB;
+
+    h1,.h1,
+    h2,.h2,
+    h3,.h3,
+    h4,.h4,
+    h5,.h5 {
+        color: white;
+    }
+}

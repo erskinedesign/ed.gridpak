@@ -1,0 +1,69 @@
+// ==========================================================================
+// GRID-BUILD
+// ==========================================================================
+//
+// Builds the various classes that we need for the grid module.
+//
+//
+// CONTENTS
+// 1. Layout mixins
+
+
+// 1. LAYOUT MIXINS
+// ==========================================================================
+// These mixins simply set positional properties such as width, margins and
+// float direction. They’re included in the GRID CLASS GENERATOR beneath.
+//
+
+
+// Sets the column width depending on the number of columns
+// defined in _grid-settings.scss
+
+@mixin _grid-column($num, $context: $columns) {
+    width: percentage(($num / $context));
+}
+
+
+// These mixins generate styles for push a grid columns left, right or in both
+// directions if necessary.
+
+@mixin _grid-push-left($num, $context: $columns) {
+    margin-left:- percentage(($num/$context));
+}
+
+@mixin _grid-push-right($num, $context: $columns) {
+    margin-right:- (percentage(($num/$context)));
+}
+
+@mixin _grid-push-both($num, $context: $columns) {
+    width: (100%) + (percentage(($num/$context)) * 2);
+    margin-left:- percentage(($num/$context));
+}
+
+
+// Grid columns can be floated left or right depending on the breakpoint
+
+@mixin _grid-align-float($direction) {
+    float: $direction;
+    margin-left: 0;
+}
+
+// Nested grid - full width columns
+@mixin _grid-all-columns() {
+    width: 100%;
+}
+
+
+// This mixin removes the modifier class at the end of the class generator
+// for styles that don’t need breakpoints.
+
+@mixin _grid-respond-to($breakpoint:false) {
+    @if $breakpoint {
+        @include respond-to($breakpoint) {
+            @content;
+        }
+    }
+    @else {
+        @content;
+    }
+}

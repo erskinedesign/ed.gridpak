@@ -10,10 +10,10 @@
     display:block;
     position:relative;
     float: right;
-    width: 204px;
-    right: -204px;
-    padding: 16px 20px 18px 39px;
-    margin: 100px 0 0 0;
+    width: rem-calc(210);
+    right: rem-calc(- 210);
+    padding: rem-calc(16 20 18 39);
+    margin: rem-calc(100 0 0 0);
     clear: both;
     color: #FFF;
     background: #404345;
@@ -21,7 +21,6 @@
 }
 
 input {
-    font-family:Helvetica, "Helvetica Neue", Arial, sans-serif;
     font-size:1.153846154em;/*15/13*/
 }
 
@@ -43,227 +42,202 @@ input::-webkit-inner-spin-button {
 }
 
 #grid_options div.submit {
-    float:left;
-    margin:13px 0 0 -39px;
-    width:160px;
-    padding:18px 0 0 40px;
+    width: 100%;
+    float: right;
+    margin:rem-calc(13 0 0 -39);
+    padding: 0;
 }
 
 #grid_options .dragme {
+    @include icon__background(arrow-drag);
     width: 64px;
     height: 64px;
-    background: #3B3F41 url(/static/images/site/icons/gridpak-sprite.png);
-    background-position: 19px -4095px;
-    background-repeat:no-repeat;
+    background: #3B3F41;
     border-radius: 100%;
-    
     position:absolute;
     left: -34px;
     top: 103px;
     margin: 0;
-    
     cursor: ew-resize;
     z-index: 10;
     box-shadow: 0px -1px 2px #4D5052 inset;
+    
+    // icon background
+    &:before {
+        width: 100%;
+        height: rem-calc(40);
+        position: relative;
+        top: rem-calc(13);
+        margin: 0 auto;
+    }
 }
     
 #grid_options input {
-    margin-left:19px;
-    padding:3px 2px 4px 8px;
+    @include font-scale(small);
+    margin-left: rem-calc(17);
+    padding:rem-calc(5 2 4 6);
     border-radius:0 3px 3px 0;
-    border:1px solid #000;
-    border-left:none;
+    border: none;
+    border-left: 1px solid #A5A5A5;
     outline:none;
-    height:21px;
-    width:33px;
-    color:#333;
-    transition:all 0.2s ease-out;
-    background:#FFF linear-gradient(top, #C6C6C6, #FFF);
-    box-shadow:0 1px 0 rgba(255,255,255,0.15), rgba(255,255,255,1) 0 1px 0 inset;
+    height: rem-calc(30);
+    width: rem-calc(43);
+    color: #333;
+    transition: all 0.2s ease-out;
+}
+
+#grid_options input:focus {
+    background:#FFF;
+    color:rgba(0,0,0,0.9);
     background-clip:padding-box;
 }
-    
-    #grid_options input:focus {
-        background:#FFF;
-        color:rgba(0,0,0,0.9);
-        background-clip:padding-box;
+
+#grid_options input:active {
+    background:#FFF;
+    background-clip:padding-box;
+}
+
+.number {
+    background-color: #CCCCCC;
+    width: rem-calc(17);
+    height: rem-calc(15);
+    position:absolute;
+}
+
+.increase {
+    border-radius: rem-calc(3) 0 0 0;
+    border-left: none;
+    border-top: 1px solid #EBEBEB;
+    border-bottom: 1px solid #797979;
+    @include icon__background(arrow-up);
+}
+
+.decrease {
+    margin-top: rem-calc(15);
+    border-radius:0 0 0 rem-calc(3);
+    border-left: none;
+    border-top: 1px solid #EBEBEB;
+    border-bottom: none;
+    @include icon__background(arrow-down);
+}
+
+.increase,
+.decrease {
+    &:before {
+        position: relative;
+        bottom: rem-calc(2);
+        left: rem-calc(5);
+        height: rem-calc(11);
+        width: rem-calc(9);
     }
-    
-    #grid_options input:active {
-        background:#FFF;
-        background-clip:padding-box;
-    }
-    
-    .number {
-        width:17px;
-    }
-    
-    .increase {
-        height:14px;
-        position:absolute;
-        border-radius:3px 0 0 0;
-        border-left:1px solid #000;
-        border-top:1px solid #000;
-        background-color:#E5E5E5;
-        background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2325px, linear-gradient(top, #E5E5E5, #B1B1B1);
-        box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.75) 1px 1px 0 inset;
-        background-clip:padding-box;
-    }
-    
-    .decrease {
-        height:14px;
-        position:absolute;
-        margin-top:14px;
-        border-radius:0 0 0 3px;
-        border-left:1px solid #000;
-        border-top:1px solid #707070;
-        border-bottom:1px solid #000;
-        background-color:#E5E5E5;
-        background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2054px, linear-gradient(top, #E5E5E5, #B1B1B1);
-        box-shadow:0 1px 0 rgba(255,255,255,0.15), rgba(255,255,255,0.7) 1px 0 0 inset;
-        filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#D4D4D4', EndColorStr='#B1B1B1');
-        -moz-background-clip:padding; 
-        -webkit-background-clip:padding-box; 
-        background-clip:padding-box;
-    }
-    
-    .increase:hover,
-    .increase:focus {
-        background:#bbb url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -2195px;
-    }
-    
-    .decrease:hover,
-    .decrease:focus {
-        background:#bbb url(/static/images/site/icons/gridpak-sprite.png) no-repeat 6px -1914px;
-    }
-    
-    /* Switchers */
-    .switcher_container {
-        display: block;
-        height: auto;
-        width: auto;
-        float: left;
-        margin-left: 0.5em;
-        cursor: pointer;
-    }
-    .switcher_container input {
-        display: none;
-    }
-    #grid_options .switcher_container label {
-        display: block;
-        float: left;
-        color: #919293;
-        background-color: #37393A;
-        clear: none;
-        padding: 7px 10px;
-        margin: 0;
-        cursor: pointer;
-    }
-    #grid_options .switcher_container label:hover,
-    #grid_options .switcher_container label:focus {
-        color: #fff;
-        color: rgba(255,255,255,0.9);
+}
+
+.increase:hover,
+.increase:focus,
+.decrease:hover,
+.decrease:focus {
+    background:#bbb;
+}
+
+/* Switchers */
+.switcher_container {
+    display: block;
+    height: auto;
+    width: auto;
+    float: left;
+    margin-left: 0.5em;
+    cursor: pointer;
+    @include font-family(apercu, semi-bold);
+}
+.switcher_container input {
+    display: none;
+}
+#grid_options .switcher_container label {
+    display: block;
+    float: left;
+    color: #919293;
+    background-color: #37393A;
+    clear: none;
+    width: rem-calc(30);
+    height: rem-calc(30);
+    line-height: rem-calc(30); // vertically aligned text
+    text-align: center;
+    cursor: pointer;
+    border-radius: rem-calc(3);
+
+    &:first-of-type {
+        border-radius: rem-calc(3) 0 0 rem-calc(3);
     }
 
-    #grid_options .switcher_container label.selected {
-        color: rgba(255,255,255,1.0);
-        margin-right: 1px; // to make sure that the box shadow doesn’t bump into it’s neighbour
-        box-shadow: 0 0 0 1px #111;
-        background-color: #535353;
-        cursor: default;
+    &:last-of-type {
+        border-radius: 0 rem-calc(3) rem-calc(3) 0;
     }
+}
+#grid_options .switcher_container label:hover,
+#grid_options .switcher_container label:focus {
+    color: #fff;
+    color: rgba(255,255,255,0.9);
+}
 
-    .number_input {
-        float: left;
-        height: 30px;
-    }
-    
-    .number:active {
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;    
-    }
+#grid_options .switcher_container label.selected {
+    border-radius: rem-calc(3); //all corners should have radii
+    color: rgba(255,255,255,1.0);
+    margin-right: 1px; // to make sure that the box shadow doesn’t bump into it’s neighbour
+    box-shadow: 0 0 0 1px #111;
+    background-color: #52575A;
+    cursor: default;
+}
 
-    .number_input {
-        float:left;
-    }
-    
-    #save_grid { // more lol
-        font-family:ff-meta-web-pro, sans-serif !important;
-        font-size:1.076923077em;/*14/13*/
-        color:#333333;
-        text-decoration:none;
-        float:left;
-        position:relative;
-        margin-left:-1px;
-        padding:8px 12px 8px 26px;
-        border:1px solid #1F1F1F;
-        border-radius:3px;
-        background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 4px -5140px, linear-gradient(top, #E5E5E5, #B1B1B1) #E5E5E5;
-        box-shadow:0 1px 1px rgba(0,0,0,0.20), rgba(255,255,255,0.50) 0 1px 0 inset;
-        cursor:pointer;
-        background-clip:padding-box;
-    }
-    
-    #save_grid:before {
-        background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -4240px !important;
-        height:36px;
-        width:30px;
-        content:'';
-        position:absolute;
-        left:-14px;
-        top:-1px;
-    }
-    
-    #save_grid:hover,
-    #save_grid:focus {
-        color:#000000;
-        background:#bbb url(/static/images/site/icons/gridpak-sprite.png) no-repeat 4px -3830px;
-        background-clip:padding-box;
-    }
-    
-    #save_grid:hover:before,
-    #save_grid:focus:before {
-        background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -4380px !important;
-    }
-    
-    #save_grid:active:before {
-        background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 0 -4520px !important;
-    }
-    
-    #save_grid:active {
-         box-shadow:none;   
-         background-clip:padding-box;
-    }
-    
-    .total_width {
-        z-index: 4000;
-        position: absolute; // because I’m not touching the HTML I have to do some yucky stuff
-        top: -370px;
-        right: 203px;
-        float: right;
-        margin: 369px -203px 0 0;
-        background-color: rbg(0,0,0);
-        background-color: rgba(0,0,0,0.8);
-        border-right: 1px solid #111111;
-        border-top: 1px solid #111111;
-        font-size: .846153846em;
-        padding: 5px 10px;
-        color: #FFF;
-    }
-    
-    .total_width input {
-        font-size:1em;/*10/13*/
-        background:none;
-        border:none;
-        text-align:right;
-        width:25px;
-        color:#FFF;
-        margin: -1px 0 0 0; 
-    }
-    .total_width input:disabled {
-        color:#FFF;
+.number_input {
+    float: left;
+    height: 30px;
+}
 
-    }
-    
-    /* @end */
+.number:active {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;    
+}
+
+.number_input {
+    float:left;
+}
+
+#save_grid { // more lol
+    float:left;
+    position:relative;
+    margin-left:-1px;
+}
+
+.total_width {
+    z-index: 4000;
+    position: absolute; // because I’m not touching the HTML I have to do some yucky stuff
+    top: -370px;
+    right: 203px;
+    float: right;
+    margin: 369px -203px 0 0;
+    background-color: rbg(0,0,0);
+    background-color: rgba(0,0,0,0.8);
+    border-right: 1px solid #111111;
+    border-top: 1px solid #111111;
+    font-size: .846153846em;
+    padding: 5px 10px;
+    color: #FFF;
+}
+
+.total_width input {
+    font-size:1em;/*10/13*/
+    background:none;
+    border:none;
+    text-align:right;
+    width:25px;
+    color:#FFF;
+    margin: -1px 0 0 0; 
+}
+
+
+.total_width input:disabled {
+    color:#FFF;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

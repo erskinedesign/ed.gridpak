@@ -1,0 +1,31 @@
+// ==========================================================================
+// NAV MODULE
+// ========================================================================== 
+
+// The breadcrumb nav menu on the about page
+
+
+.nav {
+    @include font-scale(small);
+    @include gradient-link(light);
+    color: white;
+    padding-top: rem-calc(15);
+    margin-bottom: rem-calc(30);
+
+
+    @include respond-to("large and above"){
+        margin-bottom: rem-calc(40);
+    }
+}
+
+.nav__item {
+    display: inline;
+    list-style-type: none;
+
+    &:first-of-type:after {
+        content:"»";
+        display: inline;
+        margin-left: rem-calc(5);
+        margin-right: rem-calc(2);
+    }
+}

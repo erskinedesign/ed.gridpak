@@ -6,48 +6,76 @@
 
 
 footer {
-    padding:3px 30px;
     display:block;
+    padding: rem-calc(15 0);
+    position: relative;
+
+    @include respond-to("large and above"){
+        padding: rem-calc(25 0);
+    }
+
+    .btn--cta {
+        display: none;
+
+        @include respond-to("large and above"){
+            display: block;
+            float: left;
+        }
+    }
 }
 
 .footer_wrapper {
-    background:#222;
-    padding:20px;
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    padding:0 7px 10px 28px;
+    background: #222;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: rem-calc(25 28);
+}
+
+#download {
+    margin: rem-calc(0 10 10 0);
+}
+
+#download_form {
+    width: 50%;
+}
+
+#download_form,
+#download {
+    float: left;
 }
 
 .gridpak_info {
+    @include font-scale(small);
+    color: palette(grey, light);
     width:216px;
-    font-size:0.923076923em;
     float:left;
-    line-height:1.4em;
-    margin:5px 0 0 10px;
+    margin: 0;
 }
 
 .created_by {
-    float:right;
-    padding:11px 0 4px 60px;
-    color:#888;
-    background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 2px -3682px;
-    margin-top:10px;
-    font-size:0.846153846em;
-    width:196px;
-    line-height:1.153846154em;
-}
+    @include font-scale(small);
+    clear: both;
+    width: 80%;
 
-.about .created_by {
-    float:right;
-    padding:11px 0 4px 60px;
-    color:#888;
-    background:none;
-    margin-top:10px;
-    font-size:0.846153846em;
-    width:196px;
-    line-height:1.153846154em;
+    @include respond-to("large and above"){
+        float: right;
+        clear: right;
+        text-align: right;
+        margin-bottom: 0;
+        width: 50%;
+    }
+
+    > p {
+        margin-bottom: 0;
+        color: palette(grey, light);
+    }
+
+    a {
+        @include font-family(apercu, semi-bold);
+        @include gradient-link(light);
+    }
 }
 
 .created_by a {
@@ -56,26 +84,20 @@ footer {
 
 .created_by a:hover,
 .created_by a:focus {
-    /*color:#888;*/
-    text-decoration:underline;
+    text-decoration:none;
 }
     
-@media only screen and (max-width:580px) {
-    .created_by {
-        background-image:none;
-        width:196px;
-        padding:11px 0 12px 0;
-    }
-}
+.footer__bird {
+    position: absolute;
+    bottom: rem-calc(20);
+    right: rem-calc(20);
+    margin-left: rem-calc(10);
+    width: rem-calc(51);
+    float: right;
 
-@media only screen and (max-width:480px) {
-    .created_by {
-        float:none;
-        margin:10px auto 0 auto;
-        text-align:center;
-        background-image:none;
-        width:196px;
-        padding:6px 0 12px 0;
+    @include respond-to("large and above"){
+        position: static;
+        right: 0;
+        margin-top: rem-calc(2);
     }
-
 }

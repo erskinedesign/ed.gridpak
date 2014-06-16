@@ -4,3 +4,5 @@
 *.pyc
 /static/css/screen.css
 /local_settings.py
+env/
+*.css

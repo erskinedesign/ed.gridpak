@@ -1,0 +1,95 @@
+// ==========================================================================
+// ICONS BUILD
+// ==========================================================================
+
+// A suite of mixins to create inline images and icons.
+
+
+
+// ICON BACKGROUND MIXIN
+// ==========================================================================
+//
+// This mixin generates the correct data URI for the icons passed through the
+// generate class mixin.
+//
+//
+// EXAMPLE Sass
+//
+// @include icon__background(social__twitter);
+//
+// CSS
+//
+// background: transparent url('data URI of ../images/icons/social__twitter.svg') center no-repeat
+//
+
+@mixin icon__background ($icon, $inline: true, $inline-hovers: $_icon-inline-hovers) {
+    $file: nth($icon, 1);
+    $hover: false;
+
+    @if length($icon) == 2{
+        $hover: nth($icon, 2);
+    }
+
+    $path: 'icons/#{$file}.#{$icons__filextn}';
+    $hover_path: 'icons/#{$file}--hover.#{$icons__filextn}';
+
+    &:before {
+        content: "";
+        display: inline-block;
+        background-repeat: no-repeat;
+        height: rem-calc(20);
+        width: rem-calc(20);
+    }
+
+    @if $inline {
+        &:before {
+            background: transparent inline-image($path) center no-repeat;
+        }
+    }
+
+    @if $hover {
+        &:hover,
+        &:focus {
+            @if $inline {
+                &:before {
+                    background: transparent inline-image($hover_path) center no-repeat;
+                }
+            }
+
+            @else {
+                &:before {
+                    background: transparent image-url($hover_path) center no-repeat;
+                }
+            }
+        }
+    }
+}
+
+
+// ICON GENERATE CLASSES
+// ==========================================================================
+//
+// This mixin generates the icon classes and passes their name into the icon
+// background mixin above.
+//
+// Essentially this is what it does for each and every icon in the $icons list
+//
+// [data-icon-before="social__twitter"] {
+//      @include icon__background($icon);
+// }
+//
+
+@mixin _icon_generate_classes($icons) {
+    @each $icon in $icons {
+        $file: nth($icon, 1);
+        [data-icon-before="#{$file}"],
+        [data-icon-after="#{$file}"] {
+            @include icon__background($icon);
+        }
+    }
+}
+
+
+// This list can be found in the icons-settings.scss file.
+@include _icon_generate_classes($icons);
+

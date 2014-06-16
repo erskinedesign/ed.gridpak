@@ -42,7 +42,7 @@
 #grid_list .tab .actions {
     display:inline-block;
     position:relative;
-    background-color: #ccc;
+    background-color: palette(grey, light);
     color: #222;
     line-height:1em;
     width: 100%;
@@ -62,7 +62,7 @@
 }
 
 #grid_list .cur .tab .actions {
-    background-color: #E55652;
+    background-color: palette(red, base);
     color: #fff;
 }
 
@@ -91,7 +91,6 @@
     display: inline-block;
     width:17px;
     height:17px;
-    opacity:0.8;
     background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 1px -3019px;
     // text replacement
     text-indent: 100%;

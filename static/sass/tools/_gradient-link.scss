@@ -1,0 +1,60 @@
+// ==========================================================================
+// GRADIENT LINKS
+// ========================================================================== 
+// Adds better underline links with CSS gradients
+// 
+// DEPENDENCIES
+// - Custom build of Modernizr to add the classes to the body element
+// 
+// EXAMPLE:
+// 
+// h1 {
+// @include gradient-link(dark);
+// }
+// 
+
+@mixin gradient-link($tone: "dark") {
+    a,
+    p a,
+    em a,
+    ul a {
+        .cssgradients.backgroundsize & {
+            text-decoration: none;
+            border: none;
+            background-repeat: repeat-x;
+            background-size: 2px 2px;
+            background-position: 0px 98%;
+            @if $tone == "dark" {
+                color: #333333;
+                @include background-image(linear-gradient(to top,
+                    rgba(0,0,0,0) 50%,
+                    rgba(0,0,0,.2) 50%
+                ));
+
+                &:hover,
+                &:focus {
+                    @include background-image(linear-gradient(to top,
+                        rgba(0,0,0,0) 50%,
+                        rgba(0,0,0,.5) 50%
+                    ));
+                }
+            }
+            @else if $tone == "light" {
+                color: white;
+                @include background-image(linear-gradient(to top,
+                    rgba(255,255,255,0) 50%,
+                    rgba(255,255,255,.4) 50%
+                ));
+
+                &:hover,
+                &:focus {
+                    color: #DBDBDB;
+                    @include background-image(linear-gradient(to top,
+                        rgba(255,255,255,0) 50%,
+                        rgba(255,255,255,.5) 50%
+                    ));
+                }
+            }
+        }
+    }
+}

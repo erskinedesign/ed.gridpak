@@ -1,0 +1,78 @@
+// ==========================================================================
+// ICONS SETTINGS
+// ==========================================================================
+//
+// Configuration settings that get passed into the icons-build.scss
+//
+
+
+
+
+// DEFAULT VARIABLES
+// ==========================================================================
+//
+
+$icons__filextn: svg !default;
+$_icon-inline-hovers: false !default;
+
+
+
+
+// GENERATE ICONS
+// ==========================================================================
+//
+// This list gets passed into the icon builder.
+//
+
+
+$icons:     (add),
+            (arrow-down),
+            (help),
+            (arrow-drag),
+            (download),
+            (help);
+
+
+
+// 2.DEFAULT STYLES FOR DATA-ICONS
+// ==========================================================================
+
+
+[data-icon-before]:before,
+[data-icon-after]:after{
+    content:'';
+    display: inline-block;
+    width: rem-calc(22);
+    height: rem-calc(20);
+    position: relative;
+    top: rem-calc(4);
+}
+
+[data-icon-before="download"] {
+    position: relative;
+    padding-left: rem-calc(30) !important; //overrides the default btn padding
+
+    &:before {
+        position: absolute;
+        left: rem-calc(7);
+        top: rem-calc(9);
+    }
+}
+
+[data-icon-before="help"] {
+    position: relative;
+    margin-left: rem-calc(25);
+
+    &:before {
+        position: absolute;
+        left: rem-calc(-20);
+        top: rem-calc(-2);
+    }
+}
+
+
+
+// IMPORT BUILD STEP
+// ==========================================================================
+
+@import "icons-build";

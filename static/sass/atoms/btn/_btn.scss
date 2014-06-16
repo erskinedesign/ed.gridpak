@@ -1,0 +1,76 @@
+// ==========================================================================
+// BTN MODULE
+// ========================================================================== 
+
+// Styles the buttons
+
+
+// Standard grey button styles
+.btn {
+    @include font-scale(small);
+    @include font-family(apercu, semi-bold);
+    background-color: palette(grey, light);
+    color: palette(grey, dark);
+    border-radius: rem-calc(3);
+    padding: rem-calc(10 15);
+    white-space: nowrap;
+    
+    &:hover,
+    &:focus {
+        background-color: palette(grey, x-light);
+        outline: none;
+    }
+}
+
+
+
+// special call to action buttons
+.btn--cta {
+    background-color: palette(red, dark);
+    color: white;
+
+    &:hover,
+    &:focus {
+        background-color: #CC3333;
+    }
+}
+
+
+// ADD NEW GRID BUTTON
+// ==========================================================================
+
+.btn--add {
+    @include icon__background(add);
+    height: calc-rem(13);
+    height: calc-rem(14);
+    position: relative;
+    padding-left: rem-calc(22);
+    
+    // this is the arrow that is positioned absolutely to the left
+    &:after {
+        content: "";
+        width: rem-calc(30);
+        height: rem-calc(40);
+        position: absolute;
+        left: rem-calc(-14);
+        top: 0;
+        background: inline-image("/btn-pointer.svg");
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+
+    &:hover,
+    &:focus {
+        &:after {
+            background: inline-image("/btn-pointer--hover.svg");
+            background-repeat: no-repeat;
+        }
+    }
+    
+    // The + icon
+    &:before {
+        position: absolute;
+        left: 0;
+        top: rem-calc(8);
+    }
+}
