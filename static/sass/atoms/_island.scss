@@ -5,8 +5,16 @@
 // An island component is a colored box with padding
 
 .island {
+    @extend .cf; // clearfix
     background-color: #3B4042;
+    margin-bottom: rem-calc(20);
+    padding-bottom: rem-calc(20);
 
+    @include respond-to("large and above"){
+        margin-bottom: rem-calc(30);
+    }
+
+    // the illustrative boxes on the about page
     .island--dark {
         float: left;
         width: 100%;

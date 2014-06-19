@@ -10,6 +10,7 @@
     top: -80px;
     border-right:none;
     z-index:-1;
+    // margin-left: rem-calc(-1);
 
     // the border that sits on the right of each tab
     &:after {

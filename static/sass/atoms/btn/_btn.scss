@@ -9,6 +9,7 @@
 .btn {
     @include font-scale(small);
     @include font-family(apercu, semi-bold);
+    display: inline-block;
     background-color: palette(grey, light);
     color: palette(grey, dark);
     border-radius: rem-calc(3);

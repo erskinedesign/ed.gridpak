@@ -229,7 +229,7 @@ $(function() {
     // Grids.add(new Grid({ min_width: 0, col_num: 4, padding_width: 5, padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
     // Grids.add(new Grid({ min_width: 500, col_num: 8, padding_width: 1, padding_type: '%', gutter_width: 2,  gutter_type: '%', baseline_height: 22 }));
     // Grids.add(new Grid({ min_width: 960, col_num: 16, padding_width: 10, padding_type: 'px', gutter_width: 8,  gutter_type: 'px', baseline_height: 22 }));
-    Grids.add(new Grid({ min_width: 0, col_num: 6, padding_width: 1.5, padding_type: '%', gutter_width: 2,  gutter_type: '%', baseline_height: 22 }));
+    Grids.add(new Grid({ min_width: 0, col_num: 6, padding_width: 2, padding_type: '%', gutter_width: 2,  gutter_type: '%', baseline_height: 22 }));
 
     // Set the current grid as the last in the collection
     window.Grids.current = window.Grids.at(Grids.length - 1);

@@ -58,13 +58,14 @@ footer {
     @include font-scale(small);
     clear: both;
     width: 80%;
+    color: #CCCCCC;
 
     @include respond-to("large and above"){
         float: right;
-        clear: right;
+        clear: none;
         text-align: right;
         margin-bottom: 0;
-        width: 50%;
+        width: auto;
     }
 
     > p {

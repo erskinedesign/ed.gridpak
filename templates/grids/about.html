@@ -6,13 +6,13 @@
 {% endblock %}
 {% block content %}
     {% load common %}
-        <div class="island cf">
+        <div class="island">
             <div class="wrapper">
                 <div class="g__col g__col--center g__col--12--largest">
 
-                    <ul class="nav">
-                        <li class="nav__item"><a href="http://gridpak.com">Gridpak</a></li>
-                        <li class="nav__item">Documentation</li>
+                    <ul class="nav--breadcrumb">
+                        <li class="nav--breadcrumb__item"><a href="http://gridpak.com">Gridpak</a></li>
+                        <li class="nav--breadcrumb__item">Documentation</li>
                     </ul>
 
                     <div class="longform longform--reverse">
@@ -78,12 +78,13 @@
             </div><!-- //.grid -->
         </div><!-- //.wrapper -->
 
-        <footer class="island--dark cf">
+        <footer class="island--dark">
             <div class="wrapper">
                 <a class="btn btn--cta" href="{% url grids_index %}">Create your Gridpak</a>
+                
+                <img src="/static/images/erskine-bird.png" alt="The Erskine logo" class="footer__bird"/>
 
                 <div class="created_by">
-                    <img src="/static/images/erskine-bird.png" alt="The Erskine logo" class="footer__bird"/>
                     <p>A project by <a href="http://erskinedesign.com/">Erskine Design</a>.</p>
                     <p>Licensed under a Creative Commons Attribution 3.0 License.</p>
                 </div><!-- //.created_by -->

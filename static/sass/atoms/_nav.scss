@@ -4,21 +4,29 @@
 
 // The breadcrumb nav menu on the about page
 
-
 .nav {
+
+}
+
+.nav__item {
+    display: inline-block;
+    margin-right: rem-calc(10);
+}
+
+
+.nav--breadcrumb {
     @include font-scale(small);
     @include gradient-link(light);
     color: white;
     padding-top: rem-calc(15);
     margin-bottom: rem-calc(30);
 
-
     @include respond-to("large and above"){
         margin-bottom: rem-calc(40);
     }
 }
 
-.nav__item {
+.nav--breadcrumb__item {
     display: inline;
     list-style-type: none;
 

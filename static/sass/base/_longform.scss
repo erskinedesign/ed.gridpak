@@ -211,6 +211,7 @@
     .small {
         @include font-scale(small, apercu);
         @include font-family(apercu);
+        color: white;
     }
 
     hr {

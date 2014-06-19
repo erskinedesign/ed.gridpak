@@ -1,99 +1,102 @@
 {% extends 'grids/base.html' %}
 {% load compress %}
 {% block body_class %}index{% endblock %}
-{% block nav_item %}<a href="{% url about %}" class="learn link--subtle" data-icon-before="help">Learn more</a>{% endblock %}
+{% block nav_item %}<div class="learn"><a href="{% url about %}" data-icon-before="help">Learn more</a></div>{% endblock %}
 {% block social %}                
 <nav>
-<ul class="social"> 
-    <li class="like">
-        <div class="fb-like" data-href="http://gridpak.com/" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false"></div>
-    </li>
-    <li class="share">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="gridpak" data-related="erskinedesign:creators of Gridpak">Tweet</a>
-    </li>
-</ul>
+    <ul class="nav">
+        <li class="nav__item">Twitter</li>
+        <li class="nav__item">Facebook</li>
+    </ul>
 </nav>
 {% endblock %}
 {% block content %}
-  <div id="content_wrapper">
-            <div id="gridpak">                    
-                <div id="browser">
+    
+    <div class="mobile-alert">
+        <div class="wrapper">
+            <p>Please note: the Gridpak generator is not desiged for use on touch and mobile devices, please use a desktop browser. We are aware of the irony ;-).</p>
+            <a class="btn">Take me to the documentation</a>
+        </div><!-- //.wrapper -->
+    </div><!-- //.mobile-alert -->
 
-                    <ul id="grid_list"></ul>
+    <div id="content_wrapper">
+        <div id="gridpak">                    
+            <div id="browser">
 
-                    <div id="grid_options">
+                <ul id="grid_list"></ul>
 
-                        <div class="dragme ui-resizable-handle ui-resizable-e tooltip small"><span>Drag me</span></div>  
-                        <div>
-                            <label for="new_col_num">No. of columns</label>
-                            <div class="number_input">
-                                <a href="#" class="number increase"></a>
-                                <a href="#" class="number decrease"></a>
-                                <input id="new_col_num" value="6" type="text" />    
-                            </div>
+                <div id="grid_options">
+
+                    <div class="dragme ui-resizable-handle ui-resizable-e tooltip small"><span>Drag me</span></div>  
+                    <div>
+                        <label for="new_col_num">No. of columns</label>
+                        <div class="number_input">
+                            <a href="#" class="number increase"></a>
+                            <a href="#" class="number decrease"></a>
+                            <input id="new_col_num" value="6" type="text" />    
                         </div>
-                        <div> 
-                            <label for="new_padding_width">Column padding</label>
-                            <div class="number_input">
-                                <a href="#" class="number increase"></a>
-                                <a href="#" class="number decrease"></a>
-                                <input id="new_padding_width" value="1.5" type="text" />
-                            </div>
-                            <div class="switcher_container">
-                                <label class="selected" for="padding_type_percent">%</label>
-                                <label for="padding_type_pixel">px</label>
-                                <input type="radio" name="padding_type" id="padding_type_pixel" value="px" />
-                                <input type="radio" name="padding_type" checked="checked" id="padding_type_percent" value="%" />
-                            </div>
-                        </div>
-                        <div>
-                            <label for="new_gutter_width">Gutter width</label>
-                            <div class="number_input">
-                                <a href="#" class="number increase"></a>
-                                <a href="#" class="number decrease"></a>
-                                <input id="new_gutter_width" value="2" type="text" />
-                            </div>
-                            <div class="switcher_container">
-                                <label class="selected" for="gutter_type_percent">%</label>
-                                <label for="gutter_type_pixel">px</label>
-                                <input type="radio" name="gutter_type" id="gutter_type_pixel" value="px" />
-                                <input type="radio" name="gutter_type" checked="checked" id="gutter_type_percent" value="%" />
-                            </div>
-                        </div>
-                        {% comment %}
-                        <div>
-                            <label for="new_baseline_height">Baseline height</label>
-                            <div class="number_input">
-                                <a href="#" class="number increase"></a>
-                                <a href="#" class="number decrease"></a>
-                                <input id="new_baseline_height" value="22" type="text" />
-                            </div>
-                            <div class="switcher_container">
-                                <label class="selected" for="baseline_type_pixel">px</label>
-                                <div class="switcher left"><span class="controller"></span></div>
-                                <label for="baseline_type_percent">%</label>
-                                <input type="radio" name="baseline_type" checked="checked" id="baseline_type_pixel" value="px" />
-                                <input type="radio" name="baseline_type" id="baseline_type_percent" value="%" />
-                            </div>
-                        </div>
-                        {% endcomment %}
-
-                        <div class="errors hidden"></div>
-
-                        <div class="submit">
-                            <a href="#" class="tooltip large btn btn--add" id="save_grid">Add breakpoint<span>By adding a 'break point' you are effectively creating a new grid and a media query.</span></a>
-                        </div>
-
-                    </div><!-- // #create_grid -->
-                    <div class="total_width">
-                        <input id="new_min_width" type="text" disabled="disabled" />px
                     </div>
-                </div><!-- // #browser -->
-                 
-            </div><!-- // #gridpak -->
-    
+                    <div> 
+                        <label for="new_padding_width">Column padding</label>
+                        <div class="number_input">
+                            <a href="#" class="number increase"></a>
+                            <a href="#" class="number decrease"></a>
+                            <input id="new_padding_width" value="2" type="text" />
+                        </div>
+                        <div class="switcher_container">
+                            <label class="selected" for="padding_type_percent">%</label>
+                            <label for="padding_type_pixel">px</label>
+                            <input type="radio" name="padding_type" id="padding_type_pixel" value="px" />
+                            <input type="radio" name="padding_type" checked="checked" id="padding_type_percent" value="%" />
+                        </div>
+                    </div>
+                    <div>
+                        <label for="new_gutter_width">Gutter width</label>
+                        <div class="number_input">
+                            <a href="#" class="number increase"></a>
+                            <a href="#" class="number decrease"></a>
+                            <input id="new_gutter_width" value="2" type="text" />
+                        </div>
+                        <div class="switcher_container">
+                            <label class="selected" for="gutter_type_percent">%</label>
+                            <label for="gutter_type_pixel">px</label>
+                            <input type="radio" name="gutter_type" id="gutter_type_pixel" value="px" />
+                            <input type="radio" name="gutter_type" checked="checked" id="gutter_type_percent" value="%" />
+                        </div>
+                    </div>
+                    {% comment %}
+                    <div>
+                        <label for="new_baseline_height">Baseline height</label>
+                        <div class="number_input">
+                            <a href="#" class="number increase"></a>
+                            <a href="#" class="number decrease"></a>
+                            <input id="new_baseline_height" value="22" type="text" />
+                        </div>
+                        <div class="switcher_container">
+                            <label class="selected" for="baseline_type_pixel">px</label>
+                            <div class="switcher left"><span class="controller"></span></div>
+                            <label for="baseline_type_percent">%</label>
+                            <input type="radio" name="baseline_type" checked="checked" id="baseline_type_pixel" value="px" />
+                            <input type="radio" name="baseline_type" id="baseline_type_percent" value="%" />
+                        </div>
+                    </div>
+                    {% endcomment %}
+
+                    <div class="errors hidden"></div>
+
+                    <div class="submit">
+                        <a href="#" class="tooltip large btn btn--add" id="save_grid">Add breakpoint<span>By adding a 'break point' you are effectively creating a new grid and a media query.</span></a>
+                    </div>
+
+                </div><!-- // #create_grid -->
+                <div class="total_width">
+                    <input id="new_min_width" type="text" disabled="disabled" />px
+                </div>
+            </div><!-- // #browser -->
+             
+        </div><!-- // #gridpak -->
     </div><!-- // #content_wrapper -->
-    
+
     <footer id="footer">
           <div class="footer_wrapper">
               <form id="download_form" method="post" action="{% url grids_download %}">
@@ -102,36 +105,40 @@
                     <p class="numberOfGrids hidden">1</p>
                     <p class="gridpak_info">Includes: 1 PNG(s), 1 CSS, SCSS, 1 JavaScript file &amp; 1 Readme.</p>
               </form>
-              <p class="created_by">Created by <a href="http://erskinedesign.com/">Erskine Design</a>.</p>
-              <p class="created_by">Licensed under a Creative Commons Attribution 3.0 License.</p>
-        </div><!-- // footer_wrapper -->
+               <img src="/static/images/erskine-bird.png" alt="The Erskine logo" class="footer__bird"/>
+
+                <div class="created_by">
+                    <p>A project by <a href="http://erskinedesign.com/">Erskine Design</a>.</p>
+                    <p>Licensed under a Creative Commons Attribution 3.0 License.</p>
+                </div><!-- //.created_by -->        </div><!-- // footer_wrapper -->
     </footer><!-- // #footer -->
 
     <!-- TEMPLATES -->
-                  <script type="text/template" id="grid_template">
-                      <div class="grid<%= (current) ? ' cur' : '' %>">
-                          <div class="cols" style="<%= (gutter_type == 'px') ? 'margin-left:-' + gutter_width + gutter_type : '' %>;">
-                              <% var i=0; for(i; i<col_num; i++) { %>
-                                  <div class="col" style="width:<%= col_width %>%; border-left-width:<%= (gutter_type == 'px') ? gutter_width : 0 %>px; margin-left:<%= (gutter_type == '%' && i > 0) ? gutter_width : 0 %>%; padding:0 <%= padding_width + padding_type %>;">
-                                      <div class="visible"><span class="width"><%= col_width %>%</span></div>
-                                  </div><!-- // .col -->
-                              <% } %>
-                          </div><!-- // .cols -->
-                          <div class="tab" style="left:<%= lower %>px; width:<%= (!upper) ? $('body').width() - lower : upper-lower %>px;">
-                              <a href="#">
-                                  <ul class="actions">
-                                      <li><span class="link"><%= lower %> - <%= (!upper) ? '&#8734;' : upper %></span></li>
-                                      <li><span class="remove">remove</span></li>
-                                  </ul><!-- // .actions -->
-                              </a>
-                          </div>
-                      </div>
-                  </script>
+    <script type="text/template" id="grid_template">
+      <div class="grid<%= (current) ? ' cur' : '' %>">
+          <div class="cols" style="<%= (gutter_type == 'px') ? 'margin-left:-' + gutter_width + gutter_type : '' %>;">
+              <% var i=0; for(i; i<col_num; i++) { %>
+                  <div class="col" style="width:<%= col_width %>%; border-left-width:<%= (gutter_type == 'px') ? gutter_width : 0 %>px; margin-left:<%= (gutter_type == '%' && i > 0) ? gutter_width : 0 %>%; padding:0 <%= padding_width + padding_type %>;">
+                      <div class="visible"><span class="width"><%= col_width %>%</span></div>
+                  </div><!-- // .col -->
+              <% } %>
+          </div><!-- // .cols -->
+          <div class="tab" style="left:<%= lower %>px; width:<%= (!upper) ? $('body').width() - lower : upper-lower %>px;">
+              <a href="#">
+                  <ul class="actions">
+                      <li><span class="link"><%= lower %> - <%= (!upper) ? '&#8734;' : upper %></span></li>
+                      <li><span class="remove">remove</span></li>
+                  </ul><!-- // .actions -->
+              </a>
+          </div>
+      </div>
+    </script>
 
     {% endblock %}
 
   
     {% block javascript %}
+
     {% compress js %}
     <script src="{{ STATIC_URL }}js/underscore-min.js"></script>
     <script src="{{ STATIC_URL }}js/backbone.js"></script>

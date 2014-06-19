@@ -5,6 +5,7 @@
 // Sets the default max-width of the page
 
 .wrapper {
+    @extend .cf;
     display: block;
     width: 100%;
     margin: 0 auto;

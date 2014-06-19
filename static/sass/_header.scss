@@ -13,8 +13,13 @@
 }
 
 #branding {
-    display: inline;
-    margin-right: rem-calc(5);
+    display: block;
+    margin-bottom: rem-calc(3);
+
+    @include respond-to("medium and above"){
+        display: inline;
+        margin-right: rem-calc(5);
+    }
 
     a {
         color:#333;
@@ -26,9 +31,21 @@
     }
 }
 
+.learn {
+    @include gradient-link(dark);
+    display: inline-block;
+}
+
+// byline in the header beneath the logo
 .byline {
-    display: inline;
     @include font-family(apercu, normal);
+    @include font-scale(small);
+    display: block;
+
+    @include respond-to("medium and above"){
+        @include font-scale(base);
+        display: inline;
+    }
 }
 
 nav {
@@ -43,25 +60,6 @@ body.index nav a:focus {
     background-position:0 -889px;
 }
 
-ul.social {
-    float:left;
-    margin:4px 20px 0 0;
-}
-
-ul.social li {
-    display:inline;
-    margin-right:8px;
-/*    overflow:hidden;*/
-    float:left;
-}
-
-.like {
-    width:90px;
-}
-.share {
-    width:82px;
-}
-
 .header_wrapper {
     .btn--cta {
         display: none;
@@ -74,15 +72,7 @@ ul.social li {
 
 
 @media only screen and (max-width:680px) {
-    ul.social {
-        display:none;
-    }
-    
     .header_wrapper p {
         display: none;
-    }
-    
-    body.index nav a {
-        float: right;
     }
 }

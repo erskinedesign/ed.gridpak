@@ -81,6 +81,11 @@ p {
     padding-left: 30px; 
     margin:0;
     height: 100%;
+    width: 100%;
+}
+
+.mobile-alert {
+    display: none;
 }
 
 /* @end */
@@ -105,10 +110,10 @@ p {
     &:before {
         content: "";
         position: absolute;
-        top: -48px;
-        left: 0;
+        top: rem-calc(-51);
+        left: rem-calc(0);
         right: 0;
-        height: 30px;
+        height: rem-calc(30);
         width: 100%;
         background:url(/static/images/ruler.png);
         background-repeat: no-repeat;

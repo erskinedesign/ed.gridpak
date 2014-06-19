@@ -2,7 +2,7 @@ EDJ.run_list = [
     'navigation',
     'glow_btn',
     'dropdown',
-    'fitvids'
+    'fitvids',
 ];
 
 
@@ -165,3 +165,6 @@ EDJ.fitvids = {
         this.$vids.fitVids(); 
     }
 };
+
+
+
