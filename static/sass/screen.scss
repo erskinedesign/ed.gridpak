@@ -88,15 +88,12 @@ p {
     display: none;
 }
 
-/* @end */
 
 @import "header";
-@import "footer";   
-
-    
+@import "footer";
 
 
-/* @group 6. GRIPDAK APPLICATION 
+/* @group 6. GRID CREATOR 
 ------------------------------------------*/
 
 #gridpak {
@@ -120,10 +117,6 @@ p {
     }
 }
 
-
-/* @group 6.1. BROWSER
---------------------------------------*/
-
 #browser {
     position:relative;
     border: 1px solid palette(grey, dark);
@@ -141,9 +134,6 @@ p {
 @import "dialogue";
 @import "grid-list";
 @import "tabs";
-
-
-
 @import "animations";
 
 
@@ -155,69 +145,18 @@ p {
     display: none;
 }
 
-// NOT SURE IF I SHOULD DELETE THIS YET
-// 
-// .tooltip:hover span,
-// .tooltip:focus span{
-//     /* display:inline; */
-//     position:absolute; 
-//     border-radius:3px; 
-//     border:1px solid #EEDE7D;
-//     box-shadow:1px 1px 4px rgba(0,0,0,0.5), rgba(255,255,255,0.22) 1px 1px 0 inset;
-//     padding:7px 9px;
-//     min-width:40px;
-//     max-width:120px; 
-//     background:#1a94e2 linear-gradient(top, #FFFAD9, #FFF4AA);
-//     font-size:0.8em;
-//     line-height:1.3em;
-//     text-align:center;
-//     color:#555;
-//     text-shadow:-1px -1px 0 rgba(255, 255, 255, 0.3);
-//     animation:fadeInDown 0.4s 0;
-// }
-
-// .tooltip.large:hover span,
-// .tooltip.large:focus span {
-//     right:0;
-//     bottom:-98px;
-// }
-
-// .tooltip.large:hover span:before,
-// .tooltip.large:focus span:before {
-//     top:-15px;
-//     left:58px;
-//     border-color:transparent transparent #FFFAD9 transparent;  
-// }
-
-// .tooltip.small:hover span,
-// .tooltip.small:focus span {
-//     left:-5px;
-//     top:-40px;
-// }
-
-// .tooltip.small:hover span:before,
-// .tooltip.small:focus span:before {
-//     top:27px;
-//     left:23px;
-//     border-color:#FFF4AA transparent transparent transparent;  
-// }
-
-
-/* @end */
-
-
 .errors {
-    clear:both;
-    margin-top:10px;
-    width:72.6%;
-    border-radius:3px; 
-    border:1px solid #EEDE7D;
-    box-shadow:1px 1px 4px rgba(0,0,0,0.5), rgba(255,255,255,0.22) 1px 1px 0 inset;
-    padding:7px 9px;
-    background:#1a94e2 linear-gradient(top, #FFFAD9, #FFF4AA);
-    font-size:0.8em;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: rem-calc(-78);
+    border: none;
+    box-shadow: none;
+    padding: rem-calc(10);
+    background-color: #333;
+    font-size: rem-calc(13);
     line-height:1.3em;
-    color:#555;
-    text-shadow:-1px -1px 0 rgba(255, 255, 255, 0.3);
+    color:white;
     animation:fadeInDown 0.4s 0;
 }

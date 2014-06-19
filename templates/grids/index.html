@@ -1,9 +1,9 @@
 {% extends 'grids/base.html' %}
 {% load compress %}
 {% block body_class %}index{% endblock %}
-{% block nav_item %}<div class="learn"><a href="{% url about %}" data-icon-before="help">Learn more</a></div>{% endblock %}
+{% block learn_item %}<div class="learn"><a href="{% url about %}" data-icon-before="help">Learn more</a></div>{% endblock %}
 {% block social %}                
-<nav>
+<nav class="header__nav">
     <ul class="nav">
         <li class="nav__item">Twitter</li>
         <li class="nav__item">Facebook</li>

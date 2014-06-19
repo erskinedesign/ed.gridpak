@@ -35,11 +35,13 @@
                 <div class="header_wrapper">
                     <h1 id="branding"><a href="{% url grids_index %}">Gridpak</a></h1>
                     <h2 class="byline">The responsive grid generator</h2>
-
-                    {% block nav_item %}{% endblock %}
-                    {% block social %}{% endblock %}
+                    {% block learn_item %}{% endblock %}
                 </div>
+
+                {% block nav_item %}{% endblock %}
+                {% block social %}{% endblock %}
             </header>
+
             {% block content %}{% endblock %}
 
     <!-- JAVASCRIPT -->

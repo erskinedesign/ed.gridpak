@@ -9,6 +9,7 @@
     background:#FFF;
     width:100%;
     z-index:300;
+    height: rem-calc(100);
     padding: rem-calc(33 30);
 }
 
@@ -31,6 +32,27 @@
     }
 }
 
+.header_wrapper{
+    float: left;
+}
+
+.header__nav {
+    float: right;
+}
+
+.header__btn {
+    display: none;
+
+    @include respond-to("large and above"){
+        display: block;
+        float: right;
+
+        // position the button so that it doesn’t create weird padding on the header module
+        position: relative; 
+        top: rem-calc(-5);
+    }
+}
+
 .learn {
     @include gradient-link(dark);
     display: inline-block;
@@ -45,34 +67,5 @@
     @include respond-to("medium and above"){
         @include font-scale(base);
         display: inline;
-    }
-}
-
-nav {
-    float:right;
-    margin-top:5px;
-    min-width:180px;
-}
-
-body.index nav a:hover,
-body.index nav a:focus {
-    color:#333;
-    background-position:0 -889px;
-}
-
-.header_wrapper {
-    .btn--cta {
-        display: none;
-
-        @include respond-to("large and above"){
-            display: block;
-        }
-    }
-}
-
-
-@media only screen and (max-width:680px) {
-    .header_wrapper p {
-        display: none;
     }
 }

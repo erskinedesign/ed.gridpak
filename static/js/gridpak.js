@@ -89,7 +89,7 @@ $(function() {
                 (attrs.upper && attrs.lower) &&
                 (attrs.upper - attrs.lower) < settings.min_grid_width
             ) {
-                return 'Grid must be a minimum width of ' + settings.min_grid_width + 'px';
+                return 'The difference between two breakpoints must be greater than ' + settings.min_grid_width + 'px';
             }
 
         },
