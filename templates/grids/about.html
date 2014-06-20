@@ -1,56 +1,67 @@
 {% extends 'grids/base.html' %}
 {% block page_title %}About | {% endblock %}
 {% block body_class %}about{% endblock %}
-{% block nav_item %}
-    <a class="header__btn btn btn--cta" href="{% url grids_index %}">Create your Gridpak</a>
-{% endblock %}
 {% block content %}
     {% load common %}
-        <div class="island">
-            <div class="wrapper">
-                <div class="g__col g__col--center g__col--12--largest">
 
-                    <ul class="nav--breadcrumb">
-                        <li class="nav--breadcrumb__item"><a href="http://gridpak.com">Gridpak</a></li>
-                        <li class="nav--breadcrumb__item">Documentation</li>
-                    </ul>
+    <header class="site_header">
+        <div class="wrapper">
+            <div class="g__col g__col--14--largest g__align--right--largest">
+                <div class="header_wrapper">
+                    <h1 id="branding"><a href="{% url grids_index %}">Gridpak</a></h1>
+                    <h2 class="byline">The responsive grid generator</h2>
+                </div><!-- //.header__wrapper -->
+                <a class="header__btn btn btn--cta" href="{% url grids_index %}">Create your Gridpak</a>
+            </div><!-- //.g__col -->
+        </div><!-- //.wrapper -->
+    </header>
 
-                    <div class="longform longform--reverse">
-                        <h1>A simple, responsive grid system</h1>
 
-                        <p>We made Gridpak as we wanted a quick tool to help us work with responsive grids at <a href="http://erskinedesign.com">Erskine Design</a>.</p>
+    <div class="island">
+        <div class="wrapper">
+            <div class="g__col g__col--center g__col--12--largest">
 
-                        <p>Gridpak helps you to visualse whe your breakpoints should go (such as how to break a design across small, medium and large screen sizes). It will then generate a number of useful assets for you to act as the starting point for your responsive projects including all the assets you need. Here’s how it works:</p>
-                    </div><!-- //.longform -->
+                <ul class="nav--breadcrumb">
+                    <li class="nav--breadcrumb__item"><a href="http://gridpak.com">Gridpak</a></li>
+                    <li class="nav--breadcrumb__item">Documentation</li>
+                </ul>
+
+                <div class="longform longform--reverse">
+                    <h1>A simple, responsive grid system</h1>
+
+                    <p>We made Gridpak as we wanted a quick tool to help us work with responsive grids at <a href="http://erskinedesign.com">Erskine Design</a>.</p>
+
+                    <p>Gridpak helps you to visualse whe your breakpoints should go (such as how to break a design across small, medium and large screen sizes). It will then generate a number of useful assets for you to act as the starting point for your responsive projects including all the assets you need. Here’s how it works:</p>
+                </div><!-- //.longform -->
+            </div><!-- //.grid -->
+            
+            <div class="g__col g__col--center g__col--16--largest">
+                <iframe src="http://player.vimeo.com/video/35256595?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="520" height="328" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            </div><!-- //.grid -->
+
+            <div class="g__col g__col--center g__col--12--largest 
+                        longform longform--reverse cf">
+                <h3>What you get in the download</h3>
+            
+                <div class="g__col g__col--4-of-12--largest">
+                    <div class="island--dark"><h3>CSS / Sass</h3></div>
+                    <p class="small">You’ll have several options for presentational CSS.</p>
+                </div>
+
+                <div class="g__col g__col--4-of-12--largest">
+                    <div class="island--dark"><h3>JavaScript</h3></div>
+                    <p class="small">A Javascript file which allows you to toggle your grid on and off in any browser using the <kbd>G</kbd> key.</p>
+                </div>
+
+                <div class="g__col g__col--4-of-12--largest">
+                    <div class="island--dark"><h3>PNG assets</h3></div>
+                    <p class="small">A PNG version of each grid lets you use your graphics in any app of your choice.</p>
                 </div><!-- //.grid -->
-                
-                <div class="g__col g__col--center g__col--16--largest">
-                    <iframe src="http://player.vimeo.com/video/35256595?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="520" height="328" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                </div><!-- //.grid -->
-
-                <div class="g__col g__col--center g__col--12--largest 
-                            longform longform--reverse cf">
-                    <h3>What you get in the download</h3>
-                
-                    <div class="g__col g__col--4-of-12--largest">
-                        <div class="island--dark"><h3>CSS / Sass</h3></div>
-                        <p class="small">You’ll have several options for presentational CSS.</p>
-                    </div>
-
-                    <div class="g__col g__col--4-of-12--largest">
-                        <div class="island--dark"><h3>JavaScript</h3></div>
-                        <p class="small">A Javascript file which allows you to toggle your grid on and off in any browser using the <kbd>G</kbd> key.</p>
-                    </div>
-
-                    <div class="g__col g__col--4-of-12--largest">
-                        <div class="island--dark"><h3>PNG assets</h3></div>
-                        <p class="small">A PNG version of each grid lets you use your graphics in any app of your choice.</p>
-                    </div><!-- //.grid -->
 
 
-                </div><!-- //.grid -->
-            </div><!-- //.wrapper -->
-        </div><!-- //.island -->
+            </div><!-- //.grid -->
+        </div><!-- //.wrapper -->
+    </div><!-- //.island -->
 
         <div class="wrapper">
             <div class="g__col g__col--center g__col--12--largest">

@@ -1,16 +1,24 @@
 {% extends 'grids/base.html' %}
 {% load compress %}
 {% block body_class %}index{% endblock %}
-{% block learn_item %}<div class="learn"><a href="{% url about %}" data-icon-before="help">Learn more</a></div>{% endblock %}
-{% block social %}                
-<nav class="header__nav">
-    <ul class="nav">
-        <li class="nav__item">Twitter</li>
-        <li class="nav__item">Facebook</li>
-    </ul>
-</nav>
-{% endblock %}
+
 {% block content %}
+
+    <header class="site_header site_header--app">
+        <div class="header_wrapper">
+            <h1 id="branding"><a href="{% url grids_index %}">Gridpak</a></h1>
+            <h2 class="byline">The responsive grid generator</h2>
+            <div class="learn"><a href="{% url about %}" data-icon-before="help">Learn more</a></div>
+        </div>
+
+        <nav class="header__nav">
+            <ul class="nav">
+                <li class="nav__item">Twitter</li>
+                <li class="nav__item">Facebook</li>
+            </ul>
+        </nav>
+    </header>
+
     
     <div class="mobile-alert">
         <div class="wrapper">
@@ -125,10 +133,10 @@
           </div><!-- // .cols -->
           <div class="tab" style="left:<%= lower %>px; width:<%= (!upper) ? $('body').width() - lower : upper-lower %>px;">
               <a href="#">
-                  <ul class="actions">
-                      <li><span class="link"><%= lower %> - <%= (!upper) ? '&#8734;' : upper %></span></li>
-                      <li><span class="remove">remove</span></li>
-                  </ul><!-- // .actions -->
+                  <div class="actions">                        
+                        <div class="link"><%= lower %> - <%= (!upper) ? '&#8734;' : upper %></div>
+                        <div class="remove" data-icon-before="close-on">remove</div>
+                  </div><!-- // .actions -->
               </a>
           </div>
       </div>

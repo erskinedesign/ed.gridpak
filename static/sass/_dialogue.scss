@@ -17,7 +17,8 @@
     clear: both;
     color: #FFF;
     background: #404345;
-    z-index: 99; // lol
+    z-index: 99;
+    border-radius: rem-calc(0 3 3 0);
 }
 
 input {

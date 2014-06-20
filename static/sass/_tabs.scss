@@ -30,10 +30,8 @@
     position: relative;
 }
 
-
-#grid_list .tab li:first-child:before{
-    outline: 10px solid red;
-    
+#grid_list .tab li {
+    width: 100%;
 }
 
 #grid_list .cur .tab:before {
@@ -49,13 +47,42 @@
     width: 100%;
 }
 
-#grid_list li:only-child .tab .actions .remove {
+.remove {
+    position: absolute;
+    left: 53%; 
+    top: 0;
+}
+
+#grid_list .tab .actions .remove {
+    overflow: hidden;
+    width: rem-calc(15);
+    height: rem-calc(15);    
+    opacity: .5;
+    top: rem-calc(3);
+    left: rem-calc(5);
+
+    &:hover, 
+    &:focus {
+        opacity: 1;
+    }
+
+    &:before {
+        height: rem-calc(15);
+        width: rem-calc(15);
+    }
+}
+
+#grid_list li:only-child .remove {
     display:none;
+}
+
+#grid_list .tab .actions {
+    @include transition(all 0.2s ease-in-out);
 }
 
 #grid_list .tab .actions:hover,
 #grid_list .tab .actions:focus {
-    color:rgba(255,255,255,1);
+    background-color: #ddd;
 }
 
 #grid_list .tab .actions:active {
@@ -81,25 +108,10 @@
     line-height:1em;        
 }
 
-#grid_list .tab .actions span.link {
-    padding:8px 5px 8px 10px;
+.actions .link {
+    padding: rem-calc(4 5 4 10);
 }
 #grid_list li:only-child .tab .actions span.link {
     padding-right:10px;
 }
-
-#grid_list .tab .actions span.remove {
-    display: inline-block;
-    width:17px;
-    height:17px;
-    background:url(/static/images/site/icons/gridpak-sprite.png) no-repeat 1px -3019px;
-    // text replacement
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
- }
  
-#grid_list .tab .actions span.remove:hover,
-#grid_list .tab .actions span.remove:focus {
-    opacity:1;
- }

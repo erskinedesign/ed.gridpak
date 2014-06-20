@@ -30,7 +30,8 @@ $icons:     (add),
             (help),
             (arrow-drag),
             (download),
-            (help);
+            (help),
+            (close-on, true, close-off, png);
 
 
 
@@ -70,6 +71,16 @@ $icons:     (add),
     }
 }
 
+[data-icon-before="close-on"],
+[data-icon-after="close-on"]{
+    position: relative;
+
+    &:before {
+        top: 0;
+        height: rem-calc(15) !important;
+        width: rem-calc(15);
+    }
+}
 
 
 // IMPORT BUILD STEP

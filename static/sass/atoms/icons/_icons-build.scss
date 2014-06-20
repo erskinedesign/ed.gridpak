@@ -22,9 +22,13 @@
 // background: transparent url('data URI of ../images/icons/social__twitter.svg') center no-repeat
 //
 
-@mixin icon__background ($icon, $inline: true, $inline-hovers: $_icon-inline-hovers) {
+@mixin icon__background ($icon, $inline: true, $inline-hovers: $_icon-inline-hovers, $type: $icons__filextn){
     $file: nth($icon, 1);
     $hover: false;
+
+    @if $type {
+        $icons__filextn: png;
+    }
 
     @if length($icon) == 2{
         $hover: nth($icon, 2);

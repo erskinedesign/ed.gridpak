@@ -154,9 +154,10 @@ p {
     border: none;
     box-shadow: none;
     padding: rem-calc(10);
-    background-color: #333;
+    background-color: #FFF5B1;
     font-size: rem-calc(13);
-    line-height:1.3em;
-    color:white;
+    line-height:1.35em;
+    color: #333;
     animation:fadeInDown 0.4s 0;
+    border-radius: rem-calc(0 0 3 0);
 }

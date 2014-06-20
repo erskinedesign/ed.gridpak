@@ -8,8 +8,16 @@
     @include clearfix();
     background:#FFF;
     width:100%;
+    height: rem-calc(110);
     z-index:300;
-    height: rem-calc(100);
+    padding: rem-calc(33 0 0 0);
+
+    @include respond-to("large and above"){
+        height: rem-calc(100);
+    }
+}
+
+.site__header--app {
     padding: rem-calc(33 30);
 }
 

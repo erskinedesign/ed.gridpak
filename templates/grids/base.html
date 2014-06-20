@@ -11,7 +11,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">  
         <link rel="author" type="text/plain" href="{{ STATIC_URL }}humans.txt" />
         
-        
         <title>{% block page_title %}{% endblock %}Gridpak - The responsive grid generator</title>
         
         <!-- TYPEKIT -->
@@ -30,19 +29,7 @@
     </head>
     
     <body class="{% block body_class %}{% endblock %}">
-            {% block sorry %}{% endblock %}
-            <header class="site_header">
-                <div class="header_wrapper">
-                    <h1 id="branding"><a href="{% url grids_index %}">Gridpak</a></h1>
-                    <h2 class="byline">The responsive grid generator</h2>
-                    {% block learn_item %}{% endblock %}
-                </div>
-
-                {% block nav_item %}{% endblock %}
-                {% block social %}{% endblock %}
-            </header>
-
-            {% block content %}{% endblock %}
+        {% block content %}{% endblock %}
 
     <!-- JAVASCRIPT -->
     {% compress js %}
