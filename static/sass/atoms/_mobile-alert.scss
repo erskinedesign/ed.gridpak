@@ -1,0 +1,33 @@
+// ==========================================================================
+// MOBILE ALERT
+// ========================================================================== 
+
+// When the app is on smaller screen sizes the grid is disabled by JS and 
+// all of the following changes are made to the HTML element:
+
+
+.mobile-alert {
+    background-color: #F4F4F4;
+
+    #footer, 
+    #content_wrapper,
+    .header__nav,
+    .learn {
+        display: none;
+    }
+
+    .site_header {
+        background-color: transparent;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    p {
+        margin-bottom: rem-calc(20);
+    }
+}
+
+
+.mobile-alert__text {
+    display: none;
+}

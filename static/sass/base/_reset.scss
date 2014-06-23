@@ -88,7 +88,6 @@ iframe {
     width: 100%;
     background-color: #FFFFFF;
     padding: rem-calc(5);
-    margin-top: rem-calc(10);
     margin-bottom: rem-calc(20);
 
     @include respond-to("large and above"){

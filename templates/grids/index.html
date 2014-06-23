@@ -1,9 +1,9 @@
 {% extends 'grids/base.html' %}
 {% load compress %}
+{% block html_class %}{% endblock %}
 {% block body_class %}index{% endblock %}
 
 {% block content %}
-
     <header class="site_header site_header--app">
         <div class="header_wrapper">
             <h1 id="branding"><a href="{% url grids_index %}">Gridpak</a></h1>
@@ -20,10 +20,10 @@
     </header>
 
     
-    <div class="mobile-alert">
+    <div class="mobile-alert__text">
         <div class="wrapper">
-            <p>Please note: the Gridpak generator is not desiged for use on touch and mobile devices, please use a desktop browser. We are aware of the irony ;-).</p>
-            <a class="btn">Take me to the documentation</a>
+            <p>Please note: the Gridpak generator is not desiged for use on touch and mobile devices, please use a desktop browser. We are aware of the irony ;-)</p>
+            <a class="btn" href="/about">Take me to the documentation</a>
         </div><!-- //.wrapper -->
     </div><!-- //.mobile-alert -->
 

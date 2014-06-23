@@ -41,10 +41,8 @@ $supports: (
 @import "atoms/island";
 @import "atoms/code-highlighting";
 @import "atoms/nav";
-
-// LAYOUT
-// ==========================================================================
-@import "layout/wrapper";
+@import "atoms/mobile-alert";
+@import "atoms/cell";
 
 
 // HTML & BODY
@@ -84,52 +82,14 @@ p {
     width: 100%;
 }
 
-.mobile-alert {
-    display: none;
-}
+// LAYOUT
+// ==========================================================================
+@import "layout/wrapper";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/grid-creator";
 
 
-@import "header";
-@import "footer";
-
-
-/* @group 6. GRID CREATOR 
-------------------------------------------*/
-
-#gridpak {
-    clear:both;
-    background:url(/static/images/diagonal-pattern.png);
-    overflow: visible;
-    position: relative;
-    height: 100%;
-    
-    // absolutely positioned ruler that sits beneath the tabs
-    &:before {
-        content: "";
-        position: absolute;
-        top: rem-calc(-51);
-        left: rem-calc(0);
-        right: 0;
-        height: rem-calc(30);
-        width: 100%;
-        background:url(/static/images/ruler.png);
-        background-repeat: no-repeat;
-    }
-}
-
-#browser {
-    position:relative;
-    border: 1px solid palette(grey, dark);
-    width:960px;
-    margin:0 0 40px 0;
-    height: 100%;
-    z-index:0;
-    animation:fadeInTwo 0.8s 1;
-
-    & > ul > li {
-        list-style: none;
-    }
-}
 
 @import "dialogue";
 @import "grid-list";
@@ -139,10 +99,6 @@ p {
 
 .tooltip span {
     display:none; 
-}
-
-.hidden {
-    display: none;
 }
 
 .errors {

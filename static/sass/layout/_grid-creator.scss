@@ -1,0 +1,40 @@
+// ==========================================================================
+// GRID CREATOR
+// ========================================================================== 
+
+// This module styles the grid creator and positions the various elements within
+
+#gridpak {
+    clear:both;
+    background:url(/static/images/diagonal-pattern.png);
+    overflow: visible;
+    position: relative;
+    height: 100%;
+    
+    // absolutely positioned ruler that sits beneath the tabs
+    &:before {
+        content: "";
+        position: absolute;
+        top: rem-calc(-58);
+        left: rem-calc(1);
+        right: 0;
+        height: rem-calc(30);
+        width: 100%;
+        background:url(/static/images/ruler.png);
+        background-repeat: no-repeat;
+    }
+}
+
+#browser {
+    position:relative;
+    border: 1px solid palette(grey, dark);
+    width:960px;
+    margin:0 0 40px 0;
+    height: 100%;
+    z-index:0;
+    animation:fadeInTwo 0.8s 1;
+
+    & > ul > li {
+        list-style: none;
+    }
+}

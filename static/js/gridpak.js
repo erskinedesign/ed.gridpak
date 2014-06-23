@@ -42,7 +42,7 @@ $(function() {
                 max_cols: 99,
                 allowed_types: ['px', '%'],
                 min_grid_width: 100,
-                min_min_width: 220,
+                min_min_width: 320,
             };
 
             // Int params must be integers
@@ -56,7 +56,6 @@ $(function() {
                 return 'Numbers please';
             }
 
-            // I got 99 cols but a bitch ain't one
             if (attrs.col_num > settings.max_cols || attrs.col_num < 1) {
                 return 'Must be between 1 and ' + settings.max_cols + ' cols';
             }
@@ -354,7 +353,7 @@ $(function() {
     window.AppView = Backbone.View.extend({
 
         $browser: {},
-        snap: 20,
+        snap: 10,
 
         el: $('#gridpak'),
 
