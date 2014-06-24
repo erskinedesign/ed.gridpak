@@ -11,6 +11,8 @@
 .nav__item {
     display: inline-block;
     margin-right: rem-calc(10);
+    float: left;
+    width: rem-calc(60);
 }
 
 

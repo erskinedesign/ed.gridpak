@@ -86,8 +86,7 @@
 @mixin _icon_generate_classes($icons) {
     @each $icon in $icons {
         $file: nth($icon, 1);
-        [data-icon-before="#{$file}"],
-        [data-icon-after="#{$file}"] {
+        [data-icon-before="#{$file}"] {
             @include icon__background($icon);
         }
     }

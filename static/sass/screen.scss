@@ -25,6 +25,7 @@ $supports: (
 @import "tools/palette";
 @import "tools/gradient-link";
 @import "tools/base-spacing";
+@import "tools/hide-text";
 
 // BASE STYLES
 // ==========================================================================
@@ -43,6 +44,7 @@ $supports: (
 @import "atoms/nav";
 @import "atoms/mobile-alert";
 @import "atoms/cell";
+@import "atoms/share-links";
 
 
 // HTML & BODY
