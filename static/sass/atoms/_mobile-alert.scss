@@ -2,12 +2,15 @@
 // MOBILE ALERT
 // ========================================================================== 
 
-// When the app is on smaller screen sizes the grid is disabled by JS and 
-// all of the following changes are made to the HTML element:
+// A mobile alert that pops up on smaller devices.
 
 
 .mobile-alert {
     background-color: #F4F4F4;
+
+    @include respond-to("large and above"){
+        display: none;
+    }
 
     #footer, 
     #content_wrapper,

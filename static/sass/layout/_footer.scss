@@ -25,12 +25,17 @@ footer {
 }
 
 .footer_wrapper {
-    background: #222;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: rem-calc(25 28);
+    opacity: 0;
+
+    @include respond-to("large and above"){
+        opacity: 1;
+        background: #222;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: rem-calc(25 28);
+    }
 }
 
 #download {

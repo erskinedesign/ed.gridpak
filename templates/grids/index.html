@@ -7,29 +7,30 @@
     <header class="site_header site_header--app">
         <div class="header_wrapper">
             <h1 id="branding"><a href="{% url grids_index %}">Gridpak</a></h1>
-            <h2 class="byline">The responsive grid generator</h2>
+            <h2 class="byline byline--app">The responsive grid generator</h2>
+            
             <div class="learn"><a href="{% url about %}" data-icon-before="help">Learn more</a></div>
-        </div>
+        </div><!-- //header_wrapper -->
 
-        <nav class="header__nav nav">
+        <nav class="header__nav nav hidden--mobile">
             <a href="https://twitter.com/intent/tweet?text=Check%20out%20Gridpak,%20a%20useful%20app%20for%20creating%20responsive%20grids%20%E2%80%93%20http://gridpak.com" class="nav__item">
                 <div class="share__twitter">Twitter</div>
             </a>
-            <a href="http://facebook.com" class="nav__item">
-                <div class="">Github</div>
+            <a href="http://github.com/erskinedesign/ed.gridpak" class="nav__item">
+                <div class="share__github">GitHub</div>
             </a>
         </nav>
     </header>
 
     
-    <div class="mobile-alert__text">
+    <div class="mobile-alert" aria-hidden=true>
         <div class="wrapper">
             <p>Please note: the Gridpak generator is not desiged for use on touch and mobile devices, please use a desktop browser. We are aware of the irony ;-)</p>
             <a class="btn" href="/about">Take me to the documentation</a>
         </div><!-- //.wrapper -->
     </div><!-- //.mobile-alert -->
 
-    <div id="content_wrapper">
+    <div id="content_wrapper" class="hidden--mobile">
         <div id="gridpak">                    
             <div id="browser">
 

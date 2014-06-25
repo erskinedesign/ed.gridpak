@@ -6,7 +6,7 @@
 
 .site_header {
     @include clearfix();
-    background:#FFF;
+    background-color:#F4F4F4;
     width:100%;
     height: rem-calc(110);
     z-index:300;
@@ -14,11 +14,34 @@
 
     @include respond-to("large and above"){
         height: rem-calc(100);
+        background-color: #FFFFFF;
     }
 }
 
 .site_header--app {
-    padding: rem-calc(33 30);
+    height: auto;
+    margin-bottom: rem-calc(10);
+    padding-left: rem-calc(15);
+    padding-right: rem-calc(15);
+    
+    // Align the header items with the .wrapper module below
+    @include respond-to("small and above"){
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    @include respond-to("medium and above"){
+        padding-left: 2.25rem;
+        padding-right: 2.25rem;
+        max-width: 44.1875rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    @include respond-to("large and above"){
+       padding: rem-calc(33 30);
+       max-width: 100%;
+    }
 }
 
 #branding {
@@ -62,8 +85,12 @@
 }
 
 .learn {
-    @include gradient-link(dark);
-    display: inline-block;
+    display: none;
+
+    @include respond-to("large and above"){
+        @include gradient-link(dark);
+        display: inline-block;
+    }
 }
 
 // byline in the header beneath the logo
@@ -73,7 +100,15 @@
     display: block;
 
     @include respond-to("medium and above"){
-        @include font-scale(base);
         display: inline;
+        @include font-scale(base);
     }
+}
+
+.byline--app {
+    display: none;
+
+    @include respond-to("medium and above"){
+        display: inline;
+    }    
 }

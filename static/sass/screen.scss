@@ -52,6 +52,11 @@ $supports: (
 html {
     height:100%;
     font-size: 100%;
+    background-color: #F4F4F4;
+
+    @include respond-to("large and above"){
+        background-color: white;
+    }
 }
 
 body {
@@ -67,6 +72,14 @@ p {
 
 .hidden {
     display:none;
+}
+
+.hidden--mobile {
+    display: none;
+
+    @include respond-to("large and above"){
+        display: block;
+    }
 }
        
 

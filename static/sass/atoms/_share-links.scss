@@ -4,24 +4,22 @@
 
 // The share links in the header of the app
 
+
 .share__twitter, 
-.share__facebook {
+.share__github {
     @extend %hide-text;
     margin-top: rem-calc(10);
+
+    &:hover, 
+    &:focus {
+        -webkit-filter: contrast(93%); 
+    }
 }
 
 .share__twitter {
     background: transparent inline-image("icons/twitter.svg") center no-repeat;
-
-    &:hover {
-        background-image: inline-image("icons/twitter--hover.svg");
-    }
 }
 
-.share__facebook {
-    background: transparent inline-image("icons/facebook.svg") center no-repeat;
-
-    &:hover {
-        background-image: inline-image("icons/facebook--hover.svg");
-    }
+.share__github {
+    background: transparent inline-image("icons/github.svg") center no-repeat;
 }
