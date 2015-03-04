@@ -116,9 +116,5 @@ update too.
 
 This is a beta, not finished the finished article and we plan to add many features over the coming weeks and months. We would very much like your input, so please get in touch with any suggestions or comments. 
 
-We have a [Trello board](https://trello.com/board/gridpak/4ec2949a6f575b8735025392)
-set up where you can vote on features we are choosing to develop or just
-keep track of what we have planned.
-
 Of course, if you don't see what you're looking for please just drop us
 a line at gridpak [at] erskinedesign.com. or on Twitter @Gridpak
