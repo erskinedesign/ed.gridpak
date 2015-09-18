@@ -9,6 +9,13 @@ TEMPLATE_DIRS = (
     CUR_DIR + '/templates/',
 )
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'gridpak.db',
+    }
+}
+
 # STATIC_ROOT not required for development
 STATIC_ROOT = CUR_DIR + '/static_collected/'
 COMPRESS_ROOT = STATIC_ROOT
@@ -20,5 +27,5 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = CUR_DIR + '/media/'
 
-COMPRESS = False 
-COMPRESS_ENABLED = False 
+COMPRESS = False
+COMPRESS_ENABLED = False
